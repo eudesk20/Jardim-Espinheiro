@@ -17,20 +17,41 @@
 
     <p>Ficha Online</p>
 
-<div class="pontos-vida">
+<div class="ficha-personagem">
 
-    <h2>Pontos de Vida</h2>
+    <h2>Ficha do Personagem</h2>
 
-    <button id="diminuir-pv">-</button>
+    <label for="nome-personagem">Nome</label>
+    <input
+        type="text"
+        id="nome-personagem"
+        placeholder="Nome do personagem"
+    >
 
-    <span id="pv-atual">10</span>
+    <p>Nível: <span id="nivel">1</span></p>
 
-    <button id="aumentar-pv">+</button>
+    <div class="pontos-vida">
+
+        <h3>Pontos de Vida</h3>
+
+        <button id="diminuir-pv">-</button>
+
+        <span id="pv-atual">10</span>
+        /
+        <span id="pv-maximo">10</span>
+
+        <button id="aumentar-pv">+</button>
+
+    </div>
+
+    <h3>Atributos</h3>
+
+    <p>Força: <span id="forca">10</span></p>
+    <p>Destreza: <span id="destreza">10</span></p>
+    <p>Inteligência: <span id="inteligencia">10</span></p>
 
 </div>
-
-    <script src="js/app.js"></script>
-
+<script src="js/app.js"></script>
 </body>
 
 </html>
