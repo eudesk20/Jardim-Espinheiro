@@ -1068,6 +1068,21 @@ function abrirPagina(nome) {
     window.scrollTo({ top: document.querySelector(".navegacao-paginas").offsetTop - 8, behavior: "smooth" });
 }
 
+function organizarComposicao() {
+    const gradeCombate = document.querySelector(".grade-combate");
+    const ordemCombate = [
+        ".combate", ".pontos-vida", ".morte", ".central-d20",
+        ".bloco-atributos", ".bloco-salvaguardas", ".equipamentos",
+        ".bloco-pericias", ".ataques", ".inventario"
+    ];
+
+    // appendChild move o elemento existente; não cria cópias nem perde eventos.
+    ordemCombate.forEach(function (seletor) {
+        const bloco = gradeCombate.querySelector(seletor);
+        if (bloco) gradeCombate.appendChild(bloco);
+    });
+}
+
 document.querySelectorAll("[data-abrir-pagina]").forEach(function (botao) {
     botao.addEventListener("click", function () { abrirPagina(botao.dataset.abrirPagina); });
 });
@@ -1082,6 +1097,7 @@ document.getElementById("limpar-historico").addEventListener("click", function (
 // INICIALIZAÇÃO DA TELA
 // ======================================================
 
+organizarComposicao();
 montarRegras();
 atualizarTela();
 abrirPagina(sessionStorage.getItem("pagina-ativa") || "combate");
