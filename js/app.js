@@ -11,6 +11,7 @@ const botaoAumentar = document.getElementById("aumentar-pv");
 const campoNome = document.getElementById("nome-personagem");
 
 const textoNivel = document.getElementById("nivel");
+const camposIdentidade = ["jogador", "classe", "subclasse", "raca", "antecedente", "xp"];
 // BOTÕES DOS ATRIBUTOS
 const botoesAtributos =
     document.querySelectorAll(".botao-atributo");
@@ -151,7 +152,10 @@ function atualizarTela() {
     // --------------------------------------------------
 
     campoNome.value = personagem.nome;
-    textoNivel.textContent = personagem.nivel;
+    textoNivel.value = personagem.nivel;
+    camposIdentidade.forEach(function (campo) {
+        document.getElementById(campo === "jogador" ? "nome-jogador" : campo).value = personagem[campo];
+    });
 
 
     // --------------------------------------------------
@@ -238,6 +242,14 @@ personagem.combate = personagem.combate ?? { ca: 10, deslocamento: 9 };
 personagem.salvaguardas = personagem.salvaguardas ?? {};
 personagem.pericias = personagem.pericias ?? personagem.skillRanks ?? {};
 personagem.historico = Array.isArray(personagem.historico) ? personagem.historico : [];
+personagem.jogador = personagem.jogador ?? personagem.playerName ?? "";
+personagem.classe = personagem.classe ?? "";
+personagem.subclasse = personagem.subclasse ?? "";
+personagem.raca = personagem.raca ?? personagem.raça ?? "";
+personagem.antecedente = personagem.antecedente ?? "";
+personagem.xp = personagem.xp ?? personagem.XP ?? 0;
+personagem.morte = personagem.morte ?? { sucessos: 0, falhas: 0 };
+personagem.ataques = Array.isArray(personagem.ataques) ? personagem.ataques : [];
 
 salvarPersonagem();
 
@@ -369,6 +381,7 @@ function atualizarRegras() {
     document.getElementById("ca").value = personagem.combate.ca;
     document.getElementById("deslocamento").value = personagem.combate.deslocamento;
     document.getElementById("pv-temporario").value = personagem.vida.temporario;
+    document.getElementById("editar-pv-maximo").value = personagem.vida.maximo;
 
     nomesAtributos.forEach(function (atributo) {
         document.querySelector(`[data-salvaguarda="${atributo}"]`).checked = Boolean(personagem.salvaguardas[atributo]);
@@ -380,12 +393,68 @@ function atualizarRegras() {
     });
     document.getElementById("historico-rolagens").innerHTML = personagem.historico.slice(0, 20)
         .map(function (item) { return "<li>" + item + "</li>"; }).join("");
+    atualizarMorte();
+    atualizarAtaques();
+}
+
+function atualizarMorte() {
+    ["sucessos", "falhas"].forEach(function (tipo) {
+        const grupo = document.getElementById(tipo + "-morte");
+        grupo.innerHTML = "";
+        for (let indice = 1; indice <= 3; indice += 1) {
+            const marcador = document.createElement("input");
+            marcador.type = "checkbox";
+            marcador.dataset.morte = tipo;
+            marcador.dataset.indice = indice;
+            marcador.checked = personagem.morte[tipo] >= indice;
+            grupo.appendChild(marcador);
+        }
+    });
+}
+
+function atualizarAtaques() {
+    const lista = document.getElementById("lista-ataques");
+    lista.innerHTML = "";
+
+    personagem.ataques.forEach(function (ataque, indice) {
+        const linha = document.createElement("div");
+        linha.className = "linha-ataque";
+        linha.innerHTML = `<input data-ataque-campo="nome" data-indice="${indice}" placeholder="Ataque">
+            <input data-ataque-campo="bonus" data-indice="${indice}" type="number" placeholder="Bônus">
+            <input data-ataque-campo="dano" data-indice="${indice}" placeholder="Dano (ex.: 1d8+3)">
+            <button class="rolar-ataque" data-indice="${indice}">Rolar</button>
+            <button class="rolar-dano" data-indice="${indice}">Dano</button>
+            <button class="remover-ataque" data-indice="${indice}" aria-label="Remover ataque">×</button>`;
+        linha.querySelector('[data-ataque-campo="nome"]').value = ataque.nome;
+        linha.querySelector('[data-ataque-campo="bonus"]').value = ataque.bonus;
+        linha.querySelector('[data-ataque-campo="dano"]').value = ataque.dano;
+        lista.appendChild(linha);
+    });
 }
 
 function rolarD20(rotulo, bonus) {
     const dado = Math.floor(Math.random() * 20) + 1;
     const detalhe = dado === 20 ? " — crítico!" : (dado === 1 ? " — falha crítica!" : "");
     personagem.historico.unshift(`${rotulo}: ${dado} ${formatarBonus(bonus)} = ${dado + bonus}${detalhe}`);
+    salvarPersonagem();
+    atualizarTela();
+}
+
+// Aceita fórmulas simples como 1d8+3, 2d6 ou 1d10-1.
+function rolarDano(rotulo, expressao) {
+    const resultado = String(expressao).trim().match(/^(\d+)d(\d+)([+-]\d+)?$/i);
+    if (!resultado) {
+        personagem.historico.unshift(`${rotulo}: fórmula de dano inválida (${expressao || "vazia"})`);
+    } else {
+        const quantidade = Math.min(20, Number(resultado[1]));
+        const faces = Math.min(100, Number(resultado[2]));
+        const bonus = Number(resultado[3] || 0);
+        const dados = Array.from({ length: quantidade }, function () {
+            return Math.floor(Math.random() * faces) + 1;
+        });
+        const total = dados.reduce(function (soma, dado) { return soma + dado; }, 0) + bonus;
+        personagem.historico.unshift(`${rotulo} — dano ${expressao}: [${dados.join(", ")}] ${formatarBonus(bonus)} = ${total}`);
+    }
     salvarPersonagem();
     atualizarTela();
 }
@@ -401,7 +470,10 @@ function rolarD20(rotulo, bonus) {
 
 botaoAumentar.addEventListener("click", function () {
 
-    personagem.vida.atual = personagem.vida.atual + 1;
+    personagem.vida.atual = Math.min(
+        personagem.vida.maximo,
+        personagem.vida.atual + 1
+    );
 
     atualizarTela();
     salvarPersonagem();
@@ -416,7 +488,7 @@ botaoAumentar.addEventListener("click", function () {
 
 botaoDiminuir.addEventListener("click", function () {
 
-    personagem.vida.atual = personagem.vida.atual - 1;
+    personagem.vida.atual = Math.max(0, personagem.vida.atual - 1);
 
     atualizarTela();
     salvarPersonagem();
@@ -479,6 +551,24 @@ document.addEventListener("change", function (evento) {
     if (alvo.id === "ca") personagem.combate.ca = Math.max(0, Number(alvo.value) || 0);
     if (alvo.id === "deslocamento") personagem.combate.deslocamento = Math.max(0, Number(alvo.value) || 0);
     if (alvo.id === "pv-temporario") personagem.vida.temporario = Math.max(0, Number(alvo.value) || 0);
+    if (alvo.id === "editar-pv-maximo") {
+        personagem.vida.maximo = Math.max(1, Number(alvo.value) || 1);
+        personagem.vida.atual = Math.min(personagem.vida.atual, personagem.vida.maximo);
+    }
+    if (alvo.id === "nivel") personagem.nivel = Math.min(20, Math.max(1, Number(alvo.value) || 1));
+    if (alvo.id === "nome-jogador") personagem.jogador = alvo.value;
+    if (["classe", "subclasse", "raca", "antecedente"].includes(alvo.id)) personagem[alvo.id] = alvo.value;
+    if (alvo.id === "xp") personagem.xp = Math.max(0, Number(alvo.value) || 0);
+    if (alvo.dataset.morte) {
+        const indice = Number(alvo.dataset.indice);
+        personagem.morte[alvo.dataset.morte] = alvo.checked ? indice : indice - 1;
+    }
+    if (alvo.dataset.ataqueCampo) {
+        const ataque = personagem.ataques[Number(alvo.dataset.indice)];
+        ataque[alvo.dataset.ataqueCampo] = alvo.dataset.ataqueCampo === "bonus"
+            ? Number(alvo.value) || 0
+            : alvo.value;
+    }
 
     salvarPersonagem();
     atualizarTela();
@@ -495,6 +585,48 @@ document.addEventListener("click", function (evento) {
         const nome = pericias.find(function (item) { return item[0] === botao.dataset.chave; })[1];
         rolarD20(nome, bonusPericia(botao.dataset.chave));
     }
+});
+
+document.getElementById("adicionar-ataque").addEventListener("click", function () {
+    personagem.ataques.push({ nome: "", bonus: 0, dano: "" });
+    salvarPersonagem();
+    atualizarTela();
+});
+
+document.getElementById("lista-ataques").addEventListener("click", function (evento) {
+    const remover = evento.target.closest(".remover-ataque");
+    const rolar = evento.target.closest(".rolar-ataque");
+    const dano = evento.target.closest(".rolar-dano");
+
+    if (remover) personagem.ataques.splice(Number(remover.dataset.indice), 1);
+    if (rolar) {
+        const ataque = personagem.ataques[Number(rolar.dataset.indice)];
+        rolarD20(ataque.nome || "Ataque", Number(ataque.bonus) || 0);
+        return;
+    }
+    if (dano) {
+        const ataque = personagem.ataques[Number(dano.dataset.indice)];
+        rolarDano(ataque.nome || "Ataque", ataque.dano);
+        return;
+    }
+    if (remover) {
+        salvarPersonagem();
+        atualizarTela();
+    }
+});
+
+document.getElementById("estabilizar").addEventListener("click", function () {
+    personagem.morte = { sucessos: 0, falhas: 0 };
+    salvarPersonagem();
+    atualizarTela();
+});
+
+document.getElementById("descanso-longo").addEventListener("click", function () {
+    personagem.vida.atual = personagem.vida.maximo;
+    personagem.vida.temporario = 0;
+    personagem.morte = { sucessos: 0, falhas: 0 };
+    salvarPersonagem();
+    atualizarTela();
 });
 
 document.getElementById("limpar-historico").addEventListener("click", function () {

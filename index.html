@@ -22,21 +22,41 @@
 
     <h2>Ficha do Personagem</h2>
 
-    <label for="nome-personagem">Nome</label>
-    <input
-        type="text"
-        id="nome-personagem"
-        placeholder="Nome do personagem"
-    >
-
-    <p>Nível: <span id="nivel">1</span> · Proficiência: <strong id="bonus-proficiencia">+2</strong></p>
+    <!-- IDENTIDADE: campos salvos diretamente no objeto personagem. -->
+    <div class="grade-identidade">
+        <label>Personagem <input type="text" id="nome-personagem" placeholder="Nome do personagem"></label>
+        <label>Jogador <input type="text" id="nome-jogador"></label>
+        <label>Classe <input type="text" id="classe"></label>
+        <label>Subclasse <input type="text" id="subclasse"></label>
+        <label>Raça <input type="text" id="raca"></label>
+        <label>Antecedente <input type="text" id="antecedente"></label>
+        <label>Nível <input type="number" id="nivel" min="1" max="20"></label>
+        <label>XP <input type="number" id="xp" min="0"></label>
+    </div>
+    <p>Proficiência: <strong id="bonus-proficiencia">+2</strong></p>
 
     <div class="combate">
         <h3>Combate</h3>
         <label>CA <input id="ca" type="number" min="0"></label>
         <label>Deslocamento <input id="deslocamento" type="number" min="0"></label>
         <label>PV temporário <input id="pv-temporario" type="number" min="0"></label>
+        <label>PV máximo <input id="editar-pv-maximo" type="number" min="1"></label>
         <button class="botao-rolagem" data-tipo="iniciativa">Rolar iniciativa</button>
+    </div>
+
+    <div class="morte">
+        <h3>Testes contra a morte</h3>
+        <span>Sucessos</span><div id="sucessos-morte" class="marcadores-morte"></div>
+        <span>Falhas</span><div id="falhas-morte" class="marcadores-morte"></div>
+        <button id="estabilizar">Limpar testes</button>
+        <button id="descanso-longo">Descanso longo</button>
+    </div>
+
+    <!-- Ataques livres deixam a alfa utilizável antes do catálogo de equipamentos. -->
+    <div class="ataques">
+        <h3>Ataques</h3>
+        <div id="lista-ataques"></div>
+        <button id="adicionar-ataque">+ Adicionar ataque</button>
     </div>
 
     <div class="pontos-vida">
