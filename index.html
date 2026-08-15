@@ -13,10 +13,11 @@
 
 <body>
 
-    <h1>MICROCOSMOS</h1>
-    <p>Onde o Mundo Termina</p>
-
-    <p>Ficha Online</p>
+    <header class="cabecalho-marca">
+        <p class="selo">FICHA ONLINE</p>
+        <h1>MICROCOSMOS</h1>
+        <p class="subtitulo">Onde o Mundo Termina</p>
+    </header>
 
 <div class="ficha-personagem">
 
@@ -44,6 +45,15 @@
         <button id="restaurar-backup">Restaurar último backup</button>
         <p id="status-dados" role="status" aria-live="polite"></p>
     </section>
+
+    <nav class="navegacao-paginas" aria-label="Páginas da ficha">
+        <button class="aba-pagina ativa" data-abrir-pagina="combate">I · Combate</button>
+        <button class="aba-pagina" data-abrir-pagina="narrativa">II · Vida no Jardim</button>
+        <button class="aba-pagina" data-abrir-pagina="grimorio">III · Grimório</button>
+    </nav>
+
+    <section class="ficha-pagina ativa" data-pagina="combate">
+        <header class="titulo-pagina"><span>Página I</span><h2>Combate & Jornada</h2></header>
 
     <div class="combate">
         <h3>Combate</h3>
@@ -180,9 +190,17 @@
 <h3>Perícias</h3>
 <div id="lista-pericias" class="lista-regras duas-colunas"></div>
 
+<section class="central-d20">
+    <h3>Central d20</h3>
+    <button class="botao-rolagem" data-tipo="d20">Rolar d20</button>
+    <button id="limpar-historico">Limpar histórico</button>
+    <ol id="historico-rolagens" aria-live="polite"></ol>
+</section>
+</section>
+
 <!-- VIDA NO JARDIM: a página narrativa do personagem. -->
-<section class="pagina-narrativa">
-    <h2>Vida no Jardim</h2>
+<section class="pagina-narrativa ficha-pagina" data-pagina="narrativa">
+    <header class="titulo-pagina"><span>Página II</span><h2>Vida no Jardim</h2></header>
     <div class="textos-narrativos">
         <label>Origem
             <textarea id="narrativa-origem" rows="3" placeholder="De onde o personagem veio?"></textarea>
@@ -215,8 +233,8 @@
 </section>
 
 <!-- GRIMÓRIO: valores derivados são recalculados a partir do atributo escolhido. -->
-<section class="grimorio">
-    <h2>Grimório</h2>
+<section class="grimorio ficha-pagina" data-pagina="grimorio">
+    <header class="titulo-pagina"><span>Página III</span><h2>Grimório</h2></header>
     <div class="cabecalho-grimorio">
         <label>Classe conjuradora <input id="classe-conjuradora"></label>
         <label>Atributo
@@ -242,10 +260,6 @@
     <textarea id="materiais-magicos" rows="4" placeholder="Componentes raros, focos e materiais consumíveis"></textarea>
 </section>
 
-<h3>Central d20</h3>
-<button class="botao-rolagem" data-tipo="d20">Rolar d20</button>
-<button id="limpar-historico">Limpar histórico</button>
-<ol id="historico-rolagens" aria-live="polite"></ol>
 </div>
 <script src="js/app.js"></script>
 </body>

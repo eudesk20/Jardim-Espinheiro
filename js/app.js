@@ -1052,6 +1052,26 @@ document.getElementById("restaurar-backup").addEventListener("click", function (
     }
 });
 
+// ======================================================
+// NAVEGAÇÃO ENTRE AS TRÊS PÁGINAS
+// A troca é apenas visual: nenhum campo é desmontado e os
+// eventos já aprovados continuam ligados aos mesmos IDs.
+// ======================================================
+function abrirPagina(nome) {
+    document.querySelectorAll("[data-pagina]").forEach(function (pagina) {
+        pagina.classList.toggle("ativa", pagina.dataset.pagina === nome);
+    });
+    document.querySelectorAll("[data-abrir-pagina]").forEach(function (botao) {
+        botao.classList.toggle("ativa", botao.dataset.abrirPagina === nome);
+    });
+    sessionStorage.setItem("pagina-ativa", nome);
+    window.scrollTo({ top: document.querySelector(".navegacao-paginas").offsetTop - 8, behavior: "smooth" });
+}
+
+document.querySelectorAll("[data-abrir-pagina]").forEach(function (botao) {
+    botao.addEventListener("click", function () { abrirPagina(botao.dataset.abrirPagina); });
+});
+
 document.getElementById("limpar-historico").addEventListener("click", function () {
     personagem.historico = [];
     salvarPersonagem();
@@ -1064,6 +1084,7 @@ document.getElementById("limpar-historico").addEventListener("click", function (
 
 montarRegras();
 atualizarTela();
+abrirPagina(sessionStorage.getItem("pagina-ativa") || "combate");
 
 const statusImportacao = sessionStorage.getItem("status-importacao");
 if (statusImportacao) {
