@@ -248,29 +248,39 @@
 <!-- GRIMÓRIO: valores derivados são recalculados a partir do atributo escolhido. -->
 <section class="grimorio ficha-pagina" data-pagina="grimorio">
     <header class="titulo-pagina"><span>Página III</span><h2>Grimório</h2></header>
+    <p class="epigrafe-grimorio">O impossível também obedece a regras — desde que alguém conheça seus nomes verdadeiros.</p>
     <div class="cabecalho-grimorio">
-        <label>Classe conjuradora <input id="classe-conjuradora"></label>
-        <label>Atributo
+        <label class="identidade-magica">Classe conjuradora <input id="classe-conjuradora"></label>
+        <label class="identidade-magica">Atributo
             <select id="atributo-conjurador">
                 <option value="inteligencia">Inteligência</option>
                 <option value="sabedoria">Sabedoria</option>
                 <option value="carisma">Carisma</option>
             </select>
         </label>
-        <p>CD de magia: <strong id="cd-magia">10</strong></p>
-        <p>Ataque mágico: <strong id="ataque-magico">+2</strong></p>
+        <p class="selo-magico"><span>CD de magia</span><strong id="cd-magia">10</strong></p>
+        <p class="selo-magico"><span>Ataque mágico</span><strong id="ataque-magico">+2</strong></p>
         <button class="botao-rolagem" data-tipo="magia">Rolar ataque mágico</button>
     </div>
 
-    <h3>Espaços de magia</h3>
-    <div id="espacos-magia" class="espacos-magia"></div>
+    <div class="grade-grimorio">
+        <section class="painel-grimorio painel-espacos">
+            <h3>Espaços de magia</h3>
+            <p class="ajuda">Reservas disponíveis por círculo. O descanso longo recupera os espaços gastos.</p>
+            <div id="espacos-magia" class="espacos-magia"></div>
+        </section>
 
-    <h3>Magias conhecidas</h3>
-    <div id="lista-magias"></div>
-    <button id="adicionar-magia">+ Adicionar magia</button>
+        <section class="painel-grimorio painel-magias">
+            <h3>Magias conhecidas</h3>
+            <div id="lista-magias"></div>
+            <button id="adicionar-magia">+ Adicionar magia</button>
+        </section>
 
-    <h3>Materiais especiais</h3>
-    <textarea id="materiais-magicos" rows="4" placeholder="Componentes raros, focos e materiais consumíveis"></textarea>
+        <section class="painel-grimorio painel-materiais">
+            <h3>Materiais especiais</h3>
+            <textarea id="materiais-magicos" rows="4" placeholder="Componentes raros, focos e materiais consumíveis"></textarea>
+        </section>
+    </div>
 </section>
 
 </div>
