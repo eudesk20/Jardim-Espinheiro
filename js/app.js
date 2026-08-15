@@ -260,6 +260,32 @@ personagem.inventario.mochila = Array.isArray(personagem.inventario.mochila)
     ? personagem.inventario.mochila : (Array.isArray(personagem.bolsa) ? personagem.bolsa : []);
 personagem.inventario.carrinho = Array.isArray(personagem.inventario.carrinho)
     ? personagem.inventario.carrinho : (Array.isArray(personagem.carrinho) ? personagem.carrinho : []);
+const grimorioAntigo = personagem.magia ?? {};
+personagem.grimorio = personagem.grimorio ?? {
+    classe: grimorioAntigo.classe ?? "",
+    atributo: grimorioAntigo.atributo ?? "inteligencia",
+    espacos: grimorioAntigo.slots ?? {},
+    magias: Array.isArray(grimorioAntigo.conhecidas) ? grimorioAntigo.conhecidas : [],
+    materiais: grimorioAntigo.materiais ?? ""
+};
+personagem.grimorio.espacos = personagem.grimorio.espacos ?? {};
+personagem.grimorio.magias = Array.isArray(personagem.grimorio.magias) ? personagem.grimorio.magias : [];
+personagem.grimorio.magias = personagem.grimorio.magias.map(function (magia) {
+    if (typeof magia === "string") {
+        return { nome: magia, circulo: 0, componentes: "", dano: "", notas: "", preparada: false };
+    }
+    return {
+        nome: magia.nome ?? "", circulo: Number(magia.circulo ?? magia.nivel) || 0,
+        componentes: magia.componentes ?? "", dano: magia.dano ?? "",
+        notas: magia.notas ?? magia.efeito ?? "", preparada: Boolean(magia.preparada)
+    };
+});
+for (let circulo = 1; circulo <= 9; circulo += 1) {
+    const salvo = personagem.grimorio.espacos[circulo];
+    personagem.grimorio.espacos[circulo] = typeof salvo === "object" && salvo !== null
+        ? { total: Number(salvo.total) || 0, gastos: Number(salvo.gastos) || 0 }
+        : { total: Number(salvo) || 0, gastos: 0 };
+}
 
 salvarPersonagem();
 
@@ -408,6 +434,60 @@ function atualizarRegras() {
     atualizarAtaques();
     atualizarEquipamentos();
     atualizarInventario();
+    atualizarGrimorio();
+}
+
+function bonusAtaqueMagico() {
+    return calcularModificador(personagem.atributos[personagem.grimorio.atributo]) + calcularBonusProficiencia();
+}
+
+function atualizarGrimorio() {
+    const grimorio = personagem.grimorio;
+    document.getElementById("classe-conjuradora").value = grimorio.classe;
+    document.getElementById("atributo-conjurador").value = grimorio.atributo;
+    document.getElementById("cd-magia").textContent = 8 + bonusAtaqueMagico();
+    document.getElementById("ataque-magico").textContent = formatarBonus(bonusAtaqueMagico());
+    document.getElementById("materiais-magicos").value = grimorio.materiais;
+    atualizarEspacosMagia();
+    atualizarMagias();
+}
+
+function atualizarEspacosMagia() {
+    const area = document.getElementById("espacos-magia");
+    area.innerHTML = "";
+    for (let circulo = 1; circulo <= 9; circulo += 1) {
+        const espaco = personagem.grimorio.espacos[circulo];
+        const linha = document.createElement("label");
+        linha.className = "circulo-magia";
+        linha.innerHTML = `<span>${circulo}º — restantes <strong>${Math.max(0, espaco.total - espaco.gastos)}</strong></span>
+            <input data-espaco="total" data-circulo="${circulo}" type="number" min="0" title="Espaços totais">
+            <input data-espaco="gastos" data-circulo="${circulo}" type="number" min="0" title="Espaços gastos">`;
+        linha.querySelector('[data-espaco="total"]').value = espaco.total;
+        linha.querySelector('[data-espaco="gastos"]').value = espaco.gastos;
+        area.appendChild(linha);
+    }
+}
+
+function atualizarMagias() {
+    const lista = document.getElementById("lista-magias");
+    lista.innerHTML = "";
+    personagem.grimorio.magias.forEach(function (magia, indice) {
+        const linha = document.createElement("div");
+        linha.className = "linha-magia";
+        linha.innerHTML = `<input data-magia-campo="nome" data-indice="${indice}" placeholder="Magia">
+            <input data-magia-campo="circulo" data-indice="${indice}" type="number" min="0" max="9" title="Círculo">
+            <input data-magia-campo="componentes" data-indice="${indice}" placeholder="V, S, M">
+            <input data-magia-campo="dano" data-indice="${indice}" placeholder="Dano">
+            <input data-magia-campo="notas" data-indice="${indice}" placeholder="Alcance, duração ou efeito">
+            <label><input data-magia-campo="preparada" data-indice="${indice}" type="checkbox"> Prep.</label>
+            <button class="dano-magia" data-indice="${indice}">Dano</button>
+            <button class="remover-magia" data-indice="${indice}" aria-label="Remover magia">×</button>`;
+        ["nome", "circulo", "componentes", "dano", "notas"].forEach(function (campo) {
+            linha.querySelector(`[data-magia-campo="${campo}"]`).value = magia[campo] ?? "";
+        });
+        linha.querySelector('[data-magia-campo="preparada"]').checked = Boolean(magia.preparada);
+        lista.appendChild(linha);
+    });
 }
 
 function calcularCA() {
@@ -649,6 +729,20 @@ document.addEventListener("change", function (evento) {
             ? alvo.value
             : Math.max(0, Number(alvo.value) || 0);
     }
+    if (alvo.id === "classe-conjuradora") personagem.grimorio.classe = alvo.value;
+    if (alvo.id === "atributo-conjurador") personagem.grimorio.atributo = alvo.value;
+    if (alvo.id === "materiais-magicos") personagem.grimorio.materiais = alvo.value;
+    if (alvo.dataset.espaco) {
+        const espaco = personagem.grimorio.espacos[Number(alvo.dataset.circulo)];
+        espaco[alvo.dataset.espaco] = Math.max(0, Number(alvo.value) || 0);
+        espaco.gastos = Math.min(espaco.gastos, espaco.total);
+    }
+    if (alvo.dataset.magiaCampo) {
+        const magia = personagem.grimorio.magias[Number(alvo.dataset.indice)];
+        if (alvo.dataset.magiaCampo === "preparada") magia.preparada = alvo.checked;
+        else if (alvo.dataset.magiaCampo === "circulo") magia.circulo = Math.min(9, Math.max(0, Number(alvo.value) || 0));
+        else magia[alvo.dataset.magiaCampo] = alvo.value;
+    }
 
     salvarPersonagem();
     atualizarTela();
@@ -660,6 +754,7 @@ document.addEventListener("click", function (evento) {
 
     if (botao.dataset.tipo === "d20") rolarD20("d20", 0);
     if (botao.dataset.tipo === "iniciativa") rolarD20("Iniciativa", calcularModificador(personagem.atributos.destreza));
+    if (botao.dataset.tipo === "magia") rolarD20("Ataque mágico", bonusAtaqueMagico());
     if (botao.dataset.tipo === "salvaguarda") rolarD20("Salvaguarda de " + botao.dataset.chave, bonusSalvaguarda(botao.dataset.chave));
     if (botao.dataset.tipo === "pericia") {
         const nome = pericias.find(function (item) { return item[0] === botao.dataset.chave; })[1];
@@ -705,6 +800,7 @@ document.getElementById("descanso-longo").addEventListener("click", function () 
     personagem.vida.atual = personagem.vida.maximo;
     personagem.vida.temporario = 0;
     personagem.morte = { sucessos: 0, falhas: 0 };
+    Object.values(personagem.grimorio.espacos).forEach(function (espaco) { espaco.gastos = 0; });
     salvarPersonagem();
     atualizarTela();
 });
@@ -723,6 +819,29 @@ document.querySelector(".inventario").addEventListener("click", function (evento
     personagem.inventario[botao.dataset.local].splice(Number(botao.dataset.indice), 1);
     salvarPersonagem();
     atualizarTela();
+});
+
+document.getElementById("adicionar-magia").addEventListener("click", function () {
+    personagem.grimorio.magias.push({
+        nome: "", circulo: 0, componentes: "", dano: "", notas: "", preparada: false
+    });
+    salvarPersonagem();
+    atualizarTela();
+});
+
+document.getElementById("lista-magias").addEventListener("click", function (evento) {
+    const remover = evento.target.closest(".remover-magia");
+    const dano = evento.target.closest(".dano-magia");
+    if (remover) personagem.grimorio.magias.splice(Number(remover.dataset.indice), 1);
+    if (dano) {
+        const magia = personagem.grimorio.magias[Number(dano.dataset.indice)];
+        rolarDano(magia.nome || "Magia", magia.dano);
+        return;
+    }
+    if (remover) {
+        salvarPersonagem();
+        atualizarTela();
+    }
 });
 
 document.getElementById("limpar-historico").addEventListener("click", function () {
