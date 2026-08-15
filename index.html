@@ -29,7 +29,15 @@
         placeholder="Nome do personagem"
     >
 
-    <p>Nível: <span id="nivel">1</span></p>
+    <p>Nível: <span id="nivel">1</span> · Proficiência: <strong id="bonus-proficiencia">+2</strong></p>
+
+    <div class="combate">
+        <h3>Combate</h3>
+        <label>CA <input id="ca" type="number" min="0"></label>
+        <label>Deslocamento <input id="deslocamento" type="number" min="0"></label>
+        <label>PV temporário <input id="pv-temporario" type="number" min="0"></label>
+        <button class="botao-rolagem" data-tipo="iniciativa">Rolar iniciativa</button>
+    </div>
 
     <div class="pontos-vida">
 
@@ -97,16 +105,17 @@
     <span id="modificador-carisma">+0</span>
 </p>
 
-<!-- ==================================================
-     PERÍCIAS
-     ================================================== -->
+<!-- As listas abaixo são montadas pelo JavaScript a partir das regras. -->
+<h3>Salvaguardas</h3>
+<div id="lista-salvaguardas" class="lista-regras"></div>
 
 <h3>Perícias</h3>
+<div id="lista-pericias" class="lista-regras duas-colunas"></div>
 
-<p>
-    Atletismo (Força):
-    <span class="valor-pericia" data-atributo="forca" id="atletismo">+0</span>
-</p>
+<h3>Central d20</h3>
+<button class="botao-rolagem" data-tipo="d20">Rolar d20</button>
+<button id="limpar-historico">Limpar histórico</button>
+<ol id="historico-rolagens" aria-live="polite"></ol>
 </div>
 <script src="js/app.js"></script>
 </body>
