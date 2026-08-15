@@ -210,31 +210,35 @@
 <!-- VIDA NO JARDIM: a página narrativa do personagem. -->
 <section class="pagina-narrativa ficha-pagina" data-pagina="narrativa">
     <header class="titulo-pagina"><span>Página II</span><h2>Vida no Jardim</h2></header>
+    <p class="epigrafe-narrativa">Toda criatura carrega um mundo consigo — raízes, cicatrizes e histórias que o fim ainda não levou.</p>
     <div class="textos-narrativos">
-        <label>Origem
+        <label class="cartao-texto origem">Origem <small>Raízes</small>
             <textarea id="narrativa-origem" rows="3" placeholder="De onde o personagem veio?"></textarea>
         </label>
-        <label>Aparência
+        <label class="cartao-texto aparencia">Aparência <small>Retrato</small>
             <textarea id="narrativa-aparencia" rows="4" placeholder="Traços, roupas, marcas e detalhes visuais"></textarea>
         </label>
-        <label>História
+        <label class="cartao-texto historia">História <small>Crônica da jornada</small>
             <textarea id="narrativa-historia" rows="6" placeholder="Passado, motivações e acontecimentos importantes"></textarea>
         </label>
     </div>
 
     <div class="listas-narrativas">
-        <section>
+        <section class="coluna-narrativa memorias">
             <h3>Memórias</h3>
+            <p class="ajuda">Momentos, pessoas e lugares que o personagem se recusa a esquecer.</p>
             <div id="lista-memorias"></div>
             <button class="adicionar-narrativa" data-lista="memorias">+ Memória</button>
         </section>
-        <section>
+        <section class="coluna-narrativa faccoes">
             <h3>Facções</h3>
+            <p class="ajuda">Alianças, rivalidades, reputação e vínculos com o mundo.</p>
             <div id="lista-faccoes"></div>
             <button class="adicionar-narrativa" data-lista="faccoes">+ Facção</button>
         </section>
-        <section>
+        <section class="coluna-narrativa conquistas">
             <h3>Conquistas</h3>
+            <p class="ajuda">Marcos que mudaram o personagem ou deixaram uma marca no Jardim.</p>
             <div id="lista-conquistas"></div>
             <button class="adicionar-narrativa" data-lista="conquistas">+ Conquista</button>
         </section>
