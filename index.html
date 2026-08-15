@@ -170,6 +170,34 @@
 <h3>Perícias</h3>
 <div id="lista-pericias" class="lista-regras duas-colunas"></div>
 
+<!-- GRIMÓRIO: valores derivados são recalculados a partir do atributo escolhido. -->
+<section class="grimorio">
+    <h2>Grimório</h2>
+    <div class="cabecalho-grimorio">
+        <label>Classe conjuradora <input id="classe-conjuradora"></label>
+        <label>Atributo
+            <select id="atributo-conjurador">
+                <option value="inteligencia">Inteligência</option>
+                <option value="sabedoria">Sabedoria</option>
+                <option value="carisma">Carisma</option>
+            </select>
+        </label>
+        <p>CD de magia: <strong id="cd-magia">10</strong></p>
+        <p>Ataque mágico: <strong id="ataque-magico">+2</strong></p>
+        <button class="botao-rolagem" data-tipo="magia">Rolar ataque mágico</button>
+    </div>
+
+    <h3>Espaços de magia</h3>
+    <div id="espacos-magia" class="espacos-magia"></div>
+
+    <h3>Magias conhecidas</h3>
+    <div id="lista-magias"></div>
+    <button id="adicionar-magia">+ Adicionar magia</button>
+
+    <h3>Materiais especiais</h3>
+    <textarea id="materiais-magicos" rows="4" placeholder="Componentes raros, focos e materiais consumíveis"></textarea>
+</section>
+
 <h3>Central d20</h3>
 <button class="botao-rolagem" data-tipo="d20">Rolar d20</button>
 <button id="limpar-historico">Limpar histórico</button>
