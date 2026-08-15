@@ -54,13 +54,14 @@
 
     <section class="ficha-pagina ativa" data-pagina="combate">
         <header class="titulo-pagina"><span>Página I</span><h2>Combate & Jornada</h2></header>
+        <div class="grade-combate">
 
     <div class="combate">
-        <h3>Combate</h3>
-        <label>CA <input id="ca" type="number" readonly title="Calculada pelos equipamentos"></label>
-        <label>Deslocamento <input id="deslocamento" type="number" min="0"></label>
-        <label>PV temporário <input id="pv-temporario" type="number" min="0"></label>
-        <label>PV máximo <input id="editar-pv-maximo" type="number" min="1"></label>
+        <h3>Painel rápido</h3>
+        <label><span>Classe de Armadura</span><input id="ca" type="number" readonly title="Calculada pelos equipamentos"></label>
+        <label><span>Deslocamento</span><input id="deslocamento" type="number" min="0"></label>
+        <label><span>PV temporário</span><input id="pv-temporario" type="number" min="0"></label>
+        <label><span>PV máximo</span><input id="editar-pv-maximo" type="number" min="1"></label>
         <button class="botao-rolagem" data-tipo="iniciativa">Rolar iniciativa</button>
     </div>
 
@@ -130,6 +131,7 @@
         <button id="aumentar-pv">+</button>
 
     </div>
+<section class="bloco-atributos">
 <!-- ==================================================
      Atributos
      ================================================== -->
@@ -183,12 +185,18 @@
     <span id="modificador-carisma">+0</span>
 </p>
 
+</section>
+
 <!-- As listas abaixo são montadas pelo JavaScript a partir das regras. -->
+<section class="bloco-salvaguardas">
 <h3>Salvaguardas</h3>
 <div id="lista-salvaguardas" class="lista-regras"></div>
+</section>
 
+<section class="bloco-pericias">
 <h3>Perícias</h3>
 <div id="lista-pericias" class="lista-regras duas-colunas"></div>
+</section>
 
 <section class="central-d20">
     <h3>Central d20</h3>
@@ -196,6 +204,7 @@
     <button id="limpar-historico">Limpar histórico</button>
     <ol id="historico-rolagens" aria-live="polite"></ol>
 </section>
+</div>
 </section>
 
 <!-- VIDA NO JARDIM: a página narrativa do personagem. -->
