@@ -1,56 +1,181 @@
-:root { color-scheme: dark; --fundo: #111611; --painel: #1c251c; --borda: #71805e; --ouro: #d7aa4f; }
+:root {
+    color-scheme: dark;
+    --noite: #090d0c;
+    --musgo: #111a16;
+    --folha: #223127;
+    --borda: #60705b;
+    --ouro: #d6af62;
+    --marfim: #eee7d3;
+    --texto-fraco: #b8b5a7;
+    --perigo: #9e4d48;
+}
+
 * { box-sizing: border-box; }
-body { margin: 0; padding: 24px; background: radial-gradient(circle at top, #293629, var(--fundo) 55%); color: #f2ecd9; font-family: Georgia, serif; }
-body > h1, body > p { text-align: center; }
-body > h1 { color: var(--ouro); letter-spacing: .18em; }
-.ficha-personagem { max-width: 1050px; margin: 24px auto; padding: 24px; border: 1px solid var(--borda); border-radius: 14px; background: var(--painel); }
-.ficha-personagem h2, .ficha-personagem h3 { color: var(--ouro); }
-.grade-identidade { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 18px; }
-.grade-identidade label { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
-.grade-identidade input { width: 60%; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 28px;
+    color: var(--marfim);
+    font-family: Georgia, "Times New Roman", serif;
+    background:
+        radial-gradient(circle at 12% 8%, #36452f55, transparent 28rem),
+        radial-gradient(circle at 88% 4%, #6b573022, transparent 24rem),
+        linear-gradient(160deg, #131b16, var(--noite) 52%, #101510);
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: .18;
+    background-image: repeating-linear-gradient(115deg, transparent 0 7px, #fff 8px, transparent 9px);
+    mix-blend-mode: soft-light;
+}
+
+.cabecalho-marca { text-align: center; margin-bottom: 22px; }
+.cabecalho-marca h1 { margin: 3px 0; color: var(--ouro); font-size: clamp(2rem, 6vw, 4.4rem); letter-spacing: .2em; text-shadow: 0 4px 18px #000; }
+.cabecalho-marca p { margin: 0; }
+.selo { color: var(--texto-fraco); font-size: .72rem; letter-spacing: .4em; }
+.subtitulo { font-size: 1.05rem; font-style: italic; letter-spacing: .16em; }
+
+.ficha-personagem {
+    max-width: 1280px;
+    margin: auto;
+    padding: 24px;
+    border: 1px solid #7b8066;
+    border-radius: 18px;
+    background: linear-gradient(145deg, #19221cfa, #101611fa);
+    box-shadow: 0 24px 70px #000b, inset 0 1px #ffffff12;
+}
+
+.ficha-personagem > h2 { margin: 0 0 14px; color: var(--ouro); }
+h2, h3 { color: var(--ouro); }
+h3 { padding-bottom: 5px; border-bottom: 1px solid #d6af6233; }
+
+input, select, textarea {
+    padding: 7px 9px;
+    border: 1px solid #566354;
+    border-radius: 6px;
+    outline: none;
+    color: var(--marfim);
+    background: #0b110df2;
+}
+input:focus, select:focus, textarea:focus { border-color: var(--ouro); box-shadow: 0 0 0 2px #d6af6222; }
+input { width: 84px; }
+textarea { resize: vertical; }
+
+button, .botao-arquivo {
+    padding: 7px 11px;
+    border: 1px solid #687563;
+    border-radius: 6px;
+    color: var(--marfim);
+    background: linear-gradient(#334230, #222e23);
+    cursor: pointer;
+    font: inherit;
+}
+button:hover, .botao-arquivo:hover { border-color: var(--ouro); transform: translateY(-1px); }
+button:active { transform: translateY(0); }
+
+.grade-identidade { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 9px 16px; }
+.grade-identidade label { display: grid; gap: 4px; color: var(--texto-fraco); font-size: .82rem; text-transform: uppercase; letter-spacing: .08em; }
+.grade-identidade input { width: 100%; color: var(--marfim); font-size: 1rem; text-transform: none; letter-spacing: normal; }
+
 .dados-personagem { margin: 12px 0; padding: 10px; border: 1px dashed var(--borda); border-radius: 8px; }
-.dados-personagem h3 { margin-top: 0; }
-.botao-arquivo { display: inline-block; padding: 6px 10px; background: #2d392b; border: 1px solid var(--borda); border-radius: 5px; cursor: pointer; }
+.dados-personagem h3 { display: inline; margin-right: 12px; border: 0; }
+.botao-arquivo { display: inline-block; }
 .botao-arquivo input { display: none; }
 #status-dados { min-height: 1.2em; margin-bottom: 0; }
-.combate { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 12px; border: 1px solid #46543e; border-radius: 10px; }
+
+.navegacao-paginas {
+    position: sticky;
+    z-index: 10;
+    top: 8px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin: 22px 0;
+    padding: 8px;
+    border: 1px solid #52604e;
+    border-radius: 10px;
+    background: #0d130fee;
+    backdrop-filter: blur(10px);
+}
+.aba-pagina { color: var(--texto-fraco); background: transparent; }
+.aba-pagina.ativa { color: #15120b; border-color: var(--ouro); background: linear-gradient(135deg, #f0d58e, #b88b3e); font-weight: 700; }
+
+.ficha-pagina { display: none; animation: surgir .2s ease; }
+.ficha-pagina.ativa { display: block; }
+@keyframes surgir { from { opacity: 0; transform: translateY(5px); } }
+.titulo-pagina { display: flex; align-items: baseline; gap: 12px; margin-bottom: 14px; }
+.titulo-pagina span { color: var(--texto-fraco); text-transform: uppercase; letter-spacing: .2em; font-size: .72rem; }
+.titulo-pagina h2 { margin: 0; font-size: 1.8rem; }
+
+.combate, .morte, .ataques, .equipamentos, .inventario, .central-d20,
+.textos-narrativos, .listas-narrativas > section, .cabecalho-grimorio,
+.espacos-magia, #lista-magias, #materiais-magicos {
+    margin-top: 14px;
+    padding: 14px;
+    border: 1px solid #465443;
+    border-radius: 10px;
+    background: #152019bb;
+    box-shadow: inset 0 1px #ffffff08;
+}
+
+.combate { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
 .combate h3 { width: 100%; margin: 0; }
-input { width: 84px; padding: 6px; background: #0e130f; color: inherit; border: 1px solid var(--borda); border-radius: 5px; }
-select, textarea { padding: 6px; background: #0e130f; color: inherit; border: 1px solid var(--borda); border-radius: 5px; }
-button { padding: 6px 10px; background: #2d392b; color: inherit; border: 1px solid var(--borda); border-radius: 5px; cursor: pointer; }
-button:hover { border-color: var(--ouro); }
-.lista-regras { display: grid; gap: 6px; }
-.duas-colunas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.linha-regra { display: grid; grid-template-columns: 26px 1fr 48px 62px; align-items: center; gap: 6px; min-height: 32px; }
-.bonus { font-weight: bold; text-align: center; }
-.morte, .ataques, .equipamentos, .inventario { margin-top: 16px; padding: 12px; border: 1px solid #46543e; border-radius: 10px; }
 .morte { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 8px 12px; }
 .morte h3 { grid-column: 1 / -1; margin: 0; }
 .marcadores-morte { display: flex; gap: 8px; }
+.pontos-vida { display: flex; justify-content: center; align-items: center; gap: 14px; margin: 18px auto; font-size: 1.5rem; }
+.pontos-vida h3 { border: 0; margin: 0; }
+
 .linha-ataque { display: grid; grid-template-columns: 2fr 80px 1fr auto auto auto; gap: 7px; margin-bottom: 8px; }
-.linha-ataque input { width: 100%; }
+.linha-ataque input, .linha-item input, .linha-magia input { width: 100%; }
 .grade-equipamentos, .moedas { display: flex; flex-wrap: wrap; gap: 10px 18px; }
 .grade-equipamentos label, .moedas label { display: flex; align-items: center; gap: 7px; }
 .inventarios-lado-a-lado { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
 .linha-item { display: grid; grid-template-columns: 1fr 70px 80px auto; gap: 7px; margin-bottom: 7px; }
-.linha-item input { width: 100%; }
 .ajuda { opacity: .75; font-size: .9rem; }
-.pagina-narrativa { margin-top: 20px; padding: 14px; border: 1px solid #8a6a8d; border-radius: 10px; }
+
+.lista-regras { display: grid; gap: 6px; }
+.duas-colunas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.linha-regra { display: grid; grid-template-columns: 26px 1fr 48px 62px; align-items: center; gap: 6px; min-height: 34px; padding: 3px 7px; border-radius: 5px; }
+.linha-regra:nth-child(odd) { background: #ffffff05; }
+.bonus { text-align: center; color: var(--ouro); }
+#historico-rolagens { max-height: 190px; overflow: auto; }
+
+.pagina-narrativa, .grimorio { border: 0; padding: 0; }
 .textos-narrativos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-.textos-narrativos label { display: grid; gap: 5px; }
+.textos-narrativos label { display: grid; gap: 5px; color: var(--texto-fraco); }
+.textos-narrativos textarea { width: 100%; color: var(--marfim); }
 .textos-narrativos label:last-child { grid-column: 1 / -1; }
 .listas-narrativas { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.listas-narrativas > section { margin-top: 16px; }
 .linha-narrativa { display: grid; grid-template-columns: 1fr auto; gap: 6px; margin-bottom: 8px; }
 .linha-narrativa input, .linha-narrativa textarea { width: 100%; }
-.linha-narrativa textarea { grid-column: 1 / -1; resize: vertical; }
-.grimorio { margin-top: 20px; padding: 14px; border: 1px solid var(--ouro); border-radius: 10px; }
+.linha-narrativa textarea { grid-column: 1 / -1; }
+
 .cabecalho-grimorio { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; }
 .cabecalho-grimorio label { display: flex; align-items: center; gap: 7px; }
 .cabecalho-grimorio input { width: 180px; }
 .espacos-magia { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
 .circulo-magia { display: grid; grid-template-columns: 1fr 64px 64px; align-items: center; gap: 5px; }
 .linha-magia { display: grid; grid-template-columns: 2fr 70px 80px 100px 1fr auto auto auto; gap: 7px; margin-bottom: 8px; }
-.linha-magia input { width: 100%; }
-#materiais-magicos { width: 100%; resize: vertical; }
-#historico-rolagens { max-height: 180px; overflow: auto; }
-@media (max-width: 700px) { body { padding: 10px; } .duas-colunas, .grade-identidade, .inventarios-lado-a-lado, .espacos-magia, .textos-narrativos, .listas-narrativas { grid-template-columns: 1fr; } .textos-narrativos label:last-child { grid-column: auto; } .linha-ataque, .linha-magia { grid-template-columns: 1fr 70px 1fr; } .ficha-personagem { padding: 14px; } }
+#materiais-magicos { width: 100%; }
+
+@media (max-width: 900px) {
+    .grade-identidade { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .listas-narrativas { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 700px) {
+    body { padding: 9px; }
+    .ficha-personagem { padding: 13px; border-radius: 10px; }
+    .grade-identidade, .duas-colunas, .inventarios-lado-a-lado, .espacos-magia, .textos-narrativos { grid-template-columns: 1fr; }
+    .textos-narrativos label:last-child { grid-column: auto; }
+    .linha-ataque, .linha-magia { grid-template-columns: 1fr 70px 1fr; }
+    .navegacao-paginas { top: 3px; }
+    .aba-pagina { padding: 7px 4px; font-size: .78rem; }
+}
