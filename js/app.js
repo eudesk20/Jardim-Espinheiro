@@ -1,12 +1,27 @@
 // ======================================================
-// 1. ELEMENTOS DA TELA
+// ELEMENTOS DA TELA
 // Busca no HTML os elementos que o JavaScript vai controlar.
 // ======================================================
 
 const textoPV = document.getElementById("pv-atual");
+const textoPVMaximo = document.getElementById("pv-maximo");
+
 const botaoDiminuir = document.getElementById("diminuir-pv");
 const botaoAumentar = document.getElementById("aumentar-pv");
+
 const campoNome = document.getElementById("nome-personagem");
+
+const textoNivel = document.getElementById("nivel");
+
+const textoForca = document.getElementById("forca");
+const textoDestreza = document.getElementById("destreza");
+const textoConstituicao = document.getElementById("constituicao");
+const textoInteligencia = document.getElementById("inteligencia");
+const textoSabedoria = document.getElementById("sabedoria");
+const textoCarisma = document.getElementById("carisma");
+
+const botoesAtributos =
+    document.querySelectorAll(".botao-atributo");
 
 
 // ======================================================
@@ -30,7 +45,9 @@ if (personagemSalvo !== null) {
     personagem = JSON.parse(personagemSalvo);
 
     // --------------------------------------------------
-    // INÍCIO DA MIGRAÇÃO DO FORMATO ANTIGO
+    // INÍCIO: MIGRAÇÃO DO FORMATO ANTIGO
+    // O formato antigo tinha pvAtual, pvMaximo, forca etc.
+    // O novo formato organiza isso em vida e atributos.
     // --------------------------------------------------
 
     if (personagem.vida === undefined) {
@@ -51,6 +68,7 @@ if (personagemSalvo !== null) {
             }
         };
 
+        // Salva imediatamente o personagem já migrado.
         localStorage.setItem(
             "personagem",
             JSON.stringify(personagem)
@@ -58,14 +76,14 @@ if (personagemSalvo !== null) {
     }
 
     // --------------------------------------------------
-    // FIM DA MIGRAÇÃO DO FORMATO ANTIGO
+    // FIM: MIGRAÇÃO DO FORMATO ANTIGO
     // --------------------------------------------------
 
 } else {
 
     // --------------------------------------------------
-    // CRIAÇÃO DE UM PERSONAGEM NOVO
-    // Executado somente quando não existe personagem salvo.
+    // INÍCIO: CRIAÇÃO DE PERSONAGEM NOVO
+    // Só acontece quando não existe personagem salvo.
     // --------------------------------------------------
 
     personagem = {
@@ -80,15 +98,21 @@ if (personagemSalvo !== null) {
         atributos: {
             forca: 10,
             destreza: 10,
-            inteligencia: 10
+            constituicao: 10,
+            inteligencia: 10,
+            sabedoria: 10,
+            carisma: 10
         }
-    };
+    }
+    // --------------------------------------------------
+    // FIM: CRIAÇÃO DE PERSONAGEM NOVO
+    // --------------------------------------------------
 }
 
 
 // ======================================================
 // 4. FUNÇÃO: SALVAR PERSONAGEM
-// Transforma o objeto personagem em JSON e salva no navegador.
+// Transforma o objeto em JSON e salva no navegador.
 // ======================================================
 
 function salvarPersonagem() {
@@ -96,7 +120,6 @@ function salvarPersonagem() {
     const personagemJSON = JSON.stringify(personagem);
 
     localStorage.setItem("personagem", personagemJSON);
-
 }
 
 // FIM DA FUNÇÃO salvarPersonagem()
@@ -104,38 +127,115 @@ function salvarPersonagem() {
 
 // ======================================================
 // 5. FUNÇÃO: ATUALIZAR TELA
-// Pega os dados do objeto personagem e mostra no HTML.
+// Pega os dados do personagem e mostra no HTML.
 // ======================================================
 
 function atualizarTela() {
 
+    // IDENTIDADE
     campoNome.value = personagem.nome;
+    textoNivel.textContent = personagem.nivel;
+
+    // VIDA
     textoPV.textContent = personagem.vida.atual;
+    textoPVMaximo.textContent = personagem.vida.maximo;
 
+    // ATRIBUTOS
+    textoForca.textContent = personagem.atributos.forca;
+    textoDestreza.textContent = personagem.atributos.destreza;
+    textoConstituicao.textContent = personagem.atributos.constituicao;
+    textoInteligencia.textContent = personagem.atributos.inteligencia;
+    textoSabedoria.textContent = personagem.atributos.sabedoria;
+    textoCarisma.textContent = personagem.atributos.carisma;
 }
-
 // FIM DA FUNÇÃO atualizarTela()
 
+// ======================================================
+// COMPLETA ATRIBUTOS NOVOS
+// Adiciona atributos que não existiam em versões anteriores.
+// ======================================================
+
+if (personagem.atributos.constituicao === undefined) {
+    personagem.atributos.constituicao = 10;
+}
+
+if (personagem.atributos.sabedoria === undefined) {
+    personagem.atributos.sabedoria = 10;
+}
+
+if (personagem.atributos.carisma === undefined) {
+    personagem.atributos.carisma = 10;
+}
+
+salvarPersonagem();
 
 // ======================================================
-// 6. EVENTO: DIMINUIR PV
-// Executado quando o jogador clica no botão "-"
+// FUNÇÃO: ALTERAR ATRIBUTO
+// Altera qualquer atributo e mantém seu valor entre 1 e 20.
 // ======================================================
 
-botaoDiminuir.addEventListener("click", function () {
+function alterarAtributo(nomeAtributo, valor) {
 
-    personagem.vida.atual = personagem.vida.atual - 1;
+    // --------------------------------------------------
+    // 1. LÊ O VALOR ATUAL
+    // --------------------------------------------------
+
+    const valorAtual = personagem.atributos[nomeAtributo];
+
+
+    // --------------------------------------------------
+    // 2. CALCULA O POSSÍVEL NOVO VALOR
+    // --------------------------------------------------
+
+    const novoValor = valorAtual + valor;
+
+
+    // --------------------------------------------------
+    // 3. LIMITE MÁXIMO
+    // --------------------------------------------------
+
+    if (novoValor > 20) {
+
+        personagem.atributos[nomeAtributo] = 20;
+
+        atualizarTela();
+        salvarPersonagem();
+
+        return;
+    }
+
+
+    // --------------------------------------------------
+    // 4. LIMITE MÍNIMO
+    // --------------------------------------------------
+
+    if (novoValor < 1) {
+
+        personagem.atributos[nomeAtributo] = 1;
+
+        atualizarTela();
+        salvarPersonagem();
+
+        return;
+    }
+
+
+    // --------------------------------------------------
+    // 5. VALOR VÁLIDO
+    // --------------------------------------------------
+
+    personagem.atributos[nomeAtributo] = novoValor;
 
     atualizarTela();
     salvarPersonagem();
-
-});
-
-// FIM DO EVENTO diminuir PV
-
+}
 
 // ======================================================
-// 7. EVENTO: AUMENTAR PV
+// FIM DA FUNÇÃO: ALTERAR ATRIBUTO
+// ======================================================
+
+// ======================================================
+// EVENTO: AUMENTAR PV
 // Executado quando o jogador clica no botão "+"
 // ======================================================
 
@@ -145,10 +245,24 @@ botaoAumentar.addEventListener("click", function () {
 
     atualizarTela();
     salvarPersonagem();
-
 });
 
 // FIM DO EVENTO aumentar PV
+
+// ======================================================
+// EVENTO: Diminuir PV
+// Executado quando o jogador clica no botão "+"
+// ======================================================
+
+botaoDiminuir.addEventListener("click", function () {
+
+    personagem.vida.atual = personagem.vida.atual - 1;
+
+    atualizarTela();
+    salvarPersonagem();
+});
+
+// FIM DO EVENTO Diminuir PV
 
 
 // ======================================================
@@ -161,15 +275,39 @@ campoNome.addEventListener("input", function () {
     personagem.nome = campoNome.value;
 
     salvarPersonagem();
-
 });
 
 // FIM DO EVENTO alterar nome
 
+// ======================================================
+// EVENTOS: BOTÕES DOS ATRIBUTOS
+// Percorre todos os elementos da classe botao-atributo.
+// ======================================================
+
+botoesAtributos.forEach(function (botao) {
+
+    // --------------------------------------------------
+    // Para CADA botão encontrado, cria um evento de clique.
+    // --------------------------------------------------
+
+    botao.addEventListener("click", function () {
+
+        // Descobre qual atributo está escrito no botão.
+        const nomeAtributo = botao.dataset.atributo;
+
+        // Descobre quanto esse botão altera.
+        // Number() transforma o texto em número.
+        const valor = Number(botao.dataset.valor);
+
+        // Usa nossa função que já existia.
+        alterarAtributo(nomeAtributo, valor);
+    });
+});
+
+// FIM DOS EVENTOS dos botões de atributos
 
 // ======================================================
-// 9. INICIALIZAÇÃO DA TELA
-// Depois que tudo estiver preparado, mostra os dados carregados.
+// INICIALIZAÇÃO DA TELA
 // ======================================================
 
 atualizarTela();
