@@ -82,8 +82,10 @@ button:active { transform: translateY(0); }
 .grade-identidade label { display: grid; gap: 4px; color: var(--texto-fraco); font-size: .82rem; text-transform: uppercase; letter-spacing: .08em; }
 .grade-identidade input { width: 100%; color: var(--marfim); font-size: 1rem; text-transform: none; letter-spacing: normal; }
 
-.dados-personagem { margin: 12px 0; padding: 10px; border: 1px dashed var(--borda); border-radius: 8px; }
-.dados-personagem h3 { display: inline; margin-right: 12px; border: 0; }
+.dados-personagem { margin-top: 22px; padding: 10px; border: 1px dashed #4d5a4a; border-radius: 8px; color: var(--texto-fraco); background: #0b100dcc; }
+.dados-personagem summary { cursor: pointer; color: #a9b2a4; font-size: .82rem; text-transform: uppercase; letter-spacing: .1em; }
+.dados-personagem[open] summary { margin-bottom: 10px; color: var(--ouro); }
+.acoes-dados { display: flex; flex-wrap: wrap; gap: 8px; }
 .botao-arquivo { display: inline-block; }
 .botao-arquivo input { display: none; }
 #status-dados { min-height: 1.2em; margin-bottom: 0; }
