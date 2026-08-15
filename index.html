@@ -35,6 +35,16 @@
     </div>
     <p>Proficiência: <strong id="bonus-proficiencia">+2</strong></p>
 
+    <section class="dados-personagem">
+        <h3>Dados da ficha</h3>
+        <button id="exportar-personagem">Exportar JSON</button>
+        <label class="botao-arquivo">Importar JSON
+            <input id="importar-personagem" type="file" accept="application/json,.json">
+        </label>
+        <button id="restaurar-backup">Restaurar último backup</button>
+        <p id="status-dados" role="status" aria-live="polite"></p>
+    </section>
+
     <div class="combate">
         <h3>Combate</h3>
         <label>CA <input id="ca" type="number" readonly title="Calculada pelos equipamentos"></label>

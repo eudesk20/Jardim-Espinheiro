@@ -8,6 +8,11 @@ body > h1 { color: var(--ouro); letter-spacing: .18em; }
 .grade-identidade { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 18px; }
 .grade-identidade label { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
 .grade-identidade input { width: 60%; }
+.dados-personagem { margin: 12px 0; padding: 10px; border: 1px dashed var(--borda); border-radius: 8px; }
+.dados-personagem h3 { margin-top: 0; }
+.botao-arquivo { display: inline-block; padding: 6px 10px; background: #2d392b; border: 1px solid var(--borda); border-radius: 5px; cursor: pointer; }
+.botao-arquivo input { display: none; }
+#status-dados { min-height: 1.2em; margin-bottom: 0; }
 .combate { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 12px; border: 1px solid #46543e; border-radius: 10px; }
 .combate h3 { width: 100%; margin: 0; }
 input { width: 84px; padding: 6px; background: #0e130f; color: inherit; border: 1px solid var(--borda); border-radius: 5px; }

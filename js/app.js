@@ -56,7 +56,15 @@ let personagem;
 
 if (personagemSalvo !== null) {
 
-    personagem = JSON.parse(personagemSalvo);
+    try {
+        personagem = JSON.parse(personagemSalvo);
+    } catch (erro) {
+        // Preserva o texto corrompido para uma recuperação manual e permite
+        // que a ficha abra com dados novos em vez de travar na inicialização.
+        localStorage.setItem("personagem-corrompido", personagemSalvo);
+        personagem = null;
+        console.warn("A ficha salva estava corrompida e foi isolada.", erro);
+    }
 
     // --------------------------------------------------
     // INÍCIO: MIGRAÇÃO DO FORMATO ANTIGO
@@ -64,7 +72,7 @@ if (personagemSalvo !== null) {
     // O novo formato organiza isso em vida e atributos.
     // --------------------------------------------------
 
-    if (personagem.vida === undefined) {
+    if (personagem !== null && personagem.vida === undefined) {
 
         personagem = {
             nome: personagem.nome,
@@ -93,8 +101,9 @@ if (personagemSalvo !== null) {
     // FIM: MIGRAÇÃO DO FORMATO ANTIGO
     // --------------------------------------------------
 
-} 
-else {
+}
+
+if (personagem === undefined || personagem === null) {
 
      // --------------------------------------------------
      // INÍCIO: CRIAÇÃO DE PERSONAGEM NOVO
@@ -132,9 +141,89 @@ else {
 
 function salvarPersonagem() {
 
+    personagem.meta = {
+        versaoDados: 1,
+        atualizadoEm: new Date().toISOString()
+    };
+
     const personagemJSON = JSON.stringify(personagem);
 
     localStorage.setItem("personagem", personagemJSON);
+}
+
+function mostrarStatusDados(mensagem, erro) {
+    const status = document.getElementById("status-dados");
+    status.textContent = mensagem;
+    status.style.color = erro ? "#ff9b8f" : "#b8d99b";
+}
+
+function nomeSeguroArquivo(nome) {
+    return (nome || "personagem").normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^a-z0-9_-]+/gi, "-").replace(/^-|-$/g, "").toLowerCase() || "personagem";
+}
+
+function exportarPersonagem() {
+    salvarPersonagem();
+    const pacote = {
+        aplicacao: "Microcosmos — Onde o Mundo Termina",
+        versaoDados: 1,
+        exportadoEm: new Date().toISOString(),
+        personagem: personagem
+    };
+    const arquivo = new Blob([JSON.stringify(pacote, null, 2)], { type: "application/json" });
+    const endereco = URL.createObjectURL(arquivo);
+    const link = document.createElement("a");
+    link.href = endereco;
+    link.download = `microcosmos-${nomeSeguroArquivo(personagem.nome)}.json`;
+    link.click();
+    URL.revokeObjectURL(endereco);
+    mostrarStatusDados("Ficha exportada com sucesso.", false);
+}
+
+// Converte nomes usados pelo HTML final antigo para a estrutura atual.
+function normalizarPersonagemImportado(dados) {
+    const importado = dados.personagem ?? dados;
+    if (!importado || typeof importado !== "object" || Array.isArray(importado)) {
+        throw new Error("O arquivo não contém um personagem válido.");
+    }
+
+    const mapa = { FOR: "forca", DES: "destreza", CON: "constituicao", INT: "inteligencia", SAB: "sabedoria", CAR: "carisma" };
+    if (!importado.atributos && importado.stats) {
+        importado.atributos = {};
+        Object.entries(mapa).forEach(function ([antigo, atual]) {
+            importado.atributos[atual] = Number(importado.stats[antigo]) || 10;
+        });
+    }
+    importado.nome = importado.nome ?? importado.charName ?? "";
+    importado.jogador = importado.jogador ?? importado.playerName ?? "";
+    importado.pericias = importado.pericias ?? importado.skillRanks ?? {};
+    if (!importado.vida) {
+        importado.vida = {
+            atual: Number(importado.hpCurrent ?? importado.pvAtual) || 10,
+            maximo: Number(importado.hpMax ?? importado.pvMaximo) || 10,
+            temporario: Number(importado.hpTemp ?? importado.pvTemporario) || 0
+        };
+    }
+    if (Array.isArray(importado.saves)) {
+        const convertidas = {};
+        importado.saves.forEach(function (chave) { convertidas[mapa[chave] ?? chave] = true; });
+        importado.salvaguardas = convertidas;
+    }
+
+    const atributosValidos = importado.atributos && nomesAtributos.every(function (chave) {
+        return Number.isFinite(Number(importado.atributos[chave]));
+    });
+    if (!atributosValidos || !importado.vida || typeof importado.vida !== "object") {
+        throw new Error("Faltam atributos ou pontos de vida válidos no arquivo.");
+    }
+    return importado;
+}
+
+function substituirPersonagem(novoPersonagem, mensagem) {
+    localStorage.setItem("personagem-backup", JSON.stringify(personagem));
+    localStorage.setItem("personagem", JSON.stringify(novoPersonagem));
+    sessionStorage.setItem("status-importacao", mensagem);
+    window.location.reload();
 }
 
 // FIM DA FUNÇÃO salvarPersonagem()
@@ -444,8 +533,13 @@ function atualizarRegras() {
         document.querySelector(`[data-pericia="${pericia[0]}"]`).checked = Boolean(personagem.pericias[pericia[0]]);
         document.querySelector(`[data-bonus-pericia="${pericia[0]}"]`).textContent = formatarBonus(bonusPericia(pericia[0]));
     });
-    document.getElementById("historico-rolagens").innerHTML = personagem.historico.slice(0, 20)
-        .map(function (item) { return "<li>" + item + "</li>"; }).join("");
+    const historico = document.getElementById("historico-rolagens");
+    historico.innerHTML = "";
+    personagem.historico.slice(0, 20).forEach(function (item) {
+        const linha = document.createElement("li");
+        linha.textContent = String(item);
+        historico.appendChild(linha);
+    });
     atualizarMorte();
     atualizarAtaques();
     atualizarEquipamentos();
@@ -919,6 +1013,45 @@ document.querySelector(".pagina-narrativa").addEventListener("click", function (
     atualizarTela();
 });
 
+// ======================================================
+// IMPORTAÇÃO, EXPORTAÇÃO E RECUPERAÇÃO
+// ======================================================
+document.getElementById("exportar-personagem").addEventListener("click", exportarPersonagem);
+
+document.getElementById("importar-personagem").addEventListener("change", async function (evento) {
+    const arquivo = evento.target.files[0];
+    if (!arquivo) return;
+    try {
+        const dados = JSON.parse(await arquivo.text());
+        const importado = normalizarPersonagemImportado(dados);
+        const confirmar = window.confirm(
+            `Importar a ficha de ${importado.nome || "personagem sem nome"}? A ficha atual será guardada como backup.`
+        );
+        if (confirmar) substituirPersonagem(importado, "Ficha importada; a versão anterior foi guardada como backup.");
+        else mostrarStatusDados("Importação cancelada; nenhum dado foi alterado.", false);
+    } catch (erro) {
+        mostrarStatusDados("Não foi possível importar: " + erro.message, true);
+    } finally {
+        evento.target.value = "";
+    }
+});
+
+document.getElementById("restaurar-backup").addEventListener("click", function () {
+    const backup = localStorage.getItem("personagem-backup");
+    if (!backup) {
+        mostrarStatusDados("Ainda não existe um backup para restaurar.", true);
+        return;
+    }
+    try {
+        const restaurado = normalizarPersonagemImportado(JSON.parse(backup));
+        if (window.confirm("Restaurar o último backup? A ficha atual também será preservada para desfazer a troca.")) {
+            substituirPersonagem(restaurado, "Backup restaurado com sucesso.");
+        }
+    } catch (erro) {
+        mostrarStatusDados("O backup existe, mas não pôde ser restaurado: " + erro.message, true);
+    }
+});
+
 document.getElementById("limpar-historico").addEventListener("click", function () {
     personagem.historico = [];
     salvarPersonagem();
@@ -931,3 +1064,11 @@ document.getElementById("limpar-historico").addEventListener("click", function (
 
 montarRegras();
 atualizarTela();
+
+const statusImportacao = sessionStorage.getItem("status-importacao");
+if (statusImportacao) {
+    mostrarStatusDados(statusImportacao, false);
+    sessionStorage.removeItem("status-importacao");
+} else if (localStorage.getItem("personagem-corrompido")) {
+    mostrarStatusDados("Uma ficha corrompida foi isolada; exporte a ficha atual antes de continuar.", true);
+}
