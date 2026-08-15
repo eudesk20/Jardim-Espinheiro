@@ -77,34 +77,35 @@ if (personagemSalvo !== null) {
     // FIM: MIGRAÇÃO DO FORMATO ANTIGO
     // --------------------------------------------------
 
-} else {
+} 
+else {
 
-    // --------------------------------------------------
-    // INÍCIO: CRIAÇÃO DE PERSONAGEM NOVO
-    // Só acontece quando não existe personagem salvo.
-    // --------------------------------------------------
+     // --------------------------------------------------
+     // INÍCIO: CRIAÇÃO DE PERSONAGEM NOVO
+     // Só acontece quando não existe personagem salvo.
+     // --------------------------------------------------
 
     personagem = {
-        nome: "",
-        nivel: 1,
+         nome: "",
+         nivel: 1,
 
         vida: {
-            atual: 10,
-            maximo: 10
+         atual: 10,
+         maximo: 10
         },
 
         atributos: {
-            forca: 10,
-            destreza: 10,
-            constituicao: 10,
-            inteligencia: 10,
-            sabedoria: 10,
-            carisma: 10
+         forca: 10,
+         destreza: 10,
+         constituicao: 10,
+         inteligencia: 10,
+         sabedoria: 10,
+         carisma: 10
         }
     }
-    // --------------------------------------------------
-    // FIM: CRIAÇÃO DE PERSONAGEM NOVO
-    // --------------------------------------------------
+     // --------------------------------------------------
+     // FIM: CRIAÇÃO DE PERSONAGEM NOVO
+     // --------------------------------------------------
 }
 
 
@@ -152,12 +153,45 @@ function atualizarTela() {
 
     nomesAtributos.forEach(function (nomeAtributo) {
 
-        const elementoAtributo =
-            document.getElementById(nomeAtributo);
+    // --------------------------------------------------
+    // VALOR DO ATRIBUTO
+    // --------------------------------------------------
 
-        elementoAtributo.textContent =
-            personagem.atributos[nomeAtributo];
-    });
+    const elementoAtributo =
+        document.getElementById(nomeAtributo);
+
+    const valorAtributo =
+        personagem.atributos[nomeAtributo];
+
+    elementoAtributo.textContent = valorAtributo;
+
+
+    // --------------------------------------------------
+    // MODIFICADOR DO ATRIBUTO
+    // --------------------------------------------------
+
+    const elementoModificador =
+        document.getElementById(
+            "modificador-" + nomeAtributo
+        );
+
+    const modificador =
+        calcularModificador(valorAtributo);
+
+    if (modificador >= 0) {
+
+    elementoModificador.textContent =
+        "+" + modificador;
+
+} else {
+
+    elementoModificador.textContent =
+        modificador;
+}
+});
+    
+    
+
 }
 
 // ======================================================
@@ -246,6 +280,24 @@ function alterarAtributo(nomeAtributo, valor) {
 
 // ======================================================
 // FIM DA FUNÇÃO: ALTERAR ATRIBUTO
+// ======================================================
+
+// ======================================================
+// FUNÇÃO: CALCULAR MODIFICADOR
+// Recebe o valor de um atributo e retorna seu modificador.
+// O modificador é calculado, portanto não precisa ser salvo.
+// ======================================================
+
+function calcularModificador(valorAtributo) {
+
+    const modificador =
+        Math.floor((valorAtributo - 10) / 2);
+
+    return modificador;
+}
+
+// ======================================================
+// FIM DA FUNÇÃO: CALCULAR MODIFICADOR
 // ======================================================
 
 // ======================================================
