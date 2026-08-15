@@ -250,6 +250,16 @@ personagem.antecedente = personagem.antecedente ?? "";
 personagem.xp = personagem.xp ?? personagem.XP ?? 0;
 personagem.morte = personagem.morte ?? { sucessos: 0, falhas: 0 };
 personagem.ataques = Array.isArray(personagem.ataques) ? personagem.ataques : [];
+personagem.equipamentos = personagem.equipamentos ?? {
+    armaduraNome: "", armaduraCaBase: 10, armaduraLimiteDes: null,
+    escudoNome: "", escudoBonus: 0
+};
+personagem.moedas = { pc: 0, pp: 0, pe: 0, po: 0, pl: 0, ...(personagem.moedas || {}) };
+personagem.inventario = personagem.inventario ?? {};
+personagem.inventario.mochila = Array.isArray(personagem.inventario.mochila)
+    ? personagem.inventario.mochila : (Array.isArray(personagem.bolsa) ? personagem.bolsa : []);
+personagem.inventario.carrinho = Array.isArray(personagem.inventario.carrinho)
+    ? personagem.inventario.carrinho : (Array.isArray(personagem.carrinho) ? personagem.carrinho : []);
 
 salvarPersonagem();
 
@@ -377,6 +387,7 @@ function montarRegras() {
 }
 
 function atualizarRegras() {
+    personagem.combate.ca = calcularCA();
     document.getElementById("bonus-proficiencia").textContent = formatarBonus(calcularBonusProficiencia());
     document.getElementById("ca").value = personagem.combate.ca;
     document.getElementById("deslocamento").value = personagem.combate.deslocamento;
@@ -395,6 +406,61 @@ function atualizarRegras() {
         .map(function (item) { return "<li>" + item + "</li>"; }).join("");
     atualizarMorte();
     atualizarAtaques();
+    atualizarEquipamentos();
+    atualizarInventario();
+}
+
+function calcularCA() {
+    const equipamentos = personagem.equipamentos;
+    const destreza = calcularModificador(personagem.atributos.destreza);
+    const bonusDestreza = equipamentos.armaduraLimiteDes === null
+        ? destreza
+        : (equipamentos.armaduraLimiteDes === 0 ? 0 : Math.min(destreza, equipamentos.armaduraLimiteDes));
+    return Math.max(0, equipamentos.armaduraCaBase + bonusDestreza + equipamentos.escudoBonus);
+}
+
+function atualizarEquipamentos() {
+    const equipamentos = personagem.equipamentos;
+    document.getElementById("armadura-nome").value = equipamentos.armaduraNome;
+    document.getElementById("armadura-ca-base").value = equipamentos.armaduraCaBase;
+    document.getElementById("armadura-limite-des").value = equipamentos.armaduraLimiteDes ?? "";
+    document.getElementById("escudo-nome").value = equipamentos.escudoNome;
+    document.getElementById("escudo-bonus").value = equipamentos.escudoBonus;
+}
+
+function pesoDoLocal(local) {
+    return personagem.inventario[local].reduce(function (total, item) {
+        return total + (Number(item.quantidade) || 0) * (Number(item.peso) || 0);
+    }, 0);
+}
+
+function atualizarInventario() {
+    Object.keys(personagem.moedas).forEach(function (moeda) {
+        document.querySelector(`[data-moeda="${moeda}"]`).value = personagem.moedas[moeda];
+    });
+
+    ["mochila", "carrinho"].forEach(function (local) {
+        const lista = document.getElementById("lista-" + local);
+        lista.innerHTML = "";
+        personagem.inventario[local].forEach(function (item, indice) {
+            const linha = document.createElement("div");
+            linha.className = "linha-item";
+            linha.innerHTML = `<input data-item-campo="nome" data-local="${local}" data-indice="${indice}" placeholder="Item">
+                <input data-item-campo="quantidade" data-local="${local}" data-indice="${indice}" type="number" min="0" title="Quantidade">
+                <input data-item-campo="peso" data-local="${local}" data-indice="${indice}" type="number" min="0" step="0.01" title="Peso unitário em kg">
+                <button class="remover-item" data-local="${local}" data-indice="${indice}" aria-label="Remover item">×</button>`;
+            linha.querySelector('[data-item-campo="nome"]').value = item.nome;
+            linha.querySelector('[data-item-campo="quantidade"]').value = item.quantidade;
+            linha.querySelector('[data-item-campo="peso"]').value = item.peso;
+            lista.appendChild(linha);
+        });
+    });
+
+    const mochila = pesoDoLocal("mochila");
+    const carrinho = pesoDoLocal("carrinho");
+    document.getElementById("peso-mochila").textContent = mochila.toFixed(2);
+    document.getElementById("peso-carrinho").textContent = carrinho.toFixed(2);
+    document.getElementById("peso-total").textContent = (mochila + carrinho).toFixed(2);
 }
 
 function atualizarMorte() {
@@ -569,6 +635,20 @@ document.addEventListener("change", function (evento) {
             ? Number(alvo.value) || 0
             : alvo.value;
     }
+    if (alvo.id === "armadura-nome") personagem.equipamentos.armaduraNome = alvo.value;
+    if (alvo.id === "armadura-ca-base") personagem.equipamentos.armaduraCaBase = Math.max(0, Number(alvo.value) || 0);
+    if (alvo.id === "armadura-limite-des") {
+        personagem.equipamentos.armaduraLimiteDes = alvo.value === "" ? null : Number(alvo.value);
+    }
+    if (alvo.id === "escudo-nome") personagem.equipamentos.escudoNome = alvo.value;
+    if (alvo.id === "escudo-bonus") personagem.equipamentos.escudoBonus = Math.max(0, Number(alvo.value) || 0);
+    if (alvo.dataset.moeda) personagem.moedas[alvo.dataset.moeda] = Math.max(0, Number(alvo.value) || 0);
+    if (alvo.dataset.itemCampo) {
+        const item = personagem.inventario[alvo.dataset.local][Number(alvo.dataset.indice)];
+        item[alvo.dataset.itemCampo] = alvo.dataset.itemCampo === "nome"
+            ? alvo.value
+            : Math.max(0, Number(alvo.value) || 0);
+    }
 
     salvarPersonagem();
     atualizarTela();
@@ -625,6 +705,22 @@ document.getElementById("descanso-longo").addEventListener("click", function () 
     personagem.vida.atual = personagem.vida.maximo;
     personagem.vida.temporario = 0;
     personagem.morte = { sucessos: 0, falhas: 0 };
+    salvarPersonagem();
+    atualizarTela();
+});
+
+document.querySelectorAll(".adicionar-item").forEach(function (botao) {
+    botao.addEventListener("click", function () {
+        personagem.inventario[botao.dataset.local].push({ nome: "", quantidade: 1, peso: 0 });
+        salvarPersonagem();
+        atualizarTela();
+    });
+});
+
+document.querySelector(".inventario").addEventListener("click", function (evento) {
+    const botao = evento.target.closest(".remover-item");
+    if (!botao) return;
+    personagem.inventario[botao.dataset.local].splice(Number(botao.dataset.indice), 1);
     salvarPersonagem();
     atualizarTela();
 });
