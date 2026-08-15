@@ -170,6 +170,40 @@
 <h3>Perícias</h3>
 <div id="lista-pericias" class="lista-regras duas-colunas"></div>
 
+<!-- VIDA NO JARDIM: a página narrativa do personagem. -->
+<section class="pagina-narrativa">
+    <h2>Vida no Jardim</h2>
+    <div class="textos-narrativos">
+        <label>Origem
+            <textarea id="narrativa-origem" rows="3" placeholder="De onde o personagem veio?"></textarea>
+        </label>
+        <label>Aparência
+            <textarea id="narrativa-aparencia" rows="4" placeholder="Traços, roupas, marcas e detalhes visuais"></textarea>
+        </label>
+        <label>História
+            <textarea id="narrativa-historia" rows="6" placeholder="Passado, motivações e acontecimentos importantes"></textarea>
+        </label>
+    </div>
+
+    <div class="listas-narrativas">
+        <section>
+            <h3>Memórias</h3>
+            <div id="lista-memorias"></div>
+            <button class="adicionar-narrativa" data-lista="memorias">+ Memória</button>
+        </section>
+        <section>
+            <h3>Facções</h3>
+            <div id="lista-faccoes"></div>
+            <button class="adicionar-narrativa" data-lista="faccoes">+ Facção</button>
+        </section>
+        <section>
+            <h3>Conquistas</h3>
+            <div id="lista-conquistas"></div>
+            <button class="adicionar-narrativa" data-lista="conquistas">+ Conquista</button>
+        </section>
+    </div>
+</section>
+
 <!-- GRIMÓRIO: valores derivados são recalculados a partir do atributo escolhido. -->
 <section class="grimorio">
     <h2>Grimório</h2>
