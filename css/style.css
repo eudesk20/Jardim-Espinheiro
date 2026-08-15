@@ -30,6 +30,14 @@ button:hover { border-color: var(--ouro); }
 .linha-item { display: grid; grid-template-columns: 1fr 70px 80px auto; gap: 7px; margin-bottom: 7px; }
 .linha-item input { width: 100%; }
 .ajuda { opacity: .75; font-size: .9rem; }
+.pagina-narrativa { margin-top: 20px; padding: 14px; border: 1px solid #8a6a8d; border-radius: 10px; }
+.textos-narrativos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.textos-narrativos label { display: grid; gap: 5px; }
+.textos-narrativos label:last-child { grid-column: 1 / -1; }
+.listas-narrativas { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.linha-narrativa { display: grid; grid-template-columns: 1fr auto; gap: 6px; margin-bottom: 8px; }
+.linha-narrativa input, .linha-narrativa textarea { width: 100%; }
+.linha-narrativa textarea { grid-column: 1 / -1; resize: vertical; }
 .grimorio { margin-top: 20px; padding: 14px; border: 1px solid var(--ouro); border-radius: 10px; }
 .cabecalho-grimorio { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; }
 .cabecalho-grimorio label { display: flex; align-items: center; gap: 7px; }
@@ -40,4 +48,4 @@ button:hover { border-color: var(--ouro); }
 .linha-magia input { width: 100%; }
 #materiais-magicos { width: 100%; resize: vertical; }
 #historico-rolagens { max-height: 180px; overflow: auto; }
-@media (max-width: 700px) { body { padding: 10px; } .duas-colunas, .grade-identidade, .inventarios-lado-a-lado, .espacos-magia { grid-template-columns: 1fr; } .linha-ataque, .linha-magia { grid-template-columns: 1fr 70px 1fr; } .ficha-personagem { padding: 14px; } }
+@media (max-width: 700px) { body { padding: 10px; } .duas-colunas, .grade-identidade, .inventarios-lado-a-lado, .espacos-magia, .textos-narrativos, .listas-narrativas { grid-template-columns: 1fr; } .textos-narrativos label:last-child { grid-column: auto; } .linha-ataque, .linha-magia { grid-template-columns: 1fr 70px 1fr; } .ficha-personagem { padding: 14px; } }

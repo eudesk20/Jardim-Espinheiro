@@ -286,6 +286,22 @@ for (let circulo = 1; circulo <= 9; circulo += 1) {
         ? { total: Number(salvo.total) || 0, gastos: Number(salvo.gastos) || 0 }
         : { total: Number(salvo) || 0, gastos: 0 };
 }
+const narrativaAntiga = personagem.pagina2 ?? personagem.page2 ?? {};
+personagem.narrativa = personagem.narrativa ?? {
+    origem: narrativaAntiga.origem ?? personagem.origem ?? "",
+    aparencia: narrativaAntiga.aparencia ?? personagem.aparencia ?? "",
+    historia: narrativaAntiga.historia ?? personagem.historia ?? "",
+    memorias: narrativaAntiga.memorias ?? personagem.memorias ?? [],
+    faccoes: narrativaAntiga.faccoes ?? personagem.faccoes ?? [],
+    conquistas: narrativaAntiga.conquistas ?? personagem.conquistas ?? []
+};
+["memorias", "faccoes", "conquistas"].forEach(function (lista) {
+    const itens = Array.isArray(personagem.narrativa[lista]) ? personagem.narrativa[lista] : [];
+    personagem.narrativa[lista] = itens.map(function (item) {
+        if (typeof item === "string") return { titulo: item, texto: "" };
+        return { titulo: item.titulo ?? item.nome ?? "", texto: item.texto ?? item.descricao ?? item.notas ?? "" };
+    });
+});
 
 salvarPersonagem();
 
@@ -435,6 +451,28 @@ function atualizarRegras() {
     atualizarEquipamentos();
     atualizarInventario();
     atualizarGrimorio();
+    atualizarNarrativa();
+}
+
+function atualizarNarrativa() {
+    const narrativa = personagem.narrativa;
+    ["origem", "aparencia", "historia"].forEach(function (campo) {
+        document.getElementById("narrativa-" + campo).value = narrativa[campo];
+    });
+    ["memorias", "faccoes", "conquistas"].forEach(function (lista) {
+        const area = document.getElementById("lista-" + lista);
+        area.innerHTML = "";
+        narrativa[lista].forEach(function (item, indice) {
+            const linha = document.createElement("div");
+            linha.className = "linha-narrativa";
+            linha.innerHTML = `<input data-narrativa-lista="${lista}" data-narrativa-campo="titulo" data-indice="${indice}" placeholder="Título ou nome">
+                <button class="remover-narrativa" data-lista="${lista}" data-indice="${indice}" aria-label="Remover">×</button>
+                <textarea data-narrativa-lista="${lista}" data-narrativa-campo="texto" data-indice="${indice}" rows="3" placeholder="Descrição, relação ou detalhes"></textarea>`;
+            linha.querySelector('[data-narrativa-campo="titulo"]').value = item.titulo;
+            linha.querySelector('[data-narrativa-campo="texto"]').value = item.texto;
+            area.appendChild(linha);
+        });
+    });
 }
 
 function bonusAtaqueMagico() {
@@ -743,6 +781,13 @@ document.addEventListener("change", function (evento) {
         else if (alvo.dataset.magiaCampo === "circulo") magia.circulo = Math.min(9, Math.max(0, Number(alvo.value) || 0));
         else magia[alvo.dataset.magiaCampo] = alvo.value;
     }
+    if (alvo.id && alvo.id.startsWith("narrativa-")) {
+        personagem.narrativa[alvo.id.replace("narrativa-", "")] = alvo.value;
+    }
+    if (alvo.dataset.narrativaLista) {
+        const item = personagem.narrativa[alvo.dataset.narrativaLista][Number(alvo.dataset.indice)];
+        item[alvo.dataset.narrativaCampo] = alvo.value;
+    }
 
     salvarPersonagem();
     atualizarTela();
@@ -842,6 +887,36 @@ document.getElementById("lista-magias").addEventListener("click", function (even
         salvarPersonagem();
         atualizarTela();
     }
+});
+
+// Textos longos são salvos enquanto o jogador escreve. Assim uma atualização
+// da página não perde o último parágrafo ainda em edição.
+document.querySelector(".pagina-narrativa").addEventListener("input", function (evento) {
+    const alvo = evento.target;
+    if (alvo.id && alvo.id.startsWith("narrativa-")) {
+        personagem.narrativa[alvo.id.replace("narrativa-", "")] = alvo.value;
+    }
+    if (alvo.dataset.narrativaLista) {
+        const item = personagem.narrativa[alvo.dataset.narrativaLista][Number(alvo.dataset.indice)];
+        item[alvo.dataset.narrativaCampo] = alvo.value;
+    }
+    salvarPersonagem();
+});
+
+document.querySelectorAll(".adicionar-narrativa").forEach(function (botao) {
+    botao.addEventListener("click", function () {
+        personagem.narrativa[botao.dataset.lista].push({ titulo: "", texto: "" });
+        salvarPersonagem();
+        atualizarTela();
+    });
+});
+
+document.querySelector(".pagina-narrativa").addEventListener("click", function (evento) {
+    const botao = evento.target.closest(".remover-narrativa");
+    if (!botao) return;
+    personagem.narrativa[botao.dataset.lista].splice(Number(botao.dataset.indice), 1);
+    salvarPersonagem();
+    atualizarTela();
 });
 
 document.getElementById("limpar-historico").addEventListener("click", function () {
