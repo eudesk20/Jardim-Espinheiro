@@ -1,7 +1,6 @@
-// ======================================================
+
 // ELEMENTOS DA TELA
 // Busca no HTML os elementos que o JavaScript vai controlar.
-// ======================================================
 
 const textoPV = document.getElementById("pv-atual");
 const textoPVMaximo = document.getElementById("pv-maximo");
@@ -12,27 +11,26 @@ const botaoAumentar = document.getElementById("aumentar-pv");
 const campoNome = document.getElementById("nome-personagem");
 
 const textoNivel = document.getElementById("nivel");
-
-const textoForca = document.getElementById("forca");
-const textoDestreza = document.getElementById("destreza");
-const textoConstituicao = document.getElementById("constituicao");
-const textoInteligencia = document.getElementById("inteligencia");
-const textoSabedoria = document.getElementById("sabedoria");
-const textoCarisma = document.getElementById("carisma");
-
+// BOTÕES DOS ATRIBUTOS
 const botoesAtributos =
     document.querySelectorAll(".botao-atributo");
 
+// LISTA DOS ATRIBUTOS
+// Guarda os nomes dos atributos utilizados pela ficha.
+const nomesAtributos = [
+    "forca",
+    "destreza",
+    "constituicao",
+    "inteligencia",
+    "sabedoria",
+    "carisma"
+];
 
-// ======================================================
 // 2. CARREGAMENTO DO PERSONAGEM
 // Procura no navegador um personagem salvo anteriormente.
-// ======================================================
-
 const personagemSalvo = localStorage.getItem("personagem");
 
 let personagem;
-
 
 // ======================================================
 // 3. CARREGAMENTO E MIGRAÇÃO DOS DADOS
@@ -126,29 +124,45 @@ function salvarPersonagem() {
 
 
 // ======================================================
-// 5. FUNÇÃO: ATUALIZAR TELA
-// Pega os dados do personagem e mostra no HTML.
+// FUNÇÃO: ATUALIZAR TELA
+// Mostra no HTML os dados atuais do personagem.
 // ======================================================
 
 function atualizarTela() {
 
+    // --------------------------------------------------
     // IDENTIDADE
+    // --------------------------------------------------
+
     campoNome.value = personagem.nome;
     textoNivel.textContent = personagem.nivel;
 
+
+    // --------------------------------------------------
     // VIDA
+    // --------------------------------------------------
+
     textoPV.textContent = personagem.vida.atual;
     textoPVMaximo.textContent = personagem.vida.maximo;
 
+
+    // --------------------------------------------------
     // ATRIBUTOS
-    textoForca.textContent = personagem.atributos.forca;
-    textoDestreza.textContent = personagem.atributos.destreza;
-    textoConstituicao.textContent = personagem.atributos.constituicao;
-    textoInteligencia.textContent = personagem.atributos.inteligencia;
-    textoSabedoria.textContent = personagem.atributos.sabedoria;
-    textoCarisma.textContent = personagem.atributos.carisma;
+    // --------------------------------------------------
+
+    nomesAtributos.forEach(function (nomeAtributo) {
+
+        const elementoAtributo =
+            document.getElementById(nomeAtributo);
+
+        elementoAtributo.textContent =
+            personagem.atributos[nomeAtributo];
+    });
 }
-// FIM DA FUNÇÃO atualizarTela()
+
+// ======================================================
+// FIM DA FUNÇÃO: ATUALIZAR TELA
+// ======================================================
 
 // ======================================================
 // COMPLETA ATRIBUTOS NOVOS
