@@ -26,6 +26,21 @@ const nomesAtributos = [
     "carisma"
 ];
 
+// Cada perícia aponta para o atributo que governa seu cálculo.
+// As duas últimas são próprias do Microcosmos.
+const pericias = [
+    ["acrobacia", "Acrobacia", "destreza"], ["adestrar-animais", "Adestrar Animais", "sabedoria"],
+    ["arcanismo", "Arcanismo", "inteligencia"], ["atletismo", "Atletismo", "forca"],
+    ["atuacao", "Atuação", "carisma"], ["enganacao", "Enganação", "carisma"],
+    ["furtividade", "Furtividade", "destreza"], ["historia", "História", "inteligencia"],
+    ["intimidacao", "Intimidação", "carisma"], ["intuicao", "Intuição", "sabedoria"],
+    ["investigacao", "Investigação", "inteligencia"], ["medicina", "Medicina", "sabedoria"],
+    ["natureza", "Natureza", "inteligencia"], ["percepcao", "Percepção", "sabedoria"],
+    ["persuasao", "Persuasão", "carisma"], ["prestidigitacao", "Prestidigitação", "destreza"],
+    ["religiao", "Religião", "inteligencia"], ["sobrevivencia", "Sobrevivência", "sabedoria"],
+    ["coleta", "Coleta", "sabedoria"], ["engenharia-sucata", "Engenharia de Sucata", "inteligencia"]
+];
+
 // 2. CARREGAMENTO DO PERSONAGEM
 // Procura no navegador um personagem salvo anteriormente.
 const personagemSalvo = localStorage.getItem("personagem");
@@ -189,8 +204,9 @@ function atualizarTela() {
         modificador;
 }
 });
-    
-    
+
+    // Atualiza os blocos gerados dinamicamente (perícias, saves e combate).
+    atualizarRegras();
 
 }
 
@@ -214,6 +230,14 @@ if (personagem.atributos.sabedoria === undefined) {
 if (personagem.atributos.carisma === undefined) {
     personagem.atributos.carisma = 10;
 }
+
+// Campos acrescentados no bloco alfa. O operador ?? preserva valores válidos,
+// inclusive zero, e fornece um padrão somente quando o campo não existe.
+personagem.vida.temporario = personagem.vida.temporario ?? 0;
+personagem.combate = personagem.combate ?? { ca: 10, deslocamento: 9 };
+personagem.salvaguardas = personagem.salvaguardas ?? {};
+personagem.pericias = personagem.pericias ?? personagem.skillRanks ?? {};
+personagem.historico = Array.isArray(personagem.historico) ? personagem.historico : [];
 
 salvarPersonagem();
 
@@ -296,6 +320,76 @@ function calcularModificador(valorAtributo) {
     return modificador;
 }
 
+function calcularBonusProficiencia() {
+    return 2 + Math.floor((personagem.nivel - 1) / 4);
+}
+
+function formatarBonus(valor) {
+    return valor >= 0 ? "+" + valor : String(valor);
+}
+
+function bonusPericia(chave) {
+    const pericia = pericias.find(function (item) { return item[0] === chave; });
+    const base = calcularModificador(personagem.atributos[pericia[2]]);
+    return base + (personagem.pericias[chave] ? calcularBonusProficiencia() : 0);
+}
+
+function bonusSalvaguarda(atributo) {
+    const base = calcularModificador(personagem.atributos[atributo]);
+    return base + (personagem.salvaguardas[atributo] ? calcularBonusProficiencia() : 0);
+}
+
+// O HTML das listas nasce dos catálogos acima. Para incluir uma perícia nova,
+// basta acrescentar um item ao catálogo em vez de copiar quatro blocos de código.
+function montarRegras() {
+    const salvaguardas = document.getElementById("lista-salvaguardas");
+    const listaPericias = document.getElementById("lista-pericias");
+
+    nomesAtributos.forEach(function (atributo) {
+        const linha = document.createElement("div");
+        linha.className = "linha-regra";
+        linha.innerHTML = `<input type="checkbox" data-salvaguarda="${atributo}">
+            <span>${atributo}</span><strong class="bonus" data-bonus-salvaguarda="${atributo}">+0</strong>
+            <button type="button" class="botao-rolagem" data-tipo="salvaguarda" data-chave="${atributo}">Rolar</button>`;
+        salvaguardas.appendChild(linha);
+    });
+
+    pericias.forEach(function (pericia) {
+        const linha = document.createElement("div");
+        linha.className = "linha-regra";
+        linha.innerHTML = `<input type="checkbox" data-pericia="${pericia[0]}">
+            <span>${pericia[1]}</span><strong class="bonus" data-bonus-pericia="${pericia[0]}">+0</strong>
+            <button type="button" class="botao-rolagem" data-tipo="pericia" data-chave="${pericia[0]}">Rolar</button>`;
+        listaPericias.appendChild(linha);
+    });
+}
+
+function atualizarRegras() {
+    document.getElementById("bonus-proficiencia").textContent = formatarBonus(calcularBonusProficiencia());
+    document.getElementById("ca").value = personagem.combate.ca;
+    document.getElementById("deslocamento").value = personagem.combate.deslocamento;
+    document.getElementById("pv-temporario").value = personagem.vida.temporario;
+
+    nomesAtributos.forEach(function (atributo) {
+        document.querySelector(`[data-salvaguarda="${atributo}"]`).checked = Boolean(personagem.salvaguardas[atributo]);
+        document.querySelector(`[data-bonus-salvaguarda="${atributo}"]`).textContent = formatarBonus(bonusSalvaguarda(atributo));
+    });
+    pericias.forEach(function (pericia) {
+        document.querySelector(`[data-pericia="${pericia[0]}"]`).checked = Boolean(personagem.pericias[pericia[0]]);
+        document.querySelector(`[data-bonus-pericia="${pericia[0]}"]`).textContent = formatarBonus(bonusPericia(pericia[0]));
+    });
+    document.getElementById("historico-rolagens").innerHTML = personagem.historico.slice(0, 20)
+        .map(function (item) { return "<li>" + item + "</li>"; }).join("");
+}
+
+function rolarD20(rotulo, bonus) {
+    const dado = Math.floor(Math.random() * 20) + 1;
+    const detalhe = dado === 20 ? " — crítico!" : (dado === 1 ? " — falha crítica!" : "");
+    personagem.historico.unshift(`${rotulo}: ${dado} ${formatarBonus(bonus)} = ${dado + bonus}${detalhe}`);
+    salvarPersonagem();
+    atualizarTela();
+}
+
 // ======================================================
 // FIM DA FUNÇÃO: CALCULAR MODIFICADOR
 // ======================================================
@@ -373,7 +467,45 @@ botoesAtributos.forEach(function (botao) {
 // FIM DOS EVENTOS dos botões de atributos
 
 // ======================================================
+// EVENTOS DO BLOCO ALFA
+// Delegação de eventos: um único ouvinte atende todas as
+// perícias, salvaguardas e rolagens criadas dinamicamente.
+// ======================================================
+document.addEventListener("change", function (evento) {
+    const alvo = evento.target;
+
+    if (alvo.dataset.pericia) personagem.pericias[alvo.dataset.pericia] = alvo.checked;
+    if (alvo.dataset.salvaguarda) personagem.salvaguardas[alvo.dataset.salvaguarda] = alvo.checked;
+    if (alvo.id === "ca") personagem.combate.ca = Math.max(0, Number(alvo.value) || 0);
+    if (alvo.id === "deslocamento") personagem.combate.deslocamento = Math.max(0, Number(alvo.value) || 0);
+    if (alvo.id === "pv-temporario") personagem.vida.temporario = Math.max(0, Number(alvo.value) || 0);
+
+    salvarPersonagem();
+    atualizarTela();
+});
+
+document.addEventListener("click", function (evento) {
+    const botao = evento.target.closest(".botao-rolagem");
+    if (!botao) return;
+
+    if (botao.dataset.tipo === "d20") rolarD20("d20", 0);
+    if (botao.dataset.tipo === "iniciativa") rolarD20("Iniciativa", calcularModificador(personagem.atributos.destreza));
+    if (botao.dataset.tipo === "salvaguarda") rolarD20("Salvaguarda de " + botao.dataset.chave, bonusSalvaguarda(botao.dataset.chave));
+    if (botao.dataset.tipo === "pericia") {
+        const nome = pericias.find(function (item) { return item[0] === botao.dataset.chave; })[1];
+        rolarD20(nome, bonusPericia(botao.dataset.chave));
+    }
+});
+
+document.getElementById("limpar-historico").addEventListener("click", function () {
+    personagem.historico = [];
+    salvarPersonagem();
+    atualizarTela();
+});
+
+// ======================================================
 // INICIALIZAÇÃO DA TELA
 // ======================================================
 
+montarRegras();
 atualizarTela();
