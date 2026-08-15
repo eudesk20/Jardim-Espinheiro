@@ -17,11 +17,17 @@ button:hover { border-color: var(--ouro); }
 .duas-colunas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .linha-regra { display: grid; grid-template-columns: 26px 1fr 48px 62px; align-items: center; gap: 6px; min-height: 32px; }
 .bonus { font-weight: bold; text-align: center; }
-.morte, .ataques { margin-top: 16px; padding: 12px; border: 1px solid #46543e; border-radius: 10px; }
+.morte, .ataques, .equipamentos, .inventario { margin-top: 16px; padding: 12px; border: 1px solid #46543e; border-radius: 10px; }
 .morte { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 8px 12px; }
 .morte h3 { grid-column: 1 / -1; margin: 0; }
 .marcadores-morte { display: flex; gap: 8px; }
 .linha-ataque { display: grid; grid-template-columns: 2fr 80px 1fr auto auto auto; gap: 7px; margin-bottom: 8px; }
 .linha-ataque input { width: 100%; }
+.grade-equipamentos, .moedas { display: flex; flex-wrap: wrap; gap: 10px 18px; }
+.grade-equipamentos label, .moedas label { display: flex; align-items: center; gap: 7px; }
+.inventarios-lado-a-lado { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.linha-item { display: grid; grid-template-columns: 1fr 70px 80px auto; gap: 7px; margin-bottom: 7px; }
+.linha-item input { width: 100%; }
+.ajuda { opacity: .75; font-size: .9rem; }
 #historico-rolagens { max-height: 180px; overflow: auto; }
-@media (max-width: 700px) { body { padding: 10px; } .duas-colunas, .grade-identidade { grid-template-columns: 1fr; } .linha-ataque { grid-template-columns: 1fr 70px 1fr; } .ficha-personagem { padding: 14px; } }
+@media (max-width: 700px) { body { padding: 10px; } .duas-colunas, .grade-identidade, .inventarios-lado-a-lado { grid-template-columns: 1fr; } .linha-ataque { grid-template-columns: 1fr 70px 1fr; } .ficha-personagem { padding: 14px; } }

@@ -37,7 +37,7 @@
 
     <div class="combate">
         <h3>Combate</h3>
-        <label>CA <input id="ca" type="number" min="0"></label>
+        <label>CA <input id="ca" type="number" readonly title="Calculada pelos equipamentos"></label>
         <label>Deslocamento <input id="deslocamento" type="number" min="0"></label>
         <label>PV temporário <input id="pv-temporario" type="number" min="0"></label>
         <label>PV máximo <input id="editar-pv-maximo" type="number" min="1"></label>
@@ -57,6 +57,44 @@
         <h3>Ataques</h3>
         <div id="lista-ataques"></div>
         <button id="adicionar-ataque">+ Adicionar ataque</button>
+    </div>
+
+    <!-- EQUIPAMENTOS: estes valores alimentam automaticamente a CA. -->
+    <div class="equipamentos">
+        <h3>Equipamentos defensivos</h3>
+        <div class="grade-equipamentos">
+            <label>Armadura <input id="armadura-nome" placeholder="Sem armadura"></label>
+            <label>CA base <input id="armadura-ca-base" type="number" min="0"></label>
+            <label>Limite de DES <input id="armadura-limite-des" type="number" placeholder="Livre"></label>
+            <label>Escudo <input id="escudo-nome" placeholder="Sem escudo"></label>
+            <label>Bônus do escudo <input id="escudo-bonus" type="number" min="0"></label>
+        </div>
+        <p class="ajuda">CA = base da armadura + Destreza permitida + bônus do escudo.</p>
+    </div>
+
+    <div class="inventario">
+        <h3>Moedas</h3>
+        <div class="moedas">
+            <label>PC <input data-moeda="pc" type="number" min="0"></label>
+            <label>PP <input data-moeda="pp" type="number" min="0"></label>
+            <label>PE <input data-moeda="pe" type="number" min="0"></label>
+            <label>PO <input data-moeda="po" type="number" min="0"></label>
+            <label>PL <input data-moeda="pl" type="number" min="0"></label>
+        </div>
+
+        <div class="inventarios-lado-a-lado">
+            <section>
+                <h3>Mochila — <span id="peso-mochila">0</span> kg</h3>
+                <div id="lista-mochila"></div>
+                <button class="adicionar-item" data-local="mochila">+ Item na mochila</button>
+            </section>
+            <section>
+                <h3>Carrinho — <span id="peso-carrinho">0</span> kg</h3>
+                <div id="lista-carrinho"></div>
+                <button class="adicionar-item" data-local="carrinho">+ Item no carrinho</button>
+            </section>
+        </div>
+        <p><strong>Peso total registrado: <span id="peso-total">0</span> kg</strong></p>
     </div>
 
     <div class="pontos-vida">
