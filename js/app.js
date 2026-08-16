@@ -887,6 +887,57 @@ document.addEventListener("change", function (evento) {
     atualizarTela();
 });
 
+// ======================================================
+// ATUALIZAÇÃO IMEDIATA DOS CAMPOS PRINCIPAIS
+// O evento "change" continua fazendo a atualização completa
+// quando o campo perde o foco. Este evento "input" salva a
+// digitação na hora e renova apenas os resultados dependentes,
+// sem reconstruir listas e interromper quem está escrevendo.
+// ======================================================
+document.addEventListener("input", function (evento) {
+    const alvo = evento.target;
+    const camposImediatos = [
+        "nivel", "nome-jogador", "classe", "subclasse", "raca", "antecedente", "xp",
+        "deslocamento", "pv-temporario", "editar-pv-maximo",
+        "armadura-nome", "armadura-ca-base", "armadura-limite-des", "escudo-nome", "escudo-bonus"
+    ];
+
+    if (!camposImediatos.includes(alvo.id)) return;
+
+    if (alvo.id === "nivel") personagem.nivel = Math.min(20, Math.max(1, Number(alvo.value) || 1));
+    if (alvo.id === "nome-jogador") personagem.jogador = alvo.value;
+    if (["classe", "subclasse", "raca", "antecedente"].includes(alvo.id)) personagem[alvo.id] = alvo.value;
+    if (alvo.id === "xp") personagem.xp = Math.max(0, Number(alvo.value) || 0);
+    if (alvo.id === "deslocamento") personagem.combate.deslocamento = Math.max(0, Number(alvo.value) || 0);
+    if (alvo.id === "pv-temporario") personagem.vida.temporario = Math.max(0, Number(alvo.value) || 0);
+    if (alvo.id === "editar-pv-maximo") {
+        personagem.vida.maximo = Math.max(1, Number(alvo.value) || 1);
+        personagem.vida.atual = Math.min(personagem.vida.atual, personagem.vida.maximo);
+        textoPV.textContent = personagem.vida.atual;
+        textoPVMaximo.textContent = personagem.vida.maximo;
+    }
+    if (alvo.id === "armadura-nome") personagem.equipamentos.armaduraNome = alvo.value;
+    if (alvo.id === "armadura-ca-base") personagem.equipamentos.armaduraCaBase = Math.max(0, Number(alvo.value) || 0);
+    if (alvo.id === "armadura-limite-des") {
+        personagem.equipamentos.armaduraLimiteDes = alvo.value === "" ? null : Number(alvo.value);
+    }
+    if (alvo.id === "escudo-nome") personagem.equipamentos.escudoNome = alvo.value;
+    if (alvo.id === "escudo-bonus") personagem.equipamentos.escudoBonus = Math.max(0, Number(alvo.value) || 0);
+
+    if (alvo.id === "nivel") {
+        document.getElementById("bonus-proficiencia").textContent = formatarBonus(calcularBonusProficiencia());
+        document.getElementById("cd-magia").textContent = 8 + bonusAtaqueMagico();
+        document.getElementById("ataque-magico").textContent = formatarBonus(bonusAtaqueMagico());
+    }
+
+    if (["armadura-ca-base", "armadura-limite-des", "escudo-bonus"].includes(alvo.id)) {
+        personagem.combate.ca = calcularCA();
+        document.getElementById("ca").value = personagem.combate.ca;
+    }
+
+    salvarPersonagem();
+});
+
 document.addEventListener("click", function (evento) {
     const botao = evento.target.closest(".botao-rolagem");
     if (!botao) return;
