@@ -112,13 +112,15 @@
 
         <h3>Pontos de Vida</h3>
 
-        <button id="diminuir-pv">-</button>
-
-        <span id="pv-atual">10</span>
-        /
-        <span id="pv-maximo">10</span>
-
-        <button id="aumentar-pv">+</button>
+        <p class="placar-vida"><span id="pv-atual">10</span> / <span id="pv-maximo">10</span></p>
+        <label class="ajuste-vida">Valor
+            <input id="ajuste-pv" type="number" min="1" value="1" inputmode="numeric">
+        </label>
+        <div class="acoes-vida">
+            <button id="aplicar-dano">Aplicar dano</button>
+            <button id="aplicar-cura">Curar</button>
+        </div>
+        <p class="ajuda" id="resumo-pv-temporario">PV temporário: 0</p>
 
     </div>
 <section class="bloco-atributos">
