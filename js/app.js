@@ -5,8 +5,9 @@
 const textoPV = document.getElementById("pv-atual");
 const textoPVMaximo = document.getElementById("pv-maximo");
 
-const botaoDiminuir = document.getElementById("diminuir-pv");
-const botaoAumentar = document.getElementById("aumentar-pv");
+const campoAjustePV = document.getElementById("ajuste-pv");
+const botaoAplicarDano = document.getElementById("aplicar-dano");
+const botaoAplicarCura = document.getElementById("aplicar-cura");
 
 const campoNome = document.getElementById("nome-personagem");
 
@@ -253,6 +254,7 @@ function atualizarTela() {
 
     textoPV.textContent = personagem.vida.atual;
     textoPVMaximo.textContent = personagem.vida.maximo;
+    document.getElementById("resumo-pv-temporario").textContent = `PV temporário: ${personagem.vida.temporario}`;
 
 
     // --------------------------------------------------
@@ -741,38 +743,31 @@ function rolarDano(rotulo, expressao) {
 // FIM DA FUNÇÃO: CALCULAR MODIFICADOR
 // ======================================================
 
-// ======================================================
-// EVENTO: AUMENTAR PV
-// Executado quando o jogador clica no botão "+"
-// ======================================================
+// Dano consome primeiro a proteção temporária. Somente o valor
+// restante alcança os PV atuais, como durante uma sessão de jogo.
+botaoAplicarDano.addEventListener("click", function () {
+    const dano = Math.max(1, Number(campoAjustePV.value) || 1);
+    const absorvido = Math.min(personagem.vida.temporario, dano);
+    const danoNosPV = dano - absorvido;
 
-botaoAumentar.addEventListener("click", function () {
-
-    personagem.vida.atual = Math.min(
-        personagem.vida.maximo,
-        personagem.vida.atual + 1
-    );
-
-    atualizarTela();
+    personagem.vida.temporario -= absorvido;
+    personagem.vida.atual = Math.max(0, personagem.vida.atual - danoNosPV);
+    personagem.historico.unshift(`Dano ${dano}: ${absorvido} absorvido por PV temporário; PV atual ${personagem.vida.atual}.`);
     salvarPersonagem();
+    atualizarTela();
 });
 
-// FIM DO EVENTO aumentar PV
+// Cura nunca ultrapassa o máximo e não recompõe PV temporário.
+botaoAplicarCura.addEventListener("click", function () {
+    const curaPedida = Math.max(1, Number(campoAjustePV.value) || 1);
+    const vidaAnterior = personagem.vida.atual;
 
-// ======================================================
-// EVENTO: Diminuir PV
-// Executado quando o jogador clica no botão "+"
-// ======================================================
-
-botaoDiminuir.addEventListener("click", function () {
-
-    personagem.vida.atual = Math.max(0, personagem.vida.atual - 1);
-
-    atualizarTela();
+    personagem.vida.atual = Math.min(personagem.vida.maximo, personagem.vida.atual + curaPedida);
+    const curaReal = personagem.vida.atual - vidaAnterior;
+    personagem.historico.unshift(`Cura ${curaReal}: PV atual ${personagem.vida.atual}.`);
     salvarPersonagem();
+    atualizarTela();
 });
-
-// FIM DO EVENTO Diminuir PV
 
 
 // ======================================================

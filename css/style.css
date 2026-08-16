@@ -168,9 +168,14 @@ button:active { transform: translateY(0); }
 .morte { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 8px 12px; }
 .morte h3 { grid-column: 1 / -1; margin: 0; }
 .marcadores-morte { display: flex; gap: 8px; }
-.pontos-vida { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 14px; padding: 14px; border: 1px solid #58704f; border-radius: 10px; background: radial-gradient(circle, #243c29, #121b15); font-size: 1.5rem; }
-.pontos-vida span { min-width: 110px; text-align: center; font-size: 1.8rem; }
+.pontos-vida { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 14px; padding: 14px; border: 1px solid #58704f; border-radius: 10px; background: radial-gradient(circle, #243c29, #121b15); }
+.pontos-vida .placar-vida { width: 100%; margin: 0; text-align: center; font-size: 1.8rem; }
+.pontos-vida .placar-vida span { color: var(--ouro); font-weight: 700; }
 .pontos-vida h3 { border: 0; margin: 0; }
+.ajuste-vida { display: grid; gap: 4px; color: var(--texto-fraco); font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; }
+.ajuste-vida input { width: 88px; text-align: center; }
+.acoes-vida { display: flex; flex-wrap: wrap; gap: 8px; }
+.pontos-vida .ajuda { width: 100%; margin: 0; text-align: center; }
 
 .linha-ataque { display: grid; grid-template-columns: 2fr 80px 1fr auto auto auto; gap: 7px; margin-bottom: 8px; }
 .linha-ataque input, .linha-item input, .linha-magia input { width: 100%; }

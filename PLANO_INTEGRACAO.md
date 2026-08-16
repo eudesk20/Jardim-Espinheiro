@@ -29,12 +29,16 @@
 5. Grimório: atributo conjurador, CD, ataque mágico, círculos, slots e componentes.
 6. Importação/exportação do personagem e, depois da alfa local, persistência online.
 
+## Situação atual
+
+Os blocos de identidade, combate, equipamentos, inventário, grimório,
+página narrativa e proteção dos dados foram concluídos na Alfa 1. A Alfa 1.1
+acrescentou atualização imediata dos principais valores automáticos.
+
 ## Próximos blocos
 
-1. **Identidade + combate restante** — fecha o mínimo necessário para uma sessão.
-2. **Equipamentos + inventário** — permite administrar armas, defesa e recursos.
-3. **Grimório essencial** — habilita personagens conjuradores na alfa.
-4. **Página narrativa** — recupera a segunda página do HTML final.
-5. **Persistência online** — somente após estabilizar o formato local dos dados.
+1. **Alfa 1.2 — vida em combate** — dano, cura e consumo automático de PV temporário.
+2. **Acessibilidade e mensagens** — retornos mais claros para ações e rolagens.
+3. **Persistência online** — somente depois de estabilizar o formato local dos dados.
 
 Cada bloco deve passar por teste manual, compatibilidade com personagem salvo e um checkpoint separado no Git.
