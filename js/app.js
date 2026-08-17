@@ -158,6 +158,12 @@ function mostrarStatusDados(mensagem, erro) {
     status.style.color = erro ? "#ff9b8f" : "#b8d99b";
 }
 
+// Mostra e anuncia o resultado da ação mais recente. O histórico continua
+// guardando os detalhes, enquanto esta área oferece uma confirmação imediata.
+function anunciarAcao(mensagem) {
+    document.getElementById("status-acao").textContent = mensagem;
+}
+
 function nomeSeguroArquivo(nome) {
     return (nome || "personagem").normalize("NFD").replace(/[\u0300-\u036f]/g, "")
         .replace(/[^a-z0-9_-]+/gi, "-").replace(/^-|-$/g, "").toLowerCase() || "personagem";
@@ -273,7 +279,7 @@ function atualizarTela() {
     const valorAtributo =
         personagem.atributos[nomeAtributo];
 
-    elementoAtributo.textContent = valorAtributo;
+    elementoAtributo.value = valorAtributo;
 
 
     // --------------------------------------------------
@@ -330,9 +336,22 @@ if (personagem.atributos.carisma === undefined) {
 // inclusive zero, e fornece um padrão somente quando o campo não existe.
 personagem.vida.temporario = personagem.vida.temporario ?? 0;
 personagem.combate = personagem.combate ?? { ca: 10, deslocamento: 9 };
+personagem.combate.dadoVida = personagem.combate.dadoVida ?? "d8";
+personagem.combate.pvPorNivel = personagem.combate.pvPorNivel ?? 6;
 personagem.salvaguardas = personagem.salvaguardas ?? {};
+Object.keys(personagem.salvaguardas).forEach(function (chave) {
+    const valor = personagem.salvaguardas[chave];
+    personagem.salvaguardas[chave] = valor === true ? 1 : Math.min(2, Math.max(0, Number(valor) || 0));
+});
 personagem.pericias = personagem.pericias ?? personagem.skillRanks ?? {};
+// Formatos antigos guardavam apenas verdadeiro/falso. A Alfa 1.3 usa
+// 0 = sem proficiência, 1 = proficiente e 2 = especialização.
+Object.keys(personagem.pericias).forEach(function (chave) {
+    const valor = personagem.pericias[chave];
+    personagem.pericias[chave] = valor === true ? 1 : Math.min(2, Math.max(0, Number(valor) || 0));
+});
 personagem.historico = Array.isArray(personagem.historico) ? personagem.historico : [];
+personagem.proficienciasIdiomas = personagem.proficienciasIdiomas ?? "";
 personagem.jogador = personagem.jogador ?? personagem.playerName ?? "";
 personagem.classe = personagem.classe ?? "";
 personagem.subclasse = personagem.subclasse ?? "";
@@ -351,6 +370,8 @@ personagem.inventario.mochila = Array.isArray(personagem.inventario.mochila)
     ? personagem.inventario.mochila : (Array.isArray(personagem.bolsa) ? personagem.bolsa : []);
 personagem.inventario.carrinho = Array.isArray(personagem.inventario.carrinho)
     ? personagem.inventario.carrinho : (Array.isArray(personagem.carrinho) ? personagem.carrinho : []);
+personagem.inventario.tipoCarrinho = Number(personagem.inventario.tipoCarrinho) || 0;
+personagem.observacoesAmbar = personagem.observacoesAmbar ?? "";
 const grimorioAntigo = personagem.magia ?? {};
 personagem.grimorio = personagem.grimorio ?? {
     classe: grimorioAntigo.classe ?? "",
@@ -385,6 +406,14 @@ personagem.narrativa = personagem.narrativa ?? {
     memorias: narrativaAntiga.memorias ?? personagem.memorias ?? [],
     faccoes: narrativaAntiga.faccoes ?? personagem.faccoes ?? [],
     conquistas: narrativaAntiga.conquistas ?? personagem.conquistas ?? []
+};
+personagem.personalidade = {
+    tracos: "", ideais: "", vinculos: "", fraquezas: "", caracteristicas: "",
+    ...(personagem.personalidade || {})
+};
+personagem.aparencia = {
+    idade: "", altura: "", peso: "", olhos: "", comunidade: "", pele: "", cabelo: "",
+    descricao: "", foto: "", ...(personagem.aparencia || {})
 };
 ["memorias", "faccoes", "conquistas"].forEach(function (lista) {
     const itens = Array.isArray(personagem.narrativa[lista]) ? personagem.narrativa[lista] : [];
@@ -486,12 +515,14 @@ function formatarBonus(valor) {
 function bonusPericia(chave) {
     const pericia = pericias.find(function (item) { return item[0] === chave; });
     const base = calcularModificador(personagem.atributos[pericia[2]]);
-    return base + (personagem.pericias[chave] ? calcularBonusProficiencia() : 0);
+    const nivelProficiencia = Math.min(2, Math.max(0, Number(personagem.pericias[chave]) || 0));
+    return base + nivelProficiencia * calcularBonusProficiencia();
 }
 
 function bonusSalvaguarda(atributo) {
     const base = calcularModificador(personagem.atributos[atributo]);
-    return base + (personagem.salvaguardas[atributo] ? calcularBonusProficiencia() : 0);
+    const nivelProficiencia = Math.min(2, Math.max(0, Number(personagem.salvaguardas[atributo]) || 0));
+    return base + nivelProficiencia * calcularBonusProficiencia();
 }
 
 // O HTML das listas nasce dos catálogos acima. Para incluir uma perícia nova,
@@ -502,19 +533,19 @@ function montarRegras() {
 
     nomesAtributos.forEach(function (atributo) {
         const linha = document.createElement("div");
-        linha.className = "linha-regra";
-        linha.innerHTML = `<input type="checkbox" data-salvaguarda="${atributo}">
-            <span>${atributo}</span><strong class="bonus" data-bonus-salvaguarda="${atributo}">+0</strong>
-            <button type="button" class="botao-rolagem" data-tipo="salvaguarda" data-chave="${atributo}">Rolar</button>`;
+        linha.className = "linha-regra linha-salvaguarda";
+        linha.innerHTML = `<button type="button" class="nivel-salvaguarda" data-salvaguarda="${atributo}">○</button>
+            <button type="button" class="nome-pericia botao-rolagem" data-tipo="salvaguarda" data-chave="${atributo}">Salvaguarda</button>
+            <strong class="bonus" data-bonus-salvaguarda="${atributo}">+0</strong>`;
         salvaguardas.appendChild(linha);
     });
 
     pericias.forEach(function (pericia) {
         const linha = document.createElement("div");
-        linha.className = "linha-regra";
-        linha.innerHTML = `<input type="checkbox" data-pericia="${pericia[0]}">
-            <span>${pericia[1]}</span><strong class="bonus" data-bonus-pericia="${pericia[0]}">+0</strong>
-            <button type="button" class="botao-rolagem" data-tipo="pericia" data-chave="${pericia[0]}">Rolar</button>`;
+        linha.className = "linha-regra linha-pericia";
+        linha.innerHTML = `<button type="button" class="nivel-pericia" data-pericia="${pericia[0]}" aria-label="Alterar proficiência em ${pericia[1]}">○</button>
+            <button type="button" class="nome-pericia botao-rolagem" data-tipo="pericia" data-chave="${pericia[0]}">${pericia[1]}</button>
+            <strong class="bonus" data-bonus-pericia="${pericia[0]}">+0</strong>`;
         listaPericias.appendChild(linha);
     });
 }
@@ -524,15 +555,30 @@ function atualizarRegras() {
     document.getElementById("bonus-proficiencia").textContent = formatarBonus(calcularBonusProficiencia());
     document.getElementById("ca").value = personagem.combate.ca;
     document.getElementById("deslocamento").value = personagem.combate.deslocamento;
+    document.getElementById("iniciativa").value = formatarBonus(calcularModificador(personagem.atributos.destreza));
+    document.getElementById("proficiencia-combate").value = formatarBonus(calcularBonusProficiencia());
+    document.getElementById("dado-vida").value = personagem.combate.dadoVida;
+    document.getElementById("pv-por-nivel").value = personagem.combate.pvPorNivel;
     document.getElementById("pv-temporario").value = personagem.vida.temporario;
     document.getElementById("editar-pv-maximo").value = personagem.vida.maximo;
+    document.getElementById("proficiencias-idiomas").value = personagem.proficienciasIdiomas;
 
     nomesAtributos.forEach(function (atributo) {
-        document.querySelector(`[data-salvaguarda="${atributo}"]`).checked = Boolean(personagem.salvaguardas[atributo]);
+        const nivel = Math.min(2, Math.max(0, Number(personagem.salvaguardas[atributo]) || 0));
+        const marcador = document.querySelector(`[data-salvaguarda="${atributo}"]`);
+        marcador.textContent = ["○", "●", "◆"][nivel];
+        marcador.dataset.nivel = nivel;
+        marcador.title = ["Sem proficiência", "Proficiente", "Especialização: bônus dobrado"][nivel];
+        marcador.setAttribute("aria-label", `Salvaguarda de ${atributo}: ${marcador.title}. Clique para alterar.`);
         document.querySelector(`[data-bonus-salvaguarda="${atributo}"]`).textContent = formatarBonus(bonusSalvaguarda(atributo));
     });
     pericias.forEach(function (pericia) {
-        document.querySelector(`[data-pericia="${pericia[0]}"]`).checked = Boolean(personagem.pericias[pericia[0]]);
+        const nivel = Math.min(2, Math.max(0, Number(personagem.pericias[pericia[0]]) || 0));
+        const marcador = document.querySelector(`[data-pericia="${pericia[0]}"]`);
+        marcador.textContent = ["○", "●", "◆"][nivel];
+        marcador.dataset.nivel = nivel;
+        marcador.title = ["Sem proficiência", "Proficiente", "Especialização: bônus dobrado"][nivel];
+        marcador.setAttribute("aria-label", `${pericia[1]}: ${marcador.title}. Clique para alterar.`);
         document.querySelector(`[data-bonus-pericia="${pericia[0]}"]`).textContent = formatarBonus(bonusPericia(pericia[0]));
     });
     const historico = document.getElementById("historico-rolagens");
@@ -568,6 +614,46 @@ function atualizarNarrativa() {
             linha.querySelector('[data-narrativa-campo="texto"]').value = item.texto;
             area.appendChild(linha);
         });
+    });
+    ["tracos", "ideais", "vinculos", "fraquezas"].forEach(function (campo) {
+        document.getElementById("personalidade-" + campo).value = personagem.personalidade[campo];
+    });
+    document.getElementById("aparencia-nome").value = personagem.nome;
+    document.getElementById("aparencia-raca").value = personagem.raca;
+    ["idade", "altura", "peso", "olhos", "comunidade", "pele", "cabelo", "descricao"].forEach(function (campo) {
+        document.getElementById("aparencia-" + campo).value = personagem.aparencia[campo];
+    });
+    const foto = document.getElementById("foto-personagem-preview");
+    foto.hidden = !personagem.aparencia.foto;
+    foto.src = personagem.aparencia.foto || "";
+    document.getElementById("foto-personagem-convite").hidden = Boolean(personagem.aparencia.foto);
+    document.getElementById("remover-foto").hidden = !personagem.aparencia.foto;
+    document.getElementById("observacoes-ambar").value = personagem.observacoesAmbar;
+    atualizarCaracteristicas();
+}
+
+function caracteristicasAutomaticas() {
+    const lista = [];
+    if (personagem.raca) lista.push({ titulo: `Herança de ${personagem.raca}`, origem: "Raça", descricao: `Característica recebida por pertencer ao povo ou raça ${personagem.raca}. Os benefícios específicos podem ser registrados nas anotações oficiais da raça.` });
+    if (personagem.classe) lista.push({ titulo: `Treinamento de ${personagem.classe}`, origem: "Classe", descricao: `Conjunto de técnicas e capacidades concedidas pela classe ${personagem.classe}.` });
+    if (personagem.subclasse) lista.push({ titulo: personagem.subclasse, origem: "Subclasse", descricao: `Especialização adquirida por meio da subclasse ${personagem.subclasse}.` });
+    if (personagem.equipamentos.armaduraNome) lista.push({ titulo: personagem.equipamentos.armaduraNome, origem: "Item — Armadura", descricao: `Benefício equipado. CA base ${personagem.equipamentos.armaduraCaBase}, aplicada automaticamente ao cálculo de defesa.` });
+    if (personagem.equipamentos.escudoNome) lista.push({ titulo: personagem.equipamentos.escudoNome, origem: "Item — Escudo", descricao: `Benefício equipado. Concede ${formatarBonus(personagem.equipamentos.escudoBonus)} na Classe de Armadura.` });
+    if (personagem.personalidade.caracteristicas.trim()) lista.push({ titulo: "Outras características", origem: "Anotações", descricao: personagem.personalidade.caracteristicas });
+    return lista;
+}
+
+function atualizarCaracteristicas() {
+    const area = document.getElementById("lista-caracteristicas");
+    area.innerHTML = "";
+    const lista = caracteristicasAutomaticas();
+    if (!lista.length) area.innerHTML = '<p class="ajuda">As características aparecerão conforme raça, classe e equipamentos forem preenchidos.</p>';
+    lista.forEach(function (item, indice) {
+        const botao = document.createElement("button");
+        botao.className = "cartao-caracteristica";
+        botao.dataset.caracteristica = indice;
+        botao.innerHTML = `<strong>${item.titulo}</strong><span>${item.origem} · clique para detalhes</span>`;
+        area.appendChild(botao);
     });
 }
 
@@ -650,7 +736,8 @@ function pesoDoLocal(local) {
 
 function atualizarInventario() {
     Object.keys(personagem.moedas).forEach(function (moeda) {
-        document.querySelector(`[data-moeda="${moeda}"]`).value = personagem.moedas[moeda];
+        const campo = document.querySelector(`[data-moeda="${moeda}"]`);
+        if (campo) campo.value = personagem.moedas[moeda];
     });
 
     ["mochila", "carrinho"].forEach(function (local) {
@@ -662,6 +749,7 @@ function atualizarInventario() {
             linha.innerHTML = `<input data-item-campo="nome" data-local="${local}" data-indice="${indice}" placeholder="Item">
                 <input data-item-campo="quantidade" data-local="${local}" data-indice="${indice}" type="number" min="0" title="Quantidade">
                 <input data-item-campo="peso" data-local="${local}" data-indice="${indice}" type="number" min="0" step="0.01" title="Peso unitário em kg">
+                <span class="total-item">${((Number(item.quantidade) || 0) * (Number(item.peso) || 0)).toFixed(2)} kg</span>
                 <button class="remover-item" data-local="${local}" data-indice="${indice}" aria-label="Remover item">×</button>`;
             linha.querySelector('[data-item-campo="nome"]').value = item.nome;
             linha.querySelector('[data-item-campo="quantidade"]').value = item.quantidade;
@@ -675,6 +763,13 @@ function atualizarInventario() {
     document.getElementById("peso-mochila").textContent = mochila.toFixed(2);
     document.getElementById("peso-carrinho").textContent = carrinho.toFixed(2);
     document.getElementById("peso-total").textContent = (mochila + carrinho).toFixed(2);
+    const cargaMochila = personagem.atributos.forca * 15;
+    const multiplicador = Number(personagem.inventario.tipoCarrinho) || 0;
+    document.getElementById("carga-max-mochila").textContent = cargaMochila.toFixed(0) + " kg";
+    document.getElementById("resumo-peso-mochila").textContent = mochila.toFixed(2) + " kg";
+    document.getElementById("carga-max-carrinho").textContent = (cargaMochila * multiplicador).toFixed(0) + " kg";
+    document.getElementById("resumo-peso-carrinho").textContent = carrinho.toFixed(2) + " kg";
+    document.getElementById("tipo-carrinho").value = String(multiplicador);
 }
 
 function atualizarMorte() {
@@ -715,16 +810,19 @@ function atualizarAtaques() {
 function rolarD20(rotulo, bonus) {
     const dado = Math.floor(Math.random() * 20) + 1;
     const detalhe = dado === 20 ? " — crítico!" : (dado === 1 ? " — falha crítica!" : "");
-    personagem.historico.unshift(`${rotulo}: ${dado} ${formatarBonus(bonus)} = ${dado + bonus}${detalhe}`);
+    const mensagem = `${rotulo}: ${dado} ${formatarBonus(bonus)} = ${dado + bonus}${detalhe}`;
+    personagem.historico.unshift(mensagem);
     salvarPersonagem();
     atualizarTela();
+    anunciarAcao(mensagem);
 }
 
 // Aceita fórmulas simples como 1d8+3, 2d6 ou 1d10-1.
 function rolarDano(rotulo, expressao) {
     const resultado = String(expressao).trim().match(/^(\d+)d(\d+)([+-]\d+)?$/i);
+    let mensagem;
     if (!resultado) {
-        personagem.historico.unshift(`${rotulo}: fórmula de dano inválida (${expressao || "vazia"})`);
+        mensagem = `${rotulo}: fórmula de dano inválida (${expressao || "vazia"})`;
     } else {
         const quantidade = Math.min(20, Number(resultado[1]));
         const faces = Math.min(100, Number(resultado[2]));
@@ -733,10 +831,12 @@ function rolarDano(rotulo, expressao) {
             return Math.floor(Math.random() * faces) + 1;
         });
         const total = dados.reduce(function (soma, dado) { return soma + dado; }, 0) + bonus;
-        personagem.historico.unshift(`${rotulo} — dano ${expressao}: [${dados.join(", ")}] ${formatarBonus(bonus)} = ${total}`);
+        mensagem = `${rotulo} — dano ${expressao}: [${dados.join(", ")}] ${formatarBonus(bonus)} = ${total}`;
     }
+    personagem.historico.unshift(mensagem);
     salvarPersonagem();
     atualizarTela();
+    anunciarAcao(mensagem);
 }
 
 // ======================================================
@@ -752,9 +852,11 @@ botaoAplicarDano.addEventListener("click", function () {
 
     personagem.vida.temporario -= absorvido;
     personagem.vida.atual = Math.max(0, personagem.vida.atual - danoNosPV);
-    personagem.historico.unshift(`Dano ${dano}: ${absorvido} absorvido por PV temporário; PV atual ${personagem.vida.atual}.`);
+    const mensagem = `Dano ${dano}: ${absorvido} absorvido por PV temporário; PV atual ${personagem.vida.atual}.`;
+    personagem.historico.unshift(mensagem);
     salvarPersonagem();
     atualizarTela();
+    anunciarAcao(mensagem);
 });
 
 // Cura nunca ultrapassa o máximo e não recompõe PV temporário.
@@ -764,9 +866,11 @@ botaoAplicarCura.addEventListener("click", function () {
 
     personagem.vida.atual = Math.min(personagem.vida.maximo, personagem.vida.atual + curaPedida);
     const curaReal = personagem.vida.atual - vidaAnterior;
-    personagem.historico.unshift(`Cura ${curaReal}: PV atual ${personagem.vida.atual}.`);
+    const mensagem = `Cura ${curaReal}: PV atual ${personagem.vida.atual}.`;
+    personagem.historico.unshift(mensagem);
     salvarPersonagem();
     atualizarTela();
+    anunciarAcao(mensagem);
 });
 
 
@@ -850,6 +954,7 @@ document.addEventListener("change", function (evento) {
     if (alvo.id === "escudo-nome") personagem.equipamentos.escudoNome = alvo.value;
     if (alvo.id === "escudo-bonus") personagem.equipamentos.escudoBonus = Math.max(0, Number(alvo.value) || 0);
     if (alvo.dataset.moeda) personagem.moedas[alvo.dataset.moeda] = Math.max(0, Number(alvo.value) || 0);
+    if (alvo.id === "tipo-carrinho") personagem.inventario.tipoCarrinho = Number(alvo.value) || 0;
     if (alvo.dataset.itemCampo) {
         const item = personagem.inventario[alvo.dataset.local][Number(alvo.dataset.indice)];
         item[alvo.dataset.itemCampo] = alvo.dataset.itemCampo === "nome"
@@ -891,10 +996,18 @@ document.addEventListener("change", function (evento) {
 // ======================================================
 document.addEventListener("input", function (evento) {
     const alvo = evento.target;
+    if (alvo.dataset.atributoValor) {
+        personagem.atributos[alvo.dataset.atributoValor] = Math.min(20, Math.max(1, Number(alvo.value) || 1));
+        salvarPersonagem();
+        atualizarTela();
+        return;
+    }
     const camposImediatos = [
         "nivel", "nome-jogador", "classe", "subclasse", "raca", "antecedente", "xp",
-        "deslocamento", "pv-temporario", "editar-pv-maximo",
-        "armadura-nome", "armadura-ca-base", "armadura-limite-des", "escudo-nome", "escudo-bonus"
+        "deslocamento", "pv-temporario", "editar-pv-maximo", "dado-vida", "pv-por-nivel",
+        "armadura-nome", "armadura-ca-base", "armadura-limite-des", "escudo-nome", "escudo-bonus",
+        "proficiencias-idiomas", "personalidade-tracos", "personalidade-ideais",
+        "personalidade-vinculos", "personalidade-fraquezas", "personalidade-caracteristicas"
     ];
 
     if (!camposImediatos.includes(alvo.id)) return;
@@ -904,6 +1017,8 @@ document.addEventListener("input", function (evento) {
     if (["classe", "subclasse", "raca", "antecedente"].includes(alvo.id)) personagem[alvo.id] = alvo.value;
     if (alvo.id === "xp") personagem.xp = Math.max(0, Number(alvo.value) || 0);
     if (alvo.id === "deslocamento") personagem.combate.deslocamento = Math.max(0, Number(alvo.value) || 0);
+    if (alvo.id === "dado-vida") personagem.combate.dadoVida = alvo.value;
+    if (alvo.id === "pv-por-nivel") personagem.combate.pvPorNivel = Math.max(1, Number(alvo.value) || 1);
     if (alvo.id === "pv-temporario") personagem.vida.temporario = Math.max(0, Number(alvo.value) || 0);
     if (alvo.id === "editar-pv-maximo") {
         personagem.vida.maximo = Math.max(1, Number(alvo.value) || 1);
@@ -918,6 +1033,10 @@ document.addEventListener("input", function (evento) {
     }
     if (alvo.id === "escudo-nome") personagem.equipamentos.escudoNome = alvo.value;
     if (alvo.id === "escudo-bonus") personagem.equipamentos.escudoBonus = Math.max(0, Number(alvo.value) || 0);
+    if (alvo.id === "proficiencias-idiomas") personagem.proficienciasIdiomas = alvo.value;
+    if (alvo.id.startsWith("personalidade-")) {
+        personagem.personalidade[alvo.id.replace("personalidade-", "")] = alvo.value;
+    }
 
     if (alvo.id === "nivel") {
         document.getElementById("bonus-proficiencia").textContent = formatarBonus(calcularBonusProficiencia());
@@ -934,6 +1053,24 @@ document.addEventListener("input", function (evento) {
 });
 
 document.addEventListener("click", function (evento) {
+    const marcadorSalvaguarda = evento.target.closest(".nivel-salvaguarda");
+    if (marcadorSalvaguarda) {
+        const chave = marcadorSalvaguarda.dataset.salvaguarda;
+        personagem.salvaguardas[chave] = ((Number(personagem.salvaguardas[chave]) || 0) + 1) % 3;
+        salvarPersonagem();
+        atualizarTela();
+        return;
+    }
+
+    const marcador = evento.target.closest(".nivel-pericia");
+    if (marcador) {
+        const chave = marcador.dataset.pericia;
+        personagem.pericias[chave] = ((Number(personagem.pericias[chave]) || 0) + 1) % 3;
+        salvarPersonagem();
+        atualizarTela();
+        return;
+    }
+
     const botao = evento.target.closest(".botao-rolagem");
     if (!botao) return;
 
@@ -1040,7 +1177,77 @@ document.querySelector(".pagina-narrativa").addEventListener("input", function (
         const item = personagem.narrativa[alvo.dataset.narrativaLista][Number(alvo.dataset.indice)];
         item[alvo.dataset.narrativaCampo] = alvo.value;
     }
+    if (alvo.id === "aparencia-nome") {
+        personagem.nome = alvo.value;
+        campoNome.value = alvo.value;
+    }
+    if (alvo.id === "aparencia-raca") {
+        personagem.raca = alvo.value;
+        document.getElementById("raca").value = alvo.value;
+        atualizarCaracteristicas();
+    }
+    if (alvo.id && alvo.id.startsWith("aparencia-") && !["aparencia-nome", "aparencia-raca"].includes(alvo.id)) {
+        personagem.aparencia[alvo.id.replace("aparencia-", "")] = alvo.value;
+    }
+    if (alvo.id === "observacoes-ambar") personagem.observacoesAmbar = alvo.value;
     salvarPersonagem();
+});
+
+// Reduz a foto antes de salvá-la para não ocupar excessivamente o armazenamento local.
+function prepararFoto(arquivo) {
+    return new Promise(function (resolver, rejeitar) {
+        const leitor = new FileReader();
+        leitor.onerror = rejeitar;
+        leitor.onload = function () {
+            const imagem = new Image();
+            imagem.onerror = rejeitar;
+            imagem.onload = function () {
+                const limite = 600;
+                const escala = Math.min(1, limite / Math.max(imagem.width, imagem.height));
+                const tela = document.createElement("canvas");
+                tela.width = Math.round(imagem.width * escala);
+                tela.height = Math.round(imagem.height * escala);
+                tela.getContext("2d").drawImage(imagem, 0, 0, tela.width, tela.height);
+                resolver(tela.toDataURL("image/jpeg", 0.82));
+            };
+            imagem.src = leitor.result;
+        };
+        leitor.readAsDataURL(arquivo);
+    });
+}
+
+document.getElementById("foto-personagem-arquivo").addEventListener("change", async function (evento) {
+    const arquivo = evento.target.files[0];
+    if (!arquivo) return;
+    try {
+        personagem.aparencia.foto = await prepararFoto(arquivo);
+        salvarPersonagem();
+        atualizarTela();
+    } catch (erro) {
+        mostrarStatusDados("Não foi possível preparar a foto selecionada.", true);
+    }
+    evento.target.value = "";
+});
+
+document.getElementById("remover-foto").addEventListener("click", function () {
+    if (!window.confirm("Remover a foto do personagem?")) return;
+    personagem.aparencia.foto = "";
+    salvarPersonagem();
+    atualizarTela();
+});
+
+document.getElementById("lista-caracteristicas").addEventListener("click", function (evento) {
+    const botao = evento.target.closest("[data-caracteristica]");
+    if (!botao) return;
+    const item = caracteristicasAutomaticas()[Number(botao.dataset.caracteristica)];
+    document.getElementById("detalhe-caracteristica-titulo").textContent = item.titulo;
+    document.getElementById("detalhe-caracteristica-origem").textContent = "Origem: " + item.origem;
+    document.getElementById("detalhe-caracteristica-descricao").textContent = item.descricao;
+    document.getElementById("detalhe-caracteristica").showModal();
+});
+
+document.getElementById("fechar-caracteristica").addEventListener("click", function () {
+    document.getElementById("detalhe-caracteristica").close();
 });
 
 document.querySelectorAll(".adicionar-narrativa").forEach(function (botao) {
@@ -1098,17 +1305,42 @@ document.getElementById("restaurar-backup").addEventListener("click", function (
     }
 });
 
+document.getElementById("resetar-personagem").addEventListener("click", function () {
+    const confirmar = window.confirm(
+        "Resetar toda a ficha? A versão atual será guardada como último backup antes da limpeza."
+    );
+    if (!confirmar) {
+        mostrarStatusDados("Reset cancelado; nenhum dado foi alterado.", false);
+        return;
+    }
+
+    // O backup torna o reset reversível pelo botão "Restaurar último backup".
+    localStorage.setItem("personagem-backup", JSON.stringify(personagem));
+    localStorage.removeItem("personagem");
+    sessionStorage.setItem("status-importacao", "Ficha resetada. A versão anterior foi guardada como backup.");
+    window.location.reload();
+});
+
 // ======================================================
 // NAVEGAÇÃO ENTRE AS TRÊS PÁGINAS
 // A troca é apenas visual: nenhum campo é desmontado e os
 // eventos já aprovados continuam ligados aos mesmos IDs.
 // ======================================================
 function abrirPagina(nome) {
+    // A identidade pertence à composição da Página I. Os campos continuam
+    // carregados e salvos normalmente, apenas ficam ocultos nas outras páginas.
+    document.getElementById("identidade-personagem").hidden = nome !== "combate";
+
     document.querySelectorAll("[data-pagina]").forEach(function (pagina) {
-        pagina.classList.toggle("ativa", pagina.dataset.pagina === nome);
+        const paginaAtiva = pagina.dataset.pagina === nome;
+        pagina.classList.toggle("ativa", paginaAtiva);
+        pagina.hidden = !paginaAtiva;
     });
     document.querySelectorAll("[data-abrir-pagina]").forEach(function (botao) {
-        botao.classList.toggle("ativa", botao.dataset.abrirPagina === nome);
+        const botaoAtivo = botao.dataset.abrirPagina === nome;
+        botao.classList.toggle("ativa", botaoAtivo);
+        if (botaoAtivo) botao.setAttribute("aria-current", "page");
+        else botao.removeAttribute("aria-current");
     });
     sessionStorage.setItem("pagina-ativa", nome);
     window.scrollTo({ top: document.querySelector(".navegacao-paginas").offsetTop - 8, behavior: "smooth" });
@@ -1116,17 +1348,65 @@ function abrirPagina(nome) {
 
 function organizarComposicao() {
     const gradeCombate = document.querySelector(".grade-combate");
-    const ordemCombate = [
-        ".combate", ".pontos-vida", ".morte", ".central-d20",
-        ".bloco-atributos", ".bloco-salvaguardas", ".equipamentos",
-        ".bloco-pericias", ".ataques", ".inventario"
-    ];
+    const criarColuna = function (classe, seletores) {
+        const coluna = document.createElement("div");
+        coluna.className = "coluna-ficha " + classe;
+        seletores.forEach(function (seletor) {
+            const bloco = gradeCombate.querySelector(seletor);
+            if (bloco) coluna.appendChild(bloco);
+        });
+        return coluna;
+    };
 
-    // appendChild move o elemento existente; não cria cópias nem perde eventos.
-    ordemCombate.forEach(function (seletor) {
-        const bloco = gradeCombate.querySelector(seletor);
-        if (bloco) gradeCombate.appendChild(bloco);
+    // Colunas explícitas evitam que um painel alto estique os painéis vizinhos.
+    const regras = criarColuna("coluna-regras", [
+        ".bloco-atributos", ".bloco-salvaguardas", ".bloco-pericias",
+        ".outras-proficiencias", ".historico-combate"
+    ]);
+    const combate = criarColuna("coluna-combate", [
+        ".combate", ".pontos-vida", ".morte", ".central-d20",
+        ".equipamentos", ".ataques", ".inventario"
+    ]);
+    const personagem = criarColuna("coluna-personagem", [
+        ".painel-personalidade", ".painel-caracteristicas"
+    ]);
+
+    const painelCombate = document.createElement("section");
+    painelCombate.className = "painel-conjunto painel-combate-principal";
+    [".combate", ".pontos-vida", ".morte"].forEach(function (seletor) {
+        painelCombate.appendChild(combate.querySelector(seletor));
     });
+    combate.insertBefore(painelCombate, combate.firstChild);
+
+    const painelEquipamentos = document.createElement("section");
+    painelEquipamentos.className = "painel-conjunto painel-equipamentos-combate";
+    [".equipamentos", ".ataques"].forEach(function (seletor) {
+        painelEquipamentos.appendChild(combate.querySelector(seletor));
+    });
+    combate.insertBefore(painelEquipamentos, combate.querySelector(".inventario"));
+
+    gradeCombate.replaceChildren(regras, combate, personagem);
+}
+
+// Reúne visualmente cada salvaguarda e perícia ao atributo que origina
+// seu bônus. Os mesmos elementos são apenas movidos, então eventos e dados
+// continuam funcionando sem duplicação.
+function agruparRegrasPorAtributo() {
+    nomesAtributos.forEach(function (atributo) {
+        const grupo = document.getElementById(atributo).closest("p");
+        grupo.classList.add("grupo-atributo");
+
+        const salvaguarda = document.querySelector(`[data-salvaguarda="${atributo}"]`).closest(".linha-regra");
+        salvaguarda.classList.add("salvaguarda-agrupada");
+        grupo.appendChild(salvaguarda);
+
+        pericias.filter(function (pericia) { return pericia[2] === atributo; }).forEach(function (pericia) {
+            grupo.appendChild(document.querySelector(`[data-pericia="${pericia[0]}"]`).closest(".linha-regra"));
+        });
+    });
+
+    document.querySelector(".bloco-salvaguardas").hidden = true;
+    document.querySelector(".bloco-pericias").hidden = true;
 }
 
 document.querySelectorAll("[data-abrir-pagina]").forEach(function (botao) {
@@ -1145,6 +1425,7 @@ document.getElementById("limpar-historico").addEventListener("click", function (
 
 organizarComposicao();
 montarRegras();
+agruparRegrasPorAtributo();
 atualizarTela();
 abrirPagina(sessionStorage.getItem("pagina-ativa") || "combate");
 

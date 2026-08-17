@@ -77,6 +77,10 @@ button, .botao-arquivo {
 }
 button:hover, .botao-arquivo:hover { border-color: var(--ouro); transform: translateY(-1px); }
 button:active { transform: translateY(0); }
+button:focus-visible, .botao-arquivo:focus-within, summary:focus-visible {
+    outline: 3px solid var(--ouro);
+    outline-offset: 3px;
+}
 
 .grade-identidade { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 9px 16px; }
 .grade-identidade label { display: grid; gap: 4px; color: var(--texto-fraco); font-size: .82rem; text-transform: uppercase; letter-spacing: .08em; }
@@ -86,6 +90,8 @@ button:active { transform: translateY(0); }
 .dados-personagem summary { cursor: pointer; color: #a9b2a4; font-size: .82rem; text-transform: uppercase; letter-spacing: .1em; }
 .dados-personagem[open] summary { margin-bottom: 10px; color: var(--ouro); }
 .acoes-dados { display: flex; flex-wrap: wrap; gap: 8px; }
+.botao-perigo { border-color: #b7655f; background: linear-gradient(#743d39, #512926); }
+.botao-perigo:hover { border-color: #ff9b8f; }
 .botao-arquivo { display: inline-block; }
 .botao-arquivo input { display: none; }
 #status-dados { min-height: 1.2em; margin-bottom: 0; }
@@ -97,7 +103,7 @@ button:active { transform: translateY(0); }
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 8px;
-    margin: 22px 0;
+    margin: 0 0 22px;
     padding: 8px;
     border: 1px solid #52604e;
     border-radius: 10px;
@@ -106,6 +112,8 @@ button:active { transform: translateY(0); }
 }
 .aba-pagina { color: var(--texto-fraco); background: transparent; }
 .aba-pagina.ativa { color: #15120b; border-color: var(--ouro); background: linear-gradient(135deg, #f0d58e, #b88b3e); font-weight: 700; }
+.status-acao { min-height: 1.4em; margin: -10px 0 16px; color: #c9e5b0; text-align: center; font-weight: 700; }
+.status-acao:empty { margin-bottom: 0; }
 
 .ficha-pagina { display: none; animation: surgir .2s ease; }
 .ficha-pagina.ativa { display: block; }
@@ -117,16 +125,24 @@ button:active { transform: translateY(0); }
 /* Página I — o grid reproduz a leitura por blocos da ficha final. */
 .grade-combate {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-template-areas:
-        "stats stats stats"
-        "life death dice"
-        "attrs saves equip"
-        "skills skills skills"
-        "attacks attacks attacks"
-        "inventory inventory inventory";
+    grid-template-columns: minmax(280px, .85fr) minmax(420px, 1.35fr) minmax(290px, .9fr);
+    align-items: start;
     gap: 14px;
 }
+.coluna-ficha { display: grid; align-content: start; gap: 14px; min-width: 0; }
+.coluna-ficha > * { grid-area: auto !important; }
+.painel-conjunto { padding: 12px; border: 1px solid #65735f; border-radius: 12px; background: #152019bb; box-shadow: inset 0 1px #ffffff08; }
+.painel-conjunto > .combate, .painel-conjunto > .morte,
+.painel-conjunto > .equipamentos, .painel-conjunto > .ataques {
+    margin: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+}
+.painel-conjunto > .combate, .painel-conjunto > .equipamentos, .painel-conjunto > .ataques { padding: 0; }
+.painel-combate-principal > .pontos-vida { margin-top: 12px; }
+.painel-combate-principal > .morte { margin-top: 8px; padding: 10px 0 0; border-top: 1px solid #d6af6233; border-radius: 0; }
+.painel-equipamentos-combate > .ataques { margin-top: 12px; padding-top: 10px; border-top: 1px solid #d6af6233; }
 .grade-combate > * { margin: 0; }
 .grade-combate .combate { grid-area: stats; }
 .grade-combate .pontos-vida { grid-area: life; }
@@ -136,10 +152,15 @@ button:active { transform: translateY(0); }
 .grade-combate .bloco-salvaguardas { grid-area: saves; }
 .grade-combate .equipamentos { grid-area: equip; }
 .grade-combate .bloco-pericias { grid-area: skills; }
+.grade-combate .outras-proficiencias { grid-area: prof; }
+.grade-combate .historico-combate { grid-area: history; }
+.grade-combate .painel-personalidade { grid-area: personality; }
+.grade-combate .painel-caracteristicas { grid-area: features; }
 .grade-combate .ataques { grid-area: attacks; }
 .grade-combate .inventario { grid-area: inventory; }
 
-.bloco-atributos, .bloco-salvaguardas, .bloco-pericias {
+.bloco-atributos, .bloco-salvaguardas, .bloco-pericias,
+.outras-proficiencias, .historico-combate, .painel-personalidade, .painel-caracteristicas {
     padding: 14px;
     border: 1px solid #465443;
     border-radius: 10px;
@@ -147,8 +168,28 @@ button:active { transform: translateY(0); }
     box-shadow: inset 0 1px #ffffff08;
 }
 .bloco-atributos h3, .bloco-salvaguardas h3, .bloco-pericias h3 { margin-top: 0; }
+.bloco-atributos .legenda-pericias { display: block; margin: 0 0 10px; padding: 0; background: transparent; line-height: 1.4; }
 .bloco-atributos p { display: grid; grid-template-columns: 1fr 34px 38px 34px 42px; align-items: center; gap: 5px; margin: 5px 0; padding: 5px; border-radius: 6px; background: #ffffff05; }
 .bloco-atributos p span:last-child { color: var(--ouro); font-weight: 700; text-align: center; }
+.bloco-atributos p .linha-regra { grid-column: 1 / -1; width: 100%; }
+.bloco-atributos p .linha-regra span { color: var(--marfim); font-weight: 400; text-align: left; }
+.bloco-atributos p .linha-regra.salvaguarda-agrupada { margin-top: 7px; border-top: 1px solid #d6af6233; }
+.controle-atributo { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) 58px 44px; align-items: center; gap: 7px; font-weight: 700; }
+.controle-atributo input { width: 58px; text-align: center; }
+.controle-atributo strong { color: var(--ouro); text-align: center; font-size: 1.15rem; }
+.outras-proficiencias textarea { width: 100%; min-height: 150px; }
+.painel-personalidade { display: grid; gap: 10px; }
+.painel-personalidade h3, .painel-caracteristicas h3 { margin: 0; }
+.painel-personalidade label { display: grid; gap: 5px; color: var(--texto-fraco); font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; }
+.painel-personalidade textarea, .painel-caracteristicas textarea { width: 100%; line-height: 1.45; }
+.painel-caracteristicas textarea { min-height: 330px; }
+.lista-caracteristicas { display: grid; gap: 3px; max-height: 430px; overflow: auto; }
+.cartao-caracteristica { display: grid; gap: 3px; padding: 9px 7px; border: 0; border-bottom: 1px dotted #8c7955; border-radius: 0; background: transparent; text-align: left; }
+.cartao-caracteristica strong { color: #b8d99b; }
+.cartao-caracteristica span { color: var(--texto-fraco); font-size: .8rem; }
+.detalhe-caracteristica { width: min(560px, calc(100% - 24px)); padding: 22px; border: 1px solid var(--ouro); border-radius: 14px; color: var(--marfim); background: #102b20; box-shadow: 0 20px 70px #000; }
+.detalhe-caracteristica::backdrop { background: #000a; }
+.fechar-detalhe { position: absolute; top: 10px; right: 10px; }
 
 .combate, .morte, .ataques, .equipamentos, .inventario, .central-d20,
 .textos-narrativos, .listas-narrativas > section, .cabecalho-grimorio {
@@ -160,18 +201,21 @@ button:active { transform: translateY(0); }
     box-shadow: inset 0 1px #ffffff08;
 }
 
-.combate { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); align-items: end; gap: 12px; }
+.combate { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: end; gap: 10px; }
 .combate h3 { width: 100%; margin: 0; }
 .combate h3 { grid-column: 1 / -1; }
 .combate label { display: grid; gap: 5px; color: var(--texto-fraco); font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; }
 .combate label input { width: 100%; min-height: 46px; color: var(--ouro); font-size: 1.35rem; font-weight: 700; text-align: center; }
+.botao-iniciativa { grid-column: 1 / -1; }
 .morte { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 8px 12px; }
 .morte h3 { grid-column: 1 / -1; margin: 0; }
 .marcadores-morte { display: flex; gap: 8px; }
-.pontos-vida { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 14px; padding: 14px; border: 1px solid #58704f; border-radius: 10px; background: radial-gradient(circle, #243c29, #121b15); }
-.pontos-vida .placar-vida { width: 100%; margin: 0; text-align: center; font-size: 1.8rem; }
-.pontos-vida .placar-vida span { color: var(--ouro); font-weight: 700; }
+.pontos-vida { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: end; gap: 10px; padding: 14px; border: 1px solid #58704f; border-radius: 10px; background: radial-gradient(circle, #243c29, #121b15); }
 .pontos-vida h3 { border: 0; margin: 0; }
+.pontos-vida h3, .pontos-vida .acoes-vida, .pontos-vida .ajuda { grid-column: 1 / -1; }
+.vida-campo { display: grid; gap: 5px; margin: 0; color: var(--texto-fraco); font-size: .78rem; text-align: center; text-transform: uppercase; letter-spacing: .08em; }
+.vida-campo input, .vida-campo strong { width: 100%; min-height: 38px; padding: 8px; border: 1px solid #566354; border-radius: 6px; color: var(--ouro); background: #0b110df2; font-size: 1.1rem; text-align: center; }
+.oculto { display: none; }
 .ajuste-vida { display: grid; gap: 4px; color: var(--texto-fraco); font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; }
 .ajuste-vida input { width: 88px; text-align: center; }
 .acoes-vida { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -182,12 +226,27 @@ button:active { transform: translateY(0); }
 .grade-equipamentos, .moedas { display: flex; flex-wrap: wrap; gap: 10px 18px; }
 .grade-equipamentos label, .moedas label { display: flex; align-items: center; gap: 7px; }
 .inventarios-lado-a-lado { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-.linha-item { display: grid; grid-template-columns: 1fr 70px 80px auto; gap: 7px; margin-bottom: 7px; }
+.resumo-carga { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin-bottom: 12px; }
+.resumo-carga p { display: grid; gap: 4px; margin: 0; padding: 10px; border: 1px solid #61705d; border-radius: 9px; text-align: center; }
+.resumo-carga span { color: var(--texto-fraco); font-size: .78rem; }
+.resumo-carga strong { color: var(--ouro); font-size: 1.1rem; }
+.tipo-carrinho { display: grid; gap: 5px; margin-bottom: 12px; color: var(--texto-fraco); font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; }
+.tipo-carrinho select { width: 100%; }
+.linha-item { display: grid; grid-template-columns: minmax(120px, 1fr) 70px 90px 76px auto; align-items: center; gap: 7px; margin-bottom: 7px; }
+.total-item { color: var(--ouro); text-align: center; }
 .ajuda { opacity: .75; font-size: .9rem; }
 
 .lista-regras { display: grid; gap: 6px; }
 .duas-colunas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .linha-regra { display: grid; grid-template-columns: 26px 1fr 48px 62px; align-items: center; gap: 6px; min-height: 34px; padding: 3px 7px; border-radius: 5px; }
+.linha-pericia { grid-template-columns: 28px minmax(0, 1fr) 44px; }
+.linha-salvaguarda { grid-template-columns: 28px minmax(0, 1fr) 44px; }
+.nivel-pericia { width: 25px; height: 25px; padding: 0; border-radius: 50%; color: var(--ouro); background: transparent; font-size: .85rem; }
+.nivel-salvaguarda { width: 25px; height: 25px; padding: 0; border-radius: 4px; color: var(--ouro); background: transparent; font-size: .85rem; }
+.nivel-pericia[data-nivel="2"] { color: #15120b; border-color: var(--ouro); background: var(--ouro); }
+.nivel-salvaguarda[data-nivel="2"] { color: #15120b; border-color: var(--ouro); background: var(--ouro); }
+.nome-pericia { padding: 3px 2px; border: 0; color: var(--marfim); background: transparent; text-align: left; }
+.nome-pericia:hover { color: var(--ouro); border-color: transparent; background: #ffffff06; }
 .linha-regra:nth-child(odd) { background: #ffffff05; }
 .bonus { text-align: center; color: var(--ouro); }
 #historico-rolagens { max-height: 190px; overflow: auto; }
@@ -195,6 +254,22 @@ button:active { transform: translateY(0); }
 .pagina-narrativa, .grimorio { border: 0; padding: 0; }
 .pagina-narrativa { --narrativa: #b899bd; }
 .pagina-narrativa .titulo-pagina h2 { color: #d6b9da; }
+.identidade-aparencia, .economia-jardim { margin-bottom: 16px; padding: 14px; border: 1px solid #735f76; border-radius: 12px; background: linear-gradient(145deg, #2b202dbb, #16131abb); }
+.identidade-aparencia { display: grid; grid-template-columns: 140px 1fr; gap: 12px 16px; }
+.identidade-aparencia h3, .economia-jardim h3 { grid-column: 1 / -1; margin: 0; }
+.controle-foto { display: grid; align-content: start; gap: 6px; }
+.foto-personagem { position: relative; display: grid; place-items: center; width: 140px; aspect-ratio: 1; overflow: hidden; border: 2px solid #8f7958; border-radius: 50%; color: var(--texto-fraco); text-align: center; cursor: pointer; background: #d9ccb022; }
+.foto-personagem img { width: 100%; height: 100%; object-fit: cover; }
+.foto-personagem input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.remover-foto { padding: 3px; border: 0; color: #d8aaa5; background: transparent; font-size: .78rem; }
+.grade-aparencia { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; }
+.grade-aparencia label, .descricao-visual, .economia-jardim > label { display: grid; gap: 4px; color: var(--texto-fraco); font-size: .76rem; text-transform: uppercase; letter-spacing: .07em; }
+.grade-aparencia input, .descricao-visual textarea { width: 100%; }
+.descricao-visual { grid-column: 1 / -1; }
+.grade-economia { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 9px; margin: 10px 0; }
+.grade-economia label { display: grid; gap: 5px; padding: 10px; border: 1px solid #735f76; border-radius: 10px; text-align: center; }
+.grade-economia small { color: var(--texto-fraco); }
+.grade-economia input, .economia-jardim textarea { width: 100%; }
 .epigrafe-narrativa { max-width: 720px; margin: -5px 0 20px; color: #c9bdc9; font-style: italic; line-height: 1.6; }
 .textos-narrativos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
 .textos-narrativos label { position: relative; display: grid; gap: 8px; padding: 16px; border: 1px solid #735f76; border-radius: 12px; color: #e0cce3; background: linear-gradient(145deg, #2b202dbb, #16131abb); box-shadow: inset 0 1px #ffffff0b; font-size: 1.08rem; letter-spacing: .06em; }
@@ -237,7 +312,10 @@ button:active { transform: translateY(0); }
 @media (max-width: 900px) {
     .grade-identidade { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .listas-narrativas { grid-template-columns: 1fr; }
-    .grade-combate { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-areas: "stats stats" "life death" "dice dice" "attrs saves" "equip equip" "skills skills" "attacks attacks" "inventory inventory"; }
+    .grade-combate { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .coluna-personagem { grid-column: 1 / -1; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .resumo-carga, .grade-economia { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grade-aparencia { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .combate { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .cabecalho-grimorio { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .selo-magico { border-radius: 10px; }
@@ -251,7 +329,13 @@ button:active { transform: translateY(0); }
     .linha-ataque, .linha-magia { grid-template-columns: 1fr 70px 1fr; }
     .navegacao-paginas { top: 3px; }
     .aba-pagina { padding: 7px 4px; font-size: .78rem; }
-    .grade-combate { grid-template-columns: 1fr; grid-template-areas: "stats" "life" "death" "dice" "attrs" "saves" "equip" "skills" "attacks" "inventory"; }
+    .grade-combate { grid-template-columns: 1fr; }
+    .coluna-personagem { grid-column: auto; grid-template-columns: 1fr; }
+    .identidade-aparencia { grid-template-columns: 1fr; }
+    .controle-foto { justify-items: center; }
+    .grade-aparencia, .resumo-carga, .grade-economia { grid-template-columns: 1fr; }
+    .linha-item { grid-template-columns: 1fr 58px 70px; }
+    .linha-item .total-item { display: none; }
     .combate { grid-template-columns: 1fr 1fr; }
     .cabecalho-grimorio { grid-template-columns: 1fr; }
 }

@@ -38,7 +38,7 @@ acrescentou atualização imediata dos principais valores automáticos.
 ## Próximos blocos
 
 1. **Alfa 1.2 — vida em combate** — dano, cura e consumo automático de PV temporário.
-2. **Acessibilidade e mensagens** — retornos mais claros para ações e rolagens.
+2. **Alfa 1.3 — acessibilidade e mensagens** — retornos mais claros para ações e rolagens.
 3. **Persistência online** — somente depois de estabilizar o formato local dos dados.
 
 Cada bloco deve passar por teste manual, compatibilidade com personagem salvo e um checkpoint separado no Git.

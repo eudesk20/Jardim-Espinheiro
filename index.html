@@ -1,294 +1,1124 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>O Jardim Espinheiro — Ficha Viva do Pequeno Mundo</title>
+<style>
+:root{
+  --bg:#122018; --paper:#efe5cc; --paper2:#f8f1df; --ink:#2f271e;
+  --muted:#776650; --leaf:#356342; --leaf2:#5f8d69; --gold:#b58a3d;
+  --rose:#8f5368; --line:#9c8765; --danger:#994b48; --blue:#476f86;
+  --shadow:0 14px 35px rgba(0,0,0,.32);
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:Georgia,"Times New Roman",serif}
+body{
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 15% 7%,rgba(140,185,133,.35),transparent 18%),
+    radial-gradient(circle at 83% 5%,rgba(201,128,158,.22),transparent 17%),
+    linear-gradient(160deg,#203b2b,#0c1611 70%);
+}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.app{max-width:1380px;margin:auto;padding:10px}
+.masthead{
+  background:linear-gradient(145deg,#f6eedc,#ddd0b4);
+  border:3px double #735e3e;border-radius:24px;padding:15px 18px;box-shadow:var(--shadow);
+  position:relative;overflow:hidden;margin-bottom:8px
+}
+.masthead:before,.masthead:after{content:"🌿";position:absolute;font-size:55px;opacity:.24;top:2px}
+.masthead:before{left:8px;transform:rotate(-25deg)}
+.masthead:after{right:8px;transform:scaleX(-1) rotate(-25deg)}
+.brand{text-align:center}.brand small{color:var(--leaf);font-weight:bold;letter-spacing:.12em}
+.brand h1{margin:3px 0;color:#4b3825;font-size:clamp(26px,4.4vw,43px)}
+.brand p{margin:2px;color:var(--muted)}
+.tabs{display:flex;gap:7px;overflow:auto;padding:8px 2px;position:sticky;top:0;z-index:30}
+.tabs button{white-space:nowrap;border:1px solid #846d4a;background:#e8ddc7;color:#463627;border-radius:999px;padding:9px 13px;font-weight:bold;box-shadow:0 4px 10px #0003}
+.tabs button.active{background:var(--leaf);color:white;border-color:#24452d}
+.page{display:none}.page.active{display:block}
+.sheet{
+  background:
+  radial-gradient(circle at 5% 3%,rgba(255,255,255,.55),transparent 15%),
+  radial-gradient(circle at 95% 98%,rgba(255,255,255,.35),transparent 18%),
+  var(--paper);
+  border:4px double #735e3e;border-radius:25px;padding:14px;box-shadow:var(--shadow);position:relative
+}
+.sheet:after{content:"";position:absolute;inset:7px;border:1px solid #baa684;border-radius:18px;pointer-events:none}
+.topinfo{
+  display:grid;grid-template-columns:125px minmax(0,1fr);gap:10px;
+  background:#fbf5e6;border:2px solid #806b4c;border-radius:18px;padding:10px;position:relative;z-index:2
+}
+.portrait-column{display:flex;flex-direction:column;align-items:center;min-width:0}
+.portrait-column .portrait{width:100%}
+.identity-grid{display:grid;grid-template-columns:1.35fr 1fr 1fr .65fr .85fr 1fr;grid-template-areas:"name class subclass level xp race" "align subrace background player player inspiration";gap:8px;align-items:end;min-width:0}.identity-grid .field{min-width:0}.identity-name{grid-area:name}.identity-align{grid-area:align}.identity-class{grid-area:class}.identity-subclass{grid-area:subclass}.identity-level{grid-area:level}.identity-xp{grid-area:xp}.identity-race{grid-area:race}.identity-subrace{grid-area:subrace}.identity-background{grid-area:background}.identity-player{grid-area:player}.identity-inspiration{grid-area:inspiration}.inspiration-toggle{width:100%;min-height:35px}.inspiration-toggle.active{background:#d8b45b;color:#32240c;border-color:#8c6728;box-shadow:0 0 0 2px #f4da85 inset}
+.identity-grid:has(#p1SubclassField[hidden]){grid-template-areas:"name class class level xp race" "align subrace background player player inspiration"}
+.field label,.mini-label{display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;font-weight:bold;color:#69583f;margin-bottom:3px}
+input,select,textarea{width:100%;background:#fffaf0;border:1px solid #a38f6d;border-radius:8px;padding:8px;color:#2d261f}
+textarea{resize:vertical}
+.portrait{
+  aspect-ratio:1;border:3px double #79623e;border-radius:45% 45% 42% 42%;
+  background:#dfd2b7;display:grid;place-items:center;overflow:hidden;position:relative
+}
+.portrait img{width:100%;height:100%;object-fit:cover;display:none}
+.portrait span{text-align:center;color:#78684f;font-size:.75rem;padding:7px}.portrait.clickable{cursor:pointer;position:relative}.portrait.clickable:hover{filter:brightness(.96)}
+.portrait-actions{display:flex;justify-content:center;margin-top:4px;width:100%}
+.photo-remove{padding:2px 6px!important;font-size:.66rem!important;font-weight:normal!important;opacity:.82}
+.btn{border:1px solid #765f3d;background:#eee0c0;color:#473625;border-radius:9px;padding:7px 9px;font-weight:bold}
+.btn.primary{background:var(--leaf);color:white;border-color:#25482e}
+.btn.danger{background:var(--danger);color:white;border-color:#6c302f}
+.btn.slim{padding:4px 7px;font-size:.78rem}
+.main-grid{display:grid;grid-template-columns:330px minmax(430px,1fr) 330px;gap:10px;margin-top:10px}
+.panel{
+  background:rgba(255,250,240,.78);border:2px solid #8e7755;border-radius:17px;padding:10px;
+  position:relative;z-index:2
+}
+.ribbon{
+  display:inline-block;margin:-19px 0 8px 7px;padding:5px 14px;background:#eadbbd;
+  border:1px solid #856e4c;border-radius:50% 15% 50% 15%;font-weight:bold;font-variant:small-caps
+}
+.attr-block{border-bottom:1px solid #b6a889;padding:8px 0}
+.attr-head{display:grid;grid-template-columns:74px 1fr 46px;align-items:center;gap:7px}
+.attr-shield{
+  min-height:62px;background:#fffaf0;border:2px solid #765f42;border-radius:38% 38% 28% 28%;text-align:center;padding:5px
+}
+.attr-shield b{font-size:1.4rem;display:block}.attr-shield small{font-size:.67rem;font-weight:bold}
+.save-line{font-size:.79rem;color:#5f513f}.skills{margin-top:4px}
+.skill{display:grid;grid-template-columns:31px 1fr 35px;gap:5px;align-items:center;padding:2px 0;font-size:.8rem}
+.skill-rank{
+  width:25px;height:25px;border-radius:50%;border:1px solid #7d694c;background:#fffaf0;font-weight:bold;padding:0
+}
+.skill-rank.prof{background:#dce9d8;color:#234d2d}
+.skill-rank.exp{background:#ead39b;color:#5c4213;border-color:#9c7430}
+.roll-name{appearance:none;background:none;border:0;color:inherit;font:inherit;text-align:left;padding:1px 2px;cursor:pointer;border-radius:4px}
+.roll-name:hover,.roll-name:focus-visible{background:#eadfca;color:#234d2d;outline:1px solid #9b8259}
+.skill small{color:#766753}
+.combat-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.stat-card{background:#fffaf0;border:2px solid #7e6849;border-radius:13px;padding:8px;text-align:center;min-height:72px}
+.stat-card strong{display:block;font-size:1.35rem;color:#5b3e28}
+.hpbox{margin-top:7px;background:#fffaf0;border:2px solid #7e6849;border-radius:14px;padding:8px}
+.hpgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.hpgrid input{text-align:center}
+.death{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:7px}
+.death .box{background:#fffaf0;border:1px solid #9a8563;border-radius:10px;padding:7px;text-align:center}
+.checks{display:flex;justify-content:center;gap:5px;margin-top:4px}
+.checks input{width:auto}
+.equipment-wrap{margin-top:9px}
+.equipment-catalog-add{display:grid;grid-template-columns:minmax(180px,1fr) auto;gap:7px;margin:8px 0}
+.weapon-action-row{display:grid;grid-template-columns:minmax(180px,1.7fr) auto auto auto auto auto;gap:7px;align-items:center;margin:7px 0}.weapon-attack{font-weight:bold;text-align:left;white-space:normal}.weapon-value{padding:6px 8px;border:1px solid var(--line);border-radius:9px;background:#fffaf0;font-size:.78rem;text-align:center}
+.tag-list{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}.prof-tag{display:inline-flex;align-items:center;gap:6px;padding:5px 8px;border:1px solid var(--line);border-radius:999px;background:#f7efd9}.prof-tag button{border:0;background:transparent;color:#9a3532;cursor:pointer;font-weight:bold}.prof-status{font-size:.7rem;padding:3px 6px;border-radius:999px;text-align:center}.prof-status.yes{background:#dcebd8;color:#245d36}.prof-status.no{background:#eee0d5;color:#8a3d36}
+.path-lock{padding:9px;border:1px dashed #9a815a;border-radius:10px;background:#eee4ce;color:#6b5a43;font-size:.8rem}
+.milestone{border:2px solid #9a7840;border-radius:12px;padding:9px;margin:8px 0;background:linear-gradient(135deg,#fff8e9,#ead8ad)}
+.milestone small{display:block;color:#6c5738;margin-top:3px}.milestone.legend{border-color:#75541d;box-shadow:0 0 12px #c99b4770}
+.path-options{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:13px;text-align:left}.path-option{border:1px solid #b99452;border-radius:10px;padding:10px;background:#f7ecd2;color:#332719}.path-option b{display:block;color:#345339}.path-option small{display:block;margin:4px 0 8px}.path-detail{text-align:left;background:#f7ecd2;color:#332719;border-radius:12px;padding:14px;margin-top:12px}.path-actions{display:flex;gap:8px;justify-content:center;margin-top:12px;flex-wrap:wrap}
+.eq-row{
+  display:grid;grid-template-columns:105px 1.4fr .75fr .7fr .7fr .65fr auto auto;gap:5px;
+  margin:5px 0;align-items:center
+}
+.eq-row input,.eq-row select{min-width:0;padding:6px}
+.eq-note{font-size:.72rem;color:#74644f}
+.auto-traits{max-height:290px;overflow:auto}
+.auto-trait{padding:7px;border-bottom:1px dotted #a59272}
+.auto-trait b{color:#405d3e}
+.bottom-grid{display:grid;grid-template-columns:330px 1fr;gap:10px;margin-top:10px}
+.profs textarea{min-height:105px}
+.bag-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:8px}
+.bag-summary .stat-card{min-height:60px}
+.inv-table{width:100%;border-collapse:collapse;font-size:.8rem}
+.inv-table th,.inv-table td{border:1px solid #a89574;padding:5px}
+.inv-table th{background:#e2d4b8}
+.inv-table input,.inv-table select{padding:5px}
+.sep-title{margin:10px 0 6px;font-weight:bold;color:#4e3b28}
+.right-text textarea{min-height:78px;margin-bottom:5px}
+.popup{
+  position:fixed;right:16px;bottom:16px;width:min(420px,calc(100vw - 32px));display:none;
+  background:#193023;color:#f9f0dd;border:2px solid #b99a5d;border-radius:17px;padding:13px;
+  box-shadow:0 16px 40px #0009;z-index:60
+}
+.popup.show{display:block;animation:pop .16s ease-out}
+@keyframes pop{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:scale(1)}}
+.popup h3{margin:0;color:#f0d07f}.popup .big{font-size:1.9rem;font-weight:bold;margin:4px 0}
+.popup.milestone-popup{left:50%;right:auto;top:50%;bottom:auto;transform:translate(-50%,-50%);width:min(650px,calc(100vw - 32px));text-align:center;padding:24px;background:linear-gradient(145deg,#173d29,#0d281b)}
+.popup.milestone-popup .big{color:#f0d07f;font-size:1.55rem}.popup.milestone-popup #popDetails{line-height:1.55}
+.popup.milestone-popup{overflow:visible;box-shadow:0 0 0 100vmax #07100ddb,0 20px 70px #000,0 0 35px #d3a64c88;animation:milestoneEnter .75s cubic-bezier(.2,.9,.25,1.2)}
+.popup.milestone-popup:after{position:absolute;left:0;right:0;top:-42px;text-align:center;font-size:1.7rem;letter-spacing:.45em;pointer-events:none}
+.popup.milestone-3{border-color:#78ad68;background:radial-gradient(circle at 50% 0,#315d38,#102c1d 60%)}
+.popup.milestone-3:after{content:"🌱  ✦  🌿"}.popup.milestone-3 .big{text-shadow:0 0 15px #8ed87c}
+.popup.milestone-10{border-color:#edc462;background:radial-gradient(circle at 50% 0,#76561e,#2c2515 62%);box-shadow:0 0 0 100vmax #100d08df,0 20px 70px #000,0 0 55px #f0c45ba8}
+.popup.milestone-10:after{content:"⚔️  ✦  🏆"}.popup.milestone-10 .big{color:#ffe69a;text-shadow:0 0 18px #ffcb4f}
+.popup.milestone-20{border:4px double #ffe39a;background:radial-gradient(circle at 50% 15%,#8a641f,#241a10 62%,#0e1711);box-shadow:0 0 0 100vmax #030504ed,0 25px 90px #000,0 0 80px #ffd35dcc;animation:legendEnter 1.15s cubic-bezier(.16,.9,.2,1.15)}
+.popup.milestone-20:after{content:"👑  ✦  🌟  ✦  👑";top:-52px;font-size:2rem}.popup.milestone-20 .big{font-size:2rem;color:#ffe49b;text-shadow:0 0 10px #fff,0 0 28px #ffc94f}
+.milestone-fx{position:fixed;inset:-25vh -25vw;pointer-events:none;overflow:hidden;z-index:0}.milestone-popup>button,.milestone-popup>h3,.milestone-popup>.big,.milestone-popup>#popDetails{position:relative;z-index:2}.milestone-particle{position:absolute;left:var(--x);top:105%;font-size:var(--size);opacity:0;animation:particleRise var(--speed) ease-out var(--delay) forwards;filter:drop-shadow(0 0 8px currentColor)}
+.milestone-ring{position:absolute;left:50%;top:50%;width:40px;height:40px;border:3px solid #f5cf6b;border-radius:50%;transform:translate(-50%,-50%);animation:legendRing 1.8s ease-out forwards}
+.ppt-random-bars{position:fixed;inset:0;z-index:20;display:flex;pointer-events:none;perspective:700px}.ppt-random-bars i{flex:1;margin:-1px;opacity:1;backface-visibility:hidden;animation:pptBarTurn var(--duration) cubic-bezier(.58,.02,.25,1) var(--delay) forwards;transform-origin:var(--origin);box-shadow:inset 0 0 0 1px #fff2,0 0 14px #0009}.milestone-3 .ppt-random-bars i{background:linear-gradient(90deg,#0b2115,#73a66d,#173b26)}.milestone-10 .ppt-random-bars i{background:linear-gradient(90deg,#2b1b08,#e0b450,#543711)}.milestone-20 .ppt-random-bars i{background:linear-gradient(90deg,#120d07,#ffe18a,#593b0d);box-shadow:inset 0 0 0 1px #fff5,0 0 22px #ffe39a88}
+.milestone-popup.slide-content>h3,.milestone-popup.slide-content>.big,.milestone-popup.slide-content>#popDetails{animation:slideContentIn .7s cubic-bezier(.2,.85,.3,1) .25s both}
+.milestone-story{max-width:650px;margin:14px auto;font-style:italic;line-height:1.6;text-align:center}.milestone-kicker{text-align:center;letter-spacing:.16em;font-size:.74rem;font-weight:bold;color:#e8c979}.milestone-unlocks{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin:14px 0}.milestone-unlocks span{border:1px solid #dfc47b;border-radius:999px;padding:5px 9px;background:#fff2b71c;font-size:.78rem}
+@keyframes milestoneEnter{0%{opacity:0;transform:translate(-50%,-42%) scale(.72);filter:blur(8px)}65%{opacity:1;filter:blur(0)}100%{transform:translate(-50%,-50%) scale(1)}}
+@keyframes legendEnter{0%{opacity:0;transform:translate(-50%,-50%) scale(1.7);filter:brightness(3) blur(12px)}55%{opacity:1;transform:translate(-50%,-50%) scale(.94);filter:brightness(1.35) blur(0)}75%{transform:translate(-50%,-50%) scale(1.04)}100%{transform:translate(-50%,-50%) scale(1)}}
+@keyframes particleRise{0%{opacity:0;transform:translateY(0) rotate(0) scale(.4)}20%{opacity:1}100%{opacity:0;transform:translateY(-125vh) rotate(540deg) scale(1.35)}}
+@keyframes legendRing{0%{opacity:1;width:40px;height:40px}100%{opacity:0;width:120vmax;height:120vmax;border-width:1px}}
+@keyframes slideContentIn{0%{opacity:0;transform:translateX(90px) scale(.96);filter:blur(5px)}100%{opacity:1;transform:translateX(0) scale(1);filter:blur(0)}}
+@keyframes pptBarTurn{0%,28%{opacity:1;transform:rotateY(0deg) scaleX(1)}72%{opacity:1;transform:rotateY(var(--turn)) scaleX(.72)}100%{opacity:0;transform:rotateY(var(--turn)) scaleX(0)}}
+@media(prefers-reduced-motion:reduce){.popup.milestone-popup,.milestone-popup.slide-content>h3,.milestone-popup.slide-content>.big,.milestone-popup.slide-content>#popDetails{animation:none}.ppt-random-bars{display:none}}
+.placeholder{min-height:300px;display:grid;place-items:center;text-align:center;color:#6a5a46}
+@media(max-width:1120px){
+ .main-grid{grid-template-columns:300px 1fr}.rightcol{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
+ .bottom-grid{grid-template-columns:1fr}
+ .topinfo{grid-template-columns:115px minmax(0,1fr)}
+}
+@media(max-width:760px){
+ .app{padding:5px}.sheet{padding:10px 7px}
+ .topinfo{grid-template-columns:1fr}.portrait-column{width:120px;margin:auto}.portrait-column .portrait{width:120px}.identity-grid{grid-template-columns:1fr 1fr;grid-template-areas:"name name" "align inspiration" "class subclass" "level xp" "race subrace" "background player"}.identity-grid:has(#p1SubclassField[hidden]){grid-template-areas:"name name" "align inspiration" "class class" "level xp" "race subrace" "background player"}
+ .main-grid{grid-template-columns:1fr}.rightcol{display:block}
+ .combat-cards{grid-template-columns:repeat(3,1fr)}
+ .eq-row{grid-template-columns:90px 1fr 65px 65px}.eq-row .wide-hide{display:none}
+ .bag-summary{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:490px){
+ .combat-cards{grid-template-columns:repeat(2,1fr)}.hpgrid{grid-template-columns:1fr 1fr}
+ .identity-grid{grid-template-columns:1fr;grid-template-areas:"name" "align" "class" "subclass" "level" "xp" "race" "subrace" "background" "player" "inspiration"}.identity-grid:has(#p1SubclassField[hidden]){grid-template-areas:"name" "align" "class" "level" "xp" "race" "subrace" "background" "player" "inspiration"}.portrait-column{width:120px}.portrait{grid-column:auto!important}
+ .eq-row{grid-template-columns:1fr 1fr}.eq-row button{width:100%}
+}
 
-    <title>Microcosmos — Onde o Mundo Termina</title>
 
-    <link rel="stylesheet" href="css/style.css">
+:root{--p:#efe4c9;--p2:#fffaf0;--i:#30271f;--m:#75634d;--g:#365f40;--g2:#6f9369;--b:#8d7654;--r:#96546c;--d:#9b4e49}
+*{box-sizing:border-box}body{margin:0;padding:10px;font-family:Georgia,serif;color:var(--i);background:radial-gradient(circle at 10% 5%,#6e936455,transparent 20%),linear-gradient(150deg,#20382b,#0c1611 72%)}
+.app{max-width:1250px;margin:auto}.head,.sheet{background:var(--p);border:4px double #735d3d;border-radius:24px;box-shadow:0 16px 38px #0006}.head{text-align:center;padding:16px}.head small{color:var(--g);font-weight:bold;letter-spacing:.14em}.head h1{margin:4px}.head p{margin:0;color:var(--m)}
+.sheet{margin-top:10px;padding:14px}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:10px}.card{grid-column:span 12;background:#fffaf0dd;border:2px solid var(--b);border-radius:17px;padding:11px}.half{grid-column:span 6}.third{grid-column:span 4}.two{grid-column:span 8}
+.ribbon{display:inline-block;margin:-20px 0 9px 7px;padding:5px 14px;background:#e9dabd;border:1px solid #826b49;border-radius:50% 15% 50% 15%;font-weight:bold}
+label{display:block;font-size:.7rem;text-transform:uppercase;font-weight:bold;color:#66543f;margin:7px 0 3px}input,select,textarea{width:100%;background:var(--p2);border:1px solid #a38e6b;border-radius:8px;padding:8px;font:inherit}textarea{resize:vertical;min-height:90px}
+.identity{display:grid;grid-template-columns:145px 1fr 1fr;gap:10px}.portrait{width:140px;aspect-ratio:1;background:#dccfb3;border:3px double #755f3e;border-radius:46% 46% 42% 42%;display:grid;place-items:center;overflow:hidden}.portrait img{width:100%;height:100%;object-fit:cover;display:none}.portrait span{text-align:center;color:#74634e}.fields2{display:grid;grid-template-columns:1fr 1fr;gap:0 8px}
+.btn{border:1px solid #735d3c;background:#ecdfc0;color:#443425;border-radius:9px;padding:7px 10px;font-weight:bold;cursor:pointer}.danger{background:var(--d);color:white}.actions{display:flex;gap:5px;margin-top:5px;flex-wrap:wrap}
+.wallet{display:grid;grid-template-columns:1fr 1fr;gap:9px}.moneybox{border:2px solid #806b49;border-radius:15px;padding:10px;background:var(--p2)}.moneybox h3{margin:0 0 5px;color:#60462c}.seedrow{display:grid;gap:6px;align-items:center;margin:6px 0;grid-template-columns:1.2fr 80px 90px auto}.hint{font-size:.78rem;color:var(--m);background:#e9dec5;border:1px dashed #9a815a;border-radius:10px;padding:8px;margin:7px 0}
+.memory{background:var(--p2);border-left:5px solid var(--r);padding:9px;border-radius:10px;margin:7px 0}.memory small{color:var(--m)}.faction{display:grid;grid-template-columns:1fr 2fr auto;gap:6px;margin:6px 0;align-items:center}
+.note{min-height:210px}.footer{display:flex;justify-content:flex-end;gap:7px;margin-top:10px;flex-wrap:wrap}
+@media(max-width:850px){.half,.third,.two{grid-column:span 12}.identity{grid-template-columns:130px 1fr}.identity>div:last-child{grid-column:1/-1}.wallet{grid-template-columns:1fr}}
+@media(max-width:600px){body{padding:5px}.identity,.fields2{grid-template-columns:1fr}.portrait{margin:auto}.seedrow,.faction{grid-template-columns:1fr}}
+
+
+:root{
+  --paper:#efe4c9;--paper2:#fffaf0;--ink:#30271f;--muted:#75634d;--leaf:#365f40;
+  --line:#9b8562;--gold:#b98c3e;--purple:#75538c;--danger:#9b4e49;--shadow:0 16px 38px rgba(0,0,0,.32)
+}
+*{box-sizing:border-box}
+body{margin:0;padding:10px;font-family:Georgia,"Times New Roman",serif;color:var(--ink);
+background:radial-gradient(circle at 12% 4%,rgba(130,176,123,.3),transparent 20%),linear-gradient(150deg,#20382b,#0c1611 72%)}
+button,input,select,textarea{font:inherit}button{cursor:pointer}
+.app{max-width:1280px;margin:auto}
+.header,.sheet{background:var(--paper);border:4px double #735d3d;border-radius:24px;box-shadow:var(--shadow)}
+.header{text-align:center;padding:16px}.header small{color:var(--leaf);font-weight:bold;letter-spacing:.14em}
+.header h1{margin:4px;color:#493624}.header p{margin:0;color:var(--muted)}
+.sheet{margin-top:10px;padding:14px}
+.top{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:8px}
+.box{background:var(--paper2);border:2px solid #856f4d;border-radius:14px;padding:9px;text-align:center}
+.box small{display:block;font-size:.68rem;text-transform:uppercase;color:#6a5943;font-weight:bold}.box strong{display:block;font-size:1.2rem}
+.section{background:#fffaf0d5;border:2px solid #8d7654;border-radius:17px;padding:11px;margin-top:11px}
+.ribbon{display:inline-block;margin:-20px 0 9px 7px;padding:5px 14px;background:#e9dabd;border:1px solid #826b49;border-radius:50% 15% 50% 15%;font-weight:bold}
+.selector{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+input,select,textarea{width:100%;background:var(--paper2);border:1px solid #a38e6b;border-radius:8px;padding:8px;color:var(--ink)}
+.spell-browser{display:grid;grid-template-columns:280px 1fr;gap:10px;margin-top:10px}
+.list{background:#f4ead5;border:1px solid #a18b69;border-radius:12px;max-height:460px;overflow:auto;padding:7px}
+.spell-choice{width:100%;text-align:left;background:#fffaf0;border:1px solid #a18b69;border-radius:10px;padding:8px;margin:4px 0;color:var(--ink)}
+.spell-choice.active{background:#dfead8;border-color:#55755a}
+.detail{background:var(--paper2);border:2px solid #806b49;border-left:7px solid var(--purple);border-radius:15px;padding:13px;min-height:320px}
+.detail h2{margin:0 0 4px}.meta{color:var(--muted);font-size:.8rem}.badges{display:flex;gap:5px;flex-wrap:wrap;margin:8px 0}
+.badge{padding:4px 7px;border:1px solid #8c7a60;background:#eee0c0;border-radius:999px;font-size:.72rem}
+.material{background:#efe5cf;border:1px dashed #9d8257;border-radius:12px;padding:9px;margin:9px 0;font-size:.86rem}
+.material b{color:#5d452f}
+.btn{border:1px solid #735d3c;background:#ecdfc0;color:#443425;border-radius:9px;padding:7px 10px;font-weight:bold}
+.btn.primary{background:var(--leaf);color:white}.btn.danger{background:var(--danger);color:white}
+.level-block{border:1px solid #9c8765;border-radius:13px;background:#f7efde;margin:9px 0;overflow:hidden}
+.level-title{background:#e6d8bc;padding:8px 11px;font-weight:bold;color:#523c28}
+.known-row{display:grid;grid-template-columns:1.5fr 1fr auto auto;gap:7px;align-items:center;padding:8px 10px;border-top:1px dotted #aa9879}
+.attack-tag{font-size:.72rem;padding:4px 7px;background:#ecd0c9;border:1px solid #a77b71;border-radius:999px}
+.empty{color:var(--muted);padding:11px;font-style:italic}
+.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}.slot{background:var(--paper2);border:2px solid #806b49;border-radius:14px;padding:9px}
+.dots{display:flex;gap:5px;flex-wrap:wrap;margin-top:5px}.dot{width:27px;height:27px;border-radius:50%;border:2px solid #78623f;background:#e6d6b7;padding:0}.dot.used{background:#8a5b5b;color:white}
+.component-box{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.component-card{background:var(--paper2);border:1px solid #9c8765;border-radius:13px;padding:10px}
+.component-list{margin:0;padding-left:18px}.component-list li{margin:5px 0}
+.modal{position:fixed;inset:0;background:#0009;display:none;place-items:center;padding:15px;z-index:50}.modal.show{display:grid}
+.modal-card{width:min(720px,100%);max-height:85vh;overflow:auto;background:var(--paper);border:4px double #735d3d;border-radius:20px;padding:16px}
+.note{font-size:.8rem;color:var(--muted);background:#e9dec5;border:1px dashed #9a815a;border-radius:10px;padding:8px}
+@media(max-width:850px){.top{grid-template-columns:1fr 1fr}.spell-browser{grid-template-columns:1fr}.selector,.known-row,.component-box{grid-template-columns:1fr}.slots{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){body{padding:5px}.top,.selector,.slots{grid-template-columns:1fr}.sheet{padding:10px 7px}}
+
+.global-tools{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;margin:10px 2px 0;position:relative;z-index:3}
+.safety-tools{margin:18px 2px 4px;position:relative;z-index:3;border:1px dashed #8f7956;border-radius:12px;background:#f4ead5}.safety-tools summary{cursor:pointer;padding:10px 13px;font-weight:bold;color:#59452d}.safety-tools[open] summary{border-bottom:1px solid #b8a17b}.safety-tools .global-tools{padding:4px 10px 10px;justify-content:flex-start}.backup-status{width:100%;font-size:.75rem;color:#6d5c45;padding-top:3px}
+.page-wrap{display:none}.page-wrap.active{display:block}
+.integrated-head{margin-bottom:8px}
+#p2Page .sheet,#p3Page .sheet{box-shadow:none;border:0;padding:0;background:transparent}
+#p2Page .head,#p3Page .header{display:none}
+.codex-shell{padding:14px}.codex-head h2{margin:0}.codex-searchbar{display:grid;grid-template-columns:2fr 1fr 1fr;gap:8px;margin-top:12px}.codex-category-tabs{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0}.codex-filter{border:1px solid #7f6a4a;background:#e9dcc1;color:#4a3928;border-radius:999px;padding:7px 11px;font-weight:bold}.codex-filter.active{background:var(--leaf);color:#fff}.codex-layout{display:grid;grid-template-columns:310px minmax(0,1fr);gap:10px}.codex-results{background:#f7edda;border:2px solid #8d7654;border-radius:16px;padding:8px;max-height:72vh;overflow:auto}.codex-result{width:100%;text-align:left;background:#fffaf0;border:1px solid #9f8968;border-radius:11px;padding:9px;margin:5px 0;color:var(--ink)}.codex-result.active{background:#dfead8;border-color:#55755a}.codex-result.locked{opacity:.55;filter:grayscale(.8)}.codex-content{background:#fffaf0;border:2px solid #806b49;border-radius:16px;padding:14px;min-height:520px}.codex-content h2{margin:0 0 4px}.codex-meta{color:var(--muted);font-size:.8rem}.codex-badges{display:flex;gap:5px;flex-wrap:wrap;margin:8px 0}.codex-badge{padding:4px 7px;border:1px solid #8c7a60;background:#eee0c0;border-radius:999px;font-size:.72rem}.codex-section{margin-top:14px;border-top:1px dotted #a28d6c;padding-top:10px}.codex-table{width:100%;border-collapse:collapse;font-size:.86rem;margin-top:8px}.codex-table th,.codex-table td{border:1px solid #a89574;padding:7px;text-align:left;vertical-align:top}.codex-table th{background:#e2d4b8}.codex-subclass-box{display:grid;grid-template-columns:1fr 1fr;gap:8px;align-items:end}.codex-locked{display:grid;place-items:center;text-align:center;min-height:260px;color:#6c5c49;background:repeating-linear-gradient(45deg,#f3ead8,#f3ead8 10px,#ede0c8 10px,#ede0c8 20px);border:2px dashed #a18d6b;border-radius:14px;padding:20px}.status-badge{display:inline-block;border-radius:999px;padding:3px 8px;font-size:.72rem;font-weight:bold}.status-oficial{background:#d6ead5;color:#215b35}.status-teste{background:#fff0b8;color:#76550b}.status-rascunho{background:#e8e1da;color:#65594f}.codex-empty{color:var(--muted);padding:12px;font-style:italic}
+.attack-spell-row{display:grid;grid-template-columns:1.6fr .7fr .7fr auto;gap:6px;align-items:center;margin:6px 0}
+.attack-spell-row>div{background:#fffaf0;border:1px solid #a89574;border-radius:8px;padding:7px}
+@media(max-width:700px){.attack-spell-row{grid-template-columns:1fr 1fr}.attack-spell-row button{grid-column:1/-1}}
+
+/* V3 additions */
+.d20-center{margin-top:9px;background:#f7efde;border:2px solid #806b49;border-radius:14px;padding:10px}
+.d20-controls{display:grid;grid-template-columns:repeat(5,1fr) auto;gap:7px;align-items:end}
+.hp-actions{display:grid;grid-template-columns:minmax(100px,1fr) auto auto;gap:7px;align-items:end;margin-top:8px}
+.d20-last{margin-top:8px;border-radius:12px;padding:10px;text-align:center;font-weight:bold;background:#fff;color:#222;border:2px solid #a28d6c}
+.d20-last.crit{background:#d9f1da;color:#174c22;border-color:#5c9364}
+.d20-last.fail{background:#f3d5d2;color:#711f1b;border-color:#b3625b}
+.feature-btn{display:block;width:100%;text-align:left;border:0;border-bottom:1px dotted #a59272;background:transparent;padding:7px;color:#2f271e}
+.feature-btn:hover{background:#efe5cf}
+.cart-select{display:grid;grid-template-columns:1fr 1fr;gap:8px;align-items:end;margin:8px 0}
+.currency-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.currency{background:#fffaf0;border:2px solid #806b49;border-radius:15px;padding:10px;text-align:center}
+.currency strong{display:block;color:#60462c;margin-bottom:5px}
+.source-tag{font-size:.72rem;padding:4px 7px;background:#dbe8d7;border:1px solid #78916f;border-radius:999px}
+.roll-history{width:100%;border-collapse:collapse}
+.roll-history th,.roll-history td{border:1px solid #a89574;padding:7px;text-align:left}
+.roll-history th{background:#e2d4b8}
+.compact-history{max-height:230px;overflow:auto;margin-top:7px}
+.compact-history .roll-history{font-size:.76rem}
+.compact-history .roll-history th,.compact-history .roll-history td{padding:5px}
+.roll-nat.crit{color:#19712c;font-weight:bold}.roll-nat.fail{color:#a32f28;font-weight:bold}
+@media(max-width:850px){.d20-controls{grid-template-columns:1fr 1fr}.currency-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.d20-controls,.currency-grid,.cart-select{grid-template-columns:1fr}}
+@media(max-width:520px){.hp-actions{grid-template-columns:1fr 1fr}.hp-actions>div{grid-column:1/-1}}
+@media(max-width:520px){.equipment-catalog-add{grid-template-columns:1fr}.weapon-action-row{grid-template-columns:1fr 1fr}.weapon-action-row .weapon-attack{grid-column:1/-1}}
+@media(max-width:850px){.codex-layout{grid-template-columns:1fr}.codex-results{max-height:280px}.codex-searchbar,.codex-subclass-box{grid-template-columns:1fr}}
+@media(max-width:520px){.path-options{grid-template-columns:1fr}}
+
+
+.material-add{display:grid;grid-template-columns:1.5fr .6fr auto;gap:7px;align-items:end;margin:8px 0}
+.material-owned{display:grid;grid-template-columns:1.5fr .6fr .8fr auto;gap:7px;align-items:center;padding:6px 0;border-bottom:1px dotted #aa987a}
+.material-owned small{color:#75634d}
+@media(max-width:600px){.material-add,.material-owned{grid-template-columns:1fr}}
+</style>
 </head>
-
 <body>
-
-    <header class="cabecalho-marca">
-        <p class="selo">FICHA ONLINE</p>
-        <h1>MICROCOSMOS</h1>
-        <p class="subtitulo">Onde o Mundo Termina</p>
-    </header>
-
-<div class="ficha-personagem">
-
-    <h2>Ficha do Personagem</h2>
-
-    <!-- IDENTIDADE: campos salvos diretamente no objeto personagem. -->
-    <div class="grade-identidade">
-        <label>Personagem <input type="text" id="nome-personagem" placeholder="Nome do personagem"></label>
-        <label>Jogador <input type="text" id="nome-jogador"></label>
-        <label>Classe <input type="text" id="classe"></label>
-        <label>Subclasse <input type="text" id="subclasse"></label>
-        <label>Raça <input type="text" id="raca"></label>
-        <label>Antecedente <input type="text" id="antecedente"></label>
-        <label>Nível <input type="number" id="nivel" min="1" max="20"></label>
-        <label>XP <input type="number" id="xp" min="0"></label>
+<div class="app">
+  <div class="masthead integrated-head">
+    <div class="brand">
+      <small>O JARDIM ESPINHEIRO</small>
+      <h1>🌿 Ficha Viva do Pequeno Mundo</h1>
+      <p>Páginas 1, 2, 3 e Codex integrados</p>
     </div>
-    <p>Proficiência: <strong id="bonus-proficiencia">+2</strong></p>
+  </div>
 
-    <nav class="navegacao-paginas" aria-label="Páginas da ficha">
-        <button class="aba-pagina ativa" data-abrir-pagina="combate">I · Combate</button>
-        <button class="aba-pagina" data-abrir-pagina="narrativa">II · Vida no Jardim</button>
-        <button class="aba-pagina" data-abrir-pagina="grimorio">III · Grimório</button>
-    </nav>
+  <div class="tabs">
+    <button class="active" data-page="p1Page">⚔️ 1. Combate</button>
+    <button data-page="p2Page">🌱 2. Vida no Jardim</button>
+    <button data-page="p3Page">✨ 3. Grimório</button>
+    <button data-page="p4Page">📚 4. Codex do Jardim</button>
+  </div>
 
-    <section class="ficha-pagina ativa" data-pagina="combate">
-        <header class="titulo-pagina"><span>Página I</span><h2>Combate & Jornada</h2></header>
-        <div class="grade-combate">
-
-    <div class="combate">
-        <h3>Painel rápido</h3>
-        <label><span>Classe de Armadura · automática</span><input id="ca" type="number" readonly title="Calculada pelos equipamentos"></label>
-        <label><span>Deslocamento</span><input id="deslocamento" type="number" min="0" title="Informe o deslocamento concedido pela raça e outros efeitos"></label>
-        <label><span>PV temporário</span><input id="pv-temporario" type="number" min="0" title="Informe os pontos temporários recebidos durante a aventura"></label>
-        <label><span>PV máximo</span><input id="editar-pv-maximo" type="number" min="1"></label>
-        <button class="botao-rolagem" data-tipo="iniciativa">Rolar iniciativa</button>
-    </div>
-
-    <div class="morte">
-        <h3>Testes contra a morte</h3>
-        <span>Sucessos</span><div id="sucessos-morte" class="marcadores-morte"></div>
-        <span>Falhas</span><div id="falhas-morte" class="marcadores-morte"></div>
-        <button id="estabilizar">Limpar testes</button>
-        <button id="descanso-longo">Descanso longo</button>
-    </div>
-
-    <!-- Ataques livres deixam a alfa utilizável antes do catálogo de equipamentos. -->
-    <div class="ataques">
-        <h3>Ataques</h3>
-        <div id="lista-ataques"></div>
-        <button id="adicionar-ataque">+ Adicionar ataque</button>
-    </div>
-
-    <!-- EQUIPAMENTOS: estes valores alimentam automaticamente a CA. -->
-    <div class="equipamentos">
-        <h3>Equipamentos defensivos</h3>
-        <div class="grade-equipamentos">
-            <label>Armadura <input id="armadura-nome" placeholder="Sem armadura"></label>
-            <label>CA base <input id="armadura-ca-base" type="number" min="0"></label>
-            <label>Limite de DES <input id="armadura-limite-des" type="number" placeholder="Livre"></label>
-            <label>Escudo <input id="escudo-nome" placeholder="Sem escudo"></label>
-            <label>Bônus do escudo <input id="escudo-bonus" type="number" min="0"></label>
+	  <section id="p1Page" class="page-wrap active"><div class="sheet">
+    <div class="topinfo">
+	      <div class="portrait-column">
+	        <div class="portrait clickable" id="p1PortraitBox" role="button" tabindex="0" title="Clique para adicionar ou trocar a foto" onclick="document.getElementById('p1PortraitInput').click()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();document.getElementById('p1PortraitInput').click()}">
+	          <img id="p1PortraitImg" alt="Retrato do personagem">
+	          <span id="p1PortraitPlaceholder">📷<br><b>Adicionar Foto</b><br><small>clique aqui</small></span>
+	          <input type="file" id="p1PortraitInput" accept="image/*" hidden onclick="event.stopPropagation()">
+	        </div>
+	        <div class="portrait-actions"><button class="btn danger photo-remove" onclick="removePortrait()">✕ Remover foto</button></div>
+	      </div>
+	      <div class="identity-grid">
+	        <div class="field identity-name"><label>Nome do personagem</label><input id="p1CharName"></div>
+	        <div class="field identity-align"><label>Alinhamento / Tendência</label><input id="p1Alignment" placeholder="Opcional"></div>
+          <div class="field identity-class"><label>Classe</label><select id="p1ClassSelect"></select></div>
+	        <div class="field identity-subclass" id="p1SubclassField"><label>Caminho / Subclasse</label><select id="p1SubclassSelect"></select><button type="button" class="btn slim" id="p1ChooseSubclass" onclick="showSubclassSelection()">🌱 Escolher Caminho</button></div>
+          <div class="field identity-level"><label>Nível</label><input id="p1Level" type="number" min="1" max="20" value="1"></div>
+          <div class="field identity-xp"><label>Experiência</label><input id="p1Xp" type="number" min="0" value="0"></div>
+	        <div class="field identity-race"><label>Povo / Raça</label><select id="p1RaceSelect"></select></div>
+	        <div class="field identity-subrace"><label>Linhagem / Sub-raça</label><select id="p1SubraceSelect"></select></div>
+          <div class="field identity-background"><label>Antecedente</label><input id="p1Background" placeholder="Ex.: Escoteiro das Hastes"></div>
+          <div class="field identity-player"><label>Nome do jogador</label><input id="p1PlayerName"></div>
+          <div class="field identity-inspiration"><label>Inspiração</label><button type="button" class="btn inspiration-toggle" id="p1InspirationButton" onclick="toggleInspiration()">○ Não</button></div>
         </div>
-        <p class="ajuda">CA = base da armadura + Destreza permitida + bônus do escudo.</p>
     </div>
 
-    <div class="inventario">
-        <h3>Moedas</h3>
-        <div class="moedas">
-            <label>PC <input data-moeda="pc" type="number" min="0"></label>
-            <label>PP <input data-moeda="pp" type="number" min="0"></label>
-            <label>PE <input data-moeda="pe" type="number" min="0"></label>
-            <label>PO <input data-moeda="po" type="number" min="0"></label>
-            <label>PL <input data-moeda="pl" type="number" min="0"></label>
+    <div class="main-grid">
+      <!-- ESQUERDA -->
+      <div class="panel">
+        <div class="ribbon">Atributos & Perícias</div>
+        <div style="font-size:.77rem;color:#6f604c;margin-bottom:5px">
+          Clique no círculo da perícia: ○ sem proficiência → ● proficiente → ◆ especialização (proficiência dobrada).
         </div>
+        <div id="p1Attributes"></div>
+        <div class="stat-card" style="margin-top:8px">Percepção Passiva<strong id="p1PassiveOut">10</strong></div>
+      </div>
 
-        <div class="inventarios-lado-a-lado">
-            <section>
-                <h3>Mochila — <span id="peso-mochila">0</span> kg</h3>
-                <div id="lista-mochila"></div>
-                <button class="adicionar-item" data-local="mochila">+ Item na mochila</button>
-            </section>
-            <section>
-                <h3>Carrinho — <span id="peso-carrinho">0</span> kg</h3>
-                <div id="lista-carrinho"></div>
-                <button class="adicionar-item" data-local="carrinho">+ Item no carrinho</button>
-            </section>
+      <!-- MEIO -->
+      <div>
+        <div class="panel">
+          <div class="ribbon">Combate</div>
+          <div class="combat-cards">
+            <div class="stat-card">Classe de Armadura<strong id="p1AcOut">10</strong></div>
+            <div class="stat-card">Iniciativa<strong id="p1InitOut">+0</strong></div>
+            <div class="stat-card">Deslocamento<strong id="p1SpeedOut">7,5m</strong></div>
+            <div class="stat-card">Proficiência<strong id="p1ProfOut">+2</strong></div>
+            <div class="stat-card">Dado de Vida<strong id="p1HitDieOut">d10</strong></div>
+            <div class="stat-card">PV por nível<strong id="p1HpLevelOut">6</strong></div>
+          </div>
+
+          <div class="hpbox">
+            <div class="hpgrid">
+              <div><label class="mini-label">PV Máximo</label><input id="p1HpMax" type="number" value="10"></div>
+              <div><label class="mini-label">PV Atual</label><input id="p1HpNow" type="number" value="10"></div>
+              <div><label class="mini-label">PV Temporário</label><input id="p1HpTemp" type="number" value="0"></div>
+            </div>
+            <div class="death">
+              <div class="box"><b>Sucessos contra Morte</b><div class="checks"><input type="checkbox" class="deathS"><input type="checkbox" class="deathS"><input type="checkbox" class="deathS"></div></div>
+              <div class="box"><b>Falhas contra Morte</b><div class="checks"><input type="checkbox" class="deathF"><input type="checkbox" class="deathF"><input type="checkbox" class="deathF"></div></div>
+            </div>
+          </div>
+
+          <div class="d20-center">
+            <h3 style="margin:0 0 4px">🎲 Central d20</h3>
+            <div class="eq-note">O d20 é rolado separado do dano. Vantagem usa o maior resultado; desvantagem usa o menor.</div>
+            <div class="d20-controls">
+              <div><label class="mini-label">Modo</label><select id="d20Mode"><option value="normal">Normal</option><option value="adv">Vantagem</option><option value="dis">Desvantagem</option></select></div>
+              <div><label class="mini-label">Bônus fixo</label><input id="d20Bonus" type="number" value="0"></div>
+              <div><label class="mini-label">Dados extras</label><input id="d20Extra" placeholder="Ex.: 1d4 ou 2d6"></div>
+              <div><label class="mini-label">Crítico natural a partir de</label><input id="critThreshold" type="number" min="18" max="20" value="20"></div>
+              <div><label class="mini-label">CA do alvo</label><input id="targetAc" type="number" min="0" value="10"></div>
+              <button class="btn primary" onclick="rollD20()">🎲 Rolar d20</button>
+            </div>
+            <div class="hp-actions">
+              <div><label class="mini-label">Quantidade de PV</label><input id="hpChangeAmount" type="number" min="0" value="0"></div>
+              <button class="btn danger" onclick="applyHpChange('damage')">🩸 Dano</button>
+              <button class="btn primary" onclick="applyHpChange('heal')">💚 Cura</button>
+            </div>
+            <div id="d20Last" class="d20-last">Nenhuma rolagem ainda.</div>
+          </div>
+
+          <div class="equipment-wrap">
+	            <h3 style="margin:10px 0 2px">🗡️ Equipamentos de Combate</h3>
+	            <div class="eq-note">Adicione equipamentos da lista. Clique no nome de uma arma para rolar o ataque; atributo, proficiência, bônus mágico e dano são calculados automaticamente.</div>
+	            <div class="equipment-catalog-add"><select id="p1EquipmentCatalog"></select><button class="btn" onclick="addCatalogEquipment()">➕ Adicionar da lista</button></div>
+	            <div id="p1EquipmentList"></div>
+            <div style="margin-top:12px">
+              <h3 style="margin:10px 0 2px">✨ Magias de Ataque Conhecidas</h3>
+              <div class="eq-note">Aparecem automaticamente a partir da Página 3 quando a magia possui ataque mágico.</div>
+              <div id="p1AttackSpells"></div>
+            </div>
+          </div>
         </div>
-        <p><strong>Peso total registrado: <span id="peso-total">0</span> kg</strong></p>
-    </div>
+      </div>
 
-    <div class="pontos-vida">
-
-        <h3>Pontos de Vida</h3>
-
-        <p class="placar-vida"><span id="pv-atual">10</span> / <span id="pv-maximo">10</span></p>
-        <label class="ajuste-vida">Valor
-            <input id="ajuste-pv" type="number" min="1" value="1" inputmode="numeric">
-        </label>
-        <div class="acoes-vida">
-            <button id="aplicar-dano">Aplicar dano</button>
-            <button id="aplicar-cura">Curar</button>
+      <!-- DIREITA -->
+      <div class="rightcol">
+        <div class="panel right-text">
+          <div class="ribbon">Personalidade</div>
+          <label class="mini-label">Traços de personalidade</label><textarea id="p1Traits"></textarea>
+          <label class="mini-label">Ideais</label><textarea id="p1Ideals"></textarea>
+          <label class="mini-label">Vínculos</label><textarea id="p1Bonds"></textarea>
+          <label class="mini-label">Fraquezas</label><textarea id="p1Flaws"></textarea>
         </div>
-        <p class="ajuda" id="resumo-pv-temporario">PV temporário: 0</p>
-
-    </div>
-<section class="bloco-atributos">
-<!-- ==================================================
-     Atributos
-     ================================================== -->
-<h3>Atributos</h3>
-
-<p>
-    Força:
-    <button class="botao-atributo" data-atributo="forca" data-valor="-1">-</button>
-    <span id="forca">10</span>
-    <button class="botao-atributo" data-atributo="forca" data-valor="1">+</button>
-    <span id="modificador-forca">+0</span>
-</p>
-
-<p>
-    Destreza:
-    <button class="botao-atributo" data-atributo="destreza" data-valor="-1">-</button>
-    <span id="destreza">10</span>
-    <button class="botao-atributo" data-atributo="destreza" data-valor="1">+</button>
-    <span id="modificador-destreza">+0</span>
-</p>
-
-<p>
-    Constituição:
-    <button class="botao-atributo" data-atributo="constituicao" data-valor="-1">-</button>
-    <span id="constituicao">10</span>
-    <button class="botao-atributo" data-atributo="constituicao" data-valor="1">+</button>
-    <span id="modificador-constituicao">+0</span>
-</p>
-
-<p>
-    Inteligência:
-    <button class="botao-atributo" data-atributo="inteligencia" data-valor="-1">-</button>
-    <span id="inteligencia">10</span>
-    <button class="botao-atributo" data-atributo="inteligencia" data-valor="1">+</button>
-    <span id="modificador-inteligencia">+0</span>
-</p>
-
-<p>
-    Sabedoria:
-    <button class="botao-atributo" data-atributo="sabedoria" data-valor="-1">-</button>
-    <span id="sabedoria">10</span>
-    <button class="botao-atributo" data-atributo="sabedoria" data-valor="1">+</button>
-    <span id="modificador-sabedoria">+0</span>
-</p>
-
-<p>
-    Carisma:
-    <button class="botao-atributo" data-atributo="carisma" data-valor="-1">-</button>
-    <span id="carisma">10</span>
-    <button class="botao-atributo" data-atributo="carisma" data-valor="1">+</button>
-    <span id="modificador-carisma">+0</span>
-</p>
-
-</section>
-
-<!-- As listas abaixo são montadas pelo JavaScript a partir das regras. -->
-<section class="bloco-salvaguardas">
-<h3>Salvaguardas</h3>
-<div id="lista-salvaguardas" class="lista-regras"></div>
-</section>
-
-<section class="bloco-pericias">
-<h3>Perícias</h3>
-<div id="lista-pericias" class="lista-regras duas-colunas"></div>
-</section>
-
-<section class="central-d20">
-    <h3>Central d20</h3>
-    <button class="botao-rolagem" data-tipo="d20">Rolar d20</button>
-    <button id="limpar-historico">Limpar histórico</button>
-    <ol id="historico-rolagens" aria-live="polite"></ol>
-</section>
-</div>
-</section>
-
-<!-- VIDA NO JARDIM: a página narrativa do personagem. -->
-<section class="pagina-narrativa ficha-pagina" data-pagina="narrativa">
-    <header class="titulo-pagina"><span>Página II</span><h2>Vida no Jardim</h2></header>
-    <p class="epigrafe-narrativa">Toda criatura carrega um mundo consigo — raízes, cicatrizes e histórias que o fim ainda não levou.</p>
-    <div class="textos-narrativos">
-        <label class="cartao-texto origem">Origem <small>Raízes</small>
-            <textarea id="narrativa-origem" rows="3" placeholder="De onde o personagem veio?"></textarea>
-        </label>
-        <label class="cartao-texto aparencia">Aparência <small>Retrato</small>
-            <textarea id="narrativa-aparencia" rows="4" placeholder="Traços, roupas, marcas e detalhes visuais"></textarea>
-        </label>
-        <label class="cartao-texto historia">História <small>Crônica da jornada</small>
-            <textarea id="narrativa-historia" rows="6" placeholder="Passado, motivações e acontecimentos importantes"></textarea>
-        </label>
+        <div class="panel">
+          <div class="ribbon">Características</div>
+          <div class="auto-traits" id="p1AutoTraits"></div>
+        </div>
+        <!-- O histórico fica na Página I para manter as rolagens junto das regras de combate. -->
+        <div class="panel">
+          <div class="ribbon">🎲 Histórico de Rolagens</div>
+          <div class="eq-note">Últimos resultados de atributos, perícias, salvaguardas, ataques e magias.</div>
+          <div style="display:flex;justify-content:flex-end;margin:6px 0"><button class="btn danger slim" onclick="clearRollHistory()">Limpar</button></div>
+          <div class="compact-history"><table class="roll-history"><thead><tr><th>Hora</th><th>Tipo</th><th>Natural</th><th>Mod.</th><th>Total</th><th>Observação</th></tr></thead><tbody id="rollHistoryBody"></tbody></table></div>
+        </div>
+      </div>
     </div>
 
-    <div class="listas-narrativas">
-        <section class="coluna-narrativa memorias">
-            <h3>Memórias</h3>
-            <p class="ajuda">Momentos, pessoas e lugares que o personagem se recusa a esquecer.</p>
-            <div id="lista-memorias"></div>
-            <button class="adicionar-narrativa" data-lista="memorias">+ Memória</button>
-        </section>
-        <section class="coluna-narrativa faccoes">
-            <h3>Facções</h3>
-            <p class="ajuda">Alianças, rivalidades, reputação e vínculos com o mundo.</p>
-            <div id="lista-faccoes"></div>
-            <button class="adicionar-narrativa" data-lista="faccoes">+ Facção</button>
-        </section>
-        <section class="coluna-narrativa conquistas">
-            <h3>Conquistas</h3>
-            <p class="ajuda">Marcos que mudaram o personagem ou deixaram uma marca no Jardim.</p>
-            <div id="lista-conquistas"></div>
-            <button class="adicionar-narrativa" data-lista="conquistas">+ Conquista</button>
-        </section>
-    </div>
-</section>
+    <div class="bottom-grid">
+      <div class="panel profs">
+        <div class="ribbon">Proficiências</div>
+        <label class="mini-label">Proficiências com armas</label>
+        <div class="equipment-catalog-add"><select id="p1WeaponProfCatalog"></select><button class="btn" onclick="addWeaponProficiency()">➕ Adicionar</button></div>
+        <div id="p1WeaponProfList" class="tag-list"></div>
+        <div class="eq-note">O bônus de Proficiência só entra no ataque quando a arma ou seu conjunto estiver nesta lista.</div>
+        <label class="mini-label" style="margin-top:9px">Proficiências com armaduras e escudos</label>
+        <div class="equipment-catalog-add"><select id="p1ArmorProfCatalog"></select><button class="btn" onclick="addArmorProficiency()">➕ Adicionar</button></div>
+        <div id="p1ArmorProfList" class="tag-list"></div>
+        <label class="mini-label" style="margin-top:9px">Ferramentas, kits e idiomas</label>
+        <textarea id="p1Proficiencies" placeholder="Ex.: kit de sucata, ferramentas de tecelão, idioma Murino..."></textarea>
+      </div>
 
-<!-- GRIMÓRIO: valores derivados são recalculados a partir do atributo escolhido. -->
-<section class="grimorio ficha-pagina" data-pagina="grimorio">
-    <header class="titulo-pagina"><span>Página III</span><h2>Grimório</h2></header>
-    <p class="epigrafe-grimorio">O impossível também obedece a regras — desde que alguém conheça seus nomes verdadeiros.</p>
-    <div class="cabecalho-grimorio">
-        <label class="identidade-magica">Classe conjuradora <input id="classe-conjuradora"></label>
-        <label class="identidade-magica">Atributo
-            <select id="atributo-conjurador">
-                <option value="inteligencia">Inteligência</option>
-                <option value="sabedoria">Sabedoria</option>
-                <option value="carisma">Carisma</option>
+      <div class="panel">
+        <div class="ribbon">Mochila & Carrinho</div>
+        <div class="bag-summary">
+          <div class="stat-card">Carga Máx. Mochila<strong id="p1BagCapOut">150g</strong></div>
+          <div class="stat-card">Peso na Mochila<strong id="p1BagWeightOut">0g</strong></div>
+          <div class="stat-card">Carga Máx. Carrinho<strong id="p1CartCapOut">0g</strong></div>
+          <div class="stat-card">Peso no Carrinho<strong id="p1CartWeightOut">0g</strong></div>
+        </div>
+        <div class="cart-select">
+          <div><label class="mini-label">Tipo de Carrinho</label>
+            <select id="p1CartType">
+              <option value="none">Sem carrinho</option>
+              <option value="folha">Carrinho de Folha — 2×</option>
+              <option value="tampinha">Carrinho de Tampinha — 4×</option>
+              <option value="sucata">Carroça de Sucata — 6×</option>
+              <option value="reforcado">Carrinho Reforçado — 8×</option>
             </select>
-        </label>
-        <p class="selo-magico"><span>CD de magia</span><strong id="cd-magia">10</strong></p>
-        <p class="selo-magico"><span>Ataque mágico</span><strong id="ataque-magico">+2</strong></p>
-        <button class="botao-rolagem" data-tipo="magia">Rolar ataque mágico</button>
-    </div>
-
-    <div class="grade-grimorio">
-        <section class="painel-grimorio painel-espacos">
-            <h3>Espaços de magia</h3>
-            <p class="ajuda">Reservas disponíveis por círculo. O descanso longo recupera os espaços gastos.</p>
-            <div id="espacos-magia" class="espacos-magia"></div>
-        </section>
-
-        <section class="painel-grimorio painel-magias">
-            <h3>Magias conhecidas</h3>
-            <div id="lista-magias"></div>
-            <button id="adicionar-magia">+ Adicionar magia</button>
-        </section>
-
-        <section class="painel-grimorio painel-materiais">
-            <h3>Materiais especiais</h3>
-            <textarea id="materiais-magicos" rows="4" placeholder="Componentes raros, focos e materiais consumíveis"></textarea>
-        </section>
-    </div>
-</section>
-
-    <details class="dados-personagem">
-        <summary>Importação, exportação e recuperação</summary>
-        <div class="acoes-dados">
-            <button id="exportar-personagem">Exportar JSON</button>
-            <label class="botao-arquivo">Importar JSON
-                <input id="importar-personagem" type="file" accept="application/json,.json">
-            </label>
-            <button id="restaurar-backup">Restaurar último backup</button>
+          </div>
+          <div class="eq-note">Cada modelo tem uma capacidade própria. Podemos adicionar modelos raros e mágicos depois.</div>
         </div>
-        <p id="status-dados" role="status" aria-live="polite"></p>
-    </details>
+
+        <div class="eq-note" id="materialWeightNote">Materiais especiais da magia contam no peso da Mochila automaticamente.</div><div class="sep-title">🎒 Mochila</div>
+        <table class="inv-table"><thead><tr><th>Item</th><th>Qtd.</th><th>Peso/un.</th><th>Total</th><th></th></tr></thead><tbody id="p1BagBody"></tbody></table>
+        <button class="btn slim" onclick="addInventory('bag')">+ Item na mochila</button>
+
+        <div class="sep-title">🛒 Carrinho</div>
+        <table class="inv-table"><thead><tr><th>Item</th><th>Qtd.</th><th>Peso/un.</th><th>Total</th><th></th></tr></thead><tbody id="p1CartBody"></tbody></table>
+        <button class="btn slim" onclick="addInventory('cart')">+ Item no carrinho</button>
+      </div>
+    </div>
+  </div></section>
+  <section id="p2Page" class="page-wrap"><div class="sheet"><div class="grid">
+<div class="card"><div class="ribbon">🐭 Identidade & Aparência</div><div class="identity">
+<div><div class="portrait clickable" id="p2PortraitBox" role="button" tabindex="0" title="Clique para adicionar ou trocar a foto" onclick="document.getElementById('p2Photo').click()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();document.getElementById('p2Photo').click()}"><img id="p2Pic" alt="Retrato do personagem"><span id="p2Ph">📷<br><b>Adicionar Foto</b><br><small>clique aqui</small></span><input id="p2Photo" type="file" accept="image/*" hidden onclick="event.stopPropagation()"></div><div class="actions"><button class="btn danger" onclick="rmPhoto()">✕ Remover foto</button></div></div>
+<div><label>Nome</label><input id="p2Name"><label>Povo / Raça</label><input id="p2Race" placeholder="Sincronizado com a ficha completa"><label>Lar / Comunidade</label><input id="p2Home" placeholder="Ex.: Vila Cogumelo"></div>
+<div class="fields2"><div><label>Idade</label><input id="p2Age"></div><div><label>Altura</label><input id="p2Height" placeholder="cm"></div><div><label>Peso</label><input id="p2Weight" placeholder="g"></div><div><label>Olhos</label><input id="p2Eyes"></div><div><label>Pele / Pelagem / Escamas</label><input id="p2Skin"></div><div><label>Cabelo / Plumagem / Antenas</label><input id="p2Hair"></div></div>
+</div><label>Descrição visual</label><textarea id="p2Appearance" placeholder="Roupas, cicatrizes, marcas, acessórios, carapaça, asas, objetos humanos reaproveitados..."></textarea></div>
+
+<div class="card half"><div class="ribbon">📜 Origem & História</div><textarea class="note" id="p2History" placeholder="O jogador escreve sua própria história. De onde veio? O que viveu antes da aventura?"></textarea></div>
+<div class="card half"><div class="ribbon">🧠 Memórias Importantes</div><div class="hint">Memórias são fatos que realmente aconteceram durante a campanha. O Mestre poderá reutilizá-las mais tarde.</div><div id="p2Memories"></div><button class="btn" onclick="addMemory()">+ Registrar memória</button></div>
+
+<div class="card"><div class="ribbon">💰 Economia do Jardim</div>
+<div class="hint">A economia segue quatro patamares, inspirados em PC / PP / PO / PL: 10 SF = 1 PS • 10 PS = 1 RS • 10 RS = 1 Âmbar.</div>
+<div class="currency-grid">
+  <div class="currency"><strong>🌾 Fragmentos de Semente (SF)</strong><small>troco e compras pequenas</small><input id="p2SF" type="number" min="0" value="0"></div>
+  <div class="currency"><strong>🌰 Peças de Semente (PS)</strong><small>comércio cotidiano</small><input id="p2PS" type="number" min="0" value="0"></div>
+  <div class="currency"><strong>🌻 Sementes Raras (RS)</strong><small>grandes negócios</small><input id="p2RS" type="number" min="0" value="0"></div>
+  <div class="currency"><strong>🟠 Âmbar</strong><small>equivalente ao patamar de platina</small><input id="p2Amber" type="number" min="0" value="0"></div>
+</div>
+<label>Observações sobre Âmbar</label><textarea id="p2AmberNotes" placeholder="Ex.: âmbar com pólen preservado, peça ritual, âmbar rachado..."></textarea>
+</div>
+
+<div class="card half"><div class="ribbon">🏛️ Facções Conhecidas</div><div class="hint">Escreva livremente sobre as facções que seu personagem encontrou: nomes, pessoas, impressões, símbolos ou qualquer detalhe que ajude você a lembrar. As informações oficiais de cada facção ficarão no Codex para consulta.</div><textarea id="p2Factions" class="note" placeholder="Ex.: Conheci uma patrulha da Colmeia Rubra perto das raízes... O símbolo deles parecia..."></textarea></div>
+<div class="card half"><div class="ribbon">🏆 Marcas & Conquistas</div><div class="hint">Grandes feitos podem deixar títulos, cicatrizes, marcas ou reconhecimento narrativo.</div><div id="p2Marks"></div><button class="btn" onclick="addMark()">+ Registrar conquista</button></div>
+</div><div class="footer"><span style="color:#75634d;font-size:.8rem">No arquivo final, Exportar / Importar / Resetar serão controles gerais para a ficha inteira.</span></div>
+</div></section>
+  <section id="p3Page" class="page-wrap"><div class="sheet">
+  <div class="top">
+    <div class="box"><small>Classe Conjuradora</small><strong id="p3ClassOut">Mago da Poeira</strong></div>
+    <div class="box"><small>Atributo</small><strong id="p3StatOut">INT</strong></div>
+    <div class="box"><small>CD de Magia</small><strong id="p3DcOut">13</strong></div>
+    <div class="box"><small>Ataque Mágico</small><strong id="p3AtkOut">+5</strong></div>
+  </div>
+
+  <div class="section">
+    <div class="ribbon">📚 Escolher Magias da Classe</div>
+    <div class="selector" style="margin-top:8px"><div><label>Nível da magia</label><select id="p3LevelSelect"></select></div></div>
+
+    <div class="spell-browser">
+      <div class="list" id="p3AvailableList"></div>
+      <div class="detail" id="p3SpellDetail"><div class="empty">Selecione uma magia.</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="ribbon">🎒 Componentes de Magia</div>
+    <div class="component-box">
+      <div class="component-card">
+        <h3 style="margin-top:0">Bolsa de Componentes</h3>
+        <label><input id="p3ComponentPouch" type="checkbox" style="width:auto"> Possuo Bolsa de Componentes ou Foco de Conjuração</label>
+        <p class="note">Quando marcada, materiais simples sem custo e que não são consumidos são considerados disponíveis automaticamente.</p>
+        <div class="hint"><b>Exceções:</b> a Bolsa/Foco não substitui componentes com preço listado nem componentes consumidos pela magia. Esses itens precisam estar fisicamente no inventário.</div>
+      </div>
+      <div class="component-card">
+        <h3 style="margin-top:0">Materiais Especiais</h3><p class="note">Escolha materiais da lista oficial. Na versão final, essa lista e suas propriedades serão fornecidas pelo Codex. O peso é somado automaticamente à Mochila.</p>
+        <div class="material-add">
+          <div><label>Material</label><select id="materialCatalogSelect"></select></div>
+          <div><label>Quantidade</label><input id="materialCatalogQty" type="number" min="1" value="1"></div>
+          <button class="btn" onclick="addMaterial()">+ Adicionar</button>
+        </div>
+        <div id="p3SpecialMaterials"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="ribbon">🔮 Slots de Magia</div>
+    <div class="slots" id="p3Slots"></div>
+  </div>
+
+  <div class="section">
+    <div class="ribbon">📖 Minhas Magias Conhecidas</div>
+    <div class="note">As magias ficam organizadas por círculo. O botão “Ver descrição” abre todos os detalhes, inclusive o material exigido.</div>
+    <div id="p3KnownList"></div>
+  </div>
+</div></section>
+
+  <section id="p4Page" class="page-wrap"><div class="sheet codex-shell">
+    <div class="codex-head"><small>ARQUIVO VIVO DO PEQUENO MUNDO</small><h2>📚 Codex do Jardim</h2><p>Classes, povos, magias, materiais, equipamentos e regras descobertas.</p></div>
+    <div class="codex-searchbar">
+      <input id="codexSearch" placeholder="Pesquisar no Codex... Ex.: Bárbaro, Pérola de Orvalho, Agulha">
+      <select id="codexVisibility"><option value="discovered">Somente descoberto</option><option value="all">Mostrar também bloqueados</option></select>
+      <select id="codexStatus"><option value="all">Todos os estados</option><option value="oficial">✅ Oficial</option><option value="teste">🧪 Em teste</option><option value="rascunho">📝 Rascunho</option></select>
+    </div>
+    <div class="codex-category-tabs">
+      <button class="codex-filter active" data-codex-cat="all">Tudo</button><button class="codex-filter" data-codex-cat="classes">⚔️ Classes</button><button class="codex-filter" data-codex-cat="races">🧬 Povos</button><button class="codex-filter" data-codex-cat="spells">✨ Magias</button><button class="codex-filter" data-codex-cat="materials">🧪 Materiais</button><button class="codex-filter" data-codex-cat="weapons">🗡️ Armas</button><button class="codex-filter" data-codex-cat="armor">🛡️ Armaduras</button><button class="codex-filter" data-codex-cat="world">🌿 Mundo</button><button class="codex-filter" data-codex-cat="rules">📜 Regras</button>
+    </div>
+    <div class="codex-layout"><div class="codex-results" id="codexResults"></div><article class="codex-content" id="codexContent"><div class="codex-empty">Pesquise ou escolha uma entrada do Codex.</div></article></div>
+  </div></section>
+
+<details class="safety-tools">
+  <summary>⚙️ Backup, importação e configurações</summary>
+  <div class="global-tools">
+    <button class="btn" onclick="exportCharacter()">💾 Exportar Personagem</button>
+    <button class="btn" onclick="document.getElementById('globalImportInput').click()">📂 Importar Personagem</button>
+    <input id="globalImportInput" type="file" accept=".json,application/json" hidden>
+    <button class="btn" id="restoreBackupButton" onclick="restoreSafetyBackup()">🛟 Restaurar último backup</button>
+    <button class="btn danger" onclick="resetCharacter()">🗑️ Resetar Ficha</button>
+    <button class="btn" id="milestoneSoundButton" onclick="toggleMilestoneSound()">🔊 Som dos marcos</button>
+    <div class="backup-status" id="backupStatus">Nenhum backup de segurança disponível.</div>
+  </div>
+</details>
+</div>
+
+<div class="popup" id="popup">
+  <button onclick="popup.classList.remove('show')" style="float:right;background:none;border:0;color:white;font-size:19px">✕</button>
+  <h3 id="popTitle"></h3><div class="big" id="popBig"></div><div id="popDetails"></div>
+</div>
+
 
 </div>
-<script src="js/app.js"></script>
-</body>
 
+<div class="modal" id="p3Modal" onclick="if(event.target===this)this.classList.remove('show')">
+  <div class="modal-card">
+    <button class="btn danger" style="float:right" onclick="p3Modal.classList.remove('show')">✕</button>
+    <div id="p3ModalContent"></div>
+  </div>
+</div>
+
+<script>
+const CLASS_DATA={
+ barbaro:{name:"Bárbaro",hit:"d12",hp:7,features:["Instinto Primordial","Defesa sem Armadura"],subs:["Fúria do Predador","Casca Inquebrável","Pânico Frenético","Mofo Espiritual"],caster:null},
+ bardo:{name:"Bardo",hit:"d8",hp:5,features:["Centelha Inspiradora","Ecos do Passado","Canção do Repouso"],subs:["Estridulante","Contador de Teias","Vagalume","Último Canto"],caster:"CAR"},
+ bastiao:{name:"Bastião de Quitina",hit:"d12",hp:7,features:["Postura Inabalável","Proteção de Aliado"],subs:["Muralha de Besouro-Rinoceronte","Carcaça Refletora","Escudo-Vivo da Colmeia","Fortaleza Ancorada"],caster:null},
+ clerigo:{name:"Clérigo do Ecossistema",hit:"d8",hp:5,features:["Canalizar Vitalidade","Ritos do Jardim"],subs:["Grande Decomposição","Orvalho & Chuva","Raiz-Mãe","Sol da Copa"],caster:"SAB"},
+ cozinheiro:{name:"Cozinheiro do Matagal",hit:"d8",hp:5,features:["Culinária de Campo","Caldo Curativo"],subs:["Mestre dos Caldeirões","Gourmet Tóxico","Padeiro de Sementes Féricas","Banqueteiro da Colmeia"],caster:"SAB"},
+ druida:{name:"Druida do Jardim",hit:"d8",hp:5,features:["Forma Selvagem","Magia Natural"],subs:["Micro-Enxame","Flora Carnívora","Metamorfoses Quitinosas","Névoa Esporóide"],caster:"SAB"},
+ engenheiro:{name:"Engenheiro de Sucatas",hit:"d8",hp:5,features:["Gambiarra","Ferramentas de Sucata"],subs:["Armadilhas de Mola","Balístico de Elástico","Centelha de Bateria","Piloto de Exotraje de Lata"],caster:"INT"},
+ feiticeiro:{name:"Feiticeiro do Micromundo",hit:"d6",hp:4,features:["Feitiçaria Inata","Metamagia"],subs:["Sangue-Néctar","Centelha Estática","Magia Caótica do Lixo","Alma Micelial"],caster:"CAR"},
+ guerreiro:{name:"Guerreiro do Jardim",hit:"d10",hp:6,features:["Estilo de Luta","Retomar o Fôlego"],subs:["Esgrima de Agulha","Guardião de Falange","Atirador de Catapulta","Arqueiro de Hastes"],caster:null},
+ ladino:{name:"Ladino de Sucata",hit:"d8",hp:5,features:["Ataque Furtivo","Especialização"],subs:["Saqueador de Sucatas","Sombras de Orvalho","Corta-Gargantas de Agulha","Acrobata de Teias"],caster:null},
+ mago:{name:"Mago da Poeira",hit:"d6",hp:4,features:["Conjuração de Poeira","Recuperação Arcana"],subs:["Alquimista de Resina & Seiva","Opticista do Orvalho","Geometrista da Teia","Necromante do Formigueiro"],caster:"INT"},
+ monge:{name:"Monge do Fluxo Quitinoso",hit:"d8",hp:5,features:["Artes Marciais","Fluxo Quitinoso"],subs:["Lâmina Mântica","Salto do Salticidae","Toque Paralisante","Fluxo d'Água"],caster:null},
+ paladino:{name:"Paladino do Jardim",hit:"d10",hp:6,features:["Sentido do Jardim","Imposição das Mãos"],subs:["Juramento da Colmeia","Carvalho Ancestral","Lâmina de Espinho","Guardião da Escuridão"],caster:"CAR"},
+ patrulheiro:{name:"Patrulheiro do Matagal",hit:"d10",hp:6,features:["Explorador do Matagal","Caçador de Predadores"],subs:["Emboscador do Matagal","Montaria de Besouro","Caçador de Predadores Gigantes","Rastreador de Peçonha"],caster:"SAB"},
+ bruxo:{name:"Bruxo dos Grandes Patronos",hit:"d8",hp:5,features:["Pacto do Jardim","Magia de Patrono"],subs:["Terror do Céu","Sapo do Charco Profundo","Rainha Tecelã da Morte","Gigante Bípede"],caster:"CAR"}
+};
+const RACE_DATA={
+ rato:{name:"Rato-dos-Campos",speed:"7,5m",features:["Visão no Escuro","Sentidos Aguçados","Hiper-Nervosismo"],subs:["Rato-Urbano","Rato-Sábio do Silo","Rato-dos-Bueiros"],carry:1},
+ lagartixa:{name:"Lagartixa-da-Casca",speed:"9m",features:["Patas Aderentes","Reflexos Répteis"],subs:["Noturna","Solário","Mimetista","Pântano"],carry:1},
+ pixie:{name:"Pixie / Fada do Jardim",speed:"4,5m / voo 9m",features:["Asas Féricas","Pó de Estrela"],subs:["Orvalho","Espinheiros","Noturna","Polinizadora"],carry:.7},
+ gnomo:{name:"Gnomo-do-Musgo",speed:"7,5m",features:["Astúcia dos Pequenos","Ofício de Jardim"],subs:["Cogumelo","Raiz","Engenheiro","Florido"],carry:1},
+ besouro:{name:"Besouro",speed:"7,5m",features:["Exoesqueleto Rígido","Carregador Pesado"],subs:["Rinoceronte","Joaninha","Besouro-Viga","Vira-Bosta"],carry:2},
+ formiga:{name:"Formigídeo",speed:"9m",features:["Força de Colônia","Comunicação por Feromônios"],subs:["Soldado","Tecelã","Pote-de-Mel","Corticante"],carry:1.5},
+ sapo:{name:"Rãzinha-Sapo",speed:"7,5m / natação 9m",features:["Anfíbio","Pulo do Sapo"],subs:["Flecha-Veneno","Sapo-Boi-Anão","Perereca","Cururu-Místico"],carry:1},
+ minhoca:{name:"Minhocóide",speed:"6m",features:["Sentido por Vibração","Escavação"],subs:["Gladiadora","Nutritiva","Vibracional","Tóxica"],carry:1.2}
+};
+const EQUIPMENT_CATALOG={
+ // Armas simples corpo a corpo — equivalentes mecânicos da lista do 5e.
+ espinho_curto:{name:"Espinho Curto",type:"arma",training:"simples",category:"corpo",die:"1d4",ability:"DES",magic:0,rarity:"Comum",effect:"Perfurante • acuidade, leve, arremesso 6/18m."},
+ dardo_junco:{name:"Dardo de Junco",type:"arma",training:"simples",category:"corpo",die:"1d6",ability:"FOR",magic:0,rarity:"Comum",effect:"Perfurante • arremesso 9/36m."},
+ cajado_raiz:{name:"Cajado de Raiz",type:"arma",training:"simples",category:"corpo",die:"1d6",ability:"FOR",magic:0,rarity:"Comum",effect:"Concussão • versátil (1d8)."},
+ galho_malho:{name:"Galho-Malho",type:"arma",training:"simples",category:"corpo",die:"1d8",ability:"FOR",magic:0,rarity:"Comum",effect:"Concussão • pesada, duas mãos."},
+ foice_mandibula:{name:"Foice de Mandíbula",type:"arma",training:"simples",category:"corpo",die:"1d4",ability:"FOR",magic:0,rarity:"Comum",effect:"Cortante • leve."},
+ agulha:{name:"Agulha Longa",type:"arma",training:"simples",category:"corpo",die:"1d6",ability:"FOR",magic:0,rarity:"Comum",effect:"Perfurante • arremesso 6/18m, versátil (1d8)."},
+ noz_maca:{name:"Noz-Maça",type:"arma",training:"simples",category:"corpo",die:"1d6",ability:"FOR",magic:0,rarity:"Comum",effect:"Concussão."},
+ lamina_casca:{name:"Lâmina de Casca",type:"arma",training:"simples",category:"corpo",die:"1d6",ability:"FOR",magic:0,rarity:"Comum",effect:"Cortante • leve, arremesso 6/18m."},
+ martelo_semente:{name:"Martelo de Semente",type:"arma",training:"simples",category:"corpo",die:"1d4",ability:"FOR",magic:0,rarity:"Comum",effect:"Concussão • leve, arremesso 6/18m."},
+ galho_curto:{name:"Galho Curto",type:"arma",training:"simples",category:"corpo",die:"1d4",ability:"FOR",magic:0,rarity:"Comum",effect:"Concussão • leve."},
+ // Armas simples à distância.
+ arco_antena:{name:"Arco de Antena",type:"arma",training:"simples",category:"distancia",die:"1d6",ability:"DES",magic:0,rarity:"Comum",effect:"Perfurante • munição 24/96m, duas mãos."},
+ besta_graveto:{name:"Besta de Graveto",type:"arma",training:"simples",category:"distancia",die:"1d8",ability:"DES",magic:0,rarity:"Comum",effect:"Perfurante • munição 24/96m, recarga, duas mãos."},
+ espinho_arremesso:{name:"Espinho de Arremesso",type:"arma",training:"simples",category:"distancia",die:"1d4",ability:"DES",magic:0,rarity:"Comum",effect:"Perfurante • acuidade, arremesso 6/18m."},
+ funda:{name:"Funda de Fibra",type:"arma",training:"simples",category:"distancia",die:"1d4",ability:"DES",magic:0,rarity:"Comum",effect:"Concussão • munição 9/36m."},
+ // Armas marciais corpo a corpo.
+ alabarda_galho:{name:"Alabarda de Galho-Ferro",type:"arma",training:"marcial",category:"corpo",die:"1d10",ability:"FOR",magic:0,rarity:"Comum",effect:"Cortante • pesada, alcance, duas mãos."},
+ cimitarra_folha:{name:"Cimitarra de Folha",type:"arma",training:"marcial",category:"corpo",die:"1d6",ability:"DES",magic:0,rarity:"Comum",effect:"Cortante • acuidade, leve."},
+ chicote_vinha:{name:"Chicote de Vinha",type:"arma",training:"marcial",category:"corpo",die:"1d4",ability:"DES",magic:0,rarity:"Comum",effect:"Cortante • acuidade, alcance."},
+ espada_agulha:{name:"Espada-Agulha Curta",type:"arma",training:"marcial",category:"corpo",die:"1d6",ability:"DES",magic:0,rarity:"Comum",effect:"Perfurante • acuidade, leve."},
+ espada_cascuda:{name:"Espada Cascuda Grande",type:"arma",training:"marcial",category:"corpo",die:"2d6",ability:"FOR",magic:0,rarity:"Comum",effect:"Cortante • pesada, duas mãos."},
+ lamina_orvalho:{name:"Lâmina do Orvalho Eterno",type:"arma",training:"marcial",category:"corpo",die:"1d8",ability:"DES",magic:2,rarity:"Lendário",effect:"Cortante • versátil (1d10). Item único coberto por orvalho encantado."},
+ glaive_libelula:{name:"Glaive de Asa de Libélula",type:"arma",training:"marcial",category:"corpo",die:"1d10",ability:"FOR",magic:0,rarity:"Comum",effect:"Cortante • pesada, alcance, duas mãos."},
+ aguilhao_montaria:{name:"Aguilhão de Montaria",type:"arma",training:"marcial",category:"corpo",die:"1d12",ability:"FOR",magic:0,rarity:"Comum",effect:"Perfurante • alcance, especial."},
+ lanca_espinho:{name:"Lança Longa de Espinho",type:"arma",training:"marcial",category:"corpo",die:"1d10",ability:"FOR",magic:0,rarity:"Comum",effect:"Perfurante • pesada, alcance, duas mãos."},
+ estrela_semente:{name:"Maça-Estrela de Semente",type:"arma",training:"marcial",category:"corpo",die:"1d8",ability:"FOR",magic:0,rarity:"Comum",effect:"Perfurante."},
+ machado_mandibula:{name:"Machado Grande de Mandíbula",type:"arma",training:"marcial",category:"corpo",die:"1d12",ability:"FOR",magic:0,rarity:"Comum",effect:"Cortante • pesada, duas mãos."},
+ machado_casca:{name:"Machado de Batalha de Casca",type:"arma",training:"marcial",category:"corpo",die:"1d8",ability:"FOR",magic:0,rarity:"Comum",effect:"Cortante • versátil (1d10)."},
+ malho_pedra:{name:"Malho de Pedra-Pome",type:"arma",training:"marcial",category:"corpo",die:"2d6",ability:"FOR",magic:0,rarity:"Comum",effect:"Concussão • pesada, duas mãos."},
+ mangual_raiz:{name:"Mangual de Raiz Nodosa",type:"arma",training:"marcial",category:"corpo",die:"1d8",ability:"FOR",magic:0,rarity:"Comum",effect:"Concussão."},
+ martelo_bolota:{name:"Martelo de Guerra de Bolota",type:"arma",training:"marcial",category:"corpo",die:"1d8",ability:"FOR",magic:0,rarity:"Comum",effect:"Concussão • versátil (1d10)."},
+ picareta_formiga:{name:"Picareta de Guerra Formiga",type:"arma",training:"marcial",category:"corpo",die:"1d8",ability:"FOR",magic:0,rarity:"Comum",effect:"Perfurante."},
+ florete_ferrão:{name:"Florete de Ferrão",type:"arma",training:"marcial",category:"corpo",die:"1d8",ability:"DES",magic:0,rarity:"Comum",effect:"Perfurante • acuidade."},
+ tridente_junco:{name:"Tridente de Junco",type:"arma",training:"marcial",category:"corpo",die:"1d6",ability:"FOR",magic:0,rarity:"Comum",effect:"Perfurante • arremesso 6/18m, versátil (1d8)."},
+ // Armas marciais à distância.
+ arco_libelula:{name:"Arco Longo de Libélula",type:"arma",training:"marcial",category:"distancia",die:"1d8",ability:"DES",magic:0,rarity:"Comum",effect:"Perfurante • munição 45/180m, pesada, duas mãos."},
+ besta_pata:{name:"Besta de Pata",type:"arma",training:"marcial",category:"distancia",die:"1d6",ability:"DES",magic:0,rarity:"Comum",effect:"Perfurante • munição 9/36m, leve, recarga."},
+ besta_carapaca:{name:"Besta Pesada de Carapaça",type:"arma",training:"marcial",category:"distancia",die:"1d10",ability:"DES",magic:0,rarity:"Comum",effect:"Perfurante • munição 30/120m, pesada, recarga, duas mãos."},
+ rede_teia:{name:"Rede de Teia",type:"arma",training:"marcial",category:"distancia",die:"0",ability:"DES",magic:0,rarity:"Comum",effect:"Especial • arremesso 1,5/4,5m; restringe em vez de causar dano."},
+ zarabatana_caniço:{name:"Zarabatana de Caniço",type:"arma",training:"marcial",category:"distancia",die:"1",ability:"DES",magic:0,rarity:"Comum",effect:"Perfurante • munição 7,5/30m, recarga."},
+ // Armaduras adaptadas com as mesmas famílias do 5e.
+ algodao_espinho:{name:"Gibão de Algodão-Espinho",type:"armadura",armorClass:"leve",ac:1,rarity:"Comum",effect:"Equivale à acolchoada • desvantagem em Furtividade."},
+ couro_folha:{name:"Couro de Folha Curtida",type:"armadura",armorClass:"leve",ac:1,rarity:"Comum",effect:"Equivale à armadura de couro."},
+ couro_batido:{name:"Couro Batido de Besouro",type:"armadura",armorClass:"leve",ac:2,rarity:"Comum",effect:"Equivale ao couro batido."},
+ pele_lagarta:{name:"Gibão de Pele de Lagarta",type:"armadura",armorClass:"media",ac:2,rarity:"Comum",effect:"Equivale ao gibão de peles • DES máximo +2."},
+ malha_vinha:{name:"Camisão de Malha de Vinha",type:"armadura",armorClass:"media",ac:3,rarity:"Comum",effect:"Equivale ao camisão de malha • DES máximo +2."},
+ escamas_besouro:{name:"Armadura de Escamas de Besouro",type:"armadura",armorClass:"media",ac:4,rarity:"Comum",effect:"DES máximo +2 • desvantagem em Furtividade."},
+ peitoral_carapaca:{name:"Peitoral de Carapaça",type:"armadura",armorClass:"media",ac:4,rarity:"Comum",effect:"DES máximo +2."},
+ meia_carapaca:{name:"Meia-Carapaça",type:"armadura",armorClass:"media",ac:5,rarity:"Comum",effect:"DES máximo +2 • desvantagem em Furtividade."},
+ aneis_raiz:{name:"Cota de Anéis de Raiz",type:"armadura",armorClass:"pesada",ac:4,rarity:"Comum",effect:"CA base 14 • desvantagem em Furtividade."},
+ malha_formiga:{name:"Cota de Malha Formiga",type:"armadura",armorClass:"pesada",ac:6,rarity:"Comum",effect:"CA base 16 • FOR 13 • desvantagem em Furtividade."},
+ talas_graveto:{name:"Cota de Talas de Graveto",type:"armadura",armorClass:"pesada",ac:7,rarity:"Comum",effect:"CA base 17 • FOR 15 • desvantagem em Furtividade."},
+ placas_sucata:{name:"Armadura de Placas de Sucata",type:"armadura",armorClass:"pesada",ac:8,rarity:"Muito Raro",effect:"CA base 18 • FOR 15 • desvantagem em Furtividade."},
+ tampinha:{name:"Escudo de Tampinha Reforçada",type:"escudo",armorClass:"escudo",ac:2,rarity:"Comum",effect:"Escudo do Pequeno Mundo • CA +2."},
+ escudo_colmeia:{name:"Escudo-Vivo da Colmeia",type:"escudo",armorClass:"escudo",ac:2,rarity:"Único",effect:"CA +2 • reage à proximidade de aliados e vibra diante do perigo."}
+};
+const ATTRS=[
+ {k:"FOR",label:"Força",skills:[["Atletismo de Carga","FOR"]]},
+ {k:"DES",label:"Destreza",skills:[["Acrobacia do Matagal","DES"],["Furtividade entre Folhas","DES"],["Prestidigitação de Sucata","DES"]]},
+ {k:"CON",label:"Constituição",skills:[["Sobrevivência Climática","CON"]]},
+ {k:"INT",label:"Inteligência",skills:[["Arcanismo do Jardim","INT"],["História do Jardim","INT"],["Investigação de Sucata","INT"],["Natureza do Micromundo","INT"],["Alquimia Natural","INT"]]},
+ {k:"SAB",label:"Sabedoria",skills:[["Intuição de Colônia","SAB"],["Percepção do Matagal","SAB"],["Medicina de Ervas","SAB"],["Trato com Criaturas","SAB"],["Sobrevivência do Jardim","SAB"]]},
+ {k:"CAR",label:"Carisma",skills:[["Atuação Ressonante","CAR"],["Enganação","CAR"],["Intimidação","CAR"],["Persuasão","CAR"]]}
+];
+const SPELLS={
+ mago:{name:"Mago da Poeira",stat:"INT",spells:[
+  {name:"Raio de Poeira",lvl:0,school:"Evocação",cast:"1 Ação",range:"18m",duration:"Instantânea",comp:["V","S"],material:"",consumed:false,cost:"",attack:true,damage:"1d10",save:"",text:"Você dispara um feixe concentrado de micropartículas e detritos. Faça um ataque mágico à distância. Em caso de acerto, o alvo sofre dano de trovão."},
+  {name:"Faísca Estática",lvl:0,school:"Evocação",cast:"1 Ação",range:"Toque",duration:"Instantânea",comp:["V","S"],material:"",consumed:false,cost:"",attack:true,damage:"1d8",save:"",text:"Uma descarga estática atravessa suas mãos ou antenas. É especialmente perigosa contra alvos molhados ou revestidos de metal."},
+  {name:"Luz",lvl:0,school:"Transmutação",cast:"1 Ação",range:"Toque",duration:"1 hora",comp:["V","M"],material:"um pequeno fungo bioluminescente ou gota de seiva clara",consumed:false,cost:"",attack:false,damage:"",save:"",text:"Faz um pequeno objeto emitir luz brilhante, ideal para túneis, raízes e regiões escuras."},
+  {name:"Escudo de Cristal",lvl:1,school:"Abjuração",cast:"1 Reação",range:"Pessoal",duration:"1 rodada",comp:["V","S","M"],material:"um fragmento translúcido de casca mineral",consumed:false,cost:"",attack:false,damage:"",save:"",text:"Uma barreira de microcristais refratários surge para proteger você de um ataque."},
+  {name:"Orbe Elétrica",lvl:1,school:"Evocação",cast:"1 Ação",range:"18m",duration:"Instantânea",comp:["V","S","M"],material:"um fio fino de cobre e uma gota de orvalho",consumed:false,cost:"",attack:false,damage:"2d8",save:"DES",text:"Uma esfera de carga estática explode num ponto escolhido. Criaturas próximas realizam salvaguarda de Destreza."},
+  {name:"Teia de Seda",lvl:2,school:"Conjuração",cast:"1 Ação",range:"18m",duration:"Concentração, até 1 hora",comp:["V","S","M"],material:"um fio de seda de aranha enrolado numa semente seca",consumed:false,cost:"",attack:false,damage:"",save:"DES",text:"Fios pegajosos preenchem uma área, dificultando movimento e podendo imobilizar criaturas."},
+  {name:"Bola de Fogo de Resíduo",lvl:3,school:"Evocação",cast:"1 Ação",range:"45m",duration:"Instantânea",comp:["V","S","M"],material:"uma pequena esfera de resina endurecida, carvão em pó e pó mineral inflamável",consumed:false,cost:"",attack:false,damage:"8d6",save:"DES",text:"Um fragmento inflamável explode em uma esfera devastadora para a escala do Jardim."},
+  {name:"Reviver Broto",lvl:3,school:"Necromancia",cast:"1 Ação",range:"Toque",duration:"Instantânea",comp:["V","S","M"],material:"1 Pérola de Orvalho Puríssimo",consumed:true,cost:"Raro",attack:false,damage:"",save:"",text:"Uma essência rara de orvalho força o corpo de uma criatura recém-caída a recuperar o sopro vital."}
+ ]},
+ bardo:{name:"Bardo da Ressonância",stat:"CAR",spells:[
+  {name:"Gota Guia Bioluminescente",lvl:0,school:"Evocação",cast:"1 Ação",range:"18m",duration:"1 rodada",comp:["V","S","M"],material:"uma gota de néctar ou seiva luminosa",consumed:false,cost:"",attack:true,damage:"1d6",save:"",text:"Uma gota brilhante marca o alvo, facilitando o próximo ataque contra ele."},
+  {name:"Estridulação Calmante",lvl:0,school:"Encantamento",cast:"1 Ação",range:"9m",duration:"1 minuto",comp:["V","S"],material:"",consumed:false,cost:"",attack:false,damage:"",save:"SAB",text:"Vibrações naturais diminuem a agressividade de criaturas do Jardim."},
+  {name:"Zombaria Cruel",lvl:0,school:"Encantamento",cast:"1 Ação",range:"18m",duration:"Instantânea",comp:["V"],material:"",consumed:false,cost:"",attack:false,damage:"1d4",save:"SAB",text:"Palavras carregadas de magia ferem a mente e atrapalham o próximo ataque do alvo."},
+  {name:"Palavra Curativa",lvl:1,school:"Evocação",cast:"1 Ação Bônus",range:"18m",duration:"Instantânea",comp:["V"],material:"",consumed:false,cost:"",attack:false,damage:"",save:"",text:"Uma palavra de encorajamento restaura a vitalidade de uma criatura."},
+  {name:"Grito Dissonante",lvl:1,school:"Encantamento",cast:"1 Ação",range:"18m",duration:"Instantânea",comp:["V","M"],material:"um pequeno fragmento oco de casca que ressoe ao sopro",consumed:false,cost:"",attack:false,damage:"3d6",save:"SAB",text:"Uma frequência aterradora invade a mente de uma criatura e pode fazê-la fugir."}
+ ]}
+};
+
+// Área descreve como a magia ocupa o espaço; materiais ligam a magia ao inventário real.
+const SPELL_AREAS={
+ "Raio de Poeira":"Alvo único — linha reta","Faísca Estática":"Alvo único — toque","Luz":"Objeto tocado",
+ "Escudo de Cristal":"Ao redor do conjurador","Orbe Elétrica":"Explosão esférica","Teia de Seda":"Área cúbica",
+ "Bola de Fogo de Resíduo":"Explosão esférica","Reviver Broto":"Criatura tocada","Gota Guia Bioluminescente":"Alvo único — linha reta",
+ "Estridulação Calmante":"Emanação ao redor do conjurador","Zombaria Cruel":"Alvo único","Palavra Curativa":"Alvo único","Grito Dissonante":"Cone sonoro"
+};
+const SPELL_MATERIALS={
+ "Luz":["fungo_bioluminescente"],"Escudo de Cristal":["casca_mineral"],"Orbe Elétrica":["fio_cobre"],
+ "Teia de Seda":["seda_aranha"],"Bola de Fogo de Resíduo":["resina_endurecida","carvao_po"],"Reviver Broto":["perola_orvalho"],
+ "Gota Guia Bioluminescente":["nectar_luminoso"],"Grito Dissonante":["casca_ressoante"]
+};
+
+const DEFAULT={
+ charName:"",playerName:"",cls:"guerreiro",sub:"",subLocked:false,milestoneSound:true,race:"rato",subrace:"Rato-Urbano",level:1,xp:0,background:"",alignment:"",inspiration:"Não",portrait:"",
+ stats:{FOR:12,DES:14,CON:12,INT:10,SAB:12,CAR:10},saves:[],skillRanks:{},hpMax:10,hpNow:10,hpTemp:0,
+ traits:"",ideals:"",bonds:"",flaws:"",proficiencies:"",weaponProficiencies:["weapon:agulha"],armorProficiencies:["armor:leve"],
+ equipment:[{type:"arma",name:"Agulha de Combate",catalogId:"agulha",category:"corpo",die:"1d6",ability:"FOR",magic:1},{type:"armadura",name:"Túnica de Fibra",ac:1},{type:"escudo",name:"Tampinha Reforçada",ac:1}],
+ bag:[{name:"Fio de Nylon",qty:1,weight:10},{name:"Pílula de Açúcar",qty:2,weight:2}],cart:[],cartType:"none",deathS:[false,false,false],deathF:[false,false,false],
+ p2:{home:"Vila Cogumelo",age:"",height:"",weight:"",eyes:"",skin:"",hair:"",appearance:"",history:"",sf:20,ps:0,rs:0,amber:0,amberNotes:"",memories:[],factions:"",marks:[]},
+ magic:{known:[],slots:{},componentPouch:true,specialMaterials:[{id:"perola_orvalho",qty:1}],levelFilter:0},roll:{mode:"normal",bonus:0,extra:"",crit:20,targetAc:10,history:[]}
+};
+const KEY="JE_INTEGRATED_123";
+const BACKUP_KEY="JE_INTEGRATED_123_SAFETY_BACKUP";
+let state=Object.assign({},DEFAULT,JSON.parse(localStorage.getItem(KEY)||"{}"));
+state.stats=Object.assign({},DEFAULT.stats,state.stats||{});
+state.p2=Object.assign({},DEFAULT.p2,state.p2||{});
+state.magic=Object.assign({},DEFAULT.magic,state.magic||{});
+state.magic.slots=state.magic.slots||{};
+state.roll=Object.assign({},DEFAULT.roll,state.roll||{});
+state.weaponProficiencies=Array.isArray(state.weaponProficiencies)?state.weaponProficiencies:[...DEFAULT.weaponProficiencies];
+state.armorProficiencies=Array.isArray(state.armorProficiencies)?state.armorProficiencies:[...DEFAULT.armorProficiencies];
+if(state.cartEnabled && !state.cartType) state.cartType="reforcado";
+state.cartType=state.cartType||"none";
+state.p2.sf=state.p2.sf ?? 20; state.p2.ps=state.p2.ps ?? 0; state.p2.rs=state.p2.rs ?? 0;
+const $=id=>document.getElementById(id);
+const mod=v=>Math.floor((Number(v)-10)/2),fmt=n=>n>=0?`+${n}`:`${n}`,prof=()=>2+Math.floor((Math.max(1,state.level)-1)/4);
+function esc(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
+function save(){localStorage.setItem(KEY,JSON.stringify(state))}
+function createSafetyBackup(reason){localStorage.setItem(BACKUP_KEY,JSON.stringify({createdAt:new Date().toISOString(),reason,data:state}));renderBackupStatus()}
+function readSafetyBackup(){try{return JSON.parse(localStorage.getItem(BACKUP_KEY)||"null")}catch(e){return null}}
+function renderBackupStatus(){const backup=readSafetyBackup(),button=$("restoreBackupButton");if(!backup){$("backupStatus").textContent="Nenhum backup de segurança disponível.";button.disabled=true;return}const date=new Date(backup.createdAt);$("backupStatus").textContent=`Último backup: ${date.toLocaleString()} • ${backup.reason||"Proteção automática"}`;button.disabled=false}
+function restoreSafetyBackup(){const backup=readSafetyBackup();if(!backup?.data)return alert("Nenhum backup de segurança disponível.");if(!confirm(`Restaurar a ficha para o estado salvo em ${new Date(backup.createdAt).toLocaleString()}?\n\nOs dados atuais serão substituídos.`))return;localStorage.setItem(KEY,JSON.stringify(backup.data));location.reload()}
+function parseDice(s){const m=String(s).match(/^(\d*)d(\d+)([+-]\d+)?$/i);if(!m)return null;const n=+(m[1]||1),d=+m[2],b=+(m[3]||0);const rolls=Array.from({length:n},()=>1+Math.floor(Math.random()*d));return{rolls,total:rolls.reduce((a,b)=>a+b,0)+b}}
+
+function switchPage(id,btn){document.querySelectorAll(".page-wrap").forEach(x=>x.classList.remove("active"));document.querySelectorAll(".tabs button").forEach(x=>x.classList.remove("active"));$(id).classList.add("active");btn.classList.add("active");if(id==="p3Page")renderMagicAll();if(id==="p2Page")renderP2();if(id==="p4Page")renderCodex()}
+function initNav(){document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>switchPage(b.dataset.page,b))}
+
+function initP1(){
+ Object.entries(CLASS_DATA).forEach(([k,v])=>$("p1ClassSelect").insertAdjacentHTML("beforeend",`<option value="${k}">${v.name}</option>`));
+ Object.entries(RACE_DATA).forEach(([k,v])=>$("p1RaceSelect").insertAdjacentHTML("beforeend",`<option value="${k}">${v.name}</option>`));
+ $("p1EquipmentCatalog").innerHTML=[["arma","⚔️ Armas"],["armadura","🛡️ Armaduras"],["escudo","🔰 Escudos"]].map(([type,label])=>`<optgroup label="${label}">${Object.entries(EQUIPMENT_CATALOG).filter(([,e])=>e.type===type).map(([id,e])=>`<option value="${id}">${e.name} — ${type==="arma"?`${e.training==="marcial"?"Marcial":"Simples"} • ${e.category==="distancia"?"À distância":"Corpo a corpo"}`:`${e.armorClass==="media"?"Média":e.armorClass==="pesada"?"Pesada":e.armorClass==="escudo"?"Escudo":"Leve"} • CA +${e.ac}`}</option>`).join("")}</optgroup>`).join("");
+ renderWeaponProficiencies();
+ $("p1ClassSelect").value=state.cls;$("p1RaceSelect").value=state.race;
+ const map={p1CharName:"charName",p1PlayerName:"playerName",p1Background:"background",p1Alignment:"alignment",p1Traits:"traits",p1Ideals:"ideals",p1Bonds:"bonds",p1Flaws:"flaws",p1Proficiencies:"proficiencies"};
+ Object.entries(map).forEach(([id,k])=>{$(id).value=state[k]||"";$(id).addEventListener("input",()=>{state[k]=$(id).value;save();if(k==="charName")renderP2()})});
+ $("p1Level").value=state.level;$("p1Xp").value=state.xp;renderInspiration();$("p1HpMax").value=state.hpMax;$("p1HpNow").value=state.hpNow;$("p1HpTemp").value=state.hpTemp;$("p1CartType").value=state.cartType;$("d20Mode").value=state.roll.mode;$("d20Bonus").value=state.roll.bonus;$("d20Extra").value=state.roll.extra;$("critThreshold").value=state.roll.crit;$("targetAc").value=state.roll.targetAc??10;
+ $("p1ClassSelect").onchange=()=>{if(state.subLocked){alert("A Classe não pode ser trocada depois da confirmação definitiva do Caminho/Subclasse.");$("p1ClassSelect").value=state.cls;return}state.cls=$("p1ClassSelect").value;state.sub="";save();syncAutoSpells();renderAll()};
+ $("p1RaceSelect").onchange=()=>{state.race=$("p1RaceSelect").value;state.subrace=RACE_DATA[state.race].subs[0];save();syncAutoSpells();renderAll()};
+ $("p1SubraceSelect").onchange=()=>{state.subrace=$("p1SubraceSelect").value;save();renderTraits();renderP2()};
+ $("p1Level").oninput=()=>{const previous=state.level,next=Math.max(1,Math.min(20,+$("p1Level").value||1));state.level=next;if(state.level<3&&!state.subLocked)state.sub="";save();renderAll();if(next!==previous&&[3,10,20].includes(next))showMilestonePopup(next)};
+ $("p1Xp").oninput=()=>{state.xp=+$("p1Xp").value||0;save()};
+ ["p1HpMax","p1HpNow","p1HpTemp"].forEach(id=>$(id).oninput=()=>{const k={p1HpMax:"hpMax",p1HpNow:"hpNow",p1HpTemp:"hpTemp"}[id];state[k]=+$(id).value||0;save()});
+ $("p1CartType").onchange=()=>{state.cartType=$("p1CartType").value;save();renderInventory()};
+ $("d20Mode").onchange=()=>{state.roll.mode=$("d20Mode").value;save()};
+ $("d20Bonus").oninput=()=>{state.roll.bonus=+$("d20Bonus").value||0;save()};
+ $("d20Extra").oninput=()=>{state.roll.extra=$("d20Extra").value.trim();save()};
+ $("critThreshold").oninput=()=>{state.roll.crit=Math.max(18,Math.min(20,+$("critThreshold").value||20));$("critThreshold").value=state.roll.crit;save()};
+ $("targetAc").oninput=()=>{state.roll.targetAc=Math.max(0,+$("targetAc").value||0);save()};
+ $("p1PortraitInput").addEventListener("change",handlePortrait);
+ $("globalImportInput").addEventListener("change",importCharacter);
+ document.querySelectorAll(".deathS").forEach((x,i)=>{x.checked=!!state.deathS[i];x.onchange=()=>{state.deathS[i]=x.checked;save()}});
+ document.querySelectorAll(".deathF").forEach((x,i)=>{x.checked=!!state.deathF[i];x.onchange=()=>{state.deathF[i]=x.checked;save()}});
+}
+function renderInspiration(){const button=$("p1InspirationButton");if(!button)return;const active=state.inspiration==="Sim";button.classList.toggle("active",active);button.textContent=active?"✦ Sim":"○ Não";button.setAttribute("aria-pressed",String(active))}
+function toggleInspiration(){state.inspiration=state.inspiration==="Sim"?"Não":"Sim";save();renderInspiration()}
+function renderSub(){const el=$("p1SubclassSelect"),field=$("p1SubclassField"),choose=$("p1ChooseSubclass"),subs=CLASS_DATA[state.cls].subs;$("p1ClassSelect").disabled=!!state.subLocked;if(state.level<3){if(!state.subLocked)state.sub="";field.hidden=true;el.disabled=true;el.innerHTML="";return}field.hidden=false;el.disabled=true;if(state.subLocked&&subs.includes(state.sub)){el.innerHTML=`<option>${esc(state.sub)} 🔒</option>`;choose.hidden=true}else{state.sub="";el.innerHTML='<option>Escolha pela placa especial</option>';choose.hidden=false}}
+function renderSubrace(){const subs=RACE_DATA[state.race].subs||[];if(!subs.includes(state.subrace))state.subrace=subs[0]||"";$("p1SubraceSelect").innerHTML=subs.map(x=>`<option ${x===state.subrace?"selected":""}>${x}</option>`).join("");$("p1SubraceSelect").value=state.subrace}
+function renderAttrs(){
+ $("p1Attributes").innerHTML=ATTRS.map(a=>{const m=mod(state.stats[a.k]),sv=m+(state.saves.includes(a.k)?prof():0);const skills=a.skills.map(([n,k])=>{const rank=state.skillRanks[n]||0,total=mod(state.stats[k])+prof()*rank,cls=rank===1?"prof":rank===2?"exp":"",sym=rank===1?"●":rank===2?"◆":"○";return `<div class="skill"><button class="skill-rank ${cls}" onclick="cycleSkill('${n}')" title="Clique para alternar proficiência">${sym}</button><button class="roll-name" onclick="rollNamedD20('${n}',${total},'Perícia')" title="Rolar ${n}">${n} <small>(${k})</small></button><b>${fmt(total)}</b></div>`}).join("");return `<div class="attr-block"><div class="attr-head"><div class="attr-shield"><button class="roll-name" onclick="rollNamedD20('${a.label}',${m},'Atributo')" title="Rolar ${a.label}"><small>${a.label}</small></button><input style="width:50px;text-align:center;padding:3px" type="number" value="${state.stats[a.k]}" onchange="setStat('${a.k}',this.value)"><b>${fmt(m)}</b></div><div><label class="save-line"><input style="width:auto" type="checkbox" ${state.saves.includes(a.k)?"checked":""} onchange="toggleSave('${a.k}',this.checked)"> <button class="roll-name" type="button" onclick="event.preventDefault();rollNamedD20('Salvaguarda de ${a.label}',${sv},'Salvaguarda')">Salvaguarda ${fmt(sv)}</button></label><div class="skills">${skills}</div></div><div></div></div></div>`}).join("");
+ const pr=state.skillRanks["Percepção do Matagal"]||0;$("p1PassiveOut").textContent=10+mod(state.stats.SAB)+prof()*pr
+}
+function cycleSkill(n){state.skillRanks[n]=((state.skillRanks[n]||0)+1)%3;save();renderAttrs()}
+function setStat(k,v){state.stats[k]=+v||10;save();renderAll()}
+function toggleSave(k,c){state.saves=c?[...new Set([...state.saves,k])]:state.saves.filter(x=>x!==k);save();renderAttrs()}
+function renderCombat(){
+ const armor=state.equipment.filter(x=>x.type==="armadura").reduce((s,x)=>s+(+x.ac||0),0),shield=state.equipment.filter(x=>x.type==="escudo").reduce((s,x)=>s+(+x.ac||0),0);
+ $("p1AcOut").textContent=10+mod(state.stats.DES)+armor+shield;$("p1InitOut").textContent=fmt(mod(state.stats.DES));$("p1SpeedOut").textContent=RACE_DATA[state.race].speed;$("p1ProfOut").textContent=fmt(prof());$("p1HitDieOut").textContent=CLASS_DATA[state.cls].hit;$("p1HpLevelOut").textContent=CLASS_DATA[state.cls].hp+mod(state.stats.CON)
+}
+function weaponProfLabel(id){const labels={"group:all":"Todas as armas","group:simples":"Armas simples","group:marcial":"Armas marciais","group:corpo":"Armas corpo a corpo","group:distancia":"Armas à distância","group:simples-corpo":"Armas simples • corpo a corpo","group:simples-distancia":"Armas simples • à distância","group:marcial-corpo":"Armas marciais • corpo a corpo","group:marcial-distancia":"Armas marciais • à distância"};if(labels[id])return labels[id];if(id.startsWith("weapon:"))return EQUIPMENT_CATALOG[id.slice(7)]?.name||id.slice(7);if(id.startsWith("custom:"))return id.slice(7);return id}
+function weaponCatalogId(e){if(e.catalogId&&EQUIPMENT_CATALOG[e.catalogId]?.type==="arma")return e.catalogId;return Object.entries(EQUIPMENT_CATALOG).find(([,item])=>item.type==="arma"&&item.name.toLowerCase()===String(e.name).toLowerCase())?.[0]||""}
+function weaponClassification(e){const id=weaponCatalogId(e),item=EQUIPMENT_CATALOG[id]||e;return {training:item.training||"simples",category:item.category||"corpo"}}
+function isWeaponProficient(e){const list=state.weaponProficiencies||[],id=weaponCatalogId(e),{training,category}=weaponClassification(e);return list.includes("group:all")||list.includes(`group:${training}`)||list.includes(`group:${category}`)||list.includes(`group:${training}-${category}`)||!!id&&list.includes(`weapon:${id}`)||list.includes(`custom:${String(e.name).trim().toLowerCase()}`)}
+// O atributo da arma vem do próprio catálogo: distância usa DES, corpo a corpo
+// usa FOR e Acuidade escolhe automaticamente o melhor entre FOR e DES.
+function weaponAbility(e){const item=equipmentCatalogItem(e),finesse=String(item.effect||"").toLowerCase().includes("acuidade");if(finesse)return mod(state.stats.DES)>mod(state.stats.FOR)?"DES":"FOR";return item.category==="distancia"?"DES":item.ability||"FOR"}
+function weaponAttackBonus(e){const ability=weaponAbility(e);return mod(state.stats[ability])+(isWeaponProficient(e)?prof():0)+(+e.magic||0)}
+function renderWeaponProficiencies(){const select=$("p1WeaponProfCatalog");if(!select)return;const groups='<optgroup label="Conjuntos gerais"><option value="group:all">Todas as armas</option><option value="group:simples">Todas as armas simples</option><option value="group:marcial">Todas as armas marciais</option></optgroup><optgroup label="Simples por alcance"><option value="group:simples-corpo">Simples • corpo a corpo</option><option value="group:simples-distancia">Simples • à distância</option></optgroup><optgroup label="Marciais por alcance"><option value="group:marcial-corpo">Marciais • corpo a corpo</option><option value="group:marcial-distancia">Marciais • à distância</option></optgroup>',catalog=`<optgroup label="Armas específicas">${Object.entries(EQUIPMENT_CATALOG).filter(([,e])=>e.type==="arma").map(([id,e])=>`<option value="weapon:${id}">${esc(e.name)} — ${e.training==="marcial"?"Marcial":"Simples"} • ${e.category==="distancia"?"À distância":"Corpo a corpo"}</option>`).join("")}</optgroup>`,custom=[...new Set(state.equipment.filter(e=>e.type==="arma"&&!weaponCatalogId(e)).map(e=>String(e.name).trim()).filter(Boolean))];select.innerHTML=groups+catalog+(custom.length?`<optgroup label="Armas personalizadas">${custom.map(name=>`<option value="custom:${esc(name.toLowerCase())}">${esc(name)}</option>`).join("")}</optgroup>`:"");$("p1WeaponProfList").innerHTML=(state.weaponProficiencies||[]).map((id,i)=>`<span class="prof-tag">${esc(weaponProfLabel(id))}<button onclick="removeWeaponProficiency(${i})" title="Remover proficiência">×</button></span>`).join("")||'<span class="eq-note">Nenhuma proficiência com armas adicionada.</span>';renderArmorProficiencies()}
+function addWeaponProficiency(){const id=$("p1WeaponProfCatalog").value;if(!id)return;state.weaponProficiencies=[...new Set([...(state.weaponProficiencies||[]),id])];save();renderWeaponProficiencies();renderEquipment()}
+function removeWeaponProficiency(i){state.weaponProficiencies.splice(i,1);save();renderWeaponProficiencies();renderEquipment()}
+function armorProfLabel(id){return ({"armor:leve":"Armaduras leves","armor:media":"Armaduras médias","armor:pesada":"Armaduras pesadas","armor:escudo":"Escudos"})[id]||id}
+function equipmentCatalogItem(e){return e.catalogId&&EQUIPMENT_CATALOG[e.catalogId]||Object.values(EQUIPMENT_CATALOG).find(item=>item.name.toLowerCase()===String(e.name).toLowerCase())||e}
+function isArmorProficient(e){const item=equipmentCatalogItem(e),kind=item.armorClass||(e.type==="escudo"?"escudo":"leve");return (state.armorProficiencies||[]).includes(`armor:${kind}`)}
+function renderArmorProficiencies(){const select=$("p1ArmorProfCatalog");if(!select)return;select.innerHTML='<optgroup label="Conjuntos de proteção"><option value="armor:leve">Armaduras leves</option><option value="armor:media">Armaduras médias</option><option value="armor:pesada">Armaduras pesadas</option><option value="armor:escudo">Escudos</option></optgroup>';$("p1ArmorProfList").innerHTML=(state.armorProficiencies||[]).map((id,i)=>`<span class="prof-tag">${esc(armorProfLabel(id))}<button onclick="removeArmorProficiency(${i})" title="Remover proficiência">×</button></span>`).join("")||'<span class="eq-note">Nenhuma proficiência com proteção adicionada.</span>'}
+function addArmorProficiency(){const id=$("p1ArmorProfCatalog").value;if(!id)return;state.armorProficiencies=[...new Set([...(state.armorProficiencies||[]),id])];save();renderArmorProficiencies();renderEquipment()}
+function removeArmorProficiency(i){state.armorProficiencies.splice(i,1);save();renderArmorProficiencies();renderEquipment()}
+function renderEquipment(){
+ $("p1EquipmentList").innerHTML=state.equipment.map((e,i)=>{
+   const item=equipmentCatalogItem(e),classification=e.type==="arma"?`${weaponClassification(e).training==="marcial"?"Marcial":"Simples"} • ${weaponClassification(e).category==="distancia"?"À distância":"Corpo a corpo"}`:`${item.armorClass==="media"?"Armadura média":item.armorClass==="pesada"?"Armadura pesada":item.armorClass==="escudo"?"Escudo":"Armadura leve"}`,info=`<div class="eq-note" style="margin:-2px 4px 7px"><b>${classification}</b>${e.rarity?` • ${esc(e.rarity)}`:""}${e.effect?` • ${esc(e.effect)}`:""}</div>`;
+   if(e.type==="arma"){const proficient=isWeaponProficient(e),ability=weaponAbility(e),attack=weaponAttackBonus(e);return `<div class="weapon-action-row"><button class="btn primary weapon-attack" onclick="prepareWeaponD20(${i})" title="Rolar ataque com ${esc(e.name)}">⚔️ ${esc(e.name)}</button><span class="weapon-value">Ataque <b>${fmt(attack)}</b></span><span class="weapon-value">Dano <b>${esc(e.die||"—")}</b></span><span class="weapon-value">${ability}</span><span class="prof-status ${proficient?"yes":"no"}">${proficient?`Prof. ${fmt(prof())}`:"Sem prof."}</span><button class="btn danger slim" onclick="delEq(${i})" title="Remover equipamento">✕</button></div>${info}`}
+   const proficient=isArmorProficient(e);return `<div class="eq-row"><select onchange="editEq(${i},'type',this.value)"><option value="arma">Arma</option><option value="armadura" ${e.type==="armadura"?"selected":""}>Armadura</option><option value="escudo" ${e.type==="escudo"?"selected":""}>Escudo</option></select><input value="${esc(e.name)}" onchange="editEq(${i},'name',this.value)"><input type="number" value="${+e.ac||0}" onchange="editEq(${i},'ac',+this.value)"><div class="wide-hide">CA +${+e.ac||0}</div><div class="wide-hide"></div><span class="prof-status ${proficient?"yes":"no"}">${proficient?"Proficiente":"Sem prof."}</span><div></div><button class="btn danger slim" onclick="delEq(${i})">✕</button></div>${info}`
+ }).join("");renderWeaponProficiencies();renderCombat()
+}
+function addCatalogEquipment(){const item=EQUIPMENT_CATALOG[$("p1EquipmentCatalog").value];if(!item)return;state.equipment.push({...item,catalogId:$("p1EquipmentCatalog").value});save();renderEquipment()}
+function addEquipment(){state.equipment.push({type:"arma",name:"Novo Equipamento",category:"corpo",die:"1d6",ability:"FOR",magic:0});save();renderEquipment()}
+function editEq(i,k,v){state.equipment[i][k]=v;if(k==="name")delete state.equipment[i].catalogId;if(k==="type"){if(v==="arma")Object.assign(state.equipment[i],{category:"corpo",die:"1d6",ability:"FOR",magic:0});else Object.assign(state.equipment[i],{ac:1})}save();renderEquipment()}
+function delEq(i){state.equipment.splice(i,1);save();renderEquipment()}
+function showPopup(title,big,details){$("popup").classList.remove("milestone-popup","milestone-3","milestone-10","milestone-20","slide-content");$("popup").querySelectorAll(".ppt-random-bars").forEach(x=>x.remove());$("popTitle").textContent=title;$("popBig").textContent=big;$("popDetails").innerHTML=details;$("popup").classList.add("show")}
+function automaticAttack(label,bonus,damageExpr,damageBonus=0){
+ const mode=state.roll.mode||"normal",r1=1+Math.floor(Math.random()*20),r2=1+Math.floor(Math.random()*20),natural=mode==="adv"?Math.max(r1,r2):mode==="dis"?Math.min(r1,r2):r1,total=natural+bonus,target=state.roll.targetAc??10,critical=natural>=state.roll.crit,hit=natural!==1&&(critical||total>=target);
+ addRollHistory("Ataque",natural,fmt(bonus),total,`${label} • CA ${target} • ${hit?"Acerto":"Erro"}`);
+ if(!hit){showPopup("⚔️ Ataque errou",label,`Resultado <b>${total}</b> contra CA <b>${target}</b>. Nenhum dano foi rolado.`);return false}
+ const first=parseDice(damageExpr),second=critical?parseDice(damageExpr):null,damage=(first?.total||0)+(second?.total||0)+damageBonus,rolls=[...(first?.rolls||[]),...(second?.rolls||[])];
+ addRollHistory("Dano",rolls.join(", "),fmt(damageBonus),damage,`${label}${critical?" • Crítico":""}`);showPopup(critical?"🌟 Acerto crítico":"⚔️ Ataque acertou",label,`Ataque <b>${total}</b> contra CA <b>${target}</b>.<br>Dano automático: <b>${damage}</b> (${esc(damageExpr)}${critical?" dobrado pelo crítico":""} ${damageBonus?fmt(damageBonus):""}).`);return true
+}
+function prepareWeaponD20(i){const e=state.equipment[i];if(!e||e.type!=="arma")return;const abilityKey=weaponAbility(e),ability=mod(state.stats[abilityKey]),magic=+e.magic||0;state.roll.bonus=weaponAttackBonus(e);$("d20Bonus").value=state.roll.bonus;save();automaticAttack(e.name,state.roll.bonus,e.die||"1d4",ability+magic)}
+function rollWeaponDamage(i){const e=state.equipment[i],ab=mod(state.stats[e.ability]),mg=+e.magic||0,dr=parseDice(e.die)||parseDice("1d4"),dmg=dr.total+ab+mg;showPopup("⚔️ "+e.name,`Dano ${dmg}`,`Dano: ${e.die} [${dr.rolls.join(", ")}] ${fmt(ab)} ${e.ability}${mg?` ${fmt(mg)} mágico`:""} = <b>${dmg}</b>`);addRollHistory("Dano",dr.rolls.join(", "),`${fmt(ab)} atributo${mg?` ${fmt(mg)} mágico`:""}`,dmg,e.name)}
+const FEATURE_DESC={
+"Visão no Escuro":"Descrição detalhada ainda não cadastrada no protótipo. Esta janela ficará ligada ao texto oficial da raça.",
+"Sentidos Aguçados":"Descrição detalhada ainda não cadastrada no protótipo. Esta janela ficará ligada ao texto oficial da raça.",
+"Hiper-Nervosismo":"Descrição detalhada ainda não cadastrada no protótipo. Esta janela ficará ligada ao texto oficial da raça.",
+"Estilo de Luta":"Descrição detalhada ainda não cadastrada no protótipo. Será preenchida com as regras oficiais desta classe.",
+"Retomar o Fôlego":"Descrição detalhada ainda não cadastrada no protótipo. Será preenchida com as regras oficiais desta classe."
+};
+function featureButton(name,origin){return `<button class="feature-btn" onclick="showFeature('${esc(name).replace(/'/g,"\'")}','${esc(origin).replace(/'/g,"\'")}')"><b>• ${esc(name)}</b><br><small>${esc(origin)} • clique para detalhes</small></button>`}
+function showFeature(name,origin){showPopup("📜 "+name,origin,FEATURE_DESC[name]||"A descrição detalhada desta característica ainda não foi cadastrada. Quando fecharmos as regras de Raça, Classe e Subclasse, este popup mostrará efeito, usos, recarga, nível e qualquer rolagem necessária.")}
+const CLASS_MILESTONES={
+ barbaro:{3:["🌱 O Caminho Desperta","Escolha seu Caminho Primordial e defina como seu instinto sobrevive."],10:["⚔️ O Caminho se Revela","O Jardim reconhece aquilo que seu Caminho se tornou."],20:["👑 Encarnação Primordial","FOR +4, CON +4 e Instinto Inesgotável: o Jardim ainda não conseguiu levá-lo."]},
+ bardo:{3:["🌱 Sua Voz Foi Ouvida","Escolha a forma pela qual sua expressão deixará marcas no Jardim."],10:["⚔️ O Caminho se Revela","Sua voz já possui uma identidade que todos conseguem reconhecer."],20:["👑 O Jardim Conhece Sua Canção","O Jardim não apenas escuta você agora. Ele se lembra."]}
+};
+const PATH_DETAILS={
+ barbaro:{
+  "Fúria do Predador":{style:"Ofensivo • Caçada • Alvo único",feature:"Manifestação Predatória",benefit:"Ao ativar o Instinto Primordial, você assume uma manifestação de caça e concentra sua ferocidade em uma presa."},
+  "Casca Inquebrável":{style:"Defesa • Proteção • Contra-ataque",feature:"Carapaça de Guerra",benefit:"Durante o Instinto, seu corpo se torna uma barreira viva, reduzindo impactos e protegendo a linha de frente."},
+  "Pânico Frenético":{style:"Mobilidade • Controle • Colisão",feature:"Disparada Frenética",benefit:"O Instinto transforma deslocamento em arma, permitindo atravessar o campo e atropelar inimigos uma vez por turno."},
+  "Mofo Espiritual":{style:"Área • Controle • Suporte",feature:"Nuvem Simbiótica",benefit:"Uma colônia de esporos desperta durante o Instinto, criando uma área simbiótica que afeta aliados e inimigos."}
+ },
+ bardo:{
+  "Estridulante":{style:"Som • Dano • Controle",feature:"Vibração Estridulante",benefit:"Sua expressão domina frequências e vibrações, interferindo em criaturas, objetos e estruturas."},
+  "Contador de Teias":{style:"Informação • Influência • Estratégia",feature:"Fios da História",benefit:"Você aprende a perceber desejos, receios e vínculos, usando verdades descobertas para influenciar momentos decisivos."},
+  "Vagalume":{style:"Luz • Suporte • Esperança",feature:"Luz Inspiradora",benefit:"Sua presença fortalece aliados, protege sua coragem e mantém acesa a esperança do grupo."},
+  "Último Canto":{style:"Ecos • Mistério • Espiritual",feature:"Ouvir o que Restou",benefit:"Você começa a perceber Ecos deixados por emoções, acontecimentos e criaturas que já partiram."}
+ }
+};
+const CODEX_RULES=[
+ {title:"Princípio da automação",status:"oficial",text:"A ficha resolve a matemática; o jogador toma as decisões. Cálculos e desbloqueios permanentes são automáticos, mas custos, alvos, escolhas e consequências continuam com o jogador."},
+ {title:"IPJ e IPM",status:"oficial",text:"IPJ é informação permitida ao jogador e pode entrar na ficha ou Codex. IPM inclui CDs ocultas, fichas completas de criaturas e consequências secretas, permanecendo apenas no material do Mestre."},
+ {title:"Bônus de Proficiência",status:"oficial",text:"O bônus cresce com o nível do personagem: +2 nos níveis 1–4, +3 nos níveis 5–8, +4 nos níveis 9–12, +5 nos níveis 13–16 e +6 nos níveis 17–20. Em ataques com armas, ele só é aplicado quando a arma ou seu conjunto consta nas Proficiências."},
+ {title:"Ataques, acertos e críticos",status:"oficial",text:"Role 1d20 e some o atributo apropriado, a Proficiência quando válida e bônus mágicos. O ataque acerta ao igualar ou superar a CA do alvo. Um 20 natural é crítico e rola os dados de dano novamente."},
+ {title:"Dano, cura e PV temporários",status:"oficial",text:"Dano consome primeiro os PV temporários e depois os PV atuais. Cura recupera apenas PV atuais e nunca ultrapassa o PV máximo. PV temporários não se acumulam: permanece o maior valor recebido."},
+ {title:"Marcos de progressão",status:"oficial",text:"A Subclasse fica oculta até o nível 3. O nível 3 apresenta a escolha definitiva do Caminho; o nível 10 reconhece sua evolução; o nível 20 celebra o marco lendário individual da Classe."},
+ {title:"Descansos e recuperação decrescente",status:"oficial",text:"O primeiro Descanso Curto recupera normalmente; o segundo recupera metade do anterior e os seguintes continuam reduzindo até zero. O Descanso Longo restaura a capacidade normal e reinicia a sequência."},
+ {title:"Slots de magia e PRM",status:"oficial",text:"Slots de 1º–3º Círculo custam 1 PRM para recuperar em Descanso Curto; 4º–6º custam 2 PRM; 7º–9º normalmente exigem Descanso Longo. O jogador escolhe quais Slots recuperar."},
+ {title:"Mochila, materiais e peso",status:"oficial",text:"Materiais são escolhidos de uma lista e recebem quantidade. Quantidade × peso unitário atualiza automaticamente o peso da mochila. Itens não identificados podem aparecer como Item Desconhecido."},
+ {title:"Codex de Descobertas",status:"oficial",text:"Não Descoberto não aparece; Desconhecido registra que algo existe sem revelar identidade; Descoberto libera a informação IPJ identificada durante a campanha."},
+ {title:"Identificação e códigos",status:"teste",text:"Avaliadores podem identificar itens desconhecidos. Códigos MAT, REC, PRJ, LOC, FAC, MAG e TAL poderão desbloquear somente a informação IPJ correspondente sem carregar segredos do Mestre."},
+ {title:"Receitas, projetos e experimentação",status:"teste",text:"Catálogos profissionais podem revelar progresso de componentes. A primeira produção bem-sucedida identifica a receita ou projeto; falhas podem consumir componentes e gerar consequências apropriadas ao ofício."},
+ {title:"Bestiário de especialista",status:"rascunho",text:"Conceito futuro para uma Classe naturalista que aprende comportamento, fraquezas percebidas e materiais por encontro e estudo, sem revelar a ficha IPM completa da criatura."},
+ {title:"Persistência do Codex",status:"oficial",text:"Ficha e Codex são registros separados. Resetar a ficha não apaga descobertas; o Codex terá reset, backup e importação próprios, com possibilidade futura de mesclagem."},
+ {title:"Filosofia dos recursos",status:"oficial",text:"Escolha → custo → consequência → recuperação. O sistema não impede gastar tudo; a consequência é enfrentar o próximo problema com menos recursos."},
+ {title:"Armas do Pequeno Mundo",status:"teste",text:"As armas preservam a equivalência mecânica das armas do 5e, mas usam materiais e nomes do MicroCosmo. Acuidade escolhe automaticamente o melhor modificador entre Força e Destreza."},
+ {title:"Armaduras do Pequeno Mundo",status:"teste",text:"As proteções são classificadas como leves, médias, pesadas ou escudos. O catálogo adaptado ainda está em avaliação de balanceamento para a escala do Jardim."}
+];
+const CODEX_CLASS_TEXT={
+ barbaro:{status:"oficial",summary:"Combatente de instinto, resistência e força primordial.",proficiencies:"Armas simples, armas marciais, armaduras leves, armaduras médias e escudos.",features:["Instinto Primordial — manifesta uma forma feroz de sobrevivência.","Defesa sem Armadura — transforma vigor e reflexos em proteção.","Nível 3 — escolha definitiva de um Caminho Primordial.","Nível 10 — o Caminho se revela em uma característica gloriosa.","Nível 20 — Encarnação Primordial, o marco lendário da Classe."]},
+ bardo:{status:"oficial",summary:"Artista da ressonância, inspiração, histórias e magia sonora.",proficiencies:"Armas simples selecionadas, armaduras leves, instrumentos e ferramentas ligadas à expressão escolhida.",features:["Centelha Inspiradora — fortalece uma criatura com expressão e presença.","Ecos do Passado — encontra informação nas marcas deixadas pelo Jardim.","Canção do Repouso — melhora a recuperação do grupo.","Nível 3 — escolha definitiva de um Caminho de Ressonância.","Níveis 10 e 20 — a voz alcança marcos glorioso e lendário."]}
+};
+// Progressões oficiais consolidadas nos Codex fechados do Bárbaro e do Bardo.
+const CLASS_CODEX_PROGRESSIONS={
+ barbaro:[[1,"Instinto Primordial","Ação Bônus; 5 rodadas. Vantagem em testes e Salvaguardas de FOR, resistência física e bônus de dano corpo a corpo com FOR."],[1,"Defesa sem Armadura","CA = 10 + DES + CON sem armadura; pode usar escudo."],[2,"Ataque Imprudente","Vantagem em ataques corpo a corpo com FOR; ataques contra você têm Vantagem até seu próximo turno."],[2,"Instinto de Sobrevivência","Vantagem em Salvaguardas de DES contra efeitos percebidos."],[3,"Caminho Primordial","Escolha definitiva de uma das quatro Subclasses."],[4,"Evolução","Atributo ou Talento."],[5,"Ataque Extra","Realiza dois ataques com a Ação de Ataque."],[5,"Passos do Sobrevivente","+3 m de deslocamento sem Armadura Pesada."],[6,"Caminho Primordial II","Segunda característica da Subclasse."],[7,"Instinto Feral","Vantagem em Iniciativa e interação com surpresa e Instinto do Matagal."],[8,"Evolução","Atributo ou Talento."],[9,"Crítico Brutal I","+1 dado-base da arma em crítico corpo a corpo."],[10,"Caminho Primordial III","Característica assinatura da Subclasse."],[11,"Instinto Implacável","Ao cair a 0 PV durante o Instinto, CON CD 10 para permanecer com 1 PV; a CD cresce após cada sucesso."],[12,"Evolução","Atributo ou Talento."],[13,"Crítico Brutal II","+2 dados-base da arma; substitui o nível 9."],[14,"Ápice do Caminho","Quarta característica da Subclasse."],[15,"Instinto Persistente","O Instinto só termina por contador, decisão, inconsciência ou efeito específico."],[16,"Evolução e Instinto +4","Atributo/Talento e bônus de dano do Instinto sobe para +4."],[17,"Crítico Brutal III","+3 dados-base da arma; substitui versões anteriores."],[18,"Força Indomável","Em teste de FOR, pode usar o valor de FOR quando o total for menor."],[19,"Evolução","Último Atributo ou Talento."],[20,"Encarnação Primordial","FOR +4, CON +4, Instinto Inesgotável e O Jardim Ainda Não Me Levou."]],
+ bardo:[[1,"Expressão Artística","Define a manifestação artística do Bardo."],[1,"Centelha Inspiradora d6","Concede uma Centelha a outra criatura para teste, ataque ou Salvaguarda."],[1,"Ouvir o que Restou e Conjuração","Desperta Ecos do Passado e magia de 1º Círculo."],[2,"Canção do Repouso d6 e Improviso","Melhora recuperação e usa metade da Proficiência em testes não proficientes."],[3,"Sua Voz Foi Ouvida","Escolha do Caminho, Maestria em duas perícias e 2º Círculo."],[4,"Evolução","Atributo ou Talento, terceiro Truque e uma magia conhecida."],[5,"Centelha d8, Inspiração Renovada e Contracanto","Recursos aprimorados e acesso ao 3º Círculo."],[6,"Segunda evolução do Caminho","Nova característica da Subclasse."],[7,"Ler a Cena","Interpretação de informação observável e 4º Círculo."],[8,"Evolução","Atributo ou Talento."],[9,"Centelha d10 e Canção d8","Refrão Reconfortante, Memória Compartilhada e 5º Círculo."],[10,"O Caminho se Revela","Terceira grande manifestação do Caminho e mais duas Maestrias."],[11,"Verso de Improviso e Ecos Persistentes","Nova abordagem após falha e acesso ao 6º Círculo."],[12,"Evolução","Atributo ou Talento."],[13,"Ouvido Experiente","Centelha d12, Canção d10 e 7º Círculo."],[14,"Evolução profunda do Caminho","Nova característica da Subclasse."],[15,"Centelha Persistente e Improviso Magistral","Leitura Compartilhada e 8º Círculo."],[16,"Veterano do Jardim","Atributo ou Talento e marcador narrativo."],[17,"Inspiração Inabalável","Canção d12 e 9º Círculo."],[18,"O Jardim Também Escuta","Pergunta ampla aos vestígios do lugar e mais duas Maestrias."],[19,"Última Evolução","Último Atributo ou Talento e preparação para o marco final."],[20,"O Jardim Conhece Sua Canção","Retrospectiva da Jornada, Ainda Não Terminou e Despertar Lendário do Caminho."]]
+};
+const SUBCLASS_CODEX_PROGRESSIONS={
+ barbaro:{
+  "Fúria do Predador":[[3,"Manifestação Predatória","Presas Peçonhentas, Mandíbulas Perfurantes ou Ferrão Aterrador."],[6,"Caçada Implacável","Marca uma Presa, melhora perseguição e pune fuga com +1d6."],[10,"Predador Alfa","Uma vez por turno: Dilacerar, Debilitar ou Aterrorizar a Presa."],[14,"A Caçada Terminou","Aplica duas opções de Predador Alfa e transfere a Presa ao derrubá-la."]],
+  "Casca Inquebrável":[[3,"Carapaça de Guerra","Redução física uma vez por rodada e resposta perfurante contra agressor adjacente."],[6,"Bastião Vivo","Reação para receber dano no lugar de aliado próximo."],[10,"Impacto Reverso","Reação para contra-atacar quem causar dano corpo a corpo durante o Instinto."],[14,"Muralha que Não Cai","Permanece com 1 PV, protege aliados e depois recebe Exaustão."]],
+  "Pânico Frenético":[[3,"Disparada Frenética","Mais deslocamento, travessia e Atropelamento."],[6,"Rota de Fuga","Ignora um Ataque de Oportunidade e repete teste contra Agarrado ou Caído."],[10,"Colisão Devastadora","Após 6 m, causa 2d6 + FOR e continua o movimento."],[14,"Debandada Imparável","Não provoca Ataques de Oportunidade e colide com até duas criaturas."]],
+  "Mofo Espiritual":[[3,"Nuvem Simbiótica","Aura de esporos com dano de Veneno e pressão sobre Concentração."],[6,"Esporos Mutáveis","Escolhe esporos Tóxicos, Entorpecentes ou Restauradores."],[10,"Surto de Esporos","Explosão de esporos: CON ou 2d6 Veneno e Contaminado."],[14,"Colônia Desperta","Cria e movimenta uma segunda nuvem por três rodadas."]]
+ },
+ bardo:{
+  "Estridulante":[[3,"Ressonância","Ao gastar Centelha, causa Trovão próximo uma vez por turno."],[6,"Frequência de Ruptura","Após Trovão, pode retirar Reações, empurrar ou reduzir deslocamento."],[10,"Campo de Ressonância","Área de 3 m por três rodadas que amplifica Trovão."],[14,"Ressonância Encadeada","O dano extra salta para uma segunda criatura."],[20,"Frequência Absoluta","Ruptura, Descompasso ou Colapso uma vez por Descanso Longo."]],
+  "Contador de Teias":[[3,"Plantar a Dúvida","Reação e Centelha para subtrair o dado de uma rolagem."],[6,"Fio Invisível","Percebe Desejo, Receio ou Vínculo após conversa."],[10,"Mestre dos Fios","Explora informação significativa para Plantar a Dúvida sem Centelha."],[14,"Puxar o Fio","Usar um fio verdadeiro concede Vantagem apropriada."],[20,"A Teia Perfeita","Interfere por três rodadas em criaturas cujos fios conhece."]],
+  "Vagalume":[[3,"Luz Compartilhada","Centelha pode reduzir dano; Pequena Luz cria iluminação."],[6,"Luz que Guia","Move-se melhor rumo a aliados e após Salvaguarda inspirada."],[10,"Farol de Esperança","Aura protetora contra medo e dano por três rodadas."],[14,"Ninguém Fica Para Trás","Move um aliado que caiu a 0 PV sem Ataque de Oportunidade."],[20,"A Última Luz","Aliados resistem ao medo e permanecem em 1 PV uma vez."]],
+  "Último Canto":[[3,"Vozes que Permanecem","Vantagem em Ecos de morte, perda ou medo; Lamento pode Amedrontar."],[6,"Memória dos Caídos","Guarda uma Memória quando criatura próxima cai a 0 PV."],[10,"Resposta do Eco","Faz uma pergunta a Eco de morto ou desaparecido."],[14,"Eco Inacabado","Mantém contato sensorial com o Eco por até um minuto."],[20,"Coro dos Ausentes","Faz até três perguntas aos Ecos significativos do lugar."]]
+ }
+};
+const MILESTONE_PRESENTATION={
+ barbaro:{
+  3:{title:"🌱 SEU CAMINHO DESPERTA",story:"Você sobreviveu tempo suficiente para que o Jardim começasse a moldá-lo. Seu instinto precisa encontrar uma forma. Que criatura você se tornará para continuar vivo?"},
+  10:{defaultTitle:"⚔️ O CAMINHO SE REVELA",paths:{"Fúria do Predador":["🐺 O PREDADOR ALFA","Você aprendeu como sua presa pensa, como ela foge e como a caça termina.","Predador Alfa"],"Casca Inquebrável":["🪲 IMPACTO REVERSO","Aquilo que tentou quebrar sua defesa agora encontra uma muralha que também golpeia.","Impacto Reverso"],"Pânico Frenético":["💨 COLISÃO DEVASTADORA","O medo deixou de ser fuga. Agora seu movimento atravessa o campo como uma força impossível de conter.","Colisão Devastadora"],"Mofo Espiritual":["🍄 SURTO DE ESPOROS","A colônia desperta ao seu redor e o próprio ar passa a lutar ao seu lado.","Surto de Esporos"]}},
+  20:{title:"👑 ENCARNAÇÃO PRIMORDIAL",story:"Você sobreviveu onde outros foram devorados. Seu corpo aprendeu. Seu instinto evoluiu. E o Jardim ainda não conseguiu levá-lo.",unlocks:["💪 FOR +4","❤️ CON +4","🔥 Instinto Inesgotável","❤️‍🔥 O Jardim Ainda Não Me Levou"]}
+ },
+ bardo:{
+  3:{title:"🌱 SUA VOZ FOI OUVIDA",story:"Você cantou para aqueles que tinham medo, contou histórias para aqueles que haviam esquecido e encontrou vozes onde outros ouviam silêncio. Agora sua arte precisa encontrar um caminho."},
+  10:{defaultTitle:"⚔️ O CAMINHO SE REVELA",paths:{"Estridulante":["🦗 O MUNDO TEM UMA FREQUÊNCIA","Sua voz mudou. Agora o próprio espaço vibra quando sua expressão alcança o campo.","Campo de Ressonância"],"Contador de Teias":["🕸️ A TEIA ESTÁ MONTADA","Palavras, receios e vínculos formam fios que somente você aprendeu a puxar.","Mestre dos Fios"],"Vagalume":["✨ QUANDO TODOS OLHAM PARA A LUZ","Nos lugares mais escuros, aliados aprenderam a reconhecer sua presença como esperança.","Farol de Esperança"],"Último Canto":["💀 ALGUNS ECOS RESPONDEM","Você já não apenas escuta os ausentes. Alguns deles aprenderam a responder.","Resposta do Eco"]}},
+  20:{title:"👑 O JARDIM CONHECE SUA CANÇÃO",story:"Existem histórias contadas, histórias lembradas e histórias que mudam o lugar onde nasceram. O Jardim não apenas escuta você agora. Ele se lembra.",unlocks:["🎻 Ainda Não Terminou","📜 Retrospectiva da Jornada","👑 Despertar Lendário do Caminho"]}
+ }
+};
+function milestoneCards(){const data=CLASS_MILESTONES[state.cls];if(!data)return "";return [3,10,20].filter(l=>state.level>=l).map(l=>`<div class="milestone ${l===20?"legend":""}"><b>${data[l][0]}</b><small>Nível ${l} • ${esc(data[l][1])}${l>=3&&state.sub?`<br>Caminho: <b>${esc(state.sub)}</b>`:""}</small></div>`).join("")}
+function toggleMilestoneSound(){state.milestoneSound=!state.milestoneSound;save();renderMilestoneSoundButton()}
+function renderMilestoneSoundButton(){$("milestoneSoundButton").textContent=state.milestoneSound?"🔊 Som dos marcos":"🔇 Marcos sem som"}
+// Transição inspirada nas “Barras aleatórias” do PowerPoint: o conteúdo já fica
+// atrás da cortina enquanto cada barra gira em seu próprio ritmo até desaparecer.
+function playSlideTransition(){const popup=$("popup");popup.querySelectorAll(".ppt-random-bars").forEach(x=>x.remove());popup.classList.remove("slide-content");void popup.offsetWidth;const curtain=document.createElement("div");curtain.className="ppt-random-bars";curtain.innerHTML=Array.from({length:14},()=>{const duration=(2.6+Math.random()*1.25).toFixed(2),delay=(.15+Math.random()*.85).toFixed(2),origin=Math.random()>.5?"left center":"right center",turn=(Math.random()>.5?1:-1)*(82+Math.floor(Math.random()*38));return `<i style="--duration:${duration}s;--delay:${delay}s;--origin:${origin};--turn:${turn}deg"></i>`}).join("");popup.appendChild(curtain);popup.classList.add("slide-content");setTimeout(()=>curtain.remove(),4900)}
+function playMilestoneEffects(level){
+ const popup=$("popup");popup.querySelectorAll(".milestone-fx").forEach(x=>x.remove());
+ if(!matchMedia("(prefers-reduced-motion: reduce)").matches){const fx=document.createElement("div");fx.className="milestone-fx";const icons=level===3?["🌱","✦","🍃"]:level===10?["⚔️","✦","◆","🏆"]:["✦","🌟","◆","👑","✧"];fx.innerHTML=(level===20?'<i class="milestone-ring"></i>':"")+Array.from({length:level===20?34:20},(_,i)=>`<i class="milestone-particle" style="--x:${Math.random()*100}%;--size:${.7+Math.random()*1.4}rem;--speed:${2.2+Math.random()*2}s;--delay:${Math.random()*.8}s">${icons[i%icons.length]}</i>`).join("");popup.appendChild(fx);setTimeout(()=>fx.remove(),5200)}
+ playSlideTransition();if(!state.milestoneSound)return;try{const AudioCtx=window.AudioContext||window.webkitAudioContext,ctx=new AudioCtx(),now=ctx.currentTime,sequences={3:[[261.63,0],[329.63,.18],[392,.38],[523.25,.65]],10:[[392,0],[523.25,.16],[659.25,.32],[783.99,.5],[1046.5,.72]],20:[[130.81,0],[196,0],[261.63,0],[329.63,.45],[392,.45],[523.25,.9],[659.25,.9],[783.99,1.35]]};for(const [freq,delay] of sequences[level]){const o=ctx.createOscillator(),g=ctx.createGain();o.type=level===20?"triangle":"sine";o.frequency.value=freq;g.gain.setValueAtTime(.0001,now+delay);g.gain.exponentialRampToValueAtTime(level===20?.09:.065,now+delay+.04);g.gain.exponentialRampToValueAtTime(.0001,now+delay+(level===20?1.25:.62));o.connect(g).connect(ctx.destination);o.start(now+delay);o.stop(now+delay+(level===20?1.3:.68))}setTimeout(()=>ctx.close(),3200)}catch(e){}
+}
+function showMilestonePopup(level){if(level===3&&!state.subLocked)return showSubclassSelection(true);const base=CLASS_MILESTONES[state.cls]?.[level],presentation=MILESTONE_PRESENTATION[state.cls]?.[level];if(!base)return;let title=presentation?.title||base[0],story=presentation?.story||base[1],unlocks=presentation?.unlocks||[];if(level===10&&presentation?.paths?.[state.sub]){const path=presentation.paths[state.sub];title=path[0];story=path[1];unlocks=[`🌱 ${state.sub}`,`⚔️ ${path[2]}`]}const tags=unlocks.length?`<div class="milestone-unlocks">${unlocks.map(x=>`<span>${esc(x)}</span>`).join("")}</div>`:"";showPopup(level===20?"NÍVEL 20 • MARCO LENDÁRIO":"NÍVEL 10 • MARCO DA JORNADA",title,`<div class="milestone-kicker">O JARDIM ESPINHEIRO</div><div class="milestone-story">${esc(story)}</div>${tags}${state.sub?`<p><b>Caminho atual:</b> ${esc(state.sub)}</p>`:""}<p><b>Este momento ficará marcado na sua Jornada.</b></p>`);$("popup").classList.add("milestone-popup",`milestone-${level}`);playMilestoneEffects(level)}
+function showSubclassSelection(playIntro=false){if(state.level<3)return;if(state.subLocked)return showPopup("🔒 Caminho definitivo",state.sub,"Esta Subclasse já foi confirmada e não pode ser alterada nesta ficha.");const intro=CLASS_MILESTONES[state.cls]?.[3]||["🌱 Escolha seu Caminho","Esta decisão define sua Subclasse."],presentation=MILESTONE_PRESENTATION[state.cls]?.[3],details=PATH_DETAILS[state.cls]||{};showPopup("NÍVEL 3 • MARCO DE ESCOLHA",presentation?.title||intro[0],`<div class="milestone-kicker">O JARDIM ESPINHEIRO</div><div class="milestone-story">${esc(presentation?.story||intro[1])}</div><div class="path-options">${CLASS_DATA[state.cls].subs.map(name=>{const d=details[name]||{style:"Especialização da Classe",feature:"Característica de nível 3",benefit:"Os benefícios completos deste Caminho serão apresentados no Codex."};return `<div class="path-option"><b>${esc(name)}</b><small>${esc(d.style)}</small><button class="btn" onclick="showSubclassDetail('${name.replace(/'/g,"\'")}')">Conhecer este Caminho</button></div>`}).join("")}</div>`);$("popup").classList.add("milestone-popup","milestone-3");if(playIntro)playMilestoneEffects(3);else playSlideTransition()}
+function showSubclassDetail(name){const d=(PATH_DETAILS[state.cls]||{})[name]||{style:"Especialização da Classe",feature:"Característica de nível 3",benefit:"Os benefícios completos deste Caminho serão apresentados no Codex."};showPopup("🌱 UM DESTINO POSSÍVEL",name,`<div class="path-detail"><b>Estilo:</b> ${esc(d.style)}<br><br><b>Característica de nível 3 — ${esc(d.feature)}</b><br>${esc(d.benefit)}</div><div class="path-actions"><button class="btn" onclick="showSubclassSelection()">← Voltar aos Caminhos</button><button class="btn primary" onclick="confirmSubclassChoice('${name.replace(/'/g,"\'")}')">Escolher este Caminho</button></div>`);$("popup").classList.add("milestone-popup","milestone-3");playSlideTransition()}
+function confirmSubclassChoice(name){if(state.subLocked)return;if(!CLASS_DATA[state.cls].subs.includes(name))return;if(!confirm(`Confirmar definitivamente "${name}"?\n\nEsta escolha de Subclasse não poderá ser desfeita nesta ficha.`))return;state.sub=name;state.subLocked=true;save();syncAutoSpells();renderAll();showPopup("🔒 CAMINHO CONFIRMADO",name,"Sua decisão foi registrada definitivamente. A Subclasse e a Classe agora estão bloqueadas nesta ficha.");$("popup").classList.add("milestone-popup")}
+function renderTraits(){const r=RACE_DATA[state.race],c=CLASS_DATA[state.cls],path=state.level>=3&&state.sub?`<div class="auto-trait"><b>🌱 Caminho / Subclasse</b>${featureButton(state.sub,"Subclasse • nível 3")}</div>`:`<div class="path-lock">🔒 O Caminho/Subclasse será escolhido no nível 3.</div>`;$("p1AutoTraits").innerHTML=`<div class="auto-trait"><b>🧬 ${r.name}</b>${r.features.map(x=>featureButton(x,"Povo")).join("")}${state.subrace?featureButton(state.subrace,"Linhagem / Sub-raça"):""}</div><div class="auto-trait"><b>⚔️ ${c.name}</b>${c.features.map(x=>featureButton(x,"Classe")).join("")}</div>${path}${milestoneCards()}<div class="auto-trait"><b>📈 Nível ${state.level}</b></div>`}
+const CART_TYPES={none:{name:"Sem carrinho",mult:0},folha:{name:"Carrinho de Folha",mult:2},tampinha:{name:"Carrinho de Tampinha",mult:4},sucata:{name:"Carroça de Sucata",mult:6},reforcado:{name:"Carrinho Reforçado",mult:8}};
+function renderInventory(){const base=(Number(state.stats.FOR)*15)*RACE_DATA[state.race].carry,
+materialW=(state.magic.specialMaterials||[]).reduce((sum,x)=>{const m=materialById(x.id);return sum+(m?m.weight*(+x.qty||0):0)},0),
+bagW=state.bag.reduce((s,x)=>s+(+x.qty||0)*(+x.weight||0),0)+materialW,cartW=state.cart.reduce((s,x)=>s+(+x.qty||0)*(+x.weight||0),0),cart=CART_TYPES[state.cartType]||CART_TYPES.none;$("p1BagCapOut").textContent=Math.round(base)+"g";$("p1BagWeightOut").textContent=Math.round(bagW)+"g";$("p1CartCapOut").textContent=Math.round(base*cart.mult)+"g";$("p1CartWeightOut").textContent=Math.round(cartW)+"g";renderInvTable("bag","p1BagBody");renderInvTable("cart","p1CartBody")}
+function renderInvTable(kind,body){
+  let rows=state[kind].map((x,i)=>`<tr><td><input value="${esc(x.name)}" onchange="editInv('${kind}',${i},'name',this.value)"></td><td><input type="number" min="0" value="${+x.qty||0}" onchange="editInv('${kind}',${i},'qty',+this.value)"></td><td><input type="number" min="0" step=".1" value="${+x.weight||0}" onchange="editInv('${kind}',${i},'weight',+this.value)"></td><td>${Math.round((+x.qty||0)*(+x.weight||0)*10)/10}g</td><td><button class="btn danger slim" onclick="delInv('${kind}',${i})">✕</button></td></tr>`).join("");
+  if(kind==="bag"){
+    rows+=(state.magic.specialMaterials||[]).map(x=>{const m=materialById(x.id);return m?`<tr><td>🧪 ${esc(m.name)} <small>(Grimório)</small></td><td>${x.qty}</td><td>${m.weight}g</td><td>${Math.round(m.weight*x.qty*10)/10}g</td><td>🔒</td></tr>`:""}).join("")
+  }
+  $(body).innerHTML=rows
+}
+function addInventory(kind){state[kind].push({name:"Novo Item",qty:1,weight:1});save();renderInventory()}function editInv(kind,i,k,v){state[kind][i][k]=v;save();renderInventory()}function delInv(kind,i){state[kind].splice(i,1);save();renderInventory()}
+function handlePortrait(e){const input=e.target,f=input.files[0];if(!f)return;const rd=new FileReader(),img=new Image();rd.onload=ev=>{img.onload=()=>{const c=document.createElement("canvas"),M=420;let w=img.width,h=img.height;if(w>h&&w>M){h*=M/w;w=M}else if(h>=w&&h>M){w*=M/h;h=M}c.width=w;c.height=h;c.getContext("2d").drawImage(img,0,0,w,h);state.portrait=c.toDataURL("image/jpeg",.76);save();renderPortrait();renderP2();input.value=""};img.src=ev.target.result};rd.readAsDataURL(f)}
+function renderPortrait(){if(state.portrait){$("p1PortraitImg").src=state.portrait;$("p1PortraitImg").style.display="block";$("p1PortraitPlaceholder").style.display="none"}else{$("p1PortraitImg").style.display="none";$("p1PortraitPlaceholder").style.display="block"}}
+function removePortrait(){state.portrait="";save();renderPortrait();renderP2()}
+
+function initP2(){
+ const map={p2Home:"home",p2Age:"age",p2Height:"height",p2Weight:"weight",p2Eyes:"eyes",p2Skin:"skin",p2Hair:"hair",p2Appearance:"appearance",p2History:"history",p2SF:"sf",p2PS:"ps",p2RS:"rs",p2Amber:"amber",p2AmberNotes:"amberNotes",p2Factions:"factions"};
+ Object.entries(map).forEach(([id,k])=>{$(id).value=state.p2[k]??"";["input","change"].forEach(ev=>$(id).addEventListener(ev,()=>{state.p2[k]=$(id).type==="number"?+$(id).value:$(id).value;save()}))});
+ $("p2Photo").addEventListener("change",handlePortrait);
+}
+function renderP2(){
+ $("p2Name").value=state.charName;$("p2Name").readOnly=true;$("p2Race").value=`${RACE_DATA[state.race].name}${state.subrace?` — ${state.subrace}`:""}`;$("p2Race").readOnly=true;
+ ["home","age","height","weight","eyes","skin","hair","appearance","history","sf","ps","rs","amber","amberNotes","factions"].forEach(k=>{const id="p2"+k.charAt(0).toUpperCase()+k.slice(1);if($(id))$(id).value=state.p2[k]??""});
+ if(state.portrait){$("p2Pic").src=state.portrait;$("p2Pic").style.display="block";$("p2Ph").style.display="none"}else{$("p2Pic").style.display="none";$("p2Ph").style.display="block"}
+ $("p2Memories").innerHTML=state.p2.memories.map((x,i)=>`<div class="memory">🌿 ${esc(x)} <button onclick="delP2Array('memories',${i})">✕</button></div>`).join("")||'<div class="memory"><small>Nenhuma memória registrada ainda.</small></div>';
+ $("p2Marks").innerHTML=state.p2.marks.map((x,i)=>`<div class="memory">🏆 ${esc(x)} <button onclick="delP2Array('marks',${i})">✕</button></div>`).join("")||'<div class="memory"><small>Nenhuma grande conquista registrada.</small></div>';
+}
+function addMemory(){const x=prompt("O que aconteceu?");if(x){state.p2.memories.push(x);save();renderP2()}}function addMark(){const x=prompt("Nome da conquista ou marca:");if(x){state.p2.marks.push(x);save();renderP2()}}function setP2Array(a,i,k,v){state.p2[a][i][k]=v;save()}function delP2Array(a,i){state.p2[a].splice(i,1);save();renderP2()}function rmPhoto(){removePortrait()}
+
+let currentIndex=0;
+
+const FULL_CASTER_SLOTS={
+1:[2],2:[3],3:[4,2],4:[4,3],5:[4,3,2],6:[4,3,3],7:[4,3,3,1],8:[4,3,3,2],9:[4,3,3,3,1],10:[4,3,3,3,2],
+11:[4,3,3,3,2,1],12:[4,3,3,3,2,1],13:[4,3,3,3,2,1,1],14:[4,3,3,3,2,1,1],15:[4,3,3,3,2,1,1,1],
+16:[4,3,3,3,2,1,1,1],17:[4,3,3,3,2,1,1,1,1],18:[4,3,3,3,3,1,1,1,1],19:[4,3,3,3,3,2,1,1,1],20:[4,3,3,3,3,2,2,1,1]
+};
+function slotProgression(){if(!magicSource())return {};const arr=FULL_CASTER_SLOTS[state.level]||[];const obj={};arr.forEach((max,i)=>{const lvl=i+1,old=state.magic.slots[lvl]||{used:0};obj[lvl]={max,used:Math.min(old.used||0,max)}});state.magic.slots=obj;return obj}
+
+function magicSource(){return SPELLS[state.cls]||null}
+
+
+const MATERIAL_CATALOG={
+  perola_orvalho:{name:"Pérola de Orvalho Puríssimo",weight:2,rarity:"Raro",origin:"Orvalho",desc:"Componente especial preservado em gotas de pureza incomum."},
+  fio_cobre:{name:"Fio Fino de Cobre",weight:1,rarity:"Incomum",origin:"Sucata Humana",desc:"Filamento metálico usado em magia elétrica e engenharia."},
+  casca_mineral:{name:"Casca Mineral Translúcida",weight:2,rarity:"Comum",origin:"Pedras e cascalho",desc:"Lasca mineral transparente usada para refração e proteção."},
+  seda_aranha:{name:"Fio de Seda de Aranha",weight:.5,rarity:"Comum",origin:"Teias",desc:"Fibra leve e resistente obtida de teias."},
+  resina_endurecida:{name:"Resina Endurecida",weight:2,rarity:"Comum",origin:"Árvores e arbustos",desc:"Seiva endurecida útil em alquimia e componentes."},
+  fungo_bioluminescente:{name:"Fungo Bioluminescente",weight:1,rarity:"Comum",origin:"Áreas úmidas",desc:"Pequeno fungo que emite luz suave."},
+  nectar_luminoso:{name:"Néctar Luminoso",weight:1,rarity:"Incomum",origin:"Flores",desc:"Néctar com brilho natural usado em efeitos de luz e marcação."},
+  carvao_po:{name:"Carvão em Pó",weight:1,rarity:"Comum",origin:"Restos queimados",desc:"Pó escuro e combustível usado em misturas."},
+  casca_ressoante:{name:"Casca Oca Ressoante",weight:1,rarity:"Comum",origin:"Cascas secas",desc:"Pequeno fragmento oco que amplifica vibrações mágicas."}
+};
+function materialById(id){return MATERIAL_CATALOG[id]||null}
+
+const AUTO_SPELLS={race:{},subclass:{}};
+function syncAutoSpells(){
+  state.magic.known=state.magic.known.filter(x=>!x.auto);
+  const grants=[...(AUTO_SPELLS.race[state.race]||[]).map(n=>({name:n,source:`Raça: ${RACE_DATA[state.race].name}`})),...(AUTO_SPELLS.subclass[state.sub]||[]).map(n=>({name:n,source:`Subclasse: ${state.sub}`}))];
+  for(const g of grants){let found=null,srcKey=null;for(const [k,src] of Object.entries(SPELLS)){const sp=src.spells.find(x=>x.name===g.name);if(sp){found=sp;srcKey=k;break}}if(found&&!state.magic.known.some(x=>x.name===g.name))state.magic.known.push({...found,sourceClass:srcKey,source:g.source,auto:true})}
+  save()
+}
+
+function initP3(){
+ $("materialCatalogSelect").innerHTML=Object.entries(MATERIAL_CATALOG).map(([id,m])=>`<option value="${id}">${m.name}</option>`).join("");
+ $("p3ComponentPouch").checked=state.magic.componentPouch;
+ $("p3ComponentPouch").onchange=()=>{state.magic.componentPouch=$("p3ComponentPouch").checked;save();renderMagicAvailable()};
+ $("p3LevelSelect").onchange=()=>{state.magic.levelFilter=+$("p3LevelSelect").value;save();currentIndex=0;renderMagicAvailable()};
+}
+function renderMagicAll(){renderMagicTop();renderMagicLevels();renderMagicAvailable();renderMaterials();renderSlots();renderKnown();renderAttackSpells()}
+
+function codexStatusBadge(status){const data={oficial:["✅ Oficial","status-oficial"],teste:["🧪 Em teste","status-teste"],rascunho:["📝 Rascunho","status-rascunho"]}[status]||[status,"status-rascunho"];return `<span class="status-badge ${data[1]}">${data[0]}</span>`}
+let codexCategory="all",codexSelected=null;
+function codexEntries(){const entries=[];Object.entries(CODEX_CLASS_TEXT).forEach(([id,data])=>entries.push({id:`class:${id}`,category:"classes",status:data.status,discovered:true,title:CLASS_DATA[id].name,tags:["Classe",CLASS_DATA[id].hit,...CLASS_DATA[id].features],data:{id,...data}}));Object.entries(RACE_DATA).forEach(([id,r])=>entries.push({id:`race:${id}`,category:"races",status:id==="rato"?"oficial":"rascunho",discovered:id==="rato",title:r.name,tags:["Povo",r.speed,...r.features],data:{id,...r}}));Object.entries(SPELLS).forEach(([source,book])=>book.spells.forEach((s,index)=>entries.push({id:`spell:${source}:${index}`,category:"spells",status:"teste",discovered:true,title:s.name,tags:["Magia",s.school,`Nível ${s.lvl}`,book.name],data:s})));Object.entries(MATERIAL_CATALOG).forEach(([id,m])=>entries.push({id:`material:${id}`,category:"materials",status:"teste",discovered:true,title:m.name,tags:["Material",m.rarity||"Comum"],data:m}));CODEX_RULES.forEach((r,i)=>entries.push({id:`rule:${i}`,category:"rules",status:r.status,discovered:true,title:r.title,tags:["Regra essencial"],data:r}));Object.entries(EQUIPMENT_CATALOG).forEach(([id,e])=>entries.push({id:`equipment:${id}`,category:e.type==="arma"?"weapons":"armor",status:"teste",discovered:true,title:e.name,tags:e.type==="arma"?[e.training,e.category,e.rarity]:[e.armorClass,e.rarity],data:e}));entries.push({id:"world:vila",category:"world",status:"oficial",discovered:true,title:"Vila Cogumelo",tags:["Lugar","Comunidade"],data:{summary:"Um refúgio protegido entre raízes e fungos gigantes para a escala dos habitantes do Jardim."}},{id:"world:colmeia",category:"world",status:"rascunho",discovered:false,title:"Colmeia Rubra",tags:["Facção","Bloqueado"],data:{summary:"Informação ainda não descoberta."}},{id:"world:vane",category:"world",status:"rascunho",discovered:false,title:"Lord Vane",tags:["Criatura","Mistério"],data:{summary:"Informação ainda não descoberta."}});return entries}
+function filteredCodex(){const q=String($("codexSearch")?.value||"").trim().toLowerCase(),showAll=$("codexVisibility")?.value==="all",status=$("codexStatus")?.value||"all";return codexEntries().filter(e=>(codexCategory==="all"||e.category===codexCategory)&&(showAll||e.discovered)&&(status==="all"||e.status===status)&&(!q||`${e.title} ${e.tags.join(" ")}`.toLowerCase().includes(q)))}
+function codexTable(rows){return `<table class="codex-table"><thead><tr><th>Nível</th><th>Característica</th><th>Descrição</th></tr></thead><tbody>${rows.map(r=>`<tr><td>${esc(r[0])}</td><td><b>${esc(r[1])}</b></td><td>${esc(r[2])}</td></tr>`).join("")}</tbody></table>`}
+function renderCodexContent(entry){const out=$("codexContent");if(!entry){out.innerHTML='<div class="codex-empty">Escolha uma entrada para visualizar.</div>';return}if(!entry.discovered){out.innerHTML='<div class="codex-locked"><div><div style="font-size:3rem">🔒</div><h2>Entrada não descoberta</h2><p>O personagem ainda não possui conhecimento suficiente para acessar esta informação.</p></div></div>';return}const d=entry.data,meta=`<div class="codex-meta">${esc(entry.tags.join(" • "))}</div><div class="codex-badges">${codexStatusBadge(entry.status)}</div>`;if(entry.category==="classes"){const cls=CLASS_DATA[d.id],paths=SUBCLASS_CODEX_PROGRESSIONS[d.id]||{},rows=CLASS_CODEX_PROGRESSIONS[d.id]||[];out.innerHTML=`<h2>⚔️ ${esc(cls.name)}</h2>${meta}<p>${esc(d.summary)}</p><div class="codex-badges"><span class="codex-badge">🎲 Dado de Vida: ${cls.hit}</span><span class="codex-badge">❤️ PV por nível: ${cls.hp}</span><span class="codex-badge">✨ Atributo mágico: ${cls.caster||"—"}</span></div><div class="codex-section"><h3>Proficiências</h3><p>${esc(d.proficiencies)}</p></div><div class="codex-section"><h3>Progressão oficial — níveis 1 a 20</h3>${codexTable(rows)}</div><div class="codex-section"><h3>Subclasses</h3><div class="codex-subclass-box"><div><label>Escolha uma Subclasse</label><select id="codexSubSelect" onchange="renderCodexSubclass('${d.id}')">${Object.keys(paths).map(n=>`<option>${esc(n)}</option>`).join("")}</select></div><div class="note">Mostra o que o Caminho concede em cada nível relevante.</div></div><div id="codexSubContent" style="margin-top:8px"></div></div>`;renderCodexSubclass(d.id);return}let body="";if(entry.category==="weapons")body=`<p><b>Dano:</b> ${esc(d.die)} • <b>Conjunto:</b> ${d.training==="marcial"?"Marcial":"Simples"} • <b>Uso:</b> ${d.category==="distancia"?"À distância":"Corpo a corpo"}</p><p>${esc(d.effect)}</p>`;else if(entry.category==="armor")body=`<p><b>Categoria:</b> ${esc(d.armorClass)} • <b>Bônus de CA:</b> +${+d.ac||0}</p><p>${esc(d.effect)}</p>`;else if(entry.category==="spells")body=`<div class="codex-badges"><span class="codex-badge">${esc(d.school)}</span><span class="codex-badge">Nível ${d.lvl}</span><span class="codex-badge">${esc(d.cast)}</span><span class="codex-badge">${esc(d.range)}</span></div><p>${esc(d.text)}</p>`;else if(entry.category==="races")body=`<p><b>Deslocamento:</b> ${esc(d.speed)}</p><p><b>Características:</b> ${d.features.map(esc).join(", ")}</p><p><b>Sub-raças:</b> ${d.subs.map(esc).join(", ")}</p>`;else body=`<p>${esc(d.text||d.summary||d.effect||"Informações em preparação.")}</p>`;out.innerHTML=`<h2>${esc(entry.title)}</h2>${meta}<div class="codex-section">${body}</div>`}
+function renderCodexSubclass(classId){const paths=SUBCLASS_CODEX_PROGRESSIONS[classId]||{},name=$("codexSubSelect")?.value,rows=paths[name],out=$("codexSubContent");if(!out||!rows)return;const style=PATH_DETAILS[classId]?.[name]?.style||"Caminho da Classe";out.innerHTML=`<h4>${esc(name)}</h4>${codexTable(rows)}<p class="note">${esc(style)}</p>`}
+function openCodexEntry(id){codexSelected=id;renderCodex()}
+function renderCodex(){const results=$("codexResults");if(!results)return;const all=codexEntries(),arr=filteredCodex();if(codexSelected&&!arr.some(e=>e.id===codexSelected))codexSelected=null;results.innerHTML=arr.length?arr.map(e=>`<button class="codex-result ${codexSelected===e.id?"active":""} ${!e.discovered?"locked":""}" onclick="openCodexEntry('${e.id}')"><b>${e.discovered?"":"🔒 "}${esc(e.title)}</b><br><small>${esc(e.tags.join(" • "))}</small><br>${codexStatusBadge(e.status)}</button>`).join(""):'<div class="codex-empty">Nenhum resultado encontrado.</div>';renderCodexContent(codexSelected?all.find(e=>e.id===codexSelected):null)}
+function initCodex(){$("codexSearch")?.addEventListener("input",()=>{codexSelected=null;renderCodex()});["codexVisibility","codexStatus"].forEach(id=>$(id)?.addEventListener("change",()=>{codexSelected=null;renderCodex()}));document.querySelectorAll(".codex-filter").forEach(button=>button.onclick=()=>{document.querySelectorAll(".codex-filter").forEach(x=>x.classList.remove("active"));button.classList.add("active");codexCategory=button.dataset.codexCat;codexSelected=null;renderCodex()});renderCodex()}
+function renderMagicTop(){const src=magicSource();if(!src){$("p3ClassOut").textContent=CLASS_DATA[state.cls].name;$("p3StatOut").textContent="—";$("p3DcOut").textContent="—";$("p3AtkOut").textContent="—";return}const stat=src.stat;$("p3ClassOut").textContent=src.name;$("p3StatOut").textContent=stat;$("p3DcOut").textContent=8+prof()+mod(state.stats[stat]);$("p3AtkOut").textContent=fmt(prof()+mod(state.stats[stat]))}
+function renderMagicLevels(){const src=magicSource();if(!src){$("p3LevelSelect").innerHTML='<option>Sem magia</option>';return}const levels=[...new Set(src.spells.map(x=>x.lvl))].sort((a,b)=>a-b);$("p3LevelSelect").innerHTML=levels.map(l=>`<option value="${l}">${l===0?"Truques":l+"º Círculo"}</option>`).join("");if(!levels.includes(state.magic.levelFilter))state.magic.levelFilter=levels[0]||0;$("p3LevelSelect").value=state.magic.levelFilter}
+function compBadges(s){const area=`<span class='badge'>📐 ${esc(SPELL_AREAS[s.name]||"Alvo ou área descrita no efeito")}</span>`;return area+s.comp.map(c=>c==="V"?"<span class='badge'>🗣️ Verbal</span>":c==="S"?"<span class='badge'>🤲 Somático</span>":"<span class='badge'>🎒 Material</span>").join("")}
+function materialBlock(s){
+ const known=state.magic.known.some(x=>x.name===s.name),castButton=known?`<div style="margin-top:8px"><button class="btn primary" onclick="castSpell('${s.name.replace(/'/g,"\'")}')">✨ Conjurar magia</button></div>`:"";
+ if(!s.comp.includes("M"))return `<div class='material'><b>Material:</b> Nenhum.${castButton}</div>`;
+ const hasPrice=s.price!==undefined&&s.price!==null&&s.price!=="",focusCovers=!s.consumed&&!hasPrice&&state.magic.componentPouch;
+ return `<div class="material"><b>🎒 Material:</b> ${esc(s.material||"material simples")}<br>${s.consumed?"🔥 <b>Consumido ao conjurar.</b>":"♻️ <b>Não é consumido.</b>"}${hasPrice?`<br>💰 <b>Preço obrigatório:</b> ${esc(s.price)}`:""}${s.cost?`<br>🏷️ <b>Categoria:</b> ${esc(s.cost)}`:""}${focusCovers?"<br>✅ O foco/bolsa cobre este material simples.":s.consumed||hasPrice?"<br>⚠️ A Bolsa/Foco não substitui este componente; ele deve estar no inventário.":"<br>⚠️ Sem foco/bolsa, o material deve estar no inventário, mas não será gasto."}${castButton}</div>`
+}
+function renderMagicAvailable(){const src=magicSource();if(!src){$("p3AvailableList").innerHTML='<div class="empty">Sua classe atual não possui grimório neste protótipo.</div>';$("p3SpellDetail").innerHTML='<div class="empty">Escolha uma classe conjuradora com lista disponível.</div>';return}const arr=src.spells.filter(x=>x.lvl===state.magic.levelFilter);if(currentIndex>=arr.length)currentIndex=0;$("p3AvailableList").innerHTML=arr.map((s,i)=>`<button class="spell-choice ${i===currentIndex?"active":""}" onclick="selectMagic(${i})"><b>${s.name}</b><br><small>${s.school}${s.attack?" • ⚔️ Ataque":""}${s.comp.includes("M")?" • 🎒 M":""}</small></button>`).join("")||'<div class="empty">Nenhuma magia.</div>';if(arr.length)renderMagicDetail(arr[currentIndex]);else $("p3SpellDetail").innerHTML='<div class="empty">Nenhuma magia para exibir.</div>'}
+function selectMagic(i){currentIndex=i;renderMagicAvailable()}
+function renderMagicDetail(s){const already=state.magic.known.some(x=>x.name===s.name);$("p3SpellDetail").innerHTML=`<h2>${s.name}</h2><div class="meta">${s.lvl===0?"Truque":s.lvl+"º Círculo"} • ${s.school}</div><div class="badges"><span class="badge">⏱ ${s.cast}</span><span class="badge">📏 ${s.range}</span><span class="badge">⌛ ${s.duration}</span>${compBadges(s)}${s.attack?'<span class="badge">⚔️ Ataque mágico</span>':""}${s.damage?`<span class="badge">💥 ${s.damage}</span>`:""}${s.save?`<span class="badge">🛡️ TR ${s.save}</span>`:""}</div>${materialBlock(s)}<p style="line-height:1.55">${s.text}</p><button class="btn primary" ${already?"disabled":""} onclick="addKnown('${s.name.replace(/'/g,"\\'")}')">${already?"✓ Já conhecida":"+ Adicionar à lista conhecida"}</button>`}
+function addKnown(name){const src=magicSource();if(!src)return;const sp=src.spells.find(x=>x.name===name);if(sp&&!state.magic.known.some(x=>x.name===name)){state.magic.known.push({...sp,sourceClass:state.cls});save()}renderMagicAvailable();renderKnown();renderAttackSpells()}
+function removeKnown(name){const spell=state.magic.known.find(x=>x.name===name);if(spell&&spell.auto){alert(`"${name}" é concedida automaticamente por ${spell.source} e não pode ser removida manualmente.`);return}if(!confirm(`Excluir a magia "${name}" da lista conhecida?`))return;if(!confirm(`Confirmação final: remover "${name}"?\n\nEla também desaparecerá da área de Magias de Ataque na Página 1.`))return;state.magic.known=state.magic.known.filter(x=>x.name!==name);save();renderKnown();renderMagicAvailable();renderAttackSpells()}
+function castSpell(name){
+ const s=state.magic.known.find(x=>x.name===name);if(!s)return false;
+ const ids=SPELL_MATERIALS[s.name]||[],hasPrice=s.price!==undefined&&s.price!==null&&s.price!=="",focusCovers=s.comp.includes("M")&&state.magic.componentPouch&&!s.consumed&&!hasPrice;
+ if(s.comp.includes("M")&&!focusCovers){
+   const missing=ids.filter(id=>!(state.magic.specialMaterials||[]).some(x=>x.id===id&&+x.qty>0));
+   if(!ids.length||missing.length){const names=missing.length?missing.map(id=>materialById(id)?.name||id).join(", "):s.material,reason=s.consumed?"O componente é consumido pela magia.":hasPrice?"O componente possui preço listado.":"Não há foco/bolsa para fornecer o componente simples.";showPopup("🚫 Magia bloqueada",s.name,`${reason}<br><b>Necessário no inventário:</b> ${esc(names||"material indicado na magia")}.`);return false}
+ }
+ const slots=slotProgression();
+ if(s.lvl>0&&(!slots[s.lvl]||slots[s.lvl].used>=slots[s.lvl].max)){showPopup("🚫 Magia bloqueada",s.name,`Não há espaço disponível do <b>${s.lvl}º círculo</b>.`);return false}
+ if(s.comp.includes("M")&&!focusCovers&&s.consumed){for(const id of ids){const item=state.magic.specialMaterials.find(x=>x.id===id);item.qty--;state.magic.specialMaterials=state.magic.specialMaterials.filter(x=>x.qty>0)}}
+ if(s.lvl>0)state.magic.slots[s.lvl].used++;
+ save();renderMaterials();renderSlots();renderInventory();addRollHistory("Magia","—",s.lvl?`${s.lvl}º círculo`:"Truque","—",s.name);
+ showPopup("✨ Magia conjurada",s.name,`${SPELL_AREAS[s.name]?`<b>Forma:</b> ${esc(SPELL_AREAS[s.name])}<br>`:""}${focusCovers?"O foco/bolsa substituiu o material simples.":s.comp.includes("M")&&s.consumed?"O componente consumível foi retirado automaticamente do inventário.":s.comp.includes("M")?"O componente foi verificado no inventário e não foi consumido.":"Nenhum material foi necessário."}`);return true
+}
+function renderKnown(){const levels=[...new Set(state.magic.known.map(x=>x.lvl))].sort((a,b)=>a-b);$("p3KnownList").innerHTML=levels.length?levels.map(l=>`<div class="level-block"><div class="level-title">${l===0?"🔹 Truques":`🔮 ${l}º Círculo`} — ${state.magic.known.filter(x=>x.lvl===l).length} magia(s)</div>${state.magic.known.filter(x=>x.lvl===l).map(s=>`<div class="known-row"><div><b>${s.name}</b><br><small>${s.school}</small></div><div><span class="source-tag">${esc(s.source||"Aprendida")}</span> ${s.attack?'<span class="attack-tag">⚔️ Ataque</span>':""}</div><button class="btn" onclick="showMagicDesc('${s.name.replace(/'/g,"\'")}')">Ver descrição</button>${s.auto?'<span class="source-tag">🔒 Automática</span>':`<button class="btn danger" onclick="removeKnown('${s.name.replace(/'/g,"\'")}')">✕</button>`}</div>`).join("")}</div>`).join(""):'<div class="empty">Você ainda não adicionou nenhuma magia conhecida.</div>'}
+function showMagicDesc(name){const s=state.magic.known.find(x=>x.name===name);if(!s)return;$("p3ModalContent").innerHTML=`<h2>${s.name}</h2><div class="meta">${s.lvl===0?"Truque":s.lvl+"º Círculo"} • ${s.school}</div><div class="badges"><span class="badge">⏱ ${s.cast}</span><span class="badge">📏 ${s.range}</span><span class="badge">⌛ ${s.duration}</span>${compBadges(s)}${s.damage?`<span class="badge">💥 ${s.damage}</span>`:""}${s.save?`<span class="badge">🛡️ TR ${s.save}</span>`:""}</div>${materialBlock(s)}<p style="line-height:1.6">${s.text}</p>`;$("p3Modal").classList.add("show")}
+function renderMaterials(){
+  $("p3SpecialMaterials").innerHTML=state.magic.specialMaterials.length
+    ? state.magic.specialMaterials.map((item,i)=>{
+        const m=materialById(item.id);
+        if(!m)return "";
+        return `<div class="material-owned">
+          <div><b>${esc(m.name)}</b><br><small>${m.rarity} • ${m.origin}</small></div>
+          <div>× ${item.qty}</div>
+          <div>${Math.round(m.weight*item.qty*10)/10}g</div>
+          <button class="btn danger" onclick="delMaterial(${i})">✕</button>
+        </div>`;
+      }).join("")
+    : '<div class="empty">Nenhum material especial registrado. Escolha um material da lista oficial acima.</div>';
+  renderInventory();
+}
+function addMaterial(){
+  const id=$("materialCatalogSelect").value,qty=Math.max(1,+$("materialCatalogQty").value||1);
+  if(!MATERIAL_CATALOG[id])return;
+  const found=state.magic.specialMaterials.find(x=>x.id===id);
+  if(found)found.qty+=qty; else state.magic.specialMaterials.push({id,qty});
+  $("materialCatalogQty").value=1;
+  save();renderMaterials()
+}
+function delMaterial(i){state.magic.specialMaterials.splice(i,1);save();renderMaterials()}
+function renderSlots(){const slots=slotProgression();$("p3Slots").innerHTML=Object.entries(slots).length?Object.entries(slots).map(([l,o])=>`<div class="slot"><b>${l}º Círculo</b><div class="dots">${Array.from({length:o.max},(_,i)=>`<button class="dot ${i<o.used?"used":""}" onclick="toggleSlot(${l},${i})">${i<o.used?"✕":"●"}</button>`).join("")}</div><small>${o.max-o.used} disponíveis</small></div>`).join(""):'<div class="empty">Nenhum slot disponível neste nível ou classe.</div>';save()}
+function toggleSlot(l,i){let o=state.magic.slots[l];o.used=i<o.used?i:i+1;save();renderSlots()}
+function renderAttackSpells(){const arr=state.magic.known.filter(x=>x.attack);$("p1AttackSpells").innerHTML=arr.length?arr.map((s,i)=>{const stat=(SPELLS[s.sourceClass]||{}).stat||"INT",bonus=prof()+mod(state.stats[stat]);return `<div class="attack-spell-row"><div><b>${s.name}</b><br><small>${s.damage||"—"} • ${s.range}</small></div><div>Ataque ${fmt(bonus)}</div><div><span class="source-tag">${esc(s.source||"Aprendida")}</span></div><button class="btn slim" onclick="prepareSpellD20(${i})">d20 +</button><button class="btn primary slim" onclick="rollSpellDamage(${i})">💥 Dano</button></div>`}).join(""):'<div class="eq-note">Nenhuma magia de ataque conhecida.</div>'}
+function prepareSpellD20(index){const s=state.magic.known.filter(x=>x.attack)[index];if(!s||!castSpell(s.name))return;const stat=(SPELLS[s.sourceClass]||{}).stat||"INT";state.roll.bonus=prof()+mod(state.stats[stat]);$("d20Bonus").value=state.roll.bonus;save();automaticAttack(s.name,state.roll.bonus,s.damage||"1d4",0)}
+function rollSpellDamage(index){const s=state.magic.known.filter(x=>x.attack)[index],dr=s.damage?parseDice(s.damage):null;if(!dr)return showPopup("✨ "+s.name,"Sem dano","Esta magia não possui expressão de dano cadastrada.");showPopup("✨ "+s.name,`Dano ${dr.total}`,`${s.damage} [${dr.rolls.join(", ")}] = <b>${dr.total}</b>`);addRollHistory("Dano mágico",dr.rolls.join(", "),"—",dr.total,s.name)}
+
+
+// Faz uma rolagem imediata pelo nome clicado e reutiliza o modo atual da Central d20.
+function rollNamedD20(label,bonus,type){
+  const mode=state.roll.mode||"normal",r1=1+Math.floor(Math.random()*20),r2=1+Math.floor(Math.random()*20);
+  const natural=mode==="adv"?Math.max(r1,r2):mode==="dis"?Math.min(r1,r2):r1,total=natural+(+bonus||0);
+  const modeText=mode==="adv"?`Vantagem [${r1}, ${r2}]`:mode==="dis"?`Desvantagem [${r1}, ${r2}]`:"Rolagem normal";
+  const result=natural===1?"🔴 Falha crítica":natural>=state.roll.crit?"🟢 Crítico natural":"⚪ Resultado";
+  showPopup(`🎲 ${label}`,`${result}: ${total}`,`${modeText} • d20 [${natural}] ${bonus?fmt(bonus)+" de modificador":"sem modificador"}`);
+  addRollHistory(type,natural,fmt(+bonus||0),total,label);
+}
+// Dano consome primeiro os PV temporários; cura recupera somente PV atual, até o máximo.
+function applyHpChange(kind){
+  const amount=Math.max(0,Math.floor(+$("hpChangeAmount").value||0));
+  if(!amount)return showPopup("❤️ Pontos de Vida","Informe um valor","Digite uma quantidade maior que zero antes de aplicar dano ou cura.");
+  if(kind==="damage"){
+    const tempBefore=Math.max(0,+state.hpTemp||0),absorbed=Math.min(tempBefore,amount),remaining=amount-absorbed;
+    state.hpTemp=tempBefore-absorbed;state.hpNow=Math.max(0,(+state.hpNow||0)-remaining);
+    save();$("p1HpTemp").value=state.hpTemp;$("p1HpNow").value=state.hpNow;
+    addRollHistory("Dano recebido","—",`PV temp. -${absorbed}; PV atual -${remaining}`,amount,`Restam ${state.hpNow} PV + ${state.hpTemp} temporários`);
+    showPopup("🩸 Dano aplicado",`${amount} de dano`,`PV temporário absorveu <b>${absorbed}</b>. PV atual perdeu <b>${remaining}</b>.<br>Agora: <b>${state.hpNow} PV</b> e <b>${state.hpTemp} PV temporários</b>.`);
+  }else{
+    const before=Math.max(0,+state.hpNow||0),maximum=Math.max(0,+state.hpMax||0),after=Math.min(maximum,before+amount),healed=after-before;
+    state.hpNow=after;save();$("p1HpNow").value=state.hpNow;
+    addRollHistory("Cura","—",`PV atual +${healed}`,healed,`Agora ${state.hpNow}/${maximum} PV`);
+    showPopup("💚 Cura aplicada",`${healed} PV recuperados`,`A cura não ultrapassa o PV máximo.<br>Agora: <b>${state.hpNow}/${maximum} PV</b>.`);
+  }
+  $("hpChangeAmount").value=0;
+}
+function addRollHistory(type,natural,mods,total,note){state.roll.history.unshift({time:new Date().toLocaleTimeString(),type,natural:String(natural),mods:String(mods),total,note:note||""});state.roll.history=state.roll.history.slice(0,100);save();renderRollHistory()}
+function rollD20(){
+  const mode=state.roll.mode||"normal",r1=1+Math.floor(Math.random()*20),r2=1+Math.floor(Math.random()*20);
+  const natural=mode==="adv"?Math.max(r1,r2):mode==="dis"?Math.min(r1,r2):r1;
+  const bonus=+state.roll.bonus||0,extraExpr=(state.roll.extra||"").trim(),extra=extraExpr?parseDice(extraExpr):null,extraTotal=extra?extra.total:0,total=natural+bonus+extraTotal;
+  const crit=natural>=state.roll.crit,fail=natural===1;
+  const cls=fail?"fail":crit?"crit":"";
+  const modeText=mode==="adv"?`Vantagem [${r1}, ${r2}] → ${natural}`:mode==="dis"?`Desvantagem [${r1}, ${r2}] → ${natural}`:`d20 [${natural}]`;
+  $("d20Last").className="d20-last "+cls;
+  $("d20Last").innerHTML=`${fail?"🔴 FALHA CRÍTICA":crit?"🟢 CRÍTICO NATURAL":"⚪ Resultado"} — <b>${total}</b><br><small>${modeText} ${bonus?fmt(bonus)+" bônus":""}${extra?` + ${extraExpr} [${extra.rolls.join(", ")}]`:""}</small>`;
+  addRollHistory("d20",natural,`${mode} ${bonus?fmt(bonus):""}${extra?` + ${extraExpr}`:""}`,total,fail?"Falha crítica":crit?`Crítico (margem ${state.roll.crit}–20)`:"")
+}
+function renderRollHistory(){
+  if(!$("rollHistoryBody"))return;
+  $("rollHistoryBody").innerHTML=state.roll.history.length?state.roll.history.map(r=>{const n=+r.natural||0,cls=n===1?"fail":n>=state.roll.crit?"crit":"";return `<tr><td>${esc(r.time)}</td><td>${esc(r.type)}</td><td class="roll-nat ${cls}">${esc(r.natural)}</td><td>${esc(r.mods)}</td><td><b>${esc(r.total)}</b></td><td>${esc(r.note)}</td></tr>`}).join(""):'<tr><td colspan="6">Nenhuma rolagem registrada.</td></tr>'
+}
+function clearRollHistory(){if(!confirm("Limpar todo o histórico de rolagens?"))return;state.roll.history=[];save();renderRollHistory()}
+
+function exportCharacter(){const payload={app:"Jardim Espinheiro - Ficha Integrada",version:"1.0",exportedAt:new Date().toISOString(),data:state},blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=`Jardim_Espinheiro_${(state.charName||"personagem").replace(/[^\w\-]+/g,"_")}.json`;a.click();URL.revokeObjectURL(url);showPopup("💾 Personagem exportado",state.charName||"Ficha salva","Backup completo das Páginas 1, 2 e 3 criado.")}
+function importCharacter(ev){const file=ev.target.files&&ev.target.files[0];if(!file)return;const r=new FileReader();r.onload=e=>{try{const p=JSON.parse(e.target.result),incoming=p&&p.data?p.data:p;if(!confirm("Importar este personagem? Os dados atuais das 3 páginas serão substituídos e protegidos em um backup."))return;createSafetyBackup("Antes da importação de personagem");localStorage.setItem(KEY,JSON.stringify(incoming));location.reload()}catch(err){alert("Arquivo inválido ou incompatível.")}finally{ev.target.value=""}};r.readAsText(file,"utf-8")}
+function resetCharacter(){if(!confirm("Resetar a ficha inteira? Um backup automático será criado antes da limpeza."))return;if(!confirm("Confirmação final: retrato, combate, inventário, história, economia, magias e materiais serão apagados da ficha atual."))return;createSafetyBackup("Antes do reset da ficha");localStorage.removeItem(KEY);location.reload()}
+
+function renderAll(){renderSub();renderSubrace();renderAttrs();renderCombat();renderEquipment();renderTraits();renderInventory();renderPortrait();renderP2();renderMagicAll();renderRollHistory();renderMilestoneSoundButton();renderBackupStatus();renderCodex()}
+function init(){delete state.p2.frags;state.magic.specialMaterials=(state.magic.specialMaterials||[]).map(x=>{if(x.id&&MATERIAL_CATALOG[x.id])return {id:x.id,qty:+x.qty||1};const f=Object.entries(MATERIAL_CATALOG).find(([id,m])=>m.name===x.name);return f?{id:f[0],qty:+x.qty||1}:null}).filter(Boolean);initNav();initP1();initP2();initP3();initCodex();syncAutoSpells();renderAll()}
+init();
+</script>
+</body>
 </html>
