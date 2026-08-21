@@ -19,16 +19,7 @@ globalThis.MICROCOSMO_DATA={
   patrulheiro:{name:"Patrulheiro",hit:"d10",hp:6,features:["Explorador do Matagal","Caçador de Predadores"],subs:["Emboscador do Matagal","Montaria de Besouro","Caçador de Predadores Gigantes","Rastreador de Peçonha"],caster:"SAB"},
   bruxo:{name:"Bruxo",hit:"d8",hp:5,features:["Pacto do Jardim","Magia de Patrono"],subs:["Terror do Céu","Sapo do Charco Profundo","Rainha Tecelã da Morte","Gigante Bípede"],caster:"CAR"}
  },
- races:{
-  rato:{name:"Rato-dos-Campos",speed:"7,5m",features:["Visão no Escuro","Sentidos Aguçados","Hiper-Nervosismo"],subs:["Rato-Urbano","Rato-Sábio do Silo","Rato-dos-Bueiros"],carry:1},
-  lagartixa:{name:"Lagartixa-da-Casca",speed:"9m",features:["Patas Aderentes","Reflexos Répteis"],subs:["Noturna","Solário","Mimetista","Pântano"],carry:1},
-  pixie:{name:"Pixie / Fada do Jardim",speed:"4,5m / voo 9m",features:["Asas Féricas","Pó de Estrela"],subs:["Orvalho","Espinheiros","Noturna","Polinizadora"],carry:.7},
-  gnomo:{name:"Gnomo-do-Musgo",speed:"7,5m",features:["Astúcia dos Pequenos","Ofício de Jardim"],subs:["Cogumelo","Raiz","Engenheiro","Florido"],carry:1},
-  besouro:{name:"Besouro",speed:"7,5m",features:["Exoesqueleto Rígido","Carregador Pesado"],subs:["Rinoceronte","Joaninha","Besouro-Viga","Vira-Bosta"],carry:2},
-  formiga:{name:"Formigídeo",speed:"9m",features:["Força de Colônia","Comunicação por Feromônios"],subs:["Soldado","Tecelã","Pote-de-Mel","Corticante"],carry:1.5},
-  sapo:{name:"Rãzinha-Sapo",speed:"7,5m / natação 9m",features:["Anfíbio","Pulo do Sapo"],subs:["Flecha-Veneno","Sapo-Boi-Anão","Perereca","Cururu-Místico"],carry:1},
-  minhoca:{name:"Minhocóide",speed:"6m",features:["Sentido por Vibração","Escavação"],subs:["Gladiadora","Nutritiva","Vibracional","Tóxica"],carry:1.2}
- },
+ races:globalThis.CODEX_RACE_DATA,
  classSaves:{barbaro:["FOR","CON"],bardo:["DES","CAR"],bastiao:["FOR","CON"],clerigo:["SAB","CAR"],druida:["INT","SAB"],guerreiro:["FOR","CON"],monge:["DES","SAB"],paladino:["SAB","CAR"],patrulheiro:["FOR","DES"],ladino:["DES","INT"],feiticeiro:["CON","CAR"],bruxo:["SAB","CAR"],mago:["INT","SAB"],cozinheiro:["CON","INT"],engenheiro:["CON","INT"]},
  classWeaponProficiencies:{barbaro:["group:simples","group:marcial"],bardo:["group:simples"],cozinheiro:["group:simples","weapon:tridente_junco","weapon:cimitarra_folha"]},
  classArmorProficiencies:{barbaro:["armor:leve","armor:media","armor:escudo"],bardo:["armor:leve"],cozinheiro:["armor:leve","armor:escudo"]}

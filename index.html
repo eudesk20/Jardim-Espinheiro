@@ -680,6 +680,7 @@ input,select,textarea{width:100%;background:var(--paper2);border:1px solid #a38e
 <script src="codex-revisao/grimorio-index.js"></script>
 <script src="codex-revisao/spell-data.js"></script>
 <script src="codex-revisao/class-kits.js"></script>
+<script src="codex-revisao/race-data.js"></script>
 <script src="codex-revisao/game-data.js"></script>
 <script src="codex-revisao/item-data.js"></script>
 <script>
@@ -927,14 +928,11 @@ function automaticAttack(label,bonus,damageExpr,damageBonus=0,attackNote=""){
 function prepareWeaponD20(i){const e=state.equipment[i];if(!e||e.type!=="arma")return;const item=equipmentCatalogItem(e),usesAmmo=weaponAmmoKeys(e).length&&(!item.thrown||e.useThrown),key=usesAmmo?selectedAmmoKey(e):"",ammo=key?AMMO_DEFINITIONS[key]:null;if(usesAmmo&&!ammoCount(key)){showPopup("🏹 Sem munição",e.name,`Você não possui <b>${esc(ammo.name)}</b> na Mochila nem no Carrinho. Adicione ou fabrique a munição antes de atacar.`);return}if(usesAmmo)consumeAmmo(key);const abilityKey=weaponAbility(e),ability=mod(state.stats[abilityKey]),magic=+e.magic||0,ammoBonus=ammo?.bonusDamage||0,label=ammo?`${e.name} • ${ammo.name}`:e.name;state.roll.bonus=weaponAttackBonus(e);$("d20Bonus").value=state.roll.bonus;save();automaticAttack(label,state.roll.bonus,e.die||"1d4",ability+magic+ammoBonus,ammo?.effect||"");renderInventory();renderEquipment()}
 function rollWeaponDamage(i){const e=state.equipment[i],ab=mod(state.stats[e.ability]),mg=+e.magic||0,dr=parseDice(e.die)||parseDice("1d4"),dmg=dr.total+ab+mg;showPopup("⚔️ "+e.name,`Dano ${dmg}`,`Dano: ${e.die} [${dr.rolls.join(", ")}] ${fmt(ab)} ${e.ability}${mg?` ${fmt(mg)} mágico`:""} = <b>${dmg}</b>`);addRollHistory("Dano",dr.rolls.join(", "),`${fmt(ab)} atributo${mg?` ${fmt(mg)} mágico`:""}`,dmg,e.name)}
 const FEATURE_DESC={
-"Visão no Escuro":"Descrição detalhada ainda não cadastrada no protótipo. Esta janela ficará ligada ao texto oficial da raça.",
-"Sentidos Aguçados":"Descrição detalhada ainda não cadastrada no protótipo. Esta janela ficará ligada ao texto oficial da raça.",
-"Hiper-Nervosismo":"Descrição detalhada ainda não cadastrada no protótipo. Esta janela ficará ligada ao texto oficial da raça.",
 "Estilo de Luta":"Descrição detalhada ainda não cadastrada no protótipo. Será preenchida com as regras oficiais desta classe.",
 "Retomar o Fôlego":"Descrição detalhada ainda não cadastrada no protótipo. Será preenchida com as regras oficiais desta classe."
 };
 function featureButton(name,origin){return `<button class="feature-btn" onclick="showFeature('${esc(name).replace(/'/g,"\'")}','${esc(origin).replace(/'/g,"\'")}')"><b>• ${esc(name)}</b><br><small>${esc(origin)} • clique para detalhes</small></button>`}
-function showFeature(name,origin){showPopup("📜 "+name,origin,FEATURE_DESC[name]||"A descrição detalhada desta característica ainda não foi cadastrada. Quando fecharmos as regras de Raça, Classe e Subclasse, este popup mostrará efeito, usos, recarga, nível e qualquer rolagem necessária.")}
+function showFeature(name,origin){const race=RACE_DATA[state.race],raceDetail=race?.featureDetails?.[name],subDetail=race?.subraceDetails?.[name];const details=subDetail?`<b>Características:</b> ${esc(subDetail.effect)}${subDetail.appearance?`<br><br><b>Aparência:</b> ${esc(subDetail.appearance)}`:""}${subDetail.culture?`<br><br><b>Cultura:</b> ${esc(subDetail.culture)}`:""}`:raceDetail?esc(raceDetail):FEATURE_DESC[name]||"Consulte a descrição completa desta característica no Codex.";showPopup("📜 "+name,origin,details)}
 const CLASS_MILESTONES={
  barbaro:{3:["🌱 O Caminho Desperta","Escolha seu Caminho Primordial e defina como seu instinto sobrevive."],10:["⚔️ O Caminho se Revela","O Jardim reconhece aquilo que seu Caminho se tornou."],20:["👑 Encarnação Primordial","FOR +4, CON +4 e Instinto Inesgotável: o Jardim ainda não conseguiu levá-lo."]},
  bardo:{3:["🌱 Sua Voz Foi Ouvida","Escolha a forma pela qual sua expressão deixará marcas no Jardim."],10:["⚔️ O Caminho se Revela","Sua voz já possui uma identidade que todos conseguem reconhecer."],20:["👑 O Jardim Conhece Sua Canção","O Jardim não apenas escuta você agora. Ele se lembra."]}
