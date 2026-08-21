@@ -1,0 +1,443 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MICROCOSMOS — Codex de Raças & Sub-Raças — Revisão v1</title><style>
+:root{--paper:#efe4c9;--paper2:#fffaf0;--ink:#30271f;--muted:#75634d;--leaf:#365f40;--gold:#b98c3e;--purple:#705a88}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;padding:12px;font-family:Georgia,"Times New Roman",serif;color:var(--ink);background:radial-gradient(circle at 12% 0,rgba(79,126,83,.35),transparent 26%),linear-gradient(150deg,#20382b,#0b130e 72%)}
+.app{max-width:1280px;margin:auto}.head,.panel,.race-section{background:var(--paper);border:4px double #735d3d;border-radius:24px;box-shadow:0 16px 40px #0007}.head{text-align:center;padding:20px;margin-bottom:12px}.head small{color:var(--leaf);font-weight:bold;letter-spacing:.16em}.head h1{margin:7px}.head p{color:var(--muted)}.panel{padding:13px;margin-bottom:14px}
+.selector{position:sticky;top:0;z-index:40;background:#efe4c9f4;backdrop-filter:blur(8px)}.selector select,.selector input{padding:10px 12px;border:1px solid #8c7a60;border-radius:12px;background:#fffaf0;font:inherit;margin:4px;max-width:100%}
+.race-section{display:none;padding:15px;margin-bottom:18px}.race-section.active{display:block}.race-head{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;border-bottom:2px solid #a89574;padding-bottom:10px}.race-head h2{margin:4px 0;font-size:2rem}.tagline{font-style:italic;color:var(--muted);max-width:800px}.proposal{display:inline-block;background:#fff1b8;border:1px solid var(--gold);border-radius:999px;padding:4px 8px;font-size:.7rem;font-weight:bold}.count{background:#e9dabd;border:1px solid #826b49;border-radius:999px;padding:7px 10px;font-weight:bold;height:max-content}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}.card{background:var(--paper2);border:1px solid #9c8765;border-radius:14px;padding:11px}.card h3{margin:0 0 7px;color:#493624}.traits{margin-top:12px}.traits li{margin:5px 0;line-height:1.42}.example{background:#edf1e8;border-left:5px solid #5e7b59;border-radius:9px;padding:9px;margin-top:8px}.legend{background:#fff4d7;border-left:5px solid var(--gold);border-radius:9px;padding:9px}.legend.big{margin:11px 0;line-height:1.45}
+.subhead{margin:18px 0 7px}.subhead h3{margin-bottom:3px}.subhead p{color:var(--muted);margin-top:0}.subrace{background:#fffaf0;border:2px solid #8d7654;border-radius:14px;margin:9px 0;overflow:hidden}.subrace summary{cursor:pointer;padding:11px 13px;background:#eadcc1;font-size:1.02rem}.subrace summary span{color:#75634d;font-size:.8rem;font-weight:normal}.subbody{padding:11px}.subgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.info,.mechanics{background:#f5eddd;border-radius:10px;padding:9px}.mechanics{border-left:5px solid var(--purple);margin:8px 0;line-height:1.48}.info h4,.mechanics h4{margin:0 0 5px}.note{background:#fff4d7;border-left:5px solid var(--gold);border-radius:10px;padding:10px;line-height:1.45}.search-hidden{display:none!important}.race-core{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:12px}.race-core>div{background:#f7efdf;border-left:5px solid #58768d;border-radius:10px;padding:9px}.race-core b{display:block;color:#493624;margin-bottom:3px}.subrace-select{width:100%;padding:10px;border:1px solid #8c7a60;border-radius:10px;background:#fffaf0;font:inherit;margin:8px 0}.subrace.selected-subrace{display:block;border-color:var(--purple);background:#f2e8f7}.subrace:not(.selected-subrace){display:none}body.embedded-race{padding:4px;background:transparent}body.embedded-race .head,body.embedded-race>.app>.panel,body.embedded-race .selector{display:none}body.embedded-race .race-section{border-width:2px;border-radius:14px;box-shadow:none;margin:0}
+@media(max-width:800px){.grid,.subgrid,.race-core{grid-template-columns:1fr}.race-head h2{font-size:1.45rem}.selector{position:static}}
+</style></head><body><div class="app">
+<header class="head"><small>MICROCOSMOS — ONDE O MUNDO TERMINA</small><h1>🧬 Codex de Raças & Sub-Raças</h1>
+<p>12 Raças • 60 Sub-Raças/Ramos • IPJ • Cultura • Mecânicas • Exemplos • Potencial Lendário</p></header>
+<div class="panel note"><b>⚠️ PROPOSTA PARA REVISÃO.</b> Esta versão usa exatamente as 12 Raças-base definidas para o projeto e expande cada uma com 5 Sub-Raças/Ramos. Os números ainda podem ser ajustados. <b>Raça define o que você é; Sub-Raça/Ramo define uma variação; Classe continua sendo o que você aprendeu a se tornar.</b> No Humanoide do Broto, os Ramos são culturais, não biológicos.</div>
+<div class="panel selector"><label><b>🧬 Escolha a Raça:</b></label><select id="raceSelect"><option value="race-0">🍃 Povo-Folha</option><option value="race-1">🪲 Quitinoso</option><option value="race-2">🕷️ Saltídeo</option><option value="race-3">🐜 Formiguídeo</option><option value="race-4">🐝 Apídeo</option><option value="race-5">🦗 Mantídeo</option><option value="race-6">🍄 Miceliano</option><option value="race-7">🐌 Caracolídeo</option><option value="race-8">🪽 Libélulo</option><option value="race-9">🎵 Grilídeo</option><option value="race-10">🌱 Humanoide do Broto</option><option value="race-11">🧚 Férico do Orvalho</option></select><input id="search" placeholder="🔎 Procurar Sub-Raça nesta Raça..."></div>
+<section class="race-section" id="race-0">
+    <div class="race-head"><div><div class="proposal">PROPOSTA PARA REVISÃO</div><h2>🍃 Povo-Folha</h2>
+    <p class="tagline">Ágeis, adaptáveis e moldados pela copa, arbustos e correntes de ar do Jardim.</p></div><div class="count">5 Sub-Raças/Ramos</div></div>
+    <div class="grid">
+    <article class="card"><h3>📖 IPJ — Origem & Identidade</h3><p>Os Povo-Folha afirmam que seus ancestrais aprenderam a sobreviver copiando a própria vegetação: dobrar sem quebrar, esconder-se sem desaparecer e viajar usando cada corrente de ar. Suas comunidades costumam nascer em folhas largas, nervuras, galhos ocos e pequenas pontes de fibra.</p></article>
+    <article class="card"><h3>👁 Aparência</h3><p>Corpos leves, pele em tons verdes, ocres ou amarelados, cabelos que lembram fibras vegetais e mantos que imitam nervuras.</p></article>
+    <article class="card"><h3>🏘 Cultura</h3><p>Valorizam adaptação, memória de trilha, improviso e histórias de viagem. Um Povo-Folha que conhece apenas um caminho é visto como alguém que ainda não começou a viver.</p></article>
+    <article class="card"><h3>🤝 Relações</h3><p>Costumam se dar bem com Grilídeos, Apídeos e Libélulos. Quitinosos os consideram leves demais; os Povo-Folha acham Quitinosos teimosos.</p></article>
+    <article class="card"><h3>👣 Visão dos Gigantes</h3><p>Para eles, os Gigantes são &#x27;os que fazem o vento mudar sem aviso&#x27;. Objetos humanos são partes de paisagem antes de serem entendidos como artefatos.</p></article>
+    <article class="card"><h3>🎮 Como é jogar?</h3><p>Boa escolha para mobilidade, exploração, furtividade e soluções criativas sem prender o personagem a uma classe.</p></article></div>
+    <article class="card traits"><h3>🧬 Traços Raciais Base</h3><ul><li>Deslocamento 9 m.</li><li>PROPOSTA: +1 DES e +1 SAB ou CAR.</li><li>Camuflagem de Folha: +1 em Furtividade em vegetação natural.</li><li>Queda Foliar: 1/rodada, reduza dano de queda em valor igual ao Bônus de Proficiência.</li></ul>
+    <div class="example"><b>💡 Exemplo de uso:</b> Você salta de uma folha para outra, cai 3 m, reduz parte do dano e tenta se esconder na vegetação.</div></article>
+    <article class="legend big"><b>🌟 Potencial Lendário da Raça:</b> Há histórias de um Povo-Folha que atravessou o Jardim inteiro sem tocar o solo por três dias.</article>
+    <div class="subhead"><h3>🌿 Sub-Raças / Ramos</h3><p>Escolha uma para abrir. Elas adicionam identidade e ferramentas, mas não determinam a Classe.</p></div>
+    <details class="subrace searchable"><summary>☀️ <b>Folha-Clara</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Tons verde-limão e dourados, pele adaptada à luz.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Vivem em regiões altas e abertas.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Vantagem contra calor ambiental. 1/DL, Ação Bônus: por 1 minuto emita luz suave de 3 m e receba +1 em testes para localizar rotas abertas. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você cruza uma área ensolarada sem sofrer o mesmo desgaste do grupo.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Um Farol da Copa pode guiar caravanas inteiras durante tempestades de luz.</div></div></details><details class="subrace searchable"><summary>🌙 <b>Folha-Noturna</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Tons azulados, violetas ou quase negros, olhos grandes.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Vigias e coletores de orvalho.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Visão no Escuro 18 m. 1/DC, ao Esconder-se em luz baixa/escuridão, role com Vantagem. +1 Percepção baseada em som à noite. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você ouve algo chegando e desaparece na sombra de uma folha.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Vigias da Lua são lembrados por detectar ameaças antes de qualquer alarme.</div></div></details><details class="subrace searchable"><summary>💨 <b>Folha-Veloz</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Corpos finos e roupas cortadas para não prender no vento.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Mensageiros e competidores de rota.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Deslocamento +1,5 m. 1/DC, ao Correr, ganhe +3 m adicionais. Reação: ignore 1,5 m de penalidade de terreno difícil ao terminar movimento. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você alcança um aliado antes que uma ponte de fibra se rompa.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Os mais famosos levam mensagens entre colônias antes da chegada de tempestades.</div></div></details><details class="subrace searchable"><summary>✨ <b>Folha-Espelho</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Pele encerada e reflexiva, prata ou bronze.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Vivem em folhas molhadas e usam reflexos como sinais.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>1/DL, Reação quando ataque à distância errar você: mova 1,5 m sem provocar do atacante. Vantagem contra aderência/chuva mundana. Pode enviar sinais refletindo luz.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Um disparo erra e você usa o reflexo para mudar de posição.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Mensageiros de Horizonte coordenam grupos inteiros usando sinais de luz.</div></div></details><details class="subrace searchable"><summary>🌿 <b>Folha-Espinho</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Folhas grossas, bordas duras e espinhos naturais.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Guardam regiões hostis.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Ataque desarmado 1d4 Cortante. 1/DC, Reação quando criatura adjacente acerta ataque corpo a corpo: cause dano igual à Proficiência. +1 contra empurrão em vegetação. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Um inimigo o agarra e se fere nos espinhos.</div><div class="legend"><b>🌟 Potencial Lendário:</b> O Último Galho é o nome dado a heróis que seguram sozinhos uma passagem.</div></div></details></section><section class="race-section" id="race-1">
+    <div class="race-head"><div><div class="proposal">PROPOSTA PARA REVISÃO</div><h2>🪲 Quitinoso</h2>
+    <p class="tagline">Povo de carapaça dura, força paciente e orgulho gravado no próprio corpo.</p></div><div class="count">5 Sub-Raças/Ramos</div></div>
+    <div class="grid">
+    <article class="card"><h3>📖 IPJ — Origem & Identidade</h3><p>Quitinosos tratam a carapaça como história viva. Cicatrizes, pinturas e entalhes contam feitos, família e promessas. Construíram algumas das fortalezas mais resistentes do Jardim.</p></article>
+    <article class="card"><h3>👁 Aparência</h3><p>Corpos robustos, placas de quitina, chifres, mandíbulas ou espinhos. Cores do negro ao metálico, vermelho, dourado e verde.</p></article>
+    <article class="card"><h3>🏘 Cultura</h3><p>Persistência é virtude. Abandonar algo importante sem tentar todas as opções possíveis é visto como vergonha maior que falhar.</p></article>
+    <article class="card"><h3>🤝 Relações</h3><p>Respeitam Formiguídeos e Mantídeos; acham Povo-Folha inquietos demais.</p></article>
+    <article class="card"><h3>👣 Visão dos Gigantes</h3><p>Objetos humanos são &#x27;pedras moldadas pelos Titãs&#x27;. Muitos medem prestígio pelo peso de uma Relíquia que conseguiram mover.</p></article>
+    <article class="card"><h3>🎮 Como é jogar?</h3><p>Excelente para resistência, força, defesa e presença física; algumas linhagens oferecem química, sorte e utilidade.</p></article></div>
+    <article class="card traits"><h3>🧬 Traços Raciais Base</h3><ul><li>Deslocamento 9 m.</li><li>PROPOSTA: +1 CON e +1 FOR ou SAB.</li><li>Carapaça Natural: CA 12 + DES sem armadura.</li><li>Estabilidade Quitinosa: 1/DL, ao falhar contra ser Derrubado, rerrole.</li></ul>
+    <div class="example"><b>💡 Exemplo de uso:</b> Uma criatura tenta derrubá-lo; você usa Estabilidade Quitinosa e permanece segurando a passagem.</div></article>
+    <article class="legend big"><b>🌟 Potencial Lendário da Raça:</b> Algumas carapaças antigas têm tantas marcas que viraram verdadeiros livros de guerra.</article>
+    <div class="subhead"><h3>🌿 Sub-Raças / Ramos</h3><p>Escolha uma para abrir. Elas adicionam identidade e ferramentas, mas não determinam a Classe.</p></div>
+    <details class="subrace searchable"><summary>🦏 <b>Rinoceronte</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Chifres frontais grandes e postura de aríete.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Ritos de maioridade envolvem empurrar objetos impossíveis.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Conta como uma categoria maior para empurrar/arrastar. Após mover 3 m em linha, 1/turno ao acertar: FOR contra CD 8+Prof+FOR; falha empurra 1,5 m. Chifre 1d6 Perfurante. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você corre, acerta e empurra o inimigo para fora da passagem.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Alguns abriram portões de lata com o próprio corpo.</div></div></details><details class="subrace searchable"><summary>🐞 <b>Joaninha</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Carapaça arredondada com manchas únicas.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Guardam crianças, viajantes e santuários.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>1/DL, quando você ou aliado a 3 m rolar 1 natural em d20, transforme em 2. Vantagem contra Veneno. +1 contra agarrões que prendam o corpo. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você impede que um 1 natural arruíne um teste decisivo.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Uma Mancha da Fortuna pode ser lembrada por mudar o rumo de uma guerra.</div></div></details><details class="subrace searchable"><summary>🏺 <b>Escaravelho</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Carapaça espessa, muitas vezes adornada com metais.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Carregadores, construtores e comerciantes.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Carga +25%. Vantagem para mover objeto inanimado pesado. Ignora a primeira penalidade leve de Sobrecarga. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você carrega parte da mochila do grupo sem perder velocidade.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Alguns moveram relíquias que depois viraram cidades.</div></div></details><details class="subrace searchable"><summary>💥 <b>Bombardeiro</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Glândulas químicas e coloração de aviso.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Tratam sua química corporal como arte e responsabilidade.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>1/DL, Reação quando criatura adjacente acertar você: DES contra CD 8+Prof+CON; falha sofre 1d6+Prof de Fogo ou Ácido, metade no sucesso. Vantagem contra gases/ácidos mundanos. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Um inimigo morde você e recebe uma descarga química.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Um Bombardeiro lendário pode deter um enxame inteiro num túnel.</div></div></details><details class="subrace searchable"><summary>👑 <b>Hércules</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Chifres enormes e estrutura corporal excepcional.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Celebrados por feitos de força, mas não definidos só por eles.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Conta como uma categoria maior para carga. 1/DC, rerrole Atletismo falho para levantar, segurar ou impedir queda de objeto. Ao sustentar estrutura, aliados atrás podem receber meia cobertura. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você segura uma placa caindo enquanto o grupo passa.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Um Hércules pode virar símbolo de uma cidade por ter sustentado seu teto durante um desastre.</div></div></details></section><section class="race-section" id="race-2">
+    <div class="race-head"><div><div class="proposal">PROPOSTA PARA REVISÃO</div><h2>🕷️ Saltídeo</h2>
+    <p class="tagline">Aranhas saltadoras de visão aguçada, movimento vertical e personalidade intensa.</p></div><div class="count">5 Sub-Raças/Ramos</div></div>
+    <div class="grid">
+    <article class="card"><h3>📖 IPJ — Origem & Identidade</h3><p>Saltídeos veem o mundo como ângulos, distâncias e superfícies possíveis. Onde outros enxergam uma parede, eles enxergam uma estrada.</p></article>
+    <article class="card"><h3>👁 Aparência</h3><p>Olhos grandes e múltiplos, pernas adaptadas ao salto, padrões coloridos ou escuros.</p></article>
+    <article class="card"><h3>🏘 Cultura</h3><p>Valorizam coragem, curiosidade e precisão. Danças, desafios de salto e caçadas de observação são comuns.</p></article>
+    <article class="card"><h3>🤝 Relações</h3><p>Mantídeos são rivais naturais, embora exista respeito mútuo. Libélulos e Povo-Folha compartilham rotas verticais.</p></article>
+    <article class="card"><h3>👣 Visão dos Gigantes</h3><p>Acreditam que os Gigantes são criaturas incapazes de perceber detalhes, o que os diverte e assusta.</p></article>
+    <article class="card"><h3>🎮 Como é jogar?</h3><p>Excelente para mobilidade, percepção, emboscada e exploração vertical.</p></article></div>
+    <article class="card traits"><h3>🧬 Traços Raciais Base</h3><ul><li>Deslocamento 9 m; escalada 6 m.</li><li>PROPOSTA: +1 DES e +1 SAB.</li><li>Salto Natural: +1,5 m em saltos.</li><li>Olhos Amplos: Proficiência em Percepção; se já tiver, +1.</li></ul>
+    <div class="example"><b>💡 Exemplo de uso:</b> Você escala uma parede, observa por cima da borda e salta para outra superfície sem corda.</div></article>
+    <article class="legend big"><b>🌟 Potencial Lendário da Raça:</b> Caçadores lendários são lembrados por lutar sem tocar o chão.</article>
+    <div class="subhead"><h3>🌿 Sub-Raças / Ramos</h3><p>Escolha uma para abrir. Elas adicionam identidade e ferramentas, mas não determinam a Classe.</p></div>
+    <details class="subrace searchable"><summary>🎯 <b>Caçador</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Cores discretas e movimentos econômicos.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Rastreadores silenciosos e observadores pacientes.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>+1 Iniciativa. 1/combate, primeiro ataque contra criatura que ainda não agiu causa +1d4 dano. Vantagem para seguir alvo que permaneça visível. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você age antes e abre o combate com precisão.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Alguns são lembrados por nunca errar o primeiro golpe.</div></div></details><details class="subrace searchable"><summary>🕸️ <b>Tecelão</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Fiandeiras desenvolvidas e adornos de seda.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Constroem pontes, redes, casas e símbolos sociais.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Proficiência em ferramentas de seda. 1/DC, Ação Bônus: crie até 3 m de fio preso em ponto adjacente. Vantagem para evitar queda com ancoragem disponível. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Uma ponte cede e você cria fio para salvar um aliado.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Um Tecelão pode construir uma rede entre árvores em uma única noite.</div></div></details><details class="subrace searchable"><summary>🌑 <b>Sombrio</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Tons negros, cinza e violeta.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Vivem em cascas ocas e raízes profundas.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Visão no Escuro 18 m. 1/DC, ao entrar em luz baixa, mova 1,5 m sem provocar de criatura sem visão especial. +1 Furtividade em pedra/casca seca. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você recua para a sombra e muda de posição.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Alguns atravessam fortalezas inteiras sem serem vistos.</div></div></details><details class="subrace searchable"><summary>🌈 <b>Pavão</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Padrões coloridos e danças de exibição.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Artistas, duelistas e diplomatas.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Proficiência em Atuação ou Persuasão. 1/DL, Ação: criatura a 6 m que veja você faz SAB; falha perde Reação até seu próximo turno. +1 contra Amedrontado enquanto aliado o vê. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você prende a atenção do guarda enquanto o grupo passa.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Um Pavão lendário pode encerrar uma guerra sem desembainhar arma.</div></div></details><details class="subrace searchable"><summary>💧 <b>Orvalho</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Pelos finos que acumulam gotas e refletem luz.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Vivem em regiões úmidas e usam água como lente.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Ignora terreno difícil apenas por superfície molhada. +1 Investigação ao examinar objetos pequenos sob luz. 1/DL, Reação: +2 CA contra ataque à distância. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você usa uma gota como lente para estudar inscrição minúscula.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Pode tornar-se o maior explorador de ruínas microscópicas do Jardim.</div></div></details></section><section class="race-section" id="race-3">
+    <div class="race-head"><div><div class="proposal">PROPOSTA PARA REVISÃO</div><h2>🐜 Formiguídeo</h2>
+    <p class="tagline">Força coletiva, disciplina, trabalho e identidade moldada pela colônia.</p></div><div class="count">5 Sub-Raças/Ramos</div></div>
+    <div class="grid">
+    <article class="card"><h3>📖 IPJ — Origem & Identidade</h3><p>Formiguídeos não veem indivíduo e comunidade como opostos. Tornar-se uma lenda significa provar que uma criatura pode fortalecer milhares.</p></article>
+    <article class="card"><h3>👁 Aparência</h3><p>Mandíbulas robustas, antenas sensíveis, corpos terrosos, avermelhados ou negros.</p></article>
+    <article class="card"><h3>🏘 Cultura</h3><p>Trabalho, planejamento e memória coletiva. Algumas colônias são rígidas; outras, surpreendentemente livres.</p></article>
+    <article class="card"><h3>🤝 Relações</h3><p>Respeitam Quitinosos. Mantêm rivalidades históricas com algumas comunidades Apídeas.</p></article>
+    <article class="card"><h3>👣 Visão dos Gigantes</h3><p>Relíquias humanas são avaliadas pela utilidade: &#x27;serve para quê?&#x27; vem antes de &#x27;o que é?&#x27;</p></article>
+    <article class="card"><h3>🎮 Como é jogar?</h3><p>Ótimo para cooperação, carga, construção e suporte ativo ao grupo.</p></article></div>
+    <article class="card traits"><h3>🧬 Traços Raciais Base</h3><ul><li>Deslocamento 9 m.</li><li>PROPOSTA: +1 CON e +1 FOR ou INT.</li><li>Carga de Colônia: capacidade de carga +25%.</li><li>Trabalho Conjunto: Ajudar aliado adjacente como Ação Bônus 1/DC.</li></ul>
+    <div class="example"><b>💡 Exemplo de uso:</b> Você ajuda um aliado a segurar uma porta enquanto mantém sua Ação principal.</div></article>
+    <article class="legend big"><b>🌟 Potencial Lendário da Raça:</b> Os maiores heróis Formiguídeos são lembrados pelo que permitiram que todos fizessem.</article>
+    <div class="subhead"><h3>🌿 Sub-Raças / Ramos</h3><p>Escolha uma para abrir. Elas adicionam identidade e ferramentas, mas não determinam a Classe.</p></div>
+    <details class="subrace searchable"><summary>🛠️ <b>Operário</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Corpos equilibrados e mandíbulas versáteis.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Construtores, coletores e artesãos.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Proficiência em Coleta. 1/DC, ao ajudar em construção/coleta, aliado recebe +1d4 se já tinha Vantagem por outra fonte. +10% carga. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você ajuda o Engenheiro a terminar um reparo antes do perigo.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Um Operário pode construir uma cidade sobre uma única raiz.</div></div></details><details class="subrace searchable"><summary>🛡️ <b>Soldado</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Mandíbulas maiores e placas mais espessas.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Protegem túneis e caravanas.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Proficiência com escudos. Mandíbula 1d6 Perfurante. Quando adjacente a aliado consciente, +1 contra empurrão. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você luta ombro a ombro e quase não sai do lugar.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Um Soldado lendário pode segurar a entrada de uma colônia sozinho.</div></div></details><details class="subrace searchable"><summary>⛏️ <b>Escavador</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Mandíbulas curtas e patas adaptadas ao solo.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Vivem em túneis e câmaras.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Escavação 1,5 m em solo macio fora de combate. +1 Percepção para vibrações no solo. 1/DL, após 10 min, crie esconderijo para 2 criaturas. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você cava um abrigo antes da chuva.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Pode abrir uma rota inteira por baixo de uma região mortal.</div></div></details><details class="subrace searchable"><summary>🍃 <b>Cortador</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Mandíbulas largas e cultura de transporte de folhas.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Agricultores de fungos e arquitetos vivos.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Mandíbula 1d6 Cortante. Vantagem para cortar vegetação/tecido/fibra. Objetos vegetais contam metade da Carga, PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você corta uma folha e transforma em cobertura.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Um Cortador lendário pode erguer muralhas de folhas em combate.</div></div></details><details class="subrace searchable"><summary>🧭 <b>Nômade</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Corpos leves e antenas longas.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Não pertencem a uma única colônia.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Vantagem para refazer rota das últimas 24 h. 1/DC, ignore 3 m de terreno difícil. Aliados Formiguídeos entendem suas marcas sem teste. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você conduz o grupo de volta apesar da chuva.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Um Nômade pode conhecer rotas entre extremos do Jardim.</div></div></details></section><section class="race-section" id="race-4">
+    <div class="race-head"><div><div class="proposal">PROPOSTA PARA REVISÃO</div><h2>🐝 Apídeo</h2>
+    <p class="tagline">Povo alado de pólen, perfume, voz social e explosões curtas de mobilidade.</p></div><div class="count">5 Sub-Raças/Ramos</div></div>
+    <div class="grid">
+    <article class="card"><h3>📖 IPJ — Origem & Identidade</h3><p>Apídeos organizam suas vidas em torno de rotas florais, estações e comunidades interdependentes.</p></article>
+    <article class="card"><h3>👁 Aparência</h3><p>Corpos peludos ou lisos, asas curtas, antenas sensíveis e cores douradas, pretas, azuis ou vermelhas.</p></article>
+    <article class="card"><h3>🏘 Cultura</h3><p>Troca, comunicação, trabalho em equipe e memória de comunidade.</p></article>
+    <article class="card"><h3>🤝 Relações</h3><p>Gostam de Povo-Folha e Grilídeos; rivalizam com Formiguídeos em certas regiões.</p></article>
+    <article class="card"><h3>👣 Visão dos Gigantes</h3><p>Veem os Gigantes como tempestades ambulantes. Flores humanas cultivadas são verdadeiros reinos.</p></article>
+    <article class="card"><h3>🎮 Como é jogar?</h3><p>Mistura mobilidade, social, coleta e utilidade; o voo é poderoso, mas limitado.</p></article></div>
+    <article class="card traits"><h3>🧬 Traços Raciais Base</h3><ul><li>Deslocamento 9 m.</li><li>PROPOSTA: +1 CAR e +1 DES ou SAB.</li><li>Voo Curto: Ação Bônus 1/DC, voe até seu deslocamento e termine apoiado.</li><li>Sentido Floral: Vantagem para localizar flores, pólen, néctar e aromas fortes.</li></ul>
+    <div class="example"><b>💡 Exemplo de uso:</b> Você cruza um buraco com Voo Curto, mas precisa pousar no mesmo turno.</div></article>
+    <article class="legend big"><b>🌟 Potencial Lendário da Raça:</b> Alguns Apídeos viram a voz de colônias inteiras.</article>
+    <div class="subhead"><h3>🌿 Sub-Raças / Ramos</h3><p>Escolha uma para abrir. Elas adicionam identidade e ferramentas, mas não determinam a Classe.</p></div>
+    <details class="subrace searchable"><summary>🍯 <b>Melífero</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Tons dourados e comportamento cooperativo.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Diplomatas, comerciantes e cuidadores.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Proficiência em Persuasão. 1/DL após DC, aliado que descansou com você ganha PV temporários = Proficiência. +1 História sobre comunidades Apídeas. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você divide néctar e fortalece um aliado.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Pode unir colônias rivais sob um acordo.</div></div></details><details class="subrace searchable"><summary>⚔️ <b>Vespoide</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Corpos esguios, cores de aviso e ferrão desenvolvido.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Caçadores, guardas e mercenários.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Proficiência em Intimidação. Ferrão 1d4 Perfurante; 1/DL, após acertar, +1d6 Veneno, CON metade. Voo Curto +1,5 m. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você passa sobre uma barreira e aplica veneno.</div><div class="legend"><b>🌟 Potencial Lendário:</b> O Ferrão da Colmeia pode virar protetor temido por predadores.</div></div></details><details class="subrace searchable"><summary>🐝 <b>Mamangava</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Grandes, peludos e barulhentos.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Trabalhadores resistentes e voadores fortes.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Opção +1 CON como bônus secundário. +10% carga. 1/DC, Ação Bônus: inimigos adjacentes recebem -1 Percepção baseada em som até próximo turno. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Seu zumbido mascara o movimento do Ladino.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Um Mamangava pode atravessar tempestades carregando outro aventureiro.</div></div></details><details class="subrace searchable"><summary>🪵 <b>Carpinteiro</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Mandíbulas fortes e corpos escuros/azulados.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Constroem ninhos em madeira.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Proficiência em Engenharia de Sucata ou ferramenta de madeira. Vantagem para romper madeira/fibra. 1/DL, após 10 min, crie abrigo de madeira para 1 criatura. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você cava uma câmara dentro de um galho.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Pode transformar uma árvore caída em fortaleza.</div></div></details><details class="subrace searchable"><summary>🌺 <b>Orquídea</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Cores incomuns e perfumes marcantes.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Ligados a flores raras, celebrações e diplomacia.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Proficiência em Persuasão ou Atuação. 1/DL, Ação, alvo a 3 m faz SAB; falha sofre Desvantagem no próximo teste para perceber sua mentira nesta cena. Sentido Floral aprimorado. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você usa aroma e conversa para distrair um guarda.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Um Orquídea pode convencer uma criatura gigantesca a poupar uma colônia.</div></div></details></section><section class="race-section" id="race-5">
+    <div class="race-head"><div><div class="proposal">PROPOSTA PARA REVISÃO</div><h2>🦗 Mantídeo</h2>
+    <p class="tagline">Predadores disciplinados, imóveis até o instante exato de agir.</p></div><div class="count">5 Sub-Raças/Ramos</div></div>
+    <div class="grid">
+    <article class="card"><h3>📖 IPJ — Origem & Identidade</h3><p>Mantídeos tratam paciência como forma de poder. Sua cultura valoriza postura, observação e o &#x27;momento perfeito&#x27;.</p></article>
+    <article class="card"><h3>👁 Aparência</h3><p>Corpos esguios, braços em lâmina, cabeças triangulares e cores que imitam folhas, flores ou galhos.</p></article>
+    <article class="card"><h3>🏘 Cultura</h3><p>Rituais de duelo, meditação imóvel e respeito pela caça. Muitos também são escultores, juízes e observadores.</p></article>
+    <article class="card"><h3>🤝 Relações</h3><p>Rivalidade respeitosa com Saltídeos. Formiguídeos os consideram difíceis de ler.</p></article>
+    <article class="card"><h3>👣 Visão dos Gigantes</h3><p>Acham fascinante que seres tão grandes se movam de forma tão pouco cuidadosa.</p></article>
+    <article class="card"><h3>🎮 Como é jogar?</h3><p>Excelente para precisão, controle corporal, observação e ataques naturais.</p></article></div>
+    <article class="card traits"><h3>🧬 Traços Raciais Base</h3><ul><li>Deslocamento 9 m.</li><li>PROPOSTA: +1 DES e +1 FOR ou SAB.</li><li>Garras Naturais: 1d6 Cortante.</li><li>Imobilidade de Caça: se não mover no turno, +1 Percepção até o próximo turno.</li></ul>
+    <div class="example"><b>💡 Exemplo de uso:</b> Você permanece imóvel observando uma passagem e melhora sua chance de detectar algo.</div></article>
+    <article class="legend big"><b>🌟 Potencial Lendário da Raça:</b> Os maiores Mantídeos são lembrados por esperar horas e vencer em um único movimento.</article>
+    <div class="subhead"><h3>🌿 Sub-Raças / Ramos</h3><p>Escolha uma para abrir. Elas adicionam identidade e ferramentas, mas não determinam a Classe.</p></div>
+    <details class="subrace searchable"><summary>🍃 <b>Folhoso</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Corpos largos que imitam folhas.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Mestres de camuflagem vegetal.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Vantagem em Furtividade se estiver imóvel em vegetação apropriada. 1/DC, ao sair do Esconderijo, mova 1,5 m sem provocar de criatura que não o viu. +1 Percepção em vegetação. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você parece parte da planta até o inimigo passar.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Alguns sobreviveram dias à vista de predadores sem serem notados.</div></div></details><details class="subrace searchable"><summary>🌸 <b>Orquídea</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Cores brilhantes que imitam flores.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Artistas, espiões e negociadores.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Proficiência em Enganação. +1 para se passar por elemento vegetal decorativo. 1/DL, Ação, alvo a 3 m faz SAB ou perde Reação por 1 rodada. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você imita uma flor até o guarda se aproximar.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Pode entrar em lugares onde todos o viram, mas ninguém percebeu.</div></div></details><details class="subrace searchable"><summary>🌵 <b>Espinhoso</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Carapaça irregular com pequenos espinhos.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Vivem em ambientes agressivos.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>1/DL, Reação: atacante corpo a corpo sofre dano = Proficiência. +1 contra agarrão. Garras podem causar Cortante ou Perfurante. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Um inimigo segura você e se fere nos espinhos.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Pode tornar-se uma muralha viva em duelos.</div></div></details><details class="subrace searchable"><summary>👻 <b>Fantasma</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Tons cinza-claro e movimentos quase imóveis.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Observadores de cascas mortas e ruínas.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Visão no Escuro 18 m. 1/DC, após ficar imóvel uma rodada, ganhe Vantagem no próximo Furtividade antes de se mover. Ignora ruído de folhas secas comuns. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você espera parado e depois desaparece.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Um Fantasma pode virar lenda urbana entre colônias.</div></div></details><details class="subrace searchable"><summary>👑 <b>Coroado</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Cristas altas e postura cerimonial.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Juízes, duelistas e campeões.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Proficiência em Intimidação ou Persuasão. 1/DL, Ação Bônus: criatura a 6 m que o entenda sofre -1 no primeiro ataque contra alvo que não seja você até próximo turno. +1 contra Derrubado. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você desafia o agressor e torna difícil ele ignorá-lo.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Pode virar símbolo de honra entre povos rivais.</div></div></details></section><section class="race-section" id="race-6">
+    <div class="race-head"><div><div class="proposal">PROPOSTA PARA REVISÃO</div><h2>🍄 Miceliano</h2>
+    <p class="tagline">Povo fúngico de memória, esporos e identidade parcialmente coletiva.</p></div><div class="count">5 Sub-Raças/Ramos</div></div>
+    <div class="grid">
+    <article class="card"><h3>📖 IPJ — Origem & Identidade</h3><p>Micelianos acreditam que memória é matéria. Histórias são preservadas em redes de fungo, aromas e padrões de crescimento.</p></article>
+    <article class="card"><h3>👁 Aparência</h3><p>Corpos fúngicos, chapéus, placas e filamentos em branco, roxo, azul ou vermelho.</p></article>
+    <article class="card"><h3>🏘 Cultura</h3><p>Valorizam memória, troca de experiências, decomposição e renovação.</p></article>
+    <article class="card"><h3>🤝 Relações</h3><p>Druidas e Cozinheiros os respeitam; outros povos às vezes estranham sua relação com morte e decomposição.</p></article>
+    <article class="card"><h3>👣 Visão dos Gigantes</h3><p>Veem Gigantes como grandes fontes de matéria, calor e transformação, não necessariamente como deuses.</p></article>
+    <article class="card"><h3>🎮 Como é jogar?</h3><p>Ótimos para comunicação, resistência, utilidade, suporte e efeitos estranhos.</p></article></div>
+    <article class="card traits"><h3>🧬 Traços Raciais Base</h3><ul><li>Deslocamento 7,5 m.</li><li>PROPOSTA: +1 SAB e +1 CON ou INT.</li><li>Comunicação por Esporos: ideias simples a criaturas dispostas a 6 m que respiram.</li><li>Resistência a Veneno.</li></ul>
+    <div class="example"><b>💡 Exemplo de uso:</b> Sem falar, você transmite &#x27;perigo à esquerda&#x27; por esporos.</div></article>
+    <article class="legend big"><b>🌟 Potencial Lendário da Raça:</b> Alguns tornam-se arquivos vivos de séculos de memória.</article>
+    <div class="subhead"><h3>🌿 Sub-Raças / Ramos</h3><p>Escolha uma para abrir. Elas adicionam identidade e ferramentas, mas não determinam a Classe.</p></div>
+    <details class="subrace searchable"><summary>💡 <b>Luzente</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Chapéus e filamentos bioluminescentes.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Habitam regiões escuras e usam luz como linguagem.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Ação Bônus: emita luz 3 m até desligar. 1/DL, Reação quando criatura adjacente atacar: CON ou Ofuscada até próximo turno. +1 Sobrevivência em cavernas. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você acende o corpo para guiar o grupo.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Pode iluminar uma cidade subterrânea inteira em cerimônias.</div></div></details><details class="subrace searchable"><summary>💚 <b>Curador</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Cores suaves e esporos de aroma medicinal.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Médicos e estudiosos de decomposição controlada.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Proficiência em Medicina. 1/DL, Ação: criatura a 1,5 m recupera 1d6+Prof PV. Vantagem para identificar infecção natural. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você libera esporos sobre um aliado ferido.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Pode salvar uma colônia inteira de uma praga.</div></div></details><details class="subrace searchable"><summary>🌫️ <b>Nebuloso</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Libera nuvens finas de esporos.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Vivem em regiões úmidas e usam névoa como defesa.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>1/DL, Ação: raio 1,5 m até próximo turno; inimigos fazem CON ou -1d4 no próximo ataque. Você enxerga normalmente na própria névoa. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você cobre uma passagem e reduz a precisão dos perseguidores.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Uma pequena nuvem pode fazer um exército inteiro hesitar.</div></div></details><details class="subrace searchable"><summary>📚 <b>Memorial</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Padrões circulares no corpo representam lembranças.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Historiadores e guardiões de memória coletiva.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Proficiência em História; se já tiver, +1. 1/DL, após falhar História/Natureza, rerrole. Durante DC, compartilhe memória curta com 2 aliados. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você mostra aos aliados uma lembrança visual de um lugar.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Pode carregar a última memória de uma civilização desaparecida.</div></div></details><details class="subrace searchable"><summary>🟠 <b>Ferrugem</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Fungos adaptados a metal e resíduos.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Vivem perto de Relíquias e ruínas humanas.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p> +1 Investigação para metal/sucata. 1/DL, Ação: objeto metálico Pequeno não mágico sofre 1d6+Prof Ácido. Vantagem contra ácido ambiental. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você enfraquece uma trava enferrujada.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Pode ser o único capaz de abrir uma relíquia selada por décadas.</div></div></details></section><section class="race-section" id="race-7">
+    <div class="race-head"><div><div class="proposal">PROPOSTA PARA REVISÃO</div><h2>🐌 Caracolídeo</h2>
+    <p class="tagline">Lentos, resistentes e quase impossíveis de arrancar do lugar quando decidem ficar.</p></div><div class="count">5 Sub-Raças/Ramos</div></div>
+    <div class="grid">
+    <article class="card"><h3>📖 IPJ — Origem & Identidade</h3><p>Caracolídeos veem pressa como forma de cegueira. Suas cidades são construídas para durar e suas decisões costumam ser lentas até aquilo que protegem ser ameaçado.</p></article>
+    <article class="card"><h3>👁 Aparência</h3><p>Corpos úmidos, olhos em hastes e cascos grandes com espirais e adornos.</p></article>
+    <article class="card"><h3>🏘 Cultura</h3><p>Paciência, memória, hospitalidade e proteção de abrigo.</p></article>
+    <article class="card"><h3>🤝 Relações</h3><p>Micelianos e Povo-Folha convivem bem com eles. Libélulos acham seu ritmo enlouquecedor.</p></article>
+    <article class="card"><h3>👣 Visão dos Gigantes</h3><p>Objetos humanos são estudados por décadas; uma tampa pode virar monumento, templo ou muralha.</p></article>
+    <article class="card"><h3>🎮 Como é jogar?</h3><p>Excelente para defesa, estabilidade, exploração úmida e sobrevivência extrema.</p></article></div>
+    <article class="card traits"><h3>🧬 Traços Raciais Base</h3><ul><li>Deslocamento 7,5 m.</li><li>PROPOSTA: +1 CON e +1 SAB.</li><li>Casco: Reação 1/DC, +2 CA contra um ataque.</li><li>Aderência: Vantagem contra empurrão em superfície natural.</li></ul>
+    <div class="example"><b>💡 Exemplo de uso:</b> Um ataque quase acerta; você usa Casco e evita o golpe.</div></article>
+    <article class="legend big"><b>🌟 Potencial Lendário da Raça:</b> Há contos de Caracolídeos que nunca pararam, mesmo sob desastre.</article>
+    <div class="subhead"><h3>🌿 Sub-Raças / Ramos</h3><p>Escolha uma para abrir. Elas adicionam identidade e ferramentas, mas não determinam a Classe.</p></div>
+    <details class="subrace searchable"><summary>💧 <b>Orvalho</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Cascos lisos e corpos adaptados à água.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Vivem perto de poças, canais e folhas molhadas.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Natação 6 m. Pode prender a respiração pelo dobro do normal, PROPOSTA. Ignora terreno difícil causado só por água rasa.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você atravessa uma poça que obriga outros a contornar.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Pode atravessar uma chuva como se fosse um oceano.</div></div></details><details class="subrace searchable"><summary>🌀 <b>Casca-Espiral</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Cascos excepcionalmente grossos.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Guardas e anciãos.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>PROPOSTA: +1 PV por nível. Ao usar Casco, também recebe Resistência a Contundente até fim daquele ataque. Deslocamento não recebe aumentos raciais.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você sobrevive a um golpe que derrubaria outro.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Pode tornar-se literalmente o último abrigo de seus companheiros.</div></div></details><details class="subrace searchable"><summary>🫧 <b>Limo-Claro</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Trilha transparente e reflexiva.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Especialistas em superfícies perigosas.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Ignora lama não mágica como terreno difícil. 1/DL, após mover 3 m, deixe 3 m de rastro; primeira criatura hostil que cruzar faz DES ou cai. Aderência aprimorada. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você recua e deixa o perseguidor escorregar.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Pode transformar uma perseguição inteira em armadilha.</div></div></details><details class="subrace searchable"><summary>🪨 <b>Pedra-Viva</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Cascos cobertos por minerais.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Vivem em vasos quebrados e ruínas de pedra.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>PROPOSTA: CA mínima 13 + DES máx.2 sem armadura. Reduza dano de queda em Proficiência adicional. +1 Furtividade em rocha/casca seca.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você se confunde com entulho e espera os inimigos passarem.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Pode ser lembrado como uma estátua que decidiu andar.</div></div></details><details class="subrace searchable"><summary>✉️ <b>Mensageiro de Limo</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Cascos leves e trilhas marcadas.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Mesmo lentos, quase nunca se perdem.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Sempre sabe a direção de trilha própria das últimas 24 h. 1/DL, ignore uma redução não mágica de deslocamento por 1 rodada. Proficiência em Sobrevivência. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você continua avançando mesmo quando o terreno tenta pará-lo.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Pode atravessar lugares onde velocidade seria inútil.</div></div></details></section><section class="race-section" id="race-8">
+    <div class="race-head"><div><div class="proposal">PROPOSTA PARA REVISÃO</div><h2>🪽 Libélulo</h2>
+    <p class="tagline">Reflexos rápidos, visão de movimento e vida ligada a água, vento e altitude.</p></div><div class="count">5 Sub-Raças/Ramos</div></div>
+    <div class="grid">
+    <article class="card"><h3>📖 IPJ — Origem & Identidade</h3><p>Libélulos vivem entre margens, juncos e folhas próximas à água. Falam rápido, mudam de direção rápido e, segundo Caracolídeos, pensam rápido demais.</p></article>
+    <article class="card"><h3>👁 Aparência</h3><p>Corpos esguios, olhos compostos grandes e asas translúcidas.</p></article>
+    <article class="card"><h3>🏘 Cultura</h3><p>Competição, observação, exploração e celebração do movimento.</p></article>
+    <article class="card"><h3>🤝 Relações</h3><p>Dão-se bem com Povo-Folha e Saltídeos; Caracolídeos acham suas conversas cansativas.</p></article>
+    <article class="card"><h3>👣 Visão dos Gigantes</h3><p>São fascinados por reflexos em vidro, metal e água deixados pelos humanos.</p></article>
+    <article class="card"><h3>🎮 Como é jogar?</h3><p>Excelente para iniciativa, mobilidade, investigação visual e evitar quedas.</p></article></div>
+    <article class="card traits"><h3>🧬 Traços Raciais Base</h3><ul><li>Deslocamento 9 m.</li><li>PROPOSTA: +1 DES e +1 INT ou SAB.</li><li>Planar: ao cair, mova horizontalmente 1,5 m por 1,5 m de queda, até seu deslocamento.</li><li>Reflexos: +1 Iniciativa.</li></ul>
+    <div class="example"><b>💡 Exemplo de uso:</b> Você cai 6 m e usa Planar para deslocar-se horizontalmente até uma área segura.</div></article>
+    <article class="legend big"><b>🌟 Potencial Lendário da Raça:</b> Os mais famosos são os primeiros a chegar e os últimos a serem alcançados.</article>
+    <div class="subhead"><h3>🌿 Sub-Raças / Ramos</h3><p>Escolha uma para abrir. Elas adicionam identidade e ferramentas, mas não determinam a Classe.</p></div>
+    <details class="subrace searchable"><summary>❄️ <b>Azul</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Asas azuladas e corpos adaptados a águas frias.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Vivem perto de sombra e orvalho gelado.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Vantagem contra frio ambiental. 1/DL, Ação: cone 1,5 m; CON ou deslocamento -1,5 m até próximo turno. +1 Percepção perto de água. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você reduz a velocidade de um perseguidor com ar frio.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Pode explorar regiões que congelariam outros povos.</div></div></details><details class="subrace searchable"><summary>🔥 <b>Vermelho</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Tons cobre e vermelho vivo.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Vivem em regiões abertas e ensolaradas.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Vantagem contra calor ambiental. 1/DC, ao começar sob luz forte, +1,5 m deslocamento no turno. +1 contra Ofuscado por luz natural. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você usa o calor do sol para ganhar impulso.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Pode cruzar o Jardim no auge do verão.</div></div></details><details class="subrace searchable"><summary>🔍 <b>Prateado</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Asas quase transparentes e reflexos metálicos.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Investigadores e cartógrafos.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Proficiência em Investigação. +1 Percepção contra criatura que se moveu desde seu último turno. 1/DL, rerrole Investigação visual. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você percebe um fio porque vibra quando o inimigo passa.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Pode descobrir uma cidade escondida em plena vista.</div></div></details><details class="subrace searchable"><summary>🌿 <b>Esmeralda</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Verdes intensos e asas camufladas.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Vivem em margens cobertas de plantas.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p> +1 Furtividade em vegetação úmida. 1/DC, ao Planar, desça 3 m adicionais sem aumentar dano de queda. +1 Sobrevivência perto de água. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você mergulha entre juncos e desaparece.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Pode cruzar regiões inundadas sem deixar rastros.</div></div></details><details class="subrace searchable"><summary>⛈️ <b>Tempestade</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Asas escuras e estática visível.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Mensageiros de tempestade.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Vantagem contra eletricidade ambiental. 1/DL, Reação ao ser tocado/agarrado: 1d4 Elétrico. Vantagem para prever chuva e vento nas próximas horas. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Uma criatura o agarra e recebe choque.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Pode virar o arauto que sempre chega antes da tempestade.</div></div></details></section><section class="race-section" id="race-9">
+    <div class="race-head"><div><div class="proposal">PROPOSTA PARA REVISÃO</div><h2>🎵 Grilídeo</h2>
+    <p class="tagline">Saltadores, músicos, viajantes noturnos e mestres da comunicação pelo som.</p></div><div class="count">5 Sub-Raças/Ramos</div></div>
+    <div class="grid">
+    <article class="card"><h3>📖 IPJ — Origem & Identidade</h3><p>Grilídeos acreditam que todo lugar tem um ritmo. Ouvem vento, folhas, passos e água como partes de uma grande composição.</p></article>
+    <article class="card"><h3>👁 Aparência</h3><p>Pernas fortes, antenas longas, placas leves e cores verdes, marrons, pretas ou douradas.</p></article>
+    <article class="card"><h3>🏘 Cultura</h3><p>Música, histórias, viagem e sinais sonoros. Muitos reconhecem família e região pela forma de cantar.</p></article>
+    <article class="card"><h3>🤝 Relações</h3><p>Apídeos adoram suas festas; Formiguídeos apreciam seus sinais de viagem.</p></article>
+    <article class="card"><h3>👣 Visão dos Gigantes</h3><p>Rádio, música distante e vibrações humanas são interpretados como &#x27;vozes impossíveis&#x27;.</p></article>
+    <article class="card"><h3>🎮 Como é jogar?</h3><p>Muito bom para social, mobilidade, percepção sonora e personagens carismáticos.</p></article></div>
+    <article class="card traits"><h3>🧬 Traços Raciais Base</h3><ul><li>Deslocamento 9 m.</li><li>PROPOSTA: +1 CAR e +1 DES ou CON.</li><li>Salto Poderoso: +1,5 m em salto.</li><li>Canto Natural: Proficiência em Atuação ou Persuasão.</li></ul>
+    <div class="example"><b>💡 Exemplo de uso:</b> Você alcança uma plataforma com salto e usa o canto para acalmar uma comunidade desconfiada.</div></article>
+    <article class="legend big"><b>🌟 Potencial Lendário da Raça:</b> Alguns tornam-se canções vivas, lembradas muito depois da morte.</article>
+    <div class="subhead"><h3>🌿 Sub-Raças / Ramos</h3><p>Escolha uma para abrir. Elas adicionam identidade e ferramentas, mas não determinam a Classe.</p></div>
+    <details class="subrace searchable"><summary>🎤 <b>Cantor</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Estridulação potente e controle fino de ritmo.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Artistas, arautos e líderes.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Proficiência em 1 instrumento. 1/DL, Ação Bônus: aliado a 6 m recebe +1d4 no próximo teste ou Salvaguarda até seu próximo turno. Voz alcança o dobro em campo aberto. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você canta antes de um salto difícil do aliado.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Pode ter uma música conhecida em todas as colônias.</div></div></details><details class="subrace searchable"><summary>🕳️ <b>Cavernícola</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Corpos escuros e antenas sensíveis.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Vivem em túneis e áreas sem luz.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Visão no Escuro 18 m. 1/DC, Ação: detecte grandes obstáculos e criaturas em movimento a 3 m na escuridão, sem detalhes. +1 Furtividade em pedra. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você percebe algo se movendo depois da curva.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Pode mapear cavernas apenas ouvindo ecos.</div></div></details><details class="subrace searchable"><summary>🌾 <b>Campo</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Cores verdes/amarelas e pernas muito fortes.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Batedores e agricultores de áreas abertas.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Proficiência em Sobrevivência. Salto racial aumenta +3 m em vez de +1,5 m, PROPOSTA. Ignore primeiro 1,5 m de terreno difícil vegetal por turno.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você salta por cima de uma raiz em vez de contornar.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Pode cruzar um gramado inteiro em saltos impossíveis.</div></div></details><details class="subrace searchable"><summary>🥁 <b>Tambor</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Placas largas que produzem vibrações profundas.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Comunicadores de longa distância e guardiões.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>1/DL, Ação: criaturas hostis a 1,5 m fazem CON ou perdem Reação até próximo turno. Grilídeos entendem mensagens rítmicas simples a longa distância. Vantagem contra Trovão ambiental. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você bate as placas e abre espaço para fugir.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Pode coordenar uma evacuação inteira sem ser visto.</div></div></details><details class="subrace searchable"><summary>🤫 <b>Silencioso</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Estridulação reduzida e movimentos controlados.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Espiões e viajantes solitários.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Proficiência em Furtividade. Vantagem contra Percepção auditiva quando tenta ficar em silêncio. 1/DC, aterrissagem de salto não produz som detectável além de 1,5 m. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você salta atrás de um guarda sem denunciar posição.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Pode virar a história assustadora que outros Grilídeos contam à noite.</div></div></details></section><section class="race-section" id="race-10">
+    <div class="race-head"><div><div class="proposal">PROPOSTA PARA REVISÃO</div><h2>🌱 Humanoide do Broto</h2>
+    <p class="tagline">Versáteis, adaptáveis e definidos muito mais pela cultura do que pela biologia.</p></div><div class="count">5 Sub-Raças/Ramos</div></div>
+    <div class="grid">
+    <article class="card"><h3>📖 IPJ — Origem & Identidade</h3><p>Humanoides do Broto são povos sem adaptações biológicas tão extremas quanto Quitinosos, Apídeos ou Saltídeos. Sua maior força é aprender, copiar e misturar tradições.</p></article>
+    <article class="card"><h3>👁 Aparência</h3><p>Aparência muito variável; vestimenta e traços dependem da comunidade.</p></article>
+    <article class="card"><h3>🏘 Cultura</h3><p>Não existe uma única cultura do Broto. O termo reúne comunidades diferentes que compartilham versatilidade.</p></article>
+    <article class="card"><h3>🤝 Relações</h3><p>Vivem bem em comunidades mistas e são os mais difíceis de prever culturalmente.</p></article>
+    <article class="card"><h3>👣 Visão dos Gigantes</h3><p>Há quem adore, tema, estude ou ignore os Gigantes. Não existe consenso.</p></article>
+    <article class="card"><h3>🎮 Como é jogar?</h3><p>É a escolha mais flexível. Aqui, &#x27;Sub-Raças&#x27; são Ramos Culturais, não linhagens biológicas.</p></article></div>
+    <article class="card traits"><h3>🧬 Traços Raciais Base</h3><ul><li>Deslocamento 9 m.</li><li>PROPOSTA: +1 em três atributos diferentes OU +2/+1 conforme modelo final.</li><li>Versátil: Proficiência em 1 perícia.</li><li>Talento de Origem adicional, sujeito a balanceamento.</li></ul>
+    <div class="example"><b>💡 Exemplo de uso:</b> Você usa perícia extra e Talento de Origem para criar um Broto muito diferente de outro.</div></article>
+    <article class="legend big"><b>🌟 Potencial Lendário da Raça:</b> As lendas dos Brotos quase nunca começam com &#x27;nasceu especial&#x27;; começam com &#x27;decidiu aprender&#x27;.</article>
+    <div class="subhead"><h3>🌿 Sub-Raças / Ramos</h3><p>Escolha uma para abrir. Elas adicionam identidade e ferramentas, mas não determinam a Classe.</p></div>
+    <details class="subrace searchable"><summary>☀️ <b>Ramo da Clareira</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Comunidades abertas e comerciais.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Valorizam negociação e hospitalidade.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Proficiência em Persuasão ou Intuição. 1/DL, ao chegar em comunidade não hostil, obtenha informação básica sobre comércio/abrigo/rumores sem teste, se houver interlocutor. Aprenda 1 idioma/sistema de sinais. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você descobre rapidamente onde conseguir abrigo.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Pode virar mediador entre povos incompatíveis.</div></div></details><details class="subrace searchable"><summary>🏚️ <b>Ramo das Ruínas</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Criados entre objetos humanos abandonados.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Exploradores de sucata e sobreviventes urbanos.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Proficiência em Investigação ou Engenharia. +1 para reconhecer perigos estruturais. 1/DC, use objeto pequeno como ferramenta simples sem penalidade. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você usa sucata como alavanca improvisada.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Pode ser o primeiro a compreender uma Relíquia importante.</div></div></details><details class="subrace searchable"><summary>🌾 <b>Ramo da Horta</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Comunidades rurais ligadas a cultivo.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Práticos, pacientes e bons na sobrevivência diária.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Proficiência em Coleta ou Natureza. +1 em testes de alimento, plantio ou sementes. 1/DL, produza 1 ração simples durante DC se houver matéria-prima. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você transforma coleta em alimento.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Pode salvar uma cidade de fome.</div></div></details><details class="subrace searchable"><summary>🌫️ <b>Ramo da Estufa</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Descendentes de comunidades de ambiente abafado.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Cautelosos e adaptados a espaços fechados.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Proficiência em Percepção ou Furtividade. Vantagem contra calor úmido/gás leve mundano. 1/DL, rerrole Salvaguarda contra ambiente. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você resiste melhor a vapor e continua explorando.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Pode mapear regiões que outros não suportam.</div></div></details><details class="subrace searchable"><summary>🧭 <b>Ramo Errante</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Caravanas sem território fixo.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Aprendem um pouco de tudo e trocam costumes.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Proficiência em Sobrevivência. Após DL, escolha perícia não proficiente; +1 nela até próximo DL. Aliados têm +1 para seguir sua trilha. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você escolhe Investigação antes de explorar uma ruína.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Pode pertencer a todos os lugares sem pertencer a nenhum.</div></div></details></section><section class="race-section" id="race-11">
+    <div class="race-head"><div><div class="proposal">PROPOSTA PARA REVISÃO</div><h2>🧚 Férico do Orvalho</h2>
+    <p class="tagline">Povo tocado por magia natural, reflexos, névoa e pequenos impossíveis.</p></div><div class="count">5 Sub-Raças/Ramos</div></div>
+    <div class="grid">
+    <article class="card"><h3>📖 IPJ — Origem & Identidade</h3><p>Féricos do Orvalho parecem existir meio passo fora da realidade comum. Suas histórias falam de gotas que lembram sonhos e caminhos que aparecem para quem acredita.</p></article>
+    <article class="card"><h3>👁 Aparência</h3><p>Corpos delicados, brilho suave, olhos incomuns e, em algumas linhagens, véus de luz.</p></article>
+    <article class="card"><h3>🏘 Cultura</h3><p>Cultura poética, ritualística e imprevisível. Nomes, promessas e gestos pequenos importam muito.</p></article>
+    <article class="card"><h3>🤝 Relações</h3><p>Povo-Folha e Libélulos convivem bem com eles; Quitinosos frequentemente desconfiam de sua falta de objetividade.</p></article>
+    <article class="card"><h3>👣 Visão dos Gigantes</h3><p>Alguns acreditam que sonhos dos Gigantes escorrem para o Jardim através do orvalho.</p></article>
+    <article class="card"><h3>🎮 Como é jogar?</h3><p>Mistura utilidade mágica, defesa mental, mobilidade e truques incomuns.</p></article></div>
+    <article class="card traits"><h3>🧬 Traços Raciais Base</h3><ul><li>Deslocamento 9 m.</li><li>PROPOSTA: +1 CAR e +1 DES ou SAB.</li><li>Truque Férico: aprenda 1 Truque apropriado.</li><li>1/DL, Vantagem numa Salvaguarda contra Enfeitiçado.</li></ul>
+    <div class="example"><b>💡 Exemplo de uso:</b> Você usa um Truque para pequeno efeito e guarda sua defesa contra Encantamento para ameaça maior.</div></article>
+    <article class="legend big"><b>🌟 Potencial Lendário da Raça:</b> Féricos lendários aparecem em histórias nas quais ninguém concorda totalmente sobre o que aconteceu.</article>
+    <div class="subhead"><h3>🌿 Sub-Raças / Ramos</h3><p>Escolha uma para abrir. Elas adicionam identidade e ferramentas, mas não determinam a Classe.</p></div>
+    <details class="subrace searchable"><summary>🌈 <b>Aurora</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Brilho multicolorido e olhos de tons variáveis.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Artistas, guias e celebrantes de começos.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Pode emitir luz 3 m. 1/DL, Ação Bônus: você ou aliado a 3 m recebe +1 CA até próximo turno. Proficiência em Atuação ou Persuasão. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você envolve um aliado em brilho e dificulta um ataque.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Sua chegada pode tornar-se símbolo de esperança.</div></div></details><details class="subrace searchable"><summary>🌫️ <b>Névoa</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Corpos pálidos e bordas translúcidas.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Vivem em regiões úmidas e caminhos difíceis.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>1/DL, Ação: névoa de raio 1,5 m até próximo turno. 1/DC, mova 1,5 m por espaço parcialmente obscurecido sem provocar ataque. Enxerga na própria névoa. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você cria névoa e muda de posição.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Pode desaparecer de uma prisão sem deixar porta aberta.</div></div></details><details class="subrace searchable"><summary>🌒 <b>Crepúsculo</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Tons azul-escuro, violeta e prata.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Vigias e guardiões de limites.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Visão no Escuro 18 m. 1/DL após DC, aliado recebe +1 na próxima Salvaguarda de SAB. +1 Furtividade em luz baixa. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você fortalece a mente de um aliado antes de uma região assustadora.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Pode guardar lugares onde sonho e realidade se misturam.</div></div></details><details class="subrace searchable"><summary>⭐ <b>Gota-Estelar</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Pontos luminosos parecem flutuar ao redor.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Estudiosos de presságios e coincidências.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>1/DL após DL, role 1d20 e anote; antes de criatura a 6 m rolar d20, substitua pela sua rolagem. Truque Férico pode produzir luz fria. +1 Intuição em presságios. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Você guarda um 17 e usa no teste decisivo.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Pode ser chamado de &#x27;aquele que viu o amanhã&#x27;.</div></div></details><details class="subrace searchable"><summary>🌱 <b>Raiz-Férica</b> <span>— abrir detalhes</span></summary>
+    <div class="subbody"><div class="subgrid"><div class="info"><h4>👁 Aparência</h4><p>Mais robustos, com detalhes de casca e folha.</p></div>
+    <div class="info"><h4>🏘 Cultura</h4><p>Féricos mais ligados ao solo e ao ciclo natural.</p></div></div>
+    <div class="mechanics"><h4>⚙️ Características da Sub-Raça</h4><p>Vantagem contra empurrão em solo natural. 1/DL, Reação quando aliado a 1,5 m sofre dano: reduza em Proficiência. Truque Férico deve ser Natural/protetor. PROPOSTA.</p></div>
+    <div class="example"><b>💡 Exemplo:</b> Uma raiz luminosa amortece parte do golpe contra o aliado.</div><div class="legend"><b>🌟 Potencial Lendário:</b> Pode tornar-se espírito protetor de uma região.</div></div></details></section>
+<div class="panel note"><b>Nota de balanceamento:</b> bônus de atributo permanecem em revisão junto dos Antecedentes. A prioridade desta versão é avaliar se cada opção é divertida, única e desejável; depois fazemos o ajuste fino antes do Codex definitivo.</div>
+</div>
+<script>
+const raceSelect=document.getElementById('raceSelect'), search=document.getElementById('search'),params=new URLSearchParams(location.search);
+if(params.get('embed')==='1')document.body.classList.add('embedded-race');
+const requestedRace=params.get('raca');if(requestedRace&&document.getElementById(requestedRace))raceSelect.value=requestedRace;
+document.querySelectorAll('.race-section').forEach(sec=>{
+ const traits=sec.querySelector('.traits'),items=traits?[...traits.querySelectorAll(':scope>ul>li')].map(x=>x.textContent.trim()):[];
+ const speed=items.find(x=>/^Deslocamento/i.test(x))||'Velocidade não definida.',attributes=items.find(x=>/PROPOSTA:.*\+\d/i.test(x))||'Atributos em revisão.',dark=items.find(x=>/Visão no Escuro/i.test(x))||'Não informada na Raça-base.';
+ const abilities=items.filter(x=>x!==speed&&x!==attributes&&x!==dark).join(' • ')||'Não informadas.';
+ const core=document.createElement('div');core.className='race-core';core.innerHTML=`<div><b>Tamanho</b>Não definido no material em teste.</div><div><b>Velocidade</b>${speed.replace(/^Deslocamento\s*/i,'')}</div><div><b>Visão no Escuro</b>${dark.replace(/^Visão no Escuro\s*/i,'')}</div><div><b>Atributos</b>${attributes.replace(/^PROPOSTA:\s*/i,'')}</div><div style="grid-column:1/-1"><b>Habilidades fornecidas pela Raça</b>${abilities}</div>`;traits?.insertAdjacentElement('beforebegin',core);
+ const subs=[...sec.querySelectorAll('.subrace')],head=sec.querySelector('.subhead');if(subs.length&&head){const select=document.createElement('select');select.className='subrace-select';select.setAttribute('aria-label','Escolha uma Sub-Raça');select.innerHTML=subs.map((sub,i)=>`<option value="${i}">${sub.querySelector('summary b')?.textContent||'Sub-Raça '+(i+1)}</option>`).join('');head.insertAdjacentElement('afterend',select);const show=()=>subs.forEach((sub,i)=>{sub.classList.toggle('selected-subrace',i===+select.value);sub.open=i===+select.value});select.addEventListener('change',show);show()}
+});
+function showRace(){document.querySelectorAll('.race-section').forEach(s=>s.classList.toggle('active',s.id===raceSelect.value));search.value='';applySearch();try{localStorage.setItem('microcosmosRace',raceSelect.value)}catch(e){}}
+function applySearch(){const q=search.value.trim().toLowerCase(),sec=document.getElementById(raceSelect.value);if(!sec)return;sec.querySelectorAll('.subrace').forEach(el=>{const ok=!q||el.innerText.toLowerCase().includes(q);el.classList.toggle('search-hidden',!ok);if(q&&ok)el.open=true;});}
+raceSelect.addEventListener('change',showRace);search.addEventListener('input',applySearch);
+let saved='';try{saved=localStorage.getItem('microcosmosRace')||''}catch(e){} if(!requestedRace&&saved&&document.getElementById(saved))raceSelect.value=saved; showRace();
+</script>
+</body></html>

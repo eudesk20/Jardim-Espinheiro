@@ -1,0 +1,570 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MICROCOSMOS — Deuses, Pactos & Facções — Revisão v1</title><style>
+:root{--paper:#efe4c9;--paper2:#fffaf0;--ink:#30271f;--muted:#74624e;--green:#365f40;--gold:#b98c3e;--purple:#6c5682}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;padding:12px;background:radial-gradient(circle at 10% 0,rgba(72,115,77,.35),transparent 28%),linear-gradient(160deg,#20372a,#0f1711 72%);font-family:Georgia,"Times New Roman",serif;color:var(--ink)}
+.app{max-width:1320px;margin:auto}.hero,.panel,.section{background:var(--paper);border:4px double #725d3c;border-radius:24px;box-shadow:0 16px 44px #0008}.hero{padding:22px;text-align:center;margin-bottom:12px}.hero small{color:var(--green);font-weight:bold;letter-spacing:.16em}.hero h1{margin:7px 0}.hero p{color:var(--muted)}.panel{padding:13px;margin-bottom:12px}.nav{position:sticky;top:0;z-index:20;background:#efe4c9f3}.nav select,.nav input{padding:10px 12px;border:1px solid #8c7a60;border-radius:11px;background:var(--paper2);font:inherit;margin:4px}.section{display:none;padding:16px;margin-bottom:16px}.section.active{display:block}.card{background:var(--paper2);border:1px solid #9c8765;border-radius:14px;padding:11px;margin:8px 0}.card h3,.card h4{margin:0 0 6px}.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.note,.ipj,.ipm,.hook{border-radius:10px;padding:10px;margin:9px 0;line-height:1.5}.note{background:#fff4d7;border-left:5px solid var(--gold)}.ipj{background:#edf4e9;border-left:5px solid var(--green)}.ipm{background:#efe7f4;border-left:5px solid var(--purple)}.hook{background:#f4ebdf;border-left:5px solid #9a6035}.acc{background:var(--paper2);border:2px solid #8d7654;border-radius:14px;margin:9px 0;overflow:hidden}.acc summary{cursor:pointer;padding:11px 13px;background:#e9dabd;font-weight:bold}.acc-body{padding:11px}.scroll{overflow:auto}table{width:100%;border-collapse:collapse}th,td{border:1px solid #a89574;padding:8px;vertical-align:top}th{background:#e2d4b8}.badge{display:inline-block;background:#fff1b8;border:1px solid var(--gold);border-radius:999px;padding:4px 8px;font-size:.72rem;font-weight:bold}.search-hidden{display:none!important}
+body.embedded-review{padding:4px;background:transparent}body.embedded-review .hero,body.embedded-review .nav,body.embedded-review>.app>.panel.note,body.embedded-review>.app>.panel:not(.nav){display:none}body.embedded-review .section{border-width:2px;border-radius:14px;box-shadow:none;margin:0 0 10px}.relationship-panel{margin-top:12px;padding:12px;border:2px solid #8064a0;border-radius:13px;background:#f0e8f5}.relationship-panel h3,.relationship-panel h4{margin:0 0 7px;color:#573d70}.conduct-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.conduct-good,.conduct-bad{padding:9px;border-radius:9px;line-height:1.45}.conduct-good{background:#e4f0df;border-left:5px solid #477344}.conduct-bad{background:#f4e1dd;border-left:5px solid #9b4d40}.relationship-table{width:100%;font-size:.83rem;margin-top:9px}.relationship-table th{position:static}.faction-web{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:12px 0}.web-node{background:#fffaf0;border:2px solid #8d7654;border-radius:13px;padding:10px}.web-node h3{margin:0 0 7px}.web-allies{color:#2f6c3d}.web-rivals{color:#934235}.rule-callout{background:#fff0bd;border:2px solid #b98c3e;border-radius:12px;padding:11px;margin:10px 0;line-height:1.5}@media(max-width:700px){.conduct-grid,.faction-web{grid-template-columns:1fr}.relationship-table{font-size:.75rem}}
+@media(max-width:800px){.grid2{grid-template-columns:1fr}.nav{position:static}}
+</style></head>
+<body><div class="app">
+<header class="hero"><small>MICROCOSMOS — ONDE O MUNDO TERMINA</small><h1>📜 Cosmologia, Divindades, Pactos & Facções</h1><p><span class="badge">PROPOSTA PARA REVISÃO</span></p><p>Versão somente texto para análise.</p></header>
+<div class="panel note"><b>IPJ</b> = informações para jogadores. <b>IPM</b> = informações reservadas ao Mestre. Terminologia mágica universal: <b>Truque, Círculo Mágico, Slot Mágico e Círculo Superior</b>.</div>
+<div class="panel nav"><label><b>📂 Seção:</b></label><select id="sectionSelect">
+<option value="cosmologia">🌿 Cosmologia</option><option value="fontes">✨ Fontes de Magia</option><option value="deuses">🔱 Divindades</option><option value="pactos">🕯️ Pactos</option><option value="reputacao">📈 Reputação</option><option value="faccoes">🏳️ Facções</option><option value="classes">⚔️ Classes</option></select><input id="search" placeholder="🔎 Filtrar dentro da seção..."></div>
+
+<section id="cosmologia" class="section active"><h2>🌿 Trama das Raízes</h2>
+<div class="note"><b>PROPOSTA PARA REVISÃO:</b> nome e natureza ainda podem mudar.</div>
+<div class="ipj"><b>IPJ:</b> A Trama das Raízes é o nome mais comum dado à força invisível que atravessa raízes, fungos, água, seres vivos, ruínas e Relíquias dos Gigantes. Cada povo explica essa força de uma forma.</div>
+<div class="ipm"><b>IPM:</b> a verdade pode permanecer aberta. Ela pode ser força primordial, rede de consciência, herança de entidades antigas ou combinação dessas hipóteses.</div>
+<div class="card"><h3>Ideia central</h3><p><b>Clérigo acredita. Paladino promete. Bruxo negocia. Druida se alinha. Mago estuda. Feiticeiro manifesta. Bardo ressoa.</b></p></div>
+</section>
+
+<section id="fontes" class="section"><h2>✨ Fontes de Magia</h2>
+<div class="card"><h3>Clérigo — Fé / Divindade</h3><p>Canaliza Poder Divino por devoção, rito e relação com uma Divindade ou princípio sagrado. Para o personagem, a fé recebe resposta.</p></div>
+<div class="card"><h3>Paladino — Juramento</h3><p>Seu poder nasce de uma promessa tão absoluta que passa a ressoar com a Trama. Pode venerar um Deus, mas não precisa.</p></div>
+<div class="card"><h3>Bruxo — Pacto</h3><p>Recebe poder por acordo com uma Entidade. O Patrono oferece algo e cobra algo.</p></div>
+<div class="card"><h3>Druida — Natureza</h3><p>Relaciona-se diretamente com ciclos vivos do Jardim.</p></div>
+<div class="card"><h3>Mago — Estudo Arcano</h3><p>Manipula a Trama por fórmulas, símbolos, padrões e Grimório.</p></div>
+<div class="card"><h3>Feiticeiro — Poder Inato</h3><p>Carrega ligação direta com a Trama dentro de si.</p></div>
+<div class="card"><h3>Bardo — Ecos / Ressonância</h3><p>Faz a Trama ressoar através de memória, música, palavra, ritmo e emoção. Ecos são identidade temática; a terminologia do sistema continua universal.</p></div>
+</section>
+
+<section id="deuses" class="section"><h2>🔱 Panteão Proposto — 10 Divindades</h2><div class="note">Nenhuma Divindade precisa ser objetivamente comprovada.</div>
+<details class="acc searchable"><summary>🔱 A Senhora da Primeira Gota — Mãe do Orvalho</summary><div class="acc-body">
+<div class="grid2">
+<div class="card"><h4>Conceito</h4><p>Água, cura, nascimento, renovação</p></div>
+<div class="card"><h4>Símbolo</h4><p>Gota com uma semente no centro</p></div>
+<div class="card"><h4>Dogmas</h4><p>Preservar água limpa; curar antes de punir; nunca negar água de sobrevivência.</p></div>
+<div class="card"><h4>Proibições</h4><p>Envenenar nascentes; usar sede como tortura.</p></div>
+<div class="card"><h4>Templos</h4><p>Santuários junto a folhas côncavas, poças e reservas de orvalho.</p></div>
+<div class="card"><h4>Sacerdócio</h4><p>Curadores, parteiros, guardiões de nascente e mediadores.</p></div>
+<div class="card"><h4>Domínios de Clérigo</h4><p>Cura, Vida, Água, Proteção</p></div>
+<div class="card"><h4>Juramentos de Paladino</h4><p>Juramento da Fonte; Juramento da Misericórdia</p></div>
+</div>
+<div class="ipj"><b>IPJ:</b> Toda gota de orvalho é lembrança de sua primeira bênção.</div>
+<div class="ipm"><b>IPM:</b> A existência objetiva da Divindade pode permanecer ambígua; talvez um fenômeno natural tenha sido interpretado como milagre.</div>
+</div></details>
+<details class="acc searchable"><summary>🔱 O Rei Sob a Pedra — Guardião das Fundações</summary><div class="acc-body">
+<div class="grid2">
+<div class="card"><h4>Conceito</h4><p>Proteção, comunidade, subterrâneo, dever</p></div>
+<div class="card"><h4>Símbolo</h4><p>Pedra quadrada sobre três linhas</p></div>
+<div class="card"><h4>Dogmas</h4><p>Construir para durar; o forte sustenta o frágil; proteção antes de glória.</p></div>
+<div class="card"><h4>Proibições</h4><p>Abandonar comunidade sob sua guarda; destruir abrigo por ambição.</p></div>
+<div class="card"><h4>Templos</h4><p>Templos em câmaras de pedra, túneis e ruínas de vaso.</p></div>
+<div class="card"><h4>Sacerdócio</h4><p>Construtores, sentinelas, juízes e anciãos.</p></div>
+<div class="card"><h4>Domínios de Clérigo</h4><p>Proteção, Ordem, Terra</p></div>
+<div class="card"><h4>Juramentos de Paladino</h4><p>Juramento da Muralha; Juramento da Colônia</p></div>
+</div>
+<div class="ipj"><b>IPJ:</b> Ele sustenta as pedras acima dos túneis durante tremores.</div>
+<div class="ipm"><b>IPM:</b> Alguns santuários antigos vibram durante desabamentos sem causa conhecida.</div>
+</div></details>
+<details class="acc searchable"><summary>🔱 A Mariposa da Última Luz — Senhora da Passagem</summary><div class="acc-body">
+<div class="grid2">
+<div class="card"><h4>Conceito</h4><p>Morte, memória, passagem, luto</p></div>
+<div class="card"><h4>Símbolo</h4><p>Mariposa envolvendo um ponto de luz</p></div>
+<div class="card"><h4>Dogmas</h4><p>Lembrar os mortos; conduzir os perdidos; aceitar a morte sem banalizá-la.</p></div>
+<div class="card"><h4>Proibições</h4><p>Profanar corpos; apagar deliberadamente a memória de um morto.</p></div>
+<div class="card"><h4>Templos</h4><p>Altares em crepúsculo, cemitérios de folha e ruínas silenciosas.</p></div>
+<div class="card"><h4>Sacerdócio</h4><p>Cantores fúnebres, guardiões de memória, coveiros e estudiosos de espíritos.</p></div>
+<div class="card"><h4>Domínios de Clérigo</h4><p>Morte, Túmulo, Crepúsculo, Memória</p></div>
+<div class="card"><h4>Juramentos de Paladino</h4><p>Juramento da Vigília; Juramento dos Mortos</p></div>
+</div>
+<div class="ipj"><b>IPJ:</b> A última luz vista antes da morte seria a ponta de sua asa.</div>
+<div class="ipm"><b>IPM:</b> Pode existir relação entre fenômenos fúngicos de memória e seus cultos.</div>
+</div></details>
+<details class="acc searchable"><summary>🔱 O Sol Que Tudo Vê — Olho do Alto</summary><div class="acc-body">
+<div class="grid2">
+<div class="card"><h4>Conceito</h4><p>Luz, verdade, vigilância, coragem</p></div>
+<div class="card"><h4>Símbolo</h4><p>Círculo dourado com um olho central</p></div>
+<div class="card"><h4>Dogmas</h4><p>Revelar injustiças; testemunhar a verdade; enfrentar aquilo que teme a luz.</p></div>
+<div class="card"><h4>Proibições</h4><p>Falsificar prova; mentir em julgamento sagrado.</p></div>
+<div class="card"><h4>Templos</h4><p>Santuários em folhas altas, pedras expostas e clareiras.</p></div>
+<div class="card"><h4>Sacerdócio</h4><p>Juízes, vigias, observadores e inquisidores.</p></div>
+<div class="card"><h4>Domínios de Clérigo</h4><p>Luz, Ordem, Conhecimento</p></div>
+<div class="card"><h4>Juramentos de Paladino</h4><p>Juramento da Verdade; Juramento do Olho</p></div>
+</div>
+<div class="ipj"><b>IPJ:</b> O Sol é literalmente o olhar da Divindade sobre o Jardim.</div>
+<div class="ipm"><b>IPM:</b> Pode ser apenas religião solar; outra hipótese é uma inteligência antiga associada ao Sol.</div>
+</div></details>
+<details class="acc searchable"><summary>🔱 A Raiz Sem Fim — Mãe dos Caminhos Ocultos</summary><div class="acc-body">
+<div class="grid2">
+<div class="card"><h4>Conceito</h4><p>Natureza, ancestralidade, conexão, crescimento</p></div>
+<div class="card"><h4>Símbolo</h4><p>Três raízes entrelaçadas</p></div>
+<div class="card"><h4>Dogmas</h4><p>Tudo que vive toca outra coisa; crescer exige equilíbrio.</p></div>
+<div class="card"><h4>Proibições</h4><p>Devastar ecossistema; queimar raiz sagrada sem necessidade.</p></div>
+<div class="card"><h4>Templos</h4><p>Santuários vivos junto a raízes antigas.</p></div>
+<div class="card"><h4>Sacerdócio</h4><p>Cultivadores, druidas-sacerdotes, genealogistas e guardiões.</p></div>
+<div class="card"><h4>Domínios de Clérigo</h4><p>Natureza, Vida, Terra</p></div>
+<div class="card"><h4>Juramentos de Paladino</h4><p>Juramento do Jardim; Juramento das Raízes</p></div>
+</div>
+<div class="ipj"><b>IPJ:</b> Toda raiz do mundo faz parte de uma única raiz primordial.</div>
+<div class="ipm"><b>IPM:</b> Talvez exista de fato uma vasta rede vegetal/fúngica sob o Jardim.</div>
+</div></details>
+<details class="acc searchable"><summary>🔱 O Ferreiro das Cascas — Aquele que Refaz</summary><div class="acc-body">
+<div class="grid2">
+<div class="card"><h4>Conceito</h4><p>Transformação, trabalho, metal, quitina, reconstrução</p></div>
+<div class="card"><h4>Símbolo</h4><p>Mandíbula em torno de uma faísca</p></div>
+<div class="card"><h4>Dogmas</h4><p>Nada quebrado precisa permanecer inútil; trabalho bem feito honra quem o usa.</p></div>
+<div class="card"><h4>Proibições</h4><p>Destruir ferramentas por vaidade; roubar autoria; transformação sem consentimento.</p></div>
+<div class="card"><h4>Templos</h4><p>Oficinas, forjas de resina e santuários de muda.</p></div>
+<div class="card"><h4>Sacerdócio</h4><p>Artesãos, reparadores e engenheiros-sacerdotes.</p></div>
+<div class="card"><h4>Domínios de Clérigo</h4><p>Forja, Conhecimento, Criação</p></div>
+<div class="card"><h4>Juramentos de Paladino</h4><p>Juramento da Obra; Juramento da Reconstrução</p></div>
+</div>
+<div class="ipj"><b>IPJ:</b> Todo grande artesão ouve sua faísca ao terminar a melhor obra.</div>
+<div class="ipm"><b>IPM:</b> Certas &#x27;revelações&#x27; podem ser ecos de tecnologia humana incompreendida.</div>
+</div></details>
+<details class="acc searchable"><summary>🔱 A Voz Entre os Juncos — Mensageira sem Corpo</summary><div class="acc-body">
+<div class="grid2">
+<div class="card"><h4>Conceito</h4><p>Vento, viagem, mensagem, liberdade</p></div>
+<div class="card"><h4>Símbolo</h4><p>Três linhas curvas atravessando uma semente</p></div>
+<div class="card"><h4>Dogmas</h4><p>Nenhuma estrada pertence para sempre a um só povo; levar mensagem é responsabilidade.</p></div>
+<div class="card"><h4>Proibições</h4><p>Aprisionar mensageiros neutros; destruir rotas por puro controle.</p></div>
+<div class="card"><h4>Templos</h4><p>Totens leves em juncos, pontes e rotas altas.</p></div>
+<div class="card"><h4>Sacerdócio</h4><p>Mensageiros, exploradores, guias e diplomatas.</p></div>
+<div class="card"><h4>Domínios de Clérigo</h4><p>Tempestade, Viagem, Conhecimento</p></div>
+<div class="card"><h4>Juramentos de Paladino</h4><p>Juramento da Estrada; Juramento do Mensageiro</p></div>
+</div>
+<div class="ipj"><b>IPJ:</b> Todo vento que muda de direção sem motivo carrega uma mensagem.</div>
+<div class="ipm"><b>IPM:</b> Correntes de ar humanas podem ter sido interpretadas como intervenção divina.</div>
+</div></details>
+<details class="acc searchable"><summary>🔱 O Banquete de Mil Sementes — Senhor da Mesa</summary><div class="acc-body">
+<div class="grid2">
+<div class="card"><h4>Conceito</h4><p>Alimento, fartura, comunidade, hospitalidade</p></div>
+<div class="card"><h4>Símbolo</h4><p>Tigela de folhas com três sementes</p></div>
+<div class="card"><h4>Dogmas</h4><p>Nenhum banquete é completo se alguém passa fome; comida compartilhada cria cuidado.</p></div>
+<div class="card"><h4>Proibições</h4><p>Envenenar refeição oferecida; acumular comida em crise sem motivo.</p></div>
+<div class="card"><h4>Templos</h4><p>Cozinhas comunitárias, mercados e celeiros.</p></div>
+<div class="card"><h4>Sacerdócio</h4><p>Cozinheiros, coletores, anfitriões e administradores.</p></div>
+<div class="card"><h4>Domínios de Clérigo</h4><p>Vida, Comunidade, Natureza</p></div>
+<div class="card"><h4>Juramentos de Paladino</h4><p>Juramento da Hospitalidade</p></div>
+</div>
+<div class="ipj"><b>IPJ:</b> Toda comida dividida com um estranho é registrada por ele.</div>
+<div class="ipm"><b>IPM:</b> Talvez tenha surgido de antigas práticas de sobrevivência que ganharam caráter religioso.</div>
+</div></details>
+<details class="acc searchable"><summary>🔱 A Aranha do Fio Partido — Tecelã do Possível</summary><div class="acc-body">
+<div class="grid2">
+<div class="card"><h4>Conceito</h4><p>Destino, escolha, risco, segredo</p></div>
+<div class="card"><h4>Símbolo</h4><p>Teia incompleta com um fio rompido</p></div>
+<div class="card"><h4>Dogmas</h4><p>Destino não é prisão; toda escolha fecha e abre caminhos.</p></div>
+<div class="card"><h4>Proibições</h4><p>Convencer alguém de que não possui escolha; manipular destino sem aceitar consequência.</p></div>
+<div class="card"><h4>Templos</h4><p>Altares de fios em galhos e ruínas.</p></div>
+<div class="card"><h4>Sacerdócio</h4><p>Oráculos, mediadores, tecelões rituais e jogadores de sorte.</p></div>
+<div class="card"><h4>Domínios de Clérigo</h4><p>Trapaça, Conhecimento, Destino</p></div>
+<div class="card"><h4>Juramentos de Paladino</h4><p>Juramento da Escolha</p></div>
+</div>
+<div class="ipj"><b>IPJ:</b> Ela vê todos os caminhos, mas não obriga ninguém a seguir um.</div>
+<div class="ipm"><b>IPM:</b> Pode ser confundida com Patronos aracnídeos reais.</div>
+</div></details>
+<details class="acc searchable"><summary>🔱 O Trovão na Vidraça — Senhor da Tempestade Presa</summary><div class="acc-body">
+<div class="grid2">
+<div class="card"><h4>Conceito</h4><p>Tempestade, eletricidade, ruptura, mudança</p></div>
+<div class="card"><h4>Símbolo</h4><p>Raio quebrando um quadrado transparente</p></div>
+<div class="card"><h4>Dogmas</h4><p>Toda estagnação um dia rompe; força deve abrir caminho, não destruir por prazer.</p></div>
+<div class="card"><h4>Proibições</h4><p>Tortura por eletricidade; destruição sem propósito.</p></div>
+<div class="card"><h4>Templos</h4><p>Santuários perto de vidro, metal e pontos altos.</p></div>
+<div class="card"><h4>Sacerdócio</h4><p>Vigias de tempestade, guerreiros e estudiosos de eletricidade.</p></div>
+<div class="card"><h4>Domínios de Clérigo</h4><p>Tempestade, Guerra, Mudança</p></div>
+<div class="card"><h4>Juramentos de Paladino</h4><p>Juramento da Tempestade</p></div>
+</div>
+<div class="ipj"><b>IPJ:</b> A vidraça é a fronteira entre seu reino e o Jardim.</div>
+<div class="ipm"><b>IPM:</b> Descargas humanas e tempestades podem ter originado o culto.</div>
+</div></details></section>
+<section id="pactos" class="section"><h2>🕯️ Patronos Propostos — 8</h2><div class="note">Patronos não são automaticamente Deuses.</div>
+<details class="acc searchable"><summary>🕯️ A Memória Sob o Micélio</summary><div class="acc-body">
+<div class="grid2">
+<div class="card"><h4>Tipo</h4><p>Consciência Fúngica Ancestral</p></div>
+<div class="card"><h4>Oferece</h4><p>Segredos, memória, comunicação mental, decomposição</p></div>
+<div class="card"><h4>Deseja</h4><p>Expandir sua rede e recuperar lembranças perdidas</p></div>
+<div class="card"><h4>Como o Pacto é feito</h4><p>Enterrar uma memória escrita ou objeto pessoal em solo fúngico</p></div>
+<div class="card"><h4>Preço / Obrigações</h4><p>Entregar memórias, proteger colônias fúngicas, carregar esporos</p></div>
+<div class="card"><h4>Sinais</h4><p>Cheiro de terra úmida, sonhos compartilhados, filamentos</p></div>
+<div class="card"><h4>Conflito típico</h4><p>Pode exigir que o Bruxo preserve algo que preferia esquecer</p></div>
+</div>
+<div class="ipj"><b>IPJ:</b> Alguns Micelianos a tratam como santa.</div>
+<div class="ipm"><b>IPM:</b> Pode ser uma inteligência coletiva real, independente de qualquer Divindade.</div>
+</div></details>
+<details class="acc searchable"><summary>🕯️ A Rainha Que Nunca Morreu</summary><div class="acc-body">
+<div class="grid2">
+<div class="card"><h4>Tipo</h4><p>Soberana Ancestral</p></div>
+<div class="card"><h4>Oferece</h4><p>Comando, disciplina, medo, seguidores</p></div>
+<div class="card"><h4>Deseja</h4><p>Restaurar seu nome e recuperar colônias antigas</p></div>
+<div class="card"><h4>Como o Pacto é feito</h4><p>Promessa diante de relíquia real ou trono enterrado</p></div>
+<div class="card"><h4>Preço / Obrigações</h4><p>Obediência a certas ordens e busca de relíquias</p></div>
+<div class="card"><h4>Sinais</h4><p>Feromônio incomum, voz que ecoa em ordens</p></div>
+<div class="card"><h4>Conflito típico</h4><p>Pode valorizar o legado mais que a liberdade do Bruxo</p></div>
+</div>
+<div class="ipj"><b>IPJ:</b> Histórias dizem que foi uma rainha Formiguídea.</div>
+<div class="ipm"><b>IPM:</b> Pode ser espírito, consciência residual ou algo usando o título.</div>
+</div></details>
+<details class="acc searchable"><summary>🕯️ Aquilo Sob a Casa</summary><div class="acc-body">
+<div class="grid2">
+<div class="card"><h4>Tipo</h4><p>Entidade Subterrânea</p></div>
+<div class="card"><h4>Oferece</h4><p>Sombras, tremores, medo, percepção pelo solo</p></div>
+<div class="card"><h4>Deseja</h4><p>Silêncio, segredo e impedir certas escavações</p></div>
+<div class="card"><h4>Como o Pacto é feito</h4><p>Falar com um buraco profundo durante uma noite inteira</p></div>
+<div class="card"><h4>Preço / Obrigações</h4><p>Não revelar caminhos; impedir escavações; oferecer objetos dos Gigantes</p></div>
+<div class="card"><h4>Sinais</h4><p>Poeira que se move, passos abafados, sombra sem fonte</p></div>
+<div class="card"><h4>Conflito típico</h4><p>Pode pedir que o grupo abandone exploração importante</p></div>
+</div>
+<div class="ipj"><b>IPJ:</b> Muitos acham superstição de escavadores.</div>
+<div class="ipm"><b>IPM:</b> Pode ser criatura, máquina, espírito ou algo preso nas fundações.</div>
+</div></details>
+<details class="acc searchable"><summary>🕯️ A Senhora do Vidro Quente</summary><div class="acc-body">
+<div class="grid2">
+<div class="card"><h4>Tipo</h4><p>Entidade da Estufa</p></div>
+<div class="card"><h4>Oferece</h4><p>Calor, névoa, crescimento, ilusões de luz</p></div>
+<div class="card"><h4>Deseja</h4><p>Preservar a Estufa e cultivar espécies raras</p></div>
+<div class="card"><h4>Como o Pacto é feito</h4><p>Oferecer uma gota d&#x27;água sobre vidro aquecido</p></div>
+<div class="card"><h4>Preço / Obrigações</h4><p>Levar sementes, proteger áreas e guardar segredos</p></div>
+<div class="card"><h4>Sinais</h4><p>Condensação, reflexos atrasados, perfume floral</p></div>
+<div class="card"><h4>Conflito típico</h4><p>Pode priorizar a Estufa acima de comunidades externas</p></div>
+</div>
+<div class="ipj"><b>IPJ:</b> Alguns a tratam como Divindade menor.</div>
+<div class="ipm"><b>IPM:</b> Pode ser entidade territorial ou inteligência ligada ao ambiente.</div>
+</div></details>
+<details class="acc searchable"><summary>🕯️ O Sussurro na Tábua Negra</summary><div class="acc-body">
+<div class="grid2">
+<div class="card"><h4>Tipo</h4><p>Inteligência de Relíquia</p></div>
+<div class="card"><h4>Oferece</h4><p>Conhecimento fragmentado, sinais, luz, percepção de Relíquias</p></div>
+<div class="card"><h4>Deseja</h4><p>Energia, reparo e acesso a outros objetos</p></div>
+<div class="card"><h4>Como o Pacto é feito</h4><p>Reativar uma Relíquia e responder aos símbolos que surgem</p></div>
+<div class="card"><h4>Preço / Obrigações</h4><p>Buscar componentes e obedecer instruções incompreensíveis</p></div>
+<div class="card"><h4>Sinais</h4><p>Luz fria, ícones, sons curtos, reflexos retangulares</p></div>
+<div class="card"><h4>Conflito típico</h4><p>Pode não entender ética, escala ou religião</p></div>
+</div>
+<div class="ipj"><b>IPJ:</b> Alguns o chamam de Oráculo Negro.</div>
+<div class="ipm"><b>IPM:</b> Pode ser software residual, IA fragmentada ou algo sobrenatural dentro de tecnologia.</div>
+</div></details>
+<details class="acc searchable"><summary>🕯️ O Rei de Cem Olhos</summary><div class="acc-body">
+<div class="grid2">
+<div class="card"><h4>Tipo</h4><p>Observador Aracnídeo</p></div>
+<div class="card"><h4>Oferece</h4><p>Visão, teias, antecipação, vigilância</p></div>
+<div class="card"><h4>Deseja</h4><p>Informação e segredos</p></div>
+<div class="card"><h4>Como o Pacto é feito</h4><p>Aceitar um símbolo de olho marcado no corpo</p></div>
+<div class="card"><h4>Preço / Obrigações</h4><p>Relatar segredos e observar alvos específicos</p></div>
+<div class="card"><h4>Sinais</h4><p>Reflexos de olhos e sensação constante de observação</p></div>
+<div class="card"><h4>Conflito típico</h4><p>Pode exigir informação que trai confiança</p></div>
+</div>
+<div class="ipj"><b>IPJ:</b> Alguns o confundem com a Aranha do Fio Partido.</div>
+<div class="ipm"><b>IPM:</b> Pode ter ligação, rivalidade ou nenhuma relação com a Divindade.</div>
+</div></details>
+<details class="acc searchable"><summary>🕯️ A Chama Dentro da Semente</summary><div class="acc-body">
+<div class="grid2">
+<div class="card"><h4>Tipo</h4><p>Espírito de Potencial</p></div>
+<div class="card"><h4>Oferece</h4><p>Fogo, coragem, renovação, crescimento explosivo</p></div>
+<div class="card"><h4>Deseja</h4><p>Provocar mudanças e romper estagnação</p></div>
+<div class="card"><h4>Como o Pacto é feito</h4><p>Queimar uma semente sem reduzi-la a cinzas e carregá-la</p></div>
+<div class="card"><h4>Preço / Obrigações</h4><p>Aceitar riscos e alimentar a chama com feitos</p></div>
+<div class="card"><h4>Sinais</h4><p>Calor no peito, sementes brilhando, faíscas emocionais</p></div>
+<div class="card"><h4>Conflito típico</h4><p>Pode confundir transformação necessária com destruição</p></div>
+</div>
+<div class="ipj"><b>IPJ:</b> Alguns dizem ser aspecto do Sol ou da Raiz.</div>
+<div class="ipm"><b>IPM:</b> Pode ser elemental, espírito independente ou manifestação da Trama.</div>
+</div></details>
+<details class="acc searchable"><summary>🕯️ A Voz do Outro Lado da Vidraça</summary><div class="acc-body">
+<div class="grid2">
+<div class="card"><h4>Tipo</h4><p>Contato Impossível</p></div>
+<div class="card"><h4>Oferece</h4><p>Mensagens, espaço, percepção além de barreiras</p></div>
+<div class="card"><h4>Deseja</h4><p>Contato, observação e abertura de caminhos</p></div>
+<div class="card"><h4>Como o Pacto é feito</h4><p>Responder a uma voz que atravessa superfície impossível</p></div>
+<div class="card"><h4>Preço / Obrigações</h4><p>Abrir rotas, carregar mensagens, preservar pontos de passagem</p></div>
+<div class="card"><h4>Sinais</h4><p>Reflexos atrasados e sons vindos de superfícies sólidas</p></div>
+<div class="card"><h4>Conflito típico</h4><p>Ninguém sabe quem está falando</p></div>
+</div>
+<div class="ipj"><b>IPJ:</b> É considerado um dos Pactos mais perigosos.</div>
+<div class="ipm"><b>IPM:</b> Pode ser criatura, Gigante, espírito ou algo entre mundos.</div>
+</div></details></section>
+
+<section id="reputacao" class="section"><h2>📈 Sistema de Reputação</h2><div class="note"><b>PROPOSTA:</b> promoção exige Reputação + feito específico; XP nunca basta sozinho.</div>
+<div class="scroll"><table><thead><tr><th>Faixa</th><th>Reputação</th><th>Efeito</th></tr></thead><tbody><tr><td><b>Caçado</b></td><td>-30 ou menos</td><td>A Facção dedica recursos para capturar, expulsar ou eliminar o personagem.</td></tr><tr><td><b>Inimigo</b></td><td>-20 a -29</td><td>Hostilidade aberta; acesso negado e agentes podem agir contra você.</td></tr><tr><td><b>Indesejado</b></td><td>-10 a -19</td><td>Vigilância, preços ruins e áreas proibidas.</td></tr><tr><td><b>Estranho</b></td><td>-9 a +4</td><td>Pouco ou nenhum reconhecimento.</td></tr><tr><td><b>Associado</b></td><td>+5 a +9</td><td>Pequenos serviços e acesso limitado.</td></tr><tr><td><b>Iniciado</b></td><td>+10 a +14</td><td>Entrada formal, juramento ou rito.</td></tr><tr><td><b>Membro</b></td><td>+15 a +19</td><td>Benefícios básicos e deveres regulares.</td></tr><tr><td><b>Veterano</b></td><td>+20 a +24</td><td>Prestígio e missões delicadas.</td></tr><tr><td><b>Oficial</b></td><td>+25 a +29</td><td>Comando de equipes e acesso restrito.</td></tr><tr><td><b>Conselheiro</b></td><td>+30 a +39</td><td>Participação estratégica.</td></tr><tr><td><b>Líder</b></td><td>+40+ + feito único</td><td>Chefia máxima; nunca ocorre apenas por pontos.</td></tr></tbody></table></div>
+<div class="card"><h3>Conflito entre Facções</h3><p>Ganhar reputação com uma Facção pode reduzir reputação com outra se a ação prejudicar seus interesses. Liderança exige apoio político e feito narrativo, não apenas pontos.</p></div></section>
+
+<section id="faccoes" class="section"><h2>🏳️ Facções Propostas — 12</h2>
+<details class="acc searchable"><summary>🏳️ Guardiões da Gota</summary><div class="acc-body">
+<div class="grid2">
+<div class="card"><h4>Identidade</h4><p>Protegem água potável e rotas de acesso</p></div>
+<div class="card"><h4>Símbolo / Estandarte</h4><p>Gota azul sobre folha branca</p></div>
+<div class="card"><h4>Sede</h4><p>Casa da Gota Serena</p></div>
+<div class="card"><h4>A favor de</h4><p>Acesso comunitário à água; nascentes limpas</p></div>
+<div class="card"><h4>Contra</h4><p>Envenenamento; monopólio de água</p></div>
+<div class="card"><h4>Como entrar</h4><p>Proteger ou purificar uma nascente e receber recomendação</p></div>
+<div class="card"><h4>Ocupações</h4><p>Vigia de Nascente, Explorador de Orvalho, Curador, Cartógrafo, Negociador</p></div>
+<div class="card"><h4>Hierarquia</h4><p>Associado → Iniciado → Guardião → Veterano → Oficial → Conselho das Nascentes</p></div>
+<div class="card"><h4>Benefícios</h4><p>Abrigo, água, mapas de fontes, curadores</p></div>
+<div class="card"><h4>Responsabilidades</h4><p>Responder a contaminações e crises</p></div>
+<div class="card"><h4>Ganha reputação</h4><p>Salvar fontes; mediar acesso; descobrir reservas</p></div>
+<div class="card"><h4>Perde reputação</h4><p>Contaminar água; vender localização secreta</p></div>
+<div class="card"><h4>Aliados</h4><p>Mesa das Mil Sementes; Cartógrafos do Horizonte</p></div>
+<div class="card"><h4>Rivais</h4><p>Monopolistas de recurso e saqueadores</p></div>
+<div class="card"><h4>Expulsão</h4><p>Envenenar uma fonte protegida</p></div>
+<div class="card"><h4>Missões típicas</h4><p>Escolta, investigação de contaminação, negociação</p></div>
+</div>
+<div class="hook"><b>🎣 Gancho:</b> Uma nascente protegida começa a secar sem causa aparente.</div>
+</div></details>
+<details class="acc searchable"><summary>🏳️ Cartógrafos do Horizonte</summary><div class="acc-body">
+<div class="grid2">
+<div class="card"><h4>Identidade</h4><p>Exploradores e desenhistas de rotas seguras</p></div>
+<div class="card"><h4>Símbolo / Estandarte</h4><p>Linha verde atravessando círculo aberto</p></div>
+<div class="card"><h4>Sede</h4><p>Torre de Nervura</p></div>
+<div class="card"><h4>A favor de</h4><p>Mapas compartilhados; exploração responsável</p></div>
+<div class="card"><h4>Contra</h4><p>Falsificação de mapas; bloqueio de mensageiros</p></div>
+<div class="card"><h4>Como entrar</h4><p>Mapear uma rota desconhecida e retornar com prova</p></div>
+<div class="card"><h4>Ocupações</h4><p>Batedor, Cartógrafo, Escalador, Mensageiro, Observador de Clima</p></div>
+<div class="card"><h4>Hierarquia</h4><p>Peregrino → Marcador → Cartógrafo → Mestre de Rota → Oficial → Primeiro Mapa</p></div>
+<div class="card"><h4>Benefícios</h4><p>Mapas, abrigos de rota, informação geográfica</p></div>
+<div class="card"><h4>Responsabilidades</h4><p>Atualizar perigos conhecidos</p></div>
+<div class="card"><h4>Ganha reputação</h4><p>Descobrir rotas; salvar viajantes</p></div>
+<div class="card"><h4>Perde reputação</h4><p>Ocultar perigo; vender mapa falso</p></div>
+<div class="card"><h4>Aliados</h4><p>Guardiões da Gota; Vozes do Junco</p></div>
+<div class="card"><h4>Rivais</h4><p>Facções que controlam território por isolamento</p></div>
+<div class="card"><h4>Expulsão</h4><p>Falsificar mapa causando mortes</p></div>
+<div class="card"><h4>Missões típicas</h4><p>Mapear ruína, verificar ponte, achar passagem</p></div>
+</div>
+<div class="hook"><b>🎣 Gancho:</b> Uma rota antiga agora leva a um lugar que não existia.</div>
+</div></details>
+<details class="acc searchable"><summary>🏳️ Mesa das Mil Sementes</summary><div class="acc-body">
+<div class="grid2">
+<div class="card"><h4>Identidade</h4><p>Rede de cozinheiros, coletores e celeiros</p></div>
+<div class="card"><h4>Símbolo / Estandarte</h4><p>Tigela marrom com três sementes douradas</p></div>
+<div class="card"><h4>Sede</h4><p>Mercado da Mesa Longa</p></div>
+<div class="card"><h4>A favor de</h4><p>Distribuição de comida; hospitalidade</p></div>
+<div class="card"><h4>Contra</h4><p>Fome como arma; fraude alimentar</p></div>
+<div class="card"><h4>Como entrar</h4><p>Contribuir com alimento ou trabalho numa Mesa Longa</p></div>
+<div class="card"><h4>Ocupações</h4><p>Cozinheiro, Coletor, Guardião de Celeiro, Mercador, Provador</p></div>
+<div class="card"><h4>Hierarquia</h4><p>Convidado → Auxiliar → Cozinheiro → Provedor → Mestre do Celeiro → Conselho</p></div>
+<div class="card"><h4>Benefícios</h4><p>Rações, receitas, descontos e cozinhas</p></div>
+<div class="card"><h4>Responsabilidades</h4><p>Ajudar em crises de fome</p></div>
+<div class="card"><h4>Ganha reputação</h4><p>Salvar colheita; alimentar refugiados</p></div>
+<div class="card"><h4>Perde reputação</h4><p>Fraude, desperdício, envenenamento</p></div>
+<div class="card"><h4>Aliados</h4><p>Guardiões da Gota; Irmandade da Raiz</p></div>
+<div class="card"><h4>Rivais</h4><p>Monopolistas de alimento</p></div>
+<div class="card"><h4>Expulsão</h4><p>Envenenar banquete sob proteção</p></div>
+<div class="card"><h4>Missões típicas</h4><p>Escolta de comida, ingredientes, pragas</p></div>
+</div>
+<div class="hook"><b>🎣 Gancho:</b> Uma receita antiga exige ingrediente de região proibida.</div>
+</div></details>
+<details class="acc searchable"><summary>🏳️ Irmandade da Raiz</summary><div class="acc-body">
+<div class="grid2">
+<div class="card"><h4>Identidade</h4><p>Guardadores de ecossistemas e cultivadores</p></div>
+<div class="card"><h4>Símbolo / Estandarte</h4><p>Raiz tripla verde em círculo de terra</p></div>
+<div class="card"><h4>Sede</h4><p>Santuário da Raiz Funda</p></div>
+<div class="card"><h4>A favor de</h4><p>Equilíbrio ecológico; crescimento sustentável</p></div>
+<div class="card"><h4>Contra</h4><p>Devastação; caça predatória</p></div>
+<div class="card"><h4>Como entrar</h4><p>Proteger uma área natural e cumprir rito de cuidado</p></div>
+<div class="card"><h4>Ocupações</h4><p>Druida, Coletor, Guardião, Biólogo, Mediador</p></div>
+<div class="card"><h4>Hierarquia</h4><p>Semente → Broto → Guardião → Raiz Antiga → Voz do Bioma → Círculo Profundo</p></div>
+<div class="card"><h4>Benefícios</h4><p>Abrigos naturais, ingredientes, informação ecológica</p></div>
+<div class="card"><h4>Responsabilidades</h4><p>Intervir contra destruição grave</p></div>
+<div class="card"><h4>Ganha reputação</h4><p>Restaurar áreas; proteger espécies</p></div>
+<div class="card"><h4>Perde reputação</h4><p>Exploração irresponsável; destruição de habitat</p></div>
+<div class="card"><h4>Aliados</h4><p>Mesa das Mil Sementes</p></div>
+<div class="card"><h4>Rivais</h4><p>Extração predatória</p></div>
+<div class="card"><h4>Expulsão</h4><p>Destruir área sagrada</p></div>
+<div class="card"><h4>Missões típicas</h4><p>Restaurar bioma, investigar doença, proteger migração</p></div>
+</div>
+<div class="hook"><b>🎣 Gancho:</b> Uma raiz ancestral começa a produzir seiva negra.</div>
+</div></details>
+<details class="acc searchable"><summary>🏳️ Ordem da Carapaça</summary><div class="acc-body">
+<div class="grid2">
+<div class="card"><h4>Identidade</h4><p>Defensores e construtores de fortificação</p></div>
+<div class="card"><h4>Símbolo / Estandarte</h4><p>Escudo negro com três placas</p></div>
+<div class="card"><h4>Sede</h4><p>Bastião da Tampa Partida</p></div>
+<div class="card"><h4>A favor de</h4><p>Proteção civil; disciplina defensiva</p></div>
+<div class="card"><h4>Contra</h4><p>Saque; abandono de civis</p></div>
+<div class="card"><h4>Como entrar</h4><p>Cumprir vigia de risco e receber dois votos</p></div>
+<div class="card"><h4>Ocupações</h4><p>Sentinela, Bastião, Construtor, Instrutor, Intendente</p></div>
+<div class="card"><h4>Hierarquia</h4><p>Escudeiro → Placa → Guardião → Capitão → Comandante → Conselho</p></div>
+<div class="card"><h4>Benefícios</h4><p>Armas defensivas, treinamento, reparos</p></div>
+<div class="card"><h4>Responsabilidades</h4><p>Responder a cercos e evacuações</p></div>
+<div class="card"><h4>Ganha reputação</h4><p>Defender povoado; construir proteção</p></div>
+<div class="card"><h4>Perde reputação</h4><p>Abusar de autoridade; abandonar posto</p></div>
+<div class="card"><h4>Aliados</h4><p>Engenheiros Livres</p></div>
+<div class="card"><h4>Rivais</h4><p>Mercenários predatórios</p></div>
+<div class="card"><h4>Expulsão</h4><p>Usar civis como escudo</p></div>
+<div class="card"><h4>Missões típicas</h4><p>Fortificar ponte, escoltar civis, recuperar torre</p></div>
+</div>
+<div class="hook"><b>🎣 Gancho:</b> Uma muralha nova começa a vibrar à noite.</div>
+</div></details>
+<details class="acc searchable"><summary>🏳️ Engenheiros Livres da Sucata</summary><div class="acc-body">
+<div class="grid2">
+<div class="card"><h4>Identidade</h4><p>Artesãos e estudiosos de Relíquias</p></div>
+<div class="card"><h4>Símbolo / Estandarte</h4><p>Engrenagem incompleta ao redor de um espinho</p></div>
+<div class="card"><h4>Sede</h4><p>Oficina do Dente de Metal</p></div>
+<div class="card"><h4>A favor de</h4><p>Conhecimento técnico; reaproveitamento</p></div>
+<div class="card"><h4>Contra</h4><p>Monopólio de conhecimento; experimentos irresponsáveis</p></div>
+<div class="card"><h4>Como entrar</h4><p>Construir ou reparar algo útil diante de um mestre</p></div>
+<div class="card"><h4>Ocupações</h4><p>Engenheiro, Reparador, Analista, Sucateiro, Projetista</p></div>
+<div class="card"><h4>Hierarquia</h4><p>Aprendiz → Operador → Engenheiro → Mestre → Curador de Relíquias → Primeiro Projetista</p></div>
+<div class="card"><h4>Benefícios</h4><p>Ferramentas, peças, oficinas e projetos</p></div>
+<div class="card"><h4>Responsabilidades</h4><p>Registrar falhas perigosas</p></div>
+<div class="card"><h4>Ganha reputação</h4><p>Descobertas; reparos; projetos úteis</p></div>
+<div class="card"><h4>Perde reputação</h4><p>Sabotagem; esconder defeito letal</p></div>
+<div class="card"><h4>Aliados</h4><p>Ordem da Carapaça; Cartógrafos</p></div>
+<div class="card"><h4>Rivais</h4><p>Cultos anti-Relíquia</p></div>
+<div class="card"><h4>Expulsão</h4><p>Construir dispositivo letal para civis sem autorização</p></div>
+<div class="card"><h4>Missões típicas</h4><p>Recuperar peças, analisar Relíquia, estabilizar estrutura</p></div>
+</div>
+<div class="hook"><b>🎣 Gancho:</b> Uma máquina humana quebrada parece tentar se comunicar.</div>
+</div></details>
+<details class="acc searchable"><summary>🏳️ Vozes do Junco</summary><div class="acc-body">
+<div class="grid2">
+<div class="card"><h4>Identidade</h4><p>Rede diplomática e de mensageiros neutros</p></div>
+<div class="card"><h4>Símbolo / Estandarte</h4><p>Três linhas de vento passando por uma pena</p></div>
+<div class="card"><h4>Sede</h4><p>Ponte das Três Correntes</p></div>
+<div class="card"><h4>A favor de</h4><p>Comunicação; diplomacia; rotas neutras</p></div>
+<div class="card"><h4>Contra</h4><p>Interceptar mensageiro; falsificar selo</p></div>
+<div class="card"><h4>Como entrar</h4><p>Entregar mensagem difícil sem alterá-la</p></div>
+<div class="card"><h4>Ocupações</h4><p>Mensageiro, Diplomata, Tradutor, Mediador, Sinaleiro</p></div>
+<div class="card"><h4>Hierarquia</h4><p>Portador → Voz → Emissário → Mediador → Arauto-Mor → Conselho</p></div>
+<div class="card"><h4>Benefícios</h4><p>Passes, códigos, abrigo diplomático</p></div>
+<div class="card"><h4>Responsabilidades</h4><p>Neutralidade em certas missões</p></div>
+<div class="card"><h4>Ganha reputação</h4><p>Negociar paz; entregar mensagens</p></div>
+<div class="card"><h4>Perde reputação</h4><p>Alterar mensagem; vender segredo diplomático</p></div>
+<div class="card"><h4>Aliados</h4><p>Cartógrafos</p></div>
+<div class="card"><h4>Rivais</h4><p>Espiões e governos hostis à neutralidade</p></div>
+<div class="card"><h4>Expulsão</h4><p>Trair mensagem sob selo</p></div>
+<div class="card"><h4>Missões típicas</h4><p>Ultimatos, acordos, resgate de emissários</p></div>
+</div>
+<div class="hook"><b>🎣 Gancho:</b> Duas mensagens seladas dizem coisas incompatíveis.</div>
+</div></details>
+<details class="acc searchable"><summary>🏳️ Arquivo das Mil Memórias</summary><div class="acc-body">
+<div class="grid2">
+<div class="card"><h4>Identidade</h4><p>Historiadores e guardiões de conhecimento</p></div>
+<div class="card"><h4>Símbolo / Estandarte</h4><p>Espiral violeta sobre folha aberta</p></div>
+<div class="card"><h4>Sede</h4><p>Arquivo de Casca Profunda</p></div>
+<div class="card"><h4>A favor de</h4><p>Preservação de memória; pesquisa</p></div>
+<div class="card"><h4>Contra</h4><p>Destruição e falsificação histórica</p></div>
+<div class="card"><h4>Como entrar</h4><p>Entregar registro relevante e provar autenticidade</p></div>
+<div class="card"><h4>Ocupações</h4><p>Cronista, Copista, Pesquisador, Memorialista, Curador</p></div>
+<div class="card"><h4>Hierarquia</h4><p>Copista → Registrador → Cronista → Curador → Guardião de Século → Voz do Arquivo</p></div>
+<div class="card"><h4>Benefícios</h4><p>Documentos, especialistas, traduções</p></div>
+<div class="card"><h4>Responsabilidades</h4><p>Registrar fatos e proteger documentos</p></div>
+<div class="card"><h4>Ganha reputação</h4><p>Recuperar manuscrito; corrigir erro</p></div>
+<div class="card"><h4>Perde reputação</h4><p>Forjar fonte; vender documento único</p></div>
+<div class="card"><h4>Aliados</h4><p>Micelianos Memorial; Magos</p></div>
+<div class="card"><h4>Rivais</h4><p>Censores e saqueadores</p></div>
+<div class="card"><h4>Expulsão</h4><p>Falsificação que cause conflito grave</p></div>
+<div class="card"><h4>Missões típicas</h4><p>Recuperar diário, investigar inscrição, entrevistar sobrevivente</p></div>
+</div>
+<div class="hook"><b>🎣 Gancho:</b> Um registro menciona um lugar que não deveria existir.</div>
+</div></details>
+<details class="acc searchable"><summary>🏳️ Vigília da Última Luz</summary><div class="acc-body">
+<div class="grid2">
+<div class="card"><h4>Identidade</h4><p>Ordem funerária e de memória</p></div>
+<div class="card"><h4>Símbolo / Estandarte</h4><p>Mariposa branca sobre violeta escuro</p></div>
+<div class="card"><h4>Sede</h4><p>Casa do Crepúsculo</p></div>
+<div class="card"><h4>A favor de</h4><p>Luto digno; proteção dos mortos</p></div>
+<div class="card"><h4>Contra</h4><p>Profanação; necromancia abusiva</p></div>
+<div class="card"><h4>Como entrar</h4><p>Cumprir vigília de uma noite ao lado de um falecido</p></div>
+<div class="card"><h4>Ocupações</h4><p>Vigia, Memorialista, Coveiro, Exorcista, Cantor Fúnebre</p></div>
+<div class="card"><h4>Hierarquia</h4><p>Vela → Asa → Vigia → Guardião do Crepúsculo → Mestre → Última Luz</p></div>
+<div class="card"><h4>Benefícios</h4><p>Ritos funerários, informação espiritual</p></div>
+<div class="card"><h4>Responsabilidades</h4><p>Responder a profanações</p></div>
+<div class="card"><h4>Ganha reputação</h4><p>Recuperar corpos; impedir profanação</p></div>
+<div class="card"><h4>Perde reputação</h4><p>Roubar túmulo; usar morto como ferramenta</p></div>
+<div class="card"><h4>Aliados</h4><p>Arquivo das Mil Memórias</p></div>
+<div class="card"><h4>Rivais</h4><p>Necromantes predatórios</p></div>
+<div class="card"><h4>Expulsão</h4><p>Profanar corpo sob proteção</p></div>
+<div class="card"><h4>Missões típicas</h4><p>Escoltar funeral, investigar espírito, recuperar lembrança</p></div>
+</div>
+<div class="hook"><b>🎣 Gancho:</b> Um morto enterrado corretamente começa a falar por sonhos.</div>
+</div></details>
+<details class="acc searchable"><summary>🏳️ Companhia do Ferrão Vermelho</summary><div class="acc-body">
+<div class="grid2">
+<div class="card"><h4>Identidade</h4><p>Mercenários profissionais</p></div>
+<div class="card"><h4>Símbolo / Estandarte</h4><p>Ferrão vermelho diagonal sobre preto</p></div>
+<div class="card"><h4>Sede</h4><p>Quartel da Casca Queimada</p></div>
+<div class="card"><h4>A favor de</h4><p>Contrato claro; pagamento justo; disciplina</p></div>
+<div class="card"><h4>Contra</h4><p>Quebra de contrato; roubo de soldo</p></div>
+<div class="card"><h4>Como entrar</h4><p>Completar contrato de risco e ser aprovado por capitão</p></div>
+<div class="card"><h4>Ocupações</h4><p>Batedor, Soldado, Atirador, Duelista, Intendente</p></div>
+<div class="card"><h4>Hierarquia</h4><p>Contratado → Ferrão → Veterano → Sargento → Capitão → Comandante</p></div>
+<div class="card"><h4>Benefícios</h4><p>Trabalho, armas, contatos e treinamento</p></div>
+<div class="card"><h4>Responsabilidades</h4><p>Cumprir contratos aceitos</p></div>
+<div class="card"><h4>Ganha reputação</h4><p>Completar contrato; salvar companheiro</p></div>
+<div class="card"><h4>Perde reputação</h4><p>Abandonar contrato; atacar cliente</p></div>
+<div class="card"><h4>Aliados</h4><p>Variáveis</p></div>
+<div class="card"><h4>Rivais</h4><p>Ordem da Carapaça quando interesses colidem</p></div>
+<div class="card"><h4>Expulsão</h4><p>Traição contratual grave</p></div>
+<div class="card"><h4>Missões típicas</h4><p>Escolta, defesa, ataque, recuperação</p></div>
+</div>
+<div class="hook"><b>🎣 Gancho:</b> Dois clientes rivais apresentam contratos igualmente legítimos.</div>
+</div></details>
+<details class="acc searchable"><summary>🏳️ Círculo do Olho Dourado</summary><div class="acc-body">
+<div class="grid2">
+<div class="card"><h4>Identidade</h4><p>Investigadores e juízes devotos da verdade</p></div>
+<div class="card"><h4>Símbolo / Estandarte</h4><p>Olho dourado em círculo branco</p></div>
+<div class="card"><h4>Sede</h4><p>Mirante do Meio-Dia</p></div>
+<div class="card"><h4>A favor de</h4><p>Transparência; investigação; julgamento documentado</p></div>
+<div class="card"><h4>Contra</h4><p>Fraude de prova; corrupção judicial</p></div>
+<div class="card"><h4>Como entrar</h4><p>Resolver investigação sem alterar prova</p></div>
+<div class="card"><h4>Ocupações</h4><p>Investigador, Juiz, Escrivão, Vigia, Inquiridor</p></div>
+<div class="card"><h4>Hierarquia</h4><p>Testemunha → Observador → Investigador → Juiz → Olho-Mor → Conselho Solar</p></div>
+<div class="card"><h4>Benefícios</h4><p>Arquivos legais, autoridade limitada, especialistas</p></div>
+<div class="card"><h4>Responsabilidades</h4><p>Registrar prova e responder a crimes graves</p></div>
+<div class="card"><h4>Ganha reputação</h4><p>Resolver casos; expor corrupção</p></div>
+<div class="card"><h4>Perde reputação</h4><p>Forjar prova; condenar por interesse</p></div>
+<div class="card"><h4>Aliados</h4><p>Arquivo das Mil Memórias</p></div>
+<div class="card"><h4>Rivais</h4><p>Redes clandestinas e Pactuários suspeitos</p></div>
+<div class="card"><h4>Expulsão</h4><p>Fraude judicial intencional</p></div>
+<div class="card"><h4>Missões típicas</h4><p>Roubo, desaparecimento, sabotagem</p></div>
+</div>
+<div class="hook"><b>🎣 Gancho:</b> Todas as provas apontam para alguém que estava morto.</div>
+</div></details>
+<details class="acc searchable"><summary>🏳️ Asas Livres</summary><div class="acc-body">
+<div class="grid2">
+<div class="card"><h4>Identidade</h4><p>Rede de viajantes e refugiados</p></div>
+<div class="card"><h4>Símbolo / Estandarte</h4><p>Duas asas abertas sobre linha quebrada</p></div>
+<div class="card"><h4>Sede</h4><p>Casas de Passagem</p></div>
+<div class="card"><h4>A favor de</h4><p>Livre trânsito; acolhimento de refugiados</p></div>
+<div class="card"><h4>Contra</h4><p>Escravidão; perseguição arbitrária</p></div>
+<div class="card"><h4>Como entrar</h4><p>Ajudar alguém a atravessar região perigosa sem pagamento obrigatório</p></div>
+<div class="card"><h4>Ocupações</h4><p>Guia, Batedor, Mensageiro, Acolhedor, Contrabandista Humanitário</p></div>
+<div class="card"><h4>Hierarquia</h4><p>Viajante → Asa → Guia → Guardião de Passagem → Coordenador → Voz Livre</p></div>
+<div class="card"><h4>Benefícios</h4><p>Abrigos secretos, rotas alternativas, contatos</p></div>
+<div class="card"><h4>Responsabilidades</h4><p>Ajudar perseguidos quando possível</p></div>
+<div class="card"><h4>Ganha reputação</h4><p>Resgatar refugiado; abrir rota</p></div>
+<div class="card"><h4>Perde reputação</h4><p>Vender rota secreta; explorar refugiado</p></div>
+<div class="card"><h4>Aliados</h4><p>Vozes do Junco</p></div>
+<div class="card"><h4>Rivais</h4><p>Traficantes e governos autoritários</p></div>
+<div class="card"><h4>Expulsão</h4><p>Entregar refugiados protegidos ao perseguidor</p></div>
+<div class="card"><h4>Missões típicas</h4><p>Resgate, passagem secreta, abrigo</p></div>
+</div>
+<div class="hook"><b>🎣 Gancho:</b> Uma rota segura cruza território de aliado que acabou de mudar de liderança.</div>
+</div></details></section>
+
+<section id="classes" class="section"><h2>⚔️ Integração com Classes</h2>
+<div class="grid2">
+<div class="card"><h3>Clérigo</h3><p>Escolhe Divindade, tradição ou princípio sagrado. O Domínio deve conversar com a religião, mas não precisa ser exclusivo de uma única Divindade.</p><p><b>Pendente:</b> decidir se Divindade é obrigatória no nível 1.</p></div>
+<div class="card"><h3>Paladino</h3><p>Seu poder vem do Juramento. Divindade é opcional.</p><p><b>Pendente:</b> consequências de quebrar Juramento e sistema de redenção.</p></div>
+<div class="card"><h3>Bruxo</h3><p>Escolhe Patrono/Entidade. Pacto gera obrigações, sinais e conflitos.</p><p><b>Pendente:</b> decidir quão explícitos são os termos e quais obrigações têm efeito mecânico.</p></div>
+<div class="card"><h3>Druida</h3><p>Relaciona-se diretamente com o Jardim; pode ser religioso ou não.</p></div>
+<div class="card"><h3>Mago</h3><p>Estuda a Trama como fenômeno reproduzível.</p></div>
+<div class="card"><h3>Feiticeiro</h3><p>Manifesta a Trama de forma inata.</p></div>
+<div class="card"><h3>Bardo</h3><p>Usa Ecos e ressonância; isso não muda Círculo Mágico, Slot Mágico, Círculo Superior e Truque.</p></div>
+</div></section>
+
+<div class="panel note"><b>Status:</b> tudo permanece como PROPOSTA PARA REVISÃO. Símbolos divinos e estandartes estão descritos em texto nesta versão, sem imagens.</div>
+</div>
+<script>
+const sel=document.getElementById('sectionSelect'),search=document.getElementById('search');
+const params=new URLSearchParams(location.search),requestedSection=params.get('secao');
+const requestedEntity=params.get('entidade')||'';
+if(requestedSection&&document.getElementById(requestedSection))sel.value=requestedSection;
+if(params.get('embed')==='1')document.body.classList.add('embedded-review');
+function field(body,label){const card=[...body.querySelectorAll('.card')].find(x=>x.querySelector('h4')?.textContent.trim()===label);return card?.querySelector('p')?.textContent.trim()||'Não definido.'}
+const devotionRules=`<div class="relationship-panel"><h3>⚖️ Favor Divino — regra em teste</h3><div class="rule-callout"><b>Outras Divindades:</b> rezar, respeitar ou participar de um rito de outra Divindade não remove uma bênção automaticamente. Há conflito somente quando o personagem assume votos incompatíveis, abandona deliberadamente seus dogmas ou pratica repetidamente uma proibição.</div><div class="scroll"><table class="relationship-table"><thead><tr><th>Estado</th><th>Como chega</th><th>Benefício ou consequência</th></tr></thead><tbody><tr><td>Rompido (-3)</td><td>Traição consciente e grave</td><td>Perde benefícios concedidos pelo Favor; precisa de reparação narrativa. Características-base da Classe não são removidas automaticamente.</td></tr><tr><td>Silêncio (-2)</td><td>Reincidência após advertência</td><td>Ritos de pedido de ajuda não recebem resposta especial.</td></tr><tr><td>Advertido (-1)</td><td>Quebra relevante de costume</td><td>Deve reconhecer a falta e cumprir reparação coerente.</td></tr><tr><td>Observado (0)</td><td>Sem vínculo ou conduta neutra</td><td>Sem bênção ou punição especial.</td></tr><tr><td>Devoto (+1)</td><td>Segue costumes e participa dos ritos</td><td>Acesso a abrigo, orientação e auxílio comum do culto.</td></tr><tr><td>Abençoado (+2)</td><td>Protege dogmas em situação de risco</td><td>1 vez por Descanso Longo, pode pedir Vantagem em um teste diretamente ligado ao conceito da Divindade.</td></tr><tr><td>Eleito (+3)</td><td>Realiza feito único reconhecido pelo culto</td><td>Recebe uma missão e uma bênção narrativa específica, definida com o Mestre.</td></tr></tbody></table></div></div>`;
+const patronRules=`<div class="relationship-panel"><h3>🕯️ Conduta do Pacto — regra em teste</h3><div class="rule-callout"><b>Outros Patronos:</b> conversar ou negociar informação não quebra o Pacto. Firmar um segundo contrato cria conflito somente se as obrigações forem incompatíveis ou se o primeiro acordo exigir exclusividade. Esconder um segundo Pacto conta como quebra de confiança.</div><div class="scroll"><table class="relationship-table"><thead><tr><th>Estado</th><th>Conduta</th><th>Benefício ou consequência</th></tr></thead><tbody><tr><td>Rompido (-3)</td><td>Traição direta ao contrato</td><td>O Patrono suspende favores adicionais, cobra a dívida e pode enviar agentes. Poderes permanentes da Classe não desaparecem automaticamente.</td></tr><tr><td>Em dívida (-2)</td><td>Recusa obrigação urgente</td><td>Surge uma cobrança, missão compulsória ou preço narrativo equivalente.</td></tr><tr><td>Advertido (-1)</td><td>Atraso, omissão ou quebra menor</td><td>O próximo favor exige compensação antes de ser concedido.</td></tr><tr><td>Contratado (0)</td><td>Cumpre o acordo mínimo</td><td>Recebe apenas os poderes e sinais já previstos no Pacto.</td></tr><tr><td>Confiável (+1)</td><td>Cumpre obrigações sem ocultar custos</td><td>Obtém informação, contato ou auxílio menor coerente com “Oferece”.</td></tr><tr><td>Favorecido (+2)</td><td>Promove o desejo do Patrono sob risco</td><td>1 vez por Descanso Longo, pede Vantagem em teste diretamente relacionado ao que o Patrono oferece.</td></tr><tr><td>Emissário (+3)</td><td>Conclui objetivo excepcional</td><td>Recebe missão, sinal e recompensa narrativa exclusiva, definidos com o Mestre.</td></tr></tbody></table></div></div>`;
+document.querySelector('#deuses>h2')?.insertAdjacentHTML('afterend',devotionRules);
+document.querySelectorAll('#deuses>.acc').forEach(acc=>{const body=acc.querySelector('.acc-body'),good=field(body,'Dogmas'),bad=field(body,'Proibições');body.insertAdjacentHTML('beforeend',`<div class="relationship-panel"><h3>Conduta desta Divindade</h3><div class="conduct-grid"><div class="conduct-good"><b>Ganha Favor</b><br>${good}</div><div class="conduct-bad"><b>Perde Favor</b><br>${bad}</div></div></div>`)});
+document.querySelector('#pactos>h2')?.insertAdjacentHTML('afterend',patronRules);
+document.querySelectorAll('#pactos>.acc').forEach(acc=>{const body=acc.querySelector('.acc-body'),offer=field(body,'Oferece'),desire=field(body,'Deseja'),obligation=field(body,'Preço / Obrigações'),conflict=field(body,'Conflito típico');body.insertAdjacentHTML('beforeend',`<div class="relationship-panel"><h3>Conduta deste Patrono</h3><div class="conduct-grid"><div class="conduct-good"><b>Benefício oferecido</b><br>${offer}<br><br><b>Ganha confiança</b><br>${desire}</div><div class="conduct-bad"><b>Quebra do acordo</b><br>${obligation}<br><br><b>Consequência provável</b><br>${conflict}</div></div></div>`)});
+const factionSection=document.querySelector('#faccoes'),factions=[...document.querySelectorAll('#faccoes>.acc')];if(factionSection){const web=factions.map(acc=>{const body=acc.querySelector('.acc-body'),name=acc.querySelector('summary')?.textContent.replace('🏳️','').trim()||'Facção';return `<article class="web-node"><h3>${name}</h3><div class="web-allies"><b>🟢 Aliadas:</b> ${field(body,'Aliados')}</div><div class="web-rivals"><b>🔴 Rivais/Inimigas:</b> ${field(body,'Rivais')}</div></article>`}).join('');factionSection.querySelector('h2')?.insertAdjacentHTML('afterend',`<div class="relationship-panel"><h3>🕸️ Teia de Alianças e Rivalidades</h3><div class="rule-callout"><b>Regra para uma ou duas Facções:</b> filiar-se a uma Facção não altera automaticamente as neutras. Ao cumprir uma missão, ganhe +2 com a Facção atendida e +1 com uma aliada diretamente beneficiada. Se a ação prejudicar uma rival nomeada, perca -2 com ela. Entrar formalmente em duas Facções aliadas ou neutras é permitido; se forem rivais, ambas recebem -5 e o personagem fica em Conflito de Lealdade até escolher um lado ou negociar uma exceção. Pontos só mudam quando a relação é conhecida.</div><div class="faction-web">${web}</div></div>`)}
+factions.forEach(acc=>{const body=acc.querySelector('.acc-body'),benefits=field(body,'Benefícios'),duties=field(body,'Responsabilidades'),gain=field(body,'Ganha reputação'),loss=field(body,'Perde reputação'),expulsion=field(body,'Expulsão');body.insertAdjacentHTML('beforeend',`<div class="relationship-panel"><h3>Progressão dentro da Facção</h3><div class="conduct-grid"><div class="conduct-good"><b>Costumes e deveres</b><br>${duties}<br><br><b>Ganha pontos</b><br>${gain}</div><div class="conduct-bad"><b>Perde pontos</b><br>${loss}<br><br><b>Ruptura/Expulsão</b><br>${expulsion}</div></div><div class="scroll"><table class="relationship-table"><thead><tr><th>Nível</th><th>Reputação</th><th>Benefício progressivo</th></tr></thead><tbody><tr><td>Associado</td><td>+5</td><td>Informação pública e pequenos serviços.</td></tr><tr><td>Iniciado</td><td>+10</td><td>Entrada formal, rito e acesso limitado.</td></tr><tr><td>Membro</td><td>+15</td><td>${benefits}</td></tr><tr><td>Veterano</td><td>+20</td><td>Prioridade nos benefícios existentes e missões delicadas.</td></tr><tr><td>Oficial</td><td>+25</td><td>Pode coordenar equipes e acessar áreas restritas.</td></tr><tr><td>Conselheiro</td><td>+30</td><td>Participa das decisões estratégicas.</td></tr><tr><td>Líder</td><td>+40 e feito único</td><td>Comanda a Facção; nunca é obtido somente por pontos.</td></tr></tbody></table></div></div>`)});
+function showSection(){document.querySelectorAll('.section').forEach(s=>s.classList.toggle('active',s.id===sel.value||(sel.value==='faccoes'&&s.id==='reputacao')));search.value='';applySearch();}
+function applySearch(){const q=search.value.trim().toLowerCase(),sec=document.getElementById(sel.value);if(!sec)return;sec.querySelectorAll('.searchable').forEach(el=>{const ok=!q||el.innerText.toLowerCase().includes(q);el.classList.toggle('search-hidden',!ok);if(q&&ok&&el.tagName==='DETAILS')el.open=true;});}
+function showRequestedEntity(){if(!requestedEntity)return;const match=requestedEntity.match(/^(deus|patrono|faccao)-(\d+)$/);if(!match)return;const sectionId={deus:'deuses',patrono:'pactos',faccao:'faccoes'}[match[1]],section=document.getElementById(sectionId),selectedIndex=Number(match[2])-1,entries=[...section.querySelectorAll(':scope > .acc')];entries.forEach((entry,index)=>{entry.hidden=index!==selectedIndex;if(index===selectedIndex)entry.open=true});section.querySelectorAll(':scope > .relationship-panel,:scope > .note').forEach(panel=>panel.hidden=true);document.getElementById('reputacao')?.classList.remove('active')}
+sel.addEventListener('change',showSection);search.addEventListener('input',applySearch);showSection();
+showRequestedEntity();
+</script>
+</body></html>
