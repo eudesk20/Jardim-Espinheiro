@@ -28,5 +28,8 @@ globalThis.MICROCOSMO_DATA={
   formiga:{name:"Formigídeo",speed:"9m",features:["Força de Colônia","Comunicação por Feromônios"],subs:["Soldado","Tecelã","Pote-de-Mel","Corticante"],carry:1.5},
   sapo:{name:"Rãzinha-Sapo",speed:"7,5m / natação 9m",features:["Anfíbio","Pulo do Sapo"],subs:["Flecha-Veneno","Sapo-Boi-Anão","Perereca","Cururu-Místico"],carry:1},
   minhoca:{name:"Minhocóide",speed:"6m",features:["Sentido por Vibração","Escavação"],subs:["Gladiadora","Nutritiva","Vibracional","Tóxica"],carry:1.2}
- }
+ },
+ classSaves:{barbaro:["FOR","CON"],bardo:["DES","CAR"],bastiao:["FOR","CON"],clerigo:["SAB","CAR"],druida:["INT","SAB"],guerreiro:["FOR","CON"],monge:["DES","SAB"],paladino:["SAB","CAR"],patrulheiro:["FOR","DES"],ladino:["DES","INT"],feiticeiro:["CON","CAR"],bruxo:["SAB","CAR"],mago:["INT","SAB"],cozinheiro:["CON","INT"],engenheiro:["CON","INT"]},
+ classWeaponProficiencies:{barbaro:["group:simples","group:marcial"],bardo:["group:simples"],cozinheiro:["group:simples","weapon:tridente_junco","weapon:cimitarra_folha"]},
+ classArmorProficiencies:{barbaro:["armor:leve","armor:media","armor:escudo"],bardo:["armor:leve"],cozinheiro:["armor:leve","armor:escudo"]}
 };
