@@ -634,7 +634,7 @@ input,select,textarea{width:100%;background:var(--paper2);border:1px solid #a38e
     <div class="codex-browser-head"><button class="btn codex-back" onclick="showCodexHome()">← Início do Codex</button></div>
     <div class="codex-searchbar">
       <input id="codexSearch" placeholder="Pesquisar no Codex... Ex.: Bárbaro, Pérola de Orvalho, Agulha">
-      <select id="codexVisibility"><option value="discovered">Somente descoberto</option><option value="all">Mostrar também bloqueados</option></select>
+      <select id="codexVisibility"><option value="all">Teste completo — mostrar tudo</option><option value="discovered">Somente descoberto</option></select>
       <select id="codexStatus"><option value="all">Todos os estados</option><option value="oficial">✅ Oficial</option><option value="teste">🧪 Em teste</option><option value="rascunho">📝 Rascunho</option></select>
       <select id="codexSpellLevel" hidden><option value="all">Todos os níveis de magia</option><option value="0">✨ Truques</option><option value="1">1º nível</option><option value="2">2º nível</option><option value="3">3º nível</option><option value="4">4º nível</option><option value="5">5º nível</option><option value="6">6º nível</option><option value="7">7º nível</option><option value="8">8º nível</option><option value="9">9º nível</option></select>
       <select id="codexEquipmentFilter" hidden><option value="all">Todas as categorias</option></select>
@@ -1171,9 +1171,9 @@ function renderInvTable(kind,body){
   $(body).innerHTML=rows
 }
 function inventoryCatalogEntries(){return[
- ...CODEX_ITEM_DATA.filter(item=>item.discovered!==false).map(item=>({id:`misc:${item.id}`,name:item.name,weight:item.weight,group:"Itens diversos"})),
+  ...CODEX_ITEM_DATA.filter(codexVisible).map(item=>({id:`misc:${item.id}`,name:item.name,weight:item.weight,group:"Itens diversos"})),
  ...CODEX_AMMO_KEYS.map(id=>({id:`ammo:${id}`,name:AMMO_DEFINITIONS[id].name,weight:AMMO_DEFINITIONS[id].weight,ammoKey:id,group:"Munições"})),
- ...Object.entries(MATERIAL_CATALOG).filter(([,item])=>item.discovered!==false).map(([id,item])=>({id:`material:${id}`,name:item.name,weight:item.weight,materialId:id,group:"Materiais"}))
+  ...Object.entries(MATERIAL_CATALOG).filter(([,item])=>codexVisible(item)).map(([id,item])=>({id:`material:${id}`,name:item.name,weight:item.weight,materialId:id,group:"Materiais"}))
 ]}
 function renderInventoryCatalogs(){const list=$("inventoryCodexOptions");if(list)list.innerHTML=inventoryCatalogEntries().map(item=>`<option value="${esc(item.name)}" label="${esc(item.group)} • ${item.weight}g"></option>`).join("")}
 function addInventory(kind){const input=$(kind==="bag"?"p1BagCatalog":"p1CartCatalog"),typed=String(input?.value||"").trim().toLowerCase(),entry=inventoryCatalogEntries().find(item=>item.name.toLowerCase()===typed);if(!entry){showPopup("📚 Item não encontrado", "Somente itens do Codex", "Digite o nome e escolha uma das sugestões exibidas. Itens não cadastrados ou ainda não descobertos não podem ser adicionados.");return}const found=state[kind].find(item=>item.codexId===entry.id);if(found)found.qty=(+found.qty||0)+1;else state[kind].push({name:entry.name,qty:1,weight:entry.weight,codexId:entry.id,ammoKey:entry.ammoKey||undefined,materialId:entry.materialId||undefined});input.value="";save();renderInventory()}function editInv(kind,i,k,v){if(k!=="qty")return;state[kind][i].qty=Math.max(0,+v||0);save();renderInventory()}function delInv(kind,i){state[kind].splice(i,1);save();renderInventory()}
@@ -1461,6 +1461,8 @@ function creationNarrative(d,type){
  return `<div class="creation-story ${elevated?'elevated':''} ${legendary?'legendary':''}"><p>${esc(voice)}</p>${drama}<p class="creation-effect"><b>${lead}</b> ${esc(d.effect)}</p>${warning}</div>`
 }
 
+const CODEX_REVIEW_MODE=true;
+const codexVisible=item=>CODEX_REVIEW_MODE||item?.discovered!==false;
 const AUTO_SPELLS={race:{},subclass:{}};
 function syncAutoSpells(){
   state.magic.known=state.magic.known.filter(x=>!x.auto);
@@ -1470,7 +1472,7 @@ function syncAutoSpells(){
 }
 
 function initP3(){
- $("materialCatalogSelect").innerHTML=Object.entries(MATERIAL_CATALOG).filter(([,m])=>m.discovered!==false).map(([id,m])=>`<option value="${id}">${m.name}</option>`).join("");
+ $("materialCatalogSelect").innerHTML=Object.entries(MATERIAL_CATALOG).filter(([,m])=>codexVisible(m)).map(([id,m])=>`<option value="${id}">${m.name}</option>`).join("");
  $("p3ComponentPouch").checked=state.magic.componentPouch;
  $("p3ComponentPouch").onchange=()=>{state.magic.componentPouch=$("p3ComponentPouch").checked;save();renderMagicAvailable()};
  $("p3LevelSelect").onchange=()=>{state.magic.levelFilter=+$("p3LevelSelect").value;save();currentIndex=0;renderMagicAvailable()};
@@ -1481,7 +1483,7 @@ function codexStatusBadge(status){const data={oficial:["✅ Oficial","status-ofi
 let codexCategory="all",codexSelected=null,codexOnlyLocked=false,codexPreset="";
 const CODEX_CATEGORY_TITLES={all:"Pesquisa completa",classes:"Classes",races:"Raças e Sub-raças",spells:"Magias",recipes:"Receitas",projects:"Projetos",materials:"Materiais",weapons:"Armas",armor:"Armaduras e Escudos",misc:"Itens Diversos",world:"Mundo",rules:"Regras"};
 function showCodexHome(){codexSelected=null;codexOnlyLocked=false;codexPreset="";$("codexHome").hidden=false;$("codexBrowser").hidden=true;if($("codexHeading"))$("codexHeading").textContent="📚 Início do Codex"}
-function openCodexCategory(category,search="",preset=""){codexCategory=category;codexSelected=null;codexOnlyLocked=false;codexPreset=preset;$("codexHome").hidden=true;$("codexBrowser").hidden=false;if($("codexSearch"))$("codexSearch").value=search;if($("codexVisibility"))$("codexVisibility").value="discovered";if($("codexStatus"))$("codexStatus").value="all";document.querySelectorAll(".codex-filter").forEach(button=>button.classList.toggle("active",button.dataset.codexCat===category));const presetTitle={faith:"Deuses e Patronos",talents:"Talentos",factions:"Facções",origins:"Origens e Antecedentes"}[preset],customTitle=presetTitle||search||CODEX_CATEGORY_TITLES[category]||"Codex";if($("codexHeading"))$("codexHeading").textContent=`📚 ${customTitle}`;renderCodex()}
+function openCodexCategory(category,search="",preset=""){codexCategory=category;codexSelected=null;codexOnlyLocked=false;codexPreset=preset;$("codexHome").hidden=true;$("codexBrowser").hidden=false;if($("codexSearch"))$("codexSearch").value=search;if($("codexVisibility"))$("codexVisibility").value=CODEX_REVIEW_MODE?"all":"discovered";if($("codexStatus"))$("codexStatus").value="all";document.querySelectorAll(".codex-filter").forEach(button=>button.classList.toggle("active",button.dataset.codexCat===category));const presetTitle={faith:"Deuses e Patronos",talents:"Talentos",factions:"Facções",origins:"Origens e Antecedentes"}[preset],customTitle=presetTitle||search||CODEX_CATEGORY_TITLES[category]||"Codex";if($("codexHeading"))$("codexHeading").textContent=`📚 ${customTitle}`;renderCodex()}
 function openCodexDiscoveries(){codexCategory="all";codexSelected=null;codexOnlyLocked=true;codexPreset="";$("codexHome").hidden=true;$("codexBrowser").hidden=false;$("codexSearch").value="";$("codexVisibility").value="all";$("codexStatus").value="all";document.querySelectorAll(".codex-filter").forEach(button=>button.classList.toggle("active",button.dataset.codexCat==="all"));if($("codexHeading"))$("codexHeading").textContent="📚 Descobertas ainda bloqueadas";renderCodex()}
 function codexEntries(){
  const entries=[];
@@ -1505,6 +1507,7 @@ function codexEntries(){
  Object.entries(EQUIPMENT_CATALOG).forEach(([id,e])=>entries.push({id:`equipment:${id}`,category:e.type==="arma"?"weapons":"armor",status:"teste",discovered:true,title:e.name,tags:e.type==="arma"?[e.training,e.category,e.rarity]:[e.armorClass,e.rarity],data:e}));
  CODEX_AMMO_KEYS.forEach(id=>{const ammo=AMMO_DEFINITIONS[id];entries.push({id:`ammo:${id}`,category:"weapons",status:"teste",discovered:true,title:ammo.name,tags:["Munição",ammo.rarity||"Comum",`${ammo.weight} kg`],data:{id,type:"municao",...ammo}})});
  entries.push({id:"world:colmeia",category:"world",status:"rascunho",discovered:false,title:"Colmeia Rubra",tags:["Facção","Bloqueado"],data:{summary:"Informação ainda não descoberta."}},{id:"world:vane",category:"world",status:"rascunho",discovered:false,title:"Lord Vane",tags:["Criatura","Mistério"],data:{summary:"Informação ainda não descoberta."}});
+ if(CODEX_REVIEW_MODE)return entries.map(entry=>{const name=entry.data?.name;return {...entry,discovered:true,title:name||entry.title,tags:entry.tags.map(tag=>/não descobert|bloqueado/i.test(tag)?"Liberado para teste":tag)}});
  return entries
 }
 function filteredCodex(){const q=String($("codexSearch")?.value||"").trim().toLowerCase(),showAll=$("codexVisibility")?.value==="all",status=$("codexStatus")?.value||"all",spellLevel=$("codexSpellLevel")?.value||"all",equipmentFilter=$("codexEquipmentFilter")?.value||"all",materialFilter=$("codexMaterialFilter")?.value||"all",miscFilter=$("codexMiscFilter")?.value||"all";return codexEntries().filter(e=>{const use=String(e.data?.use||"").toLowerCase(),shared=use.split("•").map(x=>x.trim()).filter(Boolean).length>1,materialMatch=materialFilter==="all"||e.category!=="materials"||(materialFilter==="compartilhado"?shared:materialFilter==="culinaria"?use.includes("culinária"):use.includes(materialFilter)),miscMatch=miscFilter==="all"||e.category!=="misc"||e.data.miscType===miscFilter,presetMatch=codexPreset==="faith"?e.id.startsWith("faith:"):codexPreset==="talents"?e.id.startsWith("talent:"):codexPreset==="factions"?e.id.startsWith("faction:"):codexPreset==="origins"?e.id.startsWith("origin:"):codexPreset==="world-general"?!e.id.startsWith("faith:")&&!e.id.startsWith("faction:"):codexPreset==="rules-general"?!e.id.startsWith("talent:")&&!e.id.startsWith("origin:"):true;return(codexCategory==="all"||e.category===codexCategory)&&(!codexOnlyLocked||!e.discovered)&&presetMatch&&(showAll||e.discovered)&&(status==="all"||e.status===status)&&(spellLevel==="all"||e.category!=="spells"||String(e.data.level??e.data.lvl)===spellLevel)&&(equipmentFilter==="all"||(e.category==="weapons"&&(e.data.training===equipmentFilter||e.data.category===equipmentFilter||e.data.type===equipmentFilter))||(e.category==="armor"&&e.data.armorClass===equipmentFilter))&&materialMatch&&miscMatch&&(!q||`${e.title} ${e.tags.join(" ")}`.toLowerCase().includes(q))})}
