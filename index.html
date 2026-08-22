@@ -634,7 +634,7 @@ input,select,textarea{width:100%;background:var(--paper2);border:1px solid #a38e
     <div class="codex-browser-head"><button class="btn codex-back" onclick="showCodexHome()">← Início do Codex</button></div>
     <div class="codex-searchbar">
       <input id="codexSearch" placeholder="Pesquisar no Codex... Ex.: Bárbaro, Pérola de Orvalho, Agulha">
-      <select id="codexVisibility"><option value="all">Teste completo — mostrar tudo</option><option value="discovered">Somente descoberto</option></select>
+      <select id="codexVisibility"><option value="discovered">Conteúdo disponível ao jogador</option><option value="all">Revisão do Mestre — mostrar bloqueados</option></select>
       <select id="codexStatus"><option value="all">Todos os estados</option><option value="oficial">✅ Oficial</option><option value="teste">🧪 Em teste</option><option value="rascunho">📝 Rascunho</option></select>
       <select id="codexSpellLevel" hidden><option value="all">Todos os níveis de magia</option><option value="0">✨ Truques</option><option value="1">1º nível</option><option value="2">2º nível</option><option value="3">3º nível</option><option value="4">4º nível</option><option value="5">5º nível</option><option value="6">6º nível</option><option value="7">7º nível</option><option value="8">8º nível</option><option value="9">9º nível</option></select>
       <select id="codexEquipmentFilter" hidden><option value="all">Todas as categorias</option></select>
@@ -1461,7 +1461,7 @@ function creationNarrative(d,type){
  return `<div class="creation-story ${elevated?'elevated':''} ${legendary?'legendary':''}"><p>${esc(voice)}</p>${drama}<p class="creation-effect"><b>${lead}</b> ${esc(d.effect)}</p>${warning}</div>`
 }
 
-const CODEX_REVIEW_MODE=true;
+const CODEX_REVIEW_MODE=false;
 const codexVisible=item=>CODEX_REVIEW_MODE||item?.discovered!==false;
 const AUTO_SPELLS={race:{},subclass:{}};
 function syncAutoSpells(){
