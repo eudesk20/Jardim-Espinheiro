@@ -41,6 +41,34 @@ function areaFrom(range) {
   if(/Pessoal/i.test(range))return "Conjurador";
   return `Alvo ou ponto dentro de ${range}`;
 }
+const MATERIAL_NAMES={
+  gota_orvalho:"Orvalho Purificado",sementes_mistas:"Sementes Nutritivas",folha_serena:"Folha Serena",fungo_bioluminescente:"Fungo Bioluminescente",brasa_semente:"Semente de Brasa",esporos_mutaveis:"Esporos Mutáveis",geleia_revigorante:"Seiva Revigorante",fio_cobre:"Fio Fino de Cobre",seda_aranha:"Fio de Seda de Aranha",resina_endurecida:"Resina Endurecida",lente_vidro:"Lente de Vidro",bateria_gigante:"Fragmento de Bateria",perola_orvalho:"Pérola de Orvalho Puríssimo",casca_mineral:"Casca Mineral Translúcida",nectar_luminoso:"Néctar Luminoso",carvao_po:"Carvão em Pó",casca_ressoante:"Casca Oca Ressoante",sal_cristalino:"Sal Cristalino",incenso_raiz:"Incenso de Raiz",cristal_condutor:"Cristal de Orvalho Condutor",polen_estelar:"Núcleo de Pólen Estelar",micelio_memoria:"Micélio de Memória",ambar_tempestade:"Âmbar de Tempestade Presa",po_carapaca:"Pó de Carapaça Ancestral",feromonio_ressonante:"Feromônio Ressonante",po_espelho:"Pó de Espelho de Orvalho",seiva_limiar:"Seiva do Limiar",esporo_toxico:"Esporo Tóxico Concentrado",areia_instante:"Areia do Instante"
+};
+function materialIdsFor(item){
+  if(!item.components.includes("M"))return [];
+  const n=item.reference.toLowerCase();
+  if(/time|temporal|foresight|contingency|fortune/.test(n))return ["areia_instante","ambar_tempestade"];
+  if(/gate|teleport|dimension|plane|demiplane|ethereal|passwall|rope trick|arcane gate/.test(n))return ["seiva_limiar","cristal_condutor"];
+  if(/dead|undead|death|necrom|reviv|resurrect|clone|soul|vampir|life transfer|harm/.test(n))return ["po_carapaca","incenso_raiz"];
+  if(/charm|suggestion|command|friend|dominat|emotion|enth?rall|geas|mind|psychic|fear|dream/.test(n))return ["feromonio_ressonante","folha_serena"];
+  if(/illusion|image|invis|mirror|blur|disguise|seeming|mirage|shadow/.test(n))return ["po_espelho","lente_vidro"];
+  if(/poison|acid|toxic|sickness|contagion|cloudkill|stinking|wither|blight/.test(n))return ["esporo_toxico","esporos_mutaveis"];
+  if(/fire|flame|burn|scorch|heat|immolat|bonfire|meteor|sun|radiance|light/.test(n))return ["brasa_semente","carvao_po"];
+  if(/lightning|thunder|shocking|storm|static|chain/.test(n))return ["fio_cobre","cristal_condutor"];
+  if(/water|frost|cold|ice|sleet|snow|rime|tidal|tsunami/.test(n))return ["gota_orvalho","perola_orvalho"];
+  if(/plant|thorn|vine|druid|animal|beast|insect|spore|wood|bark|tree|earth/.test(n))return ["sementes_mistas","resina_endurecida"];
+  if(/sound|word|message|whisper|thunder|mockery|song|speech/.test(n))return ["casca_ressoante","nectar_luminoso"];
+  return ({Abjuration:["sal_cristalino","casca_mineral"],Conjuration:["seda_aranha","resina_endurecida"],Divination:["lente_vidro","incenso_raiz"],Enchantment:["feromonio_ressonante","folha_serena"],Evocation:["cristal_condutor","nectar_luminoso"],Illusion:["po_espelho","lente_vidro"],Necromancy:["po_carapaca","incenso_raiz"],Transmutation:["esporos_mutaveis","casca_mineral"]}[item.school]||["resina_endurecida"]);
+}
+function materialIsConsumed(item){return /reviv|resurrect|raise dead|clone|awaken|heroes' feast|hallow|glyph|magic circle|simulacrum|imprisonment|true resurrection|astral projection/i.test(item.reference)}
+function conjurationText(item,ids){
+  const parts=item.components.split(",").map(value=>value.trim()),steps=[];
+  if(parts.includes("V"))steps.push("V: fórmula, palavra ou vibração de ativação");
+  if(parts.includes("S"))steps.push("S: gesto que orienta e dá forma à manifestação");
+  if(!item.components.includes("M"))return `${steps.join(". ")}. Nenhum componente material é necessário.`;
+  const names=ids.map(id=>MATERIAL_NAMES[id]||id),list=names.length>1?`${names.slice(0,-1).join(", ")} e ${names.at(-1)}`:names[0];
+  steps.push(`M: ${list}`);return `${steps.join(". ")}. Material: ${materialIsConsumed(item)?"consumível e gasto ao concluir a conjuração":"reutilizável, desde que permaneça inteiro"}. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.`;
+}
 function thematicName(translated, original) {
   let name=(translated||original).replace(/Mago/gi,"Tecelão").replace(/Drag(ão|ões)/gi,"Titã")
     .replace(/Demon(íaco|íaca|íacos|íacas|io|ios)?/gi,"Predador Abissal").replace(/Celestial/gi,"Luminar")
@@ -51,16 +79,16 @@ function thematicName(translated, original) {
 }
 function effectFor(spell) {
   const n=spell.reference.toLowerCase(),name=spell.displayName;
-  if(/heal|cure|restoration|reviv|resurrection|regenerate|spare the dying|goodberry|aid|vitality/.test(n))return `${name} restaura ou preserva a força vital de uma ou mais criaturas, respeitando alcance e duração indicados.`;
-  if(/summon|conjure|create|animate|familiar|servant|steed|homunculus|magen/.test(n))return `${name} manifesta, desperta ou convoca uma presença compatível com o Jardim, que segue as condições da conjuração.`;
-  if(/wall|barrier|cage|prison|shield|ward|armor|aura|sanctuary|protection|invulnerability|antimagic/.test(n))return `${name} ergue uma proteção, limite ou campo mágico na área indicada, bloqueando ou reduzindo efeitos compatíveis.`;
-  if(/detect|see|vision|clair|scry|foresight|identify|legend lore|commune|contact|telepathy|message|sending|tongues|speak/.test(n))return `${name} amplia sentidos, conhecimento ou comunicação por meio dos ecos do Jardim dentro do alcance indicado.`;
-  if(/charm|dominate|suggestion|command|fear|confusion|mockery|laughter|madness|sleep|stun|pain|kill|feeble|mind|psychic/.test(n))return `${name} interfere na mente, emoção ou vontade dos alvos; criaturas resistentes enfrentam a Salvaguarda apropriada.`;
-  if(/teleport|gate|door|step|stride|walk|fly|levitate|jump|haste|slow|scatter|plane shift|ethereal|passwall/.test(n))return `${name} altera deslocamento, posição ou passagem entre pontos, conforme alcance e duração da manifestação.`;
-  if(/illusion|image|invisibility|disguise|seeming|mirage|dream|darkness|blur|phantom/.test(n))return `${name} cria uma percepção falsa ou oculta presenças; interação e investigação podem revelar a ilusão.`;
-  if(/transmut|shape|polymorph|enlarge|reduce|awaken|stone|water|earth|flame|weather|wind|plant growth|barkskin/.test(n))return `${name} transforma matéria, corpo ou ambiente na escala do Pequeno Mundo durante o tempo indicado.`;
-  if(/bolt|blast|ball|storm|ray|spray|wave|touch|strike|smite|blade|arrow|whip|cloud|sphere|meteor|lightning|thunder|fire|cold|frost|acid|poison|radiance|sun|harm|disintegrate/.test(n))return `${name} libera energia ofensiva contra o alvo ou área indicada, causando dano e efeitos associados à manifestação.`;
-  return `${name} canaliza uma manifestação de ${spell.school.toLowerCase()} adaptada à escala e às matérias do Microcosmo.`;
+  if(/heal|cure|restoration|reviv|resurrection|regenerate|spare the dying|goodberry|aid|vitality/.test(n))return `${name} reúne seiva vital, calor e memória corporal para restaurar ou preservar uma ou mais criaturas. A energia procura primeiro ferimentos recentes e condições compatíveis; efeitos permanentes ou morte exigem os materiais especiais indicados. Alvos fora do alcance ou que não possam receber cura não são afetados.`;
+  if(/summon|conjure|create|animate|familiar|servant|steed|homunculus|magen/.test(n))return `${name} manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas.`;
+  if(/wall|barrier|cage|prison|shield|ward|armor|aura|sanctuary|protection|invulnerability|antimagic/.test(n))return `${name} organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo.`;
+  if(/detect|see|vision|clair|scry|foresight|identify|legend lore|commune|contact|telepathy|message|sending|tongues|speak/.test(n))return `${name} amplia sentidos, conhecimento ou comunicação através dos ecos preservados no Jardim. O conjurador recebe informações ligadas ao alvo e ao alcance, mas não ultrapassa proteções específicas contra adivinhação. Respostas simbólicas, memórias incompletas e interferências podem exigir interpretação.`;
+  if(/charm|dominate|suggestion|command|fear|confusion|mockery|laughter|madness|sleep|stun|pain|kill|feeble|mind|psychic/.test(n))return `${name} impõe uma frequência sobre pensamento, emoção ou vontade. Criaturas afetadas enfrentam a Salvaguarda apropriada; em sucesso, evitam ou reduzem o efeito conforme a magia. Ordens autodestrutivas, imunidades mentais e ausência de percepção do estímulo podem impedir a manifestação.`;
+  if(/teleport|gate|door|step|stride|walk|fly|levitate|jump|haste|slow|scatter|plane shift|ethereal|passwall/.test(n))return `${name} dobra distância, peso ou ritmo para alterar deslocamento e posição. O destino precisa respeitar as condições da magia e oferecer espaço livre; uma chegada impossível conduz ao ponto seguro mais próximo ou faz a manifestação falhar. Passagens sustentadas terminam quando a Concentração é perdida.`;
+  if(/illusion|image|invisibility|disguise|seeming|mirage|dream|darkness|blur|phantom/.test(n))return `${name} reorganiza luz, som, cheiro e expectativa para criar uma percepção falsa ou ocultar presenças. Contato direto, investigação cuidadosa ou sentidos especiais podem revelar inconsistências. Descobrir a ilusão não a dissipa automaticamente, mas permite reconhecê-la pelo restante da duração.`;
+  if(/transmut|shape|polymorph|enlarge|reduce|awaken|stone|water|earth|flame|weather|wind|plant growth|barkskin/.test(n))return `${name} transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir.`;
+  if(/bolt|blast|ball|storm|ray|spray|wave|touch|strike|smite|blade|arrow|whip|cloud|sphere|meteor|lightning|thunder|fire|cold|frost|acid|poison|radiance|sun|harm|disintegrate/.test(n))return `${name} concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação.`;
+  return `${name} canaliza uma manifestação de ${spell.school.toLowerCase()} adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia.`;
 }
 
 function parseTables(html) {
@@ -107,8 +135,8 @@ if(raw.length!==574){const counts=Object.fromEntries([...Array(10)].map((_,level
 const classes=await classAssignments(),translations=await translateTitles(raw.map(x=>x.reference));
 const spells=raw.map(item=>{
   const displayName=thematicName(translations[item.reference],item.reference),schoolData=SCHOOL[item.school]||[item.school,"✨ Manifestação"];
-  const range=translateRange(item.rangeRaw),spell={...item,displayName,range,school:schoolData[0]};
-  return {key:item.key,title:`${ICON[item.school]||"✨"} ${displayName}`,reference:item.reference,level:item.level,kind:"completa",status:"teste",classes:[...(classes.get(slug(item.reference))||[])],school:schoolData[0],source:schoolData[0],manifestation:schoolData[1],cast:translateTime(item.castRaw),range,duration:translateDuration(item.durationRaw),components:item.components,area:areaFrom(range),conjuration:item.components.includes("M")?"Bolsa de Componentes ou foco; componentes com preço ou consumo exigem o item específico.":"Nenhum.",effect:effectFor(spell),limitation:"Adaptação inicial em teste; custos especiais e números de dano serão confirmados na revisão da magia.",damage:"",attack:/bolt|ray|blade|arrow|whip|touch|strike/i.test(item.reference),save:"",flags:item.flags};
+  const range=translateRange(item.rangeRaw),spell={...item,displayName,range,school:schoolData[0]},materialIds=materialIdsFor(item);
+  return {key:item.key,title:`${ICON[item.school]||"✨"} ${displayName}`,reference:item.reference,level:item.level,kind:"completa",status:"teste",classes:[...(classes.get(slug(item.reference))||[])],school:schoolData[0],source:schoolData[0],manifestation:schoolData[1],cast:translateTime(item.castRaw),range,duration:translateDuration(item.durationRaw),components:item.components,area:areaFrom(range),materialIds,conjuration:conjurationText(item,materialIds),effect:effectFor(spell),limitation:"A magia segue alcance, duração, Concentração, imunidades e requisitos de alvo. Números de dano, cura e CD permanecem em teste até a revisão individual de equilíbrio.",damage:"",attack:/bolt|ray|blade|arrow|whip|touch|strike/i.test(item.reference),save:"",flags:item.flags};
 });
 const index=spells.map(({key,title,level,kind,classes})=>({key,title,level,kind,classes}));
 await writeFile(new URL("codex-revisao/spell-data.js",ROOT),`globalThis.CODEX_SPELL_DATA = ${JSON.stringify(spells,null,2)};\n`,`utf8`);
