@@ -1240,17 +1240,36 @@ const FULL_CASTER_SLOTS={
 16:[4,3,3,3,2,1,1,1],17:[4,3,3,3,2,1,1,1,1],18:[4,3,3,3,3,1,1,1,1],19:[4,3,3,3,3,2,1,1,1],20:[4,3,3,3,3,2,2,1,1]
 };
 const SPELL_SOURCE_BY_CLASS={bardo:"Expressiva",clerigo:"Espiritual",druida:"Natural",feiticeiro:"Arcana",mago:"Arcana",paladino:"Espiritual",patrulheiro:"Natural",bruxo:"Arcana"};
+const SPELL_CLASSES_BY_SOURCE={Expressiva:["bardo"],Espiritual:["clerigo","paladino"],Natural:["druida","patrulheiro"],Arcana:["feiticeiro","mago","bruxo"]};
+const SPELL_CLASS_OVERRIDES={
+ "m1-1":["druida","patrulheiro","feiticeiro","mago"],"m1-2":["feiticeiro","mago"],"m1-3":["druida","patrulheiro"],"m1-4":["bardo","clerigo","druida","paladino","patrulheiro"],"m1-5":["druida","patrulheiro","feiticeiro","mago"],
+ "m1-6":["bardo","feiticeiro","mago"],"m1-7":["bardo","feiticeiro","mago"],"m1-8":["bardo","feiticeiro","mago"],"m1-9":["bardo"],"m1-10":["patrulheiro","mago"],
+ "m1-11":["bardo","druida","patrulheiro"],"m1-12":["clerigo","paladino"],"m1-13":["bardo","clerigo"],"m1-14":["bruxo","mago"],"m1-15":["bardo","druida","feiticeiro","bruxo","mago"],
+ "m1-16":["clerigo","paladino"],"m1-17":["druida","patrulheiro","feiticeiro","mago"],"m1-18":["bardo","druida","patrulheiro","mago"],"m1-19":["patrulheiro"],"m1-20":["bardo","druida"],
+ "m1-21":["bardo","clerigo","druida","paladino","patrulheiro","feiticeiro","bruxo","mago"],"m1-22":["bardo","feiticeiro","bruxo","mago"],"m1-23":["bardo","druida","patrulheiro"],"m1-24":["mago"],"m1-25":["druida","patrulheiro"],
+ "m1-26":["clerigo","druida","paladino","patrulheiro"],"m1-27":["druida","patrulheiro","mago"],"m1-28":["clerigo","druida","paladino"],"m1-29":["mago"],"m1-30":["bardo","clerigo","druida","patrulheiro"],
+ "m1-31":["clerigo"],"m1-32":["feiticeiro","mago"],"m1-33":["druida","feiticeiro","mago"],"m1-34":["feiticeiro","bruxo","mago"],"m1-35":["bardo","druida","feiticeiro","mago"],
+ "m1-36":["bruxo"],"m1-37":["feiticeiro","mago"],"m1-38":["clerigo","paladino"],"m1-39":["bruxo"],"m1-40":["feiticeiro","mago"],
+ "m1-41":["druida","patrulheiro","mago"],"m1-42":["druida","feiticeiro","mago"],"m1-43":["druida","patrulheiro"],"m1-44":["druida"],"m1-45":["druida","patrulheiro"],
+ "m1-46":["mago"],"m1-47":["mago"],"m1-48":["bardo","feiticeiro","mago"],"m1-49":["clerigo","bruxo"],"m1-50":["clerigo","druida","patrulheiro"]
+};
+function codexSpellClasses(spell){
+ if(SPELL_CLASS_OVERRIDES[spell.key])return [...SPELL_CLASS_OVERRIDES[spell.key]];
+ if(Array.isArray(spell.classes))return [...new Set(spell.classes)];
+ const source=String(spell.source||"");
+ return [...new Set(Object.entries(SPELL_CLASSES_BY_SOURCE).filter(([name])=>source.includes(name)).flatMap(([,classes])=>classes))];
+}
 function spellcastingStat(classId=state.cls){return CLASS_DATA[classId]?.caster||"INT"}
 function codexSpellToSheet(spell){
  const components=String(spell.components||"").split(/[,/]/).map(x=>x.trim().charAt(0).toUpperCase()).filter(x=>["V","S","M"].includes(x));
- return {codexKey:spell.key,name:String(spell.title||"").replace(/^[^\p{L}\p{N}]+/u,""),lvl:spell.level,school:spell.manifestation||"Manifestação",cast:spell.cast||"—",range:spell.range||"—",duration:spell.duration||"—",comp:[...new Set(components)],material:spell.conjuration||"",consumed:/consum/i.test(spell.conjuration||""),cost:"",attack:!!spell.attack,damage:spell.damage||"",save:spell.save||"",area:spell.area||"",text:[spell.effect,spell.limitation].filter(Boolean).join(" ")};
+ return {codexKey:spell.key,name:String(spell.title||"").replace(/^[^\p{L}\p{N}]+/u,""),lvl:spell.level,classes:codexSpellClasses(spell),school:spell.manifestation||"Manifestação",cast:spell.cast||"—",range:spell.range||"—",duration:spell.duration||"—",comp:[...new Set(components)],material:spell.conjuration||"",consumed:/consum/i.test(spell.conjuration||""),cost:"",attack:!!spell.attack,damage:spell.damage||"",save:spell.save||"",area:spell.area||"",text:[spell.effect,spell.limitation].filter(Boolean).join(" ")};
 }
-function codexSpellReferenceToSheet(spell){return {codexKey:spell.key,name:String(spell.title||"").replace(/^[^\p{L}\p{N}]+/u,""),lvl:spell.level,school:"Referência do Codex",cast:"—",range:"—",duration:"—",comp:[],material:"",consumed:false,cost:"",attack:false,damage:"",save:"",area:"",text:"Esta magia existe no Codex, mas ainda aguarda adaptação completa para o Microcosmo.",reference:true}}
+function codexSpellReferenceToSheet(spell){return {codexKey:spell.key,name:String(spell.title||"").replace(/^[^\p{L}\p{N}]+/u,""),lvl:spell.level,classes:codexSpellClasses(spell),school:"Referência do Codex",cast:"—",range:"—",duration:"—",comp:[],material:"",consumed:false,cost:"",attack:false,damage:"",save:"",area:"",text:"Esta magia existe no Codex, mas ainda aguarda adaptação completa para o Microcosmo.",reference:true}}
 function allCodexSheetSpells(){const complete=(globalThis.CODEX_SPELL_DATA||[]).map(codexSpellToSheet),completeKeys=new Set(complete.map(spell=>spell.codexKey)),references=(globalThis.GRIMOIRE_SPELL_INDEX||GRIMOIRE_SPELL_INDEX||[]).filter(spell=>spell.kind==="referencia"&&!completeKeys.has(spell.key)).map(codexSpellReferenceToSheet);return [...complete,...references]}
 function magicSource(classId=state.cls){
- const source=SPELL_SOURCE_BY_CLASS[classId];if(!source)return null;
- const complete=(globalThis.CODEX_SPELL_DATA||[]).filter(spell=>!spell.source||String(spell.source).includes(source)).map(codexSpellToSheet),completeKeys=new Set((globalThis.CODEX_SPELL_DATA||[]).map(spell=>spell.key));
- const references=(globalThis.GRIMOIRE_SPELL_INDEX||GRIMOIRE_SPELL_INDEX||[]).filter(spell=>spell.kind==="referencia"&&!completeKeys.has(spell.key)).map(codexSpellReferenceToSheet);
+ if(!SPELL_SOURCE_BY_CLASS[classId])return null;
+ const complete=(globalThis.CODEX_SPELL_DATA||[]).filter(spell=>codexSpellClasses(spell).includes(classId)).map(codexSpellToSheet),completeKeys=new Set((globalThis.CODEX_SPELL_DATA||[]).map(spell=>spell.key));
+ const references=(globalThis.GRIMOIRE_SPELL_INDEX||GRIMOIRE_SPELL_INDEX||[]).filter(spell=>spell.kind==="referencia"&&!completeKeys.has(spell.key)&&codexSpellClasses(spell).includes(classId)).map(codexSpellReferenceToSheet);
  const spells=[...complete,...references].sort((a,b)=>a.lvl-b.lvl||a.name.localeCompare(b.name,"pt-BR"));
  return {name:CLASS_DATA[classId]?.name||classId,stat:spellcastingStat(classId),spells};
 }
