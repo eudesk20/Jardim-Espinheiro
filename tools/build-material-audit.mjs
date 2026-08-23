@@ -23,6 +23,33 @@ function componentAudit(component) {
   };
 }
 
+/*
+  Auditoria de materiais do MICROCOSMOS.
+  O gerador principal já liga os materiais temáticos mais frequentes às Magias.
+  Estes vínculos cobrem materiais que continuavam classificados como "Magia",
+  mas não eram escolhidos por nenhuma regra temática do gerador.
+
+  Importante: adicionar um material aqui NÃO torna seu valor comercial um custo
+  obrigatório da Magia. A regra de Foco/Bolsa continua sendo determinada pelo
+  custo/consumo oficial do componente da própria Magia.
+*/
+const SPECIAL_MAGIC_MATERIALS = [
+  {id:"fungo_bioluminescente", references:["light","dancing lights"]},
+  {id:"geleia_revigorante", references:["goodberry","regenerate"]},
+  {id:"bateria_gigante", references:["lightning bolt","chain lightning"]},
+  {id:"polen_estelar", references:["foresight","astral projection","dream"]},
+  {id:"micelio_memoria", references:["legend lore","dream"]},
+  {id:"semente_coracao", references:["awaken"]},
+  {id:"reliquia_viva", references:["true resurrection","clone"]}
+].map(rule=>({...rule,references:new Set(rule.references.map(norm))}));
+
+function auditedMaterialIds(spell) {
+  const ids = new Set(Array.isArray(spell.materialIds) ? spell.materialIds : []);
+  const reference = norm(spell.reference);
+  for (const rule of SPECIAL_MAGIC_MATERIALS) if (rule.references.has(reference)) ids.add(rule.id);
+  return [...ids];
+}
+
 const raw = await readFile(SPELL_DATA_URL, "utf8");
 const match = raw.match(/globalThis\.CODEX_SPELL_DATA\s*=\s*([\s\S]*);\s*$/);
 if (!match) throw new Error("Não foi possível interpretar codex-revisao/spell-data.js");
@@ -37,13 +64,13 @@ for (const file of files) {
     const key = norm(spell.name);
     const audit = componentAudit(spell.components?.m);
     const previous = reference.get(key);
-    // Prefer a record that actually carries an explicit material cost/consumption rule.
+    // Prefere o registro que realmente contenha custo ou consumo explícito.
     if (!previous || audit.costCp > previous.costCp || (audit.consumed && !previous.consumed)) reference.set(key, audit);
   }
 }
 
 const audit = {};
-let materialSpells=0,costly=0,consumed=0,unmatched=0;
+let materialSpells=0,costly=0,consumed=0,unmatched=0,specialLinks=0;
 for (const spell of spells) {
   const hasMaterial = String(spell.components||"").split(/[,/]/).map(x=>x.trim()).includes("M");
   if (!hasMaterial) continue;
@@ -54,8 +81,11 @@ for (const spell of spells) {
   const isConsumed = !!found?.consumed;
   if (cost) costly++;
   if (isConsumed) consumed++;
+  const originalIds = Array.isArray(spell.materialIds) ? spell.materialIds : [];
+  const materialIds = auditedMaterialIds(spell);
+  specialLinks += Math.max(0,materialIds.length-originalIds.length);
   audit[spell.key] = {
-    materialIds: Array.isArray(spell.materialIds) ? spell.materialIds : [],
+    materialIds,
     reference: spell.reference || "",
     originalMaterial: found?.text || "",
     requiredValue: cost,
@@ -66,6 +96,6 @@ for (const spell of spells) {
   };
 }
 
-const payload = `/* Gerado automaticamente por tools/build-material-audit.mjs.\n   Não editar manualmente: audita custo, consumo e substituição por Foco/Bolsa. */\nglobalThis.SPELL_MATERIAL_AUDIT=${JSON.stringify(audit,null,2)};\nglobalThis.SPELL_MATERIAL_AUDIT_STATS=${JSON.stringify({totalSpells:spells.length,materialSpells,costly,consumed,unmatched,generatedAt:new Date().toISOString()},null,2)};\n`;
+const payload = `/* Gerado automaticamente por tools/build-material-audit.mjs.\n   Não editar manualmente: audita custo, consumo, vínculo e substituição por Foco/Bolsa. */\nglobalThis.SPELL_MATERIAL_AUDIT=${JSON.stringify(audit,null,2)};\nglobalThis.SPELL_MATERIAL_AUDIT_STATS=${JSON.stringify({totalSpells:spells.length,materialSpells,costly,consumed,unmatched,specialLinks,generatedAt:new Date().toISOString()},null,2)};\n`;
 await writeFile(OUTPUT_URL,payload,"utf8");
-console.log(`Auditoria: ${spells.length} magias; ${materialSpells} com M; ${costly} com custo; ${consumed} consumíveis; ${unmatched} sem correspondência.`);
+console.log(`Auditoria: ${spells.length} magias; ${materialSpells} com M; ${costly} com custo; ${consumed} consumíveis; ${specialLinks} vínculos especiais; ${unmatched} sem correspondência.`);
