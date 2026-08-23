@@ -11,6 +11,7 @@ const authTag='<script src="codex-revisao/auth-demo-runtime.js"></script>';
 const masterDiscoveryFixTag='<script src="codex-revisao/master-discovery-fix-runtime.js"></script>';
 const popupLayerFixTag='<script src="codex-revisao/popup-layer-fix-runtime.js"></script>';
 const accountSheetTag='<script src="codex-revisao/account-sheet-runtime.js"></script>';
+const skillChoiceTag='<script src="codex-revisao/skill-choice-runtime.js"></script>';
 if(!html.includes(auditTag)){
   html=html.replace('<script src="codex-revisao/spell-data.js"></script>',`<script src="codex-revisao/spell-data.js"></script>\n${auditTag}`);
 }
@@ -19,6 +20,7 @@ if(!html.includes(authTag))html=html.replace('</body>',`${authTag}\n</body>`);
 if(!html.includes(masterDiscoveryFixTag))html=html.replace('</body>',`${masterDiscoveryFixTag}\n</body>`);
 if(!html.includes(popupLayerFixTag))html=html.replace('</body>',`${popupLayerFixTag}\n</body>`);
 if(!html.includes(accountSheetTag))html=html.replace('</body>',`${accountSheetTag}\n</body>`);
+if(!html.includes(skillChoiceTag))html=html.replace('</body>',`${skillChoiceTag}\n</body>`);
 await writeFile(indexUrl,html,"utf8");
 
 // Codex de Origens: distribuições de atributos derivadas de cada descrição.
@@ -28,4 +30,4 @@ const originRuntime='<script src="origin-attributes-runtime.js"></script>';
 if(!origins.includes(originRuntime))origins=origins.replace('</body>',`${originRuntime}\n</body>`);
 await writeFile(originsUrl,origins,"utf8");
 
-console.log("Runtimes de materiais, atributos das Origens, login demo, visão de Descobertas do Mestre, camada dos pop-ups e ficha por conta aplicados à publicação.");
+console.log("Runtimes de materiais, atributos das Origens, login demo, visão de Descobertas do Mestre, camada dos pop-ups, ficha por conta e escolha de perícias aplicados à publicação.");
