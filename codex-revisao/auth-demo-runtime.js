@@ -34,10 +34,20 @@
     const data=entry.data||{};
     return entry.access==="master"||entry.visibility==="master"||data.access==="master"||data.visibility==="master"||entry.category==="master"||tags.some(t=>t==="ipm"||t.includes("informação para o mestre")||t.includes("informacao para o mestre")||t.includes("somente mestre")||t.includes("secreto do mestre"));
   }
+  function masterReadableEntry(entry){
+    if(!entry||entry.discovered!==false)return entry;
+    return {
+      ...entry,
+      discovered:true,
+      masterOriginalDiscovered:false,
+      tags:[...(entry.tags||[]),"🔒 Ainda não descoberto pelos Jogadores"],
+      data:{...(entry.data||{}),masterOriginalDiscovered:false}
+    };
+  }
   if(originalCodexEntries){
     codexEntries=function(){
       const all=originalCodexEntries();
-      if(currentUser?.role==="master")return all;
+      if(currentUser?.role==="master")return all.map(masterReadableEntry);
       return all.filter(entry=>!isMasterEntry(entry));
     };
   }
@@ -48,7 +58,7 @@
       #microAuthOverlay{position:fixed;inset:0;z-index:100000;background:radial-gradient(circle at 50% 0,#273e32,#08100b 70%);display:grid;place-items:center;padding:16px;color:#2f271e}
       #microAuthOverlay[hidden]{display:none}.micro-auth-card{width:min(470px,100%);background:#efe5cc;border:4px double #b58a3d;border-radius:24px;padding:18px;box-shadow:0 22px 70px #000b}.micro-auth-card h2{margin:0 0 5px;color:#3e523d}.micro-auth-card p{line-height:1.45}.micro-auth-card label{display:block;font-size:.75rem;font-weight:bold;margin:9px 0 3px;color:#69583f}.micro-auth-card input{width:100%;padding:10px;border:1px solid #9c8765;border-radius:9px;background:#fffaf0}.micro-auth-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.micro-auth-actions button,#microAuthBadge button,#microMasterPanel button{border:1px solid #765f3d;border-radius:9px;padding:8px 10px;font-weight:bold;background:#eee0c0;color:#473625}.micro-auth-actions .primary,#microMasterPanel .primary{background:#356342;color:white}.micro-auth-error{min-height:20px;color:#913f3d;font-weight:bold;margin-top:8px}.micro-auth-hint{font-size:.75rem;color:#75634d;background:#fff4d7;border-left:4px solid #b58a3d;padding:8px;border-radius:7px;margin-top:10px}
       #microAuthBadge{position:fixed;right:10px;top:10px;z-index:99990;display:flex;align-items:center;gap:6px;background:#efe5cc;border:2px solid #735e3e;border-radius:999px;padding:5px 7px;box-shadow:0 5px 18px #0005;font-size:.72rem}#microAuthBadge[hidden]{display:none}#microAuthBadge button{padding:4px 7px;font-size:.7rem}.micro-role-master{color:#744d12;font-weight:bold}.micro-role-player{color:#315a42;font-weight:bold}
-      #microMasterPanel{position:fixed;inset:8% 4%;z-index:99995;background:#efe5cc;border:4px double #9a7840;border-radius:22px;padding:15px;box-shadow:0 0 0 100vmax #07100ddd,0 22px 60px #000b;overflow:auto;color:#2f271e}#microMasterPanel[hidden]{display:none}.micro-master-head{display:flex;justify-content:space-between;align-items:center;gap:10px}.micro-user-row{display:grid;grid-template-columns:minmax(130px,1fr) 100px 110px auto;gap:7px;align-items:center;padding:8px;border-bottom:1px solid #baa684}.micro-user-status.ok{color:#246137}.micro-user-status.wait{color:#8a5f12}.micro-ipm-test{margin:10px auto;max-width:1380px;background:#241a2d;color:#f5e5bc;border:3px double #b98c3e;border-radius:16px;padding:12px;box-shadow:0 8px 24px #0005}.micro-security-note{background:#fff1c9;border-left:5px solid #994b48;border-radius:8px;padding:9px;margin:10px 0}
+      #microMasterPanel{position:fixed;inset:8% 4%;z-index:99995;background:#efe5cc;border:4px double #9a7840;border-radius:22px;padding:15px;box-shadow:0 0 0 100vmax #07100ddd,0 22px 60px #000b;overflow:auto;color:#2f271e}#microMasterPanel[hidden]{display:none}.micro-master-head{display:flex;justify-content:space-between;align-items:center;gap:10px}.micro-user-row{display:grid;grid-template-columns:minmax(130px,1fr) 100px 110px auto;gap:7px;align-items:center;padding:8px;border-bottom:1px solid #baa684}.micro-user-status.ok{color:#246137}.micro-user-status.wait{color:#8a5f12}.micro-ipm-test{margin:10px auto;max-width:1380px;background:#241a2d;color:#f5e5bc;border:3px double #b98c3e;border-radius:16px;padding:12px;box-shadow:0 8px 24px #0005}.micro-security-note{background:#fff1c9;border-left:5px solid #994b48;border-radius:8px;padding:9px;margin:10px 0}.micro-master-note{background:#e7e0f0;border-left:5px solid #654d83;border-radius:8px;padding:9px;margin:10px 0}
       body:not(.micro-role-master-active) [data-access="master"],body:not(.micro-role-master-active) [data-ipm],body:not(.micro-role-master-active) .master-only{display:none!important}
       body.micro-role-master-active .player-only{display:none!important}
       @media(max-width:650px){.micro-user-row{grid-template-columns:1fr}.micro-auth-actions button{flex:1}#microAuthBadge{top:auto;bottom:8px;right:8px}}
@@ -69,7 +79,7 @@
       const panel=document.createElement("div");panel.id="microMasterPanel";panel.hidden=true;document.body.appendChild(panel);
     }
     if(!document.getElementById("microIpmTest")){
-      const test=document.createElement("div");test.id="microIpmTest";test.className="micro-ipm-test master-only";test.dataset.access="master";test.innerHTML='<b>🔒 IPM • TESTE DE VISIBILIDADE</b><br>Se você está vendo esta caixa, entrou como Mestre. O Jogador não deve enxergá-la na interface.';
+      const test=document.createElement("div");test.id="microIpmTest";test.className="micro-ipm-test master-only";test.dataset.access="master";test.innerHTML='<b>🔒 IPM • MODO MESTRE ATIVO</b><br>O Mestre pode abrir no Codex tanto as informações públicas quanto as Descobertas ainda bloqueadas para os Jogadores.';
       const app=document.querySelector(".app");if(app)app.insertAdjacentElement("afterbegin",test);else document.body.prepend(test);
     }
   }
@@ -93,11 +103,15 @@
     const master=currentUser.role==="master";document.body.classList.toggle("micro-role-master-active",master);document.body.classList.toggle("micro-role-player-active",!master);document.documentElement.dataset.microcosmosRole=currentUser.role;
     badge.hidden=false;badge.innerHTML=`<span class="${master?"micro-role-master":"micro-role-player"}">${master?"👑 Mestre":"🎲 Jogador"} • ${escAuth(currentUser.username)}</span>${master?'<button id="microOpenMaster">Painel</button>':""}<button id="microLogout">Sair</button>`;
     document.getElementById("microLogout").onclick=logout;if(master)document.getElementById("microOpenMaster").onclick=openMasterPanel;
+    if(master){
+      const visibility=document.getElementById("codexVisibility");
+      if(visibility)visibility.value="all";
+    }
     if(typeof renderCodex==="function")renderCodex();
   }
   function openMasterPanel(){
-    if(currentUser?.role!=="master")return;const panel=document.getElementById("microMasterPanel"),users=loadUsers();let ipmCount=0;if(originalCodexEntries){try{ipmCount=originalCodexEntries().filter(isMasterEntry).length}catch{}}
-    panel.innerHTML=`<div class="micro-master-head"><div><h2>👑 Painel do Mestre</h2><small>Controle de acesso • demonstração local</small></div><button id="microCloseMaster">Fechar</button></div><div class="micro-security-note"><b>⚠️ Segurança:</b> no GitHub Pages este login é apenas uma demonstração de interface. Conteúdo IPM realmente secreto não deve ficar dentro de arquivos públicos do site. Na etapa definitiva, IPM e contas irão para backend.</div><p><b>Entradas IPM detectadas no Codex:</b> ${ipmCount}</p><h3>Jogadores e acessos</h3><div>${users.map((u,i)=>`<div class="micro-user-row"><b>${escAuth(u.username)}${u.builtIn?" • teste":""}</b><span>${u.role==="master"?"Mestre":"Jogador"}</span><span class="micro-user-status ${u.approved?"ok":"wait"}">${u.approved?"✓ Aprovado":"⏳ Pendente"}</span><span>${u.role==="master"?"Conta Mestre":`<button data-auth-action="${u.approved?"revoke":"approve"}" data-auth-index="${i}" class="${u.approved?"":"primary"}">${u.approved?"Revogar":"Aprovar"}</button>`}</span></div>`).join("")}</div>`;
+    if(currentUser?.role!=="master")return;const panel=document.getElementById("microMasterPanel"),users=loadUsers();let ipmCount=0,lockedCount=0;if(originalCodexEntries){try{const all=originalCodexEntries();ipmCount=all.filter(isMasterEntry).length;lockedCount=all.filter(e=>e.discovered===false).length}catch{}}
+    panel.innerHTML=`<div class="micro-master-head"><div><h2>👑 Painel do Mestre</h2><small>Controle de acesso • demonstração local</small></div><button id="microCloseMaster">Fechar</button></div><div class="micro-master-note"><b>🔓 Visão do Mestre:</b> ${lockedCount} Descoberta(s) ainda bloqueada(s) para Jogadores podem ser abertas normalmente pelo Mestre no Codex. Elas aparecem marcadas como <b>“Ainda não descoberto pelos Jogadores”</b>.</div><div class="micro-security-note"><b>⚠️ Segurança:</b> no GitHub Pages este login é apenas uma demonstração de interface. Conteúdo IPM realmente secreto não deve ficar dentro de arquivos públicos do site. Na etapa definitiva, IPM e contas irão para backend.</div><p><b>Entradas IPM detectadas no Codex:</b> ${ipmCount}</p><h3>Jogadores e acessos</h3><div>${users.map((u,i)=>`<div class="micro-user-row"><b>${escAuth(u.username)}${u.builtIn?" • teste":""}</b><span>${u.role==="master"?"Mestre":"Jogador"}</span><span class="micro-user-status ${u.approved?"ok":"wait"}">${u.approved?"✓ Aprovado":"⏳ Pendente"}</span><span>${u.role==="master"?"Conta Mestre":`<button data-auth-action="${u.approved?"revoke":"approve"}" data-auth-index="${i}" class="${u.approved?"":"primary"}">${u.approved?"Revogar":"Aprovar"}</button>`}</span></div>`).join("")}</div>`;
     panel.hidden=false;document.getElementById("microCloseMaster").onclick=()=>panel.hidden=true;panel.querySelectorAll("[data-auth-action]").forEach(btn=>btn.onclick=()=>{const list=loadUsers(),i=+btn.dataset.authIndex;if(!list[i]||list[i].role==="master")return;list[i].approved=btn.dataset.authAction==="approve";saveUsers(list);openMasterPanel()});
   }
   function restoreSession(){const username=session();if(!username)return;const user=loadUsers().find(u=>u.username===username&&u.approved);if(user)currentUser=user;else setSession("")}
