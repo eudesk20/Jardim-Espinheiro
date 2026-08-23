@@ -25,6 +25,17 @@ jobs:
       - name: Baixar projeto
         uses: actions/checkout@v4
 
+      - name: Preparar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Auditar materiais das magias
+        run: node tools/build-material-audit.mjs
+
+      - name: Aplicar auditoria à ficha publicada
+        run: node tools/apply-material-audit-runtime.mjs
+
       - name: Preparar GitHub Pages
         uses: actions/configure-pages@v5
         with:
