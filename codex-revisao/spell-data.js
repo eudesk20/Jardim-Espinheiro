@@ -7,8 +7,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -20,7 +20,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "1 criatura, ou 2 criaturas separadas por até 1,5 m, dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Borrifada Ácida concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 1d6 Ácido de dano.",
+    "effect": "Borrifada Ácida libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 1d6 Ácido de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d6 Ácido",
     "healing": "",
@@ -38,10 +38,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -53,7 +53,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Proteção Contra Lâminas organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Proteção Contra Lâminas cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -72,8 +72,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -88,7 +88,7 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Lâmina em expansão concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. na falha ou acerto, aplique 1d8 Trovão de dano.",
+    "effect": "Lâmina em expansão libera energia contra o alvo ou a área escolhida. O alvo sofre 1d8 Trovão de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d8 Trovão",
     "healing": "",
@@ -107,8 +107,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Necromancia",
     "source": "Necromancia",
@@ -120,11 +120,11 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 36 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Toque Necrótico concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 1d8 Necrótico de dano; a recuperação usa 1d8 pontos de vida.",
+    "effect": "Toque Necrótico libera energia contra o alvo ou a área escolhida. Faça um ataque mágico contra cada alvo indicado. Se acertar, o alvo sofre 1d8 Necrótico de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
-    "damage": "",
-    "healing": "1d8",
-    "damageType": "",
+    "damage": "1d8 Necrótico",
+    "healing": "",
+    "damageType": "Necrótico",
     "attack": true,
     "save": "",
     "higherLevels": "No 5º nível, use 2d8; no 11º, 3d8; no 17º, 4d8.",
@@ -139,8 +139,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -152,7 +152,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "cubo de 1.5 m",
     "materialIds": [],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Controle de Brasas transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Controle de Brasas transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -170,10 +170,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "druida",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "druida",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -185,7 +185,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "cubo de 1.5 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Criar fogueira manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 1d8 Fogo de dano.",
+    "effect": "Criar fogueira cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 1d8 Fogo de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d8 Fogo",
     "healing": "",
@@ -204,8 +204,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -220,7 +220,7 @@ globalThis.CODEX_SPELL_DATA = [
       "carvao_po"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Semente de Brasa e Carvão em Pó. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Luzes Dançantes canaliza uma manifestação de evocação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Luzes Dançantes produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -250,7 +250,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 9 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Druidismo. canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Druidismo. produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -280,7 +280,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 36 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Explosão Sobrenatural concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 1d10 Força de dano.",
+    "effect": "Explosão Sobrenatural libera energia contra o alvo ou a área escolhida. Faça um ataque mágico contra cada alvo indicado. Se acertar, o alvo sofre 1d10 Força de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d10 Força",
     "healing": "",
@@ -310,7 +310,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Codificar pensamentos canaliza uma manifestação de encantamento adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Codificar pensamentos produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -328,8 +328,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -341,7 +341,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 36 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Raio de Brasa concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 1d10 Fogo de dano.",
+    "effect": "Raio de Brasa libera energia contra o alvo ou a área escolhida. Faça um ataque mágico contra cada alvo indicado. Se acertar, o alvo sofre 1d10 Fogo de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d10 Fogo",
     "healing": "",
@@ -359,10 +359,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -377,7 +377,7 @@ globalThis.CODEX_SPELL_DATA = [
       "folha_serena"
     ],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. M: Feromônio Ressonante e Folha Serena. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Amigos canaliza uma manifestação de encantamento adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Amigos produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -395,10 +395,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "druida",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "druida",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -410,7 +410,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Congelamento concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 1d6 Frio de dano.",
+    "effect": "Congelamento libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 1d6 Frio de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d6 Frio",
     "healing": "",
@@ -429,8 +429,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -445,7 +445,7 @@ globalThis.CODEX_SPELL_DATA = [
       "carvao_po"
     ],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. M: Semente de Brasa e Carvão em Pó. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Lâmina de Brasa Verde transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Lâmina de Brasa Verde transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -476,7 +476,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Criatura ou objeto tocado",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Orientação canaliza uma manifestação de adivinhação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Orientação produz um efeito de adivinhação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -495,8 +495,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -508,7 +508,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 9 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "rajada canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "rajada produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -538,7 +538,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 1.5 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Mão de Radiância (UA) concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 1d6 Radiante de dano.",
+    "effect": "Mão de Radiância (UA) libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 1d6 Radiante de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d6 Radiante",
     "healing": "",
@@ -556,10 +556,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "druida",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "druida",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -574,7 +574,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Infestação canaliza uma manifestação de conjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 1d6 Veneno de dano.",
+    "effect": "Infestação produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 1d6 Veneno de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d6 Veneno",
     "healing": "",
@@ -592,10 +592,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "clerigo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "clerigo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -610,7 +610,7 @@ globalThis.CODEX_SPELL_DATA = [
       "carvao_po"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. M: Semente de Brasa e Carvão em Pó. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Luminosidade canaliza uma manifestação de evocação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de DES.",
+    "effect": "Luminosidade produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -629,8 +629,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -642,7 +642,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 4.5 m a partir do conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Atração relâmpago concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de FOR; na falha ou acerto, aplique 1d8 Relâmpago de dano.",
+    "effect": "Atração relâmpago libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de FOR. Se falhar, sofre 1d8 Relâmpago de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d8 Relâmpago",
     "healing": "",
@@ -660,10 +660,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -675,7 +675,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 9 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Mãos Mágicas canaliza uma manifestação de conjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Mãos Mágicas produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -693,8 +693,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "druida",
-      "bruxo"
+      "bruxo",
+      "druida"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -706,7 +706,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Criatura ou objeto tocado",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Pedra Mágica transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. Faça um ataque mágico contra cada alvo indicado.",
+    "effect": "Pedra Mágica transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. Faça um ataque mágico contra cada alvo indicado. Se acertar, aplique o efeito descrito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -724,11 +724,11 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
+      "bardo",
       "druida",
       "clerigo",
-      "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -743,7 +743,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Emendando canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Emendando produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -762,8 +762,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -778,7 +778,7 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Casca Oca Ressoante e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Mensagem amplia sentidos, conhecimento ou comunicação através dos ecos preservados no Jardim. O conjurador recebe informações ligadas ao alvo e ao alcance, mas não ultrapassa proteções específicas contra adivinhação. Respostas simbólicas, memórias incompletas e interferências podem exigir interpretação. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Mensagem amplia sentidos, conhecimento ou comunicação. As informações alcançam apenas os alvos e a distância indicados pela magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -797,8 +797,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -810,7 +810,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Mind Sliver impõe uma frequência sobre pensamento, emoção ou vontade. Criaturas afetadas enfrentam a Salvaguarda apropriada; em sucesso, evitam ou reduzem o efeito conforme a magia. Ordens autodestrutivas, imunidades mentais e ausência de percepção do estímulo podem impedir a manifestação. o alvo realiza Salvaguarda de INT; na falha ou acerto, aplique 1d6 Psíquico de dano.",
+    "effect": "Mind Sliver afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de INT. Se falhar, sofre 1d6 Psíquico de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d6 Psíquico",
     "healing": "",
@@ -828,10 +828,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -846,7 +846,7 @@ globalThis.CODEX_SPELL_DATA = [
       "lente_vidro"
     ],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. M: Pó de Espelho de Orvalho e Lente de Vidro. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Ilusão Menor reorganiza luz, som, cheiro e expectativa para criar uma percepção falsa ou ocultar presenças. Contato direto, investigação cuidadosa ou sentidos especiais podem revelar inconsistências. Descobrir a ilusão não a dissipa automaticamente, mas permite reconhecê-la pelo restante da duração. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Ilusão Menor cria ou altera uma percepção. Toque, investigação ou sentidos especiais podem revelar que o efeito não é real. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -865,8 +865,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -878,7 +878,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "cubo de 1.5 m",
     "materialIds": [],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Terra de molde transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Terra de molde transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -897,8 +897,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -910,7 +910,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Ligar/Desligar (UA) canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Ligar/Desligar (UA) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -928,10 +928,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "druida",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "druida",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -943,7 +943,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 3 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Spray de Veneno concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 1d12 Veneno de dano.",
+    "effect": "Spray de Veneno libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 1d12 Veneno de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d12 Veneno",
     "healing": "",
@@ -961,10 +961,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -976,7 +976,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 3 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Prestidigitação canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Prestidigitação produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -1006,7 +1006,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Selvageria Primordial canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 1d10 Ácido de dano.",
+    "effect": "Selvageria Primordial produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Faça um ataque mágico contra cada alvo indicado. Se acertar, o alvo sofre 1d10 Ácido de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d10 Ácido",
     "healing": "",
@@ -1036,7 +1036,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 3 m a partir do conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Criar Brasas transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 1d8 Fogo de dano.",
+    "effect": "Criar Brasas transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. Faça um ataque mágico contra cada alvo indicado. Se acertar, o alvo sofre 1d8 Fogo de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d8 Fogo",
     "healing": "",
@@ -1054,8 +1054,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -1067,7 +1067,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Raio de Gelo concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 1d8 Frio de dano.",
+    "effect": "Raio de Gelo libera energia contra o alvo ou a área escolhida. Faça um ataque mágico contra cada alvo indicado. Se acertar, o alvo sofre 1d8 Frio de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d8 Frio",
     "healing": "",
@@ -1101,7 +1101,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Resistência canaliza uma manifestação de abjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Resistência produz um efeito de abjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -1131,7 +1131,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Brasa Sagrada transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 1d8 Radiante de dano.",
+    "effect": "Brasa Sagrada transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 1d8 Radiante de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d8 Radiante",
     "healing": "",
@@ -1161,7 +1161,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 9 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Picada de Sapping canaliza uma manifestação de necromancia adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 1d4 Necrótico de dano.",
+    "effect": "Picada de Sapping produz um efeito de necromancia dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 1d4 Necrótico de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d4 Necrótico",
     "healing": "",
@@ -1180,8 +1180,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -1193,7 +1193,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "cubo de 1.5 m",
     "materialIds": [],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Moldar Orvalho transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Moldar Orvalho transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -1226,7 +1226,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Shillelagh canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Shillelagh produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -1244,8 +1244,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -1257,7 +1257,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Criatura ou objeto tocado",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Eletricidade canaliza uma manifestação de evocação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 1d8 Relâmpago de dano.",
+    "effect": "Eletricidade produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Faça um ataque mágico contra cada alvo indicado. Se acertar, o alvo sofre 1d8 Relâmpago de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d8 Relâmpago",
     "healing": "",
@@ -1287,7 +1287,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Criatura ou objeto tocado",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Poupe os Moribundos reúne seiva vital, calor e memória corporal para restaurar ou preservar uma ou mais criaturas. A energia procura primeiro ferimentos recentes e condições compatíveis; efeitos permanentes ou morte exigem os materiais especiais indicados. Alvos fora do alcance ou que não possam receber cura não são afetados. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Poupe os Moribundos reúne energia vital para curar ou preservar as criaturas escolhidas. Ferimentos, condições e efeitos especiais são tratados conforme os valores indicados abaixo. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -1306,8 +1306,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -1319,7 +1319,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 1.5 m a partir do conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Explosão de Espada canaliza uma manifestação de conjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 1d6 Força de dano.",
+    "effect": "Explosão de Espada produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 1d6 Força de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d6 Força",
     "healing": "",
@@ -1349,7 +1349,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 9 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Taumaturgia canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Taumaturgia produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -1382,7 +1382,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sementes Nutritivas e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Chicote Espinhoso concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 1d6 Perfurante de dano.",
+    "effect": "Chicote Espinhoso libera energia contra o alvo ou a área escolhida. Faça um ataque mágico contra cada alvo indicado. Se acertar, o alvo sofre 1d6 Perfurante de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d6 Perfurante",
     "healing": "",
@@ -1400,11 +1400,11 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "druida",
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "druida",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -1416,7 +1416,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 1.5 m a partir do conjurador",
     "materialIds": [],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Estrondo concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 1d6 Trovão de dano.",
+    "effect": "Estrondo libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 1d6 Trovão de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d6 Trovão",
     "healing": "",
@@ -1448,7 +1448,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Pedágio dos Mortos canaliza uma manifestação de necromancia adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de SAB; na falha ou acerto, aplique 1d8 Necrótico + 1d12 Necrótico de dano.",
+    "effect": "Pedágio dos Mortos produz um efeito de necromancia dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre 1d8 Necrótico + 1d12 Necrótico de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d8 Necrótico + 1d12 Necrótico",
     "healing": "",
@@ -1466,10 +1466,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Adivinhação",
     "source": "Adivinhação",
@@ -1481,7 +1481,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 9 m",
     "materialIds": [],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Golpe Certeiro concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Golpe Certeiro libera energia contra o alvo ou a área escolhida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -1511,7 +1511,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Zombaria cruel impõe uma frequência sobre pensamento, emoção ou vontade. Criaturas afetadas enfrentam a Salvaguarda apropriada; em sucesso, evitam ou reduzem o efeito conforme a magia. Ordens autodestrutivas, imunidades mentais e ausência de percepção do estímulo podem impedir a manifestação. o alvo realiza Salvaguarda de SAB; na falha ou acerto, aplique 1d4 Psíquico de dano.",
+    "effect": "Zombaria cruel afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre 1d4 Psíquico de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d4 Psíquico",
     "healing": "",
@@ -1541,7 +1541,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Criatura ou objeto tocado",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Virtude (UA) canaliza uma manifestação de abjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Virtude (UA) produz um efeito de abjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -1574,7 +1574,7 @@ globalThis.CODEX_SPELL_DATA = [
       "carvao_po"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. M: Semente de Brasa e Carvão em Pó. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Palavra de Radiância concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 1d6 Radiante de dano.",
+    "effect": "Palavra de Radiância libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 1d6 Radiante de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d6 Radiante",
     "healing": "",
@@ -1594,8 +1594,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "druida",
       "patrulheiro",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -1607,7 +1607,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Absorver elementos canaliza uma manifestação de abjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Absorver elementos produz um efeito de abjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -1625,8 +1625,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -1641,7 +1641,7 @@ globalThis.CODEX_SPELL_DATA = [
       "esporos_mutaveis"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporo Tóxico Concentrado e Esporos Mutáveis. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Corrente Ácida (UA) concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 3d4 Ácido de dano.",
+    "effect": "Corrente Ácida (UA) libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 3d4 Ácido de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "3d4 Ácido",
     "healing": "",
@@ -1675,7 +1675,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Alarme canaliza uma manifestação de abjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Alarme produz um efeito de abjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -1693,9 +1693,9 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
+      "bardo",
       "druida",
-      "patrulheiro",
-      "bardo"
+      "patrulheiro"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -1710,7 +1710,7 @@ globalThis.CODEX_SPELL_DATA = [
       "folha_serena"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Feromônio Ressonante e Folha Serena. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Amizade Animal canaliza uma manifestação de encantamento adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de SAB.",
+    "effect": "Amizade Animal produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -1740,7 +1740,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Arma Arcana (UA) canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Arma Arcana (UA) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -1773,7 +1773,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Armadura de Agathys organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Armadura de Agathys cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -1803,7 +1803,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 3 m a partir do conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Braços de Hadar canaliza uma manifestação de conjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de FOR; na falha ou acerto, aplique 2d6 Necrótico de dano.",
+    "effect": "Braços de Hadar produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de FOR. Se falhar, sofre 2d6 Necrótico de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d6 Necrótico",
     "healing": "",
@@ -1821,8 +1821,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "clerigo",
-      "bardo"
+      "bardo",
+      "clerigo"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -1837,7 +1837,7 @@ globalThis.CODEX_SPELL_DATA = [
       "folha_serena"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Feromônio Ressonante e Folha Serena. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Eliminar canaliza uma manifestação de encantamento adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de CAR.",
+    "effect": "Eliminar produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CAR. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -1871,7 +1871,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sementes Nutritivas e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Vínculo Fera canaliza uma manifestação de adivinhação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Vínculo Fera produz um efeito de adivinhação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -1905,7 +1905,7 @@ globalThis.CODEX_SPELL_DATA = [
       "folha_serena"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Feromônio Ressonante e Folha Serena. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Bênção canaliza uma manifestação de encantamento adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Bênção produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -1923,8 +1923,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -1936,7 +1936,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "cone de 4.5 m a partir do conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Mãos Flamejantes canaliza uma manifestação de evocação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 3d6 Fogo de dano.",
+    "effect": "Mãos Flamejantes produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 3d6 Fogo de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "3d6 Fogo",
     "healing": "",
@@ -1954,8 +1954,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -1967,7 +1967,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Catapulta canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 3d8 Concussão de dano.",
+    "effect": "Catapulta produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 3d8 Concussão de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "3d8 Concussão",
     "healing": "",
@@ -1998,7 +1998,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Causar Medo impõe uma frequência sobre pensamento, emoção ou vontade. Criaturas afetadas enfrentam a Salvaguarda apropriada; em sucesso, evitam ou reduzem o efeito conforme a magia. Ordens autodestrutivas, imunidades mentais e ausência de percepção do estímulo podem impedir a manifestação. o alvo realiza Salvaguarda de SAB.",
+    "effect": "Causar Medo afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -2032,7 +2032,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Cerimônia canaliza uma manifestação de abjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Cerimônia produz um efeito de abjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -2062,7 +2062,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 36 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Parafuso do Caos concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. Faça um ataque mágico contra cada alvo indicado.",
+    "effect": "Parafuso do Caos libera energia contra o alvo ou a área escolhida. Faça um ataque mágico contra cada alvo indicado. Se acertar, aplique o efeito descrito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -2080,11 +2080,11 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "druida",
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "druida",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -2096,7 +2096,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 9 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Enfeitiçar Pessoa impõe uma frequência sobre pensamento, emoção ou vontade. Criaturas afetadas enfrentam a Salvaguarda apropriada; em sucesso, evitam ou reduzem o efeito conforme a magia. Ordens autodestrutivas, imunidades mentais e ausência de percepção do estímulo podem impedir a manifestação. o alvo realiza Salvaguarda de SAB.",
+    "effect": "Enfeitiçar Pessoa afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -2114,8 +2114,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -2130,7 +2130,7 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Orbe cromática canaliza uma manifestação de evocação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Faça um ataque mágico contra cada alvo indicado.",
+    "effect": "Orbe cromática produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Faça um ataque mágico contra cada alvo indicado. Se acertar, aplique o efeito descrito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -2149,8 +2149,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -2165,7 +2165,7 @@ globalThis.CODEX_SPELL_DATA = [
       "lente_vidro"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Espelho de Orvalho e Lente de Vidro. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Leque Cromático concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Leque Cromático libera energia contra o alvo ou a área escolhida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -2183,9 +2183,9 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
+      "bardo",
       "paladino",
-      "clerigo",
-      "bardo"
+      "clerigo"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -2197,7 +2197,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Command impõe uma frequência sobre pensamento, emoção ou vontade. Criaturas afetadas enfrentam a Salvaguarda apropriada; em sucesso, evitam ou reduzem o efeito conforme a magia. Ordens autodestrutivas, imunidades mentais e ausência de percepção do estímulo podem impedir a manifestação. o alvo realiza Salvaguarda de SAB.",
+    "effect": "Command afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -2227,7 +2227,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 9 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Duelo Compelido canaliza uma manifestação de encantamento adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de SAB.",
+    "effect": "Duelo Compelido produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -2245,10 +2245,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Adivinhação",
     "source": "Adivinhação",
@@ -2263,7 +2263,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Lente de Vidro e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Compreender Idiomas canaliza uma manifestação de adivinhação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Compreender Idiomas produz um efeito de adivinhação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -2297,7 +2297,7 @@ globalThis.CODEX_SPELL_DATA = [
       "perola_orvalho"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Orvalho Purificado e Pérola de Orvalho Puríssimo. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Criar ou Destruir Orvalho manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Criar ou Destruir Orvalho cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -2315,11 +2315,11 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
+      "bardo",
       "paladino",
       "druida",
-      "patrulheiro",
       "clerigo",
-      "bardo"
+      "patrulheiro"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -2331,7 +2331,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Criatura ou objeto tocado",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Curar Ferimentos reúne seiva vital, calor e memória corporal para restaurar ou preservar uma ou mais criaturas. A energia procura primeiro ferimentos recentes e condições compatíveis; efeitos permanentes ou morte exigem os materiais especiais indicados. Alvos fora do alcance ou que não possam receber cura não são afetados. a recuperação usa 1d8 + Mod. Conjuração pontos de vida.",
+    "effect": "Curar Ferimentos reúne energia vital para curar ou preservar as criaturas escolhidas. Ferimentos, condições e efeitos especiais são tratados conforme os valores indicados abaixo. A criatura recupera 1d8 + Mod. Conjuração pontos de vida.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "1d8 + Mod. Conjuração",
@@ -2362,7 +2362,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Detectar o Bem e o Mal amplia sentidos, conhecimento ou comunicação através dos ecos preservados no Jardim. O conjurador recebe informações ligadas ao alvo e ao alcance, mas não ultrapassa proteções específicas contra adivinhação. Respostas simbólicas, memórias incompletas e interferências podem exigir interpretação. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Detectar o Bem e o Mal amplia sentidos, conhecimento ou comunicação. As informações alcançam apenas os alvos e a distância indicados pela magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -2380,13 +2380,13 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
+      "bardo",
       "paladino",
       "druida",
-      "patrulheiro",
       "clerigo",
-      "bardo",
-      "mago",
-      "feiticeiro"
+      "patrulheiro",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Adivinhação",
     "source": "Adivinhação",
@@ -2398,7 +2398,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Detecção de Magia amplia sentidos, conhecimento ou comunicação através dos ecos preservados no Jardim. O conjurador recebe informações ligadas ao alvo e ao alcance, mas não ultrapassa proteções específicas contra adivinhação. Respostas simbólicas, memórias incompletas e interferências podem exigir interpretação. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Detecção de Magia amplia sentidos, conhecimento ou comunicação. As informações alcançam apenas os alvos e a distância indicados pela magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -2418,8 +2418,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "paladino",
       "druida",
-      "patrulheiro",
-      "clerigo"
+      "clerigo",
+      "patrulheiro"
     ],
     "school": "Adivinhação",
     "source": "Adivinhação",
@@ -2434,7 +2434,7 @@ globalThis.CODEX_SPELL_DATA = [
       "esporos_mutaveis"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporo Tóxico Concentrado e Esporos Mutáveis. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Detectar Veneno e Doença amplia sentidos, conhecimento ou comunicação através dos ecos preservados no Jardim. O conjurador recebe informações ligadas ao alvo e ao alcance, mas não ultrapassa proteções específicas contra adivinhação. Respostas simbólicas, memórias incompletas e interferências podem exigir interpretação. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Detectar Veneno e Doença amplia sentidos, conhecimento ou comunicação. As informações alcançam apenas os alvos e a distância indicados pela magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -2453,8 +2453,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -2466,7 +2466,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Disfarce. reorganiza luz, som, cheiro e expectativa para criar uma percepção falsa ou ocultar presenças. Contato direto, investigação cuidadosa ou sentidos especiais podem revelar inconsistências. Descobrir a ilusão não a dissipa automaticamente, mas permite reconhecê-la pelo restante da duração. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Disfarce. cria ou altera uma percepção. Toque, investigação ou sentidos especiais podem revelar que o efeito não é real. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -2496,7 +2496,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Sussurros Dissonantes canaliza uma manifestação de encantamento adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de SAB; na falha ou acerto, aplique 3d6 Psíquico de dano.",
+    "effect": "Sussurros Dissonantes produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre 3d6 Psíquico de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "3d6 Psíquico",
     "healing": "",
@@ -2514,10 +2514,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -2529,7 +2529,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Criatura ou objeto tocado",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Distorcer valor canaliza uma manifestação de ilusão adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Distorcer valor produz um efeito de ilusão dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -2559,7 +2559,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Auxílio Divino canaliza uma manifestação de evocação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. na falha ou acerto, aplique 1d4 Radiante de dano.",
+    "effect": "Auxílio Divino produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo sofre 1d4 Radiante de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d4 Radiante",
     "healing": "",
@@ -2577,10 +2577,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "druida",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "druida",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -2592,7 +2592,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 3 m a partir do conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Tremor de Terra transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 1d6 Concussão de dano.",
+    "effect": "Tremor de Terra transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 1d6 Concussão de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d6 Concussão",
     "healing": "",
@@ -2622,7 +2622,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Golpe Aprisionador concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de FOR; na falha ou acerto, aplique 1d6 Perfurante de dano.",
+    "effect": "Golpe Aprisionador libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de FOR. Se falhar, sofre 1d6 Perfurante de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d6 Perfurante",
     "healing": "",
@@ -2653,7 +2653,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "quadrado de 6 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Enredar canaliza uma manifestação de conjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de FOR.",
+    "effect": "Enredar produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de FOR. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -2672,8 +2672,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -2685,7 +2685,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Recuo Acelerado canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Recuo Acelerado produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -2703,8 +2703,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "druida",
-      "bardo"
+      "bardo",
+      "druida"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -2716,7 +2716,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "cubo de 6 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Brasa das Fadas concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de DES.",
+    "effect": "Brasa das Fadas libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -2734,8 +2734,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Necromancia",
     "source": "Necromancia",
@@ -2750,7 +2750,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Carapaça Ancestral e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Vitalidade Ilusória canaliza uma manifestação de necromancia adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Vitalidade Ilusória produz um efeito de necromancia dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -2769,8 +2769,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -2785,7 +2785,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Queda Suave canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Queda Suave produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -2818,7 +2818,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Encontrar Familiar manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Encontrar Familiar cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -2838,8 +2838,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "druida",
       "patrulheiro",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -2851,7 +2851,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 6 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Névoa Obscurecente concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Névoa Obscurecente libera energia contra o alvo ou a área escolhida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -2881,7 +2881,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "cone de 4.5 m a partir do conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Dedos de Gelo concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 2d8 Frio de dano.",
+    "effect": "Dedos de Gelo libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 2d8 Frio de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d8 Frio",
     "healing": "",
@@ -2911,7 +2911,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Criatura ou objeto tocado",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Presente de Alacridade canaliza uma manifestação de adivinhação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Presente de Alacridade produz um efeito de adivinhação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -2945,7 +2945,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Goodberry reúne seiva vital, calor e memória corporal para restaurar ou preservar uma ou mais criaturas. A energia procura primeiro ferimentos recentes e condições compatíveis; efeitos permanentes ou morte exigem os materiais especiais indicados. Alvos fora do alcance ou que não possam receber cura não são afetados. a recuperação usa 1 pontos de vida.",
+    "effect": "Goodberry reúne energia vital para curar ou preservar as criaturas escolhidas. Ferimentos, condições e efeitos especiais são tratados conforme os valores indicados abaixo. A criatura recupera 1 pontos de vida.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "1",
@@ -2963,8 +2963,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -2979,7 +2979,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Graxa canaliza uma manifestação de conjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de DES.",
+    "effect": "Graxa produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -3009,7 +3009,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 36 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Raio Traçante concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 4d6 Radiante de dano.",
+    "effect": "Raio Traçante libera energia contra o alvo ou a área escolhida. Faça um ataque mágico contra cada alvo indicado. Se acertar, o alvo sofre 4d6 Radiante de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "4d6 Radiante",
     "healing": "",
@@ -3027,9 +3027,9 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
+      "bardo",
       "druida",
       "clerigo",
-      "bardo",
       "mago"
     ],
     "school": "Adivinhação",
@@ -3042,7 +3042,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 1.5 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Mão Orientadora (UA) canaliza uma manifestação de adivinhação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Mão Orientadora (UA) produz um efeito de adivinhação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -3072,7 +3072,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Granizo de Espinhos canaliza uma manifestação de conjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 1d10 Perfurante de dano.",
+    "effect": "Granizo de Espinhos produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 1d10 Perfurante de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d10 Perfurante",
     "healing": "",
@@ -3106,7 +3106,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Elixir de Cura (UA) reúne seiva vital, calor e memória corporal para restaurar ou preservar uma ou mais criaturas. A energia procura primeiro ferimentos recentes e condições compatíveis; efeitos permanentes ou morte exigem os materiais especiais indicados. Alvos fora do alcance ou que não possam receber cura não são afetados. a recuperação usa 2d4 + 2 pontos de vida.",
+    "effect": "Elixir de Cura (UA) reúne energia vital para curar ou preservar as criaturas escolhidas. Ferimentos, condições e efeitos especiais são tratados conforme os valores indicados abaixo. A criatura recupera 2d4 + 2 pontos de vida.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "2d4 + 2",
@@ -3124,9 +3124,9 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
+      "bardo",
       "druida",
-      "clerigo",
-      "bardo"
+      "clerigo"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -3138,7 +3138,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Palavra Curativa reúne seiva vital, calor e memória corporal para restaurar ou preservar uma ou mais criaturas. A energia procura primeiro ferimentos recentes e condições compatíveis; efeitos permanentes ou morte exigem os materiais especiais indicados. Alvos fora do alcance ou que não possam receber cura não são afetados. a recuperação usa 1d4 + Mod. Conjuração pontos de vida.",
+    "effect": "Palavra Curativa reúne energia vital para curar ou preservar as criaturas escolhidas. Ferimentos, condições e efeitos especiais são tratados conforme os valores indicados abaixo. A criatura recupera 1d4 + Mod. Conjuração pontos de vida.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "1d4 + Mod. Conjuração",
@@ -3168,7 +3168,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Repreensão Infernal canaliza uma manifestação de evocação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 2d10 Fogo de dano.",
+    "effect": "Repreensão Infernal produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 2d10 Fogo de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d10 Fogo",
     "healing": "",
@@ -3186,8 +3186,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "paladino",
-      "bardo"
+      "bardo",
+      "paladino"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -3199,7 +3199,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Criatura ou objeto tocado",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Herói canaliza uma manifestação de encantamento adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Herói produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -3232,7 +3232,7 @@ globalThis.CODEX_SPELL_DATA = [
       "folha_serena"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Feromônio Ressonante e Folha Serena. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Feitiço canaliza uma manifestação de encantamento adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. na falha ou acerto, aplique 1d6 Necrótico de dano.",
+    "effect": "Feitiço produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo sofre 1d6 Necrótico de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d6 Necrótico",
     "healing": "",
@@ -3262,7 +3262,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 27 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Marca do Caçador canaliza uma manifestação de adivinhação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Marca do Caçador produz um efeito de adivinhação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -3281,8 +3281,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -3297,11 +3297,11 @@ globalThis.CODEX_SPELL_DATA = [
       "perola_orvalho"
     ],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. M: Orvalho Purificado e Pérola de Orvalho Puríssimo. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "“Faca de Gelo!” canaliza uma manifestação de conjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Faça um ataque mágico contra cada alvo indicado; o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 1d10 Perfurante + 2d6 Frio de dano.",
+    "effect": "“Faca de Gelo!” produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Faça um ataque mágico contra cada alvo indicado. Se acertar, o alvo sofre 1d10 Perfurante + 2d6 Frio de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d10 Perfurante + 2d6 Frio",
     "healing": "",
-    "damageType": "Frio + Perfurante",
+    "damageType": "Perfurante + Frio",
     "attack": true,
     "save": "DES",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
@@ -3316,8 +3316,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -3329,7 +3329,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Insinuação de Id (UA) canaliza uma manifestação de encantamento adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de SAB; na falha ou acerto, aplique 1d12 Psíquico de dano.",
+    "effect": "Insinuação de Id (UA) produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre 1d12 Psíquico de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d12 Psíquico",
     "healing": "",
@@ -3363,7 +3363,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Lente de Vidro e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Identificar amplia sentidos, conhecimento ou comunicação através dos ecos preservados no Jardim. O conjurador recebe informações ligadas ao alvo e ao alcance, mas não ultrapassa proteções específicas contra adivinhação. Respostas simbólicas, memórias incompletas e interferências podem exigir interpretação. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Identificar amplia sentidos, conhecimento ou comunicação. As informações alcançam apenas os alvos e a distância indicados pela magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -3381,8 +3381,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
+      "bruxo",
       "mago"
     ],
     "school": "Ilusão",
@@ -3398,7 +3398,7 @@ globalThis.CODEX_SPELL_DATA = [
       "lente_vidro"
     ],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. M: Pó de Espelho de Orvalho e Lente de Vidro. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Escrita Ilusória canaliza uma manifestação de ilusão adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Escrita Ilusória produz um efeito de ilusão dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -3417,8 +3417,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Adivinhação",
     "source": "Adivinhação",
@@ -3433,7 +3433,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Lente de Vidro e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Relé Infalível (UA) canaliza uma manifestação de adivinhação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de CAR.",
+    "effect": "Relé Infalível (UA) produz um efeito de adivinhação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CAR. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -3463,7 +3463,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Criatura ou objeto tocado",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Infligir Ferimentos canaliza uma manifestação de necromancia adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 3d10 Necrótico de dano.",
+    "effect": "Infligir Ferimentos produz um efeito de necromancia dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Faça um ataque mágico contra cada alvo indicado. Se acertar, o alvo sofre 3d10 Necrótico de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "3d10 Necrótico",
     "healing": "",
@@ -3496,7 +3496,7 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Míssil Mágico de Jim canaliza uma manifestação de evocação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 2d4 Força + 5d4 Força de dano.",
+    "effect": "Míssil Mágico de Jim produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Faça um ataque mágico contra cada alvo indicado. Se acertar, o alvo sofre 2d4 Força + 5d4 Força de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d4 Força + 5d4 Força",
     "healing": "",
@@ -3516,8 +3516,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "druida",
       "patrulheiro",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -3532,7 +3532,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Pulando dobra distância, peso ou ritmo para alterar deslocamento e posição. O destino precisa respeitar as condições da magia e oferecer espaço livre; uma chegada impossível conduz ao ponto seguro mais próximo ou faz a manifestação falhar. Passagens sustentadas terminam quando a Concentração é perdida. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Pulando altera movimento, distância ou posição. O destino precisa estar dentro do alcance e ter espaço livre para receber a criatura. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -3550,9 +3550,9 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
+      "bardo",
       "druida",
       "patrulheiro",
-      "bardo",
       "mago"
     ],
     "school": "Transmutação",
@@ -3568,7 +3568,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Passos Longos dobra distância, peso ou ritmo para alterar deslocamento e posição. O destino precisa respeitar as condições da magia e oferecer espaço livre; uma chegada impossível conduz ao ponto seguro mais próximo ou faz a manifestação falhar. Passagens sustentadas terminam quando a Concentração é perdida. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Passos Longos altera movimento, distância ou posição. O destino precisa estar dentro do alcance e ter espaço livre para receber a criatura. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -3586,8 +3586,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -3602,7 +3602,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Armadura Arcana organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Armadura Arcana cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -3620,8 +3620,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -3633,7 +3633,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 36 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Míssil Mágico canaliza uma manifestação de evocação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. na falha ou acerto, aplique 1d4 + 1 Força de dano.",
+    "effect": "Míssil Mágico produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo sofre 1d4 + 1 Força de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d4 + 1 Força",
     "healing": "",
@@ -3663,7 +3663,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 3 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Ampliar gravidade canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 2d8 Força de dano.",
+    "effect": "Ampliar gravidade produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 2d8 Força de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d8 Força",
     "healing": "",
@@ -3682,8 +3682,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "paladino",
-      "druida",
       "bruxo",
+      "druida",
       "clerigo",
       "mago"
     ],
@@ -3700,7 +3700,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Proteção contra o Bem e o Mal organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Proteção contra o Bem e o Mal cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -3718,8 +3718,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
+      "bruxo",
       "mago"
     ],
     "school": "Encantamento",
@@ -3732,7 +3732,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 36 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Fantoche (UA) canaliza uma manifestação de encantamento adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de CON.",
+    "effect": "Fantoche (UA) produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -3764,7 +3764,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 1.5 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Purificar Alimentos e Bebidas canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Purificar Alimentos e Bebidas produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -3782,8 +3782,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Necromancia",
     "source": "Necromancia",
@@ -3795,7 +3795,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Raio de Doença concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. Faça um ataque mágico contra cada alvo indicado; o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 2d8 Veneno de dano.",
+    "effect": "Raio de Doença libera energia contra o alvo ou a área escolhida. Faça um ataque mágico contra cada alvo indicado. Se acertar, o alvo sofre 2d8 Veneno de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d8 Veneno",
     "healing": "",
@@ -3814,8 +3814,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -3827,7 +3827,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 36 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Acesso Remoto (UA) canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Acesso Remoto (UA) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -3860,7 +3860,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Santuário organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. o alvo realiza Salvaguarda de SAB.",
+    "effect": "Santuário cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -3891,7 +3891,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Searing Smite concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 1d6 Fogo de dano.",
+    "effect": "Searing Smite libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 1d6 Fogo de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d6 Fogo",
     "healing": "",
@@ -3909,8 +3909,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
+      "bruxo",
       "mago"
     ],
     "school": "Adivinhação",
@@ -3923,7 +3923,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Sentir Emoção (UA) canaliza uma manifestação de adivinhação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Sentir Emoção (UA) produz um efeito de adivinhação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -3941,8 +3941,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -3954,7 +3954,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Blindagem organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Blindagem cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -3988,7 +3988,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Escudo da Fé organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Escudo da Fé cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -4007,8 +4007,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -4023,7 +4023,7 @@ globalThis.CODEX_SPELL_DATA = [
       "lente_vidro"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Espelho de Orvalho e Lente de Vidro. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Imagem Silenciosa reorganiza luz, som, cheiro e expectativa para criar uma percepção falsa ou ocultar presenças. Contato direto, investigação cuidadosa ou sentidos especiais podem revelar inconsistências. Descobrir a ilusão não a dissipa automaticamente, mas permite reconhecê-la pelo restante da duração. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Imagem Silenciosa cria ou altera uma percepção. Toque, investigação ou sentidos especiais podem revelar que o efeito não é real. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -4042,8 +4042,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -4055,7 +4055,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Farpas Prateadas canaliza uma manifestação de encantamento adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Farpas Prateadas produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -4074,8 +4074,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -4090,7 +4090,7 @@ globalThis.CODEX_SPELL_DATA = [
       "folha_serena"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Feromônio Ressonante e Folha Serena. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Dormir impõe uma frequência sobre pensamento, emoção ou vontade. Criaturas afetadas enfrentam a Salvaguarda apropriada; em sucesso, evitam ou reduzem o efeito conforme a magia. Ordens autodestrutivas, imunidades mentais e ausência de percepção do estímulo podem impedir a manifestação. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Dormir afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -4125,7 +4125,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Snare (laço) canaliza uma manifestação de abjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de DES.",
+    "effect": "Snare (laço) produz um efeito de abjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -4143,9 +4143,9 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
+      "bardo",
       "druida",
-      "patrulheiro",
-      "bardo"
+      "patrulheiro"
     ],
     "school": "Adivinhação",
     "source": "Adivinhação",
@@ -4157,7 +4157,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Falar com Animais amplia sentidos, conhecimento ou comunicação através dos ecos preservados no Jardim. O conjurador recebe informações ligadas ao alvo e ao alcance, mas não ultrapassa proteções específicas contra adivinhação. Respostas simbólicas, memórias incompletas e interferências podem exigir interpretação. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Falar com Animais amplia sentidos, conhecimento ou comunicação. As informações alcançam apenas os alvos e a distância indicados pela magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -4175,10 +4175,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "patrulheiro",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -4190,7 +4190,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 3 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Despertar Súbito (UA) transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Despertar Súbito (UA) transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -4208,8 +4208,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -4224,7 +4224,7 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Mistura cáustica de Tasha canaliza uma manifestação de evocação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 2d4 Ácido de dano.",
+    "effect": "Mistura cáustica de Tasha produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 2d4 Ácido de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d4 Ácido",
     "healing": "",
@@ -4258,7 +4258,7 @@ globalThis.CODEX_SPELL_DATA = [
       "folha_serena"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Feromônio Ressonante e Folha Serena. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "O riso hediondo de Tasha impõe uma frequência sobre pensamento, emoção ou vontade. Criaturas afetadas enfrentam a Salvaguarda apropriada; em sucesso, evitam ou reduzem o efeito conforme a magia. Ordens autodestrutivas, imunidades mentais e ausência de percepção do estímulo podem impedir a manifestação. o alvo realiza Salvaguarda de SAB.",
+    "effect": "O riso hediondo de Tasha afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -4291,7 +4291,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Disco Flutuante de Tenser canaliza uma manifestação de conjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Disco Flutuante de Tenser produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -4321,7 +4321,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Thunderous Smite concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de FOR; na falha ou acerto, aplique 2d6 Trovão de dano.",
+    "effect": "Thunderous Smite libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de FOR. Se falhar, sofre 2d6 Trovão de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d6 Trovão",
     "healing": "",
@@ -4339,10 +4339,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "druida",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "druida",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -4354,7 +4354,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "cubo de 4.5 m a partir do conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Onda Trovejante concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 2d8 Trovão de dano.",
+    "effect": "Onda Trovejante libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 2d8 Trovão de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d8 Trovão",
     "healing": "",
@@ -4384,7 +4384,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 9 m a partir do conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Coro Não Terrestre (UA) transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. o alvo realiza Salvaguarda de CAR.",
+    "effect": "Coro Não Terrestre (UA) transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. O alvo faz uma Salvaguarda de CAR. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -4402,8 +4402,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
+      "bruxo",
       "mago"
     ],
     "school": "Conjuração",
@@ -4419,7 +4419,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Servo Invísivel manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Servo Invísivel cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -4450,7 +4450,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 36 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Astúcia Selvagem (UA) canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Astúcia Selvagem (UA) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -4469,8 +4469,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -4485,7 +4485,7 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Raio Teleguiado concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 1d12 Relâmpago de dano.",
+    "effect": "Raio Teleguiado libera energia contra o alvo ou a área escolhida. Faça um ataque mágico contra cada alvo indicado. Se acertar, o alvo sofre 1d12 Relâmpago de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d12 Relâmpago",
     "healing": "",
@@ -4515,7 +4515,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Wrathful Smite concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de SAB; na falha ou acerto, aplique 1d6 Psíquico de dano.",
+    "effect": "Wrathful Smite libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre 1d6 Psíquico de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d6 Psíquico",
     "healing": "",
@@ -4545,7 +4545,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Golpe do Zéfiro concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. na falha ou acerto, aplique 1d8 Força de dano.",
+    "effect": "Golpe do Zéfiro libera energia contra o alvo ou a área escolhida. O alvo sofre 1d8 Força de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d8 Força",
     "healing": "",
@@ -4563,8 +4563,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -4579,7 +4579,7 @@ globalThis.CODEX_SPELL_DATA = [
       "carvao_po"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Semente de Brasa e Carvão em Pó. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Aganazzar's Scorcher canaliza uma manifestação de evocação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 3d8 Fogo de dano.",
+    "effect": "Aganazzar's Scorcher produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 3d8 Fogo de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "3d8 Fogo",
     "healing": "",
@@ -4597,10 +4597,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
+      "bardo",
       "paladino",
-      "patrulheiro",
       "clerigo",
-      "bardo"
+      "patrulheiro"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -4615,7 +4615,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Auxílio reúne seiva vital, calor e memória corporal para restaurar ou preservar uma ou mais criaturas. A energia procura primeiro ferimentos recentes e condições compatíveis; efeitos permanentes ou morte exigem os materiais especiais indicados. Alvos fora do alcance ou que não possam receber cura não são afetados. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Auxílio reúne energia vital para curar ou preservar as criaturas escolhidas. Ferimentos, condições e efeitos especiais são tratados conforme os valores indicados abaixo. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -4635,8 +4635,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "druida",
       "patrulheiro",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -4648,7 +4648,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Bolha de ar canaliza uma manifestação de conjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Bolha de ar produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -4666,8 +4666,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -4679,7 +4679,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Alterar-se canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Alterar-se produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -4697,9 +4697,9 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
+      "bardo",
       "druida",
-      "patrulheiro",
-      "bardo"
+      "patrulheiro"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -4714,7 +4714,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sementes Nutritivas e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Mensageiro Animal canaliza uma manifestação de encantamento adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Mensageiro Animal produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -4733,8 +4733,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -4749,7 +4749,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Hackeamento Arcano (UA) canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Hackeamento Arcano (UA) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -4782,7 +4782,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Tranca Arcana canaliza uma manifestação de abjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Tranca Arcana produz um efeito de abjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -4817,7 +4817,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Lente de Vidro e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Áugures canaliza uma manifestação de adivinhação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Áugures produz um efeito de adivinhação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -4851,7 +4851,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sementes Nutritivas e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Pele de Árvore transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Pele de Árvore transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -4882,7 +4882,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Criatura ou objeto tocado",
     "materialIds": [],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Sentido da Besta canaliza uma manifestação de adivinhação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Sentido da Besta produz um efeito de adivinhação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -4900,10 +4900,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "clerigo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "clerigo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Necromancia",
     "source": "Necromancia",
@@ -4915,7 +4915,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 9 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Cegueira/Surdez canaliza uma manifestação de necromancia adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de CON.",
+    "effect": "Cegueira/Surdez produz um efeito de necromancia dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -4933,8 +4933,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -4946,7 +4946,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Desfoque reorganiza luz, som, cheiro e expectativa para criar uma percepção falsa ou ocultar presenças. Contato direto, investigação cuidadosa ou sentidos especiais podem revelar inconsistências. Descobrir a ilusão não a dissipa automaticamente, mas permite reconhecê-la pelo restante da duração. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Desfoque cria ou altera uma percepção. Toque, investigação ou sentidos especiais podem revelar que o efeito não é real. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -4964,9 +4964,9 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
+      "bardo",
       "bruxo",
       "clerigo",
-      "bardo",
       "mago"
     ],
     "school": "Adivinhação",
@@ -4982,7 +4982,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Lente de Vidro e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Conhecimento emprestado canaliza uma manifestação de adivinhação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Conhecimento emprestado produz um efeito de adivinhação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -5012,7 +5012,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 1.5 m a partir do conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Marca da punição concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. na falha ou acerto, aplique 2d6 Radiante de dano.",
+    "effect": "Marca da punição libera energia contra o alvo ou a área escolhida. O alvo sofre 2d6 Radiante de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d6 Radiante",
     "healing": "",
@@ -5030,8 +5030,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "clerigo",
-      "bardo"
+      "bardo",
+      "clerigo"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -5043,7 +5043,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 6 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Acalmar Emoções canaliza uma manifestação de encantamento adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de CAR.",
+    "effect": "Acalmar Emoções produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CAR. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -5061,10 +5061,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -5079,7 +5079,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Nuvem de Adagas concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. na falha ou acerto, aplique 4d4 Cortante de dano.",
+    "effect": "Nuvem de Adagas libera energia contra o alvo ou a área escolhida. O alvo sofre 4d4 Cortante de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "4d4 Cortante",
     "healing": "",
@@ -5114,7 +5114,7 @@ globalThis.CODEX_SPELL_DATA = [
       "carvao_po"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Semente de Brasa e Carvão em Pó. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Brasa Contínua transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Brasa Contínua transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -5147,7 +5147,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Cordão de Flechas concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 1d6 Perfurante de dano.",
+    "effect": "Cordão de Flechas libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 1d6 Perfurante de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d6 Perfurante",
     "healing": "",
@@ -5165,10 +5165,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -5180,7 +5180,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 36 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Coroa da Loucura impõe uma frequência sobre pensamento, emoção ou vontade. Criaturas afetadas enfrentam a Salvaguarda apropriada; em sucesso, evitam ou reduzem o efeito conforme a magia. Ordens autodestrutivas, imunidades mentais e ausência de percepção do estímulo podem impedir a manifestação. o alvo realiza Salvaguarda de SAB.",
+    "effect": "Coroa da Loucura afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -5199,8 +5199,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -5215,7 +5215,7 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Escuridão reorganiza luz, som, cheiro e expectativa para criar uma percepção falsa ou ocultar presenças. Contato direto, investigação cuidadosa ou sentidos especiais podem revelar inconsistências. Descobrir a ilusão não a dissipa automaticamente, mas permite reconhecê-la pelo restante da duração. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Escuridão cria ou altera uma percepção. Toque, investigação ou sentidos especiais podem revelar que o efeito não é real. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -5235,8 +5235,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "druida",
       "patrulheiro",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -5251,7 +5251,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Visão no Escuro amplia sentidos, conhecimento ou comunicação através dos ecos preservados no Jardim. O conjurador recebe informações ligadas ao alvo e ao alcance, mas não ultrapassa proteções específicas contra adivinhação. Respostas simbólicas, memórias incompletas e interferências podem exigir interpretação. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Visão no Escuro amplia sentidos, conhecimento ou comunicação. As informações alcançam apenas os alvos e a distância indicados pela magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -5270,8 +5270,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Adivinhação",
     "source": "Adivinhação",
@@ -5286,7 +5286,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Lente de Vidro e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Detectar Pensamentos amplia sentidos, conhecimento ou comunicação através dos ecos preservados no Jardim. O conjurador recebe informações ligadas ao alvo e ao alcance, mas não ultrapassa proteções específicas contra adivinhação. Respostas simbólicas, memórias incompletas e interferências podem exigir interpretação. o alvo realiza Salvaguarda de SAB.",
+    "effect": "Detectar Pensamentos amplia sentidos, conhecimento ou comunicação. As informações alcançam apenas os alvos e a distância indicados pela magia. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -5305,8 +5305,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -5321,7 +5321,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Fantasma Digital (UA) reorganiza luz, som, cheiro e expectativa para criar uma percepção falsa ou ocultar presenças. Contato direto, investigação cuidadosa ou sentidos especiais podem revelar inconsistências. Descobrir a ilusão não a dissipa automaticamente, mas permite reconhecê-la pelo restante da duração. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Fantasma Digital (UA) cria ou altera uma percepção. Toque, investigação ou sentidos especiais podem revelar que o efeito não é real. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -5339,8 +5339,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -5355,7 +5355,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Bafo de Titã canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de DES.",
+    "effect": "Bafo de Titã produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -5374,8 +5374,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -5390,7 +5390,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Diabo da Poeira canaliza uma manifestação de conjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de FOR; na falha ou acerto, aplique 1d8 Concussão de dano.",
+    "effect": "Diabo da Poeira produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de FOR. Se falhar, sofre 1d8 Concussão de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d8 Concussão",
     "healing": "",
@@ -5408,10 +5408,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "druida",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "druida",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -5423,7 +5423,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 90 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "“Amarrar à Terra!” transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. o alvo realiza Salvaguarda de FOR.",
+    "effect": "“Amarrar à Terra!” transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. O alvo faz uma Salvaguarda de FOR. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -5441,12 +5441,12 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "druida",
-      "patrulheiro",
-      "clerigo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "druida",
+      "clerigo",
+      "patrulheiro",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -5461,7 +5461,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Aprimorar Habilidade canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Aprimorar Habilidade produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -5479,10 +5479,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "druida",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "druida",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -5497,7 +5497,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Aumentar/Reduzir transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. o alvo realiza Salvaguarda de FOR.",
+    "effect": "Aumentar/Reduzir transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. O alvo faz uma Salvaguarda de FOR. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -5515,8 +5515,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
-      "bardo"
+      "bardo",
+      "bruxo"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -5528,7 +5528,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Cativar canaliza uma manifestação de encantamento adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de SAB.",
+    "effect": "Cativar produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -5558,7 +5558,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 9 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Encontrar Montaria manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Encontrar Montaria cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -5577,8 +5577,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "patrulheiro",
-      "clerigo"
+      "clerigo",
+      "patrulheiro"
     ],
     "school": "Adivinhação",
     "source": "Adivinhação",
@@ -5590,7 +5590,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 36 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Encontrar Armadilhas canaliza uma manifestação de adivinhação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Encontrar Armadilhas produz um efeito de adivinhação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -5610,8 +5610,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "paladino",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -5623,7 +5623,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 9 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Encontrar veículo (UA) canaliza uma manifestação de conjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Encontrar veículo (UA) produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -5657,7 +5657,7 @@ globalThis.CODEX_SPELL_DATA = [
       "carvao_po"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Semente de Brasa e Carvão em Pó. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Lâmina Flamejante transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 3d6 Fogo de dano.",
+    "effect": "Lâmina Flamejante transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. Faça um ataque mágico contra cada alvo indicado. Se acertar, o alvo sofre 3d6 Fogo de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "3d6 Fogo",
     "healing": "",
@@ -5676,8 +5676,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -5692,7 +5692,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Esfera Flamejante concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 2d6 Fogo de dano.",
+    "effect": "Esfera Flamejante libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 2d6 Fogo de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d6 Fogo",
     "healing": "",
@@ -5723,7 +5723,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Criatura ou objeto tocado",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Rebanho de Familiares manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Rebanho de Familiares cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -5756,7 +5756,7 @@ globalThis.CODEX_SPELL_DATA = [
       "ambar_tempestade"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Areia do Instante e Âmbar de Tempestade Presa. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Favor da Fortuna canaliza uma manifestação de adivinhação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Favor da Fortuna produz um efeito de adivinhação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -5791,7 +5791,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Carapaça Ancestral e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Repouso Tranquilo canaliza uma manifestação de necromancia adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Repouso Tranquilo produz um efeito de necromancia dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -5825,7 +5825,7 @@ globalThis.CODEX_SPELL_DATA = [
       "folha_serena"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Feromônio Ressonante e Folha Serena. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Presente de Gab canaliza uma manifestação de encantamento adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Presente de Gab produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -5845,8 +5845,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "druida",
       "patrulheiro",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -5861,7 +5861,7 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Rajada de Vento transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. o alvo realiza Salvaguarda de FOR.",
+    "effect": "Rajada de Vento transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. O alvo faz uma Salvaguarda de FOR. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -5892,7 +5892,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "cubo de 1.5 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Espírito de Cura reúne seiva vital, calor e memória corporal para restaurar ou preservar uma ou mais criaturas. A energia procura primeiro ferimentos recentes e condições compatíveis; efeitos permanentes ou morte exigem os materiais especiais indicados. Alvos fora do alcance ou que não possam receber cura não são afetados. a recuperação usa 1d6 pontos de vida.",
+    "effect": "Espírito de Cura reúne energia vital para curar ou preservar as criaturas escolhidas. Ferimentos, condições e efeitos especiais são tratados conforme os valores indicados abaixo. A criatura recupera 1d6 pontos de vida.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "1d6",
@@ -5910,8 +5910,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "druida",
-      "bardo"
+      "bardo",
+      "druida"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -5926,7 +5926,7 @@ globalThis.CODEX_SPELL_DATA = [
       "carvao_po"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Semente de Brasa e Carvão em Pó. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Esquentar Metal canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 2d8 Fogo de dano.",
+    "effect": "Esquentar Metal produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 2d8 Fogo de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d8 Fogo",
     "healing": "",
@@ -5944,12 +5944,12 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "druida",
-      "bruxo",
-      "clerigo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "druida",
+      "clerigo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -5964,7 +5964,7 @@ globalThis.CODEX_SPELL_DATA = [
       "folha_serena"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Feromônio Ressonante e Folha Serena. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Imobilizar Pessoa canaliza uma manifestação de encantamento adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de SAB.",
+    "effect": "Imobilizar Pessoa produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -5982,8 +5982,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -5998,7 +5998,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. M: Pó de Carapaça Ancestral e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Geada da Morte Gélida (UA) concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 3d8 Frio de dano.",
+    "effect": "Geada da Morte Gélida (UA) libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 3d8 Frio de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "3d8 Frio",
     "healing": "",
@@ -6031,7 +6031,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Objeto Imóvel canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Objeto Imóvel produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -6049,10 +6049,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -6067,7 +6067,7 @@ globalThis.CODEX_SPELL_DATA = [
       "lente_vidro"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Espelho de Orvalho e Lente de Vidro. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Invisibilidade reorganiza luz, som, cheiro e expectativa para criar uma percepção falsa ou ocultar presenças. Contato direto, investigação cuidadosa ou sentidos especiais podem revelar inconsistências. Descobrir a ilusão não a dissipa automaticamente, mas permite reconhecê-la pelo restante da duração. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Invisibilidade cria ou altera uma percepção. Toque, investigação ou sentidos especiais podem revelar que o efeito não é real. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -6100,7 +6100,7 @@ globalThis.CODEX_SPELL_DATA = [
       "folha_serena"
     ],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. M: Feromônio Ressonante e Folha Serena. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Moeda Brilhante de Jim canaliza uma manifestação de encantamento adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de SAB.",
+    "effect": "Moeda Brilhante de Jim produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -6119,8 +6119,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -6132,7 +6132,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Kinetic Jaunt canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Kinetic Jaunt produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -6151,8 +6151,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -6164,7 +6164,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Batida canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Batida produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -6182,11 +6182,11 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
+      "bardo",
       "paladino",
       "druida",
-      "patrulheiro",
       "clerigo",
-      "bardo"
+      "patrulheiro"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -6198,7 +6198,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Criatura ou objeto tocado",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Restauração Menor reúne seiva vital, calor e memória corporal para restaurar ou preservar uma ou mais criaturas. A energia procura primeiro ferimentos recentes e condições compatíveis; efeitos permanentes ou morte exigem os materiais especiais indicados. Alvos fora do alcance ou que não possam receber cura não são afetados. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Restauração Menor reúne energia vital para curar ou preservar as criaturas escolhidas. Ferimentos, condições e efeitos especiais são tratados conforme os valores indicados abaixo. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -6216,8 +6216,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -6232,7 +6232,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Levitação dobra distância, peso ou ritmo para alterar deslocamento e posição. O destino precisa respeitar as condições da magia e oferecer espaço livre; uma chegada impossível conduz ao ponto seguro mais próximo ou faz a manifestação falhar. Passagens sustentadas terminam quando a Concentração é perdida. o alvo realiza Salvaguarda de CON.",
+    "effect": "Levitação altera movimento, distância ou posição. O destino precisa estar dentro do alcance e ter espaço livre para receber a criatura. O alvo faz uma Salvaguarda de CON. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -6250,9 +6250,9 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
+      "bardo",
       "druida",
-      "patrulheiro",
-      "bardo"
+      "patrulheiro"
     ],
     "school": "Adivinhação",
     "source": "Adivinhação",
@@ -6267,7 +6267,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sementes Nutritivas e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Localizar Animais ou Plantas canaliza uma manifestação de adivinhação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Localizar Animais ou Plantas produz um efeito de adivinhação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -6285,11 +6285,11 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
+      "bardo",
       "paladino",
       "druida",
-      "patrulheiro",
       "clerigo",
-      "bardo",
+      "patrulheiro",
       "mago"
     ],
     "school": "Adivinhação",
@@ -6305,7 +6305,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Lente de Vidro e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Localizar Objeto canaliza uma manifestação de adivinhação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Localizar Objeto produz um efeito de adivinhação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -6339,7 +6339,7 @@ globalThis.CODEX_SPELL_DATA = [
       "lente_vidro"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Espelho de Orvalho e Lente de Vidro. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Boca Encantada canaliza uma manifestação de ilusão adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Boca Encantada produz um efeito de ilusão dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -6359,8 +6359,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "paladino",
       "patrulheiro",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -6372,7 +6372,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Criatura ou objeto tocado",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Arma Mágica canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Arma Mágica produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -6390,8 +6390,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -6406,7 +6406,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sementes Nutritivas e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Aperto Terrestre de Maximiliano transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. o alvo realiza Salvaguarda de FOR; na falha ou acerto, aplique 2d6 Concussão de dano.",
+    "effect": "Aperto Terrestre de Maximiliano transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. O alvo faz uma Salvaguarda de FOR. Se falhar, sofre 2d6 Concussão de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d6 Concussão",
     "healing": "",
@@ -6439,7 +6439,7 @@ globalThis.CODEX_SPELL_DATA = [
       "esporos_mutaveis"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporo Tóxico Concentrado e Esporos Mutáveis. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Flecha ácida de Melf concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 4d4 Ácido + 2d4 Ácido de dano.",
+    "effect": "Flecha ácida de Melf libera energia contra o alvo ou a área escolhida. Faça um ataque mágico contra cada alvo indicado. Se acertar, o alvo sofre 4d4 Ácido + 2d4 Ácido de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "4d4 Ácido + 2d4 Ácido",
     "healing": "",
@@ -6458,8 +6458,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -6471,7 +6471,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Barreira Mental (UA) organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. o alvo realiza Salvaguarda de CAR.",
+    "effect": "Barreira Mental (UA) cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. O alvo faz uma Salvaguarda de CAR. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -6490,8 +6490,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Adivinhação",
     "source": "Adivinhação",
@@ -6503,7 +6503,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Espigão Mental impõe uma frequência sobre pensamento, emoção ou vontade. Criaturas afetadas enfrentam a Salvaguarda apropriada; em sucesso, evitam ou reduzem o efeito conforme a magia. Ordens autodestrutivas, imunidades mentais e ausência de percepção do estímulo podem impedir a manifestação. o alvo realiza Salvaguarda de SAB; na falha ou acerto, aplique 3d8 Psíquico de dano.",
+    "effect": "Espigão Mental afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre 3d8 Psíquico de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "3d8 Psíquico",
     "healing": "",
@@ -6522,8 +6522,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -6535,7 +6535,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Impulso Mental (UA) impõe uma frequência sobre pensamento, emoção ou vontade. Criaturas afetadas enfrentam a Salvaguarda apropriada; em sucesso, evitam ou reduzem o efeito conforme a magia. Ordens autodestrutivas, imunidades mentais e ausência de percepção do estímulo podem impedir a manifestação. o alvo realiza Salvaguarda de INT; na falha ou acerto, aplique 3d6 Psíquico de dano.",
+    "effect": "Impulso Mental (UA) afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de INT. Se falhar, sofre 3d6 Psíquico de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "3d6 Psíquico",
     "healing": "",
@@ -6553,10 +6553,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -6568,7 +6568,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Reflexos reorganiza luz, som, cheiro e expectativa para criar uma percepção falsa ou ocultar presenças. Contato direto, investigação cuidadosa ou sentidos especiais podem revelar inconsistências. Descobrir a ilusão não a dissipa automaticamente, mas permite reconhecê-la pelo restante da duração. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Reflexos cria ou altera uma percepção. Toque, investigação ou sentidos especiais podem revelar que o efeito não é real. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -6587,8 +6587,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -6600,7 +6600,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Passo Nebuloso dobra distância, peso ou ritmo para alterar deslocamento e posição. O destino precisa respeitar as condições da magia e oferecer espaço livre; uma chegada impossível conduz ao ponto seguro mais próximo ou faz a manifestação falhar. Passagens sustentadas terminam quando a Concentração é perdida. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Passo Nebuloso altera movimento, distância ou posição. O destino precisa estar dentro do alcance e ter espaço livre para receber a criatura. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -6633,7 +6633,7 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Raio Lunar canaliza uma manifestação de evocação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 2d10 Radiante de dano.",
+    "effect": "Raio Lunar produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 2d10 Radiante de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d10 Radiante",
     "healing": "",
@@ -6652,8 +6652,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -6668,7 +6668,7 @@ globalThis.CODEX_SPELL_DATA = [
       "lente_vidro"
     ],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. M: Pó de Espelho de Orvalho e Lente de Vidro. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Nathair's Mischief canaliza uma manifestação de ilusão adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Nathair's Mischief produz um efeito de ilusão dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -6687,8 +6687,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -6703,7 +6703,7 @@ globalThis.CODEX_SPELL_DATA = [
       "lente_vidro"
     ],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. M: Pó de Espelho de Orvalho e Lente de Vidro. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Nathair's Mischief (UA) canaliza uma manifestação de ilusão adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Nathair's Mischief (UA) produz um efeito de ilusão dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -6736,7 +6736,7 @@ globalThis.CODEX_SPELL_DATA = [
       "lente_vidro"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Espelho de Orvalho e Lente de Vidro. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "A Aura Esotérica de Nystul organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "A Aura Esotérica de Nystul cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -6770,7 +6770,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Passos sem Pegadas canaliza uma manifestação de abjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Passos sem Pegadas produz um efeito de abjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -6789,8 +6789,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -6805,7 +6805,7 @@ globalThis.CODEX_SPELL_DATA = [
       "lente_vidro"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Espelho de Orvalho e Lente de Vidro. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Força Fantasmática canaliza uma manifestação de ilusão adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de INT; na falha ou acerto, aplique 1d6 Psíquico de dano.",
+    "effect": "Força Fantasmática produz um efeito de ilusão dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de INT. Se falhar, sofre 1d6 Psíquico de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d6 Psíquico",
     "healing": "",
@@ -6836,7 +6836,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Até six criaturas dentro de 9 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Oração de Cura reúne seiva vital, calor e memória corporal para restaurar ou preservar uma ou mais criaturas. A energia procura primeiro ferimentos recentes e condições compatíveis; efeitos permanentes ou morte exigem os materiais especiais indicados. Alvos fora do alcance ou que não possam receber cura não são afetados. a recuperação usa 2d8 + Mod. Conjuração pontos de vida.",
+    "effect": "Oração de Cura reúne energia vital para curar ou preservar as criaturas escolhidas. Ferimentos, condições e efeitos especiais são tratados conforme os valores indicados abaixo. A criatura recupera 2d8 + Mod. Conjuração pontos de vida.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "2d8 + Mod. Conjuração",
@@ -6856,8 +6856,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "paladino",
       "druida",
-      "patrulheiro",
-      "clerigo"
+      "clerigo",
+      "patrulheiro"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -6869,7 +6869,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Criatura ou objeto tocado",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Proteção Contra Veneno organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Proteção Contra Veneno cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -6888,8 +6888,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -6901,7 +6901,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "cubo de 1.5 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Pirotecnia canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de CON.",
+    "effect": "Pirotecnia produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -6932,7 +6932,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Raio do Enfraquecimento impõe uma frequência sobre pensamento, emoção ou vontade. Criaturas afetadas enfrentam a Salvaguarda apropriada; em sucesso, evitam ou reduzem o efeito conforme a magia. Ordens autodestrutivas, imunidades mentais e ausência de percepção do estímulo podem impedir a manifestação. Faça um ataque mágico contra cada alvo indicado; o alvo realiza Salvaguarda de CON.",
+    "effect": "Raio do Enfraquecimento afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. Faça um ataque mágico contra cada alvo indicado. Se acertar, aplique o efeito descrito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -6950,8 +6950,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -6966,7 +6966,7 @@ globalThis.CODEX_SPELL_DATA = [
       "perola_orvalho"
     ],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. M: Orvalho Purificado e Pérola de Orvalho Puríssimo. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Gelo Vinculante de Rime canaliza uma manifestação de evocação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 3d8 Frio de dano.",
+    "effect": "Gelo Vinculante de Rime produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 3d8 Frio de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "3d8 Frio",
     "healing": "",
@@ -6999,7 +6999,7 @@ globalThis.CODEX_SPELL_DATA = [
       "cristal_condutor"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Seiva do Limiar e Cristal de Orvalho Condutor. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Truque da Corda canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Truque da Corda produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -7017,8 +7017,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -7030,7 +7030,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 36 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Raio Ardente concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 2d6 Fogo de dano.",
+    "effect": "Raio Ardente libera energia contra o alvo ou a área escolhida. Faça um ataque mágico contra cada alvo indicado. Se acertar, o alvo sofre 2d6 Fogo de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d6 Fogo",
     "healing": "",
@@ -7049,8 +7049,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Adivinhação",
     "source": "Adivinhação",
@@ -7065,7 +7065,7 @@ globalThis.CODEX_SPELL_DATA = [
       "lente_vidro"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Espelho de Orvalho e Lente de Vidro. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Ver o Invisível amplia sentidos, conhecimento ou comunicação através dos ecos preservados no Jardim. O conjurador recebe informações ligadas ao alvo e ao alcance, mas não ultrapassa proteções específicas contra adivinhação. Respostas simbólicas, memórias incompletas e interferências podem exigir interpretação. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Ver o Invisível amplia sentidos, conhecimento ou comunicação. As informações alcançam apenas os alvos e a distância indicados pela magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -7084,8 +7084,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -7097,7 +7097,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Lâmina Sombria concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. na falha ou acerto, aplique 2d8 Psíquico de dano.",
+    "effect": "Lâmina Sombria libera energia contra o alvo ou a área escolhida. O alvo sofre 2d8 Psíquico de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d8 Psíquico",
     "healing": "",
@@ -7115,10 +7115,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -7133,7 +7133,7 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Fragmentar canaliza uma manifestação de evocação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 3d8 Trovão de dano.",
+    "effect": "Fragmentar produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 3d8 Trovão de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "3d8 Trovão",
     "healing": "",
@@ -7151,9 +7151,9 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
+      "bardo",
       "clerigo",
-      "bardo"
+      "patrulheiro"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -7165,7 +7165,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 6 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Silêncio canaliza uma manifestação de ilusão adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Silêncio produz um efeito de ilusão dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -7183,8 +7183,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "druida",
       "bardo",
+      "druida",
       "mago"
     ],
     "school": "Transmutação",
@@ -7197,7 +7197,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de À vista",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Skywrite canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Skywrite produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -7215,8 +7215,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -7231,7 +7231,7 @@ globalThis.CODEX_SPELL_DATA = [
       "perola_orvalho"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Orvalho Purificado e Pérola de Orvalho Puríssimo. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Enxame de Bolas de Neve de Snilloc concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 3d6 Frio de dano.",
+    "effect": "Enxame de Bolas de Neve de Snilloc libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 3d6 Frio de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "3d6 Frio",
     "healing": "",
@@ -7250,8 +7250,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -7266,7 +7266,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Escalada de Aranha canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Escalada de Aranha produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -7300,7 +7300,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Crescer Espinhos canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. na falha ou acerto, aplique 2d4 Perfurante de dano.",
+    "effect": "Crescer Espinhos produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo sofre 2d4 Perfurante de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d4 Perfurante",
     "healing": "",
@@ -7330,7 +7330,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Arma Espiritual canaliza uma manifestação de evocação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Faça um ataque mágico contra cada alvo indicado.",
+    "effect": "Arma Espiritual produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Faça um ataque mágico contra cada alvo indicado. Se acertar, aplique o efeito descrito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -7348,10 +7348,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -7366,7 +7366,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Spray de Cartões concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 2d10 Força de dano.",
+    "effect": "Spray de Cartões libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 2d10 Força de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d10 Força",
     "healing": "",
@@ -7384,10 +7384,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -7402,7 +7402,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Pulverização de Cartões (UA) concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Pulverização de Cartões (UA) libera energia contra o alvo ou a área escolhida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -7420,10 +7420,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -7438,7 +7438,7 @@ globalThis.CODEX_SPELL_DATA = [
       "folha_serena"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. M: Feromônio Ressonante e Folha Serena. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Sugestão impõe uma frequência sobre pensamento, emoção ou vontade. Criaturas afetadas enfrentam a Salvaguarda apropriada; em sucesso, evitam ou reduzem o efeito conforme a magia. Ordens autodestrutivas, imunidades mentais e ausência de percepção do estímulo podem impedir a manifestação. o alvo realiza Salvaguarda de SAB.",
+    "effect": "Sugestão afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -7472,7 +7472,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sementes Nutritivas e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Invocar Besta manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Invocar Besta cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -7490,8 +7490,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -7503,7 +7503,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 27 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "O Chicote Mental de Tasha impõe uma frequência sobre pensamento, emoção ou vontade. Criaturas afetadas enfrentam a Salvaguarda apropriada; em sucesso, evitam ou reduzem o efeito conforme a magia. Ordens autodestrutivas, imunidades mentais e ausência de percepção do estímulo podem impedir a manifestação. o alvo realiza Salvaguarda de INT; na falha ou acerto, aplique 3d6 Psíquico de dano.",
+    "effect": "O Chicote Mental de Tasha afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de INT. Se falhar, sofre 3d6 Psíquico de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "3d6 Psíquico",
     "healing": "",
@@ -7522,8 +7522,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -7535,7 +7535,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Criatura ou objeto tocado",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Escudo do Pensamento (UA) organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Escudo do Pensamento (UA) cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -7553,8 +7553,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -7566,7 +7566,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 27 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Urdidura em Vórtice canaliza uma manifestação de conjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de CON.",
+    "effect": "Urdidura em Vórtice produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -7600,7 +7600,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Vínculo de Proteção organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Vínculo de Proteção cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -7618,10 +7618,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "druida",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "druida",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -7633,7 +7633,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 3 m a partir do conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Vento de Proteção organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Vento de Proteção cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -7652,8 +7652,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Adivinhação",
     "source": "Adivinhação",
@@ -7668,7 +7668,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Lente de Vidro e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Sentido de urdidura canaliza uma manifestação de adivinhação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Sentido de urdidura produz um efeito de adivinhação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -7686,8 +7686,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -7702,7 +7702,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Web canaliza uma manifestação de conjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 2d4 Fogo de dano.",
+    "effect": "Web produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 2d4 Fogo de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d4 Fogo",
     "healing": "",
@@ -7721,8 +7721,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Necromancia",
     "source": "Necromancia",
@@ -7737,7 +7737,7 @@ globalThis.CODEX_SPELL_DATA = [
       "esporos_mutaveis"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporo Tóxico Concentrado e Esporos Mutáveis. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Wither e Bloom canaliza uma manifestação de necromancia adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 2d6 Necrótico de dano.",
+    "effect": "Wither e Bloom produz um efeito de necromancia dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 2d6 Necrótico de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d6 Necrótico",
     "healing": "",
@@ -7767,7 +7767,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Bolso de pulso canaliza uma manifestação de conjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Bolso de pulso produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -7785,9 +7785,9 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
+      "bardo",
       "paladino",
-      "clerigo",
-      "bardo"
+      "clerigo"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -7799,7 +7799,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 4.5 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Zona da Verdade canaliza uma manifestação de encantamento adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de CAR.",
+    "effect": "Zona da Verdade produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CAR. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -7833,7 +7833,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Carapaça Ancestral e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Animar Mortos manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Animar Mortos cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -7851,10 +7851,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -7869,7 +7869,7 @@ globalThis.CODEX_SPELL_DATA = [
       "folha_serena"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Feromônio Ressonante e Folha Serena. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Antagonizar canaliza uma manifestação de encantamento adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de SAB; na falha ou acerto, aplique 4d4 Psíquico de dano.",
+    "effect": "Antagonizar produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre 4d4 Psíquico de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "4d4 Psíquico",
     "healing": "",
@@ -7887,10 +7887,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -7905,7 +7905,7 @@ globalThis.CODEX_SPELL_DATA = [
       "folha_serena"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Feromônio Ressonante e Folha Serena. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Antagonizar (UA) canaliza uma manifestação de encantamento adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de SAB; na falha ou acerto, aplique 4d4 Psíquico de dano.",
+    "effect": "Antagonizar (UA) produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre 4d4 Psíquico de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "4d4 Psíquico",
     "healing": "",
@@ -7924,8 +7924,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "patrulheiro",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -7937,7 +7937,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Passo de Ashardalon dobra distância, peso ou ritmo para alterar deslocamento e posição. O destino precisa respeitar as condições da magia e oferecer espaço livre; uma chegada impossível conduz ao ponto seguro mais próximo ou faz a manifestação falhar. Passagens sustentadas terminam quando a Concentração é perdida. na falha ou acerto, aplique 1d6 Fogo de dano.",
+    "effect": "Passo de Ashardalon altera movimento, distância ou posição. O destino precisa estar dentro do alcance e ter espaço livre para receber a criatura. O alvo sofre 1d6 Fogo de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d6 Fogo",
     "healing": "",
@@ -7969,7 +7969,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 9 m a partir do conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Aura de Vitalidade reúne seiva vital, calor e memória corporal para restaurar ou preservar uma ou mais criaturas. A energia procura primeiro ferimentos recentes e condições compatíveis; efeitos permanentes ou morte exigem os materiais especiais indicados. Alvos fora do alcance ou que não possam receber cura não são afetados. a recuperação usa 2d6 pontos de vida.",
+    "effect": "Aura de Vitalidade reúne energia vital para curar ou preservar as criaturas escolhidas. Ferimentos, condições e efeitos especiais são tratados conforme os valores indicados abaixo. A criatura recupera 2d6 pontos de vida.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "2d6",
@@ -7999,7 +7999,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 9 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Farol da Esperança canaliza uma manifestação de abjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de SAB.",
+    "effect": "Farol da Esperança produz um efeito de abjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -8017,8 +8017,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "clerigo",
       "bardo",
+      "clerigo",
       "mago"
     ],
     "school": "Necromancia",
@@ -8031,7 +8031,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Criatura ou objeto tocado",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Rogar Maldição canaliza uma manifestação de necromancia adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de SAB.",
+    "effect": "Rogar Maldição produz um efeito de necromancia dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -8061,7 +8061,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Ferimento Cegante concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 3d8 Radiante de dano.",
+    "effect": "Ferimento Cegante libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 3d8 Radiante de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "3d8 Radiante",
     "healing": "",
@@ -8079,8 +8079,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -8092,7 +8092,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Blink canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Blink produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -8122,7 +8122,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Convocar Relâmpagos concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 3d10 Relâmpago de dano.",
+    "effect": "Convocar Relâmpagos libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 3d10 Relâmpago de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "3d10 Relâmpago",
     "healing": "",
@@ -8141,8 +8141,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -8157,7 +8157,7 @@ globalThis.CODEX_SPELL_DATA = [
       "folha_serena"
     ],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. M: Feromônio Ressonante e Folha Serena. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Catnap. canaliza uma manifestação de encantamento adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Catnap. produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -8175,10 +8175,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "clerigo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "clerigo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Adivinhação",
     "source": "Adivinhação",
@@ -8193,7 +8193,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Lente de Vidro e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Clarividência amplia sentidos, conhecimento ou comunicação através dos ecos preservados no Jardim. O conjurador recebe informações ligadas ao alvo e ao alcance, mas não ultrapassa proteções específicas contra adivinhação. Respostas simbólicas, memórias incompletas e interferências podem exigir interpretação. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Clarividência amplia sentidos, conhecimento ou comunicação. As informações alcançam apenas os alvos e a distância indicados pela magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -8224,7 +8224,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Conjurar Animais manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Conjurar Animais cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -8257,7 +8257,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Invocar Barragem manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. o alvo realiza Salvaguarda de DES.",
+    "effect": "Invocar Barragem cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. O alvo faz uma Salvaguarda de DES. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -8275,8 +8275,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -8291,7 +8291,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Conjurar Demônio Menor (UA) manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Conjurar Demônio Menor (UA) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -8310,8 +8310,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -8323,7 +8323,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Contramágica canaliza uma manifestação de abjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Contramágica produz um efeito de abjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -8354,7 +8354,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 9 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Criar Comida e Orvalho manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Criar Comida e Orvalho cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -8384,7 +8384,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 9 m a partir do conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Manto do Cruzado canaliza uma manifestação de evocação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. na falha ou acerto, aplique 1d4 Radiante de dano.",
+    "effect": "Manto do Cruzado produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo sofre 1d4 Radiante de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d4 Radiante",
     "healing": "",
@@ -8404,8 +8404,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "paladino",
       "druida",
-      "patrulheiro",
       "clerigo",
+      "patrulheiro",
       "feiticeiro"
     ],
     "school": "Evocação",
@@ -8418,7 +8418,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Daylight canaliza uma manifestação de evocação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Daylight produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -8436,13 +8436,13 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "paladino",
-      "druida",
-      "bruxo",
-      "clerigo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "paladino",
+      "bruxo",
+      "druida",
+      "clerigo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -8454,7 +8454,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 36 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Dissipar Magia canaliza uma manifestação de abjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Dissipar Magia produz um efeito de abjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -8486,7 +8486,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Criatura ou objeto tocado",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Arma Elemental canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Arma Elemental produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -8504,10 +8504,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -8519,7 +8519,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 36 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Inimigos Abundam canaliza uma manifestação de encantamento adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de INT.",
+    "effect": "Inimigos Abundam produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de INT. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -8538,8 +8538,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -8554,7 +8554,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sementes Nutritivas e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Erupção da Terra transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 3d12 Concussão de dano.",
+    "effect": "Erupção da Terra transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 3d12 Concussão de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "3d12 Concussão",
     "healing": "",
@@ -8572,8 +8572,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "clerigo",
       "bardo",
+      "clerigo",
       "mago"
     ],
     "school": "Encantamento",
@@ -8586,7 +8586,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 9 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Amigos rápidos canaliza uma manifestação de encantamento adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de SAB.",
+    "effect": "Amigos rápidos produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -8604,10 +8604,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -8622,7 +8622,7 @@ globalThis.CODEX_SPELL_DATA = [
       "folha_serena"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Feromônio Ressonante e Folha Serena. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Medo impõe uma frequência sobre pensamento, emoção ou vontade. Criaturas afetadas enfrentam a Salvaguarda apropriada; em sucesso, evitam ou reduzem o efeito conforme a magia. Ordens autodestrutivas, imunidades mentais e ausência de percepção do estímulo podem impedir a manifestação. o alvo realiza Salvaguarda de SAB.",
+    "effect": "Medo afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -8640,9 +8640,9 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
+      "bardo",
       "druida",
       "clerigo",
-      "bardo",
       "mago"
     ],
     "school": "Necromancia",
@@ -8658,7 +8658,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Carapaça Ancestral e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Fingir morte canaliza uma manifestação de necromancia adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Fingir morte produz um efeito de necromancia dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -8676,8 +8676,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -8692,7 +8692,7 @@ globalThis.CODEX_SPELL_DATA = [
       "carvao_po"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Semente de Brasa e Carvão em Pó. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Bola Brasa concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 8d6 Fogo de dano.",
+    "effect": "Bola Brasa libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 8d6 Fogo de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "8d6 Fogo",
     "healing": "",
@@ -8712,8 +8712,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "druida",
       "patrulheiro",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -8725,7 +8725,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Criatura ou objeto tocado",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Flechas Flamejantes transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. na falha ou acerto, aplique 1d6 Fogo de dano.",
+    "effect": "Flechas Flamejantes transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. O alvo sofre 1d6 Fogo de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d6 Fogo",
     "healing": "",
@@ -8744,8 +8744,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "patrulheiro",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -8757,7 +8757,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Caminhada da Brasa (UA) dobra distância, peso ou ritmo para alterar deslocamento e posição. O destino precisa respeitar as condições da magia e oferecer espaço livre; uma chegada impossível conduz ao ponto seguro mais próximo ou faz a manifestação falhar. Passagens sustentadas terminam quando a Concentração é perdida. na falha ou acerto, aplique 1d6 Fogo de dano.",
+    "effect": "Caminhada da Brasa (UA) altera movimento, distância ou posição. O destino precisa estar dentro do alcance e ter espaço livre para receber a criatura. O alvo sofre 1d6 Fogo de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d6 Fogo",
     "healing": "",
@@ -8776,8 +8776,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -8792,7 +8792,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Voar dobra distância, peso ou ritmo para alterar deslocamento e posição. O destino precisa respeitar as condições da magia e oferecer espaço livre; uma chegada impossível conduz ao ponto seguro mais próximo ou faz a manifestação falhar. Passagens sustentadas terminam quando a Concentração é perdida. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Voar altera movimento, distância ou posição. O destino precisa estar dentro do alcance e ter espaço livre para receber a criatura. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -8825,7 +8825,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Torre de Galder canaliza uma manifestação de conjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Torre de Galder produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -8844,8 +8844,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -8860,7 +8860,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Forma Gasosa canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de CON.",
+    "effect": "Forma Gasosa produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -8878,8 +8878,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "clerigo",
       "bardo",
+      "clerigo",
       "mago"
     ],
     "school": "Abjuração",
@@ -8895,7 +8895,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: consumível e gasto ao concluir a conjuração. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Símbolo de Proteção organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. o alvo realiza Salvaguarda de DES.",
+    "effect": "Símbolo de Proteção cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. O alvo faz uma Salvaguarda de DES. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -8913,8 +8913,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -8929,7 +8929,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Apressar dobra distância, peso ou ritmo para alterar deslocamento e posição. O destino precisa respeitar as condições da magia e oferecer espaço livre; uma chegada impossível conduz ao ponto seguro mais próximo ou faz a manifestação falhar. Passagens sustentadas terminam quando a Concentração é perdida. o alvo realiza Salvaguarda de DES.",
+    "effect": "Apressar altera movimento, distância ou posição. O destino precisa estar dentro do alcance e ter espaço livre para receber a criatura. O alvo faz uma Salvaguarda de DES. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -8948,8 +8948,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -8961,7 +8961,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 3 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Haywire (UA) canaliza uma manifestação de encantamento adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de SAB.",
+    "effect": "Haywire (UA) produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -8980,8 +8980,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -8996,7 +8996,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Castelo de cartas canaliza uma manifestação de conjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Castelo de cartas produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -9029,11 +9029,11 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Fome de Hadar canaliza uma manifestação de conjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 2d6 Frio + 2d6 Ácido de dano.",
+    "effect": "Fome de Hadar produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 2d6 Frio + 2d6 Ácido de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d6 Frio + 2d6 Ácido",
     "healing": "",
-    "damageType": "Ácido + Frio",
+    "damageType": "Frio + Ácido",
     "attack": false,
     "save": "DES",
     "higherLevels": "",
@@ -9047,10 +9047,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -9065,7 +9065,7 @@ globalThis.CODEX_SPELL_DATA = [
       "lente_vidro"
     ],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. M: Pó de Espelho de Orvalho e Lente de Vidro. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Padrão Hipnótico canaliza uma manifestação de ilusão adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de SAB.",
+    "effect": "Padrão Hipnótico produz um efeito de ilusão dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -9085,8 +9085,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bruxo",
       "clerigo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -9101,7 +9101,7 @@ globalThis.CODEX_SPELL_DATA = [
       "folha_serena"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Feromônio Ressonante e Folha Serena. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Incite a ganância canaliza uma manifestação de encantamento adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de SAB.",
+    "effect": "Incite a ganância produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -9119,10 +9119,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -9134,7 +9134,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 9 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "I. Fortaleza do Intelecto canaliza uma manifestação de abjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de CAR.",
+    "effect": "I. Fortaleza do Intelecto produz um efeito de abjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CAR. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -9153,8 +9153,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -9169,7 +9169,7 @@ globalThis.CODEX_SPELL_DATA = [
       "lente_vidro"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Espelho de Orvalho e Lente de Vidro. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Invisibilidade para câmeras (UA) reorganiza luz, som, cheiro e expectativa para criar uma percepção falsa ou ocultar presenças. Contato direto, investigação cuidadosa ou sentidos especiais podem revelar inconsistências. Descobrir a ilusão não a dissipa automaticamente, mas permite reconhecê-la pelo restante da duração. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Invisibilidade para câmeras (UA) cria ou altera uma percepção. Toque, investigação ou sentidos especiais podem revelar que o efeito não é real. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -9203,7 +9203,7 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Pequena cabana de Leomund canaliza uma manifestação de evocação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Pequena cabana de Leomund produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -9234,11 +9234,11 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 9 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Transferência de Vida canaliza uma manifestação de necromancia adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. na falha ou acerto, aplique 4d8 Necrótico de dano; a recuperação usa 4d8 pontos de vida.",
+    "effect": "Transferência de Vida produz um efeito de necromancia dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo sofre 4d8 Necrótico de dano. A criatura recupera 4d8 pontos de vida.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "4d8",
-    "damageType": "",
+    "damageType": "Necrótico",
     "attack": false,
     "save": "",
     "higherLevels": "",
@@ -9264,7 +9264,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Flecha Relâmpago concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 4d8 Relâmpago + 2d8 Relâmpago de dano.",
+    "effect": "Flecha Relâmpago libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 4d8 Relâmpago + 2d8 Relâmpago de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "4d8 Relâmpago + 2d8 Relâmpago",
     "healing": "",
@@ -9282,8 +9282,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -9298,7 +9298,7 @@ globalThis.CODEX_SPELL_DATA = [
       "carvao_po"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Semente de Brasa e Carvão em Pó. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Relâmpago concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 8d6 Relâmpago de dano.",
+    "effect": "Relâmpago libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 8d6 Relâmpago de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "8d6 Relâmpago",
     "healing": "",
@@ -9334,7 +9334,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: consumível e gasto ao concluir a conjuração. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Círculo Mágico canaliza uma manifestação de abjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Círculo Mágico produz um efeito de abjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -9352,10 +9352,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -9370,7 +9370,7 @@ globalThis.CODEX_SPELL_DATA = [
       "lente_vidro"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Espelho de Orvalho e Lente de Vidro. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Imagem Maior reorganiza luz, som, cheiro e expectativa para criar uma percepção falsa ou ocultar presenças. Contato direto, investigação cuidadosa ou sentidos especiais podem revelar inconsistências. Descobrir a ilusão não a dissipa automaticamente, mas permite reconhecê-la pelo restante da duração. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Imagem Maior cria ou altera uma percepção. Toque, investigação ou sentidos especiais podem revelar que o efeito não é real. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -9388,8 +9388,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "clerigo",
-      "bardo"
+      "bardo",
+      "clerigo"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -9401,7 +9401,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Até six criaturas dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Palavra Curativa em Massa reúne seiva vital, calor e memória corporal para restaurar ou preservar uma ou mais criaturas. A energia procura primeiro ferimentos recentes e condições compatíveis; efeitos permanentes ou morte exigem os materiais especiais indicados. Alvos fora do alcance ou que não possam receber cura não são afetados. a recuperação usa 1d4 + Mod. Conjuração pontos de vida.",
+    "effect": "Palavra Curativa em Massa reúne energia vital para curar ou preservar as criaturas escolhidas. Ferimentos, condições e efeitos especiais são tratados conforme os valores indicados abaixo. A criatura recupera 1d4 + Mod. Conjuração pontos de vida.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "1d4 + Mod. Conjuração",
@@ -9420,8 +9420,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "patrulheiro",
-      "clerigo"
+      "clerigo",
+      "patrulheiro"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -9433,7 +9433,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Criatura ou objeto tocado",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Mesclar-se às Rochas transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. na falha ou acerto, aplique 6d6 Concussão de dano.",
+    "effect": "Mesclar-se às Rochas transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. O alvo sofre 6d6 Concussão de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "6d6 Concussão",
     "healing": "",
@@ -9451,8 +9451,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -9467,7 +9467,7 @@ globalThis.CODEX_SPELL_DATA = [
       "carvao_po"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Semente de Brasa e Carvão em Pó. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Meteoros Minutos de Melf concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 2d6 Fogo de dano.",
+    "effect": "Meteoros Minutos de Melf libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 2d6 Fogo de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d6 Fogo",
     "healing": "",
@@ -9485,8 +9485,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "clerigo",
-      "bardo"
+      "bardo",
+      "clerigo"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -9498,7 +9498,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Até five criaturas dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Fala Motivacional canaliza uma manifestação de encantamento adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de SAB.",
+    "effect": "Fala Motivacional produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -9516,8 +9516,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
       "bardo",
+      "patrulheiro",
       "mago"
     ],
     "school": "Abjuração",
@@ -9533,7 +9533,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Indetectável amplia sentidos, conhecimento ou comunicação através dos ecos preservados no Jardim. O conjurador recebe informações ligadas ao alvo e ao alcance, mas não ultrapassa proteções específicas contra adivinhação. Respostas simbólicas, memórias incompletas e interferências podem exigir interpretação. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Indetectável amplia sentidos, conhecimento ou comunicação. As informações alcançam apenas os alvos e a distância indicados pela magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -9563,7 +9563,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 9 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Montaria Fantasmagórica manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Montaria Fantasmagórica cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -9581,9 +9581,9 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
+      "bardo",
       "druida",
-      "patrulheiro",
-      "bardo"
+      "patrulheiro"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -9595,7 +9595,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 30 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Crescimento de Plantas transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Crescimento de Plantas transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -9614,8 +9614,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -9630,7 +9630,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Proteção contra Balística (UA) organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Proteção contra Balística (UA) cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -9649,10 +9649,10 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "patrulheiro",
       "clerigo",
-      "mago",
-      "feiticeiro"
+      "patrulheiro",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -9664,7 +9664,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Criatura ou objeto tocado",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Proteção contra Energia organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Proteção contra Energia cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -9683,8 +9683,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -9696,7 +9696,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "cone de 9 m a partir do conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Explosão Psiônica (UA) concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 5d8 Força de dano.",
+    "effect": "Explosão Psiônica (UA) libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 5d8 Força de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "5d8 Força",
     "healing": "",
@@ -9726,7 +9726,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "cone de 9 m a partir do conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Onda de Pulso concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 6d6 Força de dano.",
+    "effect": "Onda de Pulso libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 6d6 Força de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "6d6 Força",
     "healing": "",
@@ -9759,7 +9759,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Criatura ou objeto tocado",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Remover Maldição canaliza uma manifestação de abjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Remover Maldição produz um efeito de abjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -9779,8 +9779,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "paladino",
       "druida",
-      "patrulheiro",
-      "clerigo"
+      "clerigo",
+      "patrulheiro"
     ],
     "school": "Necromancia",
     "source": "Necromancia",
@@ -9795,7 +9795,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Carapaça Ancestral e Incenso de Raiz. Material: consumível e gasto ao concluir a conjuração. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Ressurreição reúne seiva vital, calor e memória corporal para restaurar ou preservar uma ou mais criaturas. A energia procura primeiro ferimentos recentes e condições compatíveis; efeitos permanentes ou morte exigem os materiais especiais indicados. Alvos fora do alcance ou que não possam receber cura não são afetados. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Ressurreição reúne energia vital para curar ou preservar as criaturas escolhidas. Ferimentos, condições e efeitos especiais são tratados conforme os valores indicados abaixo. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -9813,8 +9813,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "clerigo",
       "bardo",
+      "clerigo",
       "mago"
     ],
     "school": "Evocação",
@@ -9830,7 +9830,7 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Enviando amplia sentidos, conhecimento ou comunicação através dos ecos preservados no Jardim. O conjurador recebe informações ligadas ao alvo e ao alcance, mas não ultrapassa proteções específicas contra adivinhação. Respostas simbólicas, memórias incompletas e interferências podem exigir interpretação. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Enviando amplia sentidos, conhecimento ou comunicação. As informações alcançam apenas os alvos e a distância indicados pela magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -9849,8 +9849,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -9865,7 +9865,7 @@ globalThis.CODEX_SPELL_DATA = [
       "cristal_condutor"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio Fino de Cobre e Cristal de Orvalho Condutor. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Nevasca concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de DES.",
+    "effect": "Nevasca libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -9884,8 +9884,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -9900,7 +9900,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Lenta dobra distância, peso ou ritmo para alterar deslocamento e posição. O destino precisa respeitar as condições da magia e oferecer espaço livre; uma chegada impossível conduz ao ponto seguro mais próximo ou faz a manifestação falhar. Passagens sustentadas terminam quando a Concentração é perdida. o alvo realiza Salvaguarda de DES.",
+    "effect": "Lenta altera movimento, distância ou posição. O destino precisa estar dentro do alcance e ter espaço livre para receber a criatura. O alvo faz uma Salvaguarda de DES. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -9918,8 +9918,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "clerigo",
       "bardo",
+      "clerigo",
       "mago"
     ],
     "school": "Necromancia",
@@ -9935,7 +9935,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Carapaça Ancestral e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Falar com Mortos amplia sentidos, conhecimento ou comunicação através dos ecos preservados no Jardim. O conjurador recebe informações ligadas ao alvo e ao alcance, mas não ultrapassa proteções específicas contra adivinhação. Respostas simbólicas, memórias incompletas e interferências podem exigir interpretação. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Falar com Mortos amplia sentidos, conhecimento ou comunicação. As informações alcançam apenas os alvos e a distância indicados pela magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -9953,9 +9953,9 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
+      "bardo",
       "druida",
-      "patrulheiro",
-      "bardo"
+      "patrulheiro"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -9967,7 +9967,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 9 m a partir do conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Falar com Plantas amplia sentidos, conhecimento ou comunicação através dos ecos preservados no Jardim. O conjurador recebe informações ligadas ao alvo e ao alcance, mas não ultrapassa proteções específicas contra adivinhação. Respostas simbólicas, memórias incompletas e interferências podem exigir interpretação. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Falar com Plantas amplia sentidos, conhecimento ou comunicação. As informações alcançam apenas os alvos e a distância indicados pela magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -10000,11 +10000,11 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Guardiões Espirituais canaliza uma manifestação de conjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de SAB; na falha ou acerto, aplique 3d8 Radiante + 3d8 Necrótico de dano.",
+    "effect": "Guardiões Espirituais produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre 3d8 Radiante + 3d8 Necrótico de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "3d8 Radiante + 3d8 Necrótico",
     "healing": "",
-    "damageType": "Necrótico + Radiante",
+    "damageType": "Radiante + Necrótico",
     "attack": false,
     "save": "SAB",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
@@ -10033,7 +10033,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Cobertura Espiritual canaliza uma manifestação de necromancia adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Cobertura Espiritual produz um efeito de necromancia dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -10052,8 +10052,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -10068,7 +10068,7 @@ globalThis.CODEX_SPELL_DATA = [
       "esporos_mutaveis"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporo Tóxico Concentrado e Esporos Mutáveis. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Névoa Fétida concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de CON.",
+    "effect": "Névoa Fétida libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -10086,9 +10086,9 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
+      "bruxo",
       "druida",
       "patrulheiro",
-      "bruxo",
       "mago"
     ],
     "school": "Conjuração",
@@ -10104,7 +10104,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Invocar Fey manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Invocar Fey cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -10138,7 +10138,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Invocar Demônios Menores manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Invocar Demônios Menores cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -10172,7 +10172,7 @@ globalThis.CODEX_SPELL_DATA = [
       "lente_vidro"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Espelho de Orvalho e Lente de Vidro. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Invocar Cria das Sombras manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Invocar Cria das Sombras cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -10206,7 +10206,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Carapaça Ancestral e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Invocar Mortos-Vivos manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Invocar Mortos-Vivos cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -10225,8 +10225,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -10241,7 +10241,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Invocar Espírito Guerreiro (UA) manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Invocar Espírito Guerreiro (UA) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -10260,8 +10260,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -10273,7 +10273,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 27 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Passo do Trovão dobra distância, peso ou ritmo para alterar deslocamento e posição. O destino precisa respeitar as condições da magia e oferecer espaço livre; uma chegada impossível conduz ao ponto seguro mais próximo ou faz a manifestação falhar. Passagens sustentadas terminam quando a Concentração é perdida. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 3d10 Trovão de dano.",
+    "effect": "Passo do Trovão altera movimento, distância ou posição. O destino precisa estar dentro do alcance e ter espaço livre para receber a criatura. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 3d10 Trovão de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "3d10 Trovão",
     "healing": "",
@@ -10292,8 +10292,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -10308,7 +10308,7 @@ globalThis.CODEX_SPELL_DATA = [
       "perola_orvalho"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Orvalho Purificado e Pérola de Orvalho Puríssimo. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "A Onda Gigante concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 4d8 Concussão de dano.",
+    "effect": "A Onda Gigante libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 4d8 Concussão de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "4d8 Concussão",
     "healing": "",
@@ -10338,7 +10338,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Criatura ou objeto tocado",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Pequeno Servo manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Pequeno Servo cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -10356,11 +10356,11 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
+      "bardo",
       "bruxo",
       "clerigo",
-      "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Adivinhação",
     "source": "Adivinhação",
@@ -10375,7 +10375,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. M: Lente de Vidro e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Línguas amplia sentidos, conhecimento ou comunicação através dos ecos preservados no Jardim. O conjurador recebe informações ligadas ao alvo e ao alcance, mas não ultrapassa proteções específicas contra adivinhação. Respostas simbólicas, memórias incompletas e interferências podem exigir interpretação. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Línguas amplia sentidos, conhecimento ou comunicação. As informações alcançam apenas os alvos e a distância indicados pela magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -10394,8 +10394,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Necromancia",
     "source": "Necromancia",
@@ -10407,11 +10407,11 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Toque Vampírico concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 3d6 Necrótico de dano; a recuperação usa 3d6 pontos de vida.",
+    "effect": "Toque Vampírico libera energia contra o alvo ou a área escolhida. Faça um ataque mágico contra cada alvo indicado. Se acertar, o alvo sofre 3d6 Necrótico de dano. A criatura recupera 3d6 pontos de vida.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "3d6",
-    "damageType": "",
+    "damageType": "Necrótico",
     "attack": true,
     "save": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
@@ -10440,7 +10440,7 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Parede de Areia organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Parede de Areia cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -10459,8 +10459,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -10475,7 +10475,7 @@ globalThis.CODEX_SPELL_DATA = [
       "perola_orvalho"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Orvalho Purificado e Pérola de Orvalho Puríssimo. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "PAREDE DE Orvalho organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "PAREDE DE Orvalho cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -10495,8 +10495,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "druida",
       "patrulheiro",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -10511,7 +10511,7 @@ globalThis.CODEX_SPELL_DATA = [
       "perola_orvalho"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Orvalho Purificado e Pérola de Orvalho Puríssimo. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Respirar na Orvalho transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Respirar na Orvalho transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -10530,8 +10530,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "patrulheiro",
       "clerigo",
+      "patrulheiro",
       "feiticeiro"
     ],
     "school": "Transmutação",
@@ -10547,7 +10547,7 @@ globalThis.CODEX_SPELL_DATA = [
       "perola_orvalho"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Orvalho Purificado e Pérola de Orvalho Puríssimo. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Passeio das Orvalhos dobra distância, peso ou ritmo para alterar deslocamento e posição. O destino precisa respeitar as condições da magia e oferecer espaço livre; uma chegada impossível conduz ao ponto seguro mais próximo ou faz a manifestação falhar. Passagens sustentadas terminam quando a Concentração é perdida. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Passeio das Orvalhos altera movimento, distância ou posição. O destino precisa estar dentro do alcance e ter espaço livre para receber a criatura. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -10581,7 +10581,7 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Parede Eólica organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. o alvo realiza Salvaguarda de FOR; na falha ou acerto, aplique 3d8 Concussão de dano.",
+    "effect": "Parede Eólica cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. O alvo faz uma Salvaguarda de FOR. Se falhar, sofre 3d8 Concussão de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "3d8 Concussão",
     "healing": "",
@@ -10614,7 +10614,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Lente de Vidro e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Olho Arcano canaliza uma manifestação de adivinhação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Olho Arcano produz um efeito de adivinhação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -10645,7 +10645,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 9 m a partir do conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Aura de Vida organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. a recuperação usa 1 pontos de vida.",
+    "effect": "Aura de Vida cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. A criatura recupera 1 pontos de vida.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "1",
@@ -10676,7 +10676,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 9 m a partir do conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "de Pureza organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "de Pureza cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -10697,8 +10697,8 @@ globalThis.CODEX_SPELL_DATA = [
       "paladino",
       "bruxo",
       "clerigo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -10713,7 +10713,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Banimento canaliza uma manifestação de abjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de CAR.",
+    "effect": "Banimento produz um efeito de abjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CAR. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -10731,10 +10731,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "druida",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "druida",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Necromancia",
     "source": "Necromancia",
@@ -10746,7 +10746,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 9 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Secar Plantas canaliza uma manifestação de necromancia adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 8d8 Necrótico de dano.",
+    "effect": "Secar Plantas produz um efeito de necromancia dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 8d8 Necrótico de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "8d8 Necrótico",
     "healing": "",
@@ -10764,11 +10764,11 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "druida",
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "druida",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -10780,7 +10780,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 9 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Monstro de Charme impõe uma frequência sobre pensamento, emoção ou vontade. Criaturas afetadas enfrentam a Salvaguarda apropriada; em sucesso, evitam ou reduzem o efeito conforme a magia. Ordens autodestrutivas, imunidades mentais e ausência de percepção do estímulo podem impedir a manifestação. o alvo realiza Salvaguarda de SAB.",
+    "effect": "Monstro de Charme afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -10810,7 +10810,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 9 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Compulsão. canaliza uma manifestação de encantamento adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de SAB.",
+    "effect": "Compulsão. produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -10828,10 +10828,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "druida",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "druida",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -10846,7 +10846,7 @@ globalThis.CODEX_SPELL_DATA = [
       "folha_serena"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Feromônio Ressonante e Folha Serena. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Confusão impõe uma frequência sobre pensamento, emoção ou vontade. Criaturas afetadas enfrentam a Salvaguarda apropriada; em sucesso, evitam ou reduzem o efeito conforme a magia. Ordens autodestrutivas, imunidades mentais e ausência de percepção do estímulo podem impedir a manifestação. o alvo realiza Salvaguarda de SAB.",
+    "effect": "Confusão afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -10864,8 +10864,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -10877,7 +10877,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Conjurar Barlgura (UA) manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Conjurar Barlgura (UA) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -10896,8 +10896,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -10909,7 +10909,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Criatura ou objeto tocado",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Conjurar Knowbot (UA) manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Conjurar Knowbot (UA) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -10940,7 +10940,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 27 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Conjurar Elementais Menores manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Conjurar Elementais Menores cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -10958,8 +10958,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -10974,7 +10974,7 @@ globalThis.CODEX_SPELL_DATA = [
       "lente_vidro"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Espelho de Orvalho e Lente de Vidro. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Conjurar Demônio das Sombras (UA) manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Conjurar Demônio das Sombras (UA) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -11008,7 +11008,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sementes Nutritivas e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Conjurar Seres da Jardim manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Conjurar Seres da Jardim cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -11043,7 +11043,7 @@ globalThis.CODEX_SPELL_DATA = [
       "perola_orvalho"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Orvalho Purificado e Pérola de Orvalho Puríssimo. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Controlar Orvalho transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. o alvo realiza Salvaguarda de FOR; na falha ou acerto, aplique 2d8 Concussão de dano.",
+    "effect": "Controlar Orvalho transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. O alvo faz uma Salvaguarda de FOR. Se falhar, sofre 2d8 Concussão de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d8 Concussão",
     "healing": "",
@@ -11074,7 +11074,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Criatura ou objeto tocado",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Proteção Contra Morte organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Proteção Contra Morte cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -11092,10 +11092,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -11107,7 +11107,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 150 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Porta Dimensional dobra distância, peso ou ritmo para alterar deslocamento e posição. O destino precisa respeitar as condições da magia e oferecer espaço livre; uma chegada impossível conduz ao ponto seguro mais próximo ou faz a manifestação falhar. Passagens sustentadas terminam quando a Concentração é perdida. na falha ou acerto, aplique 4d6 Força de dano.",
+    "effect": "Porta Dimensional altera movimento, distância ou posição. O destino precisa estar dentro do alcance e ter espaço livre para receber a criatura. O alvo sofre 4d6 Força de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "4d6 Força",
     "healing": "",
@@ -11142,7 +11142,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Lente de Vidro e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Adivinhação canaliza uma manifestação de adivinhação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Adivinhação produz um efeito de adivinhação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -11174,7 +11174,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Dominar Fera impõe uma frequência sobre pensamento, emoção ou vontade. Criaturas afetadas enfrentam a Salvaguarda apropriada; em sucesso, evitam ou reduzem o efeito conforme a magia. Ordens autodestrutivas, imunidades mentais e ausência de percepção do estímulo podem impedir a manifestação. o alvo realiza Salvaguarda de SAB.",
+    "effect": "Dominar Fera afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -11192,10 +11192,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -11207,7 +11207,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 9 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Chicote do Ego (UA) concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de INT.",
+    "effect": "Chicote do Ego (UA) libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de INT. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -11225,8 +11225,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "druida",
       "bruxo",
+      "druida",
       "mago"
     ],
     "school": "Transmutação",
@@ -11239,7 +11239,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 27 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Perdição Elemental canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de CON.",
+    "effect": "Perdição Elemental produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -11272,7 +11272,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Tentáculos Negros de Evard canaliza uma manifestação de conjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 3d6 Concussão de dano.",
+    "effect": "Tentáculos Negros de Evard produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 3d6 Concussão de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "3d6 Concussão",
     "healing": "",
@@ -11302,7 +11302,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "cubo de 3 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Fabricar canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Fabricar produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -11332,7 +11332,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 9 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Encontre um corcel maior manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Encontre um corcel maior cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -11351,8 +11351,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -11367,11 +11367,11 @@ globalThis.CODEX_SPELL_DATA = [
       "carvao_po"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Semente de Brasa e Carvão em Pó. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Escudo do Brasa organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. na falha ou acerto, aplique 2d8 Fogo + 2d8 Frio de dano.",
+    "effect": "Escudo do Brasa cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. O alvo sofre 2d8 Fogo + 2d8 Frio de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d8 Fogo + 2d8 Frio",
     "healing": "",
-    "damageType": "Frio + Fogo",
+    "damageType": "Fogo + Frio",
     "attack": false,
     "save": "",
     "higherLevels": "",
@@ -11385,10 +11385,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
+      "bardo",
       "druida",
-      "patrulheiro",
       "clerigo",
-      "bardo"
+      "patrulheiro"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -11403,7 +11403,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Direito de ir e vir canaliza uma manifestação de abjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Direito de ir e vir produz um efeito de abjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -11437,7 +11437,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "O Correio Rápido de Galder canaliza uma manifestação de conjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "O Correio Rápido de Galder produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -11456,8 +11456,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -11472,7 +11472,7 @@ globalThis.CODEX_SPELL_DATA = [
       "cristal_condutor"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Seiva do Limiar e Cristal de Orvalho Condutor. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Vedação do portão dobra distância, peso ou ritmo para alterar deslocamento e posição. O destino precisa respeitar as condições da magia e oferecer espaço livre; uma chegada impossível conduz ao ponto seguro mais próximo ou faz a manifestação falhar. Passagens sustentadas terminam quando a Concentração é perdida. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Vedação do portão altera movimento, distância ou posição. O destino precisa estar dentro do alcance e ter espaço livre para receber a criatura. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -11502,7 +11502,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 9 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Criatura do Jardim Gigante canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Criatura do Jardim Gigante produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -11533,7 +11533,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 9 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Videira Agarradora canaliza uma manifestação de conjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de DES.",
+    "effect": "Videira Agarradora produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -11566,7 +11566,7 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Sinkhole Gravitacional canaliza uma manifestação de evocação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 5d10 Força de dano.",
+    "effect": "Sinkhole Gravitacional produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 5d10 Força de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "5d10 Força",
     "healing": "",
@@ -11585,8 +11585,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -11598,7 +11598,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Criatura ou objeto tocado",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Invisibilidade Maior reorganiza luz, som, cheiro e expectativa para criar uma percepção falsa ou ocultar presenças. Contato direto, investigação cuidadosa ou sentidos especiais podem revelar inconsistências. Descobrir a ilusão não a dissipa automaticamente, mas permite reconhecê-la pelo restante da duração. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Invisibilidade Maior cria ou altera uma percepção. Toque, investigação ou sentidos especiais podem revelar que o efeito não é real. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -11628,7 +11628,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 9 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Guardião da Fé canaliza uma manifestação de conjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de DES.",
+    "effect": "Guardião da Fé produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -11659,7 +11659,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Guardião da Natureza canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Guardião da Natureza produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -11677,9 +11677,9 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "druida",
-      "bruxo",
       "bardo",
+      "bruxo",
+      "druida",
       "mago"
     ],
     "school": "Ilusão",
@@ -11695,7 +11695,7 @@ globalThis.CODEX_SPELL_DATA = [
       "lente_vidro"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Espelho de Orvalho e Lente de Vidro. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Terreno Alucinatório canaliza uma manifestação de ilusão adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Terreno Alucinatório produz um efeito de ilusão dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -11714,8 +11714,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -11730,7 +11730,7 @@ globalThis.CODEX_SPELL_DATA = [
       "cristal_condutor"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio Fino de Cobre e Cristal de Orvalho Condutor. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Tempestade de gelo concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 2d8 Concussão + 4d6 Frio de dano.",
+    "effect": "Tempestade de gelo libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 2d8 Concussão + 4d6 Frio de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d8 Concussão + 4d6 Frio",
     "healing": "",
@@ -11763,7 +11763,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Baú Secreto de Leomund canaliza uma manifestação de conjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Baú Secreto de Leomund produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -11781,11 +11781,11 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
+      "bardo",
       "paladino",
       "druida",
-      "patrulheiro",
       "clerigo",
-      "bardo",
+      "patrulheiro",
       "mago"
     ],
     "school": "Adivinhação",
@@ -11801,7 +11801,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Lente de Vidro e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Localizar Criatura canaliza uma manifestação de adivinhação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Localizar Criatura produz um efeito de adivinhação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -11834,7 +11834,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Cão Fiel de Mordenkainen canaliza uma manifestação de conjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. na falha ou acerto, aplique 4d8 Perfurante de dano.",
+    "effect": "Cão Fiel de Mordenkainen produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo sofre 4d8 Perfurante de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "4d8 Perfurante",
     "healing": "",
@@ -11867,7 +11867,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Santuário Privado de Mordenkainen canaliza uma manifestação de abjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Santuário Privado de Mordenkainen produz um efeito de abjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -11900,7 +11900,7 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Esfera Resiliente de Otiluke concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de DES.",
+    "effect": "Esfera Resiliente de Otiluke libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -11931,7 +11931,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 36 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Assassino Fantasmagórico impõe uma frequência sobre pensamento, emoção ou vontade. Criaturas afetadas enfrentam a Salvaguarda apropriada; em sucesso, evitam ou reduzem o efeito conforme a magia. Ordens autodestrutivas, imunidades mentais e ausência de percepção do estímulo podem impedir a manifestação. o alvo realiza Salvaguarda de SAB; na falha ou acerto, aplique 4d10 Psíquico de dano.",
+    "effect": "Assassino Fantasmagórico afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre 4d10 Psíquico de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "4d10 Psíquico",
     "healing": "",
@@ -11949,10 +11949,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "druida",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "druida",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -11967,7 +11967,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Polimorfar transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. o alvo realiza Salvaguarda de SAB.",
+    "effect": "Polimorfar transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -11985,10 +11985,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -12000,7 +12000,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 36 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Lança Psíquica de Raulothim impõe uma frequência sobre pensamento, emoção ou vontade. Criaturas afetadas enfrentam a Salvaguarda apropriada; em sucesso, evitam ou reduzem o efeito conforme a magia. Ordens autodestrutivas, imunidades mentais e ausência de percepção do estímulo podem impedir a manifestação. o alvo realiza Salvaguarda de INT; na falha ou acerto, aplique 7d6 Psíquico de dano.",
+    "effect": "Lança Psíquica de Raulothim afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de INT. Se falhar, sofre 7d6 Psíquico de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "7d6 Psíquico",
     "healing": "",
@@ -12018,10 +12018,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -12033,7 +12033,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 36 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Lança Psíquica de Raulothim (UA) impõe uma frequência sobre pensamento, emoção ou vontade. Criaturas afetadas enfrentam a Salvaguarda apropriada; em sucesso, evitam ou reduzem o efeito conforme a magia. Ordens autodestrutivas, imunidades mentais e ausência de percepção do estímulo podem impedir a manifestação. o alvo realiza Salvaguarda de INT; na falha ou acerto, aplique 10d6 Psíquico de dano.",
+    "effect": "Lança Psíquica de Raulothim (UA) afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de INT. Se falhar, sofre 10d6 Psíquico de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "10d6 Psíquico",
     "healing": "",
@@ -12066,7 +12066,7 @@ globalThis.CODEX_SPELL_DATA = [
       "lente_vidro"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Espelho de Orvalho e Lente de Vidro. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Sombra de Moil canaliza uma manifestação de necromancia adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. na falha ou acerto, aplique 2d8 Necrótico de dano.",
+    "effect": "Sombra de Moil produz um efeito de necromancia dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo sofre 2d8 Necrótico de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d8 Necrótico",
     "healing": "",
@@ -12085,8 +12085,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -12098,7 +12098,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 9 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Radiância Doentia concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Radiância Doentia libera energia contra o alvo ou a área escolhida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -12117,8 +12117,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Necromancia",
     "source": "Necromancia",
@@ -12133,7 +12133,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Carapaça Ancestral e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Espírito da Morte canaliza uma manifestação de necromancia adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Espírito da Morte produz um efeito de necromancia dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -12152,8 +12152,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Necromancia",
     "source": "Necromancia",
@@ -12168,7 +12168,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Carapaça Ancestral e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Espírito da Morte (UA) canaliza uma manifestação de necromancia adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Espírito da Morte (UA) produz um efeito de necromancia dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -12198,7 +12198,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Golpe Escalonador concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de SAB; na falha ou acerto, aplique 4d6 Psíquico de dano.",
+    "effect": "Golpe Escalonador libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre 4d6 Psíquico de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "4d6 Psíquico",
     "healing": "",
@@ -12233,7 +12233,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Moldar Rochas transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Moldar Rochas transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -12253,8 +12253,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "druida",
       "patrulheiro",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -12269,7 +12269,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Pele Rochosa transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Pele Rochosa transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -12287,8 +12287,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -12300,7 +12300,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 6 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Esfera da Tempestade concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. Faça um ataque mágico contra cada alvo indicado; o alvo realiza Salvaguarda de FOR; na falha ou acerto, aplique 2d6 Concussão + 4d6 Relâmpago de dano.",
+    "effect": "Esfera da Tempestade libera energia contra o alvo ou a área escolhida. Faça um ataque mágico contra cada alvo indicado. Se acertar, o alvo sofre 2d6 Concussão + 4d6 Relâmpago de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d6 Concussão + 4d6 Relâmpago",
     "healing": "",
@@ -12334,7 +12334,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Invocar Aberração manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Invocar Aberração cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -12367,7 +12367,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Invocar Construto manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Invocar Construto cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -12402,7 +12402,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Convocar Elemental manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Convocar Elemental cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -12436,7 +12436,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Invocar Demônio Maior manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. o alvo realiza Salvaguarda de CAR.",
+    "effect": "Invocar Demônio Maior cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. O alvo faz uma Salvaguarda de CAR. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -12455,8 +12455,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -12468,7 +12468,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Criatura ou objeto tocado",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Sincronicidade (UA) canaliza uma manifestação de encantamento adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Sincronicidade (UA) produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -12487,8 +12487,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -12503,7 +12503,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Backdoor do Sistema (UA) dobra distância, peso ou ritmo para alterar deslocamento e posição. O destino precisa respeitar as condições da magia e oferecer espaço livre; uma chegada impossível conduz ao ponto seguro mais próximo ou faz a manifestação falhar. Passagens sustentadas terminam quando a Concentração é perdida. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Backdoor do Sistema (UA) altera movimento, distância ou posição. O destino precisa estar dentro do alcance e ter espaço livre para receber a criatura. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -12521,8 +12521,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -12537,7 +12537,7 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Esfera Vitriólica concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 10d4 Ácido + 5d4 Ácido de dano.",
+    "effect": "Esfera Vitriólica libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 10d4 Ácido + 5d4 Ácido de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "10d4 Ácido + 5d4 Ácido",
     "healing": "",
@@ -12556,8 +12556,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -12572,7 +12572,7 @@ globalThis.CODEX_SPELL_DATA = [
       "carvao_po"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Semente de Brasa e Carvão em Pó. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Muralha de Brasa organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 5d8 Fogo de dano.",
+    "effect": "Muralha de Brasa cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 5d8 Fogo de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "5d8 Fogo",
     "healing": "",
@@ -12591,8 +12591,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -12607,7 +12607,7 @@ globalThis.CODEX_SPELL_DATA = [
       "perola_orvalho"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Orvalho Purificado e Pérola de Orvalho Puríssimo. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Esfera Aquosa transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. o alvo realiza Salvaguarda de FOR.",
+    "effect": "Esfera Aquosa transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. O alvo faz uma Salvaguarda de FOR. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -12626,8 +12626,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -12639,7 +12639,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 36 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Animar Objetos manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Animar Objetos cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -12669,7 +12669,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 3 m a partir do conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Cúpula Antivida canaliza uma manifestação de abjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Cúpula Antivida produz um efeito de abjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -12687,8 +12687,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "druida",
-      "bardo"
+      "bardo",
+      "druida"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -12703,7 +12703,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: consumível e gasto ao concluir a conjuração. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Despertar transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Despertar transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -12733,7 +12733,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Banishing Smite concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. na falha ou acerto, aplique 5d10 Força de dano.",
+    "effect": "Banishing Smite libera energia contra o alvo ou a área escolhida. O alvo sofre 5d10 Força de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "5d10 Força",
     "healing": "",
@@ -12751,8 +12751,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -12767,7 +12767,7 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Mão de Bigby canaliza uma manifestação de evocação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Mão de Bigby produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -12797,7 +12797,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 9 m a partir do conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Círculo de Poder canaliza uma manifestação de abjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Círculo de Poder produz um efeito de abjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -12815,8 +12815,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -12828,7 +12828,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 6 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Névoa Mortal impõe uma frequência sobre pensamento, emoção ou vontade. Criaturas afetadas enfrentam a Salvaguarda apropriada; em sucesso, evitam ou reduzem o efeito conforme a magia. Ordens autodestrutivas, imunidades mentais e ausência de percepção do estímulo podem impedir a manifestação. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 5d8 Veneno de dano.",
+    "effect": "Névoa Mortal afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 5d8 Veneno de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "5d8 Veneno",
     "healing": "",
@@ -12861,7 +12861,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Lente de Vidro e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Comunhão amplia sentidos, conhecimento ou comunicação através dos ecos preservados no Jardim. O conjurador recebe informações ligadas ao alvo e ao alcance, mas não ultrapassa proteções específicas contra adivinhação. Respostas simbólicas, memórias incompletas e interferências podem exigir interpretação. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Comunhão amplia sentidos, conhecimento ou comunicação. As informações alcançam apenas os alvos e a distância indicados pela magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -12880,8 +12880,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Adivinhação",
     "source": "Adivinhação",
@@ -12893,7 +12893,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Comunhão com a Cidade (UA) amplia sentidos, conhecimento ou comunicação através dos ecos preservados no Jardim. O conjurador recebe informações ligadas ao alvo e ao alcance, mas não ultrapassa proteções específicas contra adivinhação. Respostas simbólicas, memórias incompletas e interferências podem exigir interpretação. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Comunhão com a Cidade (UA) amplia sentidos, conhecimento ou comunicação. As informações alcançam apenas os alvos e a distância indicados pela magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -12924,7 +12924,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Comunhão com a Natureza amplia sentidos, conhecimento ou comunicação através dos ecos preservados no Jardim. O conjurador recebe informações ligadas ao alvo e ao alcance, mas não ultrapassa proteções específicas contra adivinhação. Respostas simbólicas, memórias incompletas e interferências podem exigir interpretação. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Comunhão com a Natureza amplia sentidos, conhecimento ou comunicação. As informações alcançam apenas os alvos e a distância indicados pela magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -12943,8 +12943,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -12959,7 +12959,7 @@ globalThis.CODEX_SPELL_DATA = [
       "perola_orvalho"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Orvalho Purificado e Pérola de Orvalho Puríssimo. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Cone de Frio concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 8d8 Frio de dano.",
+    "effect": "Cone de Frio libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 8d8 Frio de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "8d8 Frio",
     "healing": "",
@@ -12993,7 +12993,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Conjurar Elemental manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Conjurar Elemental cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -13026,7 +13026,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Conjurar Voleio manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. o alvo realiza Salvaguarda de DES.",
+    "effect": "Conjurar Voleio cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. O alvo faz uma Salvaguarda de DES. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -13044,8 +13044,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -13060,7 +13060,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Conjurar Vrock (UA) manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Conjurar Vrock (UA) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -13091,7 +13091,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Contato Extraplanar amplia sentidos, conhecimento ou comunicação através dos ecos preservados no Jardim. O conjurador recebe informações ligadas ao alvo e ao alcance, mas não ultrapassa proteções específicas contra adivinhação. Respostas simbólicas, memórias incompletas e interferências podem exigir interpretação. o alvo realiza Salvaguarda de INT; na falha ou acerto, aplique 6d6 Psíquico de dano.",
+    "effect": "Contato Extraplanar amplia sentidos, conhecimento ou comunicação. As informações alcançam apenas os alvos e a distância indicados pela magia. O alvo faz uma Salvaguarda de INT. Se falhar, sofre 6d6 Psíquico de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "6d6 Psíquico",
     "healing": "",
@@ -13122,7 +13122,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Criatura ou objeto tocado",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Contágio canaliza uma manifestação de necromancia adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Faça um ataque mágico contra cada alvo indicado; o alvo realiza Salvaguarda de CON.",
+    "effect": "Contágio produz um efeito de necromancia dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Faça um ataque mágico contra cada alvo indicado. Se acertar, aplique o efeito descrito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -13141,8 +13141,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -13154,7 +13154,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "cubo de 30 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Ventos de Controle transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Ventos de Controle transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -13187,7 +13187,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Criar Elmo de Bloqueio Mágico manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Criar Elmo de Bloqueio Mágico cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -13205,8 +13205,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -13221,7 +13221,7 @@ globalThis.CODEX_SPELL_DATA = [
       "lente_vidro"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Espelho de Orvalho e Lente de Vidro. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Criação canaliza uma manifestação de ilusão adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Criação produz um efeito de ilusão dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -13252,7 +13252,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Danse Macabre canaliza uma manifestação de necromancia adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Danse Macabre produz um efeito de necromancia dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -13286,7 +13286,7 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Amanhecer canaliza uma manifestação de evocação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 4d10 Radiante de dano.",
+    "effect": "Amanhecer produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 4d10 Radiante de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "4d10 Radiante",
     "healing": "",
@@ -13316,7 +13316,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 9 m a partir do conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Onda Destrutiva concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 5d6 Trovão de dano.",
+    "effect": "Onda Destrutiva libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 5d6 Trovão de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "5d6 Trovão",
     "healing": "",
@@ -13350,7 +13350,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Dissipar o Mal e o Bem canaliza uma manifestação de abjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Dissipar o Mal e o Bem produz um efeito de abjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -13369,8 +13369,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -13382,7 +13382,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Dominar Pessoa impõe uma frequência sobre pensamento, emoção ou vontade. Criaturas afetadas enfrentam a Salvaguarda apropriada; em sucesso, evitam ou reduzem o efeito conforme a magia. Ordens autodestrutivas, imunidades mentais e ausência de percepção do estímulo podem impedir a manifestação. o alvo realiza Salvaguarda de SAB.",
+    "effect": "Dominar Pessoa afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -13400,8 +13400,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
+      "bruxo",
       "mago"
     ],
     "school": "Ilusão",
@@ -13417,7 +13417,7 @@ globalThis.CODEX_SPELL_DATA = [
       "folha_serena"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Feromônio Ressonante e Folha Serena. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Sonhe reorganiza luz, som, cheiro e expectativa para criar uma percepção falsa ou ocultar presenças. Contato direto, investigação cuidadosa ou sentidos especiais podem revelar inconsistências. Descobrir a ilusão não a dissipa automaticamente, mas permite reconhecê-la pelo restante da duração. o alvo realiza Salvaguarda de SAB; na falha ou acerto, aplique 3d6 Psíquico de dano.",
+    "effect": "Sonhe cria ou altera uma percepção. Toque, investigação ou sentidos especiais podem revelar que o efeito não é real. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre 3d6 Psíquico de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "3d6 Psíquico",
     "healing": "",
@@ -13436,8 +13436,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Necromancia",
     "source": "Necromancia",
@@ -13449,7 +13449,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Enervação canaliza uma manifestação de necromancia adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 2d8 Necrótico + 4d8 Necrótico de dano.",
+    "effect": "Enervação produz um efeito de necromancia dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 2d8 Necrótico + 4d8 Necrótico de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d8 Necrótico + 4d8 Necrótico",
     "healing": "",
@@ -13468,8 +13468,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -13481,7 +13481,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Passo Distante dobra distância, peso ou ritmo para alterar deslocamento e posição. O destino precisa respeitar as condições da magia e oferecer espaço livre; uma chegada impossível conduz ao ponto seguro mais próximo ou faz a manifestação falhar. Passagens sustentadas terminam quando a Concentração é perdida. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Passo Distante altera movimento, distância ou posição. O destino precisa estar dentro do alcance e ter espaço livre para receber a criatura. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -13514,7 +13514,7 @@ globalThis.CODEX_SPELL_DATA = [
       "carvao_po"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Semente de Brasa e Carvão em Pó. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Ataque Flamejante transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 4d6 Fogo + 4d6 Radiante de dano.",
+    "effect": "Ataque Flamejante transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 4d6 Fogo + 4d6 Radiante de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "4d6 Fogo + 4d6 Radiante",
     "healing": "",
@@ -13532,10 +13532,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
+      "bardo",
       "paladino",
       "druida",
       "clerigo",
-      "bardo",
       "mago"
     ],
     "school": "Encantamento",
@@ -13548,7 +13548,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Geas canaliza uma manifestação de encantamento adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de SAB; na falha ou acerto, aplique 5d10 Psíquico de dano.",
+    "effect": "Geas produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre 5d10 Psíquico de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "5d10 Psíquico",
     "healing": "",
@@ -13566,10 +13566,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
+      "bardo",
       "druida",
-      "patrulheiro",
       "clerigo",
-      "bardo"
+      "patrulheiro"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -13584,7 +13584,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Restauração maior reúne seiva vital, calor e memória corporal para restaurar ou preservar uma ou mais criaturas. A energia procura primeiro ferimentos recentes e condições compatíveis; efeitos permanentes ou morte exigem os materiais especiais indicados. Alvos fora do alcance ou que não possam receber cura não são afetados. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Restauração maior reúne energia vital para curar ou preservar as criaturas escolhidas. Ferimentos, condições e efeitos especiais são tratados conforme os valores indicados abaixo. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -13617,7 +13617,7 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: consumível e gasto ao concluir a conjuração. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Consagrar canaliza uma manifestação de evocação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de CAR.",
+    "effect": "Consagrar produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CAR. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -13635,10 +13635,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -13653,7 +13653,7 @@ globalThis.CODEX_SPELL_DATA = [
       "folha_serena"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Feromônio Ressonante e Folha Serena. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Imobilizar Monstro canaliza uma manifestação de encantamento adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de SAB.",
+    "effect": "Imobilizar Monstro produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -13684,7 +13684,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 9 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Arma Sagrada canaliza uma manifestação de evocação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 2d8 Radiante + 4d8 Radiante de dano.",
+    "effect": "Arma Sagrada produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 2d8 Radiante + 4d8 Radiante de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d8 Radiante + 4d8 Radiante",
     "healing": "",
@@ -13702,8 +13702,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -13715,7 +13715,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 9 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Imolação canaliza uma manifestação de evocação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 8d6 Fogo + 4d6 Fogo de dano.",
+    "effect": "Imolação produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 8d6 Fogo + 4d6 Fogo de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "8d6 Fogo + 4d6 Fogo",
     "healing": "",
@@ -13749,7 +13749,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Brasado Infernal canaliza uma manifestação de conjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Brasado Infernal produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -13784,7 +13784,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sementes Nutritivas e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Praga de Criatura do Jardims canaliza uma manifestação de conjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 4d10 Perfurante de dano.",
+    "effect": "Praga de Criatura do Jardims produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 4d10 Perfurante de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "4d10 Perfurante",
     "healing": "",
@@ -13802,8 +13802,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "clerigo",
       "bardo",
+      "clerigo",
       "mago"
     ],
     "school": "Adivinhação",
@@ -13819,7 +13819,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Lente de Vidro e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Lendas e Histórias amplia sentidos, conhecimento ou comunicação através dos ecos preservados no Jardim. O conjurador recebe informações ligadas ao alvo e ao alcance, mas não ultrapassa proteções específicas contra adivinhação. Respostas simbólicas, memórias incompletas e interferências podem exigir interpretação. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Lendas e Histórias amplia sentidos, conhecimento ou comunicação. As informações alcançam apenas os alvos e a distância indicados pela magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -13852,7 +13852,7 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Sorvedouro canaliza uma manifestação de evocação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de FOR; na falha ou acerto, aplique 6d6 Concussão de dano.",
+    "effect": "Sorvedouro produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de FOR. Se falhar, sofre 6d6 Concussão de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "6d6 Concussão",
     "healing": "",
@@ -13870,9 +13870,9 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
+      "bardo",
       "druida",
-      "clerigo",
-      "bardo"
+      "clerigo"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -13884,7 +13884,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Até six criaturas dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Curar Ferimentos em Massa reúne seiva vital, calor e memória corporal para restaurar ou preservar uma ou mais criaturas. A energia procura primeiro ferimentos recentes e condições compatíveis; efeitos permanentes ou morte exigem os materiais especiais indicados. Alvos fora do alcance ou que não possam receber cura não são afetados. a recuperação usa 3d8 + Mod. Conjuração pontos de vida.",
+    "effect": "Curar Ferimentos em Massa reúne energia vital para curar ou preservar as criaturas escolhidas. Ferimentos, condições e efeitos especiais são tratados conforme os valores indicados abaixo. A criatura recupera 3d8 + Mod. Conjuração pontos de vida.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "3d8 + Mod. Conjuração",
@@ -13902,8 +13902,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
+      "bruxo",
       "mago"
     ],
     "school": "Ilusão",
@@ -13916,7 +13916,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Despistar canaliza uma manifestação de ilusão adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Despistar produz um efeito de ilusão dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -13947,7 +13947,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 9 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Modificar Memória canaliza uma manifestação de encantamento adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de SAB.",
+    "effect": "Modificar Memória produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -13981,7 +13981,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. M: Pó de Carapaça Ancestral e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Inundação de Energia Negativa canaliza uma manifestação de necromancia adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 5d12 Necrótico de dano.",
+    "effect": "Inundação de Energia Negativa produz um efeito de necromancia dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 5d12 Necrótico de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "5d12 Necrótico",
     "healing": "",
@@ -14014,7 +14014,7 @@ globalThis.CODEX_SPELL_DATA = [
       "cristal_condutor"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Seiva do Limiar e Cristal de Orvalho Condutor. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Criar Passagem organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Criar Passagem cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -14032,10 +14032,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "druida",
-      "bruxo",
-      "clerigo",
       "bardo",
+      "bruxo",
+      "druida",
+      "clerigo",
       "mago"
     ],
     "school": "Abjuração",
@@ -14051,7 +14051,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Âncora Planar canaliza uma manifestação de abjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de CAR.",
+    "effect": "Âncora Planar produz um efeito de abjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CAR. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -14069,9 +14069,9 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
+      "bardo",
       "paladino",
-      "clerigo",
-      "bardo"
+      "clerigo"
     ],
     "school": "Necromancia",
     "source": "Necromancia",
@@ -14086,7 +14086,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Carapaça Ancestral e Incenso de Raiz. Material: consumível e gasto ao concluir a conjuração. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Reviver os Mortos canaliza uma manifestação de necromancia adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Reviver os Mortos produz um efeito de necromancia dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -14120,7 +14120,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Lente de Vidro e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Ligação Telepática de Rary canaliza uma manifestação de adivinhação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Ligação Telepática de Rary produz um efeito de adivinhação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -14153,7 +14153,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Reencarnar canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Reencarnar produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -14171,10 +14171,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "druida",
-      "bruxo",
-      "clerigo",
       "bardo",
+      "bruxo",
+      "druida",
+      "clerigo",
       "mago"
     ],
     "school": "Adivinhação",
@@ -14190,7 +14190,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Lente de Vidro e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Vidência amplia sentidos, conhecimento ou comunicação através dos ecos preservados no Jardim. O conjurador recebe informações ligadas ao alvo e ao alcance, mas não ultrapassa proteções específicas contra adivinhação. Respostas simbólicas, memórias incompletas e interferências podem exigir interpretação. o alvo realiza Salvaguarda de SAB.",
+    "effect": "Vidência amplia sentidos, conhecimento ou comunicação. As informações alcançam apenas os alvos e a distância indicados pela magia. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -14209,8 +14209,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -14222,7 +14222,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 9 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Similaridade amplia sentidos, conhecimento ou comunicação através dos ecos preservados no Jardim. O conjurador recebe informações ligadas ao alvo e ao alcance, mas não ultrapassa proteções específicas contra adivinhação. Respostas simbólicas, memórias incompletas e interferências podem exigir interpretação. o alvo realiza Salvaguarda de CAR.",
+    "effect": "Similaridade amplia sentidos, conhecimento ou comunicação. As informações alcançam apenas os alvos e a distância indicados pela magia. O alvo faz uma Salvaguarda de CAR. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -14241,8 +14241,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -14254,7 +14254,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 36 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Desligamento (UA) canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de CON.",
+    "effect": "Desligamento (UA) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -14273,8 +14273,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -14286,7 +14286,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Criatura ou objeto tocado",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Capacitação de habilidades impõe uma frequência sobre pensamento, emoção ou vontade. Criaturas afetadas enfrentam a Salvaguarda apropriada; em sucesso, evitam ou reduzem o efeito conforme a magia. Ordens autodestrutivas, imunidades mentais e ausência de percepção do estímulo podem impedir a manifestação. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Capacitação de habilidades afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -14320,7 +14320,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Golpe de Vento de Aço transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 6d10 Força de dano.",
+    "effect": "Golpe de Vento de Aço transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. Faça um ataque mágico contra cada alvo indicado. Se acertar, o alvo sofre 6d10 Força de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "6d10 Força",
     "healing": "",
@@ -14354,7 +14354,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Invocar Luminar manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Invocar Luminar cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -14373,8 +14373,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -14389,7 +14389,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Invocar Espírito Dracônico manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Invocar Espírito Dracônico cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -14408,8 +14408,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -14424,7 +14424,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Invocar Espírito Dracônico (UA) manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Invocar Espírito Dracônico (UA) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -14457,7 +14457,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Aljava Rápida canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Aljava Rápida produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -14475,10 +14475,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -14490,7 +14490,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 6 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Estático Sináptico canaliza uma manifestação de encantamento adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 8d6 Psíquico de dano.",
+    "effect": "Estático Sináptico produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 8d6 Psíquico de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "8d6 Psíquico",
     "healing": "",
@@ -14508,8 +14508,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -14521,7 +14521,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Telecinese canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Telecinese produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -14539,10 +14539,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -14557,7 +14557,7 @@ globalThis.CODEX_SPELL_DATA = [
       "cristal_condutor"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. M: Seiva do Limiar e Cristal de Orvalho Condutor. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Círculo de Teletransporte dobra distância, peso ou ritmo para alterar deslocamento e posição. O destino precisa respeitar as condições da magia e oferecer espaço livre; uma chegada impossível conduz ao ponto seguro mais próximo ou faz a manifestação falhar. Passagens sustentadas terminam quando a Concentração é perdida. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Círculo de Teletransporte altera movimento, distância ou posição. O destino precisa estar dentro do alcance e ter espaço livre para receber a criatura. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -14587,7 +14587,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 36 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Derivação Temporal canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de SAB.",
+    "effect": "Derivação Temporal produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -14621,7 +14621,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Transmute Rock transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Transmute Rock transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -14652,7 +14652,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Passo Arbóreo dobra distância, peso ou ritmo para alterar deslocamento e posição. O destino precisa respeitar as condições da magia e oferecer espaço livre; uma chegada impossível conduz ao ponto seguro mais próximo ou faz a manifestação falhar. Passagens sustentadas terminam quando a Concentração é perdida. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Passo Arbóreo altera movimento, distância ou posição. O destino precisa estar dentro do alcance e ter espaço livre para receber a criatura. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -14685,7 +14685,7 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Muralha de Energia organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Muralha de Energia cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -14704,8 +14704,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -14720,7 +14720,7 @@ globalThis.CODEX_SPELL_DATA = [
       "carvao_po"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Semente de Brasa e Carvão em Pó. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Muralha de Luz organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. Faça um ataque mágico contra cada alvo indicado; o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 4d8 Radiante de dano.",
+    "effect": "Muralha de Luz cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Faça um ataque mágico contra cada alvo indicado. Se acertar, o alvo sofre 4d8 Radiante de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "4d8 Radiante",
     "healing": "",
@@ -14739,8 +14739,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -14755,7 +14755,7 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Muralha de Pedra organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. o alvo realiza Salvaguarda de DES.",
+    "effect": "Muralha de Pedra cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. O alvo faz uma Salvaguarda de DES. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -14786,7 +14786,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "cubo de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Ira da natureza canaliza uma manifestação de evocação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Faça um ataque mágico contra cada alvo indicado; o alvo realiza Salvaguarda de FOR; na falha ou acerto, aplique 4d6 Cortante de dano.",
+    "effect": "Ira da natureza produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Faça um ataque mágico contra cada alvo indicado. Se acertar, o alvo sofre 4d6 Cortante de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "4d6 Cortante",
     "healing": "",
@@ -14805,8 +14805,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -14818,7 +14818,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 150 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Portão Arcano dobra distância, peso ou ritmo para alterar deslocamento e posição. O destino precisa respeitar as condições da magia e oferecer espaço livre; uma chegada impossível conduz ao ponto seguro mais próximo ou faz a manifestação falhar. Passagens sustentadas terminam quando a Concentração é perdida. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Portão Arcano altera movimento, distância ou posição. O destino precisa estar dentro do alcance e ter espaço livre para receber a criatura. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -14848,7 +14848,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 27 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Barreira de Lâminas organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 6d10 Cortante de dano.",
+    "effect": "Barreira de Lâminas cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 6d10 Cortante de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "6d10 Cortante",
     "healing": "",
@@ -14878,7 +14878,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 3 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "OSSOS DA TERRA transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 6d6 Concussão de dano.",
+    "effect": "OSSOS DA TERRA transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 6d6 Concussão de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "6d6 Concussão",
     "healing": "",
@@ -14896,8 +14896,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -14912,7 +14912,7 @@ globalThis.CODEX_SPELL_DATA = [
       "carvao_po"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Semente de Brasa e Carvão em Pó. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Cadeia de Raios concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 10d8 Relâmpago de dano.",
+    "effect": "Cadeia de Raios libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 10d8 Relâmpago de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "10d8 Relâmpago",
     "healing": "",
@@ -14931,8 +14931,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Necromancia",
     "source": "Necromancia",
@@ -14947,7 +14947,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Carapaça Ancestral e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Círculo da Morte canaliza uma manifestação de necromancia adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 8d6 Necrótico de dano.",
+    "effect": "Círculo da Morte produz um efeito de necromancia dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 8d6 Necrótico de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "8d6 Necrótico",
     "healing": "",
@@ -14965,8 +14965,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "druida",
-      "bruxo"
+      "bruxo",
+      "druida"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -14978,7 +14978,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 27 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Conjurar Feérico manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Conjurar Feérico cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -15011,7 +15011,7 @@ globalThis.CODEX_SPELL_DATA = [
       "ambar_tempestade"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Areia do Instante e Âmbar de Tempestade Presa. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Contingência canaliza uma manifestação de evocação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Contingência produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -15044,7 +15044,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Criar Homúnculo manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. na falha ou acerto, aplique 2d4 Perfurante de dano.",
+    "effect": "Criar Homúnculo cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. O alvo sofre 2d4 Perfurante de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d4 Perfurante",
     "healing": "",
@@ -15079,7 +15079,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Carapaça Ancestral e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Criar Mortos-Vivos manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Criar Mortos-Vivos cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -15097,8 +15097,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -15113,7 +15113,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Desintegrar concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 10d6 + 40 Força de dano.",
+    "effect": "Desintegrar libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 10d6 + 40 Força de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "10d6 + 40 Força",
     "healing": "",
@@ -15146,7 +15146,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Invocação Instantânea de Drawmij manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Invocação Instantânea de Drawmij cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -15179,7 +15179,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sementes Nutritivas e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Druid Grove canaliza uma manifestação de abjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Druid Grove produz um efeito de abjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -15197,10 +15197,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Necromancia",
     "source": "Necromancia",
@@ -15212,7 +15212,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Ataque Visual canaliza uma manifestação de necromancia adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de SAB.",
+    "effect": "Ataque Visual produz um efeito de necromancia dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -15230,9 +15230,9 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
+      "bardo",
       "druida",
-      "clerigo",
-      "bardo"
+      "clerigo"
     ],
     "school": "Adivinhação",
     "source": "Adivinhação",
@@ -15247,7 +15247,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Lente de Vidro e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Encontrar o Caminho canaliza uma manifestação de adivinhação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Encontrar o Caminho produz um efeito de adivinhação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -15265,8 +15265,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -15281,7 +15281,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Escudo de Platina de Fizban organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. o alvo realiza Salvaguarda de DES.",
+    "effect": "Escudo de Platina de Fizban cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. O alvo faz uma Salvaguarda de DES. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -15299,8 +15299,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -15315,7 +15315,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Escudo de Platina de Fizban (UA) organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Escudo de Platina de Fizban (UA) cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -15333,10 +15333,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "druida",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "druida",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -15351,7 +15351,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Carne para Pedra transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. o alvo realiza Salvaguarda de CON.",
+    "effect": "Carne para Pedra transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. O alvo faz uma Salvaguarda de CON. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -15384,7 +15384,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Proibição canaliza uma manifestação de abjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Proibição produz um efeito de abjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -15402,8 +15402,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -15418,7 +15418,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Globo de Invulnerabilidade organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Globo de Invulnerabilidade cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -15451,7 +15451,7 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Fissura por Gravidade canaliza uma manifestação de evocação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 8d8 Força de dano.",
+    "effect": "Fissura por Gravidade produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 8d8 Força de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "8d8 Força",
     "healing": "",
@@ -15485,7 +15485,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Proteger Fortaleza organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Proteger Fortaleza cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -15515,7 +15515,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Dano concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 14d6 Necrótico de dano.",
+    "effect": "Dano libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 14d6 Necrótico de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "14d6 Necrótico",
     "healing": "",
@@ -15546,7 +15546,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Curar reúne seiva vital, calor e memória corporal para restaurar ou preservar uma ou mais criaturas. A energia procura primeiro ferimentos recentes e condições compatíveis; efeitos permanentes ou morte exigem os materiais especiais indicados. Alvos fora do alcance ou que não possam receber cura não são afetados. a recuperação usa 70 pontos de vida.",
+    "effect": "Curar reúne energia vital para curar ou preservar as criaturas escolhidas. Ferimentos, condições e efeitos especiais são tratados conforme os valores indicados abaixo. A criatura recupera 70 pontos de vida.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "70",
@@ -15564,9 +15564,9 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
+      "bardo",
       "druida",
-      "clerigo",
-      "bardo"
+      "clerigo"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -15581,7 +15581,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: consumível e gasto ao concluir a conjuração. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Banquete de Heróis canaliza uma manifestação de conjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de SAB.",
+    "effect": "Banquete de Heróis produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -15599,10 +15599,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "druida",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "druida",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -15614,7 +15614,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 9 m a partir do conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Investidura de Brasa transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Investidura de Brasa transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -15632,10 +15632,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "druida",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "druida",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -15647,7 +15647,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Investidura de Gelo canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Investidura de Gelo produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -15665,10 +15665,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "druida",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "druida",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -15680,7 +15680,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Investidura de Pedra transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Investidura de Pedra transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -15698,10 +15698,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "druida",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "druida",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -15713,7 +15713,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Investidura de Vento transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Investidura de Vento transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -15746,7 +15746,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Carapaça Ancestral e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Jarro mágico canaliza uma manifestação de necromancia adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de CAR.",
+    "effect": "Jarro mágico produz um efeito de necromancia dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CAR. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -15764,10 +15764,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -15782,7 +15782,7 @@ globalThis.CODEX_SPELL_DATA = [
       "folha_serena"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. M: Feromônio Ressonante e Folha Serena. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Sugestão Coletiva impõe uma frequência sobre pensamento, emoção ou vontade. Criaturas afetadas enfrentam a Salvaguarda apropriada; em sucesso, evitam ou reduzem o efeito conforme a magia. Ordens autodestrutivas, imunidades mentais e ausência de percepção do estímulo podem impedir a manifestação. o alvo realiza Salvaguarda de SAB.",
+    "effect": "Sugestão Coletiva afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -15801,8 +15801,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -15814,7 +15814,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Prisão Mental organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. o alvo realiza Salvaguarda de INT; na falha ou acerto, aplique 5d10 Psíquico + 10d10 Psíquico de dano.",
+    "effect": "Prisão Mental cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. O alvo faz uma Salvaguarda de INT. Se falhar, sofre 5d10 Psíquico + 10d10 Psíquico de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "5d10 Psíquico + 10d10 Psíquico",
     "healing": "",
@@ -15833,8 +15833,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -15849,7 +15849,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sementes Nutritivas e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Mover Terra transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Mover Terra transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -15869,8 +15869,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bruxo",
       "clerigo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -15885,7 +15885,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Forma de Outro Mundo (UA) canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Forma de Outro Mundo (UA) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -15903,8 +15903,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -15919,7 +15919,7 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Esfera Congelante de Otiluke concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 10d6 Frio de dano.",
+    "effect": "Esfera Congelante de Otiluke libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 10d6 Frio de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "10d6 Frio",
     "healing": "",
@@ -15950,7 +15950,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 9 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "A dança irresistível de Otto canaliza uma manifestação de encantamento adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de DES.",
+    "effect": "A dança irresistível de Otto produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -15980,7 +15980,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Aliado Extra-Planar canaliza uma manifestação de conjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Aliado Extra-Planar produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -16010,7 +16010,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Proteção Primordial organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Proteção Primordial cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -16044,7 +16044,7 @@ globalThis.CODEX_SPELL_DATA = [
       "lente_vidro"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Espelho de Orvalho e Lente de Vidro. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Ilusão Programada reorganiza luz, som, cheiro e expectativa para criar uma percepção falsa ou ocultar presenças. Contato direto, investigação cuidadosa ou sentidos especiais podem revelar inconsistências. Descobrir a ilusão não a dissipa automaticamente, mas permite reconhecê-la pelo restante da duração. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Ilusão Programada cria ou altera uma percepção. Toque, investigação ou sentidos especiais podem revelar que o efeito não é real. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -16063,8 +16063,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -16076,7 +16076,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Esmagamento Psíquico (UA) impõe uma frequência sobre pensamento, emoção ou vontade. Criaturas afetadas enfrentam a Salvaguarda apropriada; em sucesso, evitam ou reduzem o efeito conforme a magia. Ordens autodestrutivas, imunidades mentais e ausência de percepção do estímulo podem impedir a manifestação. o alvo realiza Salvaguarda de INT; na falha ou acerto, aplique 12d6 Psíquico de dano.",
+    "effect": "Esmagamento Psíquico (UA) afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de INT. Se falhar, sofre 12d6 Psíquico de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "12d6 Psíquico",
     "healing": "",
@@ -16095,8 +16095,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -16108,7 +16108,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Até five criaturas dentro de 9 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Espalhar dobra distância, peso ou ritmo para alterar deslocamento e posição. O destino precisa respeitar as condições da magia e oferecer espaço livre; uma chegada impossível conduz ao ponto seguro mais próximo ou faz a manifestação falhar. Passagens sustentadas terminam quando a Concentração é perdida. o alvo realiza Salvaguarda de SAB.",
+    "effect": "Espalhar altera movimento, distância ou posição. O destino precisa estar dentro do alcance e ter espaço livre para receber a criatura. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -16142,7 +16142,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Carapaça Ancestral e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Gaiola da Alma organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. a recuperação usa 2d8 pontos de vida.",
+    "effect": "Gaiola da Alma cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. A criatura recupera 2d8 pontos de vida.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "2d8",
@@ -16176,7 +16176,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Invocar Ínfero manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Invocar Ínfero cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -16196,8 +16196,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "druida",
       "clerigo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -16212,7 +16212,7 @@ globalThis.CODEX_SPELL_DATA = [
       "carvao_po"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Semente de Brasa e Carvão em Pó. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Raio Solar concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 6d8 Radiante de dano.",
+    "effect": "Raio Solar libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 6d8 Radiante de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "6d8 Radiante",
     "healing": "",
@@ -16231,8 +16231,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -16247,7 +16247,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "A Guise de Outro Mundo de Tasha canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "A Guise de Outro Mundo de Tasha produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -16280,7 +16280,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Transformação de Tenser canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Transformação de Tenser produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -16310,7 +16310,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 3 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Teletransporte por Plantas canaliza uma manifestação de conjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Teletransporte por Plantas produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -16328,11 +16328,11 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
+      "bardo",
       "bruxo",
       "clerigo",
-      "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Adivinhação",
     "source": "Adivinhação",
@@ -16347,7 +16347,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Lente de Vidro e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Visão da Verdade amplia sentidos, conhecimento ou comunicação através dos ecos preservados no Jardim. O conjurador recebe informações ligadas ao alvo e ao alcance, mas não ultrapassa proteções específicas contra adivinhação. Respostas simbólicas, memórias incompletas e interferências podem exigir interpretação. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Visão da Verdade amplia sentidos, conhecimento ou comunicação. As informações alcançam apenas os alvos e a distância indicados pela magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -16380,7 +16380,7 @@ globalThis.CODEX_SPELL_DATA = [
       "perola_orvalho"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Orvalho Purificado e Pérola de Orvalho Puríssimo. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Parede de Gelo organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 10d6 Frio + 5d6 Frio de dano.",
+    "effect": "Parede de Gelo cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 10d6 Frio + 5d6 Frio de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "10d6 Frio + 5d6 Frio",
     "healing": "",
@@ -16413,7 +16413,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sementes Nutritivas e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Muralha de Espinhos organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 7d8 Perfurante + 7d8 Cortante de dano.",
+    "effect": "Muralha de Espinhos cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 7d8 Perfurante + 7d8 Cortante de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "7d8 Perfurante + 7d8 Cortante",
     "healing": "",
@@ -16446,7 +16446,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Caminhar no Vento dobra distância, peso ou ritmo para alterar deslocamento e posição. O destino precisa respeitar as condições da magia e oferecer espaço livre; uma chegada impossível conduz ao ponto seguro mais próximo ou faz a manifestação falhar. Passagens sustentadas terminam quando a Concentração é perdida. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Caminhar no Vento altera movimento, distância ou posição. O destino precisa estar dentro do alcance e ter espaço livre para receber a criatura. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -16476,7 +16476,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 1.5 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Palavra de Recordação canaliza uma manifestação de conjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Palavra de Recordação produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -16506,7 +16506,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 27 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Conjurar Luminar manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Conjurar Luminar cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -16524,8 +16524,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -16540,7 +16540,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Conjurar Hezrou (UA) manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Conjurar Hezrou (UA) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -16573,7 +16573,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Criar Magen manifesta, desperta ou convoca uma presença compatível com o Jardim. A criatura ou construção surge em espaço livre da área, age de acordo com os comandos permitidos e desaparece ou se desfaz ao término da duração. Perder Concentração encerra imediatamente manifestações sustentadas. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Criar Magen cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -16592,8 +16592,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -16605,7 +16605,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 9 m a partir do conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Coroa de Estrelas canaliza uma manifestação de evocação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 4d12 Radiante de dano.",
+    "effect": "Coroa de Estrelas produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Faça um ataque mágico contra cada alvo indicado. Se acertar, o alvo sofre 4d12 Radiante de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "4d12 Radiante",
     "healing": "",
@@ -16623,8 +16623,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -16639,7 +16639,7 @@ globalThis.CODEX_SPELL_DATA = [
       "carvao_po"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Semente de Brasa e Carvão em Pó. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Bola de Brasa Controlável concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de DES.",
+    "effect": "Bola de Brasa Controlável libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -16669,7 +16669,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 9 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Palavra Sagrada canaliza uma manifestação de evocação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de CAR.",
+    "effect": "Palavra Sagrada produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CAR. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -16688,8 +16688,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -16704,7 +16704,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Transformação Dracônica canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 6d8 Força de dano.",
+    "effect": "Transformação Dracônica produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 6d8 Força de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "6d8 Força",
     "healing": "",
@@ -16723,8 +16723,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -16739,7 +16739,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Transformação Dracônica (UA) canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Transformação Dracônica (UA) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -16757,10 +16757,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -16775,7 +16775,7 @@ globalThis.CODEX_SPELL_DATA = [
       "folha_serena"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Feromônio Ressonante e Folha Serena. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Sonho com o véu azul reorganiza luz, som, cheiro e expectativa para criar uma percepção falsa ou ocultar presenças. Contato direto, investigação cuidadosa ou sentidos especiais podem revelar inconsistências. Descobrir a ilusão não a dissipa automaticamente, mas permite reconhecê-la pelo restante da duração. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Sonho com o véu azul cria ou altera uma percepção. Toque, investigação ou sentidos especiais podem revelar que o efeito não é real. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -16793,11 +16793,11 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
+      "bardo",
       "bruxo",
       "clerigo",
-      "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -16809,7 +16809,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Eterealidade dobra distância, peso ou ritmo para alterar deslocamento e posição. O destino precisa respeitar as condições da magia e oferecer espaço livre; uma chegada impossível conduz ao ponto seguro mais próximo ou faz a manifestação falhar. Passagens sustentadas terminam quando a Concentração é perdida. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Eterealidade altera movimento, distância ou posição. O destino precisa estar dentro do alcance e ter espaço livre para receber a criatura. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -16828,8 +16828,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Necromancia",
     "source": "Necromancia",
@@ -16841,7 +16841,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Dedo da Morte canaliza uma manifestação de necromancia adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 7d8 + 30 Necrótico de dano.",
+    "effect": "Dedo da Morte produz um efeito de necromancia dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 7d8 + 30 Necrótico de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "7d8 + 30 Necrótico",
     "healing": "",
@@ -16873,7 +16873,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "cubo de 3 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Tempestade de Brasa concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 7d10 Fogo de dano.",
+    "effect": "Tempestade de Brasa libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 7d10 Fogo de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "7d10 Fogo",
     "healing": "",
@@ -16891,8 +16891,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
+      "bruxo",
       "mago"
     ],
     "school": "Evocação",
@@ -16908,7 +16908,7 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Prisão de Energia organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. o alvo realiza Salvaguarda de CAR.",
+    "effect": "Prisão de Energia cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. O alvo faz uma Salvaguarda de CAR. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -16926,8 +16926,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "druida",
       "bardo",
+      "druida",
       "mago"
     ],
     "school": "Ilusão",
@@ -16940,7 +16940,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de À vista",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Miragem reorganiza luz, som, cheiro e expectativa para criar uma percepção falsa ou ocultar presenças. Contato direto, investigação cuidadosa ou sentidos especiais podem revelar inconsistências. Descobrir a ilusão não a dissipa automaticamente, mas permite reconhecê-la pelo restante da duração. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Miragem cria ou altera uma percepção. Toque, investigação ou sentidos especiais podem revelar que o efeito não é real. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -16974,7 +16974,7 @@ globalThis.CODEX_SPELL_DATA = [
       "perola_orvalho"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Orvalho Purificado e Pérola de Orvalho Puríssimo. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Mansão Magnífica de Mordenkainen canaliza uma manifestação de conjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Mansão Magnífica de Mordenkainen produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -17008,7 +17008,7 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Casca Oca Ressoante e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Espada de Mordenkainen canaliza uma manifestação de evocação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 3d10 Força de dano.",
+    "effect": "Espada de Mordenkainen produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Faça um ataque mágico contra cada alvo indicado. Se acertar, o alvo sofre 3d10 Força de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "3d10 Força",
     "healing": "",
@@ -17026,11 +17026,11 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "druida",
       "bruxo",
+      "druida",
       "clerigo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -17045,7 +17045,7 @@ globalThis.CODEX_SPELL_DATA = [
       "cristal_condutor"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Seiva do Limiar e Cristal de Orvalho Condutor. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Viagem Planar dobra distância, peso ou ritmo para alterar deslocamento e posição. O destino precisa respeitar as condições da magia e oferecer espaço livre; uma chegada impossível conduz ao ponto seguro mais próximo ou faz a manifestação falhar. Passagens sustentadas terminam quando a Concentração é perdida. Faça um ataque mágico contra cada alvo indicado; o alvo realiza Salvaguarda de CAR.",
+    "effect": "Viagem Planar altera movimento, distância ou posição. O destino precisa estar dentro do alcance e ter espaço livre para receber a criatura. Faça um ataque mágico contra cada alvo indicado. Se acertar, aplique o efeito descrito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -17064,8 +17064,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -17077,7 +17077,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Palavra de Poder: Dor impõe uma frequência sobre pensamento, emoção ou vontade. Criaturas afetadas enfrentam a Salvaguarda apropriada; em sucesso, evitam ou reduzem o efeito conforme a magia. Ordens autodestrutivas, imunidades mentais e ausência de percepção do estímulo podem impedir a manifestação. o alvo realiza Salvaguarda de CON.",
+    "effect": "Palavra de Poder: Dor afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de CON. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -17096,8 +17096,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -17109,7 +17109,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "cone de 18 m a partir do conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Rajada Prismática concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de DES.",
+    "effect": "Rajada Prismática libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -17143,7 +17143,7 @@ globalThis.CODEX_SPELL_DATA = [
       "lente_vidro"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Espelho de Orvalho e Lente de Vidro. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Projetar Imagem reorganiza luz, som, cheiro e expectativa para criar uma percepção falsa ou ocultar presenças. Contato direto, investigação cuidadosa ou sentidos especiais podem revelar inconsistências. Descobrir a ilusão não a dissipa automaticamente, mas permite reconhecê-la pelo restante da duração. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Projetar Imagem cria ou altera uma percepção. Toque, investigação ou sentidos especiais podem revelar que o efeito não é real. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -17161,9 +17161,9 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
+      "bardo",
       "druida",
-      "clerigo",
-      "bardo"
+      "clerigo"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -17178,7 +17178,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Recriar reúne seiva vital, calor e memória corporal para restaurar ou preservar uma ou mais criaturas. A energia procura primeiro ferimentos recentes e condições compatíveis; efeitos permanentes ou morte exigem os materiais especiais indicados. Alvos fora do alcance ou que não possam receber cura não são afetados. a recuperação usa 4d8 + 15 pontos de vida.",
+    "effect": "Recriar reúne energia vital para curar ou preservar as criaturas escolhidas. Ferimentos, condições e efeitos especiais são tratados conforme os valores indicados abaixo. A criatura recupera 4d8 + 15 pontos de vida.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "4d8 + 15",
@@ -17196,8 +17196,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "clerigo",
-      "bardo"
+      "bardo",
+      "clerigo"
     ],
     "school": "Necromancia",
     "source": "Necromancia",
@@ -17212,7 +17212,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Carapaça Ancestral e Incenso de Raiz. Material: consumível e gasto ao concluir a conjuração. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Ressurreição reúne seiva vital, calor e memória corporal para restaurar ou preservar uma ou mais criaturas. A energia procura primeiro ferimentos recentes e condições compatíveis; efeitos permanentes ou morte exigem os materiais especiais indicados. Alvos fora do alcance ou que não possam receber cura não são afetados. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Ressurreição reúne energia vital para curar ou preservar as criaturas escolhidas. Ferimentos, condições e efeitos especiais são tratados conforme os valores indicados abaixo. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -17231,8 +17231,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -17247,7 +17247,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Inverter a Gravidade canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de DES.",
+    "effect": "Inverter a Gravidade produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -17280,7 +17280,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Sequradora canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Sequradora produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -17313,7 +17313,7 @@ globalThis.CODEX_SPELL_DATA = [
       "lente_vidro"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Espelho de Orvalho e Lente de Vidro. Material: consumível e gasto ao concluir a conjuração. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Simulacro canaliza uma manifestação de ilusão adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Simulacro produz um efeito de ilusão dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -17331,9 +17331,9 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
+      "bardo",
       "druida",
       "clerigo",
-      "bardo",
       "mago"
     ],
     "school": "Abjuração",
@@ -17349,7 +17349,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Símbolo canaliza uma manifestação de abjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Símbolo produz um efeito de abjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -17368,8 +17368,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -17381,7 +17381,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "cubo de 3 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Teleporte dobra distância, peso ou ritmo para alterar deslocamento e posição. O destino precisa respeitar as condições da magia e oferecer espaço livre; uma chegada impossível conduz ao ponto seguro mais próximo ou faz a manifestação falhar. Passagens sustentadas terminam quando a Concentração é perdida. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Teleporte altera movimento, distância ou posição. O destino precisa estar dentro do alcance e ter espaço livre para receber a criatura. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -17414,7 +17414,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Templo dos Deuses canaliza uma manifestação de conjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de CAR.",
+    "effect": "Templo dos Deuses produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CAR. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -17447,7 +17447,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Carapaça Ancestral e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Tether Essence canaliza uma manifestação de necromancia adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de CON.",
+    "effect": "Tether Essence produz um efeito de necromancia dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -17481,7 +17481,7 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Furacão transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. o alvo realiza Salvaguarda de FOR; na falha ou acerto, aplique 10d6 Concussão de dano.",
+    "effect": "Furacão transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. O alvo faz uma Salvaguarda de FOR. Se falhar, sofre 10d6 Concussão de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "10d6 Concussão",
     "healing": "",
@@ -17499,8 +17499,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Necromancia",
     "source": "Necromancia",
@@ -17515,7 +17515,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Carapaça Ancestral e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "O Horrendo Murchamento de Abi-Dalzim canaliza uma manifestação de necromancia adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 12d8 Necrótico de dano.",
+    "effect": "O Horrendo Murchamento de Abi-Dalzim produz um efeito de necromancia dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 12d8 Necrótico de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "12d8 Necrótico",
     "healing": "",
@@ -17545,7 +17545,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 9 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Formas Animais transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Formas Animais transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -17579,7 +17579,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Campo Antimagia organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Campo Antimagia cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -17597,8 +17597,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "druida",
       "bardo",
+      "druida",
       "mago"
     ],
     "school": "Encantamento",
@@ -17614,7 +17614,7 @@ globalThis.CODEX_SPELL_DATA = [
       "folha_serena"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Feromônio Ressonante e Folha Serena. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Antipatia / Simpatia canaliza uma manifestação de encantamento adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Antipatia / Simpatia produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -17647,7 +17647,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Carapaça Ancestral e Incenso de Raiz. Material: consumível e gasto ao concluir a conjuração. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Clonar canaliza uma manifestação de necromancia adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Clonar produz um efeito de necromancia dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -17682,7 +17682,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Controlar o Clima transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Controlar o Clima transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -17715,7 +17715,7 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Estrela Negra canaliza uma manifestação de evocação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 8d10 Força de dano.",
+    "effect": "Estrela Negra produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 8d10 Força de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "8d10 Força",
     "healing": "",
@@ -17734,8 +17734,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -17747,7 +17747,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Semiplano canaliza uma manifestação de conjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Semiplano produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -17765,10 +17765,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -17780,7 +17780,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Dominar Monstro impõe uma frequência sobre pensamento, emoção ou vontade. Criaturas afetadas enfrentam a Salvaguarda apropriada; em sucesso, evitam ou reduzem o efeito conforme a magia. Ordens autodestrutivas, imunidades mentais e ausência de percepção do estímulo podem impedir a manifestação. o alvo realiza Salvaguarda de SAB.",
+    "effect": "Dominar Monstro afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -17815,7 +17815,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sementes Nutritivas e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Terremoto transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. o alvo realiza Salvaguarda de DES.",
+    "effect": "Terremoto transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. O alvo faz uma Salvaguarda de DES. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -17833,9 +17833,9 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "druida",
-      "bruxo",
       "bardo",
+      "bruxo",
+      "druida",
       "mago"
     ],
     "school": "Encantamento",
@@ -17851,7 +17851,7 @@ globalThis.CODEX_SPELL_DATA = [
       "folha_serena"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Feromônio Ressonante e Folha Serena. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Enfraquecer Intelecto impõe uma frequência sobre pensamento, emoção ou vontade. Criaturas afetadas enfrentam a Salvaguarda apropriada; em sucesso, evitam ou reduzem o efeito conforme a magia. Ordens autodestrutivas, imunidades mentais e ausência de percepção do estímulo podem impedir a manifestação. o alvo realiza Salvaguarda de INT; na falha ou acerto, aplique 4d6 Psíquico de dano.",
+    "effect": "Enfraquecer Intelecto afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de INT. Se falhar, sofre 4d6 Psíquico de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "4d6 Psíquico",
     "healing": "",
@@ -17869,8 +17869,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
-      "bardo"
+      "bardo",
+      "bruxo"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -17882,7 +17882,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Loquacidade canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Loquacidade produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -17915,7 +17915,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Aura Sagrada organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. o alvo realiza Salvaguarda de CON.",
+    "effect": "Aura Sagrada cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. O alvo faz uma Salvaguarda de CON. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -17945,7 +17945,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "cone de 18 m",
     "materialIds": [],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Titã Ilusório canaliza uma manifestação de ilusão adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de INT.",
+    "effect": "Titã Ilusório produz um efeito de ilusão dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de INT. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -17964,8 +17964,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -17977,7 +17977,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 6 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Nuvem Incendiária concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 10d8 Fogo de dano.",
+    "effect": "Nuvem Incendiária libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 10d8 Fogo de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "10d8 Fogo",
     "healing": "",
@@ -18011,7 +18011,7 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Escuridão Enlouquecedora reorganiza luz, som, cheiro e expectativa para criar uma percepção falsa ou ocultar presenças. Contato direto, investigação cuidadosa ou sentidos especiais podem revelar inconsistências. Descobrir a ilusão não a dissipa automaticamente, mas permite reconhecê-la pelo restante da duração. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Escuridão Enlouquecedora cria ou altera uma percepção. Toque, investigação ou sentidos especiais podem revelar que o efeito não é real. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -18041,7 +18041,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Maze canaliza uma manifestação de conjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Maze produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -18074,7 +18074,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Fortaleza Poderosa canaliza uma manifestação de conjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Fortaleza Poderosa produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -18105,7 +18105,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Criatura ou objeto tocado",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Limpar a Mente impõe uma frequência sobre pensamento, emoção ou vontade. Criaturas afetadas enfrentam a Salvaguarda apropriada; em sucesso, evitam ou reduzem o efeito conforme a magia. Ordens autodestrutivas, imunidades mentais e ausência de percepção do estímulo podem impedir a manifestação. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Limpar a Mente afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -18123,10 +18123,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -18138,7 +18138,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Palavra de Poder Atordoar impõe uma frequência sobre pensamento, emoção ou vontade. Criaturas afetadas enfrentam a Salvaguarda apropriada; em sucesso, evitam ou reduzem o efeito conforme a magia. Ordens autodestrutivas, imunidades mentais e ausência de percepção do estímulo podem impedir a manifestação. o alvo realiza Salvaguarda de CON.",
+    "effect": "Palavra de Poder Atordoar afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de CON. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -18171,7 +18171,7 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Reality Break canaliza uma manifestação de conjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de SAB.",
+    "effect": "Reality Break produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -18191,8 +18191,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "druida",
       "clerigo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -18207,7 +18207,7 @@ globalThis.CODEX_SPELL_DATA = [
       "carvao_po"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Semente de Brasa e Carvão em Pó. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Raio de sol concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 12d6 Radiante de dano.",
+    "effect": "Raio de sol libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 12d6 Radiante de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "12d6 Radiante",
     "healing": "",
@@ -18240,7 +18240,7 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Telepatia amplia sentidos, conhecimento ou comunicação através dos ecos preservados no Jardim. O conjurador recebe informações ligadas ao alvo e ao alcance, mas não ultrapassa proteções específicas contra adivinhação. Respostas simbólicas, memórias incompletas e interferências podem exigir interpretação. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Telepatia amplia sentidos, conhecimento ou comunicação. As informações alcançam apenas os alvos e a distância indicados pela magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -18270,7 +18270,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de À vista",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Tsunami concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de FOR; na falha ou acerto, aplique 6d10 Concussão + 5d10 Concussão de dano.",
+    "effect": "Tsunami libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de FOR. Se falhar, sofre 6d10 Concussão + 5d10 Concussão de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "6d10 Concussão + 5d10 Concussão",
     "healing": "",
@@ -18305,7 +18305,7 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: consumível e gasto ao concluir a conjuração. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Projeção Astral canaliza uma manifestação de evocação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Projeção Astral produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -18324,8 +18324,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -18337,7 +18337,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Lâmina do Desastre concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 4d12 Força + 8d12 Força + 12d12 Força de dano.",
+    "effect": "Lâmina do Desastre libera energia contra o alvo ou a área escolhida. Faça um ataque mágico contra cada alvo indicado. Se acertar, o alvo sofre 4d12 Força + 8d12 Força + 12d12 Força de dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "4d12 Força + 8d12 Força + 12d12 Força",
     "healing": "",
@@ -18355,9 +18355,9 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "druida",
-      "bruxo",
       "bardo",
+      "bruxo",
+      "druida",
       "mago"
     ],
     "school": "Adivinhação",
@@ -18373,7 +18373,7 @@ globalThis.CODEX_SPELL_DATA = [
       "ambar_tempestade"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Areia do Instante e Âmbar de Tempestade Presa. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Previdência amplia sentidos, conhecimento ou comunicação através dos ecos preservados no Jardim. O conjurador recebe informações ligadas ao alvo e ao alcance, mas não ultrapassa proteções específicas contra adivinhação. Respostas simbólicas, memórias incompletas e interferências podem exigir interpretação. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Previdência amplia sentidos, conhecimento ou comunicação. As informações alcançam apenas os alvos e a distância indicados pela magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -18393,8 +18393,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bruxo",
       "clerigo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -18409,7 +18409,7 @@ globalThis.CODEX_SPELL_DATA = [
       "cristal_condutor"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Seiva do Limiar e Cristal de Orvalho Condutor. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Portão dobra distância, peso ou ritmo para alterar deslocamento e posição. O destino precisa respeitar as condições da magia e oferecer espaço livre; uma chegada impossível conduz ao ponto seguro mais próximo ou faz a manifestação falhar. Passagens sustentadas terminam quando a Concentração é perdida. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Portão altera movimento, distância ou posição. O destino precisa estar dentro do alcance e ter espaço livre para receber a criatura. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -18443,7 +18443,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: consumível e gasto ao concluir a conjuração. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Prisão organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. o alvo realiza Salvaguarda de SAB.",
+    "effect": "Prisão cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -18476,7 +18476,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Invulnerabilidade organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Invulnerabilidade cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -18506,7 +18506,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Cura em Massa reúne seiva vital, calor e memória corporal para restaurar ou preservar uma ou mais criaturas. A energia procura primeiro ferimentos recentes e condições compatíveis; efeitos permanentes ou morte exigem os materiais especiais indicados. Alvos fora do alcance ou que não possam receber cura não são afetados. a recuperação usa 700 pontos de vida.",
+    "effect": "Cura em Massa reúne energia vital para curar ou preservar as criaturas escolhidas. Ferimentos, condições e efeitos especiais são tratados conforme os valores indicados abaixo. A criatura recupera 700 pontos de vida.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "700",
@@ -18525,8 +18525,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -18541,7 +18541,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Polimorfo de Massa transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. o alvo realiza Salvaguarda de SAB.",
+    "effect": "Polimorfo de Massa transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -18559,8 +18559,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -18572,11 +18572,11 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 12 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Chuva de Meteoros concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 20d6 Fogo + 20d6 Concussão de dano.",
+    "effect": "Chuva de Meteoros libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de DES. Se falhar, sofre 20d6 Fogo + 20d6 Concussão de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "20d6 Fogo + 20d6 Concussão",
     "healing": "",
-    "damageType": "Concussão + Fogo",
+    "damageType": "Fogo + Concussão",
     "attack": false,
     "save": "DES",
     "higherLevels": "",
@@ -18590,8 +18590,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "clerigo",
-      "bardo"
+      "bardo",
+      "clerigo"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -18603,7 +18603,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Criatura ou objeto tocado",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Palavra de Poder: Curar reúne seiva vital, calor e memória corporal para restaurar ou preservar uma ou mais criaturas. A energia procura primeiro ferimentos recentes e condições compatíveis; efeitos permanentes ou morte exigem os materiais especiais indicados. Alvos fora do alcance ou que não possam receber cura não são afetados. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Palavra de Poder: Curar reúne energia vital para curar ou preservar as criaturas escolhidas. Ferimentos, condições e efeitos especiais são tratados conforme os valores indicados abaixo. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -18621,10 +18621,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -18636,7 +18636,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Palavra de Poder Matar impõe uma frequência sobre pensamento, emoção ou vontade. Criaturas afetadas enfrentam a Salvaguarda apropriada; em sucesso, evitam ou reduzem o efeito conforme a magia. Ordens autodestrutivas, imunidades mentais e ausência de percepção do estímulo podem impedir a manifestação. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Palavra de Poder Matar afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -18667,7 +18667,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Muralha Prismática organiza matéria e energia em uma proteção, limite ou campo mágico. A barreira ocupa a área indicada e interfere apenas nos efeitos descritos por sua manifestação, sem atravessar cobertura total. Quando exige Concentração, qualquer ruptura encerra toda a estrutura ao mesmo tempo. o alvo realiza Salvaguarda de DES.",
+    "effect": "Muralha Prismática cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. O alvo faz uma Salvaguarda de DES. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -18685,10 +18685,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -18700,7 +18700,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Até ten criaturas dentro de 27 m",
     "materialIds": [],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Grito Psíquico impõe uma frequência sobre pensamento, emoção ou vontade. Criaturas afetadas enfrentam a Salvaguarda apropriada; em sucesso, evitam ou reduzem o efeito conforme a magia. Ordens autodestrutivas, imunidades mentais e ausência de percepção do estímulo podem impedir a manifestação. o alvo realiza Salvaguarda de INT; na falha ou acerto, aplique 14d6 Psíquico de dano.",
+    "effect": "Grito Psíquico afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de INT. Se falhar, sofre 14d6 Psíquico de dano. Se passar, sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "14d6 Psíquico",
     "healing": "",
@@ -18733,7 +18733,7 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Vazio Voraz canaliza uma manifestação de evocação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de FOR; na falha ou acerto, aplique 5d10 Força de dano.",
+    "effect": "Vazio Voraz produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de FOR. Se falhar, sofre 5d10 Força de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "5d10 Força",
     "healing": "",
@@ -18767,7 +18767,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Alterar Forma transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Alterar Forma transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -18797,7 +18797,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de À vista",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Tempestade da Vingança concentra energia e a libera contra o alvo ou área indicada. Um ataque mágico ou Salvaguarda determina quem é atingido; cobertura, resistência e imunidade continuam aplicáveis. Efeitos persistentes exigem Concentração e afetam novamente apenas nas condições descritas pela manifestação. o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 2d6 Trovão de dano.",
+    "effect": "Tempestade da Vingança libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de CON. Se falhar, sofre 2d6 Trovão de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d6 Trovão",
     "healing": "",
@@ -18830,7 +18830,7 @@ globalThis.CODEX_SPELL_DATA = [
       "ambar_tempestade"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Areia do Instante e Âmbar de Tempestade Presa. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Devastação do Tempo canaliza uma manifestação de necromancia adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Devastação do Tempo produz um efeito de necromancia dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -18848,8 +18848,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -18861,7 +18861,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Parar o Tempo canaliza uma manifestação de transmutação adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Parar o Tempo produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -18879,8 +18879,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "bardo",
+      "bruxo",
       "mago"
     ],
     "school": "Transmutação",
@@ -18896,7 +18896,7 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Polimorfia Total transforma matéria, corpo ou ambiente na escala do Pequeno Mundo. A forma resultante conserva apenas as capacidades explicitamente permitidas e retorna ao estado original quando a duração termina. Objetos vestidos ou carregados acompanham a transformação somente quando a magia permitir. o alvo realiza Salvaguarda de SAB.",
+    "effect": "Polimorfia Total transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre o efeito descrito. Se passar, evita o efeito.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -18930,7 +18930,7 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Carapaça Ancestral e Incenso de Raiz. Material: consumível e gasto ao concluir a conjuração. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "effect": "Ressurreição Verdadeira reúne seiva vital, calor e memória corporal para restaurar ou preservar uma ou mais criaturas. A energia procura primeiro ferimentos recentes e condições compatíveis; efeitos permanentes ou morte exigem os materiais especiais indicados. Alvos fora do alcance ou que não possam receber cura não são afetados. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Ressurreição Verdadeira reúne energia vital para curar ou preservar as criaturas escolhidas. Ferimentos, condições e efeitos especiais são tratados conforme os valores indicados abaixo. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -18961,7 +18961,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 9 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "effect": "Estranho canaliza uma manifestação de ilusão adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. o alvo realiza Salvaguarda de SAB; na falha ou acerto, aplique 4d10 Psíquico de dano.",
+    "effect": "Estranho produz um efeito de ilusão dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de SAB. Se falhar, sofre 4d10 Psíquico de dano. Se passar, não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "4d10 Psíquico",
     "healing": "",
@@ -18979,8 +18979,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -18992,7 +18992,7 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "effect": "Desejo canaliza uma manifestação de conjuração adaptada à escala do Microcosmo. O conjurador escolhe alvos válidos dentro do alcance, respeita cobertura e sustenta Concentração quando indicada. Interferências que impeçam componentes verbais, somáticos ou materiais fazem a conjuração falhar antes de consumir o espaço de magia. Resolva o efeito conforme os alvos e condições descritos.",
+    "effect": "Desejo produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
