@@ -1,0 +1,5740 @@
+{
+  "__version": 3,
+  "Dancing Lights": {
+    "area": "raio de 3 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Chill Touch": {
+    "area": "Alvo ou ponto dentro de 36 m",
+    "damage": "",
+    "healing": "1d8",
+    "save": "",
+    "attack": true,
+    "mechanics": "Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 1d8 Necrótico de dano; a recuperação usa 1d8 pontos de vida.",
+    "higherLevels": "No 5º nível, use 2d8; no 11º, 3d8; no 17º, 4d8."
+  },
+  "Booming Blade": {
+    "area": "raio de 1.5 m a partir do conjurador",
+    "damage": "1d8 Trovão",
+    "healing": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "na falha ou acerto, aplique 1d8 Trovão de dano.",
+    "higherLevels": "No 5º nível, use 2d8; no 11º, 3d8; no 17º, 4d8.",
+    "damageType": "Trovão"
+  },
+  "Control Flames": {
+    "area": "cubo de 1.5 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Blade Ward": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Druidcraft": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Acid Splash": {
+    "area": "1 criatura, ou 2 criaturas separadas por até 1,5 m, dentro de 18 m",
+    "damage": "1d6 Ácido",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 1d6 Ácido de dano.",
+    "higherLevels": "No 5º nível, use 2d6; no 11º, 3d6; no 17º, 4d6.",
+    "damageType": "Ácido"
+  },
+  "Create Bonfire": {
+    "area": "cubo de 1.5 m",
+    "damage": "1d8 Fogo",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 1d8 Fogo de dano.",
+    "higherLevels": "No 5º nível, use 2d8; no 11º, 3d8; no 17º, 4d8.",
+    "damageType": "Fogo"
+  },
+  "Eldritch Blast": {
+    "area": "Alvo ou ponto dentro de 36 m",
+    "damage": "1d10 Força",
+    "healing": "",
+    "save": "",
+    "attack": true,
+    "mechanics": "Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 1d10 Força de dano.",
+    "higherLevels": "No 5º nível, use 2d10; no 11º, 3d10; no 17º, 4d10.",
+    "damageType": "Força"
+  },
+  "Encode Thoughts": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Green-Flame Blade": {
+    "area": "raio de 1.5 m a partir do conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "No 5º nível, use 2dado; no 11º, 3dado; no 17º, 4dado."
+  },
+  "Gust": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Fire Bolt": {
+    "area": "Alvo ou ponto dentro de 36 m",
+    "damage": "1d10 Fogo",
+    "healing": "",
+    "save": "",
+    "attack": true,
+    "mechanics": "Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 1d10 Fogo de dano.",
+    "higherLevels": "No 5º nível, use 2d10; no 11º, 3d10; no 17º, 4d10.",
+    "damageType": "Fogo"
+  },
+  "Guidance": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Frostbite": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "1d6 Frio",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 1d6 Frio de dano.",
+    "higherLevels": "No 5º nível, use 2d6; no 11º, 3d6; no 17º, 4d6.",
+    "damageType": "Frio"
+  },
+  "Friends": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Mage Hand": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Mind Sliver": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "1d6 Psíquico",
+    "healing": "",
+    "save": "INT",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de INT; na falha ou acerto, aplique 1d6 Psíquico de dano.",
+    "higherLevels": "No 5º nível, use 2d6; no 11º, 3d6; no 17º, 4d6.",
+    "damageType": "Psíquico"
+  },
+  "Lightning Lure": {
+    "area": "raio de 4.5 m a partir do conjurador",
+    "damage": "1d8 Relâmpago",
+    "healing": "",
+    "save": "FOR",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de FOR; na falha ou acerto, aplique 1d8 Relâmpago de dano.",
+    "higherLevels": "No 5º nível, use 2d8; no 11º, 3d8; no 17º, 4d8.",
+    "damageType": "Relâmpago"
+  },
+  "Infestation": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "1d6 Veneno",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 1d6 Veneno de dano.",
+    "higherLevels": "No 5º nível, use 2d6; no 11º, 3d6; no 17º, 4d6.",
+    "damageType": "Veneno"
+  },
+  "Magic Stone": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": true,
+    "mechanics": "Faça um ataque mágico contra cada alvo indicado.",
+    "higherLevels": ""
+  },
+  "Prestidigitation": {
+    "area": "Alvo ou ponto dentro de 3 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Mending": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Minor Illusion": {
+    "area": "cubo de 1.5 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Mold Earth": {
+    "area": "cubo de 1.5 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Light": {
+    "area": "raio de 6 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES.",
+    "higherLevels": ""
+  },
+  "Produce Flame": {
+    "area": "raio de 3 m a partir do conjurador",
+    "damage": "1d8 Fogo",
+    "healing": "",
+    "save": "",
+    "attack": true,
+    "mechanics": "Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 1d8 Fogo de dano.",
+    "higherLevels": "No 5º nível, use 2d8; no 11º, 3d8; no 17º, 4d8.",
+    "damageType": "Fogo"
+  },
+  "Hand of Radiance (UA)": {
+    "area": "Alvo ou ponto dentro de 1.5 m",
+    "damage": "1d6 Radiante",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 1d6 Radiante de dano.",
+    "higherLevels": "",
+    "damageType": "Radiante"
+  },
+  "Message": {
+    "area": "Alvo ou ponto dentro de 36 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "On/Off (UA)": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Primal Savagery": {
+    "area": "Conjurador",
+    "damage": "1d10 Ácido",
+    "healing": "",
+    "save": "",
+    "attack": true,
+    "mechanics": "Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 1d10 Ácido de dano.",
+    "higherLevels": "No 5º nível, use 2d10; no 11º, 3d10; no 17º, 4d10.",
+    "damageType": "Ácido"
+  },
+  "Poison Spray": {
+    "area": "Alvo ou ponto dentro de 3 m",
+    "damage": "1d12 Veneno",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 1d12 Veneno de dano.",
+    "higherLevels": "No 5º nível, use 2d12; no 11º, 3d12; no 17º, 4d12.",
+    "damageType": "Veneno"
+  },
+  "Thaumaturgy": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Sword Burst": {
+    "area": "raio de 1.5 m a partir do conjurador",
+    "damage": "1d6 Força",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 1d6 Força de dano.",
+    "higherLevels": "No 5º nível, use 2d6; no 11º, 3d6; no 17º, 4d6.",
+    "damageType": "Força"
+  },
+  "Ray of Frost": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "1d8 Frio",
+    "healing": "",
+    "save": "",
+    "attack": true,
+    "mechanics": "Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 1d8 Frio de dano.",
+    "higherLevels": "No 5º nível, use 2d8; no 11º, 3d8; no 17º, 4d8.",
+    "damageType": "Frio"
+  },
+  "Resistance": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Sacred Flame": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "1d8 Radiante",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 1d8 Radiante de dano.",
+    "higherLevels": "No 5º nível, use 2d8; no 11º, 3d8; no 17º, 4d8.",
+    "damageType": "Radiante"
+  },
+  "Thorn Whip": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "1d6 Perfurante",
+    "healing": "",
+    "save": "",
+    "attack": true,
+    "mechanics": "Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 1d6 Perfurante de dano.",
+    "higherLevels": "No 5º nível, use 2d6; no 11º, 3d6; no 17º, 4d6.",
+    "damageType": "Perfurante"
+  },
+  "Spare the Dying": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Shape Water": {
+    "area": "cubo de 1.5 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Sapping Sting": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "1d4 Necrótico",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 1d4 Necrótico de dano.",
+    "higherLevels": "No 5º nível, use 2d4; no 11º, 3d4; no 17º, 4d4.",
+    "damageType": "Necrótico"
+  },
+  "Shillelagh": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Virtue (UA)": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Toll the Dead": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "1d8 Necrótico + 1d12 Necrótico",
+    "healing": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB; na falha ou acerto, aplique 1d8 Necrótico + 1d12 Necrótico de dano.",
+    "higherLevels": "No 5º nível, use 2d8; no 11º, 3d8; no 17º, 4d8.",
+    "damageType": "Necrótico"
+  },
+  "Shocking Grasp": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "1d8 Relâmpago",
+    "healing": "",
+    "save": "",
+    "attack": true,
+    "mechanics": "Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 1d8 Relâmpago de dano.",
+    "higherLevels": "No 5º nível, use 2d8; no 11º, 3d8; no 17º, 4d8.",
+    "damageType": "Relâmpago"
+  },
+  "Thunderclap": {
+    "area": "raio de 1.5 m a partir do conjurador",
+    "damage": "1d6 Trovão",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 1d6 Trovão de dano.",
+    "higherLevels": "No 5º nível, use 2d6; no 11º, 3d6; no 17º, 4d6.",
+    "damageType": "Trovão"
+  },
+  "True Strike": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Vicious Mockery": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "1d4 Psíquico",
+    "healing": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB; na falha ou acerto, aplique 1d4 Psíquico de dano.",
+    "higherLevels": "No 5º nível, use 2d4; no 11º, 3d4; no 17º, 4d4.",
+    "damageType": "Psíquico"
+  },
+  "Bless": {
+    "area": "Até three criaturas dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base."
+  },
+  "Armor of Agathys": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Arms of Hadar": {
+    "area": "raio de 3 m a partir do conjurador",
+    "damage": "2d6 Necrótico",
+    "healing": "",
+    "save": "FOR",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de FOR; na falha ou acerto, aplique 2d6 Necrótico de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
+    "damageType": "Necrótico"
+  },
+  "Word of Radiance": {
+    "area": "Alvo ou ponto dentro de 1.5 m",
+    "damage": "1d6 Radiante",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 1d6 Radiante de dano.",
+    "higherLevels": "No 5º nível, use 2d6; no 11º, 3d6; no 17º, 4d6.",
+    "damageType": "Radiante"
+  },
+  "Ceremony": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Animal Friendship": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Alarm": {
+    "area": "cubo de 6 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Bane": {
+    "area": "Até three criaturas dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "CAR",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CAR.",
+    "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base."
+  },
+  "Beast Bond": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Absorb Elements": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base."
+  },
+  "Catapult": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "3d8 Concussão",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 3d8 Concussão de dano.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
+    "damageType": "Concussão"
+  },
+  "Cause Fear": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base."
+  },
+  "Burning Hands": {
+    "area": "cone de 4.5 m a partir do conjurador",
+    "damage": "3d6 Fogo",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 3d6 Fogo de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
+    "damageType": "Fogo"
+  },
+  "Acid Stream (UA)": {
+    "area": "linha de 9 m a partir do conjurador",
+    "damage": "3d4 Ácido",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 3d4 Ácido de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d4 por círculo acima do nível-base.",
+    "damageType": "Ácido"
+  },
+  "Chaos Bolt": {
+    "area": "Alvo ou ponto dentro de 36 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": true,
+    "mechanics": "Faça um ataque mágico contra cada alvo indicado.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Arcane Weapon (UA)": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Cure Wounds": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "1d8 + Mod. Conjuração",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "a recuperação usa 1d8 + Mod. Conjuração pontos de vida.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base."
+  },
+  "Detect Poison and Disease": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Chromatic Orb": {
+    "area": "Alvo ou ponto dentro de 27 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": true,
+    "mechanics": "Faça um ataque mágico contra cada alvo indicado.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base."
+  },
+  "Dissonant Whispers": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "3d6 Psíquico",
+    "healing": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB; na falha ou acerto, aplique 3d6 Psíquico de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
+    "damageType": "Psíquico"
+  },
+  "Divine Favor": {
+    "area": "Conjurador",
+    "damage": "1d4 Radiante",
+    "healing": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "na falha ou acerto, aplique 1d4 Radiante de dano.",
+    "higherLevels": "",
+    "damageType": "Radiante"
+  },
+  "Command": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base."
+  },
+  "Detect Magic": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Compelled Duel": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": ""
+  },
+  "Earth Tremor": {
+    "area": "raio de 3 m a partir do conjurador",
+    "damage": "1d6 Concussão",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 1d6 Concussão de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
+    "damageType": "Concussão"
+  },
+  "Create or Destroy Water": {
+    "area": "cubo de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Charm Person": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base."
+  },
+  "Comprehend Languages": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Distort Value": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Color Spray": {
+    "area": "cone de 4.5 m a partir do conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Detect Evil and Good": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Disguise Self": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Faerie Fire": {
+    "area": "cubo de 6 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES.",
+    "higherLevels": ""
+  },
+  "Frost Fingers": {
+    "area": "cone de 4.5 m a partir do conjurador",
+    "damage": "2d8 Frio",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 2d8 Frio de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
+    "damageType": "Frio"
+  },
+  "Fog Cloud": {
+    "area": "raio de 6 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Healing Elixir (UA)": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "2d4 + 2",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "a recuperação usa 2d4 + 2 pontos de vida.",
+    "higherLevels": ""
+  },
+  "False Life": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Entangle": {
+    "area": "quadrado de 6 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "FOR",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de FOR.",
+    "higherLevels": ""
+  },
+  "Goodberry": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "1",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "a recuperação usa 1 pontos de vida.",
+    "higherLevels": ""
+  },
+  "Find Familiar": {
+    "area": "Alvo ou ponto dentro de 3 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Hail of Thorns": {
+    "area": "Conjurador",
+    "damage": "1d10 Perfurante",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 1d10 Perfurante de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d10 por círculo acima do nível-base.",
+    "damageType": "Perfurante"
+  },
+  "Expeditious Retreat": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Guiding Bolt": {
+    "area": "Alvo ou ponto dentro de 36 m",
+    "damage": "4d6 Radiante",
+    "healing": "",
+    "save": "",
+    "attack": true,
+    "mechanics": "Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 4d6 Radiante de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
+    "damageType": "Radiante"
+  },
+  "Grease": {
+    "area": "quadrado de 3 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES.",
+    "higherLevels": ""
+  },
+  "Ensnaring Strike": {
+    "area": "Conjurador",
+    "damage": "1d6 Perfurante",
+    "healing": "",
+    "save": "FOR",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de FOR; na falha ou acerto, aplique 1d6 Perfurante de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
+    "damageType": "Perfurante"
+  },
+  "Feather Fall": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Gift of Alacrity": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Guiding Hand (UA)": {
+    "area": "Alvo ou ponto dentro de 1.5 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Hex": {
+    "area": "Alvo ou ponto dentro de 27 m",
+    "damage": "1d6 Necrótico",
+    "healing": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "na falha ou acerto, aplique 1d6 Necrótico de dano.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
+    "damageType": "Necrótico"
+  },
+  "Heroism": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base."
+  },
+  "Longstrider": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base."
+  },
+  "Id Insinuation (UA)": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "1d12 Psíquico",
+    "healing": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB; na falha ou acerto, aplique 1d12 Psíquico de dano.",
+    "higherLevels": "",
+    "damageType": "Psíquico"
+  },
+  "Infallible Relay (UA)": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "CAR",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CAR.",
+    "higherLevels": ""
+  },
+  "Hunter's Mark": {
+    "area": "Alvo ou ponto dentro de 27 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Identify": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Ice Knife": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "1d10 Perfurante + 2d6 Frio",
+    "healing": "",
+    "save": "DES",
+    "attack": true,
+    "mechanics": "Faça um ataque mágico contra cada alvo indicado; o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 1d10 Perfurante + 2d6 Frio de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
+    "damageType": "Frio + Perfurante"
+  },
+  "Inflict Wounds": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "3d10 Necrótico",
+    "healing": "",
+    "save": "",
+    "attack": true,
+    "mechanics": "Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 3d10 Necrótico de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d10 por círculo acima do nível-base.",
+    "damageType": "Necrótico"
+  },
+  "Mage Armor": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Jim's Magic Missile": {
+    "area": "Alvo ou ponto dentro de 36 m",
+    "damage": "2d4 Força + 5d4 Força",
+    "healing": "",
+    "save": "",
+    "attack": true,
+    "mechanics": "Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 2d4 Força + 5d4 Força de dano.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
+    "damageType": "Força"
+  },
+  "Healing Word": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "1d4 + Mod. Conjuração",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "a recuperação usa 1d4 + Mod. Conjuração pontos de vida.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d4 por círculo acima do nível-base."
+  },
+  "Illusory Script": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Jump": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Hellish Rebuke": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "2d10 Fogo",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 2d10 Fogo de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d10 por círculo acima do nível-base.",
+    "damageType": "Fogo"
+  },
+  "Magic Missile": {
+    "area": "Alvo ou ponto dentro de 36 m",
+    "damage": "1d4 + 1 Força",
+    "healing": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "na falha ou acerto, aplique 1d4 + 1 Força de dano.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
+    "damageType": "Força"
+  },
+  "Searing Smite": {
+    "area": "Conjurador",
+    "damage": "1d6 Fogo",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 1d6 Fogo de dano.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
+    "damageType": "Fogo"
+  },
+  "Shield of Faith": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Snare": {
+    "area": "raio de 1.5 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES.",
+    "higherLevels": ""
+  },
+  "Silvery Barbs": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Ray of Sickness": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "2d8 Veneno",
+    "healing": "",
+    "save": "CON",
+    "attack": true,
+    "mechanics": "Faça um ataque mágico contra cada alvo indicado; o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 2d8 Veneno de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
+    "damageType": "Veneno"
+  },
+  "Shield": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Puppet (UA)": {
+    "area": "Alvo ou ponto dentro de 36 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON.",
+    "higherLevels": ""
+  },
+  "Sense Emotion (UA)": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Remote Access (UA)": {
+    "area": "Alvo ou ponto dentro de 36 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Speak with Animals": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Protection from Evil and Good": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Sanctuary": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": ""
+  },
+  "Silent Image": {
+    "area": "cubo de 4.5 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Purify Food and Drink": {
+    "area": "raio de 1.5 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Sleep": {
+    "area": "Alvo ou ponto dentro de 27 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Magnify Gravity": {
+    "area": "raio de 3 m",
+    "damage": "2d8 Força",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 2d8 Força de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
+    "damageType": "Força"
+  },
+  "Unseen Servant": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Thunderwave": {
+    "area": "cubo de 4.5 m a partir do conjurador",
+    "damage": "2d8 Trovão",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 2d8 Trovão de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
+    "damageType": "Trovão"
+  },
+  "Unearthly Chorus (UA)": {
+    "area": "raio de 9 m a partir do conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "CAR",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CAR.",
+    "higherLevels": ""
+  },
+  "Thunderous Smite": {
+    "area": "Conjurador",
+    "damage": "2d6 Trovão",
+    "healing": "",
+    "save": "FOR",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de FOR; na falha ou acerto, aplique 2d6 Trovão de dano.",
+    "higherLevels": "",
+    "damageType": "Trovão"
+  },
+  "Alter Self": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Tasha's Hideous Laughter": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": ""
+  },
+  "Tasha's Caustic Brew": {
+    "area": "linha de 9 m a partir do conjurador",
+    "damage": "2d4 Ácido",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 2d4 Ácido de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 2d4 por círculo acima do nível-base.",
+    "damageType": "Ácido"
+  },
+  "Witch Bolt": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "1d12 Relâmpago",
+    "healing": "",
+    "save": "",
+    "attack": true,
+    "mechanics": "Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 1d12 Relâmpago de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d12 por círculo acima do nível-base.",
+    "damageType": "Relâmpago"
+  },
+  "Wrathful Smite": {
+    "area": "Conjurador",
+    "damage": "1d6 Psíquico",
+    "healing": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB; na falha ou acerto, aplique 1d6 Psíquico de dano.",
+    "higherLevels": "",
+    "damageType": "Psíquico"
+  },
+  "Air Bubble": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Sudden Awakening (UA)": {
+    "area": "Alvo ou ponto dentro de 3 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Aid": {
+    "area": "Até three criaturas dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Tenser's Floating Disk": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Zephyr Strike": {
+    "area": "Conjurador",
+    "damage": "1d8 Força",
+    "healing": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "na falha ou acerto, aplique 1d8 Força de dano.",
+    "higherLevels": "",
+    "damageType": "Força"
+  },
+  "Wild Cunning (UA)": {
+    "area": "Alvo ou ponto dentro de 36 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Aganazzar's Scorcher": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "3d8 Fogo",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 3d8 Fogo de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
+    "damageType": "Fogo"
+  },
+  "Branding Smite": {
+    "area": "raio de 1.5 m a partir do conjurador",
+    "damage": "2d6 Radiante",
+    "healing": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "na falha ou acerto, aplique 2d6 Radiante de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
+    "damageType": "Radiante"
+  },
+  "Arcane Hacking (UA)": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Augury": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Barkskin": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Darkness": {
+    "area": "raio de 4.5 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Blur": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Borrowed Knowledge": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Blindness/Deafness": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON.",
+    "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base."
+  },
+  "Animal Messenger": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Crown of Madness": {
+    "area": "Alvo ou ponto dentro de 36 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": ""
+  },
+  "Cloud of Daggers": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "4d4 Cortante",
+    "healing": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "na falha ou acerto, aplique 4d4 Cortante de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 2d4 por círculo acima do nível-base.",
+    "damageType": "Cortante"
+  },
+  "Continual Flame": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Arcane Lock": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Beast Sense": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Calm Emotions": {
+    "area": "raio de 6 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "CAR",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CAR.",
+    "higherLevels": ""
+  },
+  "Cordon of Arrows": {
+    "area": "Alvo ou ponto dentro de 1.5 m",
+    "damage": "1d6 Perfurante",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 1d6 Perfurante de dano.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
+    "damageType": "Perfurante"
+  },
+  "Detect Thoughts": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": ""
+  },
+  "Flaming Sphere": {
+    "area": "raio de 6 m",
+    "damage": "2d6 Fogo",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 2d6 Fogo de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
+    "damageType": "Fogo"
+  },
+  "Find Steed": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Digital Phantom (UA)": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Dragon's Breath": {
+    "area": "cone de 4.5 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base."
+  },
+  "Enhance Ability": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base."
+  },
+  "Enthrall": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": ""
+  },
+  "Dust Devil": {
+    "area": "cubo de 1.5 m",
+    "damage": "1d8 Concussão",
+    "healing": "",
+    "save": "FOR",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de FOR; na falha ou acerto, aplique 1d8 Concussão de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
+    "damageType": "Concussão"
+  },
+  "Find Traps": {
+    "area": "Alvo ou ponto dentro de 36 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Enlarge/Reduce": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "FOR",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de FOR.",
+    "higherLevels": ""
+  },
+  "Darkvision": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Fortune's Favor": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base."
+  },
+  "Flame Blade": {
+    "area": "raio de 3 m a partir do conjurador",
+    "damage": "3d6 Fogo",
+    "healing": "",
+    "save": "",
+    "attack": true,
+    "mechanics": "Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 3d6 Fogo de dano.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
+    "damageType": "Fogo"
+  },
+  "Find Vehicle (UA)": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Flock of Familiars": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Earthbind": {
+    "area": "Alvo ou ponto dentro de 90 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "FOR",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de FOR.",
+    "higherLevels": ""
+  },
+  "Levitate": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON.",
+    "higherLevels": ""
+  },
+  "Icingdeath's Frost (UA)": {
+    "area": "cone de 4.5 m a partir do conjurador",
+    "damage": "3d8 Frio",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 3d8 Frio de dano.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
+    "damageType": "Frio"
+  },
+  "Jim's Glowing Coin": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": ""
+  },
+  "Kinetic Jaunt": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Healing Spirit": {
+    "area": "cubo de 1.5 m",
+    "damage": "",
+    "healing": "1d6",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "a recuperação usa 1d6 pontos de vida.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Heat Metal": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "2d8 Fogo",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 2d8 Fogo de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
+    "damageType": "Fogo"
+  },
+  "Immovable Object": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Lesser Restoration": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Locate Object": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Hold Person": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Invisibility": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base."
+  },
+  "Gentle Repose": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Locate Animals or Plants": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Gust of Wind": {
+    "area": "linha de 18 m a partir do conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "FOR",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de FOR.",
+    "higherLevels": ""
+  },
+  "Knock": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Gift of Gab": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Mirror Image": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Moonbeam": {
+    "area": "raio de 1.5 m",
+    "damage": "2d10 Radiante",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 2d10 Radiante de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d10 por círculo acima do nível-base.",
+    "damageType": "Radiante"
+  },
+  "Magic Mouth": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Nathair's Mischief": {
+    "area": "cubo de 6 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Misty Step": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Magic Weapon": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Mind Thrust (UA)": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "3d6 Psíquico",
+    "healing": "",
+    "save": "INT",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de INT; na falha ou acerto, aplique 3d6 Psíquico de dano.",
+    "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base.",
+    "damageType": "Psíquico"
+  },
+  "Maximillian's Earthen Grasp": {
+    "area": "quadrado de 1.5 m",
+    "damage": "2d6 Concussão",
+    "healing": "",
+    "save": "FOR",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de FOR; na falha ou acerto, aplique 2d6 Concussão de dano.",
+    "higherLevels": "",
+    "damageType": "Concussão"
+  },
+  "Melf's Acid Arrow": {
+    "area": "Alvo ou ponto dentro de 27 m",
+    "damage": "4d4 Ácido + 2d4 Ácido",
+    "healing": "",
+    "save": "",
+    "attack": true,
+    "mechanics": "Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 4d4 Ácido + 2d4 Ácido de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d4 por círculo acima do nível-base.",
+    "damageType": "Ácido"
+  },
+  "Phantasmal Force": {
+    "area": "cubo de 3 m",
+    "damage": "1d6 Psíquico",
+    "healing": "",
+    "save": "INT",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de INT; na falha ou acerto, aplique 1d6 Psíquico de dano.",
+    "higherLevels": "",
+    "damageType": "Psíquico"
+  },
+  "Nathair's Mischief (UA)": {
+    "area": "cubo de 6 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Mind Spike": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "3d8 Psíquico",
+    "healing": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB; na falha ou acerto, aplique 3d8 Psíquico de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
+    "damageType": "Psíquico"
+  },
+  "Nystul's Magic Aura": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Prayer of Healing": {
+    "area": "Até six criaturas dentro de 9 m",
+    "damage": "",
+    "healing": "2d8 + Mod. Conjuração",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "a recuperação usa 2d8 + Mod. Conjuração pontos de vida.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base."
+  },
+  "Mental Barrier (UA)": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "CAR",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CAR.",
+    "higherLevels": ""
+  },
+  "Pass Without Trace": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Rime's Binding Ice": {
+    "area": "cone de 9 m a partir do conjurador",
+    "damage": "3d8 Frio",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 3d8 Frio de dano.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
+    "damageType": "Frio"
+  },
+  "Silence": {
+    "area": "raio de 6 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "See Invisibility": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Pyrotechnics": {
+    "area": "cubo de 1.5 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON.",
+    "higherLevels": ""
+  },
+  "Ray of Enfeeblement": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "CON",
+    "attack": true,
+    "mechanics": "Faça um ataque mágico contra cada alvo indicado; o alvo realiza Salvaguarda de CON.",
+    "higherLevels": ""
+  },
+  "Shadow Blade": {
+    "area": "Conjurador",
+    "damage": "2d8 Psíquico",
+    "healing": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "na falha ou acerto, aplique 2d8 Psíquico de dano.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
+    "damageType": "Psíquico"
+  },
+  "Skywrite": {
+    "area": "Alvo ou ponto dentro de À vista",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Shatter": {
+    "area": "raio de 3 m",
+    "damage": "3d8 Trovão",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 3d8 Trovão de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
+    "damageType": "Trovão"
+  },
+  "Spray Of Cards": {
+    "area": "cone de 4.5 m a partir do conjurador",
+    "damage": "2d10 Força",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 2d10 Força de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d10 por círculo acima do nível-base.",
+    "damageType": "Força"
+  },
+  "Rope Trick": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Snilloc's Snowball Swarm": {
+    "area": "raio de 1.5 m",
+    "damage": "3d6 Frio",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 3d6 Frio de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
+    "damageType": "Frio"
+  },
+  "Spike Growth": {
+    "area": "raio de 6 m",
+    "damage": "2d4 Perfurante",
+    "healing": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "na falha ou acerto, aplique 2d4 Perfurante de dano.",
+    "higherLevels": "",
+    "damageType": "Perfurante"
+  },
+  "Scorching Ray": {
+    "area": "Alvo ou ponto dentro de 36 m",
+    "damage": "2d6 Fogo",
+    "healing": "",
+    "save": "",
+    "attack": true,
+    "mechanics": "Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 2d6 Fogo de dano.",
+    "higherLevels": "Ao usar um espaço superior, crie um raio adicional por círculo acima do nível-base.",
+    "damageType": "Fogo"
+  },
+  "Spider Climb": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Protection from Poison": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Spiritual Weapon": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": true,
+    "mechanics": "Faça um ataque mágico contra cada alvo indicado.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Warding Bond": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Antagonize": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "4d4 Psíquico",
+    "healing": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB; na falha ou acerto, aplique 4d4 Psíquico de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d4 por círculo acima do nível-base.",
+    "damageType": "Psíquico"
+  },
+  "Tasha's Mind Whip": {
+    "area": "Alvo ou ponto dentro de 27 m",
+    "damage": "3d6 Psíquico",
+    "healing": "",
+    "save": "INT",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de INT; na falha ou acerto, aplique 3d6 Psíquico de dano.",
+    "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base.",
+    "damageType": "Psíquico"
+  },
+  "Wither and Bloom": {
+    "area": "raio de 3 m",
+    "damage": "2d6 Necrótico",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 2d6 Necrótico de dano.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
+    "damageType": "Necrótico"
+  },
+  "Summon Beast": {
+    "area": "Alvo ou ponto dentro de 27 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Warp Sense": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Warding Wind": {
+    "area": "raio de 3 m a partir do conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Animate Dead": {
+    "area": "Até four criaturas dentro de 3 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Thought Shield (UA)": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Spray of Cards (UA)": {
+    "area": "cone de 4.5 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Web": {
+    "area": "cubo de 6 m",
+    "damage": "2d4 Fogo",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 2d4 Fogo de dano.",
+    "higherLevels": "",
+    "damageType": "Fogo"
+  },
+  "Wristpocket": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Antagonize (UA)": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "4d4 Psíquico",
+    "healing": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB; na falha ou acerto, aplique 4d4 Psíquico de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d4 por círculo acima do nível-base.",
+    "damageType": "Psíquico"
+  },
+  "Suggestion": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": ""
+  },
+  "Vortex Warp": {
+    "area": "Alvo ou ponto dentro de 27 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Zone of Truth": {
+    "area": "raio de 4.5 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "CAR",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CAR.",
+    "higherLevels": ""
+  },
+  "Aura of Vitality": {
+    "area": "raio de 9 m a partir do conjurador",
+    "damage": "",
+    "healing": "2d6",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "a recuperação usa 2d6 pontos de vida.",
+    "higherLevels": ""
+  },
+  "Clairvoyance": {
+    "area": "Alvo ou ponto dentro de 1.6 km",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Beacon of Hope": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": ""
+  },
+  "Conjure Animals": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Daylight": {
+    "area": "raio de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Conjure Barrage": {
+    "area": "cone de 18 m a partir do conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES.",
+    "higherLevels": ""
+  },
+  "Crusader's Mantle": {
+    "area": "raio de 9 m a partir do conjurador",
+    "damage": "1d4 Radiante",
+    "healing": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "na falha ou acerto, aplique 1d4 Radiante de dano.",
+    "higherLevels": "",
+    "damageType": "Radiante"
+  },
+  "Conjure Lesser Demon (UA)": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Ashardalon's Stride": {
+    "area": "Conjurador",
+    "damage": "1d6 Fogo",
+    "healing": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "na falha ou acerto, aplique 1d6 Fogo de dano.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
+    "damageType": "Fogo"
+  },
+  "Counterspell": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Create Food and Water": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Blink": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Call Lightning": {
+    "area": "raio de 18 m",
+    "damage": "3d10 Relâmpago",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 3d10 Relâmpago de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d10 por círculo acima do nível-base.",
+    "damageType": "Relâmpago"
+  },
+  "Blinding Smite": {
+    "area": "Conjurador",
+    "damage": "3d8 Radiante",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 3d8 Radiante de dano.",
+    "higherLevels": "",
+    "damageType": "Radiante"
+  },
+  "Bestow Curse": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Catnap": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Enemies Abound": {
+    "area": "Alvo ou ponto dentro de 36 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "INT",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de INT.",
+    "higherLevels": ""
+  },
+  "Glyph of Warding": {
+    "area": "raio de 6 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base."
+  },
+  "Erupting Earth": {
+    "area": "cubo de 6 m",
+    "damage": "3d12 Concussão",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 3d12 Concussão de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d12 por círculo acima do nível-base.",
+    "damageType": "Concussão"
+  },
+  "Elemental Weapon": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Feign Death": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Haywire (UA)": {
+    "area": "raio de 3 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Fast Friends": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": ""
+  },
+  "Flame Arrows": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "1d6 Fogo",
+    "healing": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "na falha ou acerto, aplique 1d6 Fogo de dano.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
+    "damageType": "Fogo"
+  },
+  "Fly": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base."
+  },
+  "Flame Stride (UA)": {
+    "area": "Conjurador",
+    "damage": "1d6 Fogo",
+    "healing": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "na falha ou acerto, aplique 1d6 Fogo de dano.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
+    "damageType": "Fogo"
+  },
+  "Dispel Magic": {
+    "area": "Alvo ou ponto dentro de 36 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Gaseous Form": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON.",
+    "higherLevels": ""
+  },
+  "Galder's Tower": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Fear": {
+    "area": "cone de 9 m a partir do conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": ""
+  },
+  "Fireball": {
+    "area": "raio de 6 m",
+    "damage": "8d6 Fogo",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 8d6 Fogo de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
+    "damageType": "Fogo"
+  },
+  "Haste": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES.",
+    "higherLevels": ""
+  },
+  "Life Transference": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "4d8",
+    "save": "",
+    "attack": false,
+    "mechanics": "na falha ou acerto, aplique 4d8 Necrótico de dano; a recuperação usa 4d8 pontos de vida.",
+    "higherLevels": ""
+  },
+  "Lightning Arrow": {
+    "area": "Conjurador",
+    "damage": "4d8 Relâmpago + 2d8 Relâmpago",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 4d8 Relâmpago + 2d8 Relâmpago de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
+    "damageType": "Relâmpago"
+  },
+  "Lightning Bolt": {
+    "area": "linha de 30 m a partir do conjurador",
+    "damage": "8d6 Relâmpago",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 8d6 Relâmpago de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
+    "damageType": "Relâmpago"
+  },
+  "Motivational Speech": {
+    "area": "Até five criaturas dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": ""
+  },
+  "Major Image": {
+    "area": "cubo de 6 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Leomund's Tiny Hut": {
+    "area": "raio de 3 m a partir do conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Meld into Stone": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "6d6 Concussão",
+    "healing": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "na falha ou acerto, aplique 6d6 Concussão de dano.",
+    "higherLevels": "",
+    "damageType": "Concussão"
+  },
+  "Melf's Minute Meteors": {
+    "area": "36 m",
+    "damage": "2d6 Fogo",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 2d6 Fogo de dano.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
+    "damageType": "Fogo"
+  },
+  "Mass Healing Word": {
+    "area": "Até six criaturas dentro de 18 m",
+    "damage": "",
+    "healing": "1d4 + Mod. Conjuração",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "a recuperação usa 1d4 + Mod. Conjuração pontos de vida.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d4 por círculo acima do nível-base."
+  },
+  "Intellect Fortress": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "CAR",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CAR.",
+    "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base."
+  },
+  "Magic Circle": {
+    "area": "raio de 3 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Hunger Of Hadar": {
+    "area": "raio de 6 m",
+    "damage": "2d6 Frio + 2d6 Ácido",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 2d6 Frio + 2d6 Ácido de dano.",
+    "higherLevels": "",
+    "damageType": "Ácido + Frio"
+  },
+  "Hypnotic Pattern": {
+    "area": "cubo de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": ""
+  },
+  "Incite Greed": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": ""
+  },
+  "House of Cards (UA)": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Invisibility To Cameras (UA)": {
+    "area": "Alvo ou ponto dentro de 3 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Protection from Energy": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Pulse Wave": {
+    "area": "cone de 9 m a partir do conjurador",
+    "damage": "6d6 Força",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 6d6 Força de dano.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
+    "damageType": "Força"
+  },
+  "Plant Growth": {
+    "area": "raio de 30 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Remove Curse": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Revivify": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Psionic Blast (UA)": {
+    "area": "cone de 9 m a partir do conjurador",
+    "damage": "5d8 Força",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 5d8 Força de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
+    "damageType": "Força"
+  },
+  "Protection from Ballistics (UA)": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Sleet Storm": {
+    "area": "raio de 12 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES.",
+    "higherLevels": ""
+  },
+  "Phantom Steed": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Sending": {
+    "area": "Alvo ou ponto dentro de Ilimitado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Slow": {
+    "area": "Até six criaturas dentro de 36 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES.",
+    "higherLevels": ""
+  },
+  "Speak with Plants": {
+    "area": "raio de 9 m a partir do conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Spirit Shroud": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Nondetection": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Spirit Guardians": {
+    "area": "raio de 4.5 m a partir do conjurador",
+    "damage": "3d8 Radiante + 3d8 Necrótico",
+    "healing": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB; na falha ou acerto, aplique 3d8 Radiante + 3d8 Necrótico de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
+    "damageType": "Necrótico + Radiante"
+  },
+  "Speak with Dead": {
+    "area": "Alvo ou ponto dentro de 3 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Vampiric Touch": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "3d6",
+    "save": "",
+    "attack": true,
+    "mechanics": "Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 3d6 Necrótico de dano; a recuperação usa 3d6 pontos de vida.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base."
+  },
+  "Tongues": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Wind Wall": {
+    "area": "Alvo ou ponto dentro de 36 m",
+    "damage": "3d8 Concussão",
+    "healing": "",
+    "save": "FOR",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de FOR; na falha ou acerto, aplique 3d8 Concussão de dano.",
+    "higherLevels": "",
+    "damageType": "Concussão"
+  },
+  "Thunder Step": {
+    "area": "Alvo ou ponto dentro de 27 m",
+    "damage": "3d10 Trovão",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 3d10 Trovão de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d10 por círculo acima do nível-base.",
+    "damageType": "Trovão"
+  },
+  "Tiny Servant": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Wall of Water": {
+    "area": "quadrado de 1.5 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Tidal Wave": {
+    "area": "Alvo ou ponto dentro de 36 m",
+    "damage": "4d8 Concussão",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 4d8 Concussão de dano.",
+    "higherLevels": "",
+    "damageType": "Concussão"
+  },
+  "Water Walk": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Wall of Sand": {
+    "area": "Alvo ou ponto dentro de 27 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Water Breathing": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Stinking Cloud": {
+    "area": "raio de 6 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON.",
+    "higherLevels": ""
+  },
+  "Summon Shadowspawn": {
+    "area": "Alvo ou ponto dentro de 27 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Summon Lesser Demons": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Summon Undead": {
+    "area": "Alvo ou ponto dentro de 27 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Summon Warrior Spirit (UA)": {
+    "area": "Alvo ou ponto dentro de 27 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Summon Fey": {
+    "area": "Alvo ou ponto dentro de 27 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Blight": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "8d8 Necrótico",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 8d8 Necrótico de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
+    "damageType": "Necrótico"
+  },
+  "Aura of Life": {
+    "area": "raio de 9 m a partir do conjurador",
+    "damage": "",
+    "healing": "1",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "a recuperação usa 1 pontos de vida.",
+    "higherLevels": ""
+  },
+  "Aura of Purity": {
+    "area": "raio de 9 m a partir do conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Arcane Eye": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Banishment": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "CAR",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CAR.",
+    "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base."
+  },
+  "Conjure Minor Elementals": {
+    "area": "Alvo ou ponto dentro de 27 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Conjure Knowbot (UA)": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Compulsion": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": ""
+  },
+  "Confusion": {
+    "area": "raio de 3 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Conjure Barlgura (UA)": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Dimension Door": {
+    "area": "Alvo ou ponto dentro de 150 m",
+    "damage": "4d6 Força",
+    "healing": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "na falha ou acerto, aplique 4d6 Força de dano.",
+    "higherLevels": "",
+    "damageType": "Força"
+  },
+  "Conjure Shadow Demon (UA)": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Charm Monster": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base."
+  },
+  "Death Ward": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Control Water": {
+    "area": "Alvo ou ponto dentro de 90 m",
+    "damage": "2d8 Concussão",
+    "healing": "",
+    "save": "FOR",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de FOR; na falha ou acerto, aplique 2d8 Concussão de dano.",
+    "higherLevels": "",
+    "damageType": "Concussão"
+  },
+  "Conjure Woodland Beings": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Fire Shield": {
+    "area": "raio de 3 m a partir do conjurador",
+    "damage": "2d8 Fogo + 2d8 Frio",
+    "healing": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "na falha ou acerto, aplique 2d8 Fogo + 2d8 Frio de dano.",
+    "higherLevels": "",
+    "damageType": "Frio + Fogo"
+  },
+  "Guardian of Faith": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES.",
+    "higherLevels": ""
+  },
+  "Evard's Black Tentacles": {
+    "area": "quadrado de 6 m",
+    "damage": "3d6 Concussão",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 3d6 Concussão de dano.",
+    "higherLevels": "",
+    "damageType": "Concussão"
+  },
+  "Gate Seal": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Ego Whip (UA)": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "INT",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de INT.",
+    "higherLevels": ""
+  },
+  "Galder's Speedy Courier": {
+    "area": "Alvo ou ponto dentro de 3 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Find Greater Steed": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Grasping Vine": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES.",
+    "higherLevels": ""
+  },
+  "Elemental Bane": {
+    "area": "Alvo ou ponto dentro de 27 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON.",
+    "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base."
+  },
+  "Fabricate": {
+    "area": "cubo de 3 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Dominate Beast": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Gravity Sinkhole": {
+    "area": "raio de 6 m",
+    "damage": "5d10 Força",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 5d10 Força de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d10 por círculo acima do nível-base.",
+    "damageType": "Força"
+  },
+  "Freedom of Movement": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Giant Insect": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Greater Invisibility": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Divination": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Guardian of Nature": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Raulothim's Psychic Lance": {
+    "area": "Alvo ou ponto dentro de 36 m",
+    "damage": "7d6 Psíquico",
+    "healing": "",
+    "save": "INT",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de INT; na falha ou acerto, aplique 7d6 Psíquico de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
+    "damageType": "Psíquico"
+  },
+  "Polymorph": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": ""
+  },
+  "Otiluke's Resilient Sphere": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES.",
+    "higherLevels": ""
+  },
+  "Mordenkainen's Private Sanctum": {
+    "area": "Alvo ou ponto dentro de 36 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Leomund's Secret Chest": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Ice Storm": {
+    "area": "raio de 6 m",
+    "damage": "2d8 Concussão + 4d6 Frio",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 2d8 Concussão + 4d6 Frio de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
+    "damageType": "Concussão + Frio"
+  },
+  "Hallucinatory Terrain": {
+    "area": "cubo de 45 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Locate Creature": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Mordenkainen's Faithful Hound": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "4d8 Perfurante",
+    "healing": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "na falha ou acerto, aplique 4d8 Perfurante de dano.",
+    "higherLevels": "",
+    "damageType": "Perfurante"
+  },
+  "Spirit of Death (UA)": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Phantasmal Killer": {
+    "area": "Alvo ou ponto dentro de 36 m",
+    "damage": "4d10 Psíquico",
+    "healing": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB; na falha ou acerto, aplique 4d10 Psíquico de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d10 por círculo acima do nível-base.",
+    "damageType": "Psíquico"
+  },
+  "Raulothim's Psychic Lance (UA)": {
+    "area": "Alvo ou ponto dentro de 36 m",
+    "damage": "10d6 Psíquico",
+    "healing": "",
+    "save": "INT",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de INT; na falha ou acerto, aplique 10d6 Psíquico de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
+    "damageType": "Psíquico"
+  },
+  "Shadow Of Moil": {
+    "area": "Conjurador",
+    "damage": "2d8 Necrótico",
+    "healing": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "na falha ou acerto, aplique 2d8 Necrótico de dano.",
+    "higherLevels": "",
+    "damageType": "Necrótico"
+  },
+  "Spirit Of Death": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Sickening Radiance": {
+    "area": "raio de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Stoneskin": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Vitriolic Sphere": {
+    "area": "raio de 6 m",
+    "damage": "10d4 Ácido + 5d4 Ácido",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 10d4 Ácido + 5d4 Ácido de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 2d4 por círculo acima do nível-base.",
+    "damageType": "Ácido"
+  },
+  "Stone Shape": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Summon Greater Demon": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "CAR",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CAR.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1 por círculo acima do nível-base."
+  },
+  "Storm Sphere": {
+    "area": "raio de 6 m",
+    "damage": "2d6 Concussão + 4d6 Relâmpago",
+    "healing": "",
+    "save": "FOR",
+    "attack": true,
+    "mechanics": "Faça um ataque mágico contra cada alvo indicado; o alvo realiza Salvaguarda de FOR; na falha ou acerto, aplique 2d6 Concussão + 4d6 Relâmpago de dano.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
+    "damageType": "Concussão + Relâmpago"
+  },
+  "System Backdoor (UA)": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Synchronicity (UA)": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Summon Aberration": {
+    "area": "Alvo ou ponto dentro de 27 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Awaken": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Watery Sphere": {
+    "area": "raio de 1.5 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "FOR",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de FOR.",
+    "higherLevels": ""
+  },
+  "Summon Elemental": {
+    "area": "Alvo ou ponto dentro de 27 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Summon Construct": {
+    "area": "Alvo ou ponto dentro de 27 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Staggering Smite": {
+    "area": "Conjurador",
+    "damage": "4d6 Psíquico",
+    "healing": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB; na falha ou acerto, aplique 4d6 Psíquico de dano.",
+    "higherLevels": "",
+    "damageType": "Psíquico"
+  },
+  "Wall of Fire": {
+    "area": "Alvo ou ponto dentro de 36 m",
+    "damage": "5d8 Fogo",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 5d8 Fogo de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
+    "damageType": "Fogo"
+  },
+  "Animate Objects": {
+    "area": "Alvo ou ponto dentro de 36 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Antilife Shell": {
+    "area": "raio de 3 m a partir do conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Circle of Power": {
+    "area": "raio de 9 m a partir do conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Cloudkill": {
+    "area": "raio de 6 m",
+    "damage": "5d8 Veneno",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 5d8 Veneno de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
+    "damageType": "Veneno"
+  },
+  "Commune with Nature": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Conjure Volley": {
+    "area": "raio de 12 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES.",
+    "higherLevels": ""
+  },
+  "Bigby's Hand": {
+    "area": "Alvo ou ponto dentro de 36 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 2d6 por círculo acima do nível-base."
+  },
+  "Cone of Cold": {
+    "area": "cone de 18 m a partir do conjurador",
+    "damage": "8d8 Frio",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 8d8 Frio de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
+    "damageType": "Frio"
+  },
+  "Contagion": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "CON",
+    "attack": true,
+    "mechanics": "Faça um ataque mágico contra cada alvo indicado; o alvo realiza Salvaguarda de CON.",
+    "higherLevels": ""
+  },
+  "Creation": {
+    "area": "cubo de 1.5 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Conjure Vrock (UA)": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Commune": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Conjure Elemental": {
+    "area": "cubo de 3 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1 por círculo acima do nível-base."
+  },
+  "Create Spelljamming Helm": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Control Winds": {
+    "area": "cubo de 30 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Banishing Smite": {
+    "area": "Conjurador",
+    "damage": "5d10 Força",
+    "healing": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "na falha ou acerto, aplique 5d10 Força de dano.",
+    "higherLevels": "",
+    "damageType": "Força"
+  },
+  "Commune with City (UA)": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Contact Other Plane": {
+    "area": "Conjurador",
+    "damage": "6d6 Psíquico",
+    "healing": "",
+    "save": "INT",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de INT; na falha ou acerto, aplique 6d6 Psíquico de dano.",
+    "higherLevels": "",
+    "damageType": "Psíquico"
+  },
+  "Danse Macabre": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Dominate Person": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Far Step": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Dawn": {
+    "area": "raio de 9 m",
+    "damage": "4d10 Radiante",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 4d10 Radiante de dano.",
+    "higherLevels": "",
+    "damageType": "Radiante"
+  },
+  "Infernal Calling": {
+    "area": "Alvo ou ponto dentro de 27 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Destructive Wave": {
+    "area": "raio de 9 m a partir do conjurador",
+    "damage": "5d6 Trovão",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 5d6 Trovão de dano.",
+    "higherLevels": "",
+    "damageType": "Trovão"
+  },
+  "Flame Strike": {
+    "area": "raio de 3 m",
+    "damage": "4d6 Fogo + 4d6 Radiante",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 4d6 Fogo + 4d6 Radiante de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
+    "damageType": "Fogo + Radiante"
+  },
+  "Enervation": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "2d8 Necrótico + 4d8 Necrótico",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 2d8 Necrótico + 4d8 Necrótico de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
+    "damageType": "Necrótico"
+  },
+  "Dispel Evil and Good": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Greater Restoration": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Geas": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "5d10 Psíquico",
+    "healing": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB; na falha ou acerto, aplique 5d10 Psíquico de dano.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
+    "damageType": "Psíquico"
+  },
+  "Dream": {
+    "area": "Alvo ou ponto dentro de Special",
+    "damage": "3d6 Psíquico",
+    "healing": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB; na falha ou acerto, aplique 3d6 Psíquico de dano.",
+    "higherLevels": "",
+    "damageType": "Psíquico"
+  },
+  "Hold Monster": {
+    "area": "Alvo ou ponto dentro de 27 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base."
+  },
+  "Immolation": {
+    "area": "raio de 9 m",
+    "damage": "8d6 Fogo + 4d6 Fogo",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 8d6 Fogo + 4d6 Fogo de dano.",
+    "higherLevels": "",
+    "damageType": "Fogo"
+  },
+  "Hallow": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "CAR",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CAR.",
+    "higherLevels": ""
+  },
+  "Holy Weapon": {
+    "area": "raio de 9 m",
+    "damage": "2d8 Radiante + 4d8 Radiante",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 2d8 Radiante + 4d8 Radiante de dano.",
+    "higherLevels": "",
+    "damageType": "Radiante"
+  },
+  "Modify Memory": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Planar Binding": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "CAR",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CAR.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Mass Cure Wounds": {
+    "area": "Até six criaturas dentro de 18 m",
+    "damage": "",
+    "healing": "3d8 + Mod. Conjuração",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "a recuperação usa 3d8 + Mod. Conjuração pontos de vida.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base."
+  },
+  "Mislead": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Maelstrom": {
+    "area": "raio de 9 m",
+    "damage": "6d6 Concussão",
+    "healing": "",
+    "save": "FOR",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de FOR; na falha ou acerto, aplique 6d6 Concussão de dano.",
+    "higherLevels": "",
+    "damageType": "Concussão"
+  },
+  "Skill Empowerment": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Negative Energy Flood": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "5d12 Necrótico",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 5d12 Necrótico de dano.",
+    "higherLevels": "",
+    "damageType": "Necrótico"
+  },
+  "Seeming": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "CAR",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CAR.",
+    "higherLevels": ""
+  },
+  "Legend Lore": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Insect Plague": {
+    "area": "raio de 6 m",
+    "damage": "4d10 Perfurante",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 4d10 Perfurante de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d10 por círculo acima do nível-base.",
+    "damageType": "Perfurante"
+  },
+  "Passwall": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Rary's Telepathic Bond": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Raise Dead": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Reincarnate": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Shutdown (UA)": {
+    "area": "Alvo ou ponto dentro de 36 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON.",
+    "higherLevels": ""
+  },
+  "Scrying": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": ""
+  },
+  "Wrath Of Nature": {
+    "area": "cubo de 18 m",
+    "damage": "4d6 Cortante",
+    "healing": "",
+    "save": "FOR",
+    "attack": true,
+    "mechanics": "Faça um ataque mágico contra cada alvo indicado; o alvo realiza Salvaguarda de FOR; na falha ou acerto, aplique 4d6 Cortante de dano.",
+    "higherLevels": "",
+    "damageType": "Cortante"
+  },
+  "Temporal Shunt": {
+    "area": "Alvo ou ponto dentro de 36 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base."
+  },
+  "Summon Draconic Spirit (UA)": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Swift Quiver": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Summon Draconic Spirit": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Telekinesis": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Steel Wind Strike": {
+    "area": "Até five criaturas dentro de 9 m",
+    "damage": "6d10 Força",
+    "healing": "",
+    "save": "",
+    "attack": true,
+    "mechanics": "Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 6d10 Força de dano.",
+    "higherLevels": "",
+    "damageType": "Força"
+  },
+  "Summon Celestial": {
+    "area": "Alvo ou ponto dentro de 27 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Transmute Rock": {
+    "area": "cubo de 12 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Arcane Gate": {
+    "area": "Alvo ou ponto dentro de 150 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Teleportation Circle": {
+    "area": "Alvo ou ponto dentro de 3 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Wall of Light": {
+    "area": "Alvo ou ponto dentro de 36 m",
+    "damage": "4d8 Radiante",
+    "healing": "",
+    "save": "CON",
+    "attack": true,
+    "mechanics": "Faça um ataque mágico contra cada alvo indicado; o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 4d8 Radiante de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
+    "damageType": "Radiante"
+  },
+  "Tree Stride": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Wall of Stone": {
+    "area": "Alvo ou ponto dentro de 36 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES.",
+    "higherLevels": ""
+  },
+  "Wall of Force": {
+    "area": "Alvo ou ponto dentro de 36 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Synaptic Static": {
+    "area": "raio de 6 m",
+    "damage": "8d6 Psíquico",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 8d6 Psíquico de dano.",
+    "higherLevels": "",
+    "damageType": "Psíquico"
+  },
+  "Chain Lightning": {
+    "area": "Alvo ou ponto dentro de 45 m",
+    "damage": "10d8 Relâmpago",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 10d8 Relâmpago de dano.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
+    "damageType": "Relâmpago"
+  },
+  "Create Homunculus": {
+    "area": "Alvo ou ponto dentro de 36 m",
+    "damage": "2d4 Perfurante",
+    "healing": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "na falha ou acerto, aplique 2d4 Perfurante de dano.",
+    "higherLevels": "",
+    "damageType": "Perfurante"
+  },
+  "Druid Grove": {
+    "area": "cubo de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Disintegrate": {
+    "area": "cubo de 3 m",
+    "damage": "10d6 + 40 Força",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 10d6 + 40 Força de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 3d6 por círculo acima do nível-base.",
+    "damageType": "Força"
+  },
+  "Circle of Death": {
+    "area": "raio de 18 m",
+    "damage": "8d6 Necrótico",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 8d6 Necrótico de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 2d6 por círculo acima do nível-base.",
+    "damageType": "Necrótico"
+  },
+  "Flesh to Stone": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON.",
+    "higherLevels": ""
+  },
+  "Blade Barrier": {
+    "area": "Alvo ou ponto dentro de 27 m",
+    "damage": "6d10 Cortante",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 6d10 Cortante de dano.",
+    "higherLevels": "",
+    "damageType": "Cortante"
+  },
+  "Conjure Fey": {
+    "area": "Alvo ou ponto dentro de 27 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1 por círculo acima do nível-base."
+  },
+  "Find the Path": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Bones of the Earth": {
+    "area": "raio de 3 m",
+    "damage": "6d6 Concussão",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 6d6 Concussão de dano.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
+    "damageType": "Concussão"
+  },
+  "Fizban's Platinum Shield (UA)": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Contingency": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Drawmij's Instant Summons": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Create Undead": {
+    "area": "Até three criaturas dentro de 3 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Fizban's Platinum Shield": {
+    "area": "Alvo ou ponto dentro de 60ft",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES.",
+    "higherLevels": ""
+  },
+  "Eyebite": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": ""
+  },
+  "Mental Prison": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "5d10 Psíquico + 10d10 Psíquico",
+    "healing": "",
+    "save": "INT",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de INT; na falha ou acerto, aplique 5d10 Psíquico + 10d10 Psíquico de dano.",
+    "higherLevels": "",
+    "damageType": "Psíquico"
+  },
+  "Investiture of Ice": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Investiture of Stone": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Investiture of Wind": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Heroes' Feast": {
+    "area": "Até twelve criaturas dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": ""
+  },
+  "Harm": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "14d6 Necrótico",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 14d6 Necrótico de dano.",
+    "higherLevels": "",
+    "damageType": "Necrótico"
+  },
+  "Gravity Fissure": {
+    "area": "linha de 30 m a partir do conjurador",
+    "damage": "8d8 Força",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 8d8 Força de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
+    "damageType": "Força"
+  },
+  "Investiture of Flame": {
+    "area": "raio de 9 m a partir do conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Magic Jar": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "CAR",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CAR.",
+    "higherLevels": ""
+  },
+  "Heal": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "70",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "a recuperação usa 70 pontos de vida.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 10 por círculo acima do nível-base."
+  },
+  "Move Earth": {
+    "area": "quadrado de 12 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Guards and Wards": {
+    "area": "quadrado de 1.5 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Otherworldly Form (UA)": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Globe of Invulnerability": {
+    "area": "raio de 3 m a partir do conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Mass Suggestion": {
+    "area": "Até twelve criaturas dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Forbiddance": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Primordial Ward": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Soul Cage": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "2d8",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "a recuperação usa 2d8 pontos de vida.",
+    "higherLevels": ""
+  },
+  "Programmed Illusion": {
+    "area": "cubo de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Sunbeam": {
+    "area": "linha de 18 m a partir do conjurador",
+    "damage": "6d8 Radiante",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 6d8 Radiante de dano.",
+    "higherLevels": "",
+    "damageType": "Radiante"
+  },
+  "Otto's Irresistible Dance": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES.",
+    "higherLevels": ""
+  },
+  "Tasha's Otherworldly Guise": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Wall of Thorns": {
+    "area": "Alvo ou ponto dentro de 36 m",
+    "damage": "7d8 Perfurante + 7d8 Cortante",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 7d8 Perfurante + 7d8 Cortante de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
+    "damageType": "Perfurante + Cortante"
+  },
+  "Scatter": {
+    "area": "Até five criaturas dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": ""
+  },
+  "Summon Fiend": {
+    "area": "Alvo ou ponto dentro de 27 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Wall of Ice": {
+    "area": "quadrado de 3 m",
+    "damage": "10d6 Frio + 5d6 Frio",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 10d6 Frio + 5d6 Frio de dano.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
+    "damageType": "Frio"
+  },
+  "Transport via Plants": {
+    "area": "Alvo ou ponto dentro de 3 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Planar Ally": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Otiluke's Freezing Sphere": {
+    "area": "raio de 18 m",
+    "damage": "10d6 Frio",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 10d6 Frio de dano.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
+    "damageType": "Frio"
+  },
+  "Psychic Crush (UA)": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "12d6 Psíquico",
+    "healing": "",
+    "save": "INT",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de INT; na falha ou acerto, aplique 12d6 Psíquico de dano.",
+    "higherLevels": "",
+    "damageType": "Psíquico"
+  },
+  "Tenser's Transformation": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "True Seeing": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Dream of the Blue Veil": {
+    "area": "Alvo ou ponto dentro de 6 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Delayed Blast Fireball": {
+    "area": "raio de 6 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES.",
+    "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base."
+  },
+  "Word of Recall": {
+    "area": "Alvo ou ponto dentro de 1.5 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Draconic Transformation": {
+    "area": "cone de 18 m a partir do conjurador",
+    "damage": "6d8 Força",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 6d8 Força de dano.",
+    "higherLevels": "",
+    "damageType": "Força"
+  },
+  "Draconic Transformation (UA)": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Mirage Arcane": {
+    "area": "Alvo ou ponto dentro de À vista",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Create Magen": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Fire Storm": {
+    "area": "cubo de 3 m",
+    "damage": "7d10 Fogo",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 7d10 Fogo de dano.",
+    "higherLevels": "",
+    "damageType": "Fogo"
+  },
+  "Finger of Death": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "7d8 + 30 Necrótico",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 7d8 + 30 Necrótico de dano.",
+    "higherLevels": "",
+    "damageType": "Necrótico"
+  },
+  "Divine Word": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "CAR",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CAR.",
+    "higherLevels": ""
+  },
+  "Crown of Stars": {
+    "area": "raio de 9 m a partir do conjurador",
+    "damage": "4d12 Radiante",
+    "healing": "",
+    "save": "",
+    "attack": true,
+    "mechanics": "Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 4d12 Radiante de dano.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
+    "damageType": "Radiante"
+  },
+  "Conjure Hezrou (UA)": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Etherealness": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Conjure Celestial": {
+    "area": "Alvo ou ponto dentro de 27 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Forcecage": {
+    "area": "Alvo ou ponto dentro de 30 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "CAR",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CAR.",
+    "higherLevels": ""
+  },
+  "Wind Walk": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Plane Shift": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "CAR",
+    "attack": true,
+    "mechanics": "Faça um ataque mágico contra cada alvo indicado; o alvo realiza Salvaguarda de CAR.",
+    "higherLevels": ""
+  },
+  "Prismatic Spray": {
+    "area": "cone de 18 m a partir do conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES.",
+    "higherLevels": ""
+  },
+  "Regenerate": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "4d8 + 15",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "a recuperação usa 4d8 + 15 pontos de vida.",
+    "higherLevels": ""
+  },
+  "Mordenkainen's Sword": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "3d10 Força",
+    "healing": "",
+    "save": "",
+    "attack": true,
+    "mechanics": "Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 3d10 Força de dano.",
+    "higherLevels": "",
+    "damageType": "Força"
+  },
+  "Reverse Gravity": {
+    "area": "raio de 15 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES.",
+    "higherLevels": ""
+  },
+  "Project Image": {
+    "area": "Alvo ou ponto dentro de 800 km",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Resurrection": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Simulacrum": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Power Word: Pain": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON.",
+    "higherLevels": ""
+  },
+  "Temple of the Gods": {
+    "area": "Alvo ou ponto dentro de 36 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "CAR",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CAR.",
+    "higherLevels": ""
+  },
+  "Mordenkainen's Magnificent Mansion": {
+    "area": "Alvo ou ponto dentro de 90 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Sequester": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Teleport": {
+    "area": "cubo de 3 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Symbol": {
+    "area": "raio de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Tether Essence": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON.",
+    "higherLevels": ""
+  },
+  "Whirlwind": {
+    "area": "raio de 3 m",
+    "damage": "10d6 Concussão",
+    "healing": "",
+    "save": "FOR",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de FOR; na falha ou acerto, aplique 10d6 Concussão de dano.",
+    "higherLevels": "",
+    "damageType": "Concussão"
+  },
+  "Demiplane": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Clone": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Feeblemind": {
+    "area": "Alvo ou ponto dentro de 45 m",
+    "damage": "4d6 Psíquico",
+    "healing": "",
+    "save": "INT",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de INT; na falha ou acerto, aplique 4d6 Psíquico de dano.",
+    "higherLevels": "",
+    "damageType": "Psíquico"
+  },
+  "Antipathy/Sympathy": {
+    "area": "cubo de 60 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Dominate Monster": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia."
+  },
+  "Abi-Dalzim's Horrid Wilting": {
+    "area": "cubo de 9 m",
+    "damage": "12d8 Necrótico",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 12d8 Necrótico de dano.",
+    "higherLevels": "",
+    "damageType": "Necrótico"
+  },
+  "Dark Star": {
+    "area": "Alvo ou ponto dentro de 45 m",
+    "damage": "8d10 Força",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 8d10 Força de dano.",
+    "higherLevels": "",
+    "damageType": "Força"
+  },
+  "Holy Aura": {
+    "area": "raio de 9 m a partir do conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON.",
+    "higherLevels": ""
+  },
+  "Glibness": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Earthquake": {
+    "area": "raio de 30 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES.",
+    "higherLevels": ""
+  },
+  "Illusory Dragon": {
+    "area": "cone de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "INT",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de INT.",
+    "higherLevels": ""
+  },
+  "Animal Shapes": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Maddening Darkness": {
+    "area": "Alvo ou ponto dentro de 45 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Antimagic Field": {
+    "area": "raio de 3 m a partir do conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Control Weather": {
+    "area": "8 km radius",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Incendiary Cloud": {
+    "area": "raio de 6 m",
+    "damage": "10d8 Fogo",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 10d8 Fogo de dano.",
+    "higherLevels": "",
+    "damageType": "Fogo"
+  },
+  "Mighty Fortress": {
+    "area": "Alvo ou ponto dentro de 1.6 km",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Astral Projection": {
+    "area": "Alvo ou ponto dentro de 3 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Mind Blank": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Foresight": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Blade of Disaster": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "4d12 Força + 8d12 Força + 12d12 Força",
+    "healing": "",
+    "save": "",
+    "attack": true,
+    "mechanics": "Faça um ataque mágico contra cada alvo indicado; na falha ou acerto, aplique 4d12 Força + 8d12 Força + 12d12 Força de dano.",
+    "higherLevels": "",
+    "damageType": "Força"
+  },
+  "Power Word: Stun": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON.",
+    "higherLevels": ""
+  },
+  "Reality Break": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": ""
+  },
+  "Telepathy": {
+    "area": "Alvo ou ponto dentro de Ilimitado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Mass Heal": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "700",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "a recuperação usa 700 pontos de vida.",
+    "higherLevels": ""
+  },
+  "Sunburst": {
+    "area": "raio de 18 m",
+    "damage": "12d6 Radiante",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 12d6 Radiante de dano.",
+    "higherLevels": "",
+    "damageType": "Radiante"
+  },
+  "Tsunami": {
+    "area": "Alvo ou ponto dentro de À vista",
+    "damage": "6d10 Concussão + 5d10 Concussão",
+    "healing": "",
+    "save": "FOR",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de FOR; na falha ou acerto, aplique 6d10 Concussão + 5d10 Concussão de dano.",
+    "higherLevels": "",
+    "damageType": "Concussão"
+  },
+  "Invulnerability": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Mass Polymorph": {
+    "area": "Até ten criaturas dentro de 36 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": ""
+  },
+  "Gate": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Maze": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Imprisonment": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": ""
+  },
+  "Power Word: Heal": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Prismatic Wall": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES.",
+    "higherLevels": ""
+  },
+  "Shapechange": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Psychic Scream": {
+    "area": "Até ten criaturas dentro de 27 m",
+    "damage": "14d6 Psíquico",
+    "healing": "",
+    "save": "INT",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de INT; na falha ou acerto, aplique 14d6 Psíquico de dano.",
+    "higherLevels": "",
+    "damageType": "Psíquico"
+  },
+  "Time Stop": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Power Word: Kill": {
+    "area": "Alvo ou ponto dentro de 18 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Time Ravage": {
+    "area": "Alvo ou ponto dentro de 27 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "True Polymorph": {
+    "area": "Alvo ou ponto dentro de 9 m",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB.",
+    "higherLevels": ""
+  },
+  "Weird": {
+    "area": "raio de 9 m",
+    "damage": "4d10 Psíquico",
+    "healing": "",
+    "save": "SAB",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de SAB; na falha ou acerto, aplique 4d10 Psíquico de dano.",
+    "higherLevels": "",
+    "damageType": "Psíquico"
+  },
+  "Storm of Vengeance": {
+    "area": "Alvo ou ponto dentro de À vista",
+    "damage": "2d6 Trovão",
+    "healing": "",
+    "save": "CON",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de CON; na falha ou acerto, aplique 2d6 Trovão de dano.",
+    "higherLevels": "",
+    "damageType": "Trovão"
+  },
+  "True Resurrection": {
+    "area": "Criatura ou objeto tocado",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  },
+  "Meteor Swarm": {
+    "area": "raio de 12 m",
+    "damage": "20d6 Fogo + 20d6 Concussão",
+    "healing": "",
+    "save": "DES",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de DES; na falha ou acerto, aplique 20d6 Fogo + 20d6 Concussão de dano.",
+    "higherLevels": "",
+    "damageType": "Concussão + Fogo"
+  },
+  "Ravenous Void": {
+    "area": "raio de 6 m",
+    "damage": "5d10 Força",
+    "healing": "",
+    "save": "FOR",
+    "attack": false,
+    "mechanics": "o alvo realiza Salvaguarda de FOR; na falha ou acerto, aplique 5d10 Força de dano.",
+    "higherLevels": "",
+    "damageType": "Força"
+  },
+  "Wish": {
+    "area": "Conjurador",
+    "damage": "",
+    "healing": "",
+    "damageType": "",
+    "save": "",
+    "attack": false,
+    "mechanics": "Resolva o efeito conforme os alvos e condições descritos.",
+    "higherLevels": ""
+  }
+}
