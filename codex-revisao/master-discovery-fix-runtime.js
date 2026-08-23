@@ -1,19 +1,16 @@
 /* MICROCOSMOS — correção da visão de Descobertas para o Mestre.
-   O login do Mestre transforma entradas bloqueadas em legíveis para abrir o conteúdo.
-   Esta camada preserva a tela "Descobertas ainda bloqueadas", filtrando pela marca
-   masterOriginalDiscovered em vez do campo discovered já liberado para leitura. */
+   Compatível com o login local antigo e com o login online Supabase. */
 (function(){
   if(typeof filteredCodex!=="function")return;
+  const isMasterMode=()=>document.body.classList.contains("micro-role-master-active")||document.body.classList.contains("micro-online-master")||document.documentElement.dataset.microcosmosRole==="master";
   const originalFilteredCodex=filteredCodex;
 
   filteredCodex=function(){
-    const isMaster=document.body.classList.contains("micro-role-master-active");
-    if(!isMaster||typeof codexOnlyLocked==="undefined"||!codexOnlyLocked)return originalFilteredCodex();
-
+    if(!isMasterMode()||typeof codexOnlyLocked==="undefined"||!codexOnlyLocked)return originalFilteredCodex();
     const previous=codexOnlyLocked;
     codexOnlyLocked=false;
     try{
-      return originalFilteredCodex().filter(entry=>entry?.masterOriginalDiscovered===false||entry?.data?.masterOriginalDiscovered===false);
+      return originalFilteredCodex().filter(entry=>entry?.masterOriginalDiscovered===false||entry?.data?.masterOriginalDiscovered===false||entry?.discovered===false);
     }finally{
       codexOnlyLocked=previous;
     }
@@ -23,7 +20,7 @@
   if(originalOpenDiscoveries){
     openCodexDiscoveries=function(){
       originalOpenDiscoveries();
-      if(document.body.classList.contains("micro-role-master-active")){
+      if(isMasterMode()){
         const heading=document.getElementById("codexHeading");
         if(heading)heading.textContent="📚 Descobertas ainda bloqueadas • Visão do Mestre";
         if(typeof renderCodex==="function")renderCodex();
