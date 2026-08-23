@@ -1,0 +1,46 @@
+name: Auditar materiais das magias
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "tools/build-material-audit.mjs"
+      - "codex-revisao/spell-data.js"
+      - ".github/workflows/material-audit.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: material-audit
+  cancel-in-progress: true
+
+jobs:
+  auditar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar projeto
+        uses: actions/checkout@v4
+
+      - name: Preparar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Auditar componentes materiais do Grimório
+        run: node tools/build-material-audit.mjs
+
+      - name: Publicar auditoria gerada
+        shell: bash
+        run: |
+          if git diff --quiet -- codex-revisao/spell-material-audit.js; then
+            echo "Auditoria já está atualizada."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add codex-revisao/spell-material-audit.js
+          git commit -m "Atualizar auditoria de materiais das magias"
+          git push
