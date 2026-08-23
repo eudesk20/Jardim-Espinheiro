@@ -7,8 +7,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -28,6 +28,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Ácido",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre 1d6 Ácido de dano.",
     "saveSuccess": "Não sofre o dano.",
     "condition": "",
@@ -45,8 +46,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -66,6 +67,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -82,8 +84,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -106,6 +108,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Trovão",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -122,8 +125,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Necromancia",
     "source": "Necromancia",
@@ -143,6 +146,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Necrótico",
     "attack": true,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -159,8 +163,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -180,6 +184,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -195,10 +200,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "druida",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -218,6 +223,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Fogo",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre 1d8 Fogo de dano.",
     "saveSuccess": "Não sofre o dano.",
     "condition": "",
@@ -234,8 +240,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -258,6 +264,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -293,6 +300,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -328,6 +336,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Força",
     "attack": true,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -363,6 +372,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -378,8 +388,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -399,6 +409,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Fogo",
     "attack": true,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -416,8 +427,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -440,6 +451,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -455,10 +467,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "druida",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -478,6 +490,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Frio",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre 1d6 Frio de dano.",
     "saveSuccess": "Não sofre o dano.",
     "condition": "",
@@ -494,8 +507,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -518,6 +531,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -554,6 +568,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -570,8 +585,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -591,6 +606,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -626,6 +642,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Radiante",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre 1d6 Radiante de dano.",
     "saveSuccess": "Não sofre o dano.",
     "condition": "",
@@ -641,10 +658,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "druida",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -667,6 +684,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Veneno",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre 1d6 Veneno de dano.",
     "saveSuccess": "Não sofre o dano.",
     "condition": "",
@@ -684,8 +702,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "clerigo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -694,22 +712,23 @@ globalThis.CODEX_SPELL_DATA = [
     "range": "Toque",
     "duration": "1 hora",
     "components": "V, M",
-    "area": "raio de 6 m",
+    "area": "1 objeto tocado; ilumina 6 m e cria penumbra por mais 6 m",
     "materialIds": [
       "brasa_semente",
       "carvao_po"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. M: Semente de Brasa e Carvão em Pó. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Luminosidade produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Luminosidade produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de DES Falha: Sofre o efeito descrito pela magia. Sucesso: Evita o efeito da magia.",
+    "description": "Você toca um objeto e faz com que ele emita luz pela duração da magia. Cobrir completamente o objeto com algo opaco bloqueia a luz.",
+    "effect": "Você toca um objeto e faz com que ele emita luz pela duração da magia. Cobrir completamente o objeto com algo opaco bloqueia a luz. Salvaguarda condicional: Somente se o objeto estiver sendo vestido ou carregado por uma criatura hostil. Falha: O objeto fica iluminado normalmente. Sucesso: A criatura impede que a magia afete o objeto.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
     "damageType": "",
     "attack": false,
     "save": "DES",
-    "saveFailure": "Sofre o efeito descrito pela magia.",
-    "saveSuccess": "Evita o efeito da magia.",
+    "saveTrigger": "Somente se o objeto estiver sendo vestido ou carregado por uma criatura hostil.",
+    "saveFailure": "O objeto fica iluminado normalmente.",
+    "saveSuccess": "A criatura impede que a magia afete o objeto.",
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
@@ -724,8 +743,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -745,6 +764,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Relâmpago",
     "attack": false,
     "save": "FOR",
+    "saveTrigger": "",
     "saveFailure": "Sofre 1d8 Relâmpago de dano.",
     "saveSuccess": "Não sofre o dano.",
     "condition": "",
@@ -762,8 +782,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -783,6 +803,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -798,8 +819,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
-      "druida"
+      "druida",
+      "bruxo"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -819,6 +840,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": true,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -837,8 +859,8 @@ globalThis.CODEX_SPELL_DATA = [
       "bardo",
       "druida",
       "clerigo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -861,6 +883,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -877,8 +900,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -901,6 +924,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -917,8 +941,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -938,6 +962,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Psíquico",
     "attack": false,
     "save": "INT",
+    "saveTrigger": "",
     "saveFailure": "Sofre 1d6 Psíquico de dano.",
     "saveSuccess": "Não sofre o dano.",
     "condition": "",
@@ -955,8 +980,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -979,6 +1004,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -995,8 +1021,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -1016,6 +1042,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -1032,8 +1059,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -1053,6 +1080,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -1068,10 +1096,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "druida",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -1091,6 +1119,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Veneno",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre 1d12 Veneno de dano.",
     "saveSuccess": "Não sofre o dano.",
     "condition": "",
@@ -1108,8 +1137,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -1129,6 +1158,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -1164,6 +1194,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Ácido",
     "attack": true,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -1199,6 +1230,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Fogo",
     "attack": true,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -1214,8 +1246,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -1235,6 +1267,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Frio",
     "attack": true,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -1274,6 +1307,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -1309,6 +1343,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Radiante",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre 1d8 Radiante de dano.",
     "saveSuccess": "Não sofre o dano.",
     "condition": "",
@@ -1344,6 +1379,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Necrótico",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre 1d4 Necrótico de dano e fica Caído.",
     "saveSuccess": "Não sofre o dano nem fica Caído.",
     "condition": "Caído",
@@ -1360,8 +1396,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -1381,6 +1417,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -1419,6 +1456,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -1434,8 +1472,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -1455,6 +1493,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Relâmpago",
     "attack": true,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -1490,6 +1529,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -1506,8 +1546,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -1527,6 +1567,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Força",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre 1d6 Força de dano.",
     "saveSuccess": "Não sofre o dano.",
     "condition": "",
@@ -1562,6 +1603,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -1600,6 +1642,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Perfurante",
     "attack": true,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -1616,10 +1659,10 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "bruxo",
       "druida",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -1639,6 +1682,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Trovão",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre 1d6 Trovão de dano.",
     "saveSuccess": "Não sofre o dano.",
     "condition": "",
@@ -1654,8 +1698,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "clerigo",
+      "bruxo",
       "mago"
     ],
     "school": "Necromancia",
@@ -1676,6 +1720,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Necrótico",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Sofre 1d8 Necrótico + 1d12 Necrótico de dano.",
     "saveSuccess": "Não sofre o dano.",
     "condition": "",
@@ -1693,8 +1738,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Adivinhação",
     "source": "Adivinhação",
@@ -1714,6 +1759,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -1749,6 +1795,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Psíquico",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Sofre 1d4 Psíquico de dano.",
     "saveSuccess": "Não sofre o dano.",
     "condition": "",
@@ -1784,6 +1831,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -1822,6 +1870,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Radiante",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre 1d6 Radiante de dano.",
     "saveSuccess": "Não sofre o dano.",
     "condition": "",
@@ -1837,10 +1886,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
       "druida",
+      "feiticeiro",
       "mago",
-      "feiticeiro"
+      "patrulheiro"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -1860,6 +1909,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -1875,8 +1925,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -1899,6 +1949,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Ácido",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre 3d4 Ácido de dano.",
     "saveSuccess": "Não sofre o dano.",
     "condition": "",
@@ -1914,8 +1965,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
-      "mago"
+      "mago",
+      "patrulheiro"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -1938,6 +1989,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -1954,8 +2006,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "patrulheiro",
-      "druida"
+      "druida",
+      "patrulheiro"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -1978,6 +2030,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Fica Enfeitiçado.",
     "saveSuccess": "Não fica Enfeitiçado.",
     "condition": "Enfeitiçado",
@@ -2013,6 +2066,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -2051,6 +2105,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -2086,6 +2141,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Necrótico",
     "attack": false,
     "save": "FOR",
+    "saveTrigger": "",
     "saveFailure": "Sofre 2d6 Necrótico de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -2125,6 +2181,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "CAR",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -2140,8 +2197,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
-      "druida"
+      "druida",
+      "patrulheiro"
     ],
     "school": "Adivinhação",
     "source": "Adivinhação",
@@ -2164,6 +2221,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -2179,8 +2237,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "clerigo",
-      "paladino"
+      "paladino",
+      "clerigo"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -2203,6 +2261,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -2218,8 +2277,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -2239,6 +2298,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Fogo",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre 3d6 Fogo de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -2254,8 +2314,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -2275,6 +2335,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Concussão",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre 3d8 Concussão de dano.",
     "saveSuccess": "Não sofre o dano.",
     "condition": "",
@@ -2311,6 +2372,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Fica Amedrontado.",
     "saveSuccess": "Não fica Amedrontado.",
     "condition": "Amedrontado",
@@ -2326,8 +2388,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "clerigo",
-      "paladino"
+      "paladino",
+      "clerigo"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -2350,6 +2412,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -2385,6 +2448,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": true,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -2401,10 +2465,10 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "bruxo",
       "druida",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -2424,6 +2488,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Fica Enfeitiçado.",
     "saveSuccess": "Não fica Enfeitiçado.",
     "condition": "Enfeitiçado",
@@ -2439,8 +2504,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -2463,6 +2528,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": true,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -2479,8 +2545,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -2503,6 +2569,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -2519,8 +2586,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "clerigo",
-      "paladino"
+      "paladino",
+      "clerigo"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -2540,6 +2607,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -2575,6 +2643,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -2592,8 +2661,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Adivinhação",
     "source": "Adivinhação",
@@ -2616,6 +2685,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -2655,6 +2725,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -2671,10 +2742,10 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "patrulheiro",
+      "paladino",
       "druida",
       "clerigo",
-      "paladino"
+      "patrulheiro"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -2694,6 +2765,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -2709,8 +2781,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "clerigo",
-      "paladino"
+      "paladino",
+      "clerigo"
     ],
     "school": "Adivinhação",
     "source": "Adivinhação",
@@ -2730,6 +2802,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -2746,12 +2819,12 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "patrulheiro",
+      "paladino",
       "druida",
       "clerigo",
-      "paladino",
+      "feiticeiro",
       "mago",
-      "feiticeiro"
+      "patrulheiro"
     ],
     "school": "Adivinhação",
     "source": "Adivinhação",
@@ -2771,6 +2844,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -2786,10 +2860,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
+      "paladino",
       "druida",
       "clerigo",
-      "paladino"
+      "patrulheiro"
     ],
     "school": "Adivinhação",
     "source": "Adivinhação",
@@ -2812,6 +2886,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -2828,8 +2903,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -2849,6 +2924,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -2884,6 +2960,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Psíquico",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Sofre 3d6 Psíquico de dano e fica Surdo.",
     "saveSuccess": "Sofre metade do dano e não fica Surdo.",
     "condition": "Surdo",
@@ -2901,8 +2978,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -2922,6 +2999,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -2957,6 +3035,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Radiante",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -2974,8 +3053,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -2995,6 +3074,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Concussão",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre 1d6 Concussão de dano e fica Caído.",
     "saveSuccess": "Não sofre o dano nem fica Caído.",
     "condition": "Caído",
@@ -3030,6 +3110,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Perfurante",
     "attack": false,
     "save": "FOR",
+    "saveTrigger": "",
     "saveFailure": "Sofre 1d6 Perfurante de dano e fica Contido.",
     "saveSuccess": "Não sofre o dano nem fica Contido.",
     "condition": "Contido",
@@ -3045,8 +3126,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
-      "druida"
+      "druida",
+      "patrulheiro"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -3066,6 +3147,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "FOR",
+    "saveTrigger": "",
     "saveFailure": "Fica Contido.",
     "saveSuccess": "Não fica Contido.",
     "condition": "Contido",
@@ -3082,8 +3164,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -3103,6 +3185,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -3139,6 +3222,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -3154,8 +3238,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Necromancia",
     "source": "Necromancia",
@@ -3178,6 +3262,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -3194,8 +3279,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -3218,6 +3303,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -3256,6 +3342,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -3271,10 +3358,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
       "druida",
+      "feiticeiro",
       "mago",
-      "feiticeiro"
+      "patrulheiro"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -3294,6 +3381,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -3329,6 +3417,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Frio",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre 2d8 Frio de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -3364,6 +3453,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -3379,8 +3469,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
-      "druida"
+      "druida",
+      "patrulheiro"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -3403,6 +3493,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -3418,8 +3509,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -3442,6 +3533,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Fica Caído.",
     "saveSuccess": "Não fica Caído.",
     "condition": "Caído",
@@ -3477,6 +3569,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Radiante",
     "attack": true,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -3515,6 +3608,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -3550,6 +3644,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Perfurante",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre 1d10 Perfurante de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -3589,6 +3684,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -3626,6 +3722,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -3661,6 +3758,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Fogo",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre 2d10 Fogo de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -3697,6 +3795,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -3735,6 +3834,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Necrótico",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -3770,6 +3870,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -3786,8 +3887,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -3803,13 +3904,14 @@ globalThis.CODEX_SPELL_DATA = [
     ],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. M: Orvalho Purificado e Pérola de Orvalho Puríssimo. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
     "description": "“Faca de Gelo!” produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "“Faca de Gelo!” produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Faça um ataque mágico contra cada alvo indicado Se acertar, o alvo sofre 1d10 Perfurante + 2d6 Frio de dano",
+    "effect": "“Faca de Gelo!” produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Salvaguarda condicional: Depois que o ataque mágico acerta ou quando o efeito secundário da magia é ativado. Falha: Sofre 1d10 Perfurante + 2d6 Frio de dano. Sucesso: Não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d10 Perfurante + 2d6 Frio",
     "healing": "",
     "damageType": "Perfurante + Frio",
     "attack": true,
     "save": "DES",
+    "saveTrigger": "Depois que o ataque mágico acerta ou quando o efeito secundário da magia é ativado.",
     "saveFailure": "Sofre 1d10 Perfurante + 2d6 Frio de dano.",
     "saveSuccess": "Não sofre o dano.",
     "condition": "",
@@ -3826,8 +3928,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -3847,6 +3949,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Psíquico",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Sofre 1d12 Psíquico de dano e fica Incapacitado.",
     "saveSuccess": "Não sofre o dano nem fica Incapacitado.",
     "condition": "Incapacitado",
@@ -3886,6 +3989,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -3926,6 +4030,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -3942,8 +4047,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Adivinhação",
     "source": "Adivinhação",
@@ -3966,6 +4071,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "CAR",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -4001,6 +4107,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Necrótico",
     "attack": true,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -4039,6 +4146,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Força",
     "attack": true,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -4054,10 +4162,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
       "druida",
+      "feiticeiro",
       "mago",
-      "feiticeiro"
+      "patrulheiro"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -4080,6 +4188,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -4096,9 +4205,9 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "patrulheiro",
       "druida",
-      "mago"
+      "mago",
+      "patrulheiro"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -4121,6 +4230,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -4136,8 +4246,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -4160,6 +4270,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -4175,8 +4286,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -4196,6 +4307,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Força",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -4231,6 +4343,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Força",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre 2d8 Força de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -4246,10 +4359,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
+      "paladino",
       "druida",
       "clerigo",
-      "paladino",
+      "bruxo",
       "mago"
     ],
     "school": "Abjuração",
@@ -4273,6 +4386,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "Enfeitiçado",
@@ -4310,6 +4424,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -4325,9 +4440,9 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
+      "paladino",
       "druida",
-      "clerigo",
-      "paladino"
+      "clerigo"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -4347,6 +4462,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -4362,8 +4478,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Necromancia",
     "source": "Necromancia",
@@ -4376,13 +4492,14 @@ globalThis.CODEX_SPELL_DATA = [
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
     "description": "Raio de Doença libera energia contra o alvo ou a área escolhida.",
-    "effect": "Raio de Doença libera energia contra o alvo ou a área escolhida. Faça um ataque mágico contra cada alvo indicado Se acertar, o alvo sofre 2d8 Veneno de dano",
+    "effect": "Raio de Doença libera energia contra o alvo ou a área escolhida. Salvaguarda condicional: Depois que o ataque mágico acerta ou quando o efeito secundário da magia é ativado. Falha: Sofre 2d8 Veneno de dano e fica Envenenado. Sucesso: Não sofre o dano nem fica Envenenado.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d8 Veneno",
     "healing": "",
     "damageType": "Veneno",
     "attack": true,
     "save": "CON",
+    "saveTrigger": "Depois que o ataque mágico acerta ou quando o efeito secundário da magia é ativado.",
     "saveFailure": "Sofre 2d8 Veneno de dano e fica Envenenado.",
     "saveSuccess": "Não sofre o dano nem fica Envenenado.",
     "condition": "Envenenado",
@@ -4399,8 +4516,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -4420,6 +4537,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -4458,6 +4576,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -4473,8 +4592,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
-      "paladino"
+      "paladino",
+      "patrulheiro"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -4494,6 +4613,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Fogo",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre 1d6 Fogo de dano.",
     "saveSuccess": "Não sofre o dano.",
     "condition": "",
@@ -4531,6 +4651,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -4546,8 +4667,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -4567,6 +4688,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -4582,8 +4704,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "clerigo",
-      "paladino"
+      "paladino",
+      "clerigo"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -4606,6 +4728,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -4622,8 +4745,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -4646,6 +4769,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -4662,8 +4786,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -4683,6 +4807,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -4699,8 +4824,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -4723,6 +4848,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -4738,9 +4864,9 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
       "druida",
-      "mago"
+      "mago",
+      "patrulheiro"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -4763,6 +4889,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Fica Invisível.",
     "saveSuccess": "Não fica Invisível.",
     "condition": "Invisível",
@@ -4779,8 +4906,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "patrulheiro",
-      "druida"
+      "druida",
+      "patrulheiro"
     ],
     "school": "Adivinhação",
     "source": "Adivinhação",
@@ -4800,6 +4927,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -4816,9 +4944,9 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "patrulheiro",
+      "feiticeiro",
       "mago",
-      "feiticeiro"
+      "patrulheiro"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -4838,6 +4966,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -4853,8 +4982,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -4877,6 +5006,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Ácido",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre 2d4 Ácido de dano.",
     "saveSuccess": "Não sofre o dano.",
     "condition": "",
@@ -4916,6 +5046,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Fica Incapacitado.",
     "saveSuccess": "Não fica Incapacitado.",
     "condition": "Incapacitado",
@@ -4954,6 +5085,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -4989,6 +5121,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Trovão",
     "attack": false,
     "save": "FOR",
+    "saveTrigger": "",
     "saveFailure": "Sofre 2d6 Trovão de dano e fica Caído.",
     "saveSuccess": "Não sofre o dano nem fica Caído.",
     "condition": "Caído",
@@ -5006,8 +5139,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -5027,6 +5160,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Trovão",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre 2d8 Trovão de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -5062,6 +5196,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "CAR",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -5102,6 +5237,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -5117,8 +5253,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
-      "druida"
+      "druida",
+      "patrulheiro"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -5138,6 +5274,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -5154,8 +5291,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -5178,6 +5315,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Relâmpago",
     "attack": true,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -5213,6 +5351,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Psíquico",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Sofre 1d6 Psíquico de dano e fica Amedrontado.",
     "saveSuccess": "Não sofre o dano nem fica Amedrontado.",
     "condition": "Amedrontado",
@@ -5248,6 +5387,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Força",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -5263,8 +5403,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -5287,6 +5427,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Fogo",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre 3d8 Fogo de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -5303,9 +5444,9 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "patrulheiro",
+      "paladino",
       "clerigo",
-      "paladino"
+      "patrulheiro"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -5328,6 +5469,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -5343,10 +5485,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
       "druida",
+      "feiticeiro",
       "mago",
-      "feiticeiro"
+      "patrulheiro"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -5366,6 +5508,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -5381,8 +5524,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -5402,6 +5545,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -5418,8 +5562,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "patrulheiro",
-      "druida"
+      "druida",
+      "patrulheiro"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -5442,6 +5586,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -5458,8 +5603,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -5482,6 +5627,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -5520,6 +5666,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -5560,6 +5707,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -5575,8 +5723,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
-      "druida"
+      "druida",
+      "patrulheiro"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -5599,6 +5747,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -5614,8 +5763,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
-      "druida"
+      "druida",
+      "patrulheiro"
     ],
     "school": "Adivinhação",
     "source": "Adivinhação",
@@ -5635,6 +5784,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -5652,8 +5802,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "clerigo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Necromancia",
     "source": "Necromancia",
@@ -5673,6 +5823,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Fica Cego.",
     "saveSuccess": "Não fica Cego.",
     "condition": "Cego",
@@ -5688,8 +5839,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -5709,6 +5860,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -5725,8 +5877,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "bruxo",
       "clerigo",
+      "bruxo",
       "mago"
     ],
     "school": "Adivinhação",
@@ -5750,6 +5902,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -5785,6 +5938,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Radiante",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "Invisível",
@@ -5821,6 +5975,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "CAR",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -5838,8 +5993,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -5862,6 +6017,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Cortante",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -5902,6 +6058,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -5940,6 +6097,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Perfurante",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre 1d6 Perfurante de dano.",
     "saveSuccess": "Não sofre o dano.",
     "condition": "",
@@ -5957,8 +6115,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -5978,6 +6136,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Fica Enfeitiçado.",
     "saveSuccess": "Não fica Enfeitiçado.",
     "condition": "Enfeitiçado",
@@ -5994,8 +6153,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -6018,6 +6177,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -6033,10 +6193,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
       "druida",
+      "feiticeiro",
       "mago",
-      "feiticeiro"
+      "patrulheiro"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -6059,6 +6219,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -6075,8 +6236,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Adivinhação",
     "source": "Adivinhação",
@@ -6099,6 +6260,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -6115,8 +6277,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -6139,6 +6301,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -6154,8 +6317,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -6178,6 +6341,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -6194,8 +6358,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -6211,13 +6375,14 @@ globalThis.CODEX_SPELL_DATA = [
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
     "description": "Diabo da Poeira produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Diabo da Poeira produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de FOR Falha: Sofre 1d8 Concussão de dano. Sucesso: Sofre metade do dano.",
+    "effect": "Diabo da Poeira produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Salvaguarda condicional: Quando uma criatura termina o turno dentro da área do efeito. Falha: Sofre 1d8 Concussão de dano. Sucesso: Sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d8 Concussão",
     "healing": "",
     "damageType": "Concussão",
     "attack": false,
     "save": "FOR",
+    "saveTrigger": "Quando uma criatura termina o turno dentro da área do efeito.",
     "saveFailure": "Sofre 1d8 Concussão de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -6233,10 +6398,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "druida",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -6256,6 +6421,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "FOR",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -6272,11 +6438,11 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "patrulheiro",
       "druida",
       "clerigo",
+      "feiticeiro",
       "mago",
-      "feiticeiro"
+      "patrulheiro"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -6299,6 +6465,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -6316,8 +6483,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -6340,6 +6507,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "FOR",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -6376,6 +6544,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Fica Enfeitiçado.",
     "saveSuccess": "Não fica Enfeitiçado.",
     "condition": "Enfeitiçado",
@@ -6411,6 +6580,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -6426,9 +6596,9 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
       "druida",
-      "clerigo"
+      "clerigo",
+      "patrulheiro"
     ],
     "school": "Adivinhação",
     "source": "Adivinhação",
@@ -6448,6 +6618,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -6463,10 +6634,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "paladino",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -6486,6 +6657,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -6525,6 +6697,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Fogo",
     "attack": true,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -6541,8 +6714,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -6558,13 +6731,14 @@ globalThis.CODEX_SPELL_DATA = [
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
     "description": "Esfera Flamejante libera energia contra o alvo ou a área escolhida.",
-    "effect": "Esfera Flamejante libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de DES Falha: Sofre 2d6 Fogo de dano. Sucesso: Sofre metade do dano.",
+    "effect": "Esfera Flamejante libera energia contra o alvo ou a área escolhida. Salvaguarda condicional: Quando uma criatura termina o turno dentro da área do efeito. Falha: Sofre 2d6 Fogo de dano. Sucesso: Sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d6 Fogo",
     "healing": "",
     "damageType": "Fogo",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "Quando uma criatura termina o turno dentro da área do efeito.",
     "saveFailure": "Sofre 2d6 Fogo de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -6601,6 +6775,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -6639,6 +6814,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -6654,8 +6830,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "clerigo",
       "paladino",
+      "clerigo",
       "mago"
     ],
     "school": "Necromancia",
@@ -6679,6 +6855,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -6718,6 +6895,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -6733,10 +6911,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
       "druida",
+      "feiticeiro",
       "mago",
-      "feiticeiro"
+      "patrulheiro"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -6759,6 +6937,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "FOR",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -6774,8 +6953,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
-      "druida"
+      "druida",
+      "patrulheiro"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -6795,6 +6974,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -6834,6 +7014,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Fogo",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre 2d8 Fogo de dano.",
     "saveSuccess": "Não sofre o dano.",
     "condition": "",
@@ -6850,11 +7031,11 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "bruxo",
       "druida",
       "clerigo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -6877,6 +7058,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Fica Paralisado.",
     "saveSuccess": "Não fica Paralisado.",
     "condition": "Paralisado",
@@ -6892,8 +7074,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -6916,6 +7098,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Frio",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre 3d8 Frio de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -6954,6 +7137,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -6971,8 +7155,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -6995,6 +7179,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "Invisível",
@@ -7033,6 +7218,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -7049,8 +7235,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -7070,6 +7256,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -7086,8 +7273,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -7107,6 +7294,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -7123,10 +7311,10 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "patrulheiro",
+      "paladino",
       "druida",
       "clerigo",
-      "paladino"
+      "patrulheiro"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -7146,6 +7334,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -7161,8 +7350,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -7185,6 +7374,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -7201,8 +7391,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "patrulheiro",
-      "druida"
+      "druida",
+      "patrulheiro"
     ],
     "school": "Adivinhação",
     "source": "Adivinhação",
@@ -7225,6 +7415,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -7241,11 +7432,11 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "patrulheiro",
+      "paladino",
       "druida",
       "clerigo",
-      "paladino",
-      "mago"
+      "mago",
+      "patrulheiro"
     ],
     "school": "Adivinhação",
     "source": "Adivinhação",
@@ -7268,6 +7459,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -7307,6 +7499,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -7322,10 +7515,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
       "paladino",
+      "feiticeiro",
       "mago",
-      "feiticeiro"
+      "patrulheiro"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -7345,6 +7538,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -7360,8 +7554,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -7384,6 +7578,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Concussão",
     "attack": false,
     "save": "FOR",
+    "saveTrigger": "",
     "saveFailure": "Sofre 2d6 Concussão de dano e fica Contido.",
     "saveSuccess": "Sofre metade do dano e não fica Contido.",
     "condition": "Contido",
@@ -7422,6 +7617,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Ácido",
     "attack": true,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -7438,8 +7634,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -7459,6 +7655,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "CAR",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -7475,8 +7672,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Adivinhação",
     "source": "Adivinhação",
@@ -7496,6 +7693,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Psíquico",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Sofre 3d8 Psíquico de dano e fica Invisível.",
     "saveSuccess": "Sofre metade do dano e não fica Invisível.",
     "condition": "Invisível",
@@ -7512,8 +7710,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -7533,6 +7731,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Psíquico",
     "attack": false,
     "save": "INT",
+    "saveTrigger": "",
     "saveFailure": "Sofre 3d6 Psíquico de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -7550,8 +7749,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -7571,6 +7770,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -7587,8 +7787,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -7608,6 +7808,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -7639,13 +7840,14 @@ globalThis.CODEX_SPELL_DATA = [
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
     "description": "Raio Lunar produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Raio Lunar produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CON Falha: Sofre 2d10 Radiante de dano. Sucesso: Sofre metade do dano.",
+    "effect": "Raio Lunar produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Salvaguarda condicional: Quando uma criatura entra na área pela primeira vez no turno ou começa o turno nela. Falha: Sofre 2d10 Radiante de dano. Sucesso: Sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d10 Radiante",
     "healing": "",
     "damageType": "Radiante",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "Quando uma criatura entra na área pela primeira vez no turno ou começa o turno nela.",
     "saveFailure": "Sofre 2d10 Radiante de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -7662,8 +7864,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -7686,6 +7888,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -7702,8 +7905,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -7726,6 +7929,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -7764,6 +7968,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -7779,8 +7984,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
-      "druida"
+      "druida",
+      "patrulheiro"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -7803,6 +8008,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -7819,8 +8025,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -7843,6 +8049,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Psíquico",
     "attack": false,
     "save": "INT",
+    "saveTrigger": "",
     "saveFailure": "Sofre 1d6 Psíquico de dano.",
     "saveSuccess": "Não sofre o dano.",
     "condition": "",
@@ -7858,8 +8065,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "clerigo",
-      "paladino"
+      "paladino",
+      "clerigo"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -7879,6 +8086,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -7894,10 +8102,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
+      "paladino",
       "druida",
       "clerigo",
-      "paladino"
+      "patrulheiro"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -7917,6 +8125,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "Envenenado",
@@ -7933,8 +8142,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -7954,6 +8163,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Fica Cego.",
     "saveSuccess": "Não fica Cego.",
     "condition": "Cego",
@@ -7983,13 +8193,14 @@ globalThis.CODEX_SPELL_DATA = [
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
     "description": "Raio do Enfraquecimento afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito.",
-    "effect": "Raio do Enfraquecimento afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. Faça um ataque mágico contra cada alvo indicado Se acertar, aplique o efeito descrito",
+    "effect": "Raio do Enfraquecimento afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. Salvaguarda condicional: Depois que o ataque mágico acerta ou quando o efeito secundário da magia é ativado. Falha: Sofre o efeito descrito pela magia. Sucesso: Sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
     "damageType": "",
     "attack": true,
     "save": "CON",
+    "saveTrigger": "Depois que o ataque mágico acerta ou quando o efeito secundário da magia é ativado.",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -8005,8 +8216,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -8029,6 +8240,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Frio",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre 3d8 Frio de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -8067,6 +8279,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -8082,8 +8295,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -8103,6 +8316,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Fogo",
     "attack": true,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -8119,8 +8333,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Adivinhação",
     "source": "Adivinhação",
@@ -8143,6 +8357,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -8159,8 +8374,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -8180,6 +8395,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Psíquico",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -8197,8 +8413,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -8221,6 +8437,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Trovão",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre 3d8 Trovão de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -8237,8 +8454,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "patrulheiro",
-      "clerigo"
+      "clerigo",
+      "patrulheiro"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -8258,6 +8475,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -8295,6 +8513,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -8310,8 +8529,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -8334,6 +8553,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Frio",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre 3d6 Frio de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -8350,8 +8570,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -8374,6 +8594,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -8389,8 +8610,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
-      "druida"
+      "druida",
+      "patrulheiro"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -8413,6 +8634,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Perfurante",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -8448,6 +8670,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": true,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -8465,8 +8688,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -8489,6 +8712,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Força",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre 2d10 Força de dano e fica Cego.",
     "saveSuccess": "Sofre metade do dano e não fica Cego.",
     "condition": "Cego",
@@ -8506,8 +8730,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -8530,6 +8754,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -8547,8 +8772,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -8571,6 +8796,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -8586,8 +8812,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
-      "druida"
+      "druida",
+      "patrulheiro"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -8610,6 +8836,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -8625,8 +8852,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -8646,6 +8873,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Psíquico",
     "attack": false,
     "save": "INT",
+    "saveTrigger": "",
     "saveFailure": "Sofre 3d6 Psíquico de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -8662,8 +8890,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -8683,6 +8911,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -8698,8 +8927,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -8719,6 +8948,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -8734,8 +8964,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "clerigo",
-      "paladino"
+      "paladino",
+      "clerigo"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -8758,6 +8988,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -8775,8 +9006,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -8796,6 +9027,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -8812,8 +9044,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Adivinhação",
     "source": "Adivinhação",
@@ -8836,6 +9068,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -8851,8 +9084,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -8875,6 +9108,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Fogo",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre 2d4 Fogo de dano e fica Contido.",
     "saveSuccess": "Não sofre o dano nem fica Contido.",
     "condition": "Contido",
@@ -8891,8 +9125,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Necromancia",
     "source": "Necromancia",
@@ -8915,6 +9149,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Necrótico",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre 2d6 Necrótico de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -8950,6 +9185,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -8966,8 +9202,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "clerigo",
-      "paladino"
+      "paladino",
+      "clerigo"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -8980,13 +9216,14 @@ globalThis.CODEX_SPELL_DATA = [
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
     "description": "Zona da Verdade produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Zona da Verdade produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CAR Falha: Sofre o efeito descrito pela magia. Sucesso: Evita o efeito da magia.",
+    "effect": "Zona da Verdade produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Salvaguarda condicional: Quando uma criatura entra na área pela primeira vez no turno ou começa o turno nela. Falha: Sofre o efeito descrito pela magia. Sucesso: Evita o efeito da magia.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
     "damageType": "",
     "attack": false,
     "save": "CAR",
+    "saveTrigger": "Quando uma criatura entra na área pela primeira vez no turno ou começa o turno nela.",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -9026,6 +9263,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -9043,8 +9281,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -9067,6 +9305,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Psíquico",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Sofre 4d4 Psíquico de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -9084,8 +9323,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -9108,6 +9347,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Psíquico",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Sofre 4d4 Psíquico de dano.",
     "saveSuccess": "Não sofre o dano.",
     "condition": "",
@@ -9123,9 +9363,9 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
+      "feiticeiro",
       "mago",
-      "feiticeiro"
+      "patrulheiro"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -9145,6 +9385,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Fogo",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -9160,9 +9401,9 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
+      "paladino",
       "druida",
-      "clerigo",
-      "paladino"
+      "clerigo"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -9182,6 +9423,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -9217,6 +9459,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -9254,6 +9497,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -9289,6 +9533,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Radiante",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre 3d8 Radiante de dano e fica Cego.",
     "saveSuccess": "Não sofre o dano nem fica Cego.",
     "condition": "Cego",
@@ -9304,8 +9549,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -9325,6 +9570,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -9360,6 +9606,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Relâmpago",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre 3d10 Relâmpago de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -9376,8 +9623,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -9400,6 +9647,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -9417,8 +9665,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "clerigo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Adivinhação",
     "source": "Adivinhação",
@@ -9441,6 +9689,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -9456,8 +9705,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
-      "druida"
+      "druida",
+      "patrulheiro"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -9477,6 +9726,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -9515,6 +9765,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -9530,8 +9781,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -9554,6 +9805,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -9570,8 +9822,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -9591,6 +9843,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -9606,8 +9859,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "clerigo",
-      "paladino"
+      "paladino",
+      "clerigo"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -9627,6 +9880,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -9662,6 +9916,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Radiante",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -9677,11 +9932,11 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
+      "paladino",
       "druida",
       "clerigo",
-      "paladino",
-      "feiticeiro"
+      "feiticeiro",
+      "patrulheiro"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -9701,6 +9956,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -9717,12 +9973,12 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "bruxo",
+      "paladino",
       "druida",
       "clerigo",
-      "paladino",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -9742,6 +9998,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -9757,9 +10014,9 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
+      "paladino",
       "druida",
-      "paladino"
+      "patrulheiro"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -9779,6 +10036,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -9796,8 +10054,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -9817,6 +10075,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "INT",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -9833,8 +10092,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -9857,6 +10116,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Concussão",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre 3d12 Concussão de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -9894,6 +10154,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Fica Enfeitiçado.",
     "saveSuccess": "Não fica Enfeitiçado.",
     "condition": "Enfeitiçado",
@@ -9911,8 +10172,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -9935,6 +10196,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Fica Amedrontado.",
     "saveSuccess": "Não fica Amedrontado.",
     "condition": "Amedrontado",
@@ -9976,6 +10238,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "Envenenado",
@@ -9991,8 +10254,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -10015,6 +10278,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Fogo",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre 8d6 Fogo de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -10030,10 +10294,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
       "druida",
+      "feiticeiro",
       "mago",
-      "feiticeiro"
+      "patrulheiro"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -10053,6 +10317,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Fogo",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -10068,9 +10333,9 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
+      "feiticeiro",
       "mago",
-      "feiticeiro"
+      "patrulheiro"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -10090,6 +10355,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Fogo",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -10106,8 +10372,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -10130,6 +10396,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -10168,6 +10435,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -10184,8 +10452,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -10208,6 +10476,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -10248,6 +10517,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Fica Invisível.",
     "saveSuccess": "Sofre metade do dano e não fica Invisível.",
     "condition": "Invisível",
@@ -10263,8 +10533,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -10287,6 +10557,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -10303,8 +10574,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -10324,6 +10595,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -10340,8 +10612,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -10364,6 +10636,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -10395,13 +10668,14 @@ globalThis.CODEX_SPELL_DATA = [
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
     "description": "Fome de Hadar produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Fome de Hadar produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de DES Falha: Sofre 2d6 Frio + 2d6 Ácido de dano. Sucesso: Não sofre o dano.",
+    "effect": "Fome de Hadar produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Salvaguarda condicional: Quando uma criatura começa o turno dentro da área do efeito. Falha: Sofre 2d6 Frio + 2d6 Ácido de dano. Sucesso: Não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d6 Frio + 2d6 Ácido",
     "healing": "",
     "damageType": "Frio + Ácido",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "Quando uma criatura começa o turno dentro da área do efeito.",
     "saveFailure": "Sofre 2d6 Frio + 2d6 Ácido de dano.",
     "saveSuccess": "Não sofre o dano.",
     "condition": "",
@@ -10419,8 +10693,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -10443,6 +10717,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Fica Enfeitiçado.",
     "saveSuccess": "Não fica Enfeitiçado.",
     "condition": "Enfeitiçado",
@@ -10458,10 +10733,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "clerigo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -10484,6 +10759,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Fica Enfeitiçado.",
     "saveSuccess": "Não fica Enfeitiçado.",
     "condition": "Enfeitiçado",
@@ -10501,8 +10777,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -10522,6 +10798,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "CAR",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -10538,8 +10815,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -10562,6 +10839,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -10601,6 +10879,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -10637,6 +10916,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Necrótico",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -10672,6 +10952,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Relâmpago",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre 4d8 Relâmpago + 2d8 Relâmpago de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -10687,8 +10968,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -10711,6 +10992,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Relâmpago",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre 8d6 Relâmpago de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -10726,9 +11008,9 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
-      "clerigo",
       "paladino",
+      "clerigo",
+      "bruxo",
       "mago"
     ],
     "school": "Abjuração",
@@ -10752,6 +11034,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -10769,8 +11052,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -10793,6 +11076,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -10829,6 +11113,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -10844,9 +11129,9 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
       "druida",
-      "clerigo"
+      "clerigo",
+      "patrulheiro"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -10866,6 +11151,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Concussão",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -10881,8 +11167,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -10905,6 +11191,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Fogo",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre 2d6 Fogo de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -10941,6 +11228,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -10957,8 +11245,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "patrulheiro",
-      "mago"
+      "mago",
+      "patrulheiro"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -10981,6 +11269,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -11016,6 +11305,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -11032,8 +11322,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "patrulheiro",
-      "druida"
+      "druida",
+      "patrulheiro"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -11053,6 +11343,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -11069,8 +11360,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -11093,6 +11384,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -11108,11 +11400,11 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
       "druida",
       "clerigo",
+      "feiticeiro",
       "mago",
-      "feiticeiro"
+      "patrulheiro"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -11132,6 +11424,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -11148,8 +11441,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -11169,6 +11462,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Força",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre 5d8 Força de dano e fica Caído.",
     "saveSuccess": "Sofre metade do dano e não fica Caído.",
     "condition": "Caído",
@@ -11204,6 +11498,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Força",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre 6d6 Força de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -11219,9 +11514,9 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
-      "clerigo",
       "paladino",
+      "clerigo",
+      "bruxo",
       "mago"
     ],
     "school": "Abjuração",
@@ -11242,6 +11537,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -11257,10 +11553,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
+      "paladino",
       "druida",
       "clerigo",
-      "paladino"
+      "patrulheiro"
     ],
     "school": "Necromancia",
     "source": "Necromancia",
@@ -11283,6 +11579,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -11323,6 +11620,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -11339,8 +11637,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -11356,13 +11654,14 @@ globalThis.CODEX_SPELL_DATA = [
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio Fino de Cobre e Cristal de Orvalho Condutor. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
     "description": "Nevasca libera energia contra o alvo ou a área escolhida.",
-    "effect": "Nevasca libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de DES Falha: Fica Caído. Sucesso: Não fica Caído.",
+    "effect": "Nevasca libera energia contra o alvo ou a área escolhida. Salvaguarda condicional: Quando uma criatura entra na área pela primeira vez no turno ou começa o turno nela. Falha: Fica Caído. Sucesso: Não fica Caído.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
     "damageType": "",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "Quando uma criatura entra na área pela primeira vez no turno ou começa o turno nela.",
     "saveFailure": "Fica Caído.",
     "saveSuccess": "Não fica Caído.",
     "condition": "Caído",
@@ -11379,8 +11678,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -11403,6 +11702,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -11443,6 +11743,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -11459,8 +11760,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "patrulheiro",
-      "druida"
+      "druida",
+      "patrulheiro"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -11480,6 +11781,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -11511,13 +11813,14 @@ globalThis.CODEX_SPELL_DATA = [
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
     "description": "Guardiões Espirituais produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Guardiões Espirituais produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de SAB Falha: Sofre 3d8 Radiante + 3d8 Necrótico de dano. Sucesso: Sofre metade do dano.",
+    "effect": "Guardiões Espirituais produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Salvaguarda condicional: Quando uma criatura entra na área pela primeira vez no turno ou começa o turno nela. Falha: Sofre 3d8 Radiante + 3d8 Necrótico de dano. Sucesso: Sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "3d8 Radiante + 3d8 Necrótico",
     "healing": "",
     "damageType": "Radiante + Necrótico",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "Quando uma criatura entra na área pela primeira vez no turno ou começa o turno nela.",
     "saveFailure": "Sofre 3d8 Radiante + 3d8 Necrótico de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -11533,9 +11836,9 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
-      "clerigo",
       "paladino",
+      "clerigo",
+      "bruxo",
       "mago"
     ],
     "school": "Necromancia",
@@ -11556,6 +11859,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -11572,8 +11876,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -11596,6 +11900,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -11611,10 +11916,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
-      "patrulheiro",
       "druida",
-      "mago"
+      "bruxo",
+      "mago",
+      "patrulheiro"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -11637,6 +11942,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -11676,6 +11982,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -11715,6 +12022,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -11754,6 +12062,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -11770,8 +12079,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -11794,6 +12103,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -11810,8 +12120,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -11831,6 +12141,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Trovão",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre 3d10 Trovão de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -11847,8 +12158,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -11871,6 +12182,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Concussão",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre 4d8 Concussão de dano e fica Caído.",
     "saveSuccess": "Sofre metade do dano e não fica Caído.",
     "condition": "Caído",
@@ -11906,6 +12218,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -11922,10 +12235,10 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "bruxo",
       "clerigo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Adivinhação",
     "source": "Adivinhação",
@@ -11948,6 +12261,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -11964,8 +12278,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Necromancia",
     "source": "Necromancia",
@@ -11985,6 +12299,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Necrótico",
     "attack": true,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -12023,6 +12338,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -12039,8 +12355,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -12063,6 +12379,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -12078,10 +12395,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
       "druida",
+      "feiticeiro",
       "mago",
-      "feiticeiro"
+      "patrulheiro"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -12104,6 +12421,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -12119,10 +12437,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
       "druida",
       "clerigo",
-      "feiticeiro"
+      "feiticeiro",
+      "patrulheiro"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -12145,6 +12463,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -12160,8 +12479,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
-      "druida"
+      "druida",
+      "patrulheiro"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -12184,6 +12503,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Concussão",
     "attack": false,
     "save": "FOR",
+    "saveTrigger": "",
     "saveFailure": "Sofre 3d8 Concussão de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -12222,6 +12542,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -12237,8 +12558,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "clerigo",
-      "paladino"
+      "paladino",
+      "clerigo"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -12258,6 +12579,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -12273,8 +12595,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "clerigo",
-      "paladino"
+      "paladino",
+      "clerigo"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -12294,6 +12616,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "Cego",
@@ -12309,11 +12632,11 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
-      "clerigo",
       "paladino",
-      "mago",
-      "feiticeiro"
+      "clerigo",
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -12336,6 +12659,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "CAR",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -12351,10 +12675,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "druida",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Necromancia",
     "source": "Necromancia",
@@ -12374,6 +12698,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Necrótico",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre 8d8 Necrótico de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -12390,10 +12715,10 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "bruxo",
       "druida",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -12413,6 +12738,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Fica Enfeitiçado.",
     "saveSuccess": "Não fica Enfeitiçado.",
     "condition": "Enfeitiçado",
@@ -12448,6 +12774,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Fica Enfeitiçado.",
     "saveSuccess": "Não fica Enfeitiçado.",
     "condition": "Enfeitiçado",
@@ -12465,8 +12792,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -12489,6 +12816,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -12504,8 +12832,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -12525,6 +12853,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -12541,8 +12870,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -12562,6 +12891,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -12598,6 +12928,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -12613,8 +12944,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -12637,6 +12968,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -12652,8 +12984,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
-      "druida"
+      "druida",
+      "patrulheiro"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -12676,6 +13008,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -12709,13 +13042,14 @@ globalThis.CODEX_SPELL_DATA = [
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Orvalho Purificado e Pérola de Orvalho Puríssimo. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
     "description": "Controlar Orvalho transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia.",
-    "effect": "Controlar Orvalho transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. O alvo faz uma Salvaguarda de FOR Falha: Sofre 2d8 Concussão de dano. Sucesso: Sofre metade do dano.",
+    "effect": "Controlar Orvalho transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. Salvaguarda condicional: Quando uma criatura entra na área pela primeira vez no turno ou começa o turno nela. Falha: Sofre 2d8 Concussão de dano. Sucesso: Sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d8 Concussão",
     "healing": "",
     "damageType": "Concussão",
     "attack": false,
     "save": "FOR",
+    "saveTrigger": "Quando uma criatura entra na área pela primeira vez no turno ou começa o turno nela.",
     "saveFailure": "Sofre 2d8 Concussão de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -12731,8 +13065,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "clerigo",
-      "paladino"
+      "paladino",
+      "clerigo"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -12752,6 +13086,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -12769,8 +13104,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -12790,6 +13125,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Força",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -12830,6 +13166,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -12845,9 +13182,9 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
       "druida",
-      "feiticeiro"
+      "feiticeiro",
+      "patrulheiro"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -12867,6 +13204,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Fica Enfeitiçado.",
     "saveSuccess": "Não fica Enfeitiçado.",
     "condition": "Enfeitiçado",
@@ -12884,8 +13222,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -12905,6 +13243,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "INT",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -12920,8 +13259,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "druida",
+      "bruxo",
       "mago"
     ],
     "school": "Transmutação",
@@ -12942,6 +13281,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -12973,13 +13313,14 @@ globalThis.CODEX_SPELL_DATA = [
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
     "description": "Tentáculos Negros de Evard produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Tentáculos Negros de Evard produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de DES Falha: Sofre 3d6 Concussão de dano e fica Contido. Sucesso: Não sofre o dano nem fica Contido.",
+    "effect": "Tentáculos Negros de Evard produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Salvaguarda condicional: Quando uma criatura entra na área pela primeira vez no turno ou começa o turno nela. Falha: Sofre 3d6 Concussão de dano e fica Contido. Sucesso: Não sofre o dano nem fica Contido.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "3d6 Concussão",
     "healing": "",
     "damageType": "Concussão",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "Quando uma criatura entra na área pela primeira vez no turno ou começa o turno nela.",
     "saveFailure": "Sofre 3d6 Concussão de dano e fica Contido.",
     "saveSuccess": "Não sofre o dano nem fica Contido.",
     "condition": "Contido",
@@ -13015,6 +13356,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -13050,6 +13392,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -13066,8 +13409,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -13090,6 +13433,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Fogo + Frio",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -13106,9 +13450,9 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "patrulheiro",
       "druida",
-      "clerigo"
+      "clerigo",
+      "patrulheiro"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -13131,6 +13475,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -13170,6 +13515,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -13186,8 +13532,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -13210,6 +13556,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -13245,6 +13592,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -13260,8 +13608,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
-      "druida"
+      "druida",
+      "patrulheiro"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -13281,6 +13629,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -13319,6 +13668,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Força",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre 5d10 Força de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -13335,8 +13685,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -13356,6 +13706,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "Invisível",
@@ -13384,13 +13735,14 @@ globalThis.CODEX_SPELL_DATA = [
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
     "description": "Guardião da Fé produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Guardião da Fé produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de DES Falha: Sofre o efeito descrito pela magia. Sucesso: Sofre metade do dano.",
+    "effect": "Guardião da Fé produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Salvaguarda condicional: Quando uma criatura atravessa ou se move dentro da área indicada. Falha: Sofre o efeito descrito pela magia. Sucesso: Sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
     "damageType": "",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "Quando uma criatura atravessa ou se move dentro da área indicada.",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -13406,8 +13758,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
-      "druida"
+      "druida",
+      "patrulheiro"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -13427,6 +13779,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -13443,8 +13796,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "bruxo",
       "druida",
+      "bruxo",
       "mago"
     ],
     "school": "Ilusão",
@@ -13468,6 +13821,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -13484,8 +13838,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -13508,6 +13862,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Concussão + Frio",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre 2d8 Concussão + 4d6 Frio de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -13546,6 +13901,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -13562,11 +13918,11 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "patrulheiro",
+      "paladino",
       "druida",
       "clerigo",
-      "paladino",
-      "mago"
+      "mago",
+      "patrulheiro"
     ],
     "school": "Adivinhação",
     "source": "Adivinhação",
@@ -13589,6 +13945,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -13627,6 +13984,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Perfurante",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -13665,6 +14023,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -13703,6 +14062,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -13739,6 +14099,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Psíquico",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Sofre 4d10 Psíquico de dano e fica Amedrontado.",
     "saveSuccess": "Não sofre o dano nem fica Amedrontado.",
     "condition": "Amedrontado",
@@ -13756,8 +14117,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -13780,6 +14141,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Fica Inconsciente.",
     "saveSuccess": "Não fica Inconsciente.",
     "condition": "Inconsciente",
@@ -13797,8 +14159,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -13818,6 +14180,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Psíquico",
     "attack": false,
     "save": "INT",
+    "saveTrigger": "",
     "saveFailure": "Sofre 7d6 Psíquico de dano e fica Incapacitado.",
     "saveSuccess": "Sofre metade do dano e não fica Incapacitado.",
     "condition": "Incapacitado",
@@ -13835,8 +14198,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -13856,6 +14219,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Psíquico",
     "attack": false,
     "save": "INT",
+    "saveTrigger": "",
     "saveFailure": "Sofre 10d6 Psíquico de dano e fica Incapacitado.",
     "saveSuccess": "Não sofre o dano nem fica Incapacitado.",
     "condition": "Incapacitado",
@@ -13894,6 +14258,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Necrótico",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -13910,8 +14275,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -13931,6 +14296,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -13947,8 +14313,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Necromancia",
     "source": "Necromancia",
@@ -13971,6 +14337,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -13987,8 +14354,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Necromancia",
     "source": "Necromancia",
@@ -14011,6 +14378,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -14046,6 +14414,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Psíquico",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Sofre 4d6 Psíquico de dano.",
     "saveSuccess": "Não sofre o dano.",
     "condition": "",
@@ -14086,6 +14455,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -14101,10 +14471,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
       "druida",
+      "feiticeiro",
       "mago",
-      "feiticeiro"
+      "patrulheiro"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -14127,6 +14497,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -14142,8 +14513,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -14156,13 +14527,14 @@ globalThis.CODEX_SPELL_DATA = [
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
     "description": "Esfera da Tempestade libera energia contra o alvo ou a área escolhida.",
-    "effect": "Esfera da Tempestade libera energia contra o alvo ou a área escolhida. Faça um ataque mágico contra cada alvo indicado Se acertar, o alvo sofre 2d6 Concussão + 4d6 Relâmpago de dano",
+    "effect": "Esfera da Tempestade libera energia contra o alvo ou a área escolhida. Salvaguarda condicional: Depois que o ataque mágico acerta ou quando o efeito secundário da magia é ativado. Falha: Sofre 2d6 Concussão + 4d6 Relâmpago de dano. Sucesso: Não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d6 Concussão + 4d6 Relâmpago",
     "healing": "",
     "damageType": "Concussão + Relâmpago",
     "attack": true,
     "save": "FOR",
+    "saveTrigger": "Depois que o ataque mágico acerta ou quando o efeito secundário da magia é ativado.",
     "saveFailure": "Sofre 2d6 Concussão + 4d6 Relâmpago de dano.",
     "saveSuccess": "Não sofre o dano.",
     "condition": "",
@@ -14202,6 +14574,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -14240,6 +14613,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -14255,9 +14629,9 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
       "druida",
-      "mago"
+      "mago",
+      "patrulheiro"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -14280,6 +14654,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -14312,13 +14687,14 @@ globalThis.CODEX_SPELL_DATA = [
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
     "description": "Invocar Demônio Maior cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina.",
-    "effect": "Invocar Demônio Maior cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. O alvo faz uma Salvaguarda de CAR Falha: Sofre o efeito descrito pela magia. Sucesso: Evita o efeito da magia.",
+    "effect": "Invocar Demônio Maior cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Salvaguarda condicional: Quando uma criatura termina o turno dentro da área do efeito. Falha: Sofre o efeito descrito pela magia. Sucesso: Evita o efeito da magia.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
     "damageType": "",
     "attack": false,
     "save": "CAR",
+    "saveTrigger": "Quando uma criatura termina o turno dentro da área do efeito.",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -14335,8 +14711,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -14356,6 +14732,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -14372,8 +14749,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -14396,6 +14773,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -14411,8 +14789,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -14435,6 +14813,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Ácido",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre 10d4 Ácido + 5d4 Ácido de dano.",
     "saveSuccess": "Não sofre o dano.",
     "condition": "",
@@ -14451,8 +14830,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -14468,13 +14847,14 @@ globalThis.CODEX_SPELL_DATA = [
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Semente de Brasa e Carvão em Pó. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
     "description": "Muralha de Brasa cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar.",
-    "effect": "Muralha de Brasa cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. O alvo faz uma Salvaguarda de DES Falha: Sofre 5d8 Fogo de dano. Sucesso: Sofre metade do dano.",
+    "effect": "Muralha de Brasa cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Salvaguarda condicional: Quando uma criatura termina o turno dentro da área do efeito. Falha: Sofre 5d8 Fogo de dano. Sucesso: Sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "5d8 Fogo",
     "healing": "",
     "damageType": "Fogo",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "Quando uma criatura termina o turno dentro da área do efeito.",
     "saveFailure": "Sofre 5d8 Fogo de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -14491,8 +14871,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -14515,6 +14895,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "FOR",
+    "saveTrigger": "",
     "saveFailure": "Fica Caído.",
     "saveSuccess": "Não fica Caído.",
     "condition": "Caído",
@@ -14531,8 +14912,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -14552,6 +14933,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -14587,6 +14969,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -14626,6 +15009,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -14661,6 +15045,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Força",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -14676,8 +15061,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -14700,6 +15085,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -14735,6 +15121,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -14750,8 +15137,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -14764,13 +15151,14 @@ globalThis.CODEX_SPELL_DATA = [
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
     "description": "Névoa Mortal afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito.",
-    "effect": "Névoa Mortal afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de CON Falha: Sofre 5d8 Veneno de dano. Sucesso: Sofre metade do dano.",
+    "effect": "Névoa Mortal afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. Salvaguarda condicional: Quando uma criatura entra na área pela primeira vez no turno ou começa o turno nela. Falha: Sofre 5d8 Veneno de dano. Sucesso: Sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "5d8 Veneno",
     "healing": "",
     "damageType": "Veneno",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "Quando uma criatura entra na área pela primeira vez no turno ou começa o turno nela.",
     "saveFailure": "Sofre 5d8 Veneno de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -14809,6 +15197,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -14825,8 +15214,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Adivinhação",
     "source": "Adivinhação",
@@ -14846,6 +15235,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -14861,8 +15251,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
-      "druida"
+      "druida",
+      "patrulheiro"
     ],
     "school": "Adivinhação",
     "source": "Adivinhação",
@@ -14882,6 +15272,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -14898,8 +15289,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -14922,6 +15313,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Frio",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre 8d8 Frio de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -14961,6 +15353,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -14999,6 +15392,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -15014,8 +15408,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -15038,6 +15432,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -15074,6 +15469,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Psíquico",
     "attack": false,
     "save": "INT",
+    "saveTrigger": "",
     "saveFailure": "Sofre 6d6 Psíquico de dano.",
     "saveSuccess": "Não sofre o dano.",
     "condition": "",
@@ -15103,13 +15499,14 @@ globalThis.CODEX_SPELL_DATA = [
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
     "description": "Contágio produz um efeito de necromancia dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Contágio produz um efeito de necromancia dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Faça um ataque mágico contra cada alvo indicado Se acertar, aplique o efeito descrito",
+    "effect": "Contágio produz um efeito de necromancia dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Salvaguarda condicional: Depois que o ataque mágico acerta ou quando o efeito secundário da magia é ativado. Falha: Fica Envenenado. Sucesso: Não fica Envenenado.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
     "damageType": "",
     "attack": true,
     "save": "CON",
+    "saveTrigger": "Depois que o ataque mágico acerta ou quando o efeito secundário da magia é ativado.",
     "saveFailure": "Fica Envenenado.",
     "saveSuccess": "Não fica Envenenado.",
     "condition": "Envenenado",
@@ -15126,8 +15523,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -15147,6 +15544,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -15185,6 +15583,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -15200,8 +15599,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -15224,6 +15623,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -15260,6 +15660,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -15299,6 +15700,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Radiante",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre 4d10 Radiante de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -15334,6 +15736,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Trovão",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre 5d6 Trovão de dano e fica Caído.",
     "saveSuccess": "Sofre metade do dano e não fica Caído.",
     "condition": "Caído",
@@ -15349,8 +15752,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "clerigo",
-      "paladino"
+      "paladino",
+      "clerigo"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -15373,6 +15776,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -15389,8 +15793,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -15410,6 +15814,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Fica Enfeitiçado.",
     "saveSuccess": "Não fica Enfeitiçado.",
     "condition": "Enfeitiçado",
@@ -15450,6 +15855,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Psíquico",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Sofre 3d6 Psíquico de dano.",
     "saveSuccess": "Não sofre o dano.",
     "condition": "",
@@ -15466,8 +15872,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Necromancia",
     "source": "Necromancia",
@@ -15487,6 +15893,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Necrótico",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre 2d8 Necrótico + 4d8 Necrótico de dano.",
     "saveSuccess": "Não sofre o dano.",
     "condition": "",
@@ -15503,8 +15910,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -15524,6 +15931,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -15562,6 +15970,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Fogo + Radiante",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre 4d6 Fogo + 4d6 Radiante de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -15578,9 +15987,9 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
+      "paladino",
       "druida",
       "clerigo",
-      "paladino",
       "mago"
     ],
     "school": "Encantamento",
@@ -15601,6 +16010,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Psíquico",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Sofre 5d10 Psíquico de dano e fica Enfeitiçado.",
     "saveSuccess": "Não sofre o dano nem fica Enfeitiçado.",
     "condition": "Enfeitiçado",
@@ -15617,9 +16027,9 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "patrulheiro",
       "druida",
-      "clerigo"
+      "clerigo",
+      "patrulheiro"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -15642,6 +16052,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -15673,13 +16084,14 @@ globalThis.CODEX_SPELL_DATA = [
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: consumível e gasto ao concluir a conjuração. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
     "description": "Consagrar produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Consagrar produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CAR Falha: Sofre o efeito descrito pela magia. Sucesso: Evita o efeito da magia.",
+    "effect": "Consagrar produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Salvaguarda condicional: Quando uma criatura entra na área pela primeira vez no turno ou começa o turno nela. Falha: Sofre o efeito descrito pela magia. Sucesso: Evita o efeito da magia.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
     "damageType": "",
     "attack": false,
     "save": "CAR",
+    "saveTrigger": "Quando uma criatura entra na área pela primeira vez no turno ou começa o turno nela.",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -15697,8 +16109,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -15721,6 +16133,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Fica Paralisado.",
     "saveSuccess": "Não fica Paralisado.",
     "condition": "Paralisado",
@@ -15736,8 +16149,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "clerigo",
-      "paladino"
+      "paladino",
+      "clerigo"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -15757,6 +16170,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Radiante",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre 2d8 Radiante + 4d8 Radiante de dano e fica Cego.",
     "saveSuccess": "Sofre metade do dano e não fica Cego.",
     "condition": "Cego",
@@ -15772,8 +16186,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -15793,6 +16207,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Fogo",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre 8d6 Fogo + 4d6 Fogo de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -15832,6 +16247,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -15872,6 +16288,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Perfurante",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre 4d10 Perfurante de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -15912,6 +16329,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -15950,6 +16368,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Concussão",
     "attack": false,
     "save": "FOR",
+    "saveTrigger": "",
     "saveFailure": "Sofre 6d6 Concussão de dano.",
     "saveSuccess": "Não sofre o dano.",
     "condition": "",
@@ -15987,6 +16406,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -16024,6 +16444,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "Invisível",
@@ -16060,6 +16481,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Fica Enfeitiçado.",
     "saveSuccess": "Não fica Enfeitiçado.",
     "condition": "Enfeitiçado",
@@ -16099,6 +16521,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Necrótico",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre 5d12 Necrótico de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -16137,6 +16560,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -16153,9 +16577,9 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "bruxo",
       "druida",
       "clerigo",
+      "bruxo",
       "mago"
     ],
     "school": "Abjuração",
@@ -16179,6 +16603,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "CAR",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -16195,8 +16620,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "clerigo",
-      "paladino"
+      "paladino",
+      "clerigo"
     ],
     "school": "Necromancia",
     "source": "Necromancia",
@@ -16219,6 +16644,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -16258,6 +16684,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -16296,6 +16723,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -16312,9 +16740,9 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "bruxo",
       "druida",
       "clerigo",
+      "bruxo",
       "mago"
     ],
     "school": "Adivinhação",
@@ -16338,6 +16766,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Fica Invisível.",
     "saveSuccess": "Não fica Invisível.",
     "condition": "Invisível",
@@ -16354,8 +16783,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -16375,6 +16804,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "CAR",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -16391,8 +16821,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -16412,6 +16842,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -16428,8 +16859,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -16449,6 +16880,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -16464,8 +16896,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
-      "mago"
+      "mago",
+      "patrulheiro"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -16488,6 +16920,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Força",
     "attack": true,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -16503,8 +16936,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "clerigo",
-      "paladino"
+      "paladino",
+      "clerigo"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -16527,6 +16960,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -16543,8 +16977,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -16567,6 +17001,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -16583,8 +17018,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -16607,6 +17042,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -16645,6 +17081,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -16662,8 +17099,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -16683,6 +17120,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Psíquico",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre 8d6 Psíquico de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -16698,8 +17136,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -16719,6 +17157,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -16736,8 +17175,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -16760,6 +17199,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -16795,6 +17235,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -16834,6 +17275,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -16849,8 +17291,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
-      "druida"
+      "druida",
+      "patrulheiro"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -16870,6 +17312,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -16908,6 +17351,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -16924,8 +17368,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -16941,13 +17385,14 @@ globalThis.CODEX_SPELL_DATA = [
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Semente de Brasa e Carvão em Pó. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
     "description": "Muralha de Luz cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar.",
-    "effect": "Muralha de Luz cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Faça um ataque mágico contra cada alvo indicado Se acertar, o alvo sofre 4d8 Radiante de dano",
+    "effect": "Muralha de Luz cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Salvaguarda condicional: Quando uma criatura termina o turno dentro da área do efeito. Falha: Sofre 4d8 Radiante de dano e fica Cego. Sucesso: Sofre metade do dano e não fica Cego.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "4d8 Radiante",
     "healing": "",
     "damageType": "Radiante",
     "attack": true,
     "save": "CON",
+    "saveTrigger": "Quando uma criatura termina o turno dentro da área do efeito.",
     "saveFailure": "Sofre 4d8 Radiante de dano e fica Cego.",
     "saveSuccess": "Sofre metade do dano e não fica Cego.",
     "condition": "Cego",
@@ -16964,8 +17409,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -16988,6 +17433,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -17003,8 +17449,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "patrulheiro",
-      "druida"
+      "druida",
+      "patrulheiro"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -17017,13 +17463,14 @@ globalThis.CODEX_SPELL_DATA = [
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
     "description": "Ira da natureza produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Ira da natureza produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Faça um ataque mágico contra cada alvo indicado Se acertar, o alvo sofre 4d6 Cortante de dano",
+    "effect": "Ira da natureza produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Salvaguarda condicional: Depois que o ataque mágico acerta ou quando o efeito secundário da magia é ativado. Falha: Sofre 4d6 Cortante de dano e fica Caído. Sucesso: Não sofre o dano nem fica Caído.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "4d6 Cortante",
     "healing": "",
     "damageType": "Cortante",
     "attack": true,
     "save": "FOR",
+    "saveTrigger": "Depois que o ataque mágico acerta ou quando o efeito secundário da magia é ativado.",
     "saveFailure": "Sofre 4d6 Cortante de dano e fica Caído.",
     "saveSuccess": "Não sofre o dano nem fica Caído.",
     "condition": "Caído",
@@ -17040,8 +17487,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -17061,6 +17508,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -17089,13 +17537,14 @@ globalThis.CODEX_SPELL_DATA = [
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
     "description": "Barreira de Lâminas cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar.",
-    "effect": "Barreira de Lâminas cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. O alvo faz uma Salvaguarda de DES Falha: Sofre 6d10 Cortante de dano. Sucesso: Sofre metade do dano.",
+    "effect": "Barreira de Lâminas cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Salvaguarda condicional: Quando uma criatura entra na área pela primeira vez no turno ou começa o turno nela. Falha: Sofre 6d10 Cortante de dano. Sucesso: Sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "6d10 Cortante",
     "healing": "",
     "damageType": "Cortante",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "Quando uma criatura entra na área pela primeira vez no turno ou começa o turno nela.",
     "saveFailure": "Sofre 6d10 Cortante de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -17131,6 +17580,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Concussão",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre 6d6 Concussão de dano e fica Contido.",
     "saveSuccess": "Não sofre o dano nem fica Contido.",
     "condition": "Contido",
@@ -17146,8 +17596,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -17170,6 +17620,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Relâmpago",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre 10d8 Relâmpago de dano.",
     "saveSuccess": "Não sofre o dano.",
     "condition": "",
@@ -17186,8 +17637,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Necromancia",
     "source": "Necromancia",
@@ -17210,6 +17661,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Necrótico",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre 8d6 Necrótico de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -17225,8 +17677,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
-      "druida"
+      "druida",
+      "bruxo"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -17246,6 +17698,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -17284,6 +17737,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -17322,6 +17776,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Perfurante",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -17337,8 +17792,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "clerigo",
+      "bruxo",
       "mago"
     ],
     "school": "Necromancia",
@@ -17362,6 +17817,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -17377,8 +17833,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -17401,6 +17857,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Força",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre 10d6 + 40 Força de dano.",
     "saveSuccess": "Não sofre o dano.",
     "condition": "",
@@ -17439,6 +17896,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -17477,6 +17935,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -17494,8 +17953,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Necromancia",
     "source": "Necromancia",
@@ -17515,6 +17974,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -17555,6 +18015,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -17570,8 +18031,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -17594,6 +18055,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -17609,8 +18071,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -17633,6 +18095,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -17648,10 +18111,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "druida",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -17674,6 +18137,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Fica Petrificado.",
     "saveSuccess": "Não fica Petrificado.",
     "condition": "Petrificado",
@@ -17712,6 +18176,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -17727,8 +18192,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Abjuração",
     "source": "Abjuração",
@@ -17751,6 +18216,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -17789,6 +18255,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Força",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre 8d8 Força de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -17828,6 +18295,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -17863,6 +18331,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Necrótico",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre 14d6 Necrótico de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -17899,6 +18368,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -17939,6 +18409,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Fica Amedrontado.",
     "saveSuccess": "Não fica Amedrontado.",
     "condition": "Amedrontado",
@@ -17954,10 +18425,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "druida",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -17977,6 +18448,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -17992,10 +18464,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "druida",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -18015,6 +18487,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -18030,10 +18503,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "druida",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -18053,6 +18526,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -18068,10 +18542,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "druida",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -18091,6 +18565,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -18129,6 +18604,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "CAR",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -18146,8 +18622,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -18170,6 +18646,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -18186,8 +18663,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Ilusão",
     "source": "Ilusão",
@@ -18207,6 +18684,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Psíquico",
     "attack": false,
     "save": "INT",
+    "saveTrigger": "",
     "saveFailure": "Sofre 5d10 Psíquico + 10d10 Psíquico de dano.",
     "saveSuccess": "Não sofre o dano.",
     "condition": "",
@@ -18223,8 +18701,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -18247,6 +18725,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -18262,10 +18741,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "clerigo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -18288,6 +18767,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -18303,8 +18783,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -18327,6 +18807,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Frio",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre 10d6 Frio de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -18363,6 +18844,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -18398,6 +18880,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -18433,6 +18916,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -18472,6 +18956,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -18488,8 +18973,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -18509,6 +18994,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Psíquico",
     "attack": false,
     "save": "INT",
+    "saveTrigger": "",
     "saveFailure": "Sofre 12d6 Psíquico de dano e fica Atordoado.",
     "saveSuccess": "Sofre metade do dano e não fica Atordoado.",
     "condition": "Atordoado",
@@ -18525,8 +19011,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -18546,6 +19032,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -18585,6 +19072,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -18624,6 +19112,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -18641,8 +19130,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "druida",
       "clerigo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -18665,6 +19154,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Radiante",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre 6d8 Radiante de dano e fica Cego.",
     "saveSuccess": "Sofre metade do dano e não fica Cego.",
     "condition": "Cego",
@@ -18681,8 +19171,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -18705,6 +19195,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -18743,6 +19234,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -18778,6 +19270,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -18794,10 +19287,10 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "bruxo",
       "clerigo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Adivinhação",
     "source": "Adivinhação",
@@ -18820,6 +19313,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -18858,6 +19352,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Frio",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre 10d6 Frio + 5d6 Frio de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -18896,6 +19391,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Perfurante + Cortante",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre 7d8 Perfurante + 7d8 Cortante de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -18934,6 +19430,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -18969,6 +19466,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -19004,6 +19502,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -19019,8 +19518,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -19043,6 +19542,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -19081,6 +19581,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -19097,8 +19598,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -19118,6 +19619,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Radiante",
     "attack": true,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -19133,8 +19635,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -19150,13 +19652,14 @@ globalThis.CODEX_SPELL_DATA = [
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Semente de Brasa e Carvão em Pó. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
     "description": "Bola de Brasa Controlável libera energia contra o alvo ou a área escolhida.",
-    "effect": "Bola de Brasa Controlável libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de DES Falha: Sofre o efeito descrito pela magia. Sucesso: Sofre metade do dano.",
+    "effect": "Bola de Brasa Controlável libera energia contra o alvo ou a área escolhida. Salvaguarda condicional: Quando uma criatura toca ou entra em contato com o efeito. Falha: Sofre o efeito descrito pela magia. Sucesso: Sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
     "damageType": "",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "Quando uma criatura toca ou entra em contato com o efeito.",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -19192,6 +19695,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "CAR",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -19208,8 +19712,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -19232,6 +19736,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Força",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre 6d8 Força de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -19248,8 +19753,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -19272,6 +19777,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -19289,8 +19795,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -19313,6 +19819,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -19329,10 +19836,10 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "bruxo",
       "clerigo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -19352,6 +19859,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -19368,8 +19876,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Necromancia",
     "source": "Necromancia",
@@ -19389,6 +19897,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Necrótico",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre 7d8 + 30 Necrótico de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -19426,6 +19935,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Fogo",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre 7d10 Fogo de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -19466,6 +19976,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "CAR",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -19503,6 +20014,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -19542,6 +20054,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -19581,6 +20094,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Força",
     "attack": true,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -19596,11 +20110,11 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "druida",
       "clerigo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -19616,13 +20130,14 @@ globalThis.CODEX_SPELL_DATA = [
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Seiva do Limiar e Cristal de Orvalho Condutor. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
     "description": "Viagem Planar altera movimento, distância ou posição. O destino precisa estar dentro do alcance e ter espaço livre para receber a criatura.",
-    "effect": "Viagem Planar altera movimento, distância ou posição. O destino precisa estar dentro do alcance e ter espaço livre para receber a criatura. Faça um ataque mágico contra cada alvo indicado Se acertar, aplique o efeito descrito",
+    "effect": "Viagem Planar altera movimento, distância ou posição. O destino precisa estar dentro do alcance e ter espaço livre para receber a criatura. Salvaguarda condicional: Depois que o ataque mágico acerta ou quando o efeito secundário da magia é ativado. Falha: Sofre o efeito descrito pela magia. Sucesso: Evita o efeito da magia.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
     "damageType": "",
     "attack": true,
     "save": "CAR",
+    "saveTrigger": "Depois que o ataque mágico acerta ou quando o efeito secundário da magia é ativado.",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -19639,8 +20154,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -19660,6 +20175,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -19676,8 +20192,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -19697,6 +20213,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -19736,6 +20253,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -19776,6 +20294,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -19815,6 +20334,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -19831,8 +20351,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -19855,6 +20375,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -19893,6 +20414,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "Invisível",
@@ -19931,6 +20453,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -19972,6 +20495,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "Invisível",
@@ -19988,8 +20512,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -20009,6 +20533,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -20047,6 +20572,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "CAR",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -20085,6 +20611,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -20117,13 +20644,14 @@ globalThis.CODEX_SPELL_DATA = [
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
     "description": "Furacão transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia.",
-    "effect": "Furacão transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. O alvo faz uma Salvaguarda de FOR Falha: Sofre 10d6 Concussão de dano e fica Contido. Sucesso: Sofre metade do dano e não fica Contido.",
+    "effect": "Furacão transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. Salvaguarda condicional: Quando uma criatura começa o turno dentro da área do efeito. Falha: Sofre 10d6 Concussão de dano e fica Contido. Sucesso: Sofre metade do dano e não fica Contido.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "10d6 Concussão",
     "healing": "",
     "damageType": "Concussão",
     "attack": false,
     "save": "FOR",
+    "saveTrigger": "Quando uma criatura começa o turno dentro da área do efeito.",
     "saveFailure": "Sofre 10d6 Concussão de dano e fica Contido.",
     "saveSuccess": "Sofre metade do dano e não fica Contido.",
     "condition": "Contido",
@@ -20139,8 +20667,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Necromancia",
     "source": "Necromancia",
@@ -20163,6 +20691,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Necrótico",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre 12d8 Necrótico de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -20198,6 +20727,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "Inconsciente",
@@ -20237,6 +20767,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -20277,6 +20808,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -20315,6 +20847,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -20355,6 +20888,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -20386,13 +20920,14 @@ globalThis.CODEX_SPELL_DATA = [
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
     "description": "Estrela Negra produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Estrela Negra produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CON Falha: Sofre 8d10 Força de dano. Sucesso: Sofre metade do dano.",
+    "effect": "Estrela Negra produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Salvaguarda condicional: Quando uma criatura entra na área pela primeira vez no turno ou começa o turno nela. Falha: Sofre 8d10 Força de dano. Sucesso: Sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "8d10 Força",
     "healing": "",
     "damageType": "Força",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "Quando uma criatura entra na área pela primeira vez no turno ou começa o turno nela.",
     "saveFailure": "Sofre 8d10 Força de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -20409,8 +20944,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -20430,6 +20965,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -20447,8 +20983,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -20468,6 +21004,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Fica Enfeitiçado.",
     "saveSuccess": "Não fica Enfeitiçado.",
     "condition": "Enfeitiçado",
@@ -20508,6 +21045,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Fica Caído.",
     "saveSuccess": "Não fica Caído.",
     "condition": "Caído",
@@ -20524,8 +21062,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "bruxo",
       "druida",
+      "bruxo",
       "mago"
     ],
     "school": "Encantamento",
@@ -20549,6 +21087,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Psíquico",
     "attack": false,
     "save": "INT",
+    "saveTrigger": "",
     "saveFailure": "Sofre 4d6 Psíquico de dano.",
     "saveSuccess": "Não sofre o dano.",
     "condition": "",
@@ -20585,6 +21124,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -20623,6 +21163,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Fica Cego.",
     "saveSuccess": "Não fica Cego.",
     "condition": "Cego",
@@ -20658,6 +21199,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "INT",
+    "saveTrigger": "",
     "saveFailure": "Fica Amedrontado.",
     "saveSuccess": "Sofre metade do dano e não fica Amedrontado.",
     "condition": "Amedrontado",
@@ -20674,8 +21216,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "druida",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -20695,6 +21237,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Fogo",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre 10d8 Fogo de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -20734,6 +21277,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -20769,6 +21313,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -20807,6 +21352,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -20843,6 +21389,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -20860,8 +21407,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -20881,6 +21428,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Fica Atordoado.",
     "saveSuccess": "Não fica Atordoado.",
     "condition": "Atordoado",
@@ -20919,6 +21467,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -20936,8 +21485,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "druida",
       "clerigo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -20960,6 +21509,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Radiante",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre 12d6 Radiante de dano e fica Cego.",
     "saveSuccess": "Sofre metade do dano e não fica Cego.",
     "condition": "Cego",
@@ -20998,6 +21548,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -21033,6 +21584,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Concussão",
     "attack": false,
     "save": "FOR",
+    "saveTrigger": "",
     "saveFailure": "Sofre 6d10 Concussão + 5d10 Concussão de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -21048,8 +21600,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "clerigo",
+      "bruxo",
       "mago"
     ],
     "school": "Evocação",
@@ -21073,6 +21625,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -21089,8 +21642,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -21110,6 +21663,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Força",
     "attack": true,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -21126,8 +21680,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "bruxo",
       "druida",
+      "bruxo",
       "mago"
     ],
     "school": "Adivinhação",
@@ -21151,6 +21705,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -21166,10 +21721,10 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "bruxo",
       "clerigo",
-      "mago",
-      "feiticeiro"
+      "bruxo",
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -21192,6 +21747,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -21231,6 +21787,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -21269,6 +21826,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -21304,6 +21862,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -21320,8 +21879,8 @@ globalThis.CODEX_SPELL_DATA = [
     "status": "teste",
     "classes": [
       "bardo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -21344,6 +21903,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -21359,8 +21919,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Evocação",
     "source": "Evocação",
@@ -21380,6 +21940,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Fogo + Concussão",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "",
     "saveFailure": "Sofre 20d6 Fogo + 20d6 Concussão de dano.",
     "saveSuccess": "Sofre metade do dano.",
     "condition": "",
@@ -21416,6 +21977,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -21433,8 +21995,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -21454,6 +22016,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -21483,13 +22046,14 @@ globalThis.CODEX_SPELL_DATA = [
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
     "description": "Muralha Prismática cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar.",
-    "effect": "Muralha Prismática cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. O alvo faz uma Salvaguarda de DES Falha: Fica Cego. Sucesso: Não fica Cego.",
+    "effect": "Muralha Prismática cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Salvaguarda condicional: Quando uma criatura atravessa ou se move dentro da área indicada. Falha: Fica Cego. Sucesso: Não fica Cego.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
     "damageType": "",
     "attack": false,
     "save": "DES",
+    "saveTrigger": "Quando uma criatura atravessa ou se move dentro da área indicada.",
     "saveFailure": "Fica Cego.",
     "saveSuccess": "Não fica Cego.",
     "condition": "Cego",
@@ -21507,8 +22071,8 @@ globalThis.CODEX_SPELL_DATA = [
     "classes": [
       "bardo",
       "bruxo",
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Encantamento",
     "source": "Encantamento",
@@ -21528,6 +22092,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Psíquico",
     "attack": false,
     "save": "INT",
+    "saveTrigger": "",
     "saveFailure": "Sofre 14d6 Psíquico de dano e fica Atordoado.",
     "saveSuccess": "Sofre metade do dano e não fica Atordoado.",
     "condition": "Atordoado",
@@ -21559,13 +22124,14 @@ globalThis.CODEX_SPELL_DATA = [
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
     "description": "Vazio Voraz produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Vazio Voraz produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de FOR Falha: Sofre 5d10 Força de dano e fica Contido. Sucesso: Não sofre o dano nem fica Contido.",
+    "effect": "Vazio Voraz produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Salvaguarda condicional: Quando uma criatura entra na área pela primeira vez no turno ou começa o turno nela. Falha: Sofre 5d10 Força de dano e fica Contido. Sucesso: Não sofre o dano nem fica Contido.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "5d10 Força",
     "healing": "",
     "damageType": "Força",
     "attack": false,
     "save": "FOR",
+    "saveTrigger": "Quando uma criatura entra na área pela primeira vez no turno ou começa o turno nela.",
     "saveFailure": "Sofre 5d10 Força de dano e fica Contido.",
     "saveSuccess": "Não sofre o dano nem fica Contido.",
     "condition": "Contido",
@@ -21605,6 +22171,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "Inconsciente",
@@ -21640,6 +22207,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Trovão",
     "attack": false,
     "save": "CON",
+    "saveTrigger": "",
     "saveFailure": "Sofre 2d6 Trovão de dano e fica Surdo.",
     "saveSuccess": "Não sofre o dano nem fica Surdo.",
     "condition": "Surdo",
@@ -21678,6 +22246,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -21693,8 +22262,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Transmutação",
     "source": "Transmutação",
@@ -21714,6 +22283,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -21754,6 +22324,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Sofre o efeito descrito pela magia.",
     "saveSuccess": "Evita o efeito da magia.",
     "condition": "",
@@ -21793,6 +22364,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
@@ -21829,6 +22401,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "Psíquico",
     "attack": false,
     "save": "SAB",
+    "saveTrigger": "",
     "saveFailure": "Sofre 4d10 Psíquico de dano e fica Amedrontado.",
     "saveSuccess": "Não sofre o dano nem fica Amedrontado.",
     "condition": "Amedrontado",
@@ -21844,8 +22417,8 @@ globalThis.CODEX_SPELL_DATA = [
     "kind": "completa",
     "status": "teste",
     "classes": [
-      "mago",
-      "feiticeiro"
+      "feiticeiro",
+      "mago"
     ],
     "school": "Conjuração",
     "source": "Conjuração",
@@ -21865,6 +22438,7 @@ globalThis.CODEX_SPELL_DATA = [
     "damageType": "",
     "attack": false,
     "save": "",
+    "saveTrigger": "",
     "saveFailure": "",
     "saveSuccess": "",
     "condition": "",
