@@ -14,6 +14,7 @@ const skillChoiceTag='<script src="codex-revisao/skill-choice-runtime.js"></scri
 const classKitSheetTag='<script src="codex-revisao/class-kit-sheet-runtime.js"></script>';
 const classFeatureDetailsTag='<script src="codex-revisao/class-feature-details-runtime.js"></script>';
 const cantripCapacityTag='<script src="codex-revisao/cantrip-capacity-runtime.js"></script>';
+const cantripQualityTag='<script src="codex-revisao/cantrip-quality-runtime.js"></script>';
 const campaignTableLinkTag='<script id="microCampaignTableLinkRuntime">(()=>{if(document.getElementById("microCampaignTableLink"))return;const tabs=document.querySelector(".tabs");if(!tabs)return;const link=document.createElement("a");link.id="microCampaignTableLink";link.href="mesa-campanha.html";link.textContent="🗺️ Mesa da Campanha";link.setAttribute("aria-label","Abrir Mesa da Campanha");link.style.cssText="white-space:nowrap;border:1px solid #846d4a;background:#263c30;color:#f5e4ad;border-radius:999px;padding:9px 13px;font-weight:bold;box-shadow:0 4px 10px #0003;text-decoration:none;display:inline-flex;align-items:center;justify-content:center";tabs.appendChild(link)})();</script>';
 
 // Remove runtimes antigos para não competir com a autenticação/sincronização atual.
@@ -32,6 +33,7 @@ if(!html.includes(skillChoiceTag))html=html.replace('</body>',`${skillChoiceTag}
 if(!html.includes(classKitSheetTag))html=html.replace('</body>',`${classKitSheetTag}\n</body>`);
 if(!html.includes(classFeatureDetailsTag))html=html.replace('</body>',`${classFeatureDetailsTag}\n</body>`);
 if(!html.includes(cantripCapacityTag))html=html.replace('</body>',`${cantripCapacityTag}\n</body>`);
+if(!html.includes(cantripQualityTag))html=html.replace('</body>',`${cantripQualityTag}\n</body>`);
 if(!html.includes(onlineAuthTag))html=html.replace('</body>',`${onlineAuthTag}\n</body>`);
 if(!html.includes('microCampaignTableLinkRuntime'))html=html.replace('</body>',`${campaignTableLinkTag}\n</body>`);
 await writeFile(indexUrl,html,"utf8");
@@ -59,4 +61,4 @@ const originRuntime='<script src="origin-attributes-runtime.js"></script>';
 if(!origins.includes(originRuntime))origins=origins.replace('</body>',`${originRuntime}\n</body>`);
 await writeFile(originsUrl,origins,"utf8");
 
-console.log("Runtimes de materiais, Origens, Descobertas, pop-ups, perícias, Kits de Classe, descrições de Características, contador de Truques, autenticação online Supabase v2, Mesa, tokens vinculados e efeitos mágicos aplicados à publicação.");
+console.log("Runtimes de materiais, Origens, Descobertas, pop-ups, perícias, Kits de Classe, descrições de Características, contador e auditoria de Truques, autenticação online Supabase v2, Mesa, tokens vinculados e efeitos mágicos aplicados à publicação.");
