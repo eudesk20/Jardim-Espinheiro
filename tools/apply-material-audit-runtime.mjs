@@ -18,6 +18,7 @@ const cantripQualityTag='<script src="codex-revisao/cantrip-quality-runtime.js">
 const cantripCombatAuditTag='<script src="codex-revisao/cantrip-combat-audit-runtime.js"></script>';
 const cantrip2024SpecialTag='<script src="codex-revisao/cantrip-2024-special-runtime.js"></script>';
 const cantripUaCurationTag='<script src="codex-revisao/cantrip-ua-curation-runtime.js"></script>';
+const cantripFinalAuditTag='<script src="codex-revisao/cantrip-final-audit-runtime.js"></script>';
 const campaignTableLinkTag='<script id="microCampaignTableLinkRuntime">(()=>{if(document.getElementById("microCampaignTableLink"))return;const tabs=document.querySelector(".tabs");if(!tabs)return;const link=document.createElement("a");link.id="microCampaignTableLink";link.href="mesa-campanha.html";link.textContent="🗺️ Mesa da Campanha";link.setAttribute("aria-label","Abrir Mesa da Campanha");link.style.cssText="white-space:nowrap;border:1px solid #846d4a;background:#263c30;color:#f5e4ad;border-radius:999px;padding:9px 13px;font-weight:bold;box-shadow:0 4px 10px #0003;text-decoration:none;display:inline-flex;align-items:center;justify-content:center";tabs.appendChild(link)})();</script>';
 
 // Remove runtimes antigos para não competir com a autenticação/sincronização atual.
@@ -40,6 +41,7 @@ if(!html.includes(cantripQualityTag))html=html.replace('</body>',`${cantripQuali
 if(!html.includes(cantripCombatAuditTag))html=html.replace('</body>',`${cantripCombatAuditTag}\n</body>`);
 if(!html.includes(cantrip2024SpecialTag))html=html.replace('</body>',`${cantrip2024SpecialTag}\n</body>`);
 if(!html.includes(cantripUaCurationTag))html=html.replace('</body>',`${cantripUaCurationTag}\n</body>`);
+if(!html.includes(cantripFinalAuditTag))html=html.replace('</body>',`${cantripFinalAuditTag}\n</body>`);
 if(!html.includes(onlineAuthTag))html=html.replace('</body>',`${onlineAuthTag}\n</body>`);
 if(!html.includes('microCampaignTableLinkRuntime'))html=html.replace('</body>',`${campaignTableLinkTag}\n</body>`);
 await writeFile(indexUrl,html,"utf8");
@@ -67,4 +69,4 @@ const originRuntime='<script src="origin-attributes-runtime.js"></script>';
 if(!origins.includes(originRuntime))origins=origins.replace('</body>',`${originRuntime}\n</body>`);
 await writeFile(originsUrl,origins,"utf8");
 
-console.log("Runtimes de materiais, Origens, Descobertas, pop-ups, perícias, Kits de Classe, descrições de Características, contador e auditorias de Truques (incluindo consolidação 2024 e curadoria UA), autenticação online Supabase v2, Mesa, tokens vinculados e efeitos mágicos aplicados à publicação.");
+console.log("Runtimes de materiais, Origens, Descobertas, pop-ups, perícias, Kits de Classe, descrições de Características, contador e auditorias de Truques (incluindo consolidação 2024, curadoria UA e auditoria final), autenticação online Supabase v2, Mesa, tokens vinculados e efeitos mágicos aplicados à publicação.");
