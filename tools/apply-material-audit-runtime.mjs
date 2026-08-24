@@ -53,6 +53,7 @@ const tableUrl=new URL("mesa-campanha.html",root);
 let table=await readFile(tableUrl,"utf8");
 const tableRuntimeTag='<script src="codex-revisao/mesa-ficha-token-runtime.js"></script>';
 const tableMagicRuntimeTag='<script src="codex-revisao/mesa-magic-effects-runtime.js"></script>';
+const tableTargetPointerFixTag='<script src="codex-revisao/mesa-target-pointer-fix-runtime.js"></script>';
 const tableApiMarker='globalThis.MICROCOSMOS_TABLE_PLAYERS=players;';
 if(!table.includes(tableApiMarker)){
   const initNeedle='renderPlayers();renderTokens();updateGrid();setTransform();selectToken("luna");';
@@ -62,6 +63,7 @@ if(!table.includes(tableApiMarker)){
 }
 if(!table.includes(tableRuntimeTag))table=table.replace('</body>',`${tableRuntimeTag}\n</body>`);
 if(!table.includes(tableMagicRuntimeTag))table=table.replace('</body>',`${tableMagicRuntimeTag}\n</body>`);
+if(!table.includes(tableTargetPointerFixTag))table=table.replace('</body>',`${tableTargetPointerFixTag}\n</body>`);
 await writeFile(tableUrl,table,"utf8");
 
 // Codex de Origens: distribuições de atributos derivadas de cada descrição.
@@ -71,4 +73,4 @@ const originRuntime='<script src="origin-attributes-runtime.js"></script>';
 if(!origins.includes(originRuntime))origins=origins.replace('</body>',`${originRuntime}\n</body>`);
 await writeFile(originsUrl,origins,"utf8");
 
-console.log("Runtimes de materiais, Origens, Descobertas, pop-ups, perícias, Kits de Classe, descrições de Características, contador/auditorias de Truques e limites reais de seleção mágica, autenticação online Supabase v2, Mesa, tokens vinculados e efeitos mágicos aplicados à publicação.");
+console.log("Runtimes de materiais, Origens, Descobertas, pop-ups, perícias, Kits de Classe, descrições de Características, contador/auditorias de Truques e limites reais de seleção mágica, autenticação online Supabase v2, Mesa, tokens vinculados, seleção de alvo por pointer e efeitos mágicos aplicados à publicação.");
