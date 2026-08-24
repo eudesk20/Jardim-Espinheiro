@@ -16,6 +16,9 @@ const CLASS_STARTING_KITS={
 "engenheiro":["A — Armadilheiro: molas, fios, ganchos, alicate, Bolsa de Componentes, 2 armadilhas, 2 rações.","B — Balístico: besta/elástico, munição, ferramentas, mira, Bolsa de Componentes, 2 rações.","C — Oficina Móvel: ferramentas, fios, placas, frascos, Foco Arcano usado como foco técnico, 2 rações."]
 };
 
+// Disponibiliza a mesma fonte de dados para os runtimes da ficha.
+globalThis.CLASS_STARTING_KITS=CLASS_STARTING_KITS;
+
 // Item mágico funcional concedido por cada opção de Kit.
 // IDs vêm de CODEX_ITEM_DATA: item-6 Bolsa, item-7 Foco Arcano,
 // item-8 Foco Natural, item-9 Símbolo Espiritual.
