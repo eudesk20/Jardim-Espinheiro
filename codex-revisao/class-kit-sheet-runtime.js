@@ -65,7 +65,6 @@
   function selectStartingKit(letter){
     const cls=currentClassKey(),kits=globalThis.CLASS_STARTING_KITS?.[cls]||[];
     if(!cls||!kitLetters.includes(letter)||!kits[kitLetters.indexOf(letter)])return;
-    // Garante que a escolha visual da Classe e o estado persistido estejam alinhados.
     if(state.cls!==cls){state.cls=cls;state.saves=[...(CLASS_SAVES[cls]||[])];state.weaponProficiencies=[...(CLASS_WEAPON_PROFICIENCIES[cls]||[])];state.armorProficiencies=[...(CLASS_ARMOR_PROFICIENCIES[cls]||[])]}
     if(state.startingKit&&state.startingKitClass===cls&&state.startingKit!==letter){
       if(!confirm(`Trocar o Kit Inicial ${state.startingKit} pelo Kit ${letter}?\n\nO Foco/Bolsa concedido automaticamente pelo Kit anterior será substituído.`))return;
@@ -89,33 +88,56 @@
   }
   globalThis.selectStartingKit=selectStartingKit;
 
+  function ensureStyles(){
+    if(document.getElementById("microStartingKitStyles"))return;
+    const style=document.createElement("style");
+    style.id="microStartingKitStyles";
+    style.textContent=`
+      #microStartingKitPanel{margin:10px 0 0;padding:10px 12px;background:rgba(255,250,240,.88);border:2px solid #8e7755;border-radius:17px;position:relative;z-index:2}
+      #microStartingKitPanel .micro-kit-head{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:7px}
+      #microStartingKitPanel .micro-kit-title{font-weight:bold;color:#4e3b28;font-variant:small-caps;font-size:1rem}
+      #microStartingKitContent{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+      .micro-kit-intro{grid-column:1/-1;font-size:.76rem;color:#6d5a43}
+      .micro-kit-choice{width:100%;min-height:82px;text-align:left;border:1px solid #9b8058;border-radius:10px;background:#fffaf0;padding:8px;color:#372b20;box-shadow:0 2px 5px #0001}
+      .micro-kit-choice:hover,.micro-kit-choice:focus-visible{border-color:#547558;outline:none;box-shadow:0 0 0 2px #54755833}
+      .micro-kit-choice.active{background:#dfead8;border:2px solid #477344}
+      .micro-kit-choice b{display:block;color:#405d3e;margin-bottom:3px;font-size:.9rem}
+      .micro-kit-choice small{display:block;line-height:1.3;color:#6e5e4b;font-size:.72rem}
+      .micro-kit-magic{display:inline-block;margin-top:5px;padding:2px 6px;border-radius:999px;background:#eee2f5;color:#593b70;font-size:.66rem;font-weight:bold}
+      .micro-focus-status{grid-column:1/-1;margin-top:1px;padding:6px 8px;border-left:4px solid #a36f17;background:#fff0cf;border-radius:0 8px 8px 0;font-size:.7rem}
+      .micro-focus-status.ok{border-left-color:#477344;background:#e4f0df}
+      @media(max-width:700px){#microStartingKitContent{grid-template-columns:1fr}.micro-kit-choice{min-height:0}.micro-kit-intro,.micro-focus-status{grid-column:1}}
+    `;
+    document.head.appendChild(style)
+  }
+
   function ensurePanel(){
-    if(document.getElementById("microStartingKitPanel"))return;
-    const profPanel=document.querySelector(".bottom-grid .panel.profs");
-    if(!profPanel)return;
-    const panel=document.createElement("div");
-    panel.id="microStartingKitPanel";
-    panel.className="panel";
-    panel.style.marginTop="10px";
-    panel.innerHTML='<div class="ribbon">🎒 Kit Inicial da Classe</div><div id="microStartingKitContent"></div>';
-    profPanel.after(panel);
-    if(!document.getElementById("microStartingKitStyles")){
-      const style=document.createElement("style");
-      style.id="microStartingKitStyles";
-      style.textContent=`#microStartingKitContent{display:grid;gap:7px}.micro-kit-choice{width:100%;text-align:left;border:1px solid #9b8058;border-radius:10px;background:#fffaf0;padding:9px;color:#372b20}.micro-kit-choice.active{background:#dfead8;border:2px solid #477344}.micro-kit-choice b{display:block;color:#4b5f3b;margin-bottom:3px}.micro-kit-choice small{display:block;line-height:1.4;color:#6e5e4b}.micro-kit-magic{display:inline-block;margin-top:5px;padding:3px 7px;border-radius:999px;background:#eee2f5;color:#593b70;font-size:.72rem;font-weight:bold}.micro-focus-status{margin-top:9px;padding:8px;border-left:4px solid #a36f17;background:#fff0cf;border-radius:0 8px 8px 0;font-size:.76rem}.micro-focus-status.ok{border-left-color:#477344;background:#e4f0df}`;
-      document.head.appendChild(style)
+    ensureStyles();
+    let panel=document.getElementById("microStartingKitPanel");
+    if(!panel){
+      panel=document.createElement("div");
+      panel.id="microStartingKitPanel";
+      panel.innerHTML='<div class="micro-kit-head"><span class="micro-kit-title">🎒 Kit Inicial da Classe</span><small>Escolha A, B ou C</small></div><div id="microStartingKitContent"></div>';
     }
+    // Local solicitado: logo abaixo da Identidade e antes de Atributos/Combate.
+    const page=document.getElementById("p1Page");
+    const topInfo=page?.querySelector(".topinfo");
+    const mainGrid=page?.querySelector(".main-grid");
+    if(mainGrid&&panel.parentElement!==mainGrid.parentElement)mainGrid.parentElement.insertBefore(panel,mainGrid);
+    else if(mainGrid&&panel.nextElementSibling!==mainGrid)mainGrid.parentElement.insertBefore(panel,mainGrid);
+    else if(topInfo&&!panel.isConnected)topInfo.after(panel);
+    return panel
   }
 
   function renderKitPanel(){
     ensurePanel();
     const box=document.getElementById("microStartingKitContent");if(!box)return;
     const cls=currentClassKey(),kits=globalThis.CLASS_STARTING_KITS?.[cls]||[];
-    if(!cls||!kits.length){box.innerHTML='<div class="eq-note">Escolha uma Classe para ver os Kits A, B e C.</div>';return}
+    if(!cls||!kits.length){box.innerHTML='<div class="micro-kit-intro">Escolha uma Classe para ver os Kits A, B e C.</div>';return}
     if(state.startingKitClass&&state.startingKitClass!==cls){
       removePreviousGrant();state.startingKit="";state.startingKitClass=cls;state.startingKitMagicGrant=[];
     }
-    box.innerHTML=`<div class="eq-note" style="margin-bottom:2px"><b>${CLASS_DATA[cls]?.name||cls}</b> — escolha um dos três Kits iniciais.</div>`+kits.map((text,i)=>{
+    box.innerHTML=`<div class="micro-kit-intro"><b>${CLASS_DATA[cls]?.name||cls}</b> — toque em um Kit para selecioná-lo.</div>`+kits.map((text,i)=>{
       const letter=kitLetters[i],grants=MAGIC_ITEMS[cls]?.[letter]||[],magic=grants.map(itemById).filter(Boolean).map(x=>x.name).join(" + ");
       return `<button type="button" class="micro-kit-choice ${state.startingKit===letter&&state.startingKitClass===cls?"active":""}" onclick="selectStartingKit('${letter}')"><b>${state.startingKit===letter&&state.startingKitClass===cls?"✓ ":""}Kit ${letter}</b><small>${text}</small>${magic?`<span class="micro-kit-magic">✨ ${magic}</span>`:""}</button>`
     }).join("")+`<div id="microMagicFocusStatus" class="micro-focus-status"></div>`;
@@ -150,8 +172,6 @@
 
   const classSelect=document.getElementById("p1ClassSelect");
   const refreshAfterClassChange=()=>{
-    // O handler principal da ficha salva state.cls; estes três disparos cobrem
-    // também celular/Supabase quando a atualização ocorre em outro ciclo do navegador.
     [0,60,220].forEach(ms=>setTimeout(()=>{renderKitPanel();syncMagicAccess(ms===220)},ms))
   };
   classSelect?.addEventListener("change",refreshAfterClassChange);
