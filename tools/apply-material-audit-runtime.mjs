@@ -34,6 +34,20 @@ if(!html.includes(onlineAuthTag))html=html.replace('</body>',`${onlineAuthTag}\n
 if(!html.includes('microCampaignTableLinkRuntime'))html=html.replace('</body>',`${campaignTableLinkTag}\n</body>`);
 await writeFile(indexUrl,html,"utf8");
 
+// Mesa da Campanha: expõe a API do protótipo para o runtime que liga tokens às fichas.
+const tableUrl=new URL("mesa-campanha.html",root);
+let table=await readFile(tableUrl,"utf8");
+const tableRuntimeTag='<script src="codex-revisao/mesa-ficha-token-runtime.js"></script>';
+const tableApiMarker='globalThis.MICROCOSMOS_TABLE_PLAYERS=players;';
+if(!table.includes(tableApiMarker)){
+  const initNeedle='renderPlayers();renderTokens();updateGrid();setTransform();selectToken("luna");';
+  const apiCode=`globalThis.MICROCOSMOS_TABLE_PLAYERS=players;\nglobalThis.MICROCOSMOS_TABLE_API={renderPlayers,renderTokens,selectToken,quickRoll,updateGrid,setTransform};\n${initNeedle}`;
+  if(!table.includes(initNeedle))throw new Error("Não foi possível localizar a inicialização da Mesa para expor sua API.");
+  table=table.replace(initNeedle,apiCode);
+}
+if(!table.includes(tableRuntimeTag))table=table.replace('</body>',`${tableRuntimeTag}\n</body>`);
+await writeFile(tableUrl,table,"utf8");
+
 // Codex de Origens: distribuições de atributos derivadas de cada descrição.
 const originsUrl=new URL("codex-revisao/origens-equipamentos-talentos-revisao.html",root);
 let origins=await readFile(originsUrl,"utf8");
@@ -41,4 +55,4 @@ const originRuntime='<script src="origin-attributes-runtime.js"></script>';
 if(!origins.includes(originRuntime))origins=origins.replace('</body>',`${originRuntime}\n</body>`);
 await writeFile(originsUrl,origins,"utf8");
 
-console.log("Runtimes de materiais, Origens, Descobertas, pop-ups, perícias, Kits de Classe, descrições de Características, autenticação online Supabase v2 e acesso à Mesa da Campanha aplicados à publicação.");
+console.log("Runtimes de materiais, Origens, Descobertas, pop-ups, perícias, Kits de Classe, descrições de Características, autenticação online Supabase v2, acesso à Mesa e tokens vinculados às fichas aplicados à publicação.");
