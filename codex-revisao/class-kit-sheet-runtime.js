@@ -8,12 +8,19 @@
   const ACCEPTED=globalThis.CLASS_FOCUS_ACCEPTED_ITEMS||{};
   const kitLetters=["A","B","C"];
 
+  function currentClassKey(){
+    const select=document.getElementById("p1ClassSelect");
+    const domValue=select?.value||"";
+    if(domValue&&globalThis.MICROCOSMO_DATA?.classes?.[domValue])return domValue;
+    return state.cls||"";
+  }
   function itemById(id){return (globalThis.CODEX_ITEM_DATA||[]).find(item=>item.id===id)}
   function bagCodexId(id){return `misc:${id}`}
-  function currentKitList(){return globalThis.CLASS_STARTING_KITS?.[state.cls]||[]}
-  function currentAcceptedIds(){return ACCEPTED[state.cls]||[]}
+  function currentKitList(){return globalThis.CLASS_STARTING_KITS?.[currentClassKey()]||[]}
+  function currentAcceptedIds(){return ACCEPTED[currentClassKey()]||[]}
   function hasMagicAccess(){
-    if(!CLASS_DATA[state.cls]?.caster)return false;
+    const cls=currentClassKey();
+    if(!CLASS_DATA[cls]?.caster)return false;
     const accepted=new Set(currentAcceptedIds().map(bagCodexId));
     return (state.bag||[]).some(item=>accepted.has(item.codexId)&&(+item.qty||0)>0)
       ||(state.cart||[]).some(item=>accepted.has(item.codexId)&&(+item.qty||0)>0);
@@ -56,14 +63,17 @@
   }
 
   function selectStartingKit(letter){
-    if(!kitLetters.includes(letter)||!currentKitList()[kitLetters.indexOf(letter)])return;
-    if(state.startingKit&&state.startingKit!==letter){
+    const cls=currentClassKey(),kits=globalThis.CLASS_STARTING_KITS?.[cls]||[];
+    if(!cls||!kitLetters.includes(letter)||!kits[kitLetters.indexOf(letter)])return;
+    // Garante que a escolha visual da Classe e o estado persistido estejam alinhados.
+    if(state.cls!==cls){state.cls=cls;state.saves=[...(CLASS_SAVES[cls]||[])];state.weaponProficiencies=[...(CLASS_WEAPON_PROFICIENCIES[cls]||[])];state.armorProficiencies=[...(CLASS_ARMOR_PROFICIENCIES[cls]||[])]}
+    if(state.startingKit&&state.startingKitClass===cls&&state.startingKit!==letter){
       if(!confirm(`Trocar o Kit Inicial ${state.startingKit} pelo Kit ${letter}?\n\nO Foco/Bolsa concedido automaticamente pelo Kit anterior será substituído.`))return;
     }
     removePreviousGrant();
     state.startingKit=letter;
-    state.startingKitClass=state.cls;
-    const grants=[...(MAGIC_ITEMS[state.cls]?.[letter]||[])];
+    state.startingKitClass=cls;
+    const grants=[...(MAGIC_ITEMS[cls]?.[letter]||[])];
     grants.forEach(addMagicGrant);
     state.startingKitMagicGrant=grants;
     syncMagicAccess(false);
@@ -72,7 +82,7 @@
     if(typeof renderMagicAvailable==="function")renderMagicAvailable();
     renderKitPanel();
     if(typeof showPopup==="function"){
-      const text=currentKitList()[kitLetters.indexOf(letter)]||"";
+      const text=kits[kitLetters.indexOf(letter)]||"";
       const magic=grants.map(itemById).filter(Boolean).map(x=>x.name).join(" + ");
       showPopup("🎒 Kit Inicial escolhido",`Kit ${letter}`,`${text}${magic?`<br><br>✨ <b>Conjuração:</b> ${magic} foi adicionado à Mochila e já é reconhecido pelo Grimório.`:""}`)
     }
@@ -89,39 +99,46 @@
     panel.style.marginTop="10px";
     panel.innerHTML='<div class="ribbon">🎒 Kit Inicial da Classe</div><div id="microStartingKitContent"></div>';
     profPanel.after(panel);
-    const style=document.createElement("style");
-    style.id="microStartingKitStyles";
-    style.textContent=`#microStartingKitContent{display:grid;gap:7px}.micro-kit-choice{width:100%;text-align:left;border:1px solid #9b8058;border-radius:10px;background:#fffaf0;padding:9px;color:#372b20}.micro-kit-choice.active{background:#dfead8;border:2px solid #477344}.micro-kit-choice b{display:block;color:#4b5f3b;margin-bottom:3px}.micro-kit-choice small{display:block;line-height:1.4;color:#6e5e4b}.micro-kit-magic{display:inline-block;margin-top:5px;padding:3px 7px;border-radius:999px;background:#eee2f5;color:#593b70;font-size:.72rem;font-weight:bold}.micro-focus-status{margin-top:9px;padding:8px;border-left:4px solid #a36f17;background:#fff0cf;border-radius:0 8px 8px 0;font-size:.76rem}.micro-focus-status.ok{border-left-color:#477344;background:#e4f0df}`;
-    document.head.appendChild(style);
+    if(!document.getElementById("microStartingKitStyles")){
+      const style=document.createElement("style");
+      style.id="microStartingKitStyles";
+      style.textContent=`#microStartingKitContent{display:grid;gap:7px}.micro-kit-choice{width:100%;text-align:left;border:1px solid #9b8058;border-radius:10px;background:#fffaf0;padding:9px;color:#372b20}.micro-kit-choice.active{background:#dfead8;border:2px solid #477344}.micro-kit-choice b{display:block;color:#4b5f3b;margin-bottom:3px}.micro-kit-choice small{display:block;line-height:1.4;color:#6e5e4b}.micro-kit-magic{display:inline-block;margin-top:5px;padding:3px 7px;border-radius:999px;background:#eee2f5;color:#593b70;font-size:.72rem;font-weight:bold}.micro-focus-status{margin-top:9px;padding:8px;border-left:4px solid #a36f17;background:#fff0cf;border-radius:0 8px 8px 0;font-size:.76rem}.micro-focus-status.ok{border-left-color:#477344;background:#e4f0df}`;
+      document.head.appendChild(style)
+    }
   }
 
   function renderKitPanel(){
     ensurePanel();
     const box=document.getElementById("microStartingKitContent");if(!box)return;
-    const kits=currentKitList();
-    if(!state.cls||!kits.length){box.innerHTML='<div class="eq-note">Escolha uma Classe para ver os Kits A, B e C.</div>';return}
-    if(state.startingKitClass&&state.startingKitClass!==state.cls){
-      state.startingKit="";state.startingKitClass=state.cls;state.startingKitMagicGrant=[];
+    const cls=currentClassKey(),kits=globalThis.CLASS_STARTING_KITS?.[cls]||[];
+    if(!cls||!kits.length){box.innerHTML='<div class="eq-note">Escolha uma Classe para ver os Kits A, B e C.</div>';return}
+    if(state.startingKitClass&&state.startingKitClass!==cls){
+      removePreviousGrant();state.startingKit="";state.startingKitClass=cls;state.startingKitMagicGrant=[];
     }
-    box.innerHTML=kits.map((text,i)=>{
-      const letter=kitLetters[i],grants=MAGIC_ITEMS[state.cls]?.[letter]||[],magic=grants.map(itemById).filter(Boolean).map(x=>x.name).join(" + ");
-      return `<button type="button" class="micro-kit-choice ${state.startingKit===letter?"active":""}" onclick="selectStartingKit('${letter}')"><b>${state.startingKit===letter?"✓ ":""}Kit ${letter}</b><small>${text}</small>${magic?`<span class="micro-kit-magic">✨ ${magic}</span>`:""}</button>`
+    box.innerHTML=`<div class="eq-note" style="margin-bottom:2px"><b>${CLASS_DATA[cls]?.name||cls}</b> — escolha um dos três Kits iniciais.</div>`+kits.map((text,i)=>{
+      const letter=kitLetters[i],grants=MAGIC_ITEMS[cls]?.[letter]||[],magic=grants.map(itemById).filter(Boolean).map(x=>x.name).join(" + ");
+      return `<button type="button" class="micro-kit-choice ${state.startingKit===letter&&state.startingKitClass===cls?"active":""}" onclick="selectStartingKit('${letter}')"><b>${state.startingKit===letter&&state.startingKitClass===cls?"✓ ":""}Kit ${letter}</b><small>${text}</small>${magic?`<span class="micro-kit-magic">✨ ${magic}</span>`:""}</button>`
     }).join("")+`<div id="microMagicFocusStatus" class="micro-focus-status"></div>`;
     syncMagicAccess(false);
   }
+  globalThis.renderStartingKitPanel=renderKitPanel;
 
   function patchGrimoireUi(){
-    const check=document.getElementById("p3ComponentPouch");if(!check)return;
+    let check=document.getElementById("p3ComponentPouch");if(!check)return;
     check.disabled=true;
-    const label=check.closest("label");if(label)label.innerHTML='<input id="p3ComponentPouch" type="checkbox" style="width:auto" disabled> Detectado automaticamente pelo inventário';
+    const label=check.closest("label");
+    if(label&&!label.dataset.microPatched){
+      label.dataset.microPatched="1";
+      label.innerHTML='<input id="p3ComponentPouch" type="checkbox" style="width:auto" disabled> Detectado automaticamente pelo inventário';
+      check=document.getElementById("p3ComponentPouch")
+    }
     const card=label?.closest(".component-card");
     if(card&&!card.querySelector(".micro-grimoire-auto-note")){
-      const note=document.createElement("div");note.className="hint micro-grimoire-auto-note";note.style.marginTop="8px";note.innerHTML="🎒 O Foco de Conjuração ou a Bolsa de Componentes agora vem do <b>Kit Inicial</b> ou de um item real adicionado à Mochila/Carrinho. Não é mais uma marcação manual.";card.appendChild(note)
+      const note=document.createElement("div");note.className="hint micro-grimoire-auto-note";note.style.marginTop="8px";note.innerHTML="🎒 O Foco de Conjuração ou a Bolsa de Componentes vem do <b>Kit Inicial</b> ou de um item real adicionado à Mochila/Carrinho. Não é uma marcação manual.";card.appendChild(note)
     }
     syncMagicAccess(false)
   }
 
-  // Qualquer alteração no inventário atualiza a disponibilidade de componentes.
   if(typeof renderInventory==="function"){
     const originalRenderInventory=renderInventory;
     renderInventory=function(){const result=originalRenderInventory.apply(this,arguments);syncMagicAccess(false);return result}
@@ -132,6 +149,15 @@
   }
 
   const classSelect=document.getElementById("p1ClassSelect");
-  classSelect?.addEventListener("change",()=>setTimeout(()=>{renderKitPanel();syncMagicAccess(true)},0));
+  const refreshAfterClassChange=()=>{
+    // O handler principal da ficha salva state.cls; estes três disparos cobrem
+    // também celular/Supabase quando a atualização ocorre em outro ciclo do navegador.
+    [0,60,220].forEach(ms=>setTimeout(()=>{renderKitPanel();syncMagicAccess(ms===220)},ms))
+  };
+  classSelect?.addEventListener("change",refreshAfterClassChange);
+  classSelect?.addEventListener("input",refreshAfterClassChange);
+  window.addEventListener("pageshow",()=>setTimeout(renderKitPanel,0));
+  document.addEventListener("visibilitychange",()=>{if(!document.hidden)renderKitPanel()});
+
   ensurePanel();renderKitPanel();patchGrimoireUi();syncMagicAccess(true);
 })();
