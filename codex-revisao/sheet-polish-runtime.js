@@ -11,6 +11,21 @@
   const normalize=s=>String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[.]+$/g,"").replace(/[^a-z0-9]+/g," ").trim().toLowerCase();
 
   // ---------- Central d20 + Histórico: removidos visualmente da ficha ----------
+  function markHistoryPanel(box){
+    if(box)box.classList.add("micro-roll-history-hidden")
+  }
+  function findHistoryPanel(anchor){
+    let node=anchor;
+    for(let i=0;node&&i<8;i++,node=node.parentElement){
+      const text=node.textContent||"";
+      const hasHistoryText=/últimos resultados de atributos|ultimos resultados de atributos|hist[oó]rico de rolagens/i.test(text);
+      const hasTable=!!node.querySelector?.("table");
+      const hasHeaders=/\bHora\b/.test(text)&&/\bTipo\b/.test(text)&&/\bNatural\b/.test(text)&&/\bTotal\b/.test(text)&&/Observa[cç][aã]o/i.test(text);
+      const hasClear=[...node.querySelectorAll?.("button")||[]].some(b=>/^\s*Limpar\s*$/i.test(b.textContent||""));
+      if(hasHistoryText&&hasTable&&(hasHeaders||hasClear))return node
+    }
+    return anchor.closest?.(".panel,.card,.sub,section,article")||anchor.parentElement
+  }
   function hideSheetRollUi(){
     if(!document.getElementById("microHideSheetRollUi")){
       const style=document.createElement("style");
@@ -18,11 +33,30 @@
       style.textContent='.d20-center{display:none!important}.micro-roll-history-hidden{display:none!important}';
       document.head.appendChild(style);
     }
+
+    // Título explícito, quando existir.
     document.querySelectorAll("h1,h2,h3,h4,.ribbon,.sep-title,b,strong").forEach(el=>{
-      if(!/hist[oó]rico de rolagens/i.test(el.textContent||""))return;
-      const box=el.closest(".panel,.card,.sub,section,article,div");
-      if(box)box.classList.add("micro-roll-history-hidden")
+      if(/hist[oó]rico de rolagens/i.test(el.textContent||""))markHistoryPanel(findHistoryPanel(el))
     });
+
+    // Painel atual da ficha: o título pode não existir; usamos o texto introdutório
+    // e a estrutura da tabela para remover o bloco inteiro (texto + Limpar + tabela).
+    document.querySelectorAll("p,small,div,span").forEach(el=>{
+      const own=el.childElementCount?"":(el.textContent||"");
+      if(/últimos resultados de atributos,? perícias,? salvaguardas,? ataques e magias/i.test(own)||/ultimos resultados de atributos,? pericias,? salvaguardas,? ataques e magias/i.test(normalize(own)))markHistoryPanel(findHistoryPanel(el))
+    });
+
+    // Fallback estrutural específico: qualquer painel da Página 1 que contenha a
+    // tabela Hora/Tipo/Natural/Mod./Total/Observação e botão Limpar é o histórico.
+    const page=document.getElementById("p1Page")||document;
+    page.querySelectorAll(".panel,.card,.sub,section,article,div").forEach(box=>{
+      const table=box.querySelector?.("table");if(!table)return;
+      const text=box.textContent||"";
+      if(!/\bHora\b/.test(text)||!/\bTipo\b/.test(text)||!/\bNatural\b/.test(text)||!/\bTotal\b/.test(text)||!/Observa[cç][aã]o/i.test(text))return;
+      const clear=[...box.querySelectorAll("button")].some(b=>/^\s*Limpar\s*$/i.test(b.textContent||""));
+      if(clear)markHistoryPanel(box)
+    });
+
     try{if(state?.roll){state.roll.mode="normal";save()}}catch(e){}
   }
 
