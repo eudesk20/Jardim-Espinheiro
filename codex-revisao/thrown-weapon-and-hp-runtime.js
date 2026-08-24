@@ -12,14 +12,21 @@
  function catalog(e){try{return e?.catalogId&&EQUIPMENT_CATALOG[e.catalogId]||equipmentCatalogItem(e)}catch{return e||{}}}
  function isThrown(e){return !!catalog(e)?.thrown}
  function thrownKey(e){return `${e?.catalogId||e?.name||""}|${+e?.magic||0}|${e?.name||""}`}
+ function ownedQty(e){
+   // undefined = item antigo sem quantidade explícita, portanto começa com 1.
+   // 0 é quantidade válida e NUNCA deve voltar automaticamente para 1.
+   if(e?.qty===undefined||e?.qty===null||e?.qty==="")return 1;
+   const n=Number(e.qty);return Number.isFinite(n)?Math.max(0,n):1
+ }
  function consolidateThrown(){
    state.equipment=Array.isArray(state.equipment)?state.equipment:[];
    const seen=new Map(),out=[];let changed=false;
    for(const e of state.equipment){
      if(!isThrown(e)){out.push(e);continue}
-     const key=thrownKey(e),existing=seen.get(key),qty=Math.max(1,+e.qty||1),field=Math.max(0,+e.thrownOut||0);
-     if(existing){existing.qty=(+existing.qty||1)+qty;existing.thrownOut=(+existing.thrownOut||0)+field;changed=true;continue}
-     e.qty=qty;e.thrownOut=field;seen.set(key,e);out.push(e)
+     const key=thrownKey(e),existing=seen.get(key),qty=ownedQty(e),field=Math.max(0,+e.thrownOut||0);
+     if(existing){existing.qty=ownedQty(existing)+qty;existing.thrownOut=(+existing.thrownOut||0)+field;changed=true;continue}
+     if(e.qty!==qty){e.qty=qty;changed=true}else e.qty=qty;
+     e.thrownOut=field;seen.set(key,e);out.push(e)
    }
    if(changed){state.equipment=out;try{save()}catch(e){}}
    return changed
@@ -28,25 +35,27 @@
  const oldAmmoPanel=globalThis.weaponAmmoPanel;
  globalThis.weaponAmmoPanel=function(e,i){
    if(!isThrown(e))return typeof oldAmmoPanel==="function"?oldAmmoPanel(e,i):"";
-   const qty=Math.max(0,+e.qty||0),out=Math.max(0,+e.thrownOut||0),mode=e.useThrown?"throw":"melee";
+   const qty=ownedQty(e),out=Math.max(0,+e.thrownOut||0),mode=e.useThrown?"throw":"melee";
    return `<div class="ammo-note"><select onchange="setWeaponThrowMode(${i},this.value)"><option value="melee" ${mode==="melee"?"selected":""}>Uso corpo a corpo</option><option value="throw" ${mode==="throw"?"selected":""}>Arremessar</option></select><span>🗡️ Quantidade em posse:</span><b>${qty}</b><span>📍 Arremessados no campo:</span><b>${out}</b>${out?`<button class="btn slim" onclick="recoverThrownWeapon(${i},1)">Recuperar 1</button><button class="btn slim" onclick="recoverThrownWeapon(${i},${out})">Recuperar todos</button>`:""}<span class="ammo-effect">Ao arremessar, 1 unidade sai da posse. Depois do combate, pode ser recuperada se não tiver quebrado ou sido perdida.</span></div>`
  };
 
  globalThis.recoverThrownWeapon=function(i,amount=1){
    const e=state.equipment?.[i];if(!e||!isThrown(e))return;
    const available=Math.max(0,+e.thrownOut||0),take=Math.min(available,Math.max(1,+amount||1));
-   if(!take)return;e.thrownOut=available-take;e.qty=Math.max(0,+e.qty||0)+take;save();renderEquipment();
+   if(!take)return;e.thrownOut=available-take;e.qty=ownedQty(e)+take;save();renderEquipment();
    if(typeof showPopup==="function")showPopup("🧭 Arma recuperada",e.name,`${take} unidade${take===1?"":"s"} recuperada${take===1?"":"s"} do campo.`)
  };
 
  const oldPrepare=globalThis.prepareWeaponD20;
  globalThis.prepareWeaponD20=function(i){
+   consolidateThrown();
    const e=state.equipment?.[i];if(!e||e.type!=="arma")return;
    if(!isThrown(e))return typeof oldPrepare==="function"?oldPrepare(i):undefined;
-   consolidateThrown();
-   const qty=Math.max(0,+e.qty||0);
-   if(qty<=0){if(typeof showPopup==="function")showPopup("🗡️ Sem arma em posse",e.name,`Todas as unidades de <b>${e.name}</b> estão arremessadas, perdidas ou já foram usadas. Recupere uma unidade antes de atacar.`);return}
-   const throwing=!!e.useThrown;
+   const qty=ownedQty(e),throwing=!!e.useThrown;
+   if(qty<=0){
+     if(typeof showPopup==="function")showPopup("🗡️ Sem arma em posse",e.name,`Você está com <b>0</b> ${e.name} em posse.${(+e.thrownOut||0)>0?` Há <b>${+e.thrownOut||0}</b> arremessado${(+e.thrownOut||0)===1?"":"s"} no campo para possível recuperação.`:""}`);
+     return
+   }
    if(throwing){e.qty=qty-1;e.thrownOut=Math.max(0,+e.thrownOut||0)+1}
    const abilityKey=weaponAbility(e),ability=mod(state.stats[abilityKey]),magic=+e.magic||0,label=throwing?`${e.name} • Arremesso`:e.name;
    state.roll.bonus=weaponAttackBonus(e);if($("d20Bonus"))$("d20Bonus").value=state.roll.bonus;save();
@@ -54,7 +63,6 @@
    try{renderInventory();renderEquipment()}catch(_e){}
  };
 
- // Garante que futuras adições do Kit ou do catálogo também sejam agrupadas.
  const oldRenderEquipment=globalThis.renderEquipment;
  if(typeof oldRenderEquipment==="function")globalThis.renderEquipment=function(){consolidateThrown();return oldRenderEquipment.apply(this,arguments)};
 
@@ -80,12 +88,7 @@
    if($("p1HpMax"))$("p1HpMax").value=state.hpMax;if($("p1HpNow"))$("p1HpNow").value=state.hpNow;
    return oldMax!==next
  }
-
- // Edição manual de PV Máximo desliga o cálculo automático para não sobrescrever escolhas do jogador.
- document.addEventListener("input",e=>{
-   if(e.target?.id==="p1HpMax"&&!e.target.dataset.microHpAutoWrite){state.hpAuto=false;try{save()}catch(_e){}}
- },true);
- // Classe, nível e alterações de atributo podem mudar o PV automático.
+ document.addEventListener("input",e=>{if(e.target?.id==="p1HpMax"&&!e.target.dataset.microHpAutoWrite){state.hpAuto=false;try{save()}catch(_e){}}},true);
  function scheduleHp(){setTimeout(()=>{if((+state.hpMax||0)<=0)state.hpAuto=true;applyAutoHp(false);try{renderCombat()}catch(e){}},0)}
  document.addEventListener("change",e=>{if(["p1ClassSelect","p1Level"].includes(e.target?.id))scheduleHp()},true);
  document.addEventListener("input",e=>{if(e.target?.id==="p1Level")scheduleHp()},true);
