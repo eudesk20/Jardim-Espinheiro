@@ -1,28 +1,30 @@
 /* MICROCOSMOS — Kits Iniciais completos.
-   Problema 2: complementa o Kit A/B/C com armas/armaduras/escudos reais do
-   EQUIPMENT_CATALOG. Equipamentos entram diretamente na lista de combate. */
+   Concede armas/armaduras/escudos reais em state.equipment e itens reais do
+   Codex na Mochila. Ao trocar Kit, remove somente concessões do Kit anterior. */
 (function(){
  if(globalThis.MICROCOSMOS_CLASS_KIT_FULL_GRANTS)return;globalThis.MICROCOSMOS_CLASS_KIT_FULL_GRANTS=true;
- const G={
- barbaro:{A:["machado_mandibula","espinho_arremesso","espinho_arremesso","couro_folha"],B:["machado_casca","tampinha","couro_folha"],C:["espada_agulha","espada_agulha","espinho_arremesso","espinho_arremesso","espinho_arremesso"]},
- bardo:{A:["espada_agulha"],B:["besta_graveto"],C:["espinho_curto"]},
- bastiao:{A:["tampinha","agulha","malha_formiga"],B:["tampinha","alabarda_galho","escamas_besouro"],C:["couro_batido","espada_agulha"]},
- clerigo:{A:["couro_folha","noz_maca"],B:["tampinha","noz_maca"],C:["cajado_raiz"]},
- druida:{A:["cajado_raiz","couro_folha"],B:["espinho_curto"],C:["lamina_casca","couro_folha"]},
- guerreiro:{A:["florete_ferrão","tampinha","couro_batido"],B:["agulha","tampinha","escamas_besouro"],C:["arco_libelula","espinho_curto","couro_folha"]},
- monge:{A:["espada_agulha","espada_agulha"],B:["cajado_raiz"],C:["lamina_casca"]},
- paladino:{A:["tampinha","machado_casca","escamas_besouro"],B:["alabarda_galho","escamas_besouro"],C:["machado_casca","tampinha","couro_batido"]},
- patrulheiro:{A:["arco_libelula","espinho_curto","couro_folha"],B:["lanca_espinho","escamas_besouro"],C:["espada_agulha","besta_graveto","couro_folha"]},
- ladino:{A:["espinho_curto","couro_folha"],B:["espada_agulha","couro_folha"],C:["besta_pata","espinho_curto","couro_folha"]},
- feiticeiro:{A:["cajado_raiz"],B:["espada_agulha"],C:["couro_folha"]},
- bruxo:{A:["cajado_raiz"],B:["espada_agulha","couro_folha"],C:["besta_graveto"]},
- mago:{A:["cajado_raiz"],B:["espinho_curto"],C:["espinho_curto"]},
- cozinheiro:{A:["espinho_curto"],B:["galho_curto"],C:["espinho_curto"]},
- engenheiro:{A:["espinho_curto"],B:["besta_graveto"],C:["galho_curto"]}
+ const K={
+ barbaro:{A:[{eq:"machado_mandibula"},{eq:"espinho_arremesso",q:2},{eq:"couro_folha"},{it:"item-19",q:2}],B:[{eq:"machado_casca"},{eq:"tampinha"},{eq:"couro_folha"},{it:"item-1"},{it:"item-19",q:3}],C:[{eq:"espada_agulha",q:2},{eq:"espinho_arremesso",q:3},{it:"item-2"},{it:"item-12"},{it:"item-19",q:2}]},
+ bardo:{A:[{eq:"espada_agulha"},{it:"item-6"},{it:"item-1"},{it:"item-19",q:2}],B:[{eq:"besta_graveto"},{it:"item-32"},{it:"item-33"},{it:"item-34"},{it:"item-16"},{it:"item-6"},{it:"item-19",q:2}],C:[{eq:"espinho_curto"},{it:"item-32"},{it:"item-6"},{it:"item-19",q:3}]},
+ bastiao:{A:[{eq:"tampinha"},{eq:"agulha"},{eq:"malha_formiga"},{it:"item-22"},{it:"item-19",q:2}],B:[{eq:"tampinha"},{eq:"alabarda_galho"},{eq:"escamas_besouro"},{it:"item-2"},{it:"item-1"},{it:"item-19",q:2}],C:[{eq:"couro_batido"},{eq:"espada_agulha"},{it:"item-28"},{it:"item-11"},{it:"item-19",q:3}]},
+ clerigo:{A:[{eq:"couro_folha"},{eq:"cajado_raiz"},{it:"item-9"},{it:"item-11"},{it:"item-19",q:3}],B:[{eq:"tampinha"},{eq:"cajado_raiz"},{it:"item-9"},{it:"item-6"},{it:"item-22"}],C:[{eq:"cajado_raiz"},{it:"item-16"},{it:"item-12"},{it:"item-9"},{it:"item-19",q:3}]},
+ druida:{A:[{eq:"cajado_raiz"},{it:"item-8"},{it:"item-12"},{eq:"couro_folha"},{it:"item-19",q:2}],B:[{eq:"foice_mandibula"},{it:"item-8"},{it:"item-38",q:2},{it:"item-40"},{it:"item-19",q:2}],C:[{eq:"cajado_raiz"},{it:"item-16"},{it:"item-8"},{it:"item-19",q:3}]},
+ guerreiro:{A:[{eq:"florete_ferrão"},{eq:"tampinha"},{eq:"couro_batido"},{it:"item-22"},{it:"item-19",q:2}],B:[{eq:"lanca_espinho"},{eq:"tampinha"},{eq:"peitoral_carapaca"},{it:"item-1"},{it:"item-19",q:2}],C:[{eq:"arco_antena"},{eq:"espinho_curto"},{it:"item-16"},{it:"item-19",q:2}]},
+ monge:{A:[{eq:"espinho_curto",q:2},{it:"item-1"},{it:"item-19",q:2}],B:[{eq:"cajado_raiz"},{it:"item-2"},{it:"item-16"},{it:"item-43"}],C:[{eq:"cajado_raiz"},{it:"item-43"},{it:"item-5"},{it:"item-19",q:3}]},
+ paladino:{A:[{eq:"tampinha"},{eq:"martelo_bolota"},{eq:"peitoral_carapaca"},{it:"item-9"},{it:"item-19",q:2}],B:[{eq:"lanca_espinho"},{eq:"escamas_besouro"},{it:"item-9"},{it:"item-1"},{it:"item-19",q:2}],C:[{eq:"machado_casca"},{eq:"tampinha"},{it:"item-11"},{it:"item-9"},{it:"item-16"},{it:"item-19",q:3}]},
+ patrulheiro:{A:[{eq:"arco_antena"},{eq:"espinho_curto"},{it:"item-16"},{it:"item-12"},{it:"item-8"},{it:"item-19",q:2}],B:[{eq:"lanca_espinho"},{eq:"peitoral_carapaca"},{it:"item-1"},{it:"item-2"},{it:"item-8"},{it:"item-19",q:2}],C:[{eq:"espinho_curto"},{eq:"besta_graveto"},{it:"item-43"},{it:"item-31"},{it:"item-8"},{it:"item-19",q:3}]},
+ ladino:{A:[{eq:"espinho_curto"},{eq:"couro_folha"},{it:"item-13"},{it:"item-1"},{it:"item-16"},{it:"item-19",q:2}],B:[{eq:"espada_agulha"},{eq:"couro_folha"},{it:"item-2"},{it:"item-13"},{it:"item-22"},{it:"item-19",q:2}],C:[{eq:"besta_graveto"},{eq:"espinho_curto"},{eq:"couro_folha"},{it:"item-16"},{it:"item-19",q:2}]},
+ feiticeiro:{A:[{eq:"cajado_raiz"},{it:"item-7"},{it:"item-16"},{it:"item-19",q:2}],B:[{eq:"espinho_curto"},{it:"item-6"},{it:"item-12"},{it:"item-19",q:2}],C:[{eq:"couro_folha"},{it:"item-7"},{it:"item-38",q:2},{it:"item-39"},{it:"item-19",q:2}]},
+ bruxo:{A:[{eq:"cajado_raiz"},{it:"item-7"},{it:"item-29"},{it:"item-19",q:2}],B:[{eq:"espinho_curto"},{eq:"couro_folha"},{it:"item-7"},{it:"item-16"},{it:"item-19",q:2}],C:[{eq:"besta_graveto"},{it:"item-6"},{it:"item-1"},{it:"item-29"},{it:"item-19",q:3}]},
+ mago:{A:[{eq:"cajado_raiz"},{it:"item-6"},{it:"item-32"},{it:"item-19",q:2}],B:[{eq:"espinho_curto"},{it:"item-7"},{it:"item-26"},{it:"item-12"},{it:"item-32"},{it:"item-19",q:2}],C:[{eq:"espinho_curto"},{it:"item-7"},{it:"item-15"},{it:"item-32"},{it:"item-19",q:2}]},
+ cozinheiro:{A:[{eq:"espinho_curto"},{it:"item-14"},{it:"item-20",q:2},{it:"item-19",q:2}],B:[{eq:"espinho_curto"},{it:"item-14"},{it:"item-24"},{it:"item-20",q:2},{it:"item-19",q:2}],C:[{eq:"espinho_curto"},{it:"item-14"},{it:"item-38",q:2},{it:"item-20",q:3}]},
+ engenheiro:{A:[{eq:"espinho_curto"},{it:"item-13"},{it:"item-1"},{it:"item-2"},{it:"item-6"},{it:"item-19",q:2}],B:[{eq:"besta_graveto"},{it:"item-13"},{it:"item-26"},{it:"item-6"},{it:"item-19",q:2}],C:[{eq:"espinho_curto"},{it:"item-13"},{it:"item-38",q:2},{it:"item-7"},{it:"item-19",q:2}]}
  };
- globalThis.CLASS_STARTING_KIT_EQUIPMENT=G;
- function removeOld(){const ids=Array.isArray(state.startingKitEquipmentGrant)?state.startingKitEquipmentGrant:[];for(const grantId of ids){const at=(state.equipment||[]).findIndex(e=>e.kitGrantId===grantId);if(at>=0)state.equipment.splice(at,1)}state.startingKitEquipmentGrant=[]}
- function apply(cls,letter){removeOld();const ids=G[cls]?.[letter]||[],grants=[];ids.forEach((id,n)=>{const item=globalThis.EQUIPMENT_CATALOG?.[id]||((typeof EQUIPMENT_CATALOG!=="undefined")?EQUIPMENT_CATALOG[id]:null);if(!item)return;const grantId=`kit:${cls}:${letter}:${n}:${id}`;(state.equipment||(state.equipment=[])).push({...item,catalogId:id,kitGrantId:grantId,source:"Kit Inicial"});grants.push(grantId)});state.startingKitEquipmentGrant=grants;try{save();renderEquipment();renderInventory()}catch(e){}return ids}
- function patch(){if(typeof globalThis.selectStartingKit!=="function"||globalThis.selectStartingKit.microFullGrants)return;const old=globalThis.selectStartingKit;const wrapped=function(letter){const before=state.startingKit,cls=(document.getElementById("p1ClassSelect")?.value||state.cls||"");const r=old.apply(this,arguments);if(state.startingKit===letter&&state.startingKitClass===cls&&(before!==letter||!Array.isArray(state.startingKitEquipmentGrant)||!state.startingKitEquipmentGrant.length)){const ids=apply(cls,letter);if(typeof showPopup==="function"&&ids.length)showPopup("🎒 Equipamentos do Kit",`Kit ${letter}`,`${ids.length} equipamento(s) do Codex foram adicionados automaticamente à área de Armas/Armaduras.`)}return r};wrapped.microFullGrants=true;globalThis.selectStartingKit=wrapped}
- setTimeout(patch,0);setTimeout(patch,250);setTimeout(()=>{patch();if(state.startingKit&&state.startingKitClass&&(!state.startingKitEquipmentGrant||!state.startingKitEquipmentGrant.length)){apply(state.startingKitClass,state.startingKit)}},700);
+ globalThis.CLASS_STARTING_KIT_FULL=K;
+ function ci(id){return(globalThis.CODEX_ITEM_DATA||[]).find(x=>x.id===id)}function eq(id){try{return typeof EQUIPMENT_CATALOG!=="undefined"?EQUIPMENT_CATALOG[id]:null}catch{return null}}
+ function removeOld(){const old=state.startingKitFullGrant;if(!old)return;state.equipment=(state.equipment||[]).filter(x=>x.kitGrantKey!==old.key);for(const r of old.items||[]){const row=(state.bag||[]).find(x=>x.codexId===`misc:${r.id}`);if(row)row.qty=Math.max(0,(+row.qty||0)-r.q)}state.bag=(state.bag||[]).filter(x=>(+x.qty||0)>0);state.startingKitFullGrant=null}
+ function addItem(id,q){const d=ci(id);if(!d)return false;let row=(state.bag||(state.bag=[])).find(x=>x.codexId===`misc:${id}`);if(row)row.qty=(+row.qty||0)+q;else state.bag.push({name:d.name,qty:q,weight:+d.weight||0,codexId:`misc:${id}`,source:"Kit Inicial"});return true}
+ function apply(cls,l){removeOld();const spec=K[cls]?.[l]||[],key=`${cls}:${l}`,items=[];state.equipment=Array.isArray(state.equipment)?state.equipment:[];for(const r of spec){const q=+r.q||1;if(r.eq){const d=eq(r.eq);if(d)for(let i=0;i<q;i++)state.equipment.push({...d,catalogId:r.eq,kitGrantKey:key,source:"Kit Inicial"})}if(r.it&&addItem(r.it,q))items.push({id:r.it,q})}state.startingKitFullGrant={key,cls,l,items};try{save();renderEquipment();renderInventory()}catch(e){}return spec}
+ function patch(){if(typeof globalThis.selectStartingKit!=="function"||globalThis.selectStartingKit.microFullGrants)return;const old=globalThis.selectStartingKit;const wrapped=function(l){const before=state.startingKit,r=old.apply(this,arguments),cls=state.startingKitClass||state.cls;if(state.startingKit===l&&(before!==l||state.startingKitFullGrant?.key!==`${cls}:${l}`)){const rows=apply(cls,l);if(typeof showPopup==="function")showPopup("🎒 Kit Inicial completo",`Kit ${l}`,`${rows.length} tipos de equipamento/item do Codex foram adicionados automaticamente à ficha.`)}return r};wrapped.microFullGrants=true;globalThis.selectStartingKit=wrapped}
+ setTimeout(patch,0);setTimeout(patch,250);setTimeout(()=>{patch();if(state.startingKit&&state.startingKitClass&&!state.startingKitFullGrant)apply(state.startingKitClass,state.startingKit)},700);
 })();
