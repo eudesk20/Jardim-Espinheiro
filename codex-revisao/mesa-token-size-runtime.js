@@ -2,7 +2,8 @@
    Regra visual/mecânica base:
    Minúsculo: 4 por célula; Pequeno/Médio: 1 célula; Grande: 2x2 / 3 hexes;
    Enorme: 3x3 / 7 hexes; Colossal: 4x4+ / 12+ hexes.
-   Tamanho Atual altera a ocupação. Escala visual é ajuste fino exclusivo do Mestre.
+   O tamanho mecânico continua aplicado a todos os tokens, mas o painel de
+   controle Tamanho no Grid é visível exclusivamente para contas Mestre.
 */
 (async function(){
   if(globalThis.MICROCOSMOS_MESA_TOKEN_SIZE)return;
@@ -37,8 +38,6 @@
   function footprintText(p){const r=rule(p);return gridType.value==="hex"?r.hexText:r.squareText}
 
   async function resolveRole(){
-    // Consulta o mesmo perfil online usado pela Mesa. Se não houver sessão,
-    // escala visual permanece indisponível por segurança.
     try{
       const {createClient}=await import("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm");
       const sb=createClient("https://evyhhlbvhspiuwouivbb.supabase.co","sb_publishable_mf7PV03HfaJw_YkUhX34NA_dAGFbyp6",{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}});
@@ -63,27 +62,27 @@
   }
   function decorate(){for(const p of players)applyToken(p);renderControls()}
 
-  function panelKey(p){return [p?.id,baseSize(p),currentSize(p),visualScale(p),gridType.value,isMaster,!!overrides[p?.id]?.size].join("|")}
+  function panelKey(p){return [p?.id,baseSize(p),currentSize(p),visualScale(p),gridType.value,!!overrides[p?.id]?.size].join("|")}
   function renderControls(force=false){
-    const p=selected();
     let panel=$("microTokenSizePanel");
+    // Jogadores não veem nenhuma parte do painel. O tamanho mecânico do token
+    // continua sendo aplicado por applyToken(), independentemente desta UI.
+    if(!isMaster){if(panel)panel.remove();lastPanelKey="";return}
+    const p=selected();
     if(!p){if(panel)panel.remove();lastPanelKey="";return}
     ensureCss();
     if(!panel){panel=document.createElement("div");panel.id="microTokenSizePanel";panel.className="micro-token-size-panel";card.appendChild(panel);force=true}
     const key=panelKey(p);
-    // Fundamental: não reconstruir o painel continuamente. Isso era o que
-    // fechava o <select> antes que o usuário conseguisse escolher uma opção.
     if(!force&&key===lastPanelKey)return;
     lastPanelKey=key;
     const base=baseSize(p),cur=currentSize(p),scale=visualScale(p),temporary=!!overrides[p.id]?.size;
-    const masterScale=isMaster?`<label class="micro-master-scale">Escala visual <b id="microScaleValue">${scale}%</b><input id="microTokenVisualScale" type="range" min="60" max="140" step="5" value="${scale}"><small class="micro-master-only-note">👑 Somente Mestre • ajuste visual, não altera a categoria mecânica.</small></label>`:"";
-    panel.innerHTML=`<h3>📐 Tamanho no Grid</h3><div class="micro-size-grid"><label>Tamanho Base<input value="${base}" disabled></label><label>Tamanho Atual<select id="microTokenCurrentSize">${SIZES.map(s=>`<option value="${s}" ${s===cur?"selected":""}>${s}</option>`).join("")}</select></label>${masterScale}<label>Ajuste temporário<button type="button" class="btn" id="microResetTokenSize" style="width:100%;margin-top:3px" ${!temporary&&(!isMaster||scale===100)?"disabled":""}>↩ Voltar ao tamanho base</button></label></div><div class="micro-size-summary"><b>${cur}</b> ocupa <b>${footprintText(p)}</b> no grid atual.${temporary?'<span class="micro-size-temp-badge">TEMPORÁRIO</span>':""}<br><small>A categoria altera o espaço mecânico.${isMaster?" A escala visual é exclusiva do Mestre.":""}</small></div>`;
+    panel.innerHTML=`<h3>📐 Tamanho no Grid</h3><div class="micro-size-grid"><label>Tamanho Base<input value="${base}" disabled></label><label>Tamanho Atual<select id="microTokenCurrentSize">${SIZES.map(s=>`<option value="${s}" ${s===cur?"selected":""}>${s}</option>`).join("")}</select></label><label class="micro-master-scale">Escala visual <b id="microScaleValue">${scale}%</b><input id="microTokenVisualScale" type="range" min="60" max="140" step="5" value="${scale}"><small class="micro-master-only-note">👑 Somente Mestre • ajuste visual, não altera a categoria mecânica.</small></label><label>Ajuste temporário<button type="button" class="btn" id="microResetTokenSize" style="width:100%;margin-top:3px" ${!temporary&&scale===100?"disabled":""}>↩ Voltar ao tamanho base</button></label></div><div class="micro-size-summary"><b>${cur}</b> ocupa <b>${footprintText(p)}</b> no grid atual.${temporary?'<span class="micro-size-temp-badge">TEMPORÁRIO</span>':""}<br><small>A categoria altera o espaço mecânico. A escala visual é exclusiva do Mestre.</small></div>`;
     bindControls(p)
   }
   function bindControls(p){
     const sel=$("microTokenCurrentSize"),range=$("microTokenVisualScale"),reset=$("microResetTokenSize");
     if(sel)sel.addEventListener("change",()=>setTemporarySize(p.id,sel.value,"Ajuste temporário da Mesa"));
-    if(range&&isMaster)range.addEventListener("input",()=>{overrides[p.id]=overrides[p.id]||{};overrides[p.id].visualScale=+range.value;save();const val=$("microScaleValue");if(val)val.textContent=`${range.value}%`;applyToken(p);lastPanelKey=panelKey(p)});
+    if(range)range.addEventListener("input",()=>{overrides[p.id]=overrides[p.id]||{};overrides[p.id].visualScale=+range.value;save();const val=$("microScaleValue");if(val)val.textContent=`${range.value}%`;applyToken(p);lastPanelKey=panelKey(p)});
     if(reset)reset.addEventListener("click",e=>{e.preventDefault();resetSize(p.id)})
   }
   function setTemporarySize(id,size,source="Efeito temporário"){
@@ -91,17 +90,15 @@
     const next=norm(size),base=baseSize(p);
     overrides[id]=overrides[id]||{};
     if(next===base){delete overrides[id].size;delete overrides[id].source}else{overrides[id].size=next;overrides[id].source=source}
-    // Mantém sizeBase separado: p.size pode mudar sem destruir a referência original.
     if(!p.sizeBase)p.sizeBase=base;
     p.size=next;p.sizeTemporary=next!==base;
     save();lastPanelKey="";applyToken(p);renderControls(true);return next
   }
   function resetSize(id){
     const p=players.find(x=>x.id===id);if(!p)return;
-    const base=baseSize(p),keepScale=isMaster?100:visualScale(p);
+    const base=baseSize(p);
     overrides[id]=overrides[id]||{};
-    delete overrides[id].size;delete overrides[id].source;
-    if(isMaster)overrides[id].visualScale=100;
+    delete overrides[id].size;delete overrides[id].source;overrides[id].visualScale=100;
     if(!Object.keys(overrides[id]).length)delete overrides[id];
     p.size=base;p.sizeTemporary=false;
     save();lastPanelKey="";applyToken(p);renderControls(true);return base
@@ -113,8 +110,6 @@
   }
   function schedule(){if(queued)return;queued=true;requestAnimationFrame(()=>{queued=false;decorate()})}
 
-  // Snap quadrado considera o espaço mecânico: tamanhos pares (Grande/Colossal)
-  // centralizam no cruzamento de linhas; ímpares no centro da célula central.
   function squareSnap(p,x,y){
     const s=gridPx(),size=currentSize(p),cells=size==="Grande"?2:size==="Enorme"?3:size==="Colossal"?4:1;
     if(cells%2===0)return{x:Math.round(x/s)*s,y:Math.round(y/s)*s};
@@ -133,11 +128,7 @@
   document.addEventListener("pointerup",e=>{if(!drag||drag.pointer!==e.pointerId)return;e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();const id=drag.id;drag=null;try{api.renderTokens?.();api.selectToken?.(id)}catch(_e){}lastPanelKey="";setTimeout(schedule,0)},true);
   document.addEventListener("pointercancel",e=>{if(drag?.pointer===e.pointerId)drag=null},true);
 
-  // Observamos somente a camada de tokens. Observar o próprio card causava um
-  // ciclo de re-render que quebrava select/botões do painel de Tamanho.
   const obs=new MutationObserver(schedule);obs.observe(tokenLayer,{childList:true,subtree:true});
-  // Mudança de seleção pode acontecer sem criação de token; capture do clique
-  // atualiza o painel depois que a Mesa marcar .selected.
   tokenLayer.addEventListener("click",()=>{lastPanelKey="";setTimeout(schedule,0)},true);
   document.querySelectorAll("[data-select]").forEach(el=>el.addEventListener("click",()=>{lastPanelKey="";setTimeout(schedule,0)},true));
   gridType.addEventListener("change",()=>{lastPanelKey="";schedule()});gridSize.addEventListener("input",schedule);$("gridMinus")?.addEventListener("click",()=>setTimeout(schedule,0));$("gridPlus")?.addEventListener("click",()=>setTimeout(schedule,0));
