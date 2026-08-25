@@ -31,6 +31,7 @@
     const hp=Math.max(1,num($("mcHp")?.value,1));
     const stats=Object.fromEntries(ABILITIES.map(a=>[a,num($(`mc${a}`)?.value,10)]));
     const id=`creature:${activeCreatureId()}:${Date.now().toString(36)}`;
+    const size=$("mcSize")?.value?.trim()||"Pequeno";
     return {
       id,
       name,
@@ -50,7 +51,10 @@
       creature:true,
       creatureId:activeCreatureId(),
       linked:false,
-      size:$("mcSize")?.value?.trim()||"Pequeno",
+      sizeBase:size,
+      size,
+      sizeTemporary:false,
+      sizeSource:"Codex IPM",
       type:$("mcType")?.value?.trim()||"Criatura",
       stats,
       saveBonuses:Object.fromEntries(ABILITIES.map(a=>[a,mod(stats[a])])),
@@ -71,35 +75,27 @@
 
   function addLog(token){
     const log=$("rollLog");if(!log)return;
-    const e=document.createElement("div");e.className="log-entry";e.textContent=`👑 ${token.name} foi adicionado à Mesa a partir do Codex IPM.`;log.prepend(e)
+    const e=document.createElement("div");e.className="log-entry";e.textContent=`👑 ${token.name} foi adicionado à Mesa a partir do Codex IPM (${token.size}).`;log.prepend(e)
   }
 
   function closeModal(){const modal=$("microCreatureModal");if(modal)modal.hidden=true}
 
   document.addEventListener("click",e=>{
     const btn=e.target?.closest?.("#mcAdd");if(!btn)return;
-    // Impede o listener original do Codex e qualquer runtime legado de também criar o token.
-    e.preventDefault();
-    e.stopPropagation();
-    e.stopImmediatePropagation();
+    e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();
     if(creating)return;
     creating=true;btn.disabled=true;
     try{
       const token=buildToken();
       players.push(token);
-      api.renderPlayers();
-      api.renderTokens();
-      api.selectToken(token.id);
-      closeModal();
-      addLog(token);
+      api.renderPlayers();api.renderTokens();api.selectToken(token.id);
+      closeModal();addLog(token);
+      globalThis.MICROCOSMOS_TOKEN_SIZE?.refresh?.();
       globalThis.MICROCOSMOS_CREATURE_ND_LABEL_API?.refresh?.();
     }catch(err){
       console.error("MICROCOSMOS: falha na criação segura do token",err);
       alert("Não foi possível criar o token desta criatura. A Mesa foi preservada; tente novamente após atualizar a página.")
-    }finally{
-      creating=false;
-      if(btn.isConnected)btn.disabled=false
-    }
+    }finally{creating=false;if(btn.isConnected)btn.disabled=false}
   },true);
 
   globalThis.MICROCOSMOS_CREATURE_SAFE_CREATE_API={buildToken};
