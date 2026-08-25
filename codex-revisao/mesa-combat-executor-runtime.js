@@ -19,7 +19,14 @@
   function log(html,color="#7d6c55"){if(!rollLog)return;const d=document.createElement("div");d.className="log-entry";d.style.borderLeftColor=color;d.innerHTML=html;rollLog.prepend(d)}
   function selected(){const el=tokenLayer?.querySelector(".token.selected");return el?players.find(p=>p.id===el.dataset.token):null}
   function gridMeters(){return 1.5}
-  function distance(a,b){const s=+$("gridSize")?.value||70;return Math.hypot((+a.x||0)-(+b.x||0),(+a.y||0)-(+b.y||0))/s*gridMeters()}
+  function distance(a,b){
+    const s=+$("gridSize")?.value||70,dx=Math.abs((+a.x||0)-(+b.x||0)),dy=Math.abs((+a.y||0)-(+b.y||0)),type=$("gridType")?.value||"square";
+    // No Grid quadrado, uma casa diagonal também conta como 1 quadrado (1,5 m),
+    // seguindo a regra tática usada pela Mesa. Assim dois tokens em casas
+    // diagonalmente adjacentes permanecem válidos para ataques corpo a corpo.
+    if(type==="square")return Math.max(dx,dy)/s*gridMeters();
+    return Math.hypot(dx,dy)/s*gridMeters()
+  }
   function parseRange(item){
     if(item?.kind==="weapon"&&item.range?.normal)return +item.range.normal;
     const raw=String(item?.range||"").toLowerCase();if(/pessoal|self/.test(raw))return 0;if(/toque|touch/.test(raw))return 1.5;
