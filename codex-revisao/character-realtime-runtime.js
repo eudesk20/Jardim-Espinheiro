@@ -10,6 +10,7 @@
   const stable=v=>Array.isArray(v)?v.map(stable):(v&&typeof v==="object"?Object.keys(v).sort().reduce((o,k)=>(o[k]=stable(v[k]),o),{}):v);
   const same=(a,b)=>JSON.stringify(stable(a))===JSON.stringify(stable(b));
   const parse=()=>{try{return JSON.parse(localStorage.getItem(SHEET_KEY)||"{}")||{}}catch{return{}}};
+  const loadAddon=src=>{if([...document.scripts].some(s=>s.src.endsWith(src)))return;const el=document.createElement("script");el.src=src;el.async=false;document.head.appendChild(el)};
 
   // Online v2 inicializa de forma assíncrona; aguardamos o cliente existente para
   // usar exatamente a mesma sessão autenticada.
@@ -41,6 +42,10 @@
     .on("postgres_changes",{event:"UPDATE",schema:"public",table:"characters",filter:`user_id=eq.${session.user.id}`},payload=>applyCloud(payload.new?.data,payload.new?.updated_at))
     .on("postgres_changes",{event:"INSERT",schema:"public",table:"characters",filter:`user_id=eq.${session.user.id}`},payload=>applyCloud(payload.new?.data,payload.new?.updated_at))
     .subscribe();
+
+  // A ficha não permite mais devolver Slots clicando nos marcadores. A recuperação
+  // é aplicada na Mesa pelo Mestre, vinculada a DC/DL.
+  loadAddon("codex-revisao/slot-recovery-lock-runtime.js");
 
   globalThis.MICROCOSMOS_CHARACTER_REALTIME_API={apply:applyCloud,channel};
 })();
