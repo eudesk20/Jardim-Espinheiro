@@ -47,11 +47,12 @@
     return{ok:true,level:found.level}
   }
 
-  function start(caster,type,index){
+  async function start(caster,type,index){
     if(!canControl(caster)){log(`🔒 Você não controla <b>${esc(caster.name)}</b>.`);return}
+    if(caster.linked)await globalThis.MICROCOSMOS_TABLE_COMBAT_DATA?.refresh?.();
     const item=(type==="attack"?caster.attacks:caster.spells)?.[index];if(!item)return;
     if(!caster.combatDataReady&&caster.linked){log(`⏳ <b>${esc(caster.name)}</b>: aguardando dados completos da ficha. Atualize os tokens e tente novamente.`,caster.color);globalThis.MICROCOSMOS_TABLE_COMBAT_DATA?.refresh?.();return}
-    pending={caster,item,type};document.body.classList.add("micro-auto-target");const st=$("mapStatus");if(st)st.textContent=`🎯 ${item.name}: selecione o alvo. Alcance: ${parseRange(item)} m.`
+    pending={caster,item,type,index};document.body.classList.add("micro-auto-target");const st=$("mapStatus");if(st)st.textContent=`🎯 ${item.name}: selecione o alvo. Alcance: ${parseRange(item)} m.`
   }
   function cancel(){pending=null;armed=null;document.body.classList.remove("micro-auto-target");const st=$("mapStatus");if(st)st.textContent="Arraste o mapa para navegar • toque no token para selecionar"}
 
@@ -74,7 +75,7 @@
   function pullToward(caster,target,meters){const rank=targetSizeRank(target.size);if(rank>3)return false;const s=+$("gridSize")?.value||70,maxPx=meters/gridMeters()*s,dx=caster.x-target.x,dy=caster.y-target.y,d=Math.hypot(dx,dy);if(d<1)return false;const move=Math.min(maxPx,d);target.x+=dx/d*move;target.y+=dy/d*move;api.renderTokens();return true}
 
   async function resolve(target){
-    const p=pending;if(!p)return;cancel();const {caster,item,type}=p,dist=distance(caster,target),max=parseRange(item),selfOnly=max===0;
+    const p=pending;if(!p)return;cancel();const {caster,type,index}=p,item=(type==="attack"?caster.attacks:caster.spells)?.[index]||p.item,dist=distance(caster,target),max=parseRange(item),selfOnly=max===0;
     if(selfOnly&&target.id!==caster.id){log(`❌ <b>${esc(item.name)}</b> tem alcance Pessoal. O alvo escolhido é inválido.`,caster.color);return}
     if(!selfOnly&&dist>max+.05){
       const spend=type==="spell"?await consumeSlot(caster,item):{ok:true};log(`❌ <b>${esc(item.name)}</b>: alvo a ${dist.toFixed(1)} m, fora do alcance de ${max} m.${type==="spell"&&+item.lvl>0?(spend.ok?` O Slot de ${spend.level}º Círculo foi gasto pela tentativa.`:` ${spend.reason}.`):" A ação foi gasta."}`,caster.color);return

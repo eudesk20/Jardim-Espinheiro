@@ -44,7 +44,7 @@
       setTimeout(flush,0);
     }finally{loading=false}}
 
-  async function writeCloud(payload){if(!session||!profile?.approved)return null;const {data,error:e}=await supabase.from("characters").upsert({user_id:session.user.id,name:payload.charName||"",data:payload},{onConflict:"user_id"}).select("id,updated_at").single();if(e)throw e;if(data?.updated_at)sessionStorage.setItem(HYDRATE_PREFIX+session.user.id,data.updated_at);return data}
+  async function writeCloud(payload){if(!session||!profile?.approved)return null;const uid=session.user.id,guard=sessionStorage.getItem(HYDRATE_PREFIX+uid),{data:latest,error:readError}=await supabase.from("characters").select("data,updated_at").eq("user_id",uid).maybeSingle();if(readError)throw readError;if(latest?.updated_at&&guard&&latest.updated_at!==guard){payload={...payload,hpNow:latest.data?.hpNow??payload.hpNow,hpMax:latest.data?.hpMax??payload.hpMax};rawSet.call(localStorage,SHEET_KEY,JSON.stringify(payload))}const {data,error:e}=await supabase.from("characters").upsert({user_id:uid,name:payload.charName||"",data:payload},{onConflict:"user_id"}).select("id,updated_at").single();if(e)throw e;if(data?.updated_at)sessionStorage.setItem(HYDRATE_PREFIX+uid,data.updated_at);return data}
   async function flush(){if(!session||!profile?.approved||loading||writing)return;const payload=parseLocal();writing=true;try{await writeCloud(payload)}catch(e){console.warn("MICROCOSMOS: falha ao sincronizar ficha",e)}finally{writing=false}}
   function schedule(){clearTimeout(syncTimer);syncTimer=setTimeout(flush,650)}
   Storage.prototype.setItem=function(k,v){rawSet.call(this,k,v);if(this===localStorage&&k===SHEET_KEY)schedule()};

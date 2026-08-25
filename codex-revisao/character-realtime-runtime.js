@@ -18,8 +18,9 @@
   if(!supabase)return;
   const {data:{session}}=await supabase.auth.getSession();if(!session)return;
 
-  function applyCloud(data){
+  function applyCloud(data,updatedAt=""){
     const cloud=clone(data||{}),local=parse();if(same(cloud,local))return;
+    if(updatedAt)sessionStorage.setItem(`MICROCOSMOS_CLOUD_HYDRATED_V2:${session.user.id}`,updatedAt);
     try{localStorage.setItem(SHEET_KEY,JSON.stringify(cloud))}catch(_e){}
     try{if(typeof state!=="undefined")state=clone(cloud)}catch(_e){}
     // Atualiza a UI em memória quando possível; fallback leve para telas que não
@@ -37,8 +38,8 @@
   }
 
   const channel=supabase.channel(`character-live-${session.user.id}`)
-    .on("postgres_changes",{event:"UPDATE",schema:"public",table:"characters",filter:`user_id=eq.${session.user.id}`},payload=>applyCloud(payload.new?.data))
-    .on("postgres_changes",{event:"INSERT",schema:"public",table:"characters",filter:`user_id=eq.${session.user.id}`},payload=>applyCloud(payload.new?.data))
+    .on("postgres_changes",{event:"UPDATE",schema:"public",table:"characters",filter:`user_id=eq.${session.user.id}`},payload=>applyCloud(payload.new?.data,payload.new?.updated_at))
+    .on("postgres_changes",{event:"INSERT",schema:"public",table:"characters",filter:`user_id=eq.${session.user.id}`},payload=>applyCloud(payload.new?.data,payload.new?.updated_at))
     .subscribe();
 
   globalThis.MICROCOSMOS_CHARACTER_REALTIME_API={apply:applyCloud,channel};
