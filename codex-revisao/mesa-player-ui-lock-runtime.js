@@ -23,6 +23,7 @@
 
   function hide(el){if(el)el.style.setProperty("display","none","important")}
   function show(el,display=""){if(el){el.style.removeProperty("display");if(display)el.style.display=display}}
+  function loadAddon(src){if([...document.scripts].some(s=>s.src.endsWith(src)))return;const s=document.createElement("script");s.src=src;s.async=false;document.head.appendChild(s)}
 
   function apply(){
     const master=role==="master";
@@ -58,6 +59,10 @@
 
   role=await resolveRole();
   apply();
+
+  // Complementos novos ficam separados do runtime de permissões para facilitar manutenção.
+  loadAddon("codex-revisao/mesa-combat-safety-runtime.js");
+  if(role==="master")loadAddon("codex-revisao/mesa-master-tools-organizer-runtime.js");
 
   let queued=false;
   const obs=new MutationObserver(()=>{
