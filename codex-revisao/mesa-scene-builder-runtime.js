@@ -53,7 +53,7 @@
     if(el.type==="window")return state==="open"?{blocksVision:false,blocksMovement:false}:{blocksVision:false,blocksMovement:true};
     if(el.type==="door"){
       if(state==="open")return{blocksVision:false,blocksMovement:false};
-      if(state==="half")return{blocksVision:false,blocksMovement:true};
+      if(state==="half")return{blocksVision:false,blocksMovement:false};
       return{blocksVision:true,blocksMovement:true}
     }
     return{blocksVision:false,blocksMovement:false}
@@ -110,8 +110,8 @@
   function renderSelected(){
     const box=$("microBuilderSelected");if(!box)return;const el=selected();
     if(!el){box.innerHTML="<small>Nenhum elemento selecionado.</small>";return}
-    const stateUi=el.type==="wall"?"<span>Estado: fixo</span>":`<label>Estado<select id="microElementState">${(el.type==="door"?[['closed','Fechada'],['half','Meia aberta'],['open','Aberta'],['locked','Trancada']]:[['closed','Fechada'],['open','Aberta']]).map(([v,n])=>`<option value="${v}" ${el.state===v?'selected':''}>${n}</option>`).join("")}</select></label>`;
-    box.innerHTML=`<b>${el.type==="wall"?"🧱 Parede":el.type==="door"?"🚪 Porta":"🪟 Janela"}</b><span class="micro-layer-chip">${el.layer==="master"?"SÓ MESTRE":"VISÍVEL"}</span><div class="micro-builder-row">${stateUi}<label>Camada<select id="microElementLayer"><option value="players" ${el.layer!=="master"?'selected':''}>Jogadores</option><option value="master" ${el.layer==="master"?'selected':''}>Mestre</option></select></label></div><small>Visão: <b>${el.blocksVision?"bloqueia":"permite"}</b> • Movimento: <b>${el.blocksMovement?"bloqueia":"permite"}</b></small><button type="button" class="btn danger" id="microDeleteElement" style="width:100%;margin-top:6px">🗑️ Apagar elemento</button>`;
+    const stateUi=el.type==="wall"?"<span>Estado: fixo</span>":`<label>Estado<select id="microElementState">${(el.type==="door"?[["closed","Fechada"],["half","Meia aberta"],["open","Aberta"],["locked","Trancada"]]:[["closed","Fechada"],["open","Aberta"]]).map(([v,n])=>`<option value="${v}" ${el.state===v?"selected":""}>${n}</option>`).join("")}</select></label>`;
+    box.innerHTML=`<b>${el.type==="wall"?"🧱 Parede":el.type==="door"?"🚪 Porta":"🪟 Janela"}</b><span class="micro-layer-chip">${el.layer==="master"?"SÓ MESTRE":"VISÍVEL"}</span><div class="micro-builder-row">${stateUi}<label>Camada<select id="microElementLayer"><option value="players" ${el.layer!=="master"?"selected":""}>Jogadores</option><option value="master" ${el.layer==="master"?"selected":""}>Mestre</option></select></label></div><small>Visão: <b>${el.blocksVision?"bloqueia":"permite"}</b> • Movimento: <b>${el.blocksMovement?"bloqueia":"permite"}</b></small><button type="button" class="btn danger" id="microDeleteElement" style="width:100%;margin-top:6px">🗑️ Apagar elemento</button>`;
     $("microElementState")?.addEventListener("change",e=>setElementState(el.id,e.target.value));$("microElementLayer")?.addEventListener("change",e=>setElementLayer(el.id,e.target.value));$("microDeleteElement")?.addEventListener("click",deleteSelected)
   }
 
