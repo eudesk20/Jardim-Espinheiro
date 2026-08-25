@@ -65,13 +65,13 @@
       }
       const sceneCandidates=[...tools.querySelectorAll(".panel,section,div")].filter(el=>el!==root&&!el.closest(".micro-master-section")&&/construir cen[aá]rio/i.test(panelTitle(el)));
       sceneCandidates.forEach(el=>move(el,bodyOf("microMasterSceneSection")));
-      if(!$("microMasterRestCard")){const card=document.createElement("div");card.id="microMasterRestCard";card.className="micro-rest-card";bodyOf("microMasterRestSection").appendChild(card)}
-      renderRest();
+      let createdRest=false;if(!$("microMasterRestCard")){const card=document.createElement("div");card.id="microMasterRestCard";card.className="micro-rest-card";bodyOf("microMasterRestSection").appendChild(card);createdRest=true}
+      if(createdRest)setTimeout(renderRest,0);
     }finally{organizing=false}
   }
 
   function selectedToken(){const id=document.querySelector("#tokenLayer .token.selected")?.dataset?.token;return players.find(p=>String(p.id)===String(id))||null}
-  function slotRows(slots){const out=[];for(let l=1;l<=9;l++){const row=slots?.[l]??slots?.[String(l)]??(Array.isArray(slots)?slots[l-1]:null);if(!row)continue;out.push({level:l,max:+(row.max??row.total??0)||0,used:+(row.used??0)||0})}return out}
+  function slotRows(slots){const out=[];for(let l=1;l<=9;l++){const row=Array.isArray(slots)?(slots[l]??slots[l-1]):(slots?.[l]??slots?.[String(l)]);if(!row)continue;out.push({level:l,max:+(row.max??row.total??0)||0,used:+(row.used??0)||0})}return out}
   async function getCharacter(token){if(!token?.linked||!token.characterId||String(token.characterId).startsWith("local-"))return null;const {data,error}=await sb.from("characters").select("id,name,data").eq("id",token.characterId).maybeSingle();if(error)return null;return data}
 
   async function renderRest(){
@@ -89,7 +89,7 @@
   async function recover(characterId,kind,level,amount){
     const status=$("microRestStatus");if(status)status.textContent="Aplicando recuperação…";
     const args={target_character:characterId,rest_kind:kind,slot_level:level,amount};
-    const {data,error}=await sb.rpc("master_recover_spell_slot",args);
+    const {error}=await sb.rpc("master_recover_spell_slot",args);
     if(error){if(status)status.textContent=`⚠️ ${error.message}`;return}
     if(status)status.textContent=kind==="long"?"✅ Descanso Longo aplicado aos Slots de 1º–6º.":`✅ 1 Slot de ${level}º Círculo recuperado durante o DC.`;
     try{await globalThis.MICROCOSMOS_TABLE_COMBAT_DATA?.refresh?.();await globalThis.MICROCOSMOS_MESA_SHARED?.reloadTokens?.()}catch(_e){}
