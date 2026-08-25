@@ -10,15 +10,20 @@
 
   const wait=ms=>new Promise(r=>setTimeout(r,ms));
   const spellLevel=s=>+(s?.lvl??s?.level??s?.circle??0)||0;
-  function normalizeSpell(s){
+  const abilityMod=(caster)=>{const key=caster?.spellAbility||"INT",score=+caster?.stats?.[key]||10;return Math.floor((score-10)/2)};
+  function resolveCasterMod(expr,caster){
+    const raw=String(expr||"");if(!raw)return raw;const m=abilityMod(caster),rep=m>=0?`+${m}`:`${m}`;
+    return raw.replace(/\+?\s*Mod\.?\s*(?:de\s*)?Conjura(?:ção|cao)/gi,rep).replace(/\s+/g,"")
+  }
+  function normalizeSpell(s,caster){
     if(!s)return s;
     const healing=s.healing||((s.kind==="cura"||s.kind==="healing")?s.damage:"")||"";
     const damage=(s.kind==="cura"||s.kind==="healing")?"":(s.damage||"");
-    s.lvl=spellLevel(s);s.level=s.lvl;s.healing=healing;s.damage=damage;
-    if(healing)s.kind="cura";
+    s.lvl=spellLevel(s);s.level=s.lvl;s.healing=resolveCasterMod(healing,caster);s.damage=resolveCasterMod(damage,caster);
+    if(s.healing)s.kind="cura";
     return s
   }
-  function normalizeCaster(caster){for(const s of caster?.spells||[])normalizeSpell(s);return caster}
+  function normalizeCaster(caster){for(const s of caster?.spells||[])normalizeSpell(s,caster);return caster}
 
   let tries=0,executor=null;
   while(!(executor=globalThis.MICROCOSMOS_COMBAT_EXECUTOR)&&tries++<120)await wait(100);
