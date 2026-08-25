@@ -9,6 +9,7 @@
   const PROJECT_URL="https://evyhhlbvhspiuwouivbb.supabase.co";
   const PUBLISHABLE_KEY="sb_publishable_mf7PV03HfaJw_YkUhX34NA_dAGFbyp6";
   const SHEET_KEY="JE_INTEGRATED_123";
+  const SESSION_KEY="microcosmos-main";
   const players=globalThis.MICROCOSMOS_TABLE_PLAYERS,api=globalThis.MICROCOSMOS_TABLE_API;
   if(!Array.isArray(players)||!api)return;
   const $=id=>document.getElementById(id),tokenLayer=$("tokenLayer"),rollLog=$("rollLog"),stage=$("stage");
@@ -58,16 +59,21 @@
 
   async function hpEffect(caster,target,amount,effect,item,details){
     if(amount<=0){log(`${details}<br><small>Nenhuma alteração de PV.</small>`,caster.color);return}
-    if(supabase&&session&&target.linked&&target.userId){
-      const payload={effect,amount,spell_name:item.name||"Ação",source_name:item.name||"Ação",caster_name:caster.name||"Personagem",target_name:target.name||"Alvo",damage_type:item.damageType||null,caster_character_id:caster.characterId||null,target_character_id:target.characterId||null,source:"campaign_table",automation:{details_text:String(details||"").replace(/<[^>]*>/g," ").replace(/\s+/g," ").trim(),range_checked:true}};
-      const {data,error}=await supabase.rpc("request_interaction",{target:target.userId,interaction_kind:"combat_effect",interaction_payload:payload});
+    const characterTarget=!!(target?.linked&&target?.userId),tokenTarget=!characterTarget&&!!target?.id;
+    if(supabase&&session&&(characterTarget||tokenTarget)){
+      const payload={effect,amount,spell_name:item.name||"Ação",source_name:item.name||"Ação",caster_name:caster.name||"Personagem",target_name:target.name||"Alvo",damage_type:item.damageType||null,caster_character_id:caster.characterId||null,target_character_id:characterTarget?(target.characterId||null):null,target_scope:tokenTarget?"mesa_token":"character",target_token_id:tokenTarget?String(target.id):null,session_key:tokenTarget?SESSION_KEY:null,source:"campaign_table",automation:{details_text:String(details||"").replace(/<[^>]*>/g," ").replace(/\s+/g," ").trim(),range_checked:true}};
+      const rpcTarget=characterTarget?target.userId:session.user.id;
+      const {data,error}=await supabase.rpc("request_interaction",{target:rpcTarget,interaction_kind:"combat_effect",interaction_payload:payload});
       if(error){log(`${details}<br>⚠️ Não foi possível enviar a alteração de PV: ${esc(error.message)}`,caster.color);return}
       if(profile?.role==="master"){
         const {error:reviewError}=await supabase.rpc("review_interaction",{interaction_id:data,approve:true,note:"Aplicado automaticamente por ação do Mestre"});
         if(reviewError){log(`${details}<br>⚠️ A ação foi criada, mas não pôde ser aplicada automaticamente: ${esc(reviewError.message)}`,caster.color);return}
-        log(`${details}<br>${effect==="healing"?"💚 Cura":"💥 Dano"} de <b>${amount} PV</b> aplicado diretamente pelo Mestre.`,caster.color);await globalThis.MICROCOSMOS_TABLE_COMBAT_DATA?.refresh?.();await globalThis.MICROCOSMOS_MESA_SHARED?.flushToken?.(target.id,true);return data
+        log(`${details}<br>${effect==="healing"?"💚 Cura":"💥 Dano"} de <b>${amount} PV</b> aplicado diretamente pelo Mestre.`,caster.color);
+        if(tokenTarget)await globalThis.MICROCOSMOS_MESA_SHARED?.reloadTokens?.();
+        else {await globalThis.MICROCOSMOS_TABLE_COMBAT_DATA?.refresh?.();await globalThis.MICROCOSMOS_MESA_SHARED?.flushToken?.(target.id,true)}
+        return data
       }
-      log(`${details}<br>👑 Alteração de <b>${amount} PV</b> enviada para aprovação do Mestre.`,caster.color);return data
+      log(`${details}<br>👑 Alteração de <b>${amount} PV</b> enviada para aprovação do Mestre. O PV só muda depois da aprovação.`,caster.color);return data
     }
     const before=+target.hp||0;target.hp=effect==="healing"?Math.min(+target.hpMax||before,before+amount):Math.max(0,before-amount);api.renderPlayers();api.renderTokens();api.selectToken(target.id);await globalThis.MICROCOSMOS_MESA_SHARED?.flushToken?.(target.id,true);log(`${details}<br>${effect==="healing"?"💚":"💥"} PV: <b>${before} → ${target.hp}</b>`,caster.color)
   }
