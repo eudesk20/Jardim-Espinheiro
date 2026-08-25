@@ -44,7 +44,7 @@
       remoteMeta.clear();
       const next=[];
       for(const row of rows){
-        remoteMeta.set(row.token_id,{owner_user_id:row.owner_user_id,layer:row.layer});
+        remoteMeta.set(row.token_id,{owner_user_id:row.owner_user_id,layer:row.layer,data:clone(row.data||{})});
         const p={...(row.data||{}),id:row.token_id};
         if(row.owner_user_id&&!p.userId)p.userId=row.owner_user_id;
         if(row.layer&&!p.visibilityLayer)p.visibilityLayer=row.layer;
@@ -56,12 +56,17 @@
       globalThis.MICROCOSMOS_INITIATIVE?.refresh?.();
     }finally{setTimeout(()=>applyingRemote=false,0)}
   }
-  async function uploadToken(p){
+  async function uploadToken(p,{includeHp=false}={}){
     const owner=ownerId(p),layer=tokenLayer(p);
     if(!isMaster&&owner!==session.user.id)return;
-    const {error}=await supabase.from("mesa_tokens").upsert({session_key:SESSION_KEY,token_id:p.id,owner_user_id:owner,layer,data:tokenPayload(p),updated_by:session.user.id,updated_at:new Date().toISOString()},{onConflict:"session_key,token_id"});
-    if(error)console.warn("MICROCOSMOS Mesa: falha ao sincronizar token",p.id,error)
+    const data=tokenPayload(p),remote=remoteMeta.get(p.id)?.data;
+    // Movimentar/renderizar um token nunca pode reenviar um PV antigo. Somente
+    // rotinas que alteram PV usam includeHp=true explicitamente.
+    if(!includeHp&&remote){if(Number.isFinite(+remote.hp))data.hp=+remote.hp;if(Number.isFinite(+remote.hpMax))data.hpMax=+remote.hpMax}
+    const {error}=await supabase.from("mesa_tokens").upsert({session_key:SESSION_KEY,token_id:p.id,owner_user_id:owner,layer,data,updated_by:session.user.id,updated_at:new Date().toISOString()},{onConflict:"session_key,token_id"});
+    if(error)console.warn("MICROCOSMOS Mesa: falha ao sincronizar token",p.id,error);else remoteMeta.set(p.id,{owner_user_id:owner,layer,data:clone(data)})
   }
+  async function flushToken(id,includeHp=false){if(!session)return false;const p=players.find(x=>String(x.id)===String(id));if(!p)return false;await uploadToken(p,{includeHp});return true}
   async function flushTokens(){
     if(applyingRemote||!session)return;
     const allowed=players.filter(p=>isMaster||ownerId(p)===session.user.id);
@@ -175,5 +180,5 @@
     .on("postgres_changes",{event:"*",schema:"public",table:"mesa_session_state",filter:`session_key=eq.${SESSION_KEY}`},async payload=>{if(payload.new?.data)await applySessionState(payload.new.data)})
     .subscribe();
 
-  globalThis.MICROCOSMOS_MESA_SHARED={isMaster:()=>isMaster,flushTokens,flushScene,reloadTokens:async()=>applyRemoteTokens(await readRemoteTokens()),reloadScene:async()=>applyRemoteScene(await readRemoteScene()),reloadState:async()=>applySessionState(await getSessionState()),channel};
+  globalThis.MICROCOSMOS_MESA_SHARED={isMaster:()=>isMaster,flushToken,flushTokens,flushScene,reloadTokens:async()=>applyRemoteTokens(await readRemoteTokens()),reloadScene:async()=>applyRemoteScene(await readRemoteScene()),reloadState:async()=>applySessionState(await getSessionState()),channel};
 })();

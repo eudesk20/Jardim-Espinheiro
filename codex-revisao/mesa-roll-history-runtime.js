@@ -46,12 +46,13 @@
 
   function prependRow(r){
     if(!r?.id||seenIds.has(r.id))return;seenIds.add(r.id);
+    if(r.client_nonce&&localNonces.has(r.client_nonce)){rollLog.querySelector(`[data-micro-roll-nonce="${CSS.escape(String(r.client_nonce))}"]`)?.remove();localNonces.delete(r.client_nonce)}
     const wrap=document.createElement("div");wrap.innerHTML=rowHtml(r);const node=wrap.firstElementChild;if(!node)return;
     node.dataset.remoteRoll="1";rollLog.prepend(node)
   }
 
   async function loadRecent(){
-    const {data,error}=await supabase.from("mesa_rolls").select("id,actor_user_id,actor_name,actor_role,token_name,message,hidden,created_at").eq("session_key",SESSION_KEY).order("created_at",{ascending:false}).limit(100);
+    const {data,error}=await supabase.from("mesa_rolls").select("id,actor_user_id,actor_name,actor_role,token_name,message,hidden,client_nonce,created_at").eq("session_key",SESSION_KEY).order("created_at",{ascending:false}).limit(100);
     if(error){console.warn("MICROCOSMOS: falha ao carregar rolagens",error);return}
     loadingRemote=true;
     try{
@@ -60,9 +61,9 @@
     }finally{loadingRemote=false}
   }
 
-  async function publishMessage(message){
+  async function publishMessage(message,entry){
     if(!session||!profile||!message?.trim())return;
-    const n=nonce();localNonces.add(n);const token=selectedToken();
+    const n=nonce();localNonces.add(n);if(entry)entry.dataset.microRollNonce=n;const token=selectedToken();
     const payload={session_key:SESSION_KEY,actor_user_id:session.user.id,actor_name:actorName(),actor_role:profile.role==="master"?"master":"player",token_name:token?.name||null,message:message.trim().slice(0,2000),hidden:profile.role==="master"&&hiddenMode,client_nonce:n};
     const {error}=await supabase.from("mesa_rolls").insert(payload);if(error)console.warn("MICROCOSMOS: falha ao publicar rolagem",error)
   }
@@ -79,7 +80,7 @@
         const text=(entry.textContent||"").trim();if(!text||/mesa está pronta para o teste/i.test(text))continue;
         entry.dataset.microPublished="1";
         if(profile?.role==="master"&&hiddenMode){entry.classList.add("micro-hidden-roll");const badge=document.createElement("span");badge.className="micro-roll-hidden-badge";badge.textContent="SÓ MESTRE";entry.prepend(badge)}
-        publishMessage(text)
+        publishMessage(text,entry)
       }
     }
   });

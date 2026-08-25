@@ -64,11 +64,11 @@
       if(profile?.role==="master"){
         const {error:reviewError}=await supabase.rpc("review_interaction",{interaction_id:data,approve:true,note:"Aplicado automaticamente por ação do Mestre"});
         if(reviewError){log(`${details}<br>⚠️ A ação foi criada, mas não pôde ser aplicada automaticamente: ${esc(reviewError.message)}`,caster.color);return}
-        log(`${details}<br>${effect==="healing"?"💚 Cura":"💥 Dano"} de <b>${amount} PV</b> aplicado diretamente pelo Mestre.`,caster.color);await globalThis.MICROCOSMOS_TABLE_COMBAT_DATA?.refresh?.();return data
+        log(`${details}<br>${effect==="healing"?"💚 Cura":"💥 Dano"} de <b>${amount} PV</b> aplicado diretamente pelo Mestre.`,caster.color);await globalThis.MICROCOSMOS_TABLE_COMBAT_DATA?.refresh?.();await globalThis.MICROCOSMOS_MESA_SHARED?.flushToken?.(target.id,true);return data
       }
       log(`${details}<br>👑 Alteração de <b>${amount} PV</b> enviada para aprovação do Mestre.`,caster.color);return data
     }
-    const before=+target.hp||0;target.hp=effect==="healing"?Math.min(+target.hpMax||before,before+amount):Math.max(0,before-amount);api.renderPlayers();api.renderTokens();api.selectToken(target.id);await globalThis.MICROCOSMOS_MESA_SHARED?.flushTokens?.();log(`${details}<br>${effect==="healing"?"💚":"💥"} PV: <b>${before} → ${target.hp}</b>`,caster.color)
+    const before=+target.hp||0;target.hp=effect==="healing"?Math.min(+target.hpMax||before,before+amount):Math.max(0,before-amount);api.renderPlayers();api.renderTokens();api.selectToken(target.id);await globalThis.MICROCOSMOS_MESA_SHARED?.flushToken?.(target.id,true);log(`${details}<br>${effect==="healing"?"💚":"💥"} PV: <b>${before} → ${target.hp}</b>`,caster.color)
   }
 
   function pullToward(caster,target,meters){const rank=targetSizeRank(target.size);if(rank>3)return false;const s=+$("gridSize")?.value||70,maxPx=meters/gridMeters()*s,dx=caster.x-target.x,dy=caster.y-target.y,d=Math.hypot(dx,dy);if(d<1)return false;const move=Math.min(maxPx,d);target.x+=dx/d*move;target.y+=dy/d*move;api.renderTokens();return true}
