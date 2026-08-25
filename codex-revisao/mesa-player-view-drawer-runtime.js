@@ -79,9 +79,10 @@
     drawer.id="microPlayerGridDrawer";
     drawer.className="micro-player-grid-drawer";
     drawer.innerHTML='<button type="button" id="microPlayerGridToggle" class="micro-player-grid-toggle" aria-expanded="false" aria-label="Abrir controles do Grid">⌄</button><div id="microPlayerGridControls" class="micro-player-grid-controls"></div>';
+    for(const type of ["pointerdown","pointermove","pointerup","pointercancel","wheel"])drawer.addEventListener(type,e=>e.stopPropagation(),{passive:type!=="wheel"});
     viewport.appendChild(drawer);
     const toggle=$("microPlayerGridToggle");
-    toggle.addEventListener("click",()=>setOpen(!open));
+    toggle.addEventListener("click",e=>{e.preventDefault();e.stopPropagation();setOpen(!open)});
     return drawer
   }
   function setOpen(value){
