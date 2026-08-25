@@ -61,9 +61,14 @@
       const payload={effect,amount,spell_name:item.name||"Ação",source_name:item.name||"Ação",caster_name:caster.name||"Personagem",target_name:target.name||"Alvo",damage_type:item.damageType||null,caster_character_id:caster.characterId||null,target_character_id:target.characterId||null,source:"campaign_table",automation:{details_text:String(details||"").replace(/<[^>]*>/g," ").replace(/\s+/g," ").trim(),range_checked:true}};
       const {data,error}=await supabase.rpc("request_interaction",{target:target.userId,interaction_kind:"combat_effect",interaction_payload:payload});
       if(error){log(`${details}<br>⚠️ Não foi possível enviar a alteração de PV: ${esc(error.message)}`,caster.color);return}
+      if(profile?.role==="master"){
+        const {error:reviewError}=await supabase.rpc("review_interaction",{interaction_id:data,approve:true,note:"Aplicado automaticamente por ação do Mestre"});
+        if(reviewError){log(`${details}<br>⚠️ A ação foi criada, mas não pôde ser aplicada automaticamente: ${esc(reviewError.message)}`,caster.color);return}
+        log(`${details}<br>${effect==="healing"?"💚 Cura":"💥 Dano"} de <b>${amount} PV</b> aplicado diretamente pelo Mestre.`,caster.color);await globalThis.MICROCOSMOS_TABLE_COMBAT_DATA?.refresh?.();return data
+      }
       log(`${details}<br>👑 Alteração de <b>${amount} PV</b> enviada para aprovação do Mestre.`,caster.color);return data
     }
-    const before=+target.hp||0;target.hp=effect==="healing"?Math.min(+target.hpMax||before,before+amount):Math.max(0,before-amount);api.renderPlayers();api.renderTokens();api.selectToken(target.id);log(`${details}<br>${effect==="healing"?"💚":"💥"} PV: <b>${before} → ${target.hp}</b>`,caster.color)
+    const before=+target.hp||0;target.hp=effect==="healing"?Math.min(+target.hpMax||before,before+amount):Math.max(0,before-amount);api.renderPlayers();api.renderTokens();api.selectToken(target.id);await globalThis.MICROCOSMOS_MESA_SHARED?.flushTokens?.();log(`${details}<br>${effect==="healing"?"💚":"💥"} PV: <b>${before} → ${target.hp}</b>`,caster.color)
   }
 
   function pullToward(caster,target,meters){const rank=targetSizeRank(target.size);if(rank>3)return false;const s=+$("gridSize")?.value||70,maxPx=meters/gridMeters()*s,dx=caster.x-target.x,dy=caster.y-target.y,d=Math.hypot(dx,dy);if(d<1)return false;const move=Math.min(maxPx,d);target.x+=dx/d*move;target.y+=dy/d*move;api.renderTokens();return true}
