@@ -11,9 +11,9 @@
     clearTimeout(timer);
     timer=setTimeout(()=>{
       const btn=document.getElementById("microRefreshLinked");
-      if(btn){lastRun=Date.now();btn.click();return}
+      if(btn){lastRun=Date.now();btn.click();setTimeout(()=>globalThis.MICROCOSMOS_TABLE_COMBAT_DATA?.refresh?.(),450);return}
       if(typeof globalThis.MICROCOSMOS_REFRESH_LINKED_TOKENS==="function"){
-        lastRun=Date.now();globalThis.MICROCOSMOS_REFRESH_LINKED_TOKENS()
+        lastRun=Date.now();Promise.resolve(globalThis.MICROCOSMOS_REFRESH_LINKED_TOKENS()).finally(()=>globalThis.MICROCOSMOS_TABLE_COMBAT_DATA?.refresh?.())
       }
     },220)
   }

@@ -82,7 +82,7 @@
     if(!supabase)return;const {data}=await supabase.from("characters").select("id,user_id,data");characterMods=new Map();for(const row of data||[]){const m=mod(row.data?.stats?.DES);characterMods.set(row.id,m);if(row.user_id)characterMods.set(`user:${row.user_id}`,m)}
   }
   async function loadState(){
-    if(!supabase||loading)return;loading=true;
+    if(!supabase||!session||loading)return;loading=true;
     try{
       const [{data:init},{data:state}]=await Promise.all([
         supabase.from("mesa_initiative").select("token_id,token_name,owner_user_id,initiative,natural_roll,modifier,updated_at").eq("session_key",SESSION_KEY),
@@ -93,7 +93,7 @@
   }
 
   async function saveRoll(p,natural,total,modifier){
-    if(!supabase||!session)return;
+    if(!supabase||!session){rows.set(p.id,{token_id:p.id,token_name:p.name||"Token",owner_user_id:p.userId||null,initiative:total,natural_roll:natural,modifier,updated_at:new Date().toISOString()});schedule();return true}
     const payload={session_key:SESSION_KEY,token_id:p.id,token_name:p.name||"Token",owner_user_id:p.userId||null,initiative:total,natural_roll:natural,modifier,updated_by:session.user.id,updated_at:new Date().toISOString()};
     const {error}=await supabase.from("mesa_initiative").upsert(payload,{onConflict:"session_key,token_id"});if(error){console.warn("MICROCOSMOS iniciativa:",error);return false}return true
   }
@@ -120,13 +120,12 @@
   }
 
   try{
-    const {createClient}=await import("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm");supabase=createClient(PROJECT_URL,PUBLISHABLE_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}});const {data:{session:s}}=await supabase.auth.getSession();session=s;if(!session){schedule();return}
-    const {data:p}=await supabase.from("profiles").select("role,approved").eq("id",session.user.id).maybeSingle();profile=p;isMaster=profile?.role==="master"&&profile?.approved!==false;await loadCharacters();await loadState();
-    supabase.channel(`mesa-init-${SESSION_KEY}`).on("postgres_changes",{event:"*",schema:"public",table:"mesa_initiative",filter:`session_key=eq.${SESSION_KEY}`},()=>loadState()).on("postgres_changes",{event:"*",schema:"public",table:"mesa_combat_state",filter:`session_key=eq.${SESSION_KEY}`},()=>loadState()).subscribe();
+    const {createClient}=await import("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm");supabase=createClient(PROJECT_URL,PUBLISHABLE_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}});const {data:{session:s}}=await supabase.auth.getSession();session=s;
+    if(session){const {data:p}=await supabase.from("profiles").select("role,approved").eq("id",session.user.id).maybeSingle();profile=p;isMaster=profile?.role==="master"&&profile?.approved!==false;await loadCharacters();await loadState();supabase.channel(`mesa-init-${SESSION_KEY}`).on("postgres_changes",{event:"*",schema:"public",table:"mesa_initiative",filter:`session_key=eq.${SESSION_KEY}`},()=>loadState()).on("postgres_changes",{event:"*",schema:"public",table:"mesa_combat_state",filter:`session_key=eq.${SESSION_KEY}`},()=>loadState()).subscribe()}else schedule();
   }catch(e){console.warn("MICROCOSMOS: iniciativa online indisponível",e);schedule()}
 
   if(tokenLayer){const obs=new MutationObserver(()=>{loadCharacters().then(schedule)});obs.observe(tokenLayer,{childList:true,subtree:false})}
   const oldRender=api.renderPlayers;if(typeof oldRender==="function"&&!oldRender.__microInitWrapped){api.renderPlayers=function(){const out=oldRender.apply(this,arguments);schedule();return out};api.renderPlayers.__microInitWrapped=true}
   setInterval(schedule,1200);
-  globalThis.MICROCOSMOS_INITIATIVE={rollOne,rollAll,nextTurn,clearCombat,reload:loadState,get order(){return orderedPlayers()},get combat(){return combat}};
+  globalThis.MICROCOSMOS_INITIATIVE={rollOne,rollAll,nextTurn,clearCombat,reload:loadState,hasRolled:id=>Number.isFinite(rows.get(id)?.initiative),valueFor:id=>rows.get(id)?.initiative,get order(){return orderedPlayers()},get combat(){return combat}};
 })();
