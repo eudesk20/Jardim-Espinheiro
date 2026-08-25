@@ -14,10 +14,10 @@
   let open=false,queued=false;
 
   function isPlayer(){
-    return document.documentElement.dataset.microcosmosRole==="player"||document.body.classList.contains("micro-online-player")
+    return document.documentElement.dataset.mesaRole==="player"||document.documentElement.dataset.microcosmosRole==="player"||document.body.classList.contains("micro-mesa-player")||document.body.classList.contains("micro-online-player")
   }
   function isMaster(){
-    return document.documentElement.dataset.microcosmosRole==="master"||document.body.classList.contains("micro-online-master")
+    return document.documentElement.dataset.mesaRole==="master"||document.documentElement.dataset.microcosmosRole==="master"||document.body.classList.contains("micro-mesa-master")||document.body.classList.contains("micro-online-master")
   }
 
   function ensureCss(){
@@ -110,15 +110,14 @@
 
     const ficha=sheetButton(),minus=zoomOut(),pct=zoomValue(),plus=zoomIn(),snapBtn=snap();
     if(ficha){
-      ficha.style.display="";
+      ficha.style.removeProperty("display");
       ficha.textContent="🧙 Ficha";
       ficha.title="Adicionar ou abrir o personagem da própria ficha";
       move(ficha,controls,"micro-player-sheet-btn")
     }
     move(minus,controls);move(pct,controls);move(plus,controls);move(snapBtn,controls);
 
-    // Se algum runtime posterior recriar controles, a gaveta os recolhe novamente.
-    [...controls.children].forEach(el=>el.style.display="");
+    [...controls.children].forEach(el=>el.style.removeProperty("display"));
   }
 
   function schedule(){if(queued)return;queued=true;requestAnimationFrame(()=>{queued=false;apply()})}
