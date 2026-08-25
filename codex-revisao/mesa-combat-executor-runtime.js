@@ -58,7 +58,8 @@
   async function hpEffect(caster,target,amount,effect,item,details){
     if(amount<=0){log(`${details}<br><small>Nenhuma alteração de PV.</small>`,caster.color);return}
     if(supabase&&session&&target.linked&&target.userId){
-      const {data,error}=await supabase.rpc("request_interaction",{p_target_id:target.userId,p_kind:"combat_effect",p_payload:{effect,amount,source_name:item.name||"Ação",damage_type:item.damageType||null,caster_character_id:caster.characterId||null,target_character_id:target.characterId||null,automation:{...details,range_checked:true}}});
+      const payload={effect,amount,spell_name:item.name||"Ação",source_name:item.name||"Ação",caster_name:caster.name||"Personagem",target_name:target.name||"Alvo",damage_type:item.damageType||null,caster_character_id:caster.characterId||null,target_character_id:target.characterId||null,source:"campaign_table",automation:{details_text:String(details||"").replace(/<[^>]*>/g," ").replace(/\s+/g," ").trim(),range_checked:true}};
+      const {data,error}=await supabase.rpc("request_interaction",{target:target.userId,interaction_kind:"combat_effect",interaction_payload:payload});
       if(error){log(`${details}<br>⚠️ Não foi possível enviar a alteração de PV: ${esc(error.message)}`,caster.color);return}
       log(`${details}<br>👑 Alteração de <b>${amount} PV</b> enviada para aprovação do Mestre.`,caster.color);return data
     }
