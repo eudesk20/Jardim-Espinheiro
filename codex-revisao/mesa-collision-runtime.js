@@ -67,12 +67,10 @@
     for(const el of blockers()){
       const c={x:+el.x1||0,y:+el.y1||0},d={x:+el.x2||0,y:+el.y2||0};
       const startDist=pointSegDist(from.x,from.y,c.x,c.y,d.x,d.y),endDist=pointSegDist(to.x,to.y,c.x,c.y,d.x,d.y),swept=segDistance(pathA,pathB,c,d);
-      if(swept>radius)returnCheck: void 0;
-      if(swept<=radius){
-        // Se o token já nasceu/está encostado numa barreira, permitimos afastar-se dela.
-        if(startDist<=radius+1&&endDist>startDist+0.5)continue;
-        return{blocked:true,element:el,radius,startDist,endDist,swept}
-      }
+      if(swept>radius)continue;
+      const sideStart=orient(c.x,c.y,d.x,d.y,from.x,from.y),sideEnd=orient(c.x,c.y,d.x,d.y,to.x,to.y),sameSide=(sideStart===0||sideEnd===0)?false:Math.sign(sideStart)===Math.sign(sideEnd);
+      if(startDist<=radius+1&&endDist>startDist+0.5&&sameSide)continue;
+      return{blocked:true,element:el,radius,startDist,endDist,swept}
     }
     return{blocked:false}
   }
@@ -97,14 +95,15 @@
     if(targeting())return;
     const el=e.target?.closest?.("#tokenLayer [data-token]");if(!el)return;
     const p=players.find(x=>x.id===el.dataset.token);if(!p)return;
-    drag={pointer:e.pointerId,p,id:p.id,last:{x:+p.x||0,y:+p.y||0}};
+    const pointer=stagePoint(e),start={x:+p.x||0,y:+p.y||0};
+    drag={pointer:e.pointerId,p,id:p.id,last:start,offset:{x:pointer.x-start.x,y:pointer.y-start.y}};
     e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();
     try{api?.selectToken?.(p.id)}catch(_e){}
   },true);
   document.addEventListener("pointermove",e=>{
     if(!drag||drag.pointer!==e.pointerId)return;
     e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();
-    const raw=stagePoint(e),candidate=candidatePoint(drag.p,raw),resolved=resolveMove(drag.p,drag.last,candidate);
+    const pointer=stagePoint(e),raw={x:pointer.x-drag.offset.x,y:pointer.y-drag.offset.y},candidate=candidatePoint(drag.p,raw),resolved=resolveMove(drag.p,drag.last,candidate);
     applyPosition(drag.p,resolved.point);
     drag.last={x:resolved.point.x,y:resolved.point.y};
     if(resolved.blocker)notifyBlocked(resolved.blocker)
@@ -117,5 +116,5 @@
   },true);
   document.addEventListener("pointercancel",e=>{if(drag?.pointer===e.pointerId)drag=null},true);
 
-  globalThis.MICROCOSMOS_COLLISION={collisionRadius,blocked,resolveMove,refresh:()=>{},getBlockers:blockers};
+  globalThis.MICROCOSMOS_COLLISION={collisionRadius,blocked,resolveMove,getBlockers:blockers};
 })();
