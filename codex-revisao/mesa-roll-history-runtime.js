@@ -22,6 +22,15 @@
   function actorName(){return profile?.display_name||profile?.username||session?.user?.email?.split("@")[0]||"Jogador"}
   function nonce(){return `${Date.now()}-${crypto.randomUUID?.()||Math.random().toString(36).slice(2)}`}
   function timeText(ts){try{return new Date(ts).toLocaleTimeString("pt-BR",{hour:"2-digit",minute:"2-digit",second:"2-digit"})}catch{return""}}
+  function publicRollText(value){
+    let text=String(value??"").trim();if(!text)return"";
+    // Aprovação é fluxo interno da Mesa, não uma rolagem. Mantemos no painel
+    // próprio do Mestre e retiramos do histórico público.
+    if(/^(?:👑\s*)?Mestre\s+(?:aprovou|rejeitou)\s+a alteração de PV/i.test(text)||/^↩\s*O Mestre corrigiu uma recusa/i.test(text)||/^✅\s*O Mestre aprovou/i.test(text)||/^✅\s*Efeito aplicado diretamente pelo Mestre/i.test(text))return"";
+    text=text.replace(/👑\s*Alteração de\s+\d+\s*PV\s+enviada para aprovação do Mestre\.\s*O PV só muda depois da aprovação\.?/gi,"");
+    text=text.replace(/👑\s*Alteração de\s+\d+\s*PV\s+enviada para aprovação do Mestre\.?/gi,"");
+    return text.trim()
+  }
 
   function ensureStyle(){
     if(document.getElementById("microMesaRollStyle"))return;
@@ -40,14 +49,16 @@
   }
 
   function rowHtml(r){
+    const message=publicRollText(r?.message);if(!message)return"";
     const hidden=r.hidden&&profile?.role==="master";
-    return `<div class="log-entry ${hidden?"micro-hidden-roll":""}" data-roll-id="${esc(r.id)}"><span class="micro-roll-author">${esc(r.actor_name||"Jogador")}</span>${r.token_name?` • ${esc(r.token_name)}`:""}<span class="micro-roll-time">${esc(timeText(r.created_at))}</span>${hidden?'<span class="micro-roll-hidden-badge">SÓ MESTRE</span>':""}<br>${esc(r.message)}</div>`
+    return `<div class="log-entry ${hidden?"micro-hidden-roll":""}" data-roll-id="${esc(r.id)}"><span class="micro-roll-author">${esc(r.actor_name||"Jogador")}</span>${r.token_name?` • ${esc(r.token_name)}`:""}<span class="micro-roll-time">${esc(timeText(r.created_at))}</span>${hidden?'<span class="micro-roll-hidden-badge">SÓ MESTRE</span>':""}<br>${esc(message)}</div>`
   }
 
   function prependRow(r){
     if(!r?.id||seenIds.has(r.id))return;seenIds.add(r.id);
     if(r.client_nonce&&localNonces.has(r.client_nonce)){rollLog.querySelector(`[data-micro-roll-nonce="${CSS.escape(String(r.client_nonce))}"]`)?.remove();localNonces.delete(r.client_nonce)}
-    const wrap=document.createElement("div");wrap.innerHTML=rowHtml(r);const node=wrap.firstElementChild;if(!node)return;
+    const html=rowHtml(r);if(!html)return;
+    const wrap=document.createElement("div");wrap.innerHTML=html;const node=wrap.firstElementChild;if(!node)return;
     node.dataset.remoteRoll="1";rollLog.prepend(node)
   }
 
@@ -62,14 +73,15 @@
   }
 
   async function publishMessage(message,entry){
-    if(!session||!profile||!message?.trim())return;
+    message=publicRollText(message);if(!session||!profile||!message)return;
     const n=nonce();localNonces.add(n);if(entry)entry.dataset.microRollNonce=n;const token=selectedToken();
-    const payload={session_key:SESSION_KEY,actor_user_id:session.user.id,actor_name:actorName(),actor_role:profile.role==="master"?"master":"player",token_name:token?.name||null,message:message.trim().slice(0,2000),hidden:profile.role==="master"&&hiddenMode,client_nonce:n};
+    const payload={session_key:SESSION_KEY,actor_user_id:session.user.id,actor_name:actorName(),actor_role:profile.role==="master"?"master":"player",token_name:token?.name||null,message:message.slice(0,2000),hidden:profile.role==="master"&&hiddenMode,client_nonce:n};
     const {error}=await supabase.from("mesa_rolls").insert(payload);if(error)console.warn("MICROCOSMOS: falha ao publicar rolagem",error)
   }
 
   // Captura o histórico local já produzido pelas rotinas existentes da Mesa,
-  // inclusive ataques, danos, curas, Salvaguardas e magias.
+  // inclusive ataques, danos, curas, Salvaguardas e magias. Mensagens de
+  // aprovação/rejeição ficam somente no fluxo de Aprovações do Mestre.
   const observer=new MutationObserver(mutations=>{
     if(loadingRemote)return;
     for(const m of mutations)for(const node of m.addedNodes){
@@ -77,8 +89,9 @@
       const entries=node.matches?.(".log-entry")?[node]:[...node.querySelectorAll?.(".log-entry")||[]];
       for(const entry of entries){
         if(entry.dataset.remoteRoll==="1"||entry.dataset.microPublished==="1")continue;
-        const text=(entry.textContent||"").trim();if(!text||/mesa está pronta para o teste/i.test(text))continue;
+        const raw=(entry.textContent||"").trim(),text=publicRollText(raw);if(!raw||/mesa está pronta para o teste/i.test(raw))continue;
         entry.dataset.microPublished="1";
+        if(!text){entry.remove();continue}
         if(profile?.role==="master"&&hiddenMode){entry.classList.add("micro-hidden-roll");const badge=document.createElement("span");badge.className="micro-roll-hidden-badge";badge.textContent="SÓ MESTRE";entry.prepend(badge)}
         publishMessage(text,entry)
       }
