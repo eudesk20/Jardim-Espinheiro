@@ -2,6 +2,10 @@
    Durante um combate iniciado, apenas o token cujo turno está ativo pode
    executar ações pelo menu contextual. Os demais tokens continuam podendo ser
    consultados, mas os botões de execução ficam bloqueados até chegar a vez.
+
+   v1.1: atualização sem MutationObserver global. A versão anterior observava
+   atributos que ela mesma alterava (class/disabled), podendo criar um ciclo de
+   mutações quando o alvo de um ataque era selecionado e congelar a página.
 */
 (function(){
   if(globalThis.MICROCOSMOS_TURN_ACTION_LOCK)return;
@@ -9,7 +13,7 @@
 
   const $=id=>document.getElementById(id);
   const players=()=>Array.isArray(globalThis.MICROCOSMOS_TABLE_PLAYERS)?globalThis.MICROCOSMOS_TABLE_PLAYERS:[];
-  let wrappedExecutor=null,lastLocked=false,lastTokenId="";
+  let wrappedExecutor=null,lastLocked=null,lastTokenId="",lastMenuVisible=null;
 
   function combat(){return globalThis.MICROCOSMOS_INITIATIVE?.combat||{started:false,active_token_id:null,round:0}}
   function activeToken(){const c=combat();return players().find(p=>String(p.id)===String(c.active_token_id))||null}
@@ -32,19 +36,26 @@
       #microTurnActionLockNotice{margin:7px 0 1px;padding:7px 9px;border:1px solid #b18a48;border-radius:9px;background:#fff0bd;color:#654a1f;font-size:.72rem;font-weight:bold;text-align:center}
     `;document.head.appendChild(s)
   }
-  function updateMenu(){
+
+  function updateMenu(force=false){
     ensureCss();const menu=$("microTokenActionMenu");if(!menu)return;
-    const p=selectedToken(),c=combat(),locked=!!(c.started&&p&&!isTurnOf(p));
-    menu.classList.toggle("micro-turn-actions-locked",locked);
+    const visible=!menu.hidden,p=selectedToken(),c=combat(),locked=!!(visible&&c.started&&p&&!isTurnOf(p)),tokenId=String(p?.id||"");
+    if(!force&&locked===lastLocked&&tokenId===lastTokenId&&visible===lastMenuVisible)return;
+
+    if(menu.classList.contains("micro-turn-actions-locked")!==locked)menu.classList.toggle("micro-turn-actions-locked",locked);
     let notice=$("microTurnActionLockNotice");
     if(locked){
       if(!notice){notice=document.createElement("div");notice.id="microTurnActionLockNotice";const head=menu.querySelector(".micro-token-menu-head");head?.insertAdjacentElement("afterend",notice)}
-      if(notice)notice.textContent=message()
+      const text=message();if(notice&&notice.textContent!==text)notice.textContent=text
     }else notice?.remove();
+
+    const title=message();
     for(const b of menu.querySelectorAll(".micro-action-row button[data-action-row]")){
-      b.disabled=locked;b.setAttribute("aria-disabled",String(locked));if(locked)b.title=message();else if(b.title===message())b.removeAttribute("title")
+      if(b.disabled!==locked)b.disabled=locked;
+      const aria=String(locked);if(b.getAttribute("aria-disabled")!==aria)b.setAttribute("aria-disabled",aria);
+      if(locked){if(b.title!==title)b.title=title}else if(b.title&&/^⏳ Aguarde\./.test(b.title))b.removeAttribute("title")
     }
-    lastLocked=locked;lastTokenId=p?.id||""
+    lastLocked=locked;lastTokenId=tokenId;lastMenuVisible=visible
   }
 
   // Captura antes dos onclick do menu. Assim Item, Perícia e Salvaguarda também
@@ -52,7 +63,7 @@
   window.addEventListener("click",e=>{
     const button=e.target?.closest?.("#microTokenActionMenu [data-action-row]");if(!button)return;
     const p=selectedToken();if(isTurnOf(p))return;
-    e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();notify();updateMenu()
+    e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();notify();updateMenu(true)
   },true);
 
   // Proteção adicional para ataques/magias iniciados por qualquer outro caminho.
@@ -67,15 +78,16 @@
   // cancela o modo de alvo antes de a ação antiga poder ser concluída.
   window.addEventListener("pointerup",e=>{
     if(!document.body.classList.contains("micro-auto-target"))return;
-    const p=selectedToken();if(isTurnOf(p))return;
+    const c=combat(),caster=players().find(p=>String(p.id)===String(c.active_token_id));
+    if(caster&&isTurnOf(caster))return;
     e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();
     try{globalThis.MICROCOSMOS_COMBAT_EXECUTOR?.cancel?.()}catch(_e){}
-    notify();updateMenu()
+    notify();updateMenu(true)
   },true);
 
-  const observer=new MutationObserver(()=>{wrapExecutor();updateMenu()});
-  observer.observe(document.documentElement,{childList:true,subtree:true,attributes:true,attributeFilter:["class","aria-selected","disabled"]});
-  setInterval(()=>{wrapExecutor();const p=selectedToken(),locked=!!(combat().started&&p&&!isTurnOf(p));if(locked!==lastLocked||String(p?.id||"")!==String(lastTokenId))updateMenu()},250);
-  wrapExecutor();updateMenu();
-  globalThis.MICROCOSMOS_ACTION_TURN_LOCK={isTurnOf,refresh:updateMenu};
+  // Poll leve e idempotente. Evita observar DOM inteiro e, principalmente,
+  // evita reagir às próprias alterações de class/disabled.
+  setInterval(()=>{wrapExecutor();updateMenu(false)},200);
+  wrapExecutor();updateMenu(true);
+  globalThis.MICROCOSMOS_ACTION_TURN_LOCK={isTurnOf,refresh:()=>updateMenu(true)};
 })();
