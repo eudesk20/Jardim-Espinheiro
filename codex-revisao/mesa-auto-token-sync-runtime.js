@@ -10,6 +10,7 @@
   function refresh(){
     clearTimeout(timer);
     timer=setTimeout(()=>{
+      if(globalThis.MICROCOSMOS_TOKEN_DRAGGING){refresh();return}
       const btn=document.getElementById("microRefreshLinked");
       if(btn){lastRun=Date.now();btn.click();setTimeout(()=>globalThis.MICROCOSMOS_TABLE_COMBAT_DATA?.refresh?.(),450);return}
       if(typeof globalThis.MICROCOSMOS_REFRESH_LINKED_TOKENS==="function"){

@@ -96,6 +96,7 @@
     const el=e.target?.closest?.("#tokenLayer [data-token]");if(!el)return;
     const p=players.find(x=>x.id===el.dataset.token);if(!p)return;
     const pointer=stagePoint(e),start={x:+p.x||0,y:+p.y||0};
+    globalThis.MICROCOSMOS_TOKEN_DRAGGING=p.id;
     drag={pointer:e.pointerId,p,id:p.id,last:start,offset:{x:pointer.x-start.x,y:pointer.y-start.y}};
     e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();
     try{api?.selectToken?.(p.id)}catch(_e){}
@@ -113,8 +114,10 @@
     e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();
     const id=drag.id;drag=null;
     try{api?.renderTokens?.();api?.selectToken?.(id);globalThis.MICROCOSMOS_TOKEN_SIZE?.refresh?.()}catch(_e){}
+    if(globalThis.MICROCOSMOS_MESA_SHARED?.finishTokenDrag)globalThis.MICROCOSMOS_MESA_SHARED.finishTokenDrag(id);
+    else globalThis.MICROCOSMOS_TOKEN_DRAGGING=null;
   },true);
-  document.addEventListener("pointercancel",e=>{if(drag?.pointer===e.pointerId)drag=null},true);
+  document.addEventListener("pointercancel",e=>{if(drag?.pointer===e.pointerId){const id=drag.id;drag=null;if(globalThis.MICROCOSMOS_MESA_SHARED?.finishTokenDrag)globalThis.MICROCOSMOS_MESA_SHARED.finishTokenDrag(id);else globalThis.MICROCOSMOS_TOKEN_DRAGGING=null}},true);
 
   globalThis.MICROCOSMOS_COLLISION={collisionRadius,blocked,resolveMove,getBlockers:blockers};
 })();

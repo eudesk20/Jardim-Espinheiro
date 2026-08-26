@@ -118,15 +118,9 @@
   function stagePoint(e){const stage=$("stage"),r=stage.getBoundingClientRect(),sx=r.width/(stage.offsetWidth||1400),sy=r.height/(stage.offsetHeight||900);return{x:(e.clientX-r.left)/sx,y:(e.clientY-r.top)/sy}}
   function snapOn(){return !/OFF/i.test($("toggleSnap")?.textContent||"")}
   function targeting(){return document.body.classList.contains("micro-auto-target")||document.body.classList.contains("micro-target-mode")}
-  document.addEventListener("pointerdown",e=>{
-    if(gridType.value!=="square"||!snapOn()||targeting())return;const el=e.target?.closest?.("#tokenLayer [data-token]");if(!el)return;const p=players.find(x=>x.id===el.dataset.token);if(!p)return;
-    drag={p,pointer:e.pointerId,id:p.id};e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();try{api.selectToken?.(p.id)}catch(_e){}
-  },true);
-  document.addEventListener("pointermove",e=>{
-    if(!drag||drag.pointer!==e.pointerId)return;e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();const pt=stagePoint(e),sn=squareSnap(drag.p,pt.x,pt.y);drag.p.x=sn.x;drag.p.y=sn.y;const el=tokenLayer.querySelector(`[data-token="${CSS.escape(drag.id)}"]`);if(el){el.style.left=`${sn.x}px`;el.style.top=`${sn.y}px`}
-  },true);
-  document.addEventListener("pointerup",e=>{if(!drag||drag.pointer!==e.pointerId)return;e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();const id=drag.id;drag=null;try{api.renderTokens?.();api.selectToken?.(id)}catch(_e){}lastPanelKey="";setTimeout(schedule,0)},true);
-  document.addEventListener("pointercancel",e=>{if(drag?.pointer===e.pointerId)drag=null},true);
+  // O tamanho continua determinando a ocupação e o encaixe. O arrasto pertence
+  // exclusivamente ao controlador de colisão, evitando dois movimentos para
+  // o mesmo evento de ponteiro.
 
   const obs=new MutationObserver(schedule);obs.observe(tokenLayer,{childList:true,subtree:true});
   tokenLayer.addEventListener("click",()=>{lastPanelKey="";setTimeout(schedule,0)},true);

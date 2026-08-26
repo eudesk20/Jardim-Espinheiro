@@ -11,7 +11,6 @@
   const players=globalThis.MICROCOSMOS_TABLE_PLAYERS||[],api=globalThis.MICROCOSMOS_TABLE_API||{};
   if(!gridType||!gridSize||!gridLayer||!viewport||!stage||!tokenLayer)return;
   const METERS_PER_HEX=1.5;
-  let drag=null;
 
   function size(){return Math.max(20,+gridSize.value||70)}
   function geometry(){
@@ -105,32 +104,8 @@
   }
   function tokenPlayer(el){return players.find(p=>p.id===el?.dataset?.token)}
 
-  // Em Hex + Snap ON assumimos o arrasto para impedir que a lógica antiga,
-  // baseada no hex de topo reto, mova o token para centros incompatíveis.
-  document.addEventListener("pointerdown",e=>{
-    if(!isHex()||!snapEnabled()||targeting())return;
-    const el=e.target?.closest?.("#tokenLayer [data-token]");if(!el)return;
-    const p=tokenPlayer(el);if(!p)return;
-    drag={pointer:e.pointerId,p,id:p.id};
-    e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();
-    try{api.selectToken?.(p.id)}catch(_e){}
-  },true);
-  document.addEventListener("pointermove",e=>{
-    if(!drag||drag.pointer!==e.pointerId)return;
-    e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();
-    const pt=stagePoint(e),sn=snapPoint(pt.x,pt.y);
-    drag.p.x=Math.max(25,Math.min((stage.offsetWidth||1400)-25,sn.x));
-    drag.p.y=Math.max(25,Math.min((stage.offsetHeight||900)-25,sn.y));
-    const el=tokenLayer.querySelector(`[data-token="${CSS.escape(drag.id)}"]`);if(el){el.style.left=`${drag.p.x}px`;el.style.top=`${drag.p.y}px`}
-  },true);
-  function endDrag(e){
-    if(!drag||drag.pointer!==e.pointerId)return;
-    e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();
-    const id=drag.id;drag=null;
-    try{api.renderTokens?.();api.selectToken?.(id)}catch(_e){}
-  }
-  document.addEventListener("pointerup",endDrag,true);
-  document.addEventListener("pointercancel",e=>{if(drag?.pointer===e.pointerId)drag=null},true);
+  // O controlador de colisão é o único responsável pelo arrasto. Esta rotina
+  // fornece apenas a geometria e o encaixe hexagonal usados por ele.
 
   // O controle principal já atualiza o grid; estes listeners apenas redesenham
   // a camada pointy-top logo depois da atualização original.
