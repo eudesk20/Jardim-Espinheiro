@@ -22,6 +22,7 @@
   function undoScene(){if(!undoStack.length)return;const previous=undoStack.pop();try{scene=JSON.parse(previous);if(!Array.isArray(scene.elements))scene.elements=[];lastSnapshot=previous;localStorage.setItem(STORE_KEY,previous);selectedId="";drawing=null;editing=null;globalThis.MICROCOSMOS_SCENE_EDITING=null;setTool("select");render();updateUndoButton()}catch(e){console.warn("MICROCOSMOS: não foi possível desfazer",e)}}
   function esc(v){return String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
   function selected(){return scene.elements.find(x=>x.id===selectedId)||null}
+  function selectedTogether(el){const current=selected();return el.id===selectedId||!!(current?.groupId&&el.groupId===current.groupId)}
 
   async function resolveRole(){
     try{
@@ -73,7 +74,7 @@
     const end=points.at(-1);out.push(`L ${end.x} ${end.y}`);return out.join(" ")
   }
   function elementSvg(el){
-    normalize(el);const state=el.state||"closed",sel=el.id===selectedId?" selected":"",editingHandles=el.id===selectedId&&isMaster&&tool==="select";
+    normalize(el);const state=el.state||"closed",sel=selectedTogether(el)?" selected":"",editingHandles=el.id===selectedId&&isMaster&&tool==="select";
     if(el.type==="circle"){
       const handles=editingHandles?`<circle class="micro-scene-handle" data-scene-handle="circle-move" cx="${el.cx}" cy="${el.cy}" r="10"></circle><circle class="micro-scene-handle endpoint" data-scene-handle="circle-radius" cx="${el.cx+el.r}" cy="${el.cy}" r="9"></circle>`:"";
       return `<g data-scene-id="${esc(el.id)}"><circle class="micro-scene-hit" cx="${el.cx}" cy="${el.cy}" r="${el.r}" fill="none"></circle><circle class="micro-scene-segment wall ${state}${sel}" cx="${el.cx}" cy="${el.cy}" r="${el.r}" fill="none"></circle>${handles}</g>`
@@ -169,21 +170,21 @@
   function drawEnd(e){
     if(!drawing||drawing.type==="pen"||drawing.pointer!==e.pointerId)return;const d=drawing;drawing=null;globalThis.MICROCOSMOS_SCENE_EDITING=null;removePreview();e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();
     if(Math.hypot(d.end.x-d.start.x,d.end.y-d.start.y)<8){setTool("select");render();return}
-    const el=d.type==="circle"?normalize({id:uid(),type:"circle",layer:d.layer,state:"solid",cx:+d.start.x.toFixed(1),cy:+d.start.y.toFixed(1),r:+Math.hypot(d.end.x-d.start.x,d.end.y-d.start.y).toFixed(1)}):normalize({id:uid(),type:d.type,layer:d.layer,state:defaultState(d.type),x1:+d.start.x.toFixed(1),y1:+d.start.y.toFixed(1),x2:+d.end.x.toFixed(1),y2:+d.end.y.toFixed(1)});insertElement(el);selectedId=el.id;save();setTool("select");render()
+    const el=d.type==="circle"?normalize({id:uid(),type:"circle",layer:d.layer,state:"solid",cx:+d.start.x.toFixed(1),cy:+d.start.y.toFixed(1),r:+Math.hypot(d.end.x-d.start.x,d.end.y-d.start.y).toFixed(1)}):normalize({id:uid(),type:d.type,layer:d.layer,state:defaultState(d.type),x1:+d.start.x.toFixed(1),y1:+d.start.y.toFixed(1),x2:+d.end.x.toFixed(1),y2:+d.end.y.toFixed(1)});insertElement(el);autoFuseGroups();selectedId=el.id;save();setTool("select");render()
   }
   function finishPen(){
     if(!drawing||drawing.type!=="pen")return;const d=drawing,points=(d.points||[]).filter((p,i,a)=>!i||Math.hypot(p.x-a[i-1].x,p.y-a[i-1].y)>=4);drawing=null;globalThis.MICROCOSMOS_SCENE_EDITING=null;removePreview();
     if(points.length<2){setTool("select");render();return}
-    const el=normalize({id:uid(),type:"wall",shape:"polyline",layer:d.layer,state:"solid",cornerStyle:d.cornerStyle||"straight",cornerControls:{},points:points.map(p=>({x:+p.x.toFixed(1),y:+p.y.toFixed(1)}))});scene.elements.push(el);mergeStraightWalls();selectedId=scene.elements.find(x=>x.id===el.id)?.id||"";save();setTool("select");render()
+    const el=normalize({id:uid(),type:"wall",shape:"polyline",layer:d.layer,state:"solid",cornerStyle:d.cornerStyle||"straight",cornerControls:{},points:points.map(p=>({x:+p.x.toFixed(1),y:+p.y.toFixed(1)}))});scene.elements.push(el);mergeStraightWalls();autoFuseGroups();selectedId=scene.elements.find(x=>x.id===el.id)?.id||"";save();setTool("select");render()
   }
   function eraseAt(e){
-    if(!isMaster||tool!=="erase")return;const g=e.target?.closest?.("[data-scene-id]");if(!g)return;e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();scene.elements=scene.elements.filter(x=>x.id!==g.dataset.sceneId);if(selectedId===g.dataset.sceneId)selectedId="";save();render()
+    if(!isMaster||tool!=="erase")return;const g=e.target?.closest?.("[data-scene-id]");if(!g)return;e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();const hit=scene.elements.find(x=>x.id===g.dataset.sceneId),group=hit?.groupId;scene.elements=scene.elements.filter(x=>group?x.groupId!==group:x.id!==g.dataset.sceneId);selectedId="";save();render()
   }
   function sampledPoints(el){let source=[];if(el.type==="circle"){const n=Math.max(48,Math.ceil(Math.PI*2*el.r/8));source=Array.from({length:n+1},(_,i)=>{const a=i/n*Math.PI*2;return{x:el.cx+Math.cos(a)*el.r,y:el.cy+Math.sin(a)*el.r}})}else if(el.shape==="polyline")source=el.points||[];else if(el.type==="wall")source=[{x:el.x1,y:el.y1},{x:el.x2,y:el.y2}];const out=[];for(let i=0;i<source.length-1;i++){const a=source[i],b=source[i+1],n=Math.max(1,Math.ceil(Math.hypot(b.x-a.x,b.y-a.y)/8));for(let j=0;j<n;j++)out.push({x:a.x+(b.x-a.x)*j/n,y:a.y+(b.y-a.y)*j/n})}if(source.length)out.push(source.at(-1));return out}
   function simplifyPoints(points,tolerance=3){if(points.length<3)return points;const a=points[0],b=points.at(-1),vx=b.x-a.x,vy=b.y-a.y,len2=vx*vx+vy*vy||1;let max=0,index=0;for(let i=1;i<points.length-1;i++){const p=points[i],t=Math.max(0,Math.min(1,((p.x-a.x)*vx+(p.y-a.y)*vy)/len2)),d=Math.hypot(p.x-(a.x+vx*t),p.y-(a.y+vy*t));if(d>max){max=d;index=i}}if(max<=tolerance)return[a,b];const left=simplifyPoints(points.slice(0,index+1),tolerance),right=simplifyPoints(points.slice(index),tolerance);return[...left.slice(0,-1),...right]}
   function brushContains(p,c,size,shape){const h=size/2,dx=Math.abs(p.x-c.x),dy=Math.abs(p.y-c.y);return shape==="square"?dx<=h&&dy<=h:Math.hypot(dx,dy)<=h}
   function showEraserPreview(p,size,shape){let d=$("microPartialEraserPreview");if(!d){d=document.createElement("div");d.id="microPartialEraserPreview";d.className="micro-eraser-preview";stage.appendChild(d)}d.style.left=`${p.x}px`;d.style.top=`${p.y}px`;d.style.width=`${size}px`;d.style.height=`${size}px`;d.style.borderRadius=shape==="circle"?"50%":"3px"}
-  function partialEraseAt(e){if(!isMaster||tool!=="partialErase")return;const p=stagePoint(e),size=+$("microEraserSize")?.value||70,shape=$("microEraserShape")?.value||"circle";showEraserPreview(p,size,shape);if(e.type==="pointerdown")partialErasing=e.pointerId;else if(partialErasing!==e.pointerId)return;let changed=false,next=[];for(const el of scene.elements){if(!(el.type==="circle"||el.type==="wall")){next.push(el);continue}const pts=sampledPoints(el);if(!pts.some(q=>brushContains(q,p,size,shape))){next.push(el);continue}changed=true;let run=[];const flush=()=>{if(run.length>1){const clean=simplifyPoints(run,3);if(clean.length>1)next.push(normalize({id:uid(),type:"wall",shape:"polyline",layer:el.layer,state:"solid",cornerStyle:"custom",cornerControls:{},generatedFromErase:true,points:clean}))}run=[]};for(const q of pts){if(brushContains(q,p,size,shape))flush();else run.push({x:+q.x.toFixed(1),y:+q.y.toFixed(1)})}flush()}if(changed){scene.elements=next;selectedId="";save();render()}e.preventDefault();e.stopPropagation();e.stopImmediatePropagation()}
+  function partialEraseAt(e){if(!isMaster||tool!=="partialErase")return;const p=stagePoint(e),size=+$("microEraserSize")?.value||70,shape=$("microEraserShape")?.value||"circle";showEraserPreview(p,size,shape);if(e.type==="pointerdown")partialErasing=e.pointerId;else if(partialErasing!==e.pointerId)return;let changed=false,next=[];for(const el of scene.elements){if(!(el.type==="circle"||el.type==="wall")){next.push(el);continue}const pts=sampledPoints(el);if(!pts.some(q=>brushContains(q,p,size,shape))){next.push(el);continue}changed=true;let run=[];const flush=()=>{if(run.length>1){const clean=simplifyPoints(run,3);if(clean.length>1)next.push(normalize({id:uid(),groupId:el.groupId,type:"wall",shape:"polyline",layer:el.layer,state:"solid",cornerStyle:"custom",cornerControls:{},generatedFromErase:true,points:clean}))}run=[]};for(const q of pts){if(brushContains(q,p,size,shape))flush();else run.push({x:+q.x.toFixed(1),y:+q.y.toFixed(1)})}flush()}if(changed){scene.elements=next;autoFuseGroups();selectedId="";save();render()}e.preventDefault();e.stopPropagation();e.stopImmediatePropagation()}
   function clearSelectionAt(e){
     if(!isMaster||tool!=="select"||!selectedId||e.target?.closest?.("[data-scene-id],[data-scene-handle],#tokenLayer [data-token]"))return;
     selectedId="";render()
@@ -200,7 +201,7 @@
   function setElementState(id,state){const el=scene.elements.find(x=>x.id===id);if(!el)return;el.state=state;normalize(el);save();render()}
   function setElementLayer(id,layer){const el=scene.elements.find(x=>x.id===id);if(!el)return;el.layer=layer;save();render()}
   function setElementType(id,type){const el=scene.elements.find(x=>x.id===id);if(!el||!["wall","door","window"].includes(type))return;el.type=type;el.state=defaultState(type);normalize(el);save();render()}
-  function deleteSelected(){if(!selectedId)return;scene.elements=scene.elements.filter(x=>x.id!==selectedId);selectedId="";save();render()}
+  function deleteSelected(){if(!selectedId)return;const group=selected()?.groupId;scene.elements=scene.elements.filter(x=>group?x.groupId!==group:x.id!==selectedId);selectedId="";save();render()}
 
   function renderSelected(){
     const box=$("microBuilderSelected");if(!box)return;const el=selected();
@@ -222,7 +223,7 @@
     else if(editing.mode==="start"){el.x1=+p.x.toFixed(1);el.y1=+p.y.toFixed(1)}else if(editing.mode==="end"){el.x2=+p.x.toFixed(1);el.y2=+p.y.toFixed(1)}else{const dx=p.x-editing.start.x,dy=p.y-editing.start.y;el.x1=+(i.x1+dx).toFixed(1);el.y1=+(i.y1+dy).toFixed(1);el.x2=+(i.x2+dx).toFixed(1);el.y2=+(i.y2+dy).toFixed(1)}
     render();e.preventDefault();e.stopPropagation();e.stopImmediatePropagation()
   }
-  function editEnd(e){if(!editing||editing.pointer!==e.pointerId)return;editing=null;globalThis.MICROCOSMOS_SCENE_EDITING=null;save();render();e.preventDefault();e.stopPropagation();e.stopImmediatePropagation()}
+  function editEnd(e){if(!editing||editing.pointer!==e.pointerId)return;editing=null;globalThis.MICROCOSMOS_SCENE_EDITING=null;autoFuseGroups();save();render();e.preventDefault();e.stopPropagation();e.stopImmediatePropagation()}
 
   function blockingSegments(el){
     if(el.type==="circle"){
@@ -231,6 +232,13 @@
     }
     if(el.shape==="polyline"&&Array.isArray(el.points))return el.points.slice(0,-1).map((p,i)=>normalize({id:`${el.id}:path:${i}`,parentId:el.id,type:"wall",layer:el.layer,state:"solid",x1:p.x,y1:p.y,x2:el.points[i+1].x,y2:el.points[i+1].y}));
     return[el]
+  }
+  function pointSegmentDistance(p,a,b){const vx=b.x-a.x,vy=b.y-a.y,len2=vx*vx+vy*vy||1,t=Math.max(0,Math.min(1,((p.x-a.x)*vx+(p.y-a.y)*vy)/len2));return Math.hypot(p.x-(a.x+vx*t),p.y-(a.y+vy*t))}
+  function segmentsTouch(a,b,tolerance){const orient=(p,q,r)=>(q.x-p.x)*(r.y-p.y)-(q.y-p.y)*(r.x-p.x),boxes=Math.max(Math.min(a.a.x,a.b.x),Math.min(b.a.x,b.b.x))<=Math.min(Math.max(a.a.x,a.b.x),Math.max(b.a.x,b.b.x))+tolerance&&Math.max(Math.min(a.a.y,a.b.y),Math.min(b.a.y,b.b.y))<=Math.min(Math.max(a.a.y,a.b.y),Math.max(b.a.y,b.b.y))+tolerance,cross=boxes&&orient(a.a,a.b,b.a)*orient(a.a,a.b,b.b)<=0&&orient(b.a,b.b,a.a)*orient(b.a,b.b,a.b)<=0;if(cross)return true;return Math.min(pointSegmentDistance(a.a,b.a,b.b),pointSegmentDistance(a.b,b.a,b.b),pointSegmentDistance(b.a,a.a,a.b),pointSegmentDistance(b.b,a.a,a.b))<=tolerance}
+  function autoFuseGroups(){
+    const walls=scene.elements.filter(e=>e.type==="wall"||e.type==="circle"),parent=walls.map((_,i)=>i),find=i=>parent[i]===i?i:(parent[i]=find(parent[i])),join=(a,b)=>{a=find(a);b=find(b);if(a!==b)parent[b]=a},tolerance=Math.max(6,(+gridSize?.value||70)*.1),segments=walls.map(el=>blockingSegments(el).map(s=>({a:{x:s.x1,y:s.y1},b:{x:s.x2,y:s.y2}})));
+    for(let i=0;i<walls.length;i++)for(let j=i+1;j<walls.length;j++){if(walls[i].layer!==walls[j].layer)continue;if(walls[i].groupId&&walls[i].groupId===walls[j].groupId){join(i,j);continue}if(segments[i].some(a=>segments[j].some(b=>segmentsTouch(a,b,tolerance))))join(i,j)}
+    let changed=false;const components=new Map();walls.forEach((el,i)=>{const root=find(i);if(!components.has(root))components.set(root,[]);components.get(root).push(el)});for(const list of components.values()){if(list.length<2)continue;const group=list.find(x=>x.groupId)?.groupId||uid();for(const el of list)if(el.groupId!==group){el.groupId=group;changed=true}}return changed
   }
 
   function buildPanel(){
@@ -242,7 +250,7 @@
     });$("microSceneUndo").addEventListener("click",undoScene);$("microBuilderLayer").addEventListener("change",e=>targetLayer=e.target.value);setTool("select");updateUndoButton()
   }
 
-  ensureCss();await resolveRole();ensureLayers();buildPanel();render();
+  ensureCss();await resolveRole();ensureLayers();buildPanel();if(isMaster&&autoFuseGroups())save();render();
   if(isMaster){
     stage.addEventListener("pointerdown",drawStart,true);stage.addEventListener("pointerdown",clearSelectionAt,true);stage.addEventListener("pointermove",editMove,true);stage.addEventListener("pointermove",drawMove,true);stage.addEventListener("pointerup",editEnd,true);stage.addEventListener("pointerup",drawEnd,true);stage.addEventListener("pointercancel",()=>{drawing=null;editing=null;globalThis.MICROCOSMOS_SCENE_EDITING=null;removePreview();setTool("select");render()},true);stage.addEventListener("pointerdown",eraseAt,true);
     stage.addEventListener("pointerdown",partialEraseAt,true);stage.addEventListener("pointermove",partialEraseAt,true);stage.addEventListener("pointerup",e=>{if(partialErasing===e.pointerId)partialErasing=null},true);stage.addEventListener("pointerleave",()=>$("microPartialEraserPreview")?.remove(),true);
