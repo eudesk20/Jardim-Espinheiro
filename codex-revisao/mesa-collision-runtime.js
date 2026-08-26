@@ -104,7 +104,7 @@
   document.addEventListener("pointermove",e=>{
     if(!drag||drag.pointer!==e.pointerId)return;
     e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();
-    const pointer=stagePoint(e),raw={x:pointer.x-drag.offset.x,y:pointer.y-drag.offset.y},candidate=candidatePoint(drag.p,raw),resolved=resolveMove(drag.p,drag.last,candidate);
+    const pointer=stagePoint(e),raw={x:pointer.x-drag.offset.x,y:pointer.y-drag.offset.y},resolved=resolveMove(drag.p,drag.last,raw);
     applyPosition(drag.p,resolved.point);
     drag.last={x:resolved.point.x,y:resolved.point.y};
     if(resolved.blocker)notifyBlocked(resolved.blocker)
@@ -112,7 +112,8 @@
   document.addEventListener("pointerup",e=>{
     if(!drag||drag.pointer!==e.pointerId)return;
     e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();
-    const id=drag.id;drag=null;
+    const id=drag.id,p=drag.p,from=drag.last,snapped=candidatePoint(p,from),finalMove=resolveMove(p,from,snapped);drag=null;
+    applyPosition(p,finalMove.point);
     try{api?.renderTokens?.();api?.selectToken?.(id);globalThis.MICROCOSMOS_TOKEN_SIZE?.refresh?.()}catch(_e){}
     if(globalThis.MICROCOSMOS_MESA_SHARED?.finishTokenDrag)globalThis.MICROCOSMOS_MESA_SHARED.finishTokenDrag(id);
     else globalThis.MICROCOSMOS_TOKEN_DRAGGING=null;
