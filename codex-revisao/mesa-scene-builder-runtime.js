@@ -33,13 +33,16 @@
   function ensureLayers(){
     let visible=$("microSceneVisibleLayer"),master=$("microSceneMasterLayer");
     if(!visible){
-      visible=document.createElementNS("http://www.w3.org/2000/svg","svg");visible.id="microSceneVisibleLayer";visible.classList.add("micro-scene-layer","micro-scene-visible");visible.setAttribute("viewBox","0 0 1400 900");visible.setAttribute("preserveAspectRatio","none");
+      visible=document.createElementNS("http://www.w3.org/2000/svg","svg");visible.id="microSceneVisibleLayer";visible.classList.add("micro-scene-layer","micro-scene-visible");visible.setAttribute("preserveAspectRatio","none");
       stage.insertBefore(visible,tokenLayer)
     }
     if(!master){
-      master=document.createElementNS("http://www.w3.org/2000/svg","svg");master.id="microSceneMasterLayer";master.classList.add("micro-scene-layer","micro-scene-master");master.setAttribute("viewBox","0 0 1400 900");master.setAttribute("preserveAspectRatio","none");
+      master=document.createElementNS("http://www.w3.org/2000/svg","svg");master.id="microSceneMasterLayer";master.classList.add("micro-scene-layer","micro-scene-master");master.setAttribute("preserveAspectRatio","none");
       stage.insertBefore(master,tokenLayer)
     }
+    const viewBox=`0 0 ${stage.offsetWidth||1400} ${stage.offsetHeight||900}`;
+    if(visible.getAttribute("viewBox")!==viewBox)visible.setAttribute("viewBox",viewBox);
+    if(master.getAttribute("viewBox")!==viewBox)master.setAttribute("viewBox",viewBox);
     master.hidden=!isMaster;
     return{visible,master}
   }
@@ -137,6 +140,10 @@
   function eraseAt(e){
     if(!isMaster||tool!=="erase")return;const g=e.target?.closest?.("[data-scene-id]");if(!g)return;e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();scene.elements=scene.elements.filter(x=>x.id!==g.dataset.sceneId);if(selectedId===g.dataset.sceneId)selectedId="";save();render()
   }
+  function clearSelectionAt(e){
+    if(!isMaster||tool!=="select"||!selectedId||e.target?.closest?.("[data-scene-id],[data-scene-handle],#tokenLayer [data-token]"))return;
+    selectedId="";render()
+  }
 
   function setTool(next){
     if(!["select","wall","door","window","erase"].includes(next))return;
@@ -177,9 +184,10 @@
 
   ensureCss();await resolveRole();ensureLayers();buildPanel();render();
   if(isMaster){
-    stage.addEventListener("pointerdown",drawStart,true);stage.addEventListener("pointermove",editMove,true);stage.addEventListener("pointermove",drawMove,true);stage.addEventListener("pointerup",editEnd,true);stage.addEventListener("pointerup",drawEnd,true);stage.addEventListener("pointercancel",()=>{drawing=null;editing=null;globalThis.MICROCOSMOS_SCENE_EDITING=null;removePreview();setTool("select");render()},true);stage.addEventListener("pointerdown",eraseAt,true);
+    stage.addEventListener("pointerdown",drawStart,true);stage.addEventListener("pointerdown",clearSelectionAt,true);stage.addEventListener("pointermove",editMove,true);stage.addEventListener("pointermove",drawMove,true);stage.addEventListener("pointerup",editEnd,true);stage.addEventListener("pointerup",drawEnd,true);stage.addEventListener("pointercancel",()=>{drawing=null;editing=null;globalThis.MICROCOSMOS_SCENE_EDITING=null;removePreview();setTool("select");render()},true);stage.addEventListener("pointerdown",eraseAt,true);
     window.addEventListener("pointermove",drawMove,true);window.addEventListener("pointerup",drawEnd,true)
     window.addEventListener("keydown",e=>{if(e.key!=="Escape")return;if(!drawing&&tool==="select")return;e.preventDefault();drawing=null;editing=null;globalThis.MICROCOSMOS_SCENE_EDITING=null;removePreview();setTool("select");render()},true)
+    new ResizeObserver(()=>render()).observe(stage)
   }
 
   globalThis.MICROCOSMOS_SCENE={
