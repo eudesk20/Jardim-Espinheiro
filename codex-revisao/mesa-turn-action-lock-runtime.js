@@ -3,9 +3,9 @@
    executar ações pelo menu contextual. Os demais tokens continuam podendo ser
    consultados, mas os botões de execução ficam bloqueados até chegar a vez.
 
-   v1.1: atualização sem MutationObserver global. A versão anterior observava
-   atributos que ela mesma alterava (class/disabled), podendo criar um ciclo de
-   mutações quando o alvo de um ataque era selecionado e congelar a página.
+   v1.2: além da trava por turno, Ataques e Magias consultam o recurso tático
+   correspondente (Ação, Ação Bônus ou Reação) antes de entrar na seleção de alvo.
+   Assim uma Ação já gasta não pode ser executada novamente no mesmo turno.
 */
 (function(){
   if(globalThis.MICROCOSMOS_TURN_ACTION_LOCK)return;
@@ -23,11 +23,11 @@
   }
   function isTurnOf(p){const c=combat();return !c.started||!c.active_token_id||!!p&&String(p.id)===String(c.active_token_id)}
   function message(){const p=activeToken();return `⏳ Aguarde. Agora é o turno de ${p?.name||"outro token"}.`}
-  function notify(){
-    const text=message();
+  function notifyText(text){
     if(globalThis.MICROCOSMOS_TOKEN_ACTIONS?.showToast){globalThis.MICROCOSMOS_TOKEN_ACTIONS.showToast(text);return}
-    const st=$("mapStatus");if(!st)return;const old=st.textContent;st.textContent=text;clearTimeout(notify._t);notify._t=setTimeout(()=>{if(st.textContent===text)st.textContent=old},1600)
+    const st=$("mapStatus");if(!st)return;const old=st.textContent;st.textContent=text;clearTimeout(notifyText._t);notifyText._t=setTimeout(()=>{if(st.textContent===text)st.textContent=old},1800)
   }
+  function notify(){notifyText(message())}
 
   function ensureCss(){
     if($("microTurnActionLockStyle"))return;
@@ -58,19 +58,26 @@
     lastLocked=locked;lastTokenId=tokenId;lastMenuVisible=visible
   }
 
-  // Captura antes dos onclick do menu. Assim Item, Perícia e Salvaguarda também
-  // respeitam o turno, não apenas ataques e magias do executor de combate.
+  // Captura antes dos onclick do menu. Item, Perícia e Salvaguarda continuam
+  // respeitando a vez do token, mesmo sem consumir a Ação principal nesta Beta.
   window.addEventListener("click",e=>{
     const button=e.target?.closest?.("#microTokenActionMenu [data-action-row]");if(!button)return;
     const p=selectedToken();if(isTurnOf(p))return;
     e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();notify();updateMenu(true)
   },true);
 
-  // Proteção adicional para ataques/magias iniciados por qualquer outro caminho.
+  // Proteção para Ataques/Magias iniciados por qualquer caminho. Primeiro valida
+  // de quem é o turno; depois consulta se Ação/Ação Bônus/Reação ainda está livre.
   function wrapExecutor(){
     const ex=globalThis.MICROCOSMOS_COMBAT_EXECUTOR;if(!ex||ex===wrappedExecutor||typeof ex.start!=="function")return;
     const original=ex.start.bind(ex);
-    ex.start=function(caster,type,index){if(!isTurnOf(caster)){notify();return false}return original(caster,type,index)};
+    ex.start=function(caster,type,index){
+      if(!isTurnOf(caster)){notify();return false}
+      const item=(type==="attack"?caster?.attacks:caster?.spells)?.[index];
+      const tactical=globalThis.MICROCOSMOS_TACTICAL_TURN,check=tactical?.canUseAction?.(caster,{type,item});
+      if(check&&check.ok===false){notifyText(check.reason||"🚫 Esta ação já foi usada neste turno.");return false}
+      return original(caster,type,index)
+    };
     wrappedExecutor=ex
   }
 
@@ -85,8 +92,8 @@
     notify();updateMenu(true)
   },true);
 
-  // Poll leve e idempotente. Evita observar DOM inteiro e, principalmente,
-  // evita reagir às próprias alterações de class/disabled.
+  // Poll leve e idempotente. Evita observar DOM inteiro e reagir às próprias
+  // alterações de class/disabled, que já causaram congelamento da Mesa.
   setInterval(()=>{wrapExecutor();updateMenu(false)},200);
   wrapExecutor();updateMenu(true);
   globalThis.MICROCOSMOS_ACTION_TURN_LOCK={isTurnOf,refresh:()=>updateMenu(true)};
