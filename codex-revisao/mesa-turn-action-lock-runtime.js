@@ -3,9 +3,9 @@
    executar ações pelo menu contextual. Os demais tokens continuam podendo ser
    consultados, mas os botões de execução ficam bloqueados até chegar a vez.
 
-   v1.2: além da trava por turno, Ataques e Magias consultam o recurso tático
-   correspondente (Ação, Ação Bônus ou Reação) antes de entrar na seleção de alvo.
-   Assim uma Ação já gasta não pode ser executada novamente no mesmo turno.
+   v1.3: Ataques e Magias consultam Ação/Ação Bônus/Reação. Reações continuam
+   bloqueadas fora do turno por padrão, mas uma Janela de Reação válida pode
+   liberar temporariamente o executor para o personagem que recebeu o gatilho.
 */
 (function(){
   if(globalThis.MICROCOSMOS_TURN_ACTION_LOCK)return;
@@ -22,6 +22,7 @@
     return el?players().find(p=>String(p.id)===String(el.dataset.token)):null
   }
   function isTurnOf(p){const c=combat();return !c.started||!c.active_token_id||!!p&&String(p.id)===String(c.active_token_id)}
+  function isReactionWindowFor(p){const ctx=globalThis.MICROCOSMOS_REACTION_CONTEXT;return !!ctx&&!!p&&String(ctx.reactorId)===String(p.id)}
   function message(){const p=activeToken();return `⏳ Aguarde. Agora é o turno de ${p?.name||"outro token"}.`}
   function notifyText(text){
     if(globalThis.MICROCOSMOS_TOKEN_ACTIONS?.showToast){globalThis.MICROCOSMOS_TOKEN_ACTIONS.showToast(text);return}
@@ -58,33 +59,33 @@
     lastLocked=locked;lastTokenId=tokenId;lastMenuVisible=visible
   }
 
-  // Captura antes dos onclick do menu. Item, Perícia e Salvaguarda continuam
-  // respeitando a vez do token, mesmo sem consumir a Ação principal nesta Beta.
+  // O menu comum continua fechado fora do turno. A exceção de Reação acontece
+  // somente pela janela dedicada; assim não dá para disparar uma reação manualmente.
   window.addEventListener("click",e=>{
     const button=e.target?.closest?.("#microTokenActionMenu [data-action-row]");if(!button)return;
     const p=selectedToken();if(isTurnOf(p))return;
     e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();notify();updateMenu(true)
   },true);
 
-  // Proteção para Ataques/Magias iniciados por qualquer caminho. Primeiro valida
-  // de quem é o turno; depois consulta se Ação/Ação Bônus/Reação ainda está livre.
   function wrapExecutor(){
     const ex=globalThis.MICROCOSMOS_COMBAT_EXECUTOR;if(!ex||ex===wrappedExecutor||typeof ex.start!=="function")return;
     const original=ex.start.bind(ex);
     ex.start=function(caster,type,index){
-      if(!isTurnOf(caster)){notify();return false}
+      const reactionWindow=isReactionWindowFor(caster);
+      if(!isTurnOf(caster)&&!reactionWindow){notify();return false}
       const item=(type==="attack"?caster?.attacks:caster?.spells)?.[index];
-      const tactical=globalThis.MICROCOSMOS_TACTICAL_TURN,check=tactical?.canUseAction?.(caster,{type,item});
+      const tactical=globalThis.MICROCOSMOS_TACTICAL_TURN,check=tactical?.canUseAction?.(caster,{type,item,reactionWindow});
       if(check&&check.ok===false){notifyText(check.reason||"🚫 Esta ação já foi usada neste turno.");return false}
       return original(caster,type,index)
     };
     wrappedExecutor=ex
   }
 
-  // Se o turno mudar enquanto o jogador ainda estava escolhendo um alvo,
-  // cancela o modo de alvo antes de a ação antiga poder ser concluída.
+  // Uma ação comum antiga é cancelada se o turno mudou. Durante uma Janela de
+  // Reação válida, não cancelamos o executor só porque o personagem não é o ativo.
   window.addEventListener("pointerup",e=>{
     if(!document.body.classList.contains("micro-auto-target"))return;
+    if(globalThis.MICROCOSMOS_REACTION_CONTEXT)return;
     const c=combat(),caster=players().find(p=>String(p.id)===String(c.active_token_id));
     if(caster&&isTurnOf(caster))return;
     e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();
@@ -92,9 +93,7 @@
     notify();updateMenu(true)
   },true);
 
-  // Poll leve e idempotente. Evita observar DOM inteiro e reagir às próprias
-  // alterações de class/disabled, que já causaram congelamento da Mesa.
   setInterval(()=>{wrapExecutor();updateMenu(false)},200);
   wrapExecutor();updateMenu(true);
-  globalThis.MICROCOSMOS_ACTION_TURN_LOCK={isTurnOf,refresh:()=>updateMenu(true)};
+  globalThis.MICROCOSMOS_ACTION_TURN_LOCK={isTurnOf,isReactionWindowFor,refresh:()=>updateMenu(true)};
 })();
