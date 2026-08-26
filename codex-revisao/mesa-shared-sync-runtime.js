@@ -119,7 +119,7 @@
     const current=new Set(els.map(e=>e.id)),del=(remote||[]).map(r=>r.element_id).filter(id=>!current.has(id));
     if(del.length)await supabase.from("mesa_scene_elements").delete().eq("session_key",SESSION_KEY).in("element_id",del)
   }
-  function scheduleScene(){if(!isMaster||applyingRemote)return;clearTimeout(sceneTimer);sceneTimer=setTimeout(flushScene,180)}
+  function scheduleScene(){if(!isMaster||applyingRemote||globalThis.MICROCOSMOS_SCENE_EDITING)return;clearTimeout(sceneTimer);sceneTimer=setTimeout(flushScene,180)}
 
   async function getSessionState(){
     const {data}=await supabase.from("mesa_session_state").select("data").eq("session_key",SESSION_KEY).maybeSingle();return data?.data||{}
@@ -183,7 +183,7 @@
 
   const channel=supabase.channel(`mesa-shared-${SESSION_KEY}`)
     .on("postgres_changes",{event:"*",schema:"public",table:"mesa_tokens",filter:`session_key=eq.${SESSION_KEY}`},async()=>{if(!applyingRemote)applyRemoteTokens(await readRemoteTokens())})
-    .on("postgres_changes",{event:"*",schema:"public",table:"mesa_scene_elements",filter:`session_key=eq.${SESSION_KEY}`},async()=>{if(!applyingRemote)applyRemoteScene(await readRemoteScene())})
+    .on("postgres_changes",{event:"*",schema:"public",table:"mesa_scene_elements",filter:`session_key=eq.${SESSION_KEY}`},async()=>{if(!applyingRemote&&!globalThis.MICROCOSMOS_SCENE_EDITING)applyRemoteScene(await readRemoteScene())})
     .on("postgres_changes",{event:"*",schema:"public",table:"mesa_session_state",filter:`session_key=eq.${SESSION_KEY}`},async payload=>{if(payload.new?.data)await applySessionState(payload.new.data)})
     .subscribe();
 
