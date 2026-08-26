@@ -1,10 +1,7 @@
-/* MICROCOSMOS — Prévia Tática Beta v1.3.
-   Visualização por CASAS do Grid antes de confirmar Ataques/Magias:
-   - amarelo = casas onde um alvo/ponto pode ser escolhido;
-   - verde = casas realmente afetadas pela área da ação;
-   - cone/linha acompanham a direção do cursor;
-   - raio/cubo não centrados acompanham o ponto mirado;
-   - nenhum efeito, Ação ou Slot Mágico é consumido durante a prévia.
+/* MICROCOSMOS — Prévia Tática Beta v1.4.
+   Visualização por casas do Grid antes de confirmar Ataques/Magias.
+   Agora respeita as barreiras do cenário: Parede/Porta/Janela fechada
+   bloqueiam linha de efeito; portas/janelas abertas liberam novamente.
 */
 (function(){
   if(globalThis.MICROCOSMOS_TACTICAL_PREVIEW)return;
@@ -42,10 +39,50 @@
     if(gridType()==="square")return Math.max(dx,dy)/s*1.5;
     return Math.hypot(dx,dy)/s*1.5
   }
+
+  function orient(a,b,c){return(b.x-a.x)*(c.y-a.y)-(b.y-a.y)*(c.x-a.x)}
+  function onSeg(a,b,p){return p.x>=Math.min(a.x,b.x)-.01&&p.x<=Math.max(a.x,b.x)+.01&&p.y>=Math.min(a.y,b.y)-.01&&p.y<=Math.max(a.y,b.y)+.01}
+  function segmentsIntersect(a,b,c,d){
+    const o1=orient(a,b,c),o2=orient(a,b,d),o3=orient(c,d,a),o4=orient(c,d,b),eps=.01;
+    if(((o1>eps&&o2<-eps)||(o1<-eps&&o2>eps))&&((o3>eps&&o4<-eps)||(o3<-eps&&o4>eps)))return true;
+    if(Math.abs(o1)<=eps&&onSeg(a,b,c))return true;
+    if(Math.abs(o2)<=eps&&onSeg(a,b,d))return true;
+    if(Math.abs(o3)<=eps&&onSeg(c,d,a))return true;
+    if(Math.abs(o4)<=eps&&onSeg(c,d,b))return true;
+    return false
+  }
+  function combatBlockers(){
+    const scene=globalThis.MICROCOSMOS_SCENE;if(!scene)return[];
+    try{
+      return (scene.elements||[]).filter(el=>{
+        const b=scene.behavior?.(el)||el;
+        return !!(b?.blocksVision||b?.blocksMovement)
+      })
+    }catch(_e){return[]}
+  }
+  function lineBlocker(from,to){
+    if(!from||!to)return null;
+    const a={x:+from.x||0,y:+from.y||0},b={x:+to.x||0,y:+to.y||0};
+    if(Math.hypot(b.x-a.x,b.y-a.y)<2)return null;
+    for(const el of combatBlockers()){
+      const c={x:+el.x1||0,y:+el.y1||0},d={x:+el.x2||0,y:+el.y2||0};
+      if(!segmentsIntersect(a,b,c,d))continue;
+      // Se a barreira encostar exatamente no centro de origem/destino, não
+      // consideramos isso uma travessia. Evita falso bloqueio em tokens junto à parede.
+      const nearStart=Math.min(Math.hypot(a.x-c.x,a.y-c.y),Math.hypot(a.x-d.x,a.y-d.y))<2;
+      const nearEnd=Math.min(Math.hypot(b.x-c.x,b.y-c.y),Math.hypot(b.x-d.x,b.y-d.y))<2;
+      if(nearStart||nearEnd)continue;
+      return el
+    }
+    return null
+  }
+  function blockerLabel(el){return el?.type==="wall"?"Parede":el?.type==="door"?"Porta":el?.type==="window"?"Janela":"Barreira"}
+  function hasLineOfEffect(from,to){return !lineBlocker(from,to)}
+
   function validTarget(p){
     if(!active||!p)return false;
     if(active.range<=0)return String(p.id)===String(active.caster.id);
-    return distance(active.caster,p)<=active.range+.05
+    return distance(active.caster,p)<=active.range+.05&&hasLineOfEffect(active.caster,p)
   }
 
   function areaInfo(item){
@@ -62,9 +99,7 @@
     const shapeRx=kind==="cone"?/cone[^\d]{0,24}(\d+(?:[,.]\d+)?)\s*m/i:kind==="line"?/linha[^\d]{0,24}(\d+(?:[,.]\d+)?)\s*m/i:kind==="cube"?/(?:cubo|quadrado)[^\d]{0,24}(\d+(?:[,.]\d+)?)\s*m/i:/(?:raio|circulo|círculo|esfera|zona)[^\d]{0,24}(\d+(?:[,.]\d+)?)\s*m/i;
     const specific=source.match(shapeRx),generic=source.match(/(\d+(?:[,.]\d+)?)\s*m\b/i);
     meters=+(specific?.[1]||generic?.[1]||0).replace?.(",",".")||0;
-    if(kind==="line"){
-      const w=source.match(/(?:por|x|×)\s*(\d+(?:[,.]\d+)?)\s*m/i);if(w)width=+w[1].replace(",",".")||1.5
-    }
+    if(kind==="line"){const w=source.match(/(?:por|x|×)\s*(\d+(?:[,.]\d+)?)\s*m/i);if(w)width=+w[1].replace(",",".")||1.5}
     const centered=/a partir do conjurador|ao redor (?:do conjurador|de voce|de você)|conjurador|pessoal|self/.test(raw);
     return{kind,meters,width,centered,label:base||source.trim()}
   }
@@ -77,22 +112,23 @@
     const set=new Set(),origin=cellOf(active.caster),steps=Math.max(0,Math.floor((active.range+.05)/1.5));
     if(active.range<=0){set.add(key(origin.c,origin.r));return set}
     for(let dc=-steps;dc<=steps;dc++)for(let dr=-steps;dr<=steps;dr++){
-      const c=origin.c+dc,r=origin.r+dr;if(!inBounds(c,r))continue;
-      if(Math.max(Math.abs(dc),Math.abs(dr))<=steps)set.add(key(c,r))
+      const c=origin.c+dc,r=origin.r+dr;if(!inBounds(c,r)||Math.max(Math.abs(dc),Math.abs(dr))>steps)continue;
+      if(hasLineOfEffect(active.caster,cellCenter(c,r)))set.add(key(c,r))
     }
     return set
   }
   function radiusCells(center,meters){
-    const set=new Set(),cc=cellOf(center),steps=Math.max(0,Math.ceil((meters-.01)/1.5));
+    const set=new Set(),cc=cellOf(center),steps=Math.max(0,Math.ceil((meters-.01)/1.5)),origin=center;
     for(let dc=-steps;dc<=steps;dc++)for(let dr=-steps;dr<=steps;dr++){
-      const c=cc.c+dc,r=cc.r+dr;if(inBounds(c,r)&&Math.max(Math.abs(dc),Math.abs(dr))<=steps)set.add(key(c,r))
+      const c=cc.c+dc,r=cc.r+dr;if(!inBounds(c,r)||Math.max(Math.abs(dc),Math.abs(dr))>steps)continue;
+      if(hasLineOfEffect(origin,cellCenter(c,r)))set.add(key(c,r))
     }
     return set
   }
   function cubeCells(center,meters){
-    const set=new Set(),cc=cellOf(center),side=Math.max(1,Math.ceil((meters-.01)/1.5)),start=-Math.floor((side-1)/2);
+    const set=new Set(),cc=cellOf(center),side=Math.max(1,Math.ceil((meters-.01)/1.5)),start=-Math.floor((side-1)/2),origin=center;
     for(let dx=0;dx<side;dx++)for(let dy=0;dy<side;dy++){
-      const c=cc.c+start+dx,r=cc.r+start+dy;if(inBounds(c,r))set.add(key(c,r))
+      const c=cc.c+start+dx,r=cc.r+start+dy;if(inBounds(c,r)&&hasLineOfEffect(origin,cellCenter(c,r)))set.add(key(c,r))
     }
     return set
   }
@@ -103,17 +139,15 @@
     const lengthPx=Math.max(s,meters/1.5*s),halfWidth=Math.max(s*.42,width/1.5*s/2),maxC=stageCols(),maxR=stageRows();
     for(let c=0;c<maxC;c++)for(let r=0;r<maxR;r++){
       const p=cellCenter(c,r),dx=p.x-origin.x,dy=p.y-origin.y,proj=dx*vx+dy*vy;if(proj<0||proj>lengthPx+s*.15)continue;
-      const perp=Math.abs(dx*vy-dy*vx);
-      if(kind==="line"){
-        if(perp<=halfWidth)set.add(key(c,r))
-      }else{
-        const radial=Math.hypot(dx,dy);if(radial<=lengthPx+s*.15&&proj>0&&perp<=proj)set.add(key(c,r))
-      }
+      const perp=Math.abs(dx*vy-dy*vx),radial=Math.hypot(dx,dy);
+      const inside=kind==="line"?perp<=halfWidth:(radial<=lengthPx+s*.15&&proj>0&&perp<=proj);
+      if(inside&&hasLineOfEffect(origin,p))set.add(key(c,r))
     }
     return set
   }
   function effectCells(){
     const a=active.area;if(!a?.kind||!a.meters)return new Set();
+    if(!a.centered&&lineBlocker(active.caster,active.aim))return new Set();
     if(a.kind==="radius")return radiusCells(a.centered?active.caster:active.aim,a.meters);
     if(a.kind==="cube")return cubeCells(a.centered?active.caster:active.aim,a.meters);
     if(a.kind==="line"||a.kind==="cone")return directedCells(a.kind,a.meters,a.width,active.aim);
@@ -134,6 +168,7 @@
       body.micro-tactical-preview-active #tokenLayer .token.micro-preview-invalid{opacity:.34;filter:grayscale(.55)}
       body.micro-tactical-preview-active #tokenLayer .token.micro-preview-caster{opacity:1;filter:none;outline:3px solid #ffe16c;outline-offset:3px}
       body.micro-tactical-preview-active #tokenLayer .token.micro-preview-affected{opacity:1!important;filter:none!important;box-shadow:0 0 0 5px #ff875f,0 0 25px rgba(255,95,58,.95),0 4px 12px #0009!important}
+      body.micro-tactical-preview-active #tokenLayer .token.micro-preview-wall-blocked{opacity:.25!important;filter:grayscale(.8)!important;box-shadow:0 0 0 3px rgba(95,72,55,.9)!important}
       .micro-preview-distance{position:absolute;right:-14px;top:-17px;z-index:70;min-width:34px;padding:3px 5px;border-radius:999px;background:#17251e;color:#fff8dd;border:1px solid #e7cc82;font:bold 10px/1.2 Arial,sans-serif;white-space:nowrap;pointer-events:none}
       #microTacticalPreviewBar{display:none;align-items:center;gap:7px;flex-wrap:wrap;margin:0 0 6px;padding:7px 9px;border:2px solid #b58a3d;border-radius:10px;background:#17251e;color:#fff2cf;font-size:.75rem;box-shadow:0 3px 10px #0007}
       #microTacticalPreviewBar.active{display:flex}#microTacticalPreviewBar b{color:#f1d789}.micro-preview-info{display:flex;gap:7px;align-items:center;flex-wrap:wrap;min-width:0;flex:1}.micro-preview-chip{padding:3px 6px;border:1px solid #816e50;border-radius:999px;background:#fff1;color:#fff3d6;white-space:nowrap}.micro-preview-legend{font-weight:bold;color:#ffe38a}.micro-preview-area-text{color:#aaffd7}.micro-preview-hint{color:#ffcf79;font-weight:bold}.micro-preview-cancel{margin-left:auto;padding:5px 8px!important;min-height:29px!important;font-size:.69rem!important}
@@ -144,20 +179,20 @@
     ensureCss();
     let layer=$("microTacticalPreviewLayer");if(!layer){layer=document.createElement("div");layer.id="microTacticalPreviewLayer";stage.appendChild(layer)}
     let bar=$("microTacticalPreviewBar");if(!bar){
-      bar=document.createElement("div");bar.id="microTacticalPreviewBar";bar.innerHTML='<div class="micro-preview-info"><b id="microPreviewAction"></b><span class="micro-preview-chip" id="microPreviewRange"></span><span class="micro-preview-chip" id="microPreviewTargets"></span><span class="micro-preview-legend">🟨 alcance</span><span class="micro-preview-legend micro-preview-area-text" id="microPreviewAreaLegend" hidden>🟩 área afetada</span><span class="micro-preview-hint" id="microPreviewHint"></span></div><button type="button" class="btn micro-preview-cancel" id="microPreviewCancel">✕ Cancelar prévia</button>';
+      bar=document.createElement("div");bar.id="microTacticalPreviewBar";bar.innerHTML='<div class="micro-preview-info"><b id="microPreviewAction"></b><span class="micro-preview-chip" id="microPreviewRange"></span><span class="micro-preview-chip" id="microPreviewTargets"></span><span class="micro-preview-legend">🟨 alcance com linha livre</span><span class="micro-preview-legend micro-preview-area-text" id="microPreviewAreaLegend" hidden>🟩 área afetada</span><span class="micro-preview-hint" id="microPreviewHint"></span></div><button type="button" class="btn micro-preview-cancel" id="microPreviewCancel">✕ Cancelar prévia</button>';
       const tactical=$("microTacticalHud");if(tactical?.parentElement)tactical.insertAdjacentElement("afterend",bar);else viewport.insertAdjacentElement("beforebegin",bar);
       $("microPreviewCancel").onclick=()=>{try{globalThis.MICROCOSMOS_COMBAT_EXECUTOR?.cancel?.()}catch(_e){}clear()}
     }
     return{layer,bar}
   }
   function clearTokenMarks(){
-    tokenLayer.querySelectorAll("[data-token]").forEach(el=>{el.classList.remove("micro-preview-valid","micro-preview-invalid","micro-preview-caster","micro-preview-affected");el.querySelector(":scope>.micro-preview-distance")?.remove()})
+    tokenLayer.querySelectorAll("[data-token]").forEach(el=>{el.classList.remove("micro-preview-valid","micro-preview-invalid","micro-preview-caster","micro-preview-affected","micro-preview-wall-blocked");el.querySelector(":scope>.micro-preview-distance")?.remove()})
   }
   function clear(){
     active=null;lastRenderKey="";document.body.classList.remove("micro-tactical-preview-active");clearTokenMarks();
     $("microTacticalPreviewBar")?.classList.remove("active");const layer=$("microTacticalPreviewLayer");if(layer){layer.style.display="none";layer.replaceChildren()}
   }
-  function showHint(text){const el=$("microPreviewHint");if(!el)return;el.textContent=text;clearTimeout(hintTimer);hintTimer=setTimeout(()=>{if(el.textContent===text)el.textContent=""},1700)}
+  function showHint(text){const el=$("microPreviewHint");if(!el)return;el.textContent=text;clearTimeout(hintTimer);hintTimer=setTimeout(()=>{if(el.textContent===text)el.textContent=""},1900)}
   function begin(caster,type,index,item){
     if(!caster||!item)return;
     active={caster,type,index,item,range:parseRange(item),area:areaInfo(item),aim:{x:+caster.x||0,y:+caster.y||0}};lastRenderKey="";render(true)
@@ -167,7 +202,7 @@
     const s=gridSize(),aim=cellOf(active.aim),frag=document.createDocumentFragment();
     for(const k of ranges){const [c,r]=k.split(":").map(Number),d=document.createElement("div");d.className="micro-preview-cell range";d.style.cssText=`left:${c*s}px;top:${r*s}px;width:${s}px;height:${s}px`;frag.appendChild(d)}
     for(const k of effects){const [c,r]=k.split(":").map(Number),d=document.createElement("div");d.className="micro-preview-cell effect"+(c===aim.c&&r===aim.r&&!active.area.centered?" aim":"");d.style.cssText=`left:${c*s}px;top:${r*s}px;width:${s}px;height:${s}px`;frag.appendChild(d)}
-    if(active.area?.kind&&!active.area.centered&&!effects.size){const d=document.createElement("div");d.className="micro-preview-cell aim";d.style.cssText=`left:${aim.c*s}px;top:${aim.r*s}px;width:${s}px;height:${s}px`;frag.appendChild(d)}
+    if(active.area?.kind&&!active.area.centered&&!effects.size&&!lineBlocker(active.caster,active.aim)){const d=document.createElement("div");d.className="micro-preview-cell aim";d.style.cssText=`left:${aim.c*s}px;top:${aim.r*s}px;width:${s}px;height:${s}px`;frag.appendChild(d)}
     layer.replaceChildren(frag)
   }
   function drawFallback(layer){
@@ -175,18 +210,18 @@
   }
   function render(force=false){
     if(!active)return;const {layer,bar}=ensureUi();if(!layer||!bar)return;
-    active.area=areaInfo(active.item);const ranges=rangeCells(),effects=effectCells(),aimCell=cellOf(active.aim);
-    const rk=`${active.caster.id}|${active.item.name}|${gridType()}|${gridSize()}|${active.caster.x}|${active.caster.y}|${aimCell.c},${aimCell.r}|${active.area.kind}|${active.area.meters}`;
+    active.area=areaInfo(active.item);const ranges=rangeCells(),effects=effectCells(),aimCell=cellOf(active.aim),sceneSig=combatBlockers().map(x=>`${x.id}:${x.type}:${x.state}:${x.x1},${x.y1},${x.x2},${x.y2}`).join("|");
+    const rk=`${active.caster.id}|${active.item.name}|${gridType()}|${gridSize()}|${active.caster.x}|${active.caster.y}|${aimCell.c},${aimCell.r}|${active.area.kind}|${active.area.meters}|${sceneSig}`;
     if(force||rk!==lastRenderKey){gridType()==="square"?drawSquareGrid(layer,ranges,effects):drawFallback(layer);lastRenderKey=rk}
     layer.style.display="block";bar.classList.add("active");document.body.classList.add("micro-tactical-preview-active");
 
     clearTokenMarks();let validCount=0,affectedCount=0;
     for(const p of players()){
       const el=tokenLayer.querySelector(`[data-token="${CSS.escape(String(p.id))}"]`);if(!el)continue;
-      const caster=String(p.id)===String(active.caster.id),valid=validTarget(p),pc=cellOf(p),affected=effects.has(key(pc.c,pc.r));
+      const caster=String(p.id)===String(active.caster.id),blocked=!caster&&!!lineBlocker(active.caster,p),valid=validTarget(p),pc=cellOf(p),affected=effects.has(key(pc.c,pc.r))&&!blocked;
       if(valid&&!caster)validCount++;if(affected&&!caster)affectedCount++;
-      el.classList.add(valid?"micro-preview-valid":"micro-preview-invalid");if(caster)el.classList.add("micro-preview-caster");if(affected)el.classList.add("micro-preview-affected");
-      if(!caster){const badge=document.createElement("span");badge.className="micro-preview-distance";badge.textContent=`${fmt(distance(active.caster,p))} m`;el.appendChild(badge)}
+      el.classList.add(valid?"micro-preview-valid":"micro-preview-invalid");if(caster)el.classList.add("micro-preview-caster");if(affected)el.classList.add("micro-preview-affected");if(blocked)el.classList.add("micro-preview-wall-blocked");
+      if(!caster){const badge=document.createElement("span");badge.className="micro-preview-distance";badge.textContent=blocked?`🧱 ${fmt(distance(active.caster,p))} m`:`${fmt(distance(active.caster,p))} m`;el.appendChild(badge)}
     }
     $("microPreviewAction").textContent=`👁️ PRÉVIA • ${active.item.name||"Ação"}`;
     $("microPreviewRange").textContent=active.range<=0?"🎯 Pessoal":`📏 ${fmt(active.range)} m`;
@@ -206,7 +241,7 @@
   function fallbackDetect(){
     hookExecutor();
     if(!document.body.classList.contains("micro-auto-target")){if(active)clear();return}
-    if(active)return;
+    if(active){render();return}
     const selectedEl=tokenLayer.querySelector(".token.selected"),combat=globalThis.MICROCOSMOS_INITIATIVE?.combat,caster=players().find(p=>String(p.id)===String(selectedEl?.dataset?.token))||players().find(p=>String(p.id)===String(combat?.active_token_id));
     if(!caster)return;const m=String(status?.textContent||"").match(/^🎯\s*(.+?):\s*selecione/i),name=m?.[1]?.trim();if(!name)return;
     let index=(caster.attacks||[]).findIndex(x=>String(x.name)===name),type="attack",item=index>=0?caster.attacks[index]:null;
@@ -219,12 +254,15 @@
   },true);
   window.addEventListener("pointerdown",e=>{
     if(!active||!document.body.classList.contains("micro-auto-target"))return;const el=e.target?.closest?.("#tokenLayer [data-token]");if(!el)return;
-    const target=players().find(p=>String(p.id)===String(el.dataset.token));if(!target||validTarget(target))return;
+    const target=players().find(p=>String(p.id)===String(el.dataset.token));if(!target)return;
+    const wall=lineBlocker(active.caster,target);
+    if(wall){e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();showHint(`🧱 ${blockerLabel(wall)} bloqueia o ataque.`);return}
+    if(validTarget(target))return;
     e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();showHint(`🚫 Fora do alcance: ${fmt(distance(active.caster,target))} m`)
   },true);
   window.addEventListener("keydown",e=>{if(e.key==="Escape"&&active)clear()});
   $("gridSize")?.addEventListener("input",()=>active&&render(true));$("gridType")?.addEventListener("change",()=>active&&render(true));
 
   ensureUi();hookExecutor();setInterval(fallbackDetect,140);
-  globalThis.MICROCOSMOS_TACTICAL_PREVIEW_API={begin,clear,render,parseRange,distance,areaInfo,get active(){return active}};
+  globalThis.MICROCOSMOS_TACTICAL_PREVIEW_API={begin,clear,render,parseRange,distance,areaInfo,lineBlocker,hasLineOfEffect,get active(){return active}};
 })();
