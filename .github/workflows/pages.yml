@@ -36,9 +36,6 @@ jobs:
       - name: Aplicar auditoria à ficha publicada
         run: node tools/apply-material-audit-runtime.mjs
 
-      - name: Corrigir estado das gavetas do Mestre
-        run: node tools/fix-master-drawer-state.mjs
-
       - name: Preparar GitHub Pages
         uses: actions/configure-pages@v5
         with:
