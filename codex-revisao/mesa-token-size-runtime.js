@@ -49,7 +49,7 @@
   }
 
   function ensureCss(){if($("microTokenSizeStyle"))return;const s=document.createElement("style");s.id="microTokenSizeStyle";s.textContent=`
-    #tokenLayer .token{transition:width .15s ease,height .15s ease,font-size .15s ease}#tokenLayer .token>small{top:calc(100% + 3px)!important}#tokenLayer .token>.hp{bottom:-10px!important}.micro-token-size-panel{margin-top:9px;padding:9px;border:1px solid #9b8058;border-radius:10px;background:#f5ecd8}.micro-token-size-panel h3{margin:0 0 7px!important}.micro-size-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px}.micro-size-grid label{font-size:.68rem;font-weight:bold;color:#6d5a43}.micro-size-grid select,.micro-size-grid input{width:100%;margin-top:3px}.micro-size-summary{margin-top:6px;font-size:.72rem;color:#6b5a43}.micro-size-temp-badge{display:inline-block;background:#6b4d87;color:#fff;border-radius:999px;padding:2px 6px;font-size:.64rem;margin-left:5px}.micro-master-scale{padding:7px;border:1px dashed #8a6a96;border-radius:8px;background:#f0e6f4}.micro-master-only-note{font-size:.65rem;color:#77527f;display:block;margin-top:3px}@media(max-width:620px){.micro-size-grid{grid-template-columns:1fr}}`;
+    #tokenLayer .token{transition:none!important}#tokenLayer .token>small{top:calc(100% + 3px)!important}#tokenLayer .token>.hp{bottom:-10px!important}.micro-token-size-panel{margin-top:9px;padding:9px;border:1px solid #9b8058;border-radius:10px;background:#f5ecd8}.micro-token-size-panel h3{margin:0 0 7px!important}.micro-size-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px}.micro-size-grid label{font-size:.68rem;font-weight:bold;color:#6d5a43}.micro-size-grid select,.micro-size-grid input{width:100%;margin-top:3px}.micro-size-summary{margin-top:6px;font-size:.72rem;color:#6b5a43}.micro-size-temp-badge{display:inline-block;background:#6b4d87;color:#fff;border-radius:999px;padding:2px 6px;font-size:.64rem;margin-left:5px}.micro-master-scale{padding:7px;border:1px dashed #8a6a96;border-radius:8px;background:#f0e6f4}.micro-master-only-note{font-size:.65rem;color:#77527f;display:block;margin-top:3px}@media(max-width:620px){.micro-size-grid{grid-template-columns:1fr}}`;
     document.head.appendChild(s)
   }
   function applyToken(p){
@@ -123,7 +123,7 @@
   // o mesmo evento de ponteiro.
 
   const obs=new MutationObserver(schedule);obs.observe(tokenLayer,{childList:true,subtree:true});
-  tokenLayer.addEventListener("click",()=>{lastPanelKey="";setTimeout(schedule,0)},true);
+  tokenLayer.addEventListener("click",()=>{if(!isMaster)return;lastPanelKey="";setTimeout(schedule,0)},true);
   document.querySelectorAll("[data-select]").forEach(el=>el.addEventListener("click",()=>{lastPanelKey="";setTimeout(schedule,0)},true));
   gridType.addEventListener("change",()=>{lastPanelKey="";schedule()});gridSize.addEventListener("input",schedule);$("gridMinus")?.addEventListener("click",()=>setTimeout(schedule,0));$("gridPlus")?.addEventListener("click",()=>setTimeout(schedule,0));
 
