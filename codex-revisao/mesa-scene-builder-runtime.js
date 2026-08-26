@@ -52,7 +52,7 @@
 
   function behavior(el){
     const state=el.state||"closed";
-    if(el.type==="wall")return{blocksVision:true,blocksMovement:true};
+    if(el.type==="wall"||el.type==="circle")return{blocksVision:true,blocksMovement:true};
     if(el.type==="window")return state==="open"?{blocksVision:false,blocksMovement:false}:{blocksVision:false,blocksMovement:true};
     if(el.type==="door"){
       if(state==="open")return{blocksVision:false,blocksMovement:false};
@@ -63,15 +63,29 @@
   }
   function normalize(el){const b=behavior(el);el.blocksVision=b.blocksVision;el.blocksMovement=b.blocksMovement;return el}
 
-  function lineSvg(el){
-    normalize(el);const state=el.state||"closed",sel=el.id===selectedId?" selected":"";
-    const handles=el.id===selectedId&&isMaster&&tool==="select"?`<circle class="micro-scene-handle endpoint" data-scene-handle="start" cx="${el.x1}" cy="${el.y1}" r="9"></circle><circle class="micro-scene-handle" data-scene-handle="move" cx="${(el.x1+el.x2)/2}" cy="${(el.y1+el.y2)/2}" r="10"></circle><circle class="micro-scene-handle endpoint" data-scene-handle="end" cx="${el.x2}" cy="${el.y2}" r="9"></circle>`:"";
+  function pathD(points,rounded=false){
+    if(!points?.length)return"";if(!rounded||points.length<3)return points.map((p,i)=>`${i?"L":"M"} ${p.x} ${p.y}`).join(" ");
+    const radius=Math.max(6,Math.min(24,(+gridSize?.value||70)*.22)),out=[`M ${points[0].x} ${points[0].y}`];
+    for(let i=1;i<points.length-1;i++){const a=points[i-1],p=points[i],b=points[i+1],la=Math.hypot(p.x-a.x,p.y-a.y)||1,lb=Math.hypot(b.x-p.x,b.y-p.y)||1,ra=Math.min(radius,la*.38),rb=Math.min(radius,lb*.38),before={x:p.x-(p.x-a.x)/la*ra,y:p.y-(p.y-a.y)/la*ra},after={x:p.x+(b.x-p.x)/lb*rb,y:p.y+(b.y-p.y)/lb*rb};out.push(`L ${before.x} ${before.y} Q ${p.x} ${p.y} ${after.x} ${after.y}`)}
+    const end=points.at(-1);out.push(`L ${end.x} ${end.y}`);return out.join(" ")
+  }
+  function elementSvg(el){
+    normalize(el);const state=el.state||"closed",sel=el.id===selectedId?" selected":"",editingHandles=el.id===selectedId&&isMaster&&tool==="select";
+    if(el.type==="circle"){
+      const handles=editingHandles?`<circle class="micro-scene-handle" data-scene-handle="circle-move" cx="${el.cx}" cy="${el.cy}" r="10"></circle><circle class="micro-scene-handle endpoint" data-scene-handle="circle-radius" cx="${el.cx+el.r}" cy="${el.cy}" r="9"></circle>`:"";
+      return `<g data-scene-id="${esc(el.id)}"><circle class="micro-scene-hit" cx="${el.cx}" cy="${el.cy}" r="${el.r}" fill="none"></circle><circle class="micro-scene-segment wall ${state}${sel}" cx="${el.cx}" cy="${el.cy}" r="${el.r}" fill="none"></circle>${handles}</g>`
+    }
+    if(el.shape==="polyline"&&Array.isArray(el.points)){
+      const d=pathD(el.points,el.cornerStyle==="round"),handles=editingHandles?el.points.map((p,i)=>`<circle class="micro-scene-handle endpoint" data-scene-handle="point" data-point-index="${i}" cx="${p.x}" cy="${p.y}" r="9"></circle>`).join(""):"";
+      return `<g data-scene-id="${esc(el.id)}"><path class="micro-scene-hit" d="${d}" fill="none"></path><path class="micro-scene-segment wall ${state}${sel}" d="${d}" fill="none"></path>${handles}</g>`
+    }
+    const handles=editingHandles?`<circle class="micro-scene-handle endpoint" data-scene-handle="start" cx="${el.x1}" cy="${el.y1}" r="9"></circle><circle class="micro-scene-handle" data-scene-handle="move" cx="${(el.x1+el.x2)/2}" cy="${(el.y1+el.y2)/2}" r="10"></circle><circle class="micro-scene-handle endpoint" data-scene-handle="end" cx="${el.x2}" cy="${el.y2}" r="9"></circle>`:"";
     return `<g data-scene-id="${esc(el.id)}"><line class="micro-scene-hit" x1="${el.x1}" y1="${el.y1}" x2="${el.x2}" y2="${el.y2}"></line><line class="micro-scene-segment ${el.type} ${state}${sel}" x1="${el.x1}" y1="${el.y1}" x2="${el.x2}" y2="${el.y2}"></line>${handles}</g>`
   }
   function render(){
     const {visible,master}=ensureLayers();
-    visible.innerHTML=scene.elements.filter(e=>e.layer!=="master").map(lineSvg).join("");
-    master.innerHTML=isMaster?scene.elements.filter(e=>e.layer==="master").map(lineSvg).join(""):"";
+    visible.innerHTML=scene.elements.filter(e=>e.layer!=="master").map(elementSvg).join("");
+    master.innerHTML=isMaster?scene.elements.filter(e=>e.layer==="master").map(elementSvg).join(""):"";
     bindSegments(visible);if(isMaster)bindSegments(master);renderSelected()
   }
   function bindSegments(svg){
@@ -80,7 +94,7 @@
     },true));
     svg.querySelectorAll("[data-scene-handle]").forEach(handle=>handle.addEventListener("pointerdown",e=>{
       const g=handle.closest("[data-scene-id]"),el=scene.elements.find(x=>x.id===g?.dataset.sceneId);if(!isMaster||tool!=="select"||!el)return;
-      const p=snapPoint(stagePoint(e));globalThis.MICROCOSMOS_SCENE_EDITING=el.id;editing={pointer:e.pointerId,id:el.id,mode:handle.dataset.sceneHandle,start:p,initial:{x1:el.x1,y1:el.y1,x2:el.x2,y2:el.y2}};stage.setPointerCapture?.(e.pointerId);e.preventDefault();e.stopPropagation();e.stopImmediatePropagation()
+      const p=snapPoint(stagePoint(e));globalThis.MICROCOSMOS_SCENE_EDITING=el.id;editing={pointer:e.pointerId,id:el.id,mode:handle.dataset.sceneHandle,index:+handle.dataset.pointIndex,start:p,initial:structuredClone(el)};stage.setPointerCapture?.(e.pointerId);e.preventDefault();e.stopPropagation();e.stopImmediatePropagation()
     },true))
   }
 
@@ -98,14 +112,20 @@
     if(type==="hex"&&globalThis.MICROCOSMOS_HEX_GRID?.snapPoint)return globalThis.MICROCOSMOS_HEX_GRID.snapPoint(p.x,p.y);
     return{x:Math.round(p.x/10)*10,y:Math.round(p.y/10)*10}
   }
-  function ensurePreview(){const {visible}=ensureLayers();let line=$("microScenePreview");if(!line){line=document.createElementNS("http://www.w3.org/2000/svg","line");line.id="microScenePreview";line.setAttribute("class","micro-scene-preview");visible.appendChild(line)}return line}
+  function ensurePreview(){const {visible}=ensureLayers();let group=$("microScenePreview");if(!group){group=document.createElementNS("http://www.w3.org/2000/svg","g");group.id="microScenePreview";visible.appendChild(group)}return group}
   function removePreview(){$("microScenePreview")?.remove()}
+  function renderPreview(cursor=null){
+    if(!drawing)return;const group=ensurePreview(),end=cursor||drawing.end||drawing.start;
+    if(drawing.type==="circle"){const r=Math.hypot(end.x-drawing.start.x,end.y-drawing.start.y);group.innerHTML=`<circle class="micro-scene-preview" cx="${drawing.start.x}" cy="${drawing.start.y}" r="${r}" fill="none"></circle>`;return}
+    if(drawing.type==="pen"){const pts=[...(drawing.points||[]),...(end?[end]:[])];group.innerHTML=`<path class="micro-scene-preview" d="${pathD(pts,drawing.cornerStyle==="round")}" fill="none"></path>`;return}
+    group.innerHTML=`<line class="micro-scene-preview" x1="${drawing.start.x}" y1="${drawing.start.y}" x2="${end.x}" y2="${end.y}"></line>`
+  }
 
   function defaultState(type){return type==="door"||type==="window"?"closed":"solid"}
   function pointOn(el,t){return{x:el.x1+(el.x2-el.x1)*t,y:el.y1+(el.y2-el.y1)*t}}
   function wallOpeningMatch(opening){
     let best=null;const tolerance=Math.max(9,(+gridSize?.value||70)*.16);
-    for(const wall of scene.elements.filter(e=>e.type==="wall"&&e.layer===opening.layer)){
+    for(const wall of scene.elements.filter(e=>e.type==="wall"&&e.shape!=="polyline"&&e.layer===opening.layer)){
       const vx=wall.x2-wall.x1,vy=wall.y2-wall.y1,len2=vx*vx+vy*vy;if(len2<64)continue;
       const project=p=>({t:((p.x-wall.x1)*vx+(p.y-wall.y1)*vy)/len2,d:Math.abs((p.x-wall.x1)*vy-(p.y-wall.y1)*vx)/Math.sqrt(len2)}),a=project({x:opening.x1,y:opening.y1}),b=project({x:opening.x2,y:opening.y2});
       const lo=Math.max(0,Math.min(a.t,b.t)),hi=Math.min(1,Math.max(a.t,b.t)),overlap=(hi-lo)*Math.sqrt(len2);if(Math.max(a.d,b.d)>tolerance||overlap<8)continue;
@@ -124,18 +144,29 @@
     return el
   }
   function drawStart(e){
-    if(!isMaster||e.button>0||!["wall","door","window"].includes(tool)||e.target?.closest?.(".token"))return;
+    if(!isMaster||e.button>0||!["wall","door","window","circle","pen"].includes(tool)||e.target?.closest?.(".token"))return;
     const p=snapPoint(stagePoint(e)),drawType=tool,drawLayer=targetLayer;
+    if(drawType==="pen"){
+      e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();selectedId="";
+      if(!drawing){globalThis.MICROCOSMOS_SCENE_EDITING="drawing";drawing={type:"pen",layer:drawLayer,points:[p],end:p,cornerStyle:$("microBuilderCorner")?.value||"straight"}}
+      else if(drawing.type==="pen"&&e.detail<2&&Math.hypot(p.x-drawing.points.at(-1).x,p.y-drawing.points.at(-1).y)>=4)drawing.points.push(p);
+      renderPreview(p);if(e.detail>=2)finishPen();return
+    }
     globalThis.MICROCOSMOS_SCENE_EDITING="drawing";drawing={pointer:e.pointerId,type:drawType,layer:drawLayer,start:p,end:p};selectedId="";
-    const line=ensurePreview();line.setAttribute("class",`micro-scene-preview ${drawType}`);line.setAttribute("x1",p.x);line.setAttribute("y1",p.y);line.setAttribute("x2",p.x);line.setAttribute("y2",p.y);
+    renderPreview(p);
     try{stage.setPointerCapture?.(e.pointerId)}catch(_e){}
     e.preventDefault();e.stopPropagation();e.stopImmediatePropagation()
   }
-  function drawMove(e){if(!drawing||drawing.pointer!==e.pointerId)return;const p=snapPoint(stagePoint(e));drawing.end=p;const l=$("microScenePreview");if(l){l.setAttribute("x2",p.x);l.setAttribute("y2",p.y)}e.preventDefault();e.stopPropagation();e.stopImmediatePropagation()}
+  function drawMove(e){if(!drawing||drawing.type!=="pen"&&drawing.pointer!==e.pointerId)return;const p=snapPoint(stagePoint(e));drawing.end=p;renderPreview(p);e.preventDefault();e.stopPropagation();e.stopImmediatePropagation()}
   function drawEnd(e){
-    if(!drawing||drawing.pointer!==e.pointerId)return;const d=drawing;drawing=null;globalThis.MICROCOSMOS_SCENE_EDITING=null;removePreview();e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();
-    if(Math.hypot(d.end.x-d.start.x,d.end.y-d.start.y)<8)return;
-    const el=normalize({id:uid(),type:d.type,layer:d.layer,state:defaultState(d.type),x1:+d.start.x.toFixed(1),y1:+d.start.y.toFixed(1),x2:+d.end.x.toFixed(1),y2:+d.end.y.toFixed(1)});insertElement(el);selectedId=el.id;save();setTool("select");render()
+    if(!drawing||drawing.type==="pen"||drawing.pointer!==e.pointerId)return;const d=drawing;drawing=null;globalThis.MICROCOSMOS_SCENE_EDITING=null;removePreview();e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();
+    if(Math.hypot(d.end.x-d.start.x,d.end.y-d.start.y)<8){setTool("select");render();return}
+    const el=d.type==="circle"?normalize({id:uid(),type:"circle",layer:d.layer,state:"solid",cx:+d.start.x.toFixed(1),cy:+d.start.y.toFixed(1),r:+Math.hypot(d.end.x-d.start.x,d.end.y-d.start.y).toFixed(1)}):normalize({id:uid(),type:d.type,layer:d.layer,state:defaultState(d.type),x1:+d.start.x.toFixed(1),y1:+d.start.y.toFixed(1),x2:+d.end.x.toFixed(1),y2:+d.end.y.toFixed(1)});insertElement(el);selectedId=el.id;save();setTool("select");render()
+  }
+  function finishPen(){
+    if(!drawing||drawing.type!=="pen")return;const d=drawing,points=(d.points||[]).filter((p,i,a)=>!i||Math.hypot(p.x-a[i-1].x,p.y-a[i-1].y)>=4);drawing=null;globalThis.MICROCOSMOS_SCENE_EDITING=null;removePreview();
+    if(points.length<2){setTool("select");render();return}
+    const el=normalize({id:uid(),type:"wall",shape:"polyline",layer:d.layer,state:"solid",cornerStyle:d.cornerStyle||"straight",points:points.map(p=>({x:+p.x.toFixed(1),y:+p.y.toFixed(1)}))});scene.elements.push(el);selectedId=el.id;save();setTool("select");render()
   }
   function eraseAt(e){
     if(!isMaster||tool!=="erase")return;const g=e.target?.closest?.("[data-scene-id]");if(!g)return;e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();scene.elements=scene.elements.filter(x=>x.id!==g.dataset.sceneId);if(selectedId===g.dataset.sceneId)selectedId="";save();render()
@@ -146,12 +177,12 @@
   }
 
   function setTool(next){
-    if(!["select","wall","door","window","erase"].includes(next))return;
+    if(!["select","wall","door","window","circle","pen","erase"].includes(next))return;
     if(next===tool&&next!=="select")next="select";
     drawing=null;globalThis.MICROCOSMOS_SCENE_EDITING=null;removePreview();tool=next;
-    document.body.classList.toggle("micro-scene-building",["wall","door","window"].includes(tool));document.body.dataset.microSceneTool=tool;
+    document.body.classList.toggle("micro-scene-building",["wall","door","window","circle","pen"].includes(tool));document.body.dataset.microSceneTool=tool;
     document.querySelectorAll("[data-scene-tool]").forEach(b=>{const active=b.dataset.sceneTool===tool;b.classList.toggle("active",active);b.setAttribute("aria-pressed",String(active))});
-    const status=$("microBuilderStatus");if(status)status.innerHTML={select:"Clique em uma barreira para editar.",wall:"🧱 <b>Parede ativa.</b> Clique e arraste no mapa.",door:"🚪 <b>Porta ativa.</b> Clique e arraste no mapa.",window:"🪟 <b>Janela ativa.</b> Clique e arraste no mapa.",erase:"Clique numa barreira para apagá-la."}[tool]||"";stage.style.cursor=tool==="select"?"default":"crosshair"
+    const status=$("microBuilderStatus");if(status)status.innerHTML={select:"Clique em uma barreira para editar.",wall:"🧱 <b>Parede ativa.</b> Clique e arraste no mapa.",door:"🚪 <b>Porta ativa.</b> Clique e arraste no mapa.",window:"🪟 <b>Janela ativa.</b> Clique e arraste no mapa.",circle:"⭕ <b>Círculo ativo.</b> Arraste do centro até a borda.",pen:"✒️ <b>Caneta ativa.</b> Clique em cada direção; Enter ou duplo clique finaliza.",erase:"Clique numa barreira para apagá-la."}[tool]||"";stage.style.cursor=tool==="select"?"default":"crosshair"
   }
   function setElementState(id,state){const el=scene.elements.find(x=>x.id===id);if(!el)return;el.state=state;normalize(el);save();render()}
   function setElementLayer(id,layer){const el=scene.elements.find(x=>x.id===id);if(!el)return;el.layer=layer;save();render()}
@@ -161,21 +192,36 @@
   function renderSelected(){
     const box=$("microBuilderSelected");if(!box)return;const el=selected();
     if(!el){box.innerHTML="<small>Nenhum elemento selecionado.</small>";return}
-    const stateUi=el.type==="wall"?"<span>Estado: fixo</span>":`<label>Estado<select id="microElementState">${(el.type==="door"?[["closed","Fechada"],["half","Meia aberta"],["open","Aberta"],["locked","Trancada"]]:[["closed","Fechada"],["open","Aberta"]]).map(([v,n])=>`<option value="${v}" ${el.state===v?"selected":""}>${n}</option>`).join("")}</select></label>`;
-    box.innerHTML=`<b>${el.type==="wall"?"🧱 Parede":el.type==="door"?"🚪 Porta":"🪟 Janela"}</b><span class="micro-layer-chip">${el.layer==="master"?"SÓ MESTRE":"VISÍVEL"}</span><div class="micro-builder-row"><label>Tipo<select id="microElementType"><option value="wall" ${el.type==="wall"?"selected":""}>Parede</option><option value="door" ${el.type==="door"?"selected":""}>Porta</option><option value="window" ${el.type==="window"?"selected":""}>Janela</option></select></label><label>Camada<select id="microElementLayer"><option value="players" ${el.layer!=="master"?"selected":""}>Jogadores</option><option value="master" ${el.layer==="master"?"selected":""}>Mestre</option></select></label></div><div class="micro-builder-row">${stateUi}<small>Arraste as pontas amarelas para redimensionar e o círculo central para mover.</small></div><small>Visão: <b>${el.blocksVision?"bloqueia":"permite"}</b> • Movimento: <b>${el.blocksMovement?"bloqueia":"permite"}</b></small><button type="button" class="btn danger" id="microDeleteElement" style="width:100%;margin-top:6px">🗑️ Apagar elemento</button>`;
+    const isPath=el.shape==="polyline",isCircle=el.type==="circle",stateUi=el.type==="wall"||isCircle?"<span>Estado: fixo</span>":`<label>Estado<select id="microElementState">${(el.type==="door"?[["closed","Fechada"],["half","Meia aberta"],["open","Aberta"],["locked","Trancada"]]:[["closed","Fechada"],["open","Aberta"]]).map(([v,n])=>`<option value="${v}" ${el.state===v?"selected":""}>${n}</option>`).join("")}</select></label>`;
+    const typeUi=isPath||isCircle?`<label>Formato<input value="${isCircle?"Círculo":"Parede contínua"}" disabled></label>`:`<label>Tipo<select id="microElementType"><option value="wall" ${el.type==="wall"?"selected":""}>Parede</option><option value="door" ${el.type==="door"?"selected":""}>Porta</option><option value="window" ${el.type==="window"?"selected":""}>Janela</option></select></label>`;
+    const cornerUi=isPath?`<label>Quinas<select id="microElementCorner"><option value="straight" ${el.cornerStyle!=="round"?"selected":""}>Retas</option><option value="round" ${el.cornerStyle==="round"?"selected":""}>Arredondadas</option></select></label>`:stateUi;
+    box.innerHTML=`<b>${isCircle?"⭕ Círculo":isPath?"✒️ Parede contínua":el.type==="wall"?"🧱 Parede":el.type==="door"?"🚪 Porta":"🪟 Janela"}</b><span class="micro-layer-chip">${el.layer==="master"?"SÓ MESTRE":"VISÍVEL"}</span><div class="micro-builder-row">${typeUi}<label>Camada<select id="microElementLayer"><option value="players" ${el.layer!=="master"?"selected":""}>Jogadores</option><option value="master" ${el.layer==="master"?"selected":""}>Mestre</option></select></label></div><div class="micro-builder-row">${cornerUi}<small>${isCircle?"Arraste o centro para mover ou o ponto amarelo para alterar o raio.":isPath?"Arraste qualquer ponto amarelo para editar a direção.":"Arraste as pontas amarelas para redimensionar e o círculo central para mover."}</small></div><small>Visão: <b>${el.blocksVision?"bloqueia":"permite"}</b> • Movimento: <b>${el.blocksMovement?"bloqueia":"permite"}</b></small><button type="button" class="btn danger" id="microDeleteElement" style="width:100%;margin-top:6px">🗑️ Apagar elemento</button>`;
     $("microElementType")?.addEventListener("change",e=>setElementType(el.id,e.target.value));$("microElementState")?.addEventListener("change",e=>setElementState(el.id,e.target.value));$("microElementLayer")?.addEventListener("change",e=>setElementLayer(el.id,e.target.value));$("microDeleteElement")?.addEventListener("click",deleteSelected)
+    $("microElementCorner")?.addEventListener("change",e=>{el.cornerStyle=e.target.value;save();render()})
   }
 
   function editMove(e){
     if(!editing||editing.pointer!==e.pointerId)return;const el=scene.elements.find(x=>x.id===editing.id);if(!el)return;const p=snapPoint(stagePoint(e)),i=editing.initial;
-    if(editing.mode==="start"){el.x1=+p.x.toFixed(1);el.y1=+p.y.toFixed(1)}else if(editing.mode==="end"){el.x2=+p.x.toFixed(1);el.y2=+p.y.toFixed(1)}else{const dx=p.x-editing.start.x,dy=p.y-editing.start.y;el.x1=+(i.x1+dx).toFixed(1);el.y1=+(i.y1+dy).toFixed(1);el.x2=+(i.x2+dx).toFixed(1);el.y2=+(i.y2+dy).toFixed(1)}
+    if(editing.mode==="point"&&el.points?.[editing.index])el.points[editing.index]={x:+p.x.toFixed(1),y:+p.y.toFixed(1)};
+    else if(editing.mode==="circle-radius")el.r=+Math.max(8,Math.hypot(p.x-el.cx,p.y-el.cy)).toFixed(1);
+    else if(editing.mode==="circle-move"){el.cx=+p.x.toFixed(1);el.cy=+p.y.toFixed(1)}
+    else if(editing.mode==="start"){el.x1=+p.x.toFixed(1);el.y1=+p.y.toFixed(1)}else if(editing.mode==="end"){el.x2=+p.x.toFixed(1);el.y2=+p.y.toFixed(1)}else{const dx=p.x-editing.start.x,dy=p.y-editing.start.y;el.x1=+(i.x1+dx).toFixed(1);el.y1=+(i.y1+dy).toFixed(1);el.x2=+(i.x2+dx).toFixed(1);el.y2=+(i.y2+dy).toFixed(1)}
     render();e.preventDefault();e.stopPropagation();e.stopImmediatePropagation()
   }
   function editEnd(e){if(!editing||editing.pointer!==e.pointerId)return;editing=null;globalThis.MICROCOSMOS_SCENE_EDITING=null;save();render();e.preventDefault();e.stopPropagation();e.stopImmediatePropagation()}
 
+  function blockingSegments(el){
+    if(el.type==="circle"){
+      const count=Math.max(20,Math.ceil((Math.PI*2*(+el.r||1))/24)),points=Array.from({length:count},(_,i)=>{const a=i/count*Math.PI*2;return{x:el.cx+Math.cos(a)*el.r,y:el.cy+Math.sin(a)*el.r}});
+      return points.map((p,i)=>normalize({id:`${el.id}:circle:${i}`,parentId:el.id,type:"wall",layer:el.layer,state:"solid",x1:p.x,y1:p.y,x2:points[(i+1)%count].x,y2:points[(i+1)%count].y}))
+    }
+    if(el.shape==="polyline"&&Array.isArray(el.points))return el.points.slice(0,-1).map((p,i)=>normalize({id:`${el.id}:path:${i}`,parentId:el.id,type:"wall",layer:el.layer,state:"solid",x1:p.x,y1:p.y,x2:el.points[i+1].x,y2:el.points[i+1].y}));
+    return[el]
+  }
+
   function buildPanel(){
     if(!isMaster||$("microSceneBuilderPanel"))return;
-    const panel=document.createElement("section");panel.className="panel micro-builder-panel";panel.id="microSceneBuilderPanel";panel.innerHTML=`<h3>🛠️ Construir Cenário</h3><div class="micro-builder-tools"><button type="button" class="btn active" data-scene-tool="select">🖱️ Selecionar</button><button type="button" class="btn" data-scene-tool="wall">🧱 Parede</button><button type="button" class="btn" data-scene-tool="door">🚪 Porta</button><button type="button" class="btn" data-scene-tool="window">🪟 Janela</button><button type="button" class="btn danger" data-scene-tool="erase">🧽 Apagar</button></div><div class="micro-builder-row"><label>Nova barreira<select id="microBuilderLayer"><option value="players">Camada Jogadores</option><option value="master">Camada Mestre</option></select></label><label><input id="microBuilderSnap" type="checkbox" checked> Ajustar ao Grid</label></div><div class="micro-builder-status" id="microBuilderStatus">Clique em uma barreira para editar.</div><div class="micro-builder-selected" id="microBuilderSelected"><small>Nenhum elemento selecionado.</small></div>`;
+    const panel=document.createElement("section");panel.className="panel micro-builder-panel";panel.id="microSceneBuilderPanel";panel.innerHTML=`<h3>🛠️ Construir Cenário</h3><div class="micro-builder-tools"><button type="button" class="btn active" data-scene-tool="select">🖱️ Selecionar</button><button type="button" class="btn" data-scene-tool="wall">🧱 Parede</button><button type="button" class="btn" data-scene-tool="door">🚪 Porta</button><button type="button" class="btn" data-scene-tool="window">🪟 Janela</button><button type="button" class="btn" data-scene-tool="circle">⭕ Círculo</button><button type="button" class="btn" data-scene-tool="pen">✒️ Caneta</button><button type="button" class="btn danger" data-scene-tool="erase">🧽 Apagar</button></div><div class="micro-builder-row"><label>Nova barreira<select id="microBuilderLayer"><option value="players">Camada Jogadores</option><option value="master">Camada Mestre</option></select></label><label><input id="microBuilderSnap" type="checkbox" checked> Ajustar ao Grid</label></div><div class="micro-builder-row"><label>Quinas da Caneta<select id="microBuilderCorner"><option value="straight">Retas</option><option value="round">Arredondadas</option></select></label><small>Enter ou duplo clique finaliza.</small></div><div class="micro-builder-status" id="microBuilderStatus">Clique em uma barreira para editar.</div><div class="micro-builder-selected" id="microBuilderSelected"><small>Nenhum elemento selecionado.</small></div>`;
     left.appendChild(panel);panel.querySelectorAll("[data-scene-tool]").forEach(b=>{
       const activate=e=>{e.preventDefault();e.stopPropagation();setTool(b.dataset.sceneTool)};
       b.addEventListener("pointerdown",activate,true);b.addEventListener("click",e=>{if(e.detail===0)activate(e);else{e.preventDefault();e.stopPropagation()}},true)
@@ -186,14 +232,17 @@
   if(isMaster){
     stage.addEventListener("pointerdown",drawStart,true);stage.addEventListener("pointerdown",clearSelectionAt,true);stage.addEventListener("pointermove",editMove,true);stage.addEventListener("pointermove",drawMove,true);stage.addEventListener("pointerup",editEnd,true);stage.addEventListener("pointerup",drawEnd,true);stage.addEventListener("pointercancel",()=>{drawing=null;editing=null;globalThis.MICROCOSMOS_SCENE_EDITING=null;removePreview();setTool("select");render()},true);stage.addEventListener("pointerdown",eraseAt,true);
     window.addEventListener("pointermove",drawMove,true);window.addEventListener("pointerup",drawEnd,true)
-    window.addEventListener("keydown",e=>{if(e.key!=="Escape")return;if(!drawing&&tool==="select")return;e.preventDefault();drawing=null;editing=null;globalThis.MICROCOSMOS_SCENE_EDITING=null;removePreview();setTool("select");render()},true)
+    window.addEventListener("keydown",e=>{
+      if(e.key==="Enter"&&drawing?.type==="pen"){e.preventDefault();finishPen();return}
+      if(e.key!=="Escape"||!drawing&&!editing&&tool==="select")return;e.preventDefault();drawing=null;editing=null;globalThis.MICROCOSMOS_SCENE_EDITING=null;removePreview();setTool("select");render()
+    },true)
     new ResizeObserver(()=>render()).observe(stage)
   }
 
   globalThis.MICROCOSMOS_SCENE={
     get elements(){return scene.elements},get isMaster(){return isMaster},behavior,refresh:render,
-    getBlockingVision:()=>scene.elements.filter(e=>normalize(e).blocksVision),
-    getBlockingMovement:()=>scene.elements.filter(e=>normalize(e).blocksMovement),
+    getBlockingVision:()=>scene.elements.filter(e=>normalize(e).blocksVision).flatMap(blockingSegments),
+    getBlockingMovement:()=>scene.elements.filter(e=>normalize(e).blocksMovement).flatMap(blockingSegments),
     add:e=>{const el=normalize({...e,id:e.id||uid()});insertElement(el);save();render();return el},
     remove:id=>{scene.elements=scene.elements.filter(e=>e.id!==id);save();render()}
   };
