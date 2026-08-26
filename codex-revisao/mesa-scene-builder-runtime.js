@@ -119,20 +119,30 @@
     return el
   }
   function drawStart(e){
-    if(!isMaster||!["wall","door","window"].includes(tool)||e.target?.closest?.(".token"))return;
-    const p=snapPoint(stagePoint(e));globalThis.MICROCOSMOS_SCENE_EDITING="drawing";drawing={pointer:e.pointerId,start:p,end:p};selectedId="";const line=ensurePreview();line.setAttribute("x1",p.x);line.setAttribute("y1",p.y);line.setAttribute("x2",p.x);line.setAttribute("y2",p.y);stage.setPointerCapture?.(e.pointerId);e.preventDefault();e.stopPropagation();e.stopImmediatePropagation()
+    if(!isMaster||e.button>0||!["wall","door","window"].includes(tool)||e.target?.closest?.(".token"))return;
+    const p=snapPoint(stagePoint(e)),drawType=tool,drawLayer=targetLayer;
+    globalThis.MICROCOSMOS_SCENE_EDITING="drawing";drawing={pointer:e.pointerId,type:drawType,layer:drawLayer,start:p,end:p};selectedId="";
+    const line=ensurePreview();line.setAttribute("class",`micro-scene-preview ${drawType}`);line.setAttribute("x1",p.x);line.setAttribute("y1",p.y);line.setAttribute("x2",p.x);line.setAttribute("y2",p.y);
+    try{stage.setPointerCapture?.(e.pointerId)}catch(_e){}
+    e.preventDefault();e.stopPropagation();e.stopImmediatePropagation()
   }
   function drawMove(e){if(!drawing||drawing.pointer!==e.pointerId)return;const p=snapPoint(stagePoint(e));drawing.end=p;const l=$("microScenePreview");if(l){l.setAttribute("x2",p.x);l.setAttribute("y2",p.y)}e.preventDefault();e.stopPropagation();e.stopImmediatePropagation()}
   function drawEnd(e){
     if(!drawing||drawing.pointer!==e.pointerId)return;const d=drawing;drawing=null;globalThis.MICROCOSMOS_SCENE_EDITING=null;removePreview();e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();
     if(Math.hypot(d.end.x-d.start.x,d.end.y-d.start.y)<8)return;
-    const el=normalize({id:uid(),type:tool,layer:targetLayer,state:defaultState(tool),x1:+d.start.x.toFixed(1),y1:+d.start.y.toFixed(1),x2:+d.end.x.toFixed(1),y2:+d.end.y.toFixed(1)});insertElement(el);selectedId=el.id;save();render()
+    const el=normalize({id:uid(),type:d.type,layer:d.layer,state:defaultState(d.type),x1:+d.start.x.toFixed(1),y1:+d.start.y.toFixed(1),x2:+d.end.x.toFixed(1),y2:+d.end.y.toFixed(1)});insertElement(el);selectedId=el.id;save();render()
   }
   function eraseAt(e){
     if(!isMaster||tool!=="erase")return;const g=e.target?.closest?.("[data-scene-id]");if(!g)return;e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();scene.elements=scene.elements.filter(x=>x.id!==g.dataset.sceneId);if(selectedId===g.dataset.sceneId)selectedId="";save();render()
   }
 
-  function setTool(next){tool=next;document.querySelectorAll("[data-scene-tool]").forEach(b=>b.classList.toggle("active",b.dataset.sceneTool===tool));const status=$("microBuilderStatus");if(status)status.innerHTML={select:"Clique em uma barreira para editar.",wall:"Clique e arraste no mapa para criar uma <b>Parede</b>.",door:"Clique e arraste para criar uma <b>Porta</b>.",window:"Clique e arraste para criar uma <b>Janela</b>.",erase:"Clique numa barreira para apagá-la."}[tool]||"";stage.style.cursor=tool==="select"?"default":"crosshair"}
+  function setTool(next){
+    if(!["select","wall","door","window","erase"].includes(next))return;
+    drawing=null;globalThis.MICROCOSMOS_SCENE_EDITING=null;removePreview();tool=next;
+    document.body.classList.toggle("micro-scene-building",["wall","door","window"].includes(tool));document.body.dataset.microSceneTool=tool;
+    document.querySelectorAll("[data-scene-tool]").forEach(b=>{const active=b.dataset.sceneTool===tool;b.classList.toggle("active",active);b.setAttribute("aria-pressed",String(active))});
+    const status=$("microBuilderStatus");if(status)status.innerHTML={select:"Clique em uma barreira para editar.",wall:"🧱 <b>Parede ativa.</b> Clique e arraste no mapa.",door:"🚪 <b>Porta ativa.</b> Clique e arraste no mapa.",window:"🪟 <b>Janela ativa.</b> Clique e arraste no mapa.",erase:"Clique numa barreira para apagá-la."}[tool]||"";stage.style.cursor=tool==="select"?"default":"crosshair"
+  }
   function setElementState(id,state){const el=scene.elements.find(x=>x.id===id);if(!el)return;el.state=state;normalize(el);save();render()}
   function setElementLayer(id,layer){const el=scene.elements.find(x=>x.id===id);if(!el)return;el.layer=layer;save();render()}
   function setElementType(id,type){const el=scene.elements.find(x=>x.id===id);if(!el||!["wall","door","window"].includes(type))return;el.type=type;el.state=defaultState(type);normalize(el);save();render()}
@@ -155,13 +165,17 @@
 
   function buildPanel(){
     if(!isMaster||$("microSceneBuilderPanel"))return;
-    const panel=document.createElement("section");panel.className="panel micro-builder-panel";panel.id="microSceneBuilderPanel";panel.innerHTML=`<h3>🛠️ Construir Cenário</h3><div class="micro-builder-tools"><button class="btn active" data-scene-tool="select">🖱️ Selecionar</button><button class="btn" data-scene-tool="wall">🧱 Parede</button><button class="btn" data-scene-tool="door">🚪 Porta</button><button class="btn" data-scene-tool="window">🪟 Janela</button><button class="btn danger" data-scene-tool="erase">🧽 Apagar</button></div><div class="micro-builder-row"><label>Nova barreira<select id="microBuilderLayer"><option value="players">Camada Jogadores</option><option value="master">Camada Mestre</option></select></label><label><input id="microBuilderSnap" type="checkbox" checked> Ajustar ao Grid</label></div><div class="micro-builder-status" id="microBuilderStatus">Clique em uma barreira para editar.</div><div class="micro-builder-selected" id="microBuilderSelected"><small>Nenhum elemento selecionado.</small></div>`;
-    left.appendChild(panel);panel.querySelectorAll("[data-scene-tool]").forEach(b=>b.addEventListener("click",()=>setTool(b.dataset.sceneTool)));$("microBuilderLayer").addEventListener("change",e=>targetLayer=e.target.value)
+    const panel=document.createElement("section");panel.className="panel micro-builder-panel";panel.id="microSceneBuilderPanel";panel.innerHTML=`<h3>🛠️ Construir Cenário</h3><div class="micro-builder-tools"><button type="button" class="btn active" data-scene-tool="select">🖱️ Selecionar</button><button type="button" class="btn" data-scene-tool="wall">🧱 Parede</button><button type="button" class="btn" data-scene-tool="door">🚪 Porta</button><button type="button" class="btn" data-scene-tool="window">🪟 Janela</button><button type="button" class="btn danger" data-scene-tool="erase">🧽 Apagar</button></div><div class="micro-builder-row"><label>Nova barreira<select id="microBuilderLayer"><option value="players">Camada Jogadores</option><option value="master">Camada Mestre</option></select></label><label><input id="microBuilderSnap" type="checkbox" checked> Ajustar ao Grid</label></div><div class="micro-builder-status" id="microBuilderStatus">Clique em uma barreira para editar.</div><div class="micro-builder-selected" id="microBuilderSelected"><small>Nenhum elemento selecionado.</small></div>`;
+    left.appendChild(panel);panel.querySelectorAll("[data-scene-tool]").forEach(b=>{
+      const activate=e=>{e.preventDefault();e.stopPropagation();setTool(b.dataset.sceneTool)};
+      b.addEventListener("pointerdown",activate,true);b.addEventListener("click",activate,true)
+    });$("microBuilderLayer").addEventListener("change",e=>targetLayer=e.target.value);setTool("select")
   }
 
   ensureCss();await resolveRole();ensureLayers();buildPanel();render();
   if(isMaster){
-    stage.addEventListener("pointerdown",drawStart,true);stage.addEventListener("pointermove",editMove,true);stage.addEventListener("pointermove",drawMove,true);stage.addEventListener("pointerup",editEnd,true);stage.addEventListener("pointerup",drawEnd,true);stage.addEventListener("pointercancel",()=>{drawing=null;editing=null;globalThis.MICROCOSMOS_SCENE_EDITING=null;removePreview();render()},true);stage.addEventListener("pointerdown",eraseAt,true)
+    stage.addEventListener("pointerdown",drawStart,true);stage.addEventListener("pointermove",editMove,true);stage.addEventListener("pointermove",drawMove,true);stage.addEventListener("pointerup",editEnd,true);stage.addEventListener("pointerup",drawEnd,true);stage.addEventListener("pointercancel",()=>{drawing=null;editing=null;globalThis.MICROCOSMOS_SCENE_EDITING=null;removePreview();render()},true);stage.addEventListener("pointerdown",eraseAt,true);
+    window.addEventListener("pointermove",drawMove,true);window.addEventListener("pointerup",drawEnd,true)
   }
 
   globalThis.MICROCOSMOS_SCENE={
