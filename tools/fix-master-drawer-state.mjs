@@ -10,7 +10,7 @@ const fixed = 'd.querySelector("summary").textContent=title;if(!d.dataset.master
 
 if (source.includes(broken)) {
   source = source.replace(broken, fixed);
-} else if (!source.includes('masterInitialOpen')) {
+} else if (!source.includes('masterInitialOpen') && !source.includes('masterInitialRender') && !source.includes('v2Bound')) {
   throw new Error("Trecho esperado da gaveta do Mestre não foi encontrado.");
 }
 
