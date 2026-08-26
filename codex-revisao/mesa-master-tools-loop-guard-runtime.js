@@ -9,8 +9,8 @@
   const NativeMutationObserver=globalThis.MutationObserver;
   if(!NativeMutationObserver)return;
 
-  // Este runtime é carregado imediatamente antes do organizador do Mestre.
-  // Observadores criados depois dele ignoram mutações geradas dentro do próprio acordeão.
+  // Se este runtime entrar antes de algum observador futuro, evita que mutações
+  // internas do acordeão sejam tratadas como mudanças estruturais da Mesa.
   globalThis.MutationObserver=class MicrocosmosGuardedMutationObserver extends NativeMutationObserver{
     constructor(callback){
       super((mutations,observer)=>{
@@ -31,8 +31,10 @@
       if(child?.nodeType===1&&child.dataset?.masterV2==='1'){
         const existing=[...this.children].find(el=>el!==child&&el.dataset?.masterV2==='1');
         if(existing){
-          existing.className=child.className;
-          existing.innerHTML=child.innerHTML;
+          // Atualiza o cartão existente em vez de criar outra cópia. Se nada mudou,
+          // não toca no DOM e quebra o ciclo MutationObserver -> organize -> append.
+          if(existing.className!==child.className)existing.className=child.className;
+          if(existing.innerHTML!==child.innerHTML)existing.innerHTML=child.innerHTML;
           return existing;
         }
       }
@@ -42,7 +44,7 @@
 
   function patchSections(){
     document.querySelectorAll('#microMasterAccordion .micro-master-section-body').forEach(patchBody);
-    // Remove duplicações que já possam ter sido criadas antes da proteção entrar em ação.
+    // Remove duplicações que já tenham sido criadas antes da proteção entrar em ação.
     document.querySelectorAll('#microMasterAccordion .micro-master-section-body').forEach(body=>{
       const cards=[...body.children].filter(el=>el.dataset?.masterV2==='1');
       if(cards.length>1){
