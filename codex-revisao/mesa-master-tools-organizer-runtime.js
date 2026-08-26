@@ -1,7 +1,7 @@
-/* MICROCOSMOS — Ferramentas do Mestre v2.
+/* MICROCOSMOS — Ferramentas do Mestre v2.1.
    Gavetas funcionais sem depender do reparenting da barra compacta.
-   Mesa/Grid, Jogadores, Token, Cenário, Criaturas, Aprovações e Descanso ficam
-   centralizados em uma única gaveta. Aprovações exibem apenas pendências.
+   Esta versão preserva o estado manual das gavetas e ignora mutações internas
+   do próprio acordeão para impedir ciclos de re-render/piscar.
 */
 (async function(){
   if(globalThis.MICROCOSMOS_MASTER_TOOLS_ORGANIZER_V2)return;
@@ -38,11 +38,26 @@
   }
 
   function section(root,id,title,open=false){
-    let d=$(id);
-    if(!d){d=document.createElement("details");d.id=id;d.className="micro-master-section";d.innerHTML=`<summary>${title}</summary><div class="micro-master-section-body"></div>`;root.appendChild(d)}
-    d.querySelector("summary").textContent=title;d.open=!!open&&root.querySelectorAll(".micro-master-section[open]").length===0;
-    if(!d.dataset.v2Bound){d.dataset.v2Bound="1";d.addEventListener("toggle",()=>{if(!d.open)return;root.querySelectorAll(":scope>.micro-master-section").forEach(o=>{if(o!==d)o.open=false});refreshSection(id)})}
-    return d
+    let d=$(id),created=false;
+    if(!d){
+      created=true;
+      d=document.createElement("details");
+      d.id=id;
+      d.className="micro-master-section";
+      d.innerHTML=`<summary>${title}</summary><div class="micro-master-section-body"></div>`;
+      root.appendChild(d);
+      if(open&&root.querySelectorAll(":scope>.micro-master-section[open]").length===0)d.open=true;
+    }
+    d.querySelector("summary").textContent=title;
+    if(!d.dataset.v2Bound){
+      d.dataset.v2Bound="1";
+      d.addEventListener("toggle",()=>{
+        if(!d.open)return;
+        root.querySelectorAll(":scope>.micro-master-section").forEach(o=>{if(o!==d&&o.open)o.open=false});
+        refreshSection(id)
+      })
+    }
+    return {element:d,created}
   }
   const bodyOf=id=>$(id)?.querySelector(".micro-master-section-body");
   function clearLegacyBody(body,keepSelector=""){if(!body)return;for(const el of [...body.children]){if(el.matches?.("[data-master-v2]"))continue;if(keepSelector&&el.matches?.(keepSelector))continue;el.remove()}}
@@ -138,13 +153,21 @@
       let root=$("microMasterAccordion");if(!root){root=document.createElement("div");root.id="microMasterAccordion";root.className="micro-master-accordion";tools.prepend(root)}
       section(root,"microMasterTableSection","🗺️ Mesa, Grid & Mapa",true);section(root,"microMasterPlayersSection","👥 Jogadores & Tokens");section(root,"microMasterTokenSection","🎲 Token selecionado");section(root,"microMasterSceneSection","🛠️ Construir Cenário");section(root,"microMasterCreatureSection","👑 Criaturas IPM");section(root,"microMasterApprovalSection","✅ Aprovações");section(root,"microMasterRestSection","🌙 Descanso & Slots Mágicos");
       $("microMasterOtherSection")?.remove();
-      for(const d of root.querySelectorAll(":scope>.micro-master-section[open]"))refreshSection(d.id)
+      if(!root.dataset.masterInitialRender){root.dataset.masterInitialRender="1";for(const d of root.querySelectorAll(":scope>.micro-master-section[open]"))refreshSection(d.id)}
     }finally{organizing=false}
   }
 
   if(!await connect())return;
   let tries=0;while(!$("microMasterDrawer")&&tries++<140)await wait(100);organize();
-  const obs=new MutationObserver(()=>{clearTimeout(obs._t);obs._t=setTimeout(organize,120)});obs.observe(document.body,{childList:true,subtree:true});
+  const obs=new MutationObserver(mutations=>{
+    const external=mutations.some(m=>{
+      const target=m.target?.nodeType===1?m.target:m.target?.parentElement;
+      return !target?.closest?.("#microMasterAccordion")
+    });
+    if(!external)return;
+    clearTimeout(obs._t);obs._t=setTimeout(organize,120)
+  });
+  obs.observe(document.body,{childList:true,subtree:true});
   document.addEventListener("click",e=>{if(e.target?.closest?.("#tokenLayer [data-token]")){setTimeout(()=>{if($("microMasterPlayersSection")?.open)renderPlayers();if($("microMasterTokenSection")?.open)renderToken();if($("microMasterRestSection")?.open)renderRest()},120)}},true);
   approvalChannel=sb.channel("microcosmos-master-tools-v2").on("postgres_changes",{event:"*",schema:"public",table:"interactions"},()=>{if($("microMasterApprovalSection")?.open)renderApprovals()}).on("postgres_changes",{event:"UPDATE",schema:"public",table:"characters"},()=>{if($("microMasterRestSection")?.open)renderRest()}).subscribe();
   globalThis.MICROCOSMOS_MASTER_TOOLS={organize,renderRest,renderApprovals,renderPlayers,renderTable};
