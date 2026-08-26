@@ -37,7 +37,12 @@
   function inferShape(spell){const t=`${spell.name||""} ${spell.area||""} ${spell.shape||""}`.toLowerCase();if(/cone/.test(t))return"cone";if(/linha|line|raio/.test(t))return"line";if(/explos|esfera|bola|burst|radius|raio de/.test(t))return"burst";if(/aura/.test(t))return"aura";return"target"}
   function selectedPlayer(){const el=tokenLayer.querySelector(".token.selected");return el?players.find(p=>p.id===el.dataset.token):null}
   function canCast(p){return !!p&&(profile?.role==="master"||!session||p.userId===session.user.id)}
-  async function syncLinkedHp(){await globalThis.MICROCOSMOS_TABLE_COMBAT_DATA?.refresh?.();await globalThis.MICROCOSMOS_MESA_SHARED?.reloadTokens?.()}
+  async function syncLinkedHp(){
+    const shared=globalThis.MICROCOSMOS_MESA_SHARED;
+    await shared?.reloadTokens?.();
+    await globalThis.MICROCOSMOS_TABLE_COMBAT_DATA?.refresh?.();
+    for(const token of players.filter(p=>p?.linked&&p?.id))await shared?.flushToken?.(token.id,true)
+  }
 
   async function connect(){try{const {createClient}=await import("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm");supabase=createClient(PROJECT_URL,PUBLISHABLE_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}});const {data:{session:s}}=await supabase.auth.getSession();session=s;if(session){const {data}=await supabase.from("profiles").select("id,username,role,approved").eq("id",session.user.id).maybeSingle();profile=data||null;listenRealtime();if(profile?.role==="master"){await ensureMasterBadge();await pollPendingApprovals();approvalPoll=setInterval(pollPendingApprovals,2500)}}}catch(e){console.warn("MICROCOSMOS Mesa: efeitos online indisponíveis",e)}}
 
