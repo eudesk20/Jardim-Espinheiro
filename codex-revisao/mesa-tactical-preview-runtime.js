@@ -1,11 +1,10 @@
-/* MICROCOSMOS — Prévia Tática Beta v1.2.
-   Camada visual de planejamento antes de confirmar Ataque/Magia:
-   - conecta diretamente ao executor de combate (sem depender do texto de status);
-   - mostra o alcance real no Grid a partir da posição atual do token;
-   - destaca alvos dentro e fora do alcance e exibe a distância;
-   - desenha áreas centradas no conjurador e áreas de ponto seguindo o cursor;
-   - impede selecionar por engano um alvo fora do alcance, sem gastar Ação/Slot;
-   - não altera dano, cura, PV, Slots ou resolução atual do combate.
+/* MICROCOSMOS — Prévia Tática Beta v1.3.
+   Visualização por CASAS do Grid antes de confirmar Ataques/Magias:
+   - amarelo = casas onde um alvo/ponto pode ser escolhido;
+   - verde = casas realmente afetadas pela área da ação;
+   - cone/linha acompanham a direção do cursor;
+   - raio/cubo não centrados acompanham o ponto mirado;
+   - nenhum efeito, Ação ou Slot Mágico é consumido durante a prévia.
 */
 (function(){
   if(globalThis.MICROCOSMOS_TACTICAL_PREVIEW)return;
@@ -16,12 +15,19 @@
   const stage=$("stage"),tokenLayer=$("tokenLayer"),viewport=$("viewport"),status=$("mapStatus");
   if(!stage||!tokenLayer||!viewport)return;
 
-  let active=null,lastSignature="",hintTimer=0,executorHooked=false;
+  let active=null,executorHooked=false,hintTimer=0,lastRenderKey="";
   const norm=v=>String(v??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
   const fmt=v=>{const n=Math.max(0,Math.round((+v||0)*10)/10);return Number.isInteger(n)?String(n):n.toFixed(1).replace(".",",")};
+  const key=(c,r)=>`${c}:${r}`;
 
   function gridSize(){return Math.max(20,+$("gridSize")?.value||70)}
   function gridType(){return $("gridType")?.value||"square"}
+  function stageCols(){return Math.ceil((stage.offsetWidth||1400)/gridSize())}
+  function stageRows(){return Math.ceil((stage.offsetHeight||900)/gridSize())}
+  function cellOf(p){const s=gridSize();return{c:Math.floor((+p?.x||0)/s),r:Math.floor((+p?.y||0)/s)}}
+  function cellCenter(c,r){const s=gridSize();return{x:c*s+s/2,y:r*s+s/2}}
+  function inBounds(c,r){return c>=0&&r>=0&&c<stageCols()&&r<stageRows()}
+
   function parseRange(item){
     if(item?.kind==="weapon"&&item.range?.normal!=null)return +item.range.normal||0;
     const raw=norm(item?.range||"");
@@ -36,144 +42,189 @@
     if(gridType()==="square")return Math.max(dx,dy)/s*1.5;
     return Math.hypot(dx,dy)/s*1.5
   }
-  function areaInfo(item){
-    const original=String(item?.area||item?.shape||"").trim(),raw=norm(`${item?.shape||""} ${item?.area||""}`);
-    if(!raw)return{kind:"",meters:0,centered:false,label:""};
-    const kind=/cone/.test(raw)?"cone":/linha/.test(raw)?"line":/cubo|quadrado/.test(raw)?"cube":/raio|circulo|esfera/.test(raw)?"radius":"";
-    const m=raw.match(/(\d+(?:[,.]\d+)?)\s*m\b/),meters=m?+m[1].replace(",","."):0;
-    const centered=/a partir do conjurador|conjurador|pessoal|self/.test(raw);
-    return{kind,meters,centered,label:original}
-  }
   function validTarget(p){
     if(!active||!p)return false;
     if(active.range<=0)return String(p.id)===String(active.caster.id);
     return distance(active.caster,p)<=active.range+.05
   }
+
+  function areaInfo(item){
+    const base=String(item?.area||item?.shape||"").trim();
+    const fallback=/\b(cone|linha|cubo|quadrado|raio|circulo|círculo|esfera|zona)\b/i.test(`${item?.effect||""} ${item?.text||""}`)?`${item?.effect||""} ${item?.text||""}`:"";
+    const source=base||fallback,raw=norm(`${item?.shape||""} ${source}`);
+    if(!raw)return{kind:"",meters:0,width:1.5,centered:false,label:""};
+    let kind="";
+    if(/\bcone\b/.test(raw))kind="cone";
+    else if(/\blinha\b/.test(raw))kind="line";
+    else if(/\bcubo\b|\bquadrado\b/.test(raw))kind="cube";
+    else if(/\braio\b|\bcirculo\b|\besfera\b|\bzona\b/.test(raw))kind="radius";
+    let meters=0,width=1.5;
+    const shapeRx=kind==="cone"?/cone[^\d]{0,24}(\d+(?:[,.]\d+)?)\s*m/i:kind==="line"?/linha[^\d]{0,24}(\d+(?:[,.]\d+)?)\s*m/i:kind==="cube"?/(?:cubo|quadrado)[^\d]{0,24}(\d+(?:[,.]\d+)?)\s*m/i:/(?:raio|circulo|círculo|esfera|zona)[^\d]{0,24}(\d+(?:[,.]\d+)?)\s*m/i;
+    const specific=source.match(shapeRx),generic=source.match(/(\d+(?:[,.]\d+)?)\s*m\b/i);
+    meters=+(specific?.[1]||generic?.[1]||0).replace?.(",",".")||0;
+    if(kind==="line"){
+      const w=source.match(/(?:por|x|×)\s*(\d+(?:[,.]\d+)?)\s*m/i);if(w)width=+w[1].replace(",",".")||1.5
+    }
+    const centered=/a partir do conjurador|ao redor (?:do conjurador|de voce|de você)|conjurador|pessoal|self/.test(raw);
+    return{kind,meters,width,centered,label:base||source.trim()}
+  }
+
   function stagePoint(e){
     const r=stage.getBoundingClientRect(),w=stage.offsetWidth||1400,h=stage.offsetHeight||900;
     return{x:(e.clientX-r.left)*(w/Math.max(1,r.width)),y:(e.clientY-r.top)*(h/Math.max(1,r.height))}
+  }
+  function rangeCells(){
+    const set=new Set(),origin=cellOf(active.caster),steps=Math.max(0,Math.floor((active.range+.05)/1.5));
+    if(active.range<=0){set.add(key(origin.c,origin.r));return set}
+    for(let dc=-steps;dc<=steps;dc++)for(let dr=-steps;dr<=steps;dr++){
+      const c=origin.c+dc,r=origin.r+dr;if(!inBounds(c,r))continue;
+      if(Math.max(Math.abs(dc),Math.abs(dr))<=steps)set.add(key(c,r))
+    }
+    return set
+  }
+  function radiusCells(center,meters){
+    const set=new Set(),cc=cellOf(center),steps=Math.max(0,Math.ceil((meters-.01)/1.5));
+    for(let dc=-steps;dc<=steps;dc++)for(let dr=-steps;dr<=steps;dr++){
+      const c=cc.c+dc,r=cc.r+dr;if(inBounds(c,r)&&Math.max(Math.abs(dc),Math.abs(dr))<=steps)set.add(key(c,r))
+    }
+    return set
+  }
+  function cubeCells(center,meters){
+    const set=new Set(),cc=cellOf(center),side=Math.max(1,Math.ceil((meters-.01)/1.5)),start=-Math.floor((side-1)/2);
+    for(let dx=0;dx<side;dx++)for(let dy=0;dy<side;dy++){
+      const c=cc.c+start+dx,r=cc.r+start+dy;if(inBounds(c,r))set.add(key(c,r))
+    }
+    return set
+  }
+  function directedCells(kind,meters,width,aim){
+    const set=new Set(),s=gridSize(),origin={x:+active.caster.x||0,y:+active.caster.y||0};
+    let vx=(+aim?.x||origin.x)-origin.x,vy=(+aim?.y||origin.y)-origin.y,vl=Math.hypot(vx,vy);
+    if(vl<1){vx=1;vy=0;vl=1}vx/=vl;vy/=vl;
+    const lengthPx=Math.max(s,meters/1.5*s),halfWidth=Math.max(s*.42,width/1.5*s/2),maxC=stageCols(),maxR=stageRows();
+    for(let c=0;c<maxC;c++)for(let r=0;r<maxR;r++){
+      const p=cellCenter(c,r),dx=p.x-origin.x,dy=p.y-origin.y,proj=dx*vx+dy*vy;if(proj<0||proj>lengthPx+s*.15)continue;
+      const perp=Math.abs(dx*vy-dy*vx);
+      if(kind==="line"){
+        if(perp<=halfWidth)set.add(key(c,r))
+      }else{
+        const radial=Math.hypot(dx,dy);if(radial<=lengthPx+s*.15&&proj>0&&perp<=proj)set.add(key(c,r))
+      }
+    }
+    return set
+  }
+  function effectCells(){
+    const a=active.area;if(!a?.kind||!a.meters)return new Set();
+    if(a.kind==="radius")return radiusCells(a.centered?active.caster:active.aim,a.meters);
+    if(a.kind==="cube")return cubeCells(a.centered?active.caster:active.aim,a.meters);
+    if(a.kind==="line"||a.kind==="cone")return directedCells(a.kind,a.meters,a.width,active.aim);
+    return new Set()
   }
 
   function ensureCss(){
     if($("microTacticalPreviewStyle"))return;
     const s=document.createElement("style");s.id="microTacticalPreviewStyle";s.textContent=`
       #microTacticalPreviewLayer{position:absolute;inset:0;z-index:40;pointer-events:none;overflow:hidden}
-      .micro-preview-zone{position:absolute;pointer-events:none;border:4px dashed rgba(255,220,90,.98);background:repeating-linear-gradient(45deg,rgba(255,215,70,.22) 0 10px,rgba(255,215,70,.10) 10px 20px);box-shadow:0 0 28px rgba(255,215,70,.45) inset,0 0 18px rgba(255,215,70,.55)}
-      .micro-preview-zone.circle{border-radius:50%}.micro-preview-zone.square{border-radius:10px}
-      .micro-preview-area-zone{position:absolute;pointer-events:none;border:4px solid rgba(83,255,188,.98);background:repeating-linear-gradient(-45deg,rgba(45,225,155,.34) 0 10px,rgba(45,225,155,.17) 10px 20px);box-shadow:0 0 30px rgba(65,255,185,.55) inset,0 0 18px rgba(65,255,185,.65)}
-      .micro-preview-area-zone.circle{border-radius:50%}.micro-preview-area-zone.square{border-radius:8px}
-      .micro-preview-zone-label{position:absolute;z-index:42;transform:translate(-50%,-50%);padding:4px 7px;border-radius:999px;background:#171f1a;color:#ffe28a;border:2px solid #f1cc63;font:bold 11px/1 Arial,sans-serif;box-shadow:0 3px 10px #0009;white-space:nowrap}
+      .micro-preview-cell{position:absolute;box-sizing:border-box;pointer-events:none}
+      .micro-preview-cell.range{background:rgba(255,211,69,.22);border:2px solid rgba(255,224,105,.72);box-shadow:inset 0 0 14px rgba(255,210,45,.18)}
+      .micro-preview-cell.effect{background:rgba(59,228,161,.42);border:3px solid rgba(105,255,199,.98);box-shadow:inset 0 0 18px rgba(48,255,175,.36),0 0 7px rgba(48,255,175,.45)}
+      .micro-preview-cell.aim{outline:4px solid #fff6b7;outline-offset:-5px;background:rgba(255,245,155,.28)}
+      .micro-preview-fallback{position:absolute;border:4px dashed #f4d45d;background:rgba(244,212,93,.18);border-radius:50%;pointer-events:none}
       body.micro-tactical-preview-active #tokenLayer .token{z-index:60;transition:opacity .12s ease,filter .12s ease,box-shadow .12s ease}
-      body.micro-tactical-preview-active #tokenLayer .token.micro-preview-valid{opacity:1;filter:none;box-shadow:0 0 0 4px rgba(91,255,145,.92),0 0 24px rgba(91,255,145,.9),0 4px 12px #0009}
-      body.micro-tactical-preview-active #tokenLayer .token.micro-preview-invalid{opacity:.28;filter:grayscale(.65)}
-      body.micro-tactical-preview-active #tokenLayer .token.micro-preview-caster{opacity:1;filter:none;outline:4px solid #ffe16c;outline-offset:4px}
+      body.micro-tactical-preview-active #tokenLayer .token.micro-preview-valid{opacity:1;filter:none;box-shadow:0 0 0 4px rgba(102,245,145,.88),0 0 20px rgba(102,245,145,.72),0 4px 12px #0009}
+      body.micro-tactical-preview-active #tokenLayer .token.micro-preview-invalid{opacity:.34;filter:grayscale(.55)}
+      body.micro-tactical-preview-active #tokenLayer .token.micro-preview-caster{opacity:1;filter:none;outline:3px solid #ffe16c;outline-offset:3px}
+      body.micro-tactical-preview-active #tokenLayer .token.micro-preview-affected{opacity:1!important;filter:none!important;box-shadow:0 0 0 5px #ff875f,0 0 25px rgba(255,95,58,.95),0 4px 12px #0009!important}
       .micro-preview-distance{position:absolute;right:-14px;top:-17px;z-index:70;min-width:34px;padding:3px 5px;border-radius:999px;background:#17251e;color:#fff8dd;border:1px solid #e7cc82;font:bold 10px/1.2 Arial,sans-serif;white-space:nowrap;pointer-events:none}
       #microTacticalPreviewBar{display:none;align-items:center;gap:7px;flex-wrap:wrap;margin:0 0 6px;padding:7px 9px;border:2px solid #b58a3d;border-radius:10px;background:#17251e;color:#fff2cf;font-size:.75rem;box-shadow:0 3px 10px #0007}
-      #microTacticalPreviewBar.active{display:flex}#microTacticalPreviewBar b{color:#f1d789}.micro-preview-info{display:flex;gap:7px;align-items:center;flex-wrap:wrap;min-width:0;flex:1}.micro-preview-chip{padding:3px 6px;border:1px solid #816e50;border-radius:999px;background:#fff1;color:#fff3d6;white-space:nowrap}.micro-preview-hint{color:#ffd687;font-weight:bold}.micro-preview-cancel{margin-left:auto;padding:5px 8px!important;min-height:29px!important;font-size:.69rem!important}
-      @media(max-width:720px){#microTacticalPreviewBar{font-size:.68rem;padding:5px 6px;gap:4px}.micro-preview-info{gap:4px}.micro-preview-chip{padding:2px 5px}.micro-preview-cancel{margin-left:0;width:100%}}
+      #microTacticalPreviewBar.active{display:flex}#microTacticalPreviewBar b{color:#f1d789}.micro-preview-info{display:flex;gap:7px;align-items:center;flex-wrap:wrap;min-width:0;flex:1}.micro-preview-chip{padding:3px 6px;border:1px solid #816e50;border-radius:999px;background:#fff1;color:#fff3d6;white-space:nowrap}.micro-preview-legend{font-weight:bold;color:#ffe38a}.micro-preview-area-text{color:#aaffd7}.micro-preview-hint{color:#ffcf79;font-weight:bold}.micro-preview-cancel{margin-left:auto;padding:5px 8px!important;min-height:29px!important;font-size:.69rem!important}
+      @media(max-width:720px){#microTacticalPreviewBar{font-size:.67rem;padding:5px 6px;gap:4px}.micro-preview-info{gap:4px}.micro-preview-chip{padding:2px 5px}.micro-preview-cancel{margin-left:0;width:100%}}
     `;document.head.appendChild(s)
   }
   function ensureUi(){
     ensureCss();
-    let layer=$("microTacticalPreviewLayer");if(!layer){layer=document.createElement("div");layer.id="microTacticalPreviewLayer";layer.innerHTML='<div id="microPreviewRangeZone" class="micro-preview-zone"></div><div id="microPreviewAreaZone" class="micro-preview-area-zone" hidden></div><div id="microPreviewZoneLabel" class="micro-preview-zone-label"></div>';stage.appendChild(layer)}
+    let layer=$("microTacticalPreviewLayer");if(!layer){layer=document.createElement("div");layer.id="microTacticalPreviewLayer";stage.appendChild(layer)}
     let bar=$("microTacticalPreviewBar");if(!bar){
-      bar=document.createElement("div");bar.id="microTacticalPreviewBar";bar.innerHTML='<div class="micro-preview-info"><b id="microPreviewAction"></b><span class="micro-preview-chip" id="microPreviewRange"></span><span class="micro-preview-chip" id="microPreviewTargets"></span><span class="micro-preview-chip" id="microPreviewArea" hidden></span><span class="micro-preview-hint" id="microPreviewHint"></span></div><button type="button" class="btn micro-preview-cancel" id="microPreviewCancel">✕ Cancelar prévia</button>';
+      bar=document.createElement("div");bar.id="microTacticalPreviewBar";bar.innerHTML='<div class="micro-preview-info"><b id="microPreviewAction"></b><span class="micro-preview-chip" id="microPreviewRange"></span><span class="micro-preview-chip" id="microPreviewTargets"></span><span class="micro-preview-legend">🟨 alcance</span><span class="micro-preview-legend micro-preview-area-text" id="microPreviewAreaLegend" hidden>🟩 área afetada</span><span class="micro-preview-hint" id="microPreviewHint"></span></div><button type="button" class="btn micro-preview-cancel" id="microPreviewCancel">✕ Cancelar prévia</button>';
       const tactical=$("microTacticalHud");if(tactical?.parentElement)tactical.insertAdjacentElement("afterend",bar);else viewport.insertAdjacentElement("beforebegin",bar);
       $("microPreviewCancel").onclick=()=>{try{globalThis.MICROCOSMOS_COMBAT_EXECUTOR?.cancel?.()}catch(_e){}clear()}
     }
-  }
-  function positionZone(el,center,meters,kind,includeCenter=true){
-    const s=gridSize(),stepPx=Math.max(0,meters)/1.5*s,half=Math.max(s/2,stepPx+(includeCenter?s/2:0));
-    el.classList.toggle("square",kind==="square");el.classList.toggle("circle",kind!=="square");
-    el.style.left=`${(+center.x||0)-half}px`;el.style.top=`${(+center.y||0)-half}px`;el.style.width=`${half*2}px`;el.style.height=`${half*2}px`
+    return{layer,bar}
   }
   function clearTokenMarks(){
-    tokenLayer.querySelectorAll("[data-token]").forEach(el=>{el.classList.remove("micro-preview-valid","micro-preview-invalid","micro-preview-caster");el.querySelector(":scope>.micro-preview-distance")?.remove()})
-  }
-  function showHint(text){
-    ensureUi();const el=$("microPreviewHint");if(!el)return;el.textContent=text;clearTimeout(hintTimer);hintTimer=setTimeout(()=>{if(el.textContent===text)el.textContent=""},1800)
+    tokenLayer.querySelectorAll("[data-token]").forEach(el=>{el.classList.remove("micro-preview-valid","micro-preview-invalid","micro-preview-caster","micro-preview-affected");el.querySelector(":scope>.micro-preview-distance")?.remove()})
   }
   function clear(){
-    active=null;lastSignature="";document.body.classList.remove("micro-tactical-preview-active");clearTokenMarks();
-    const bar=$("microTacticalPreviewBar");bar?.classList.remove("active");
-    const layer=$("microTacticalPreviewLayer");if(layer)layer.style.display="none"
+    active=null;lastRenderKey="";document.body.classList.remove("micro-tactical-preview-active");clearTokenMarks();
+    $("microTacticalPreviewBar")?.classList.remove("active");const layer=$("microTacticalPreviewLayer");if(layer){layer.style.display="none";layer.replaceChildren()}
   }
+  function showHint(text){const el=$("microPreviewHint");if(!el)return;el.textContent=text;clearTimeout(hintTimer);hintTimer=setTimeout(()=>{if(el.textContent===text)el.textContent=""},1700)}
   function begin(caster,type,index,item){
     if(!caster||!item)return;
-    active={caster,type,index,item,range:parseRange(item),area:areaInfo(item),aim:{x:+caster.x||0,y:+caster.y||0}};lastSignature=`${caster.id}:${type}:${index}:${item.name||""}`;render(true)
+    active={caster,type,index,item,range:parseRange(item),area:areaInfo(item),aim:{x:+caster.x||0,y:+caster.y||0}};lastRenderKey="";render(true)
   }
 
-  // Ligação direta com o executor. A versão anterior tentava descobrir a ação
-  // lendo mapStatus; outros runtimes podem alterar esse texto e a prévia nunca iniciava.
-  function hookExecutor(){
-    if(executorHooked)return true;
-    const ex=globalThis.MICROCOSMOS_COMBAT_EXECUTOR;if(!ex||typeof ex.start!=="function")return false;
-    const originalStart=ex.start.bind(ex),originalCancel=typeof ex.cancel==="function"?ex.cancel.bind(ex):null;
-    ex.start=function(caster,type,index){
-      const item=(type==="attack"?caster?.attacks:caster?.spells)?.[index];
-      if(item)begin(caster,type,index,item);
-      const result=originalStart(caster,type,index);
-      if(result&&typeof result.then==="function")result.catch(()=>clear());
-      return result
-    };
-    if(originalCancel)ex.cancel=function(){const r=originalCancel();clear();return r};
-    executorHooked=true;return true
+  function drawSquareGrid(layer,ranges,effects){
+    const s=gridSize(),aim=cellOf(active.aim),frag=document.createDocumentFragment();
+    for(const k of ranges){const [c,r]=k.split(":").map(Number),d=document.createElement("div");d.className="micro-preview-cell range";d.style.cssText=`left:${c*s}px;top:${r*s}px;width:${s}px;height:${s}px`;frag.appendChild(d)}
+    for(const k of effects){const [c,r]=k.split(":").map(Number),d=document.createElement("div");d.className="micro-preview-cell effect"+(c===aim.c&&r===aim.r&&!active.area.centered?" aim":"");d.style.cssText=`left:${c*s}px;top:${r*s}px;width:${s}px;height:${s}px`;frag.appendChild(d)}
+    if(active.area?.kind&&!active.area.centered&&!effects.size){const d=document.createElement("div");d.className="micro-preview-cell aim";d.style.cssText=`left:${aim.c*s}px;top:${aim.r*s}px;width:${s}px;height:${s}px`;frag.appendChild(d)}
+    layer.replaceChildren(frag)
   }
-
-  function detectFromTargetMode(){
-    hookExecutor();
-    if(!document.body.classList.contains("micro-auto-target")){if(active&&executorHooked)clear();return}
-    if(active){render();return}
-    const selectedEl=tokenLayer.querySelector(".token.selected"),combat=globalThis.MICROCOSMOS_INITIATIVE?.combat;
-    const caster=players().find(p=>String(p.id)===String(selectedEl?.dataset?.token))||players().find(p=>String(p.id)===String(combat?.active_token_id));
-    if(!caster)return;
-    const text=String(status?.textContent||""),m=text.match(/^🎯\s*(.+?):\s*selecione/i),name=m?.[1]?.trim();
-    if(!name)return;
-    let index=(caster.attacks||[]).findIndex(x=>String(x.name)===name),type="attack",item=index>=0?caster.attacks[index]:null;
-    if(!item){index=(caster.spells||[]).findIndex(x=>String(x.name)===name);type="spell";item=index>=0?caster.spells[index]:null}
-    if(item)begin(caster,type,index,item)
+  function drawFallback(layer){
+    const s=gridSize(),radius=Math.max(s/2,active.range/1.5*s),d=document.createElement("div");d.className="micro-preview-fallback";d.style.cssText=`left:${(+active.caster.x||0)-radius}px;top:${(+active.caster.y||0)-radius}px;width:${radius*2}px;height:${radius*2}px`;layer.replaceChildren(d)
   }
-  function render(){
-    if(!active)return;ensureUi();
-    const layer=$("microTacticalPreviewLayer"),rangeZone=$("microPreviewRangeZone"),areaZone=$("microPreviewAreaZone"),bar=$("microTacticalPreviewBar"),zoneLabel=$("microPreviewZoneLabel");
-    if(!layer||!rangeZone||!bar)return;
+  function render(force=false){
+    if(!active)return;const {layer,bar}=ensureUi();if(!layer||!bar)return;
+    active.area=areaInfo(active.item);const ranges=rangeCells(),effects=effectCells(),aimCell=cellOf(active.aim);
+    const rk=`${active.caster.id}|${active.item.name}|${gridType()}|${gridSize()}|${active.caster.x}|${active.caster.y}|${aimCell.c},${aimCell.r}|${active.area.kind}|${active.area.meters}`;
+    if(force||rk!==lastRenderKey){gridType()==="square"?drawSquareGrid(layer,ranges,effects):drawFallback(layer);lastRenderKey=rk}
     layer.style.display="block";bar.classList.add("active");document.body.classList.add("micro-tactical-preview-active");
-    positionZone(rangeZone,active.caster,active.range,gridType()==="square"?"square":"circle",true);
-    if(zoneLabel){zoneLabel.style.left=`${+active.caster.x||0}px`;zoneLabel.style.top=`${(+active.caster.y||0)-gridSize()*.8}px`;zoneLabel.textContent=active.range<=0?"PESSOAL":`ALCANCE ${fmt(active.range)} m`}
 
-    const area=areaInfo(active.item);active.area=area;
-    if(area.meters>0&&(area.kind==="radius"||area.kind==="cube")){
-      const center=area.centered?active.caster:(active.aim||active.caster);
-      areaZone.hidden=false;positionZone(areaZone,center,area.meters,area.kind==="cube"?"square":"circle",false)
-    }else areaZone.hidden=true;
-
-    clearTokenMarks();let validCount=0;
+    clearTokenMarks();let validCount=0,affectedCount=0;
     for(const p of players()){
       const el=tokenLayer.querySelector(`[data-token="${CSS.escape(String(p.id))}"]`);if(!el)continue;
-      const valid=validTarget(p),caster=String(p.id)===String(active.caster.id);if(valid&&!caster)validCount++;
-      el.classList.add(valid?"micro-preview-valid":"micro-preview-invalid");if(caster)el.classList.add("micro-preview-caster");
+      const caster=String(p.id)===String(active.caster.id),valid=validTarget(p),pc=cellOf(p),affected=effects.has(key(pc.c,pc.r));
+      if(valid&&!caster)validCount++;if(affected&&!caster)affectedCount++;
+      el.classList.add(valid?"micro-preview-valid":"micro-preview-invalid");if(caster)el.classList.add("micro-preview-caster");if(affected)el.classList.add("micro-preview-affected");
       if(!caster){const badge=document.createElement("span");badge.className="micro-preview-distance";badge.textContent=`${fmt(distance(active.caster,p))} m`;el.appendChild(badge)}
     }
     $("microPreviewAction").textContent=`👁️ PRÉVIA • ${active.item.name||"Ação"}`;
-    $("microPreviewRange").textContent=active.range<=0?"🎯 Pessoal":`📏 Alcance ${fmt(active.range)} m`;
-    $("microPreviewTargets").textContent=`✅ ${validCount} alvo${validCount===1?"":"s"} possível${validCount===1?"":"is"}`;
-    const areaChip=$("microPreviewArea");if(areaChip){areaChip.hidden=!area.label;areaChip.textContent=area.label?`▧ Área: ${area.label}`:""}
+    $("microPreviewRange").textContent=active.range<=0?"🎯 Pessoal":`📏 ${fmt(active.range)} m`;
+    $("microPreviewTargets").textContent=active.area?.kind&&active.area.meters?`🎯 ${affectedCount} na área`:`✅ ${validCount} alvo${validCount===1?"":"s"}`;
+    const areaLegend=$("microPreviewAreaLegend");if(areaLegend){areaLegend.hidden=!(active.area?.kind&&active.area.meters);areaLegend.title=active.area?.label||""}
   }
 
-  // Área de ponto acompanha o cursor enquanto o jogador procura a melhor posição.
-  viewport.addEventListener("pointermove",e=>{
-    if(!active||active.area?.centered||!active.area?.meters)return;
-    active.aim=stagePoint(e);render()
-  },{passive:true});
+  function hookExecutor(){
+    if(executorHooked)return true;const ex=globalThis.MICROCOSMOS_COMBAT_EXECUTOR;if(!ex||typeof ex.start!=="function")return false;
+    const originalStart=ex.start.bind(ex),originalCancel=typeof ex.cancel==="function"?ex.cancel.bind(ex):null;
+    ex.start=function(caster,type,index){
+      const item=(type==="attack"?caster?.attacks:caster?.spells)?.[index];if(item)begin(caster,type,index,item);
+      const result=originalStart(caster,type,index);if(result&&typeof result.then==="function")result.catch(()=>clear());return result
+    };
+    if(originalCancel)ex.cancel=function(){const result=originalCancel();clear();return result};executorHooked=true;return true
+  }
+  function fallbackDetect(){
+    hookExecutor();
+    if(!document.body.classList.contains("micro-auto-target")){if(active)clear();return}
+    if(active)return;
+    const selectedEl=tokenLayer.querySelector(".token.selected"),combat=globalThis.MICROCOSMOS_INITIATIVE?.combat,caster=players().find(p=>String(p.id)===String(selectedEl?.dataset?.token))||players().find(p=>String(p.id)===String(combat?.active_token_id));
+    if(!caster)return;const m=String(status?.textContent||"").match(/^🎯\s*(.+?):\s*selecione/i),name=m?.[1]?.trim();if(!name)return;
+    let index=(caster.attacks||[]).findIndex(x=>String(x.name)===name),type="attack",item=index>=0?caster.attacks[index]:null;
+    if(!item){index=(caster.spells||[]).findIndex(x=>String(x.name)===name);type="spell";item=index>=0?caster.spells[index]:null}if(item)begin(caster,type,index,item)
+  }
 
-  // Um alvo fora do alcance não chega ao executor: testar posição não gasta recurso.
+  window.addEventListener("pointermove",e=>{
+    if(!active||!document.body.classList.contains("micro-auto-target"))return;const p=stagePoint(e),area=active.area;
+    if(area?.kind&&!area.centered){active.aim=p;render()}
+  },true);
   window.addEventListener("pointerdown",e=>{
-    if(!active||!document.body.classList.contains("micro-auto-target"))return;
-    const el=e.target?.closest?.("#tokenLayer [data-token]");if(!el)return;
+    if(!active||!document.body.classList.contains("micro-auto-target"))return;const el=e.target?.closest?.("#tokenLayer [data-token]");if(!el)return;
     const target=players().find(p=>String(p.id)===String(el.dataset.token));if(!target||validTarget(target))return;
     e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();showHint(`🚫 Fora do alcance: ${fmt(distance(active.caster,target))} m`)
   },true);
+  window.addEventListener("keydown",e=>{if(e.key==="Escape"&&active)clear()});
+  $("gridSize")?.addEventListener("input",()=>active&&render(true));$("gridType")?.addEventListener("change",()=>active&&render(true));
 
-  ensureUi();hookExecutor();setInterval(detectFromTargetMode,120);
+  ensureUi();hookExecutor();setInterval(fallbackDetect,140);
   globalThis.MICROCOSMOS_TACTICAL_PREVIEW_API={begin,clear,render,parseRange,distance,areaInfo,get active(){return active}};
 })();
