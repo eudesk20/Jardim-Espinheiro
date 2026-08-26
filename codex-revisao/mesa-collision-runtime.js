@@ -97,7 +97,7 @@
     const p=players.find(x=>x.id===el.dataset.token);if(!p)return;
     const pointer=stagePoint(e),start={x:+p.x||0,y:+p.y||0};
     globalThis.MICROCOSMOS_TOKEN_DRAGGING=p.id;
-    drag={pointer:e.pointerId,p,id:p.id,last:start,offset:{x:pointer.x-start.x,y:pointer.y-start.y}};
+    drag={pointer:e.pointerId,p,id:p.id,start:{...start},last:start,offset:{x:pointer.x-start.x,y:pointer.y-start.y}};
     e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();
     try{api?.selectToken?.(p.id)}catch(_e){}
   },true);
@@ -112,8 +112,12 @@
   document.addEventListener("pointerup",e=>{
     if(!drag||drag.pointer!==e.pointerId)return;
     e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();
-    const id=drag.id,p=drag.p,from=drag.last,snapped=candidatePoint(p,from),finalMove=resolveMove(p,from,snapped);drag=null;
-    applyPosition(p,finalMove.point);
+    const id=drag.id,p=drag.p,start=drag.start,from=drag.last,snapped=candidatePoint(p,from),finalMove=resolveMove(p,from,snapped);
+    let verdict={ok:true,point:finalMove.point};
+    try{verdict=globalThis.MICROCOSMOS_TACTICAL_TURN?.validateMove?.(p,start,finalMove.point)||verdict}catch(_e){}
+    const destination=verdict?.ok===false?start:(verdict?.point||finalMove.point);drag=null;
+    applyPosition(p,destination);
+    try{if(verdict?.ok!==false)globalThis.MICROCOSMOS_TACTICAL_TURN?.recordMove?.(p,start,destination)}catch(_e){}
     try{api?.renderTokens?.();api?.selectToken?.(id);globalThis.MICROCOSMOS_TOKEN_SIZE?.refresh?.()}catch(_e){}
     if(globalThis.MICROCOSMOS_MESA_SHARED?.finishTokenDrag)globalThis.MICROCOSMOS_MESA_SHARED.finishTokenDrag(id);
     else globalThis.MICROCOSMOS_TOKEN_DRAGGING=null;
