@@ -1,16 +1,35 @@
-/* MICROCOSMOS — proteção e estabilidade das Ferramentas do Mestre.
-   Impede cartões duplicados e preserva a gaveta escolhida manualmente pelo Mestre,
-   mesmo quando runtimes da Mesa disparam novas reorganizações do painel. */
+/* MICROCOSMOS — estabilidade visual das Ferramentas do Mestre.
+   O organizador antigo ainda pode alterar o atributo nativo `open` durante
+   atualizacoes da Mesa. Para evitar o efeito de piscar, a interface passa a usar
+   uma classe visual controlada apenas pelo clique do Mestre. O atributo `open`
+   continua livre para os runtimes internos carregarem/atualizarem o conteudo. */
 (function(){
-  if(globalThis.MICROCOSMOS_MASTER_TOOLS_LOOP_GUARD_V2)return;
-  globalThis.MICROCOSMOS_MASTER_TOOLS_LOOP_GUARD_V2=true;
+  if(globalThis.MICROCOSMOS_MASTER_TOOLS_VISUAL_STABILITY)return;
+  globalThis.MICROCOSMOS_MASTER_TOOLS_VISUAL_STABILITY=true;
 
   const NativeMutationObserver=globalThis.MutationObserver;
   if(!NativeMutationObserver)return;
 
-  let desiredOpenId=undefined;
-  let applyingState=false;
-  let accordionObserver=null;
+  function ensureStyle(){
+    if(document.getElementById('microMasterVisualStabilityStyle'))return;
+    const style=document.createElement('style');
+    style.id='microMasterVisualStabilityStyle';
+    style.textContent=`
+      #microMasterAccordion > .micro-master-section > .micro-master-section-body{
+        display:none!important;
+      }
+      #microMasterAccordion > .micro-master-section.micro-master-manual-open > .micro-master-section-body{
+        display:grid!important;
+      }
+      #microMasterAccordion > .micro-master-section > summary:after{
+        content:"＋"!important;
+      }
+      #microMasterAccordion > .micro-master-section.micro-master-manual-open > summary:after{
+        content:"−"!important;
+      }
+    `;
+    document.head.appendChild(style);
+  }
 
   function patchBody(body){
     if(!body||body.dataset.masterAppendGuard==='1')return;
@@ -40,60 +59,50 @@
     });
   }
 
-  function sections(root){
-    return [...root.querySelectorAll(':scope > .micro-master-section')];
+  function directSections(root){
+    return [...root.children].filter(el=>el.classList?.contains('micro-master-section'));
   }
 
-  function applyDesiredState(root){
-    if(applyingState||desiredOpenId===undefined)return;
-    applyingState=true;
-    try{
-      sections(root).forEach(section=>{
-        const shouldOpen=desiredOpenId!==null&&section.id===desiredOpenId;
-        if(section.open!==shouldOpen)section.open=shouldOpen;
-      });
-    }finally{
-      applyingState=false;
-    }
+  function setVisualOpen(root,section){
+    directSections(root).forEach(el=>el.classList.toggle('micro-master-manual-open',el===section));
   }
 
   function bindAccordion(root){
     if(!root)return;
+    ensureStyle();
     removeDuplicateCards(root);
 
-    if(desiredOpenId===undefined){
-      desiredOpenId=sections(root).find(s=>s.open)?.id||null;
+    if(!root.querySelector(':scope > .micro-master-section.micro-master-manual-open')){
+      const initial=directSections(root).find(el=>el.open)||directSections(root)[0]||null;
+      if(initial)setVisualOpen(root,initial);
     }
 
-    if(root.dataset.masterStableAccordion!=='1'){
-      root.dataset.masterStableAccordion='1';
+    if(root.dataset.masterVisualStable==='1')return;
+    root.dataset.masterVisualStable='1';
+
+    root.addEventListener('click',event=>{
+      const summary=event.target?.closest?.('summary');
+      if(!summary)return;
+      const section=summary.parentElement;
+      if(section?.parentElement!==root||!section.classList.contains('micro-master-section'))return;
+
+      const alreadyVisualOpen=section.classList.contains('micro-master-manual-open');
+      if(alreadyVisualOpen){
+        section.classList.remove('micro-master-manual-open');
+      }else{
+        setVisualOpen(root,section);
+      }
 
       /*
-       * O organizador antigo reescreve a propriedade `open` sempre que observa
-       * mudanças na página. Capturamos o clique do Mestre e tornamos esse estado
-       * a fonte de verdade até que ele escolha outra gaveta.
+       * Nao impedimos o comportamento nativo do <details>. Assim os listeners
+       * originais ainda recebem `toggle` e carregam Aprovações, Descanso, Token etc.
+       * A diferenca e que mudancas programaticas de `open` nao afetam mais o que
+       * o Mestre esta vendo, eliminando o abre/fecha rapido.
        */
-      root.addEventListener('click',event=>{
-        const summary=event.target?.closest?.(':scope summary')||event.target?.closest?.('summary');
-        if(!summary||summary.parentElement?.parentElement!==root)return;
-        const section=summary.parentElement;
-        event.preventDefault();
-        event.stopPropagation();
-        desiredOpenId=section.open?null:section.id;
-        applyDesiredState(root);
-      },true);
-    }
+    },true);
 
-    if(accordionObserver)accordionObserver.disconnect();
-    accordionObserver=new NativeMutationObserver(mutations=>{
-      removeDuplicateCards(root);
-      if(mutations.some(m=>m.type==='attributes'&&m.attributeName==='open')){
-        queueMicrotask(()=>applyDesiredState(root));
-      }
-    });
-    accordionObserver.observe(root,{childList:true,subtree:true,attributes:true,attributeFilter:['open']});
-
-    applyDesiredState(root);
+    const childWatcher=new NativeMutationObserver(()=>removeDuplicateCards(root));
+    childWatcher.observe(root,{childList:true,subtree:true});
   }
 
   function scan(){
@@ -103,7 +112,7 @@
 
   const pageWatcher=new NativeMutationObserver(()=>{
     clearTimeout(pageWatcher._timer);
-    pageWatcher._timer=setTimeout(scan,60);
+    pageWatcher._timer=setTimeout(scan,80);
   });
   pageWatcher.observe(document.documentElement,{childList:true,subtree:true});
 
