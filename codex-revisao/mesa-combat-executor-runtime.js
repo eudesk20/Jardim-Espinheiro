@@ -91,9 +91,12 @@
     const p=pending;if(!p)return;cancel();const {caster,type,index}=p,item=(type==="attack"?caster.attacks:caster.spells)?.[index]||p.item,dist=distance(caster,target),max=parseRange(item),selfOnly=max===0;
     if(selfOnly&&target.id!==caster.id){log(`❌ <b>${esc(item.name)}</b> tem alcance Pessoal. O alvo escolhido é inválido.`,caster.color);return}
     if(!selfOnly&&dist>max+.05){
-      const spend=type==="spell"?await consumeSlot(caster,item):{ok:true};log(`❌ <b>${esc(item.name)}</b>: alvo a ${dist.toFixed(1)} m, fora do alcance de ${max} m.${type==="spell"&&+item.lvl>0?(spend.ok?` O Slot de ${spend.level}º Círculo foi gasto pela tentativa.`:` ${spend.reason}.`):" A ação foi gasta."}`,caster.color);return
+      const spend=type==="spell"?await consumeSlot(caster,item):{ok:true};
+      if(type!=="spell"||spend.ok)globalThis.MICROCOSMOS_TACTICAL_TURN?.commitAction?.(caster,{type,item,reason:"tentativa fora do alcance"});
+      log(`❌ <b>${esc(item.name)}</b>: alvo a ${dist.toFixed(1)} m, fora do alcance de ${max} m.${type==="spell"&&+item.lvl>0?(spend.ok?` O Slot de ${spend.level}º Círculo foi gasto pela tentativa.`:` ${spend.reason}.`):" A ação foi gasta."}`,caster.color);return
     }
     let slot={ok:true,level:0};if(type==="spell"){slot=await consumeSlot(caster,item);if(!slot.ok){log(`❌ <b>${esc(item.name)}</b>: ${slot.reason}.`,caster.color);return}}
+    globalThis.MICROCOSMOS_TACTICAL_TURN?.commitAction?.(caster,{type,item,slotLevel:slot.level});
     vfx(caster,target,item.damageType||item.name);
     let success=true,crit=false,rollInfo="";
     if(item.attack||type==="attack"){
