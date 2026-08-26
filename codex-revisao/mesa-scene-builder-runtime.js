@@ -82,9 +82,11 @@
   }
 
   function stagePoint(e){
-    const svg=$("microSceneVisibleLayer"),matrix=svg?.getScreenCTM?.();
-    if(svg&&matrix){const point=svg.createSVGPoint();point.x=e.clientX;point.y=e.clientY;const local=point.matrixTransform(matrix.inverse());return{x:local.x,y:local.y}}
-    const r=stage.getBoundingClientRect(),sx=r.width/(stage.offsetWidth||1400),sy=r.height/(stage.offsetHeight||900);return{x:(e.clientX-r.left)/sx,y:(e.clientY-r.top)/sy}
+    // Usa o mesmo sistema de coordenadas dos tokens e da colisão. A camada SVG
+    // pode informar uma matriz diferente quando o Stage tem pan/zoom, fazendo o
+    // desenho aparecer longe do cursor.
+    const r=stage.getBoundingClientRect(),w=stage.offsetWidth||1400,h=stage.offsetHeight||900;
+    return{x:(e.clientX-r.left)*(w/Math.max(1,r.width)),y:(e.clientY-r.top)*(h/Math.max(1,r.height))}
   }
   function snapPoint(p){
     if(!$("microBuilderSnap")?.checked)return p;
