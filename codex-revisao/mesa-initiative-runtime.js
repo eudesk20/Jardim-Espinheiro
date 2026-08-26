@@ -18,7 +18,8 @@
 
   let supabase=null,session=null,profile=null,isMaster=false;
   let rows=new Map(),combat={started:false,active_token_id:null,round:0};
-  let characterMods=new Map(),renderQueued=false,loading=false;
+  let characterMods=new Map(),renderQueued=false,loading=false,autoStarting=false,clearingCombat=false;
+  const rollingIds=new Set();
 
   const esc=v=>String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
   const mod=v=>Math.floor(((Number(v)||10)-10)/2);
@@ -28,7 +29,7 @@
   function ensureCss(){
     if(document.getElementById("microInitiativeStyle"))return;
     const s=document.createElement("style");s.id="microInitiativeStyle";s.textContent=`
-      .micro-init-toolbar{display:flex;gap:5px;flex-wrap:wrap;margin:0 0 7px}.micro-init-toolbar .btn{flex:1;min-width:72px;padding:6px 7px;font-size:.72rem}.micro-init-round{width:100%;font-size:.7rem;color:#6c5a43;text-align:center}.micro-init-row{display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:7px;align-items:center;background:#fff8e7;border:1px solid #b6a17d;border-radius:10px;padding:6px 7px;margin:5px 0;cursor:pointer;min-width:0}.micro-init-row.active-turn{border:2px solid #b58a3d;background:#fff0bd;box-shadow:0 0 0 2px #fff6 inset}.micro-init-row.unrolled{opacity:.78}.micro-init-main{min-width:0}.micro-init-main b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.micro-init-main small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#6b5a43}.micro-init-right{display:flex;align-items:center;gap:5px}.micro-init-value{min-width:34px;height:30px;display:grid;place-items:center;border:1px solid #806844;border-radius:9px;background:#fffdf6;font-weight:bold;font-size:.88rem}.micro-init-value.master-edit{cursor:pointer}.micro-init-roll{width:30px;height:30px;display:grid;place-items:center;border:1px solid #806844;border-radius:9px;background:#e9dcc1;cursor:pointer;user-select:none}.micro-init-roll.disabled{opacity:.35;cursor:default}.micro-init-dot{width:22px;height:22px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px #5f503d;overflow:hidden;display:grid;place-items:center}.micro-init-dot img{width:100%;height:100%;object-fit:cover}.micro-init-turn-tag{font-size:.58rem;color:#75531d;font-weight:bold}.micro-init-empty{font-size:.74rem;color:#75644e;text-align:center;padding:8px}@media(max-width:720px){.micro-init-row{grid-template-columns:27px minmax(0,1fr) auto;padding:5px 6px}.micro-init-toolbar{display:grid;grid-template-columns:repeat(3,1fr)}.micro-init-toolbar .btn{min-width:0}.micro-init-value,.micro-init-roll{width:28px;min-width:28px;height:28px}}
+      .micro-init-toolbar{display:flex;gap:5px;flex-wrap:wrap;margin:0 0 7px}.micro-init-toolbar .btn{flex:1;min-width:72px;padding:6px 7px;font-size:.72rem}.micro-init-round{width:100%;font-size:.7rem;color:#6c5a43;text-align:center}.micro-init-row{display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:7px;align-items:center;background:#fff8e7;border:1px solid #b6a17d;border-radius:10px;padding:6px 7px;margin:5px 0;cursor:pointer;min-width:0}.micro-init-row.active-turn{border:2px solid #b58a3d;background:#fff0bd;box-shadow:0 0 0 2px #fff6 inset}.micro-init-row.unrolled{opacity:.78}.micro-init-main{min-width:0}.micro-init-main b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.micro-init-main small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#6b5a43}.micro-init-right{display:flex;align-items:center;gap:5px}.micro-init-value{min-width:34px;height:30px;display:grid;place-items:center;border:1px solid #806844;border-radius:9px;background:#fffdf6;font-weight:bold;font-size:.88rem}.micro-init-value.master-edit{cursor:pointer}.micro-init-roll{width:30px;height:30px;display:grid;place-items:center;border:1px solid #806844;border-radius:9px;background:#e9dcc1;cursor:pointer;user-select:none}.micro-init-roll.disabled{opacity:.35;cursor:default;filter:grayscale(.65)}.micro-init-dot{width:22px;height:22px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px #5f503d;overflow:hidden;display:grid;place-items:center}.micro-init-dot img{width:100%;height:100%;object-fit:cover}.micro-init-turn-tag{font-size:.58rem;color:#75531d;font-weight:bold}.micro-init-empty{font-size:.74rem;color:#75644e;text-align:center;padding:8px}@media(max-width:720px){.micro-init-row{grid-template-columns:27px minmax(0,1fr) auto;padding:5px 6px}.micro-init-toolbar{display:grid;grid-template-columns:repeat(3,1fr)}.micro-init-toolbar .btn{min-width:0}.micro-init-value,.micro-init-roll{width:28px;min-width:28px;height:28px}}
     `;document.head.appendChild(s)
   }
 
@@ -41,6 +42,8 @@
   }
   function canRoll(p){return isMaster||!!(session?.user?.id&&p?.userId===session.user.id)}
   function tokenRow(p){return rows.get(p.id)||null}
+  function hasRolled(p){return Number.isFinite(tokenRow(p)?.initiative)}
+  function allInitiativesReady(){const current=players.filter(p=>p?.id);return current.length>0&&current.every(hasRolled)}
   function orderedPlayers(){
     return [...players].sort((a,b)=>{
       const A=tokenRow(a),B=tokenRow(b),ai=A?.initiative,bi=B?.initiative;
@@ -66,13 +69,14 @@
     const order=orderedPlayers();
     if(!order.length){list.innerHTML='<div class="micro-init-empty">Nenhum token na Mesa.</div>';return}
     list.innerHTML=order.map(p=>{
-      const r=tokenRow(p),value=Number.isFinite(r?.initiative)?r.initiative:"—",active=combat.started&&combat.active_token_id===p.id,allowed=canRoll(p);
+      const r=tokenRow(p),rolled=Number.isFinite(r?.initiative),value=rolled?r.initiative:"—",active=combat.started&&combat.active_token_id===p.id,allowed=canRoll(p)&&!rolled&&!rollingIds.has(p.id);
       const meta=p.creature?`${p.cls||"Criatura"} • ND ${p.challenge??p.level??"—"}`:`${p.cls||"Personagem"} • Nv. ${p.level||1}`;
       const image=p.tokenImage||p.sheetPortrait||"",dot=image?`<span class="micro-init-dot"><img src="${esc(image)}" alt=""></span>`:`<span class="micro-init-dot" style="background:${esc(p.color||"#8d63bf")}"></span>`;
-      return `<div class="micro-init-row ${active?"active-turn":""} ${Number.isFinite(r?.initiative)?"":"unrolled"}" data-init-token="${esc(p.id)}">${dot}<div class="micro-init-main"><b>${esc(p.name||"Token")}</b><small>${esc(meta)}${active?'<span class="micro-init-turn-tag"> • TURNO ATUAL</span>':""}</small></div><div class="micro-init-right"><span class="micro-init-value ${isMaster?"master-edit":""}" data-init-edit="${esc(p.id)}" title="${isMaster?"Clique para editar":"Iniciativa"}">${value}</span><span class="micro-init-roll ${allowed?"":"disabled"}" data-init-roll="${esc(p.id)}" title="${allowed?`Rolar iniciativa (${fmt(r?.modifier??tokenModifier(p))})`:"Somente o dono do token ou Mestre"}">🎲</span></div></div>`
+      const rollTitle=rolled?"Iniciativa já registrada. Limpe a iniciativa para rolar novamente.":allowed?`Rolar iniciativa (${fmt(r?.modifier??tokenModifier(p))})`:"Somente o dono do token ou Mestre";
+      return `<div class="micro-init-row ${active?"active-turn":""} ${rolled?"":"unrolled"}" data-init-token="${esc(p.id)}">${dot}<div class="micro-init-main"><b>${esc(p.name||"Token")}</b><small>${esc(meta)}${active?'<span class="micro-init-turn-tag"> • TURNO ATUAL</span>':""}</small></div><div class="micro-init-right"><span class="micro-init-value ${isMaster?"master-edit":""}" data-init-edit="${esc(p.id)}" title="${isMaster?"Clique para editar":"Iniciativa"}">${value}</span><span class="micro-init-roll ${allowed?"":"disabled"}" data-init-roll="${esc(p.id)}" title="${esc(rollTitle)}" aria-disabled="${allowed?"false":"true"}">🎲</span></div></div>`
     }).join("");
     list.querySelectorAll("[data-init-token]").forEach(el=>el.addEventListener("click",e=>{if(e.target.closest("[data-init-roll],[data-init-edit]"))return;api.selectToken?.(el.dataset.initToken)}));
-    list.querySelectorAll("[data-init-roll]").forEach(el=>el.addEventListener("click",e=>{e.stopPropagation();const p=players.find(x=>x.id===el.dataset.initRoll);if(p&&canRoll(p))rollOne(p)}));
+    list.querySelectorAll("[data-init-roll]").forEach(el=>el.addEventListener("click",e=>{e.stopPropagation();const p=players.find(x=>x.id===el.dataset.initRoll);if(p&&canRoll(p)&&!hasRolled(p)&&!rollingIds.has(p.id))rollOne(p)}));
     if(isMaster)list.querySelectorAll("[data-init-edit]").forEach(el=>el.addEventListener("click",e=>{e.stopPropagation();editOne(el.dataset.initEdit)}));
     const round=document.getElementById("microInitRound");if(round)round.textContent=combat.started?`Rodada ${Math.max(1,combat.round||1)} • ${order.find(p=>p.id===combat.active_token_id)?.name||"turno não definido"}`:"Combate ainda não iniciado";
   }
@@ -90,33 +94,63 @@
       ]);
       rows=new Map((init||[]).map(r=>[r.token_id,r]));combat=state||{started:false,active_token_id:null,round:0};schedule()
     }finally{loading=false}
+    if(isMaster&&!combat.started&&!autoStarting&&!clearingCombat)setTimeout(()=>maybeStartCombat(),0)
   }
 
-  async function saveRoll(p,natural,total,modifier){
-    if(!supabase||!session){rows.set(p.id,{token_id:p.id,token_name:p.name||"Token",owner_user_id:p.userId||null,initiative:total,natural_roll:natural,modifier,updated_at:new Date().toISOString()});schedule();return true}
+  async function saveRoll(p,natural,total,modifier,replace=false){
+    if(!supabase||!session){if(!replace&&hasRolled(p))return false;rows.set(p.id,{token_id:p.id,token_name:p.name||"Token",owner_user_id:p.userId||null,initiative:total,natural_roll:natural,modifier,updated_at:new Date().toISOString()});schedule();return true}
     const payload={session_key:SESSION_KEY,token_id:p.id,token_name:p.name||"Token",owner_user_id:p.userId||null,initiative:total,natural_roll:natural,modifier,updated_by:session.user.id,updated_at:new Date().toISOString()};
-    const {error}=await supabase.from("mesa_initiative").upsert(payload,{onConflict:"session_key,token_id"});if(error){console.warn("MICROCOSMOS iniciativa:",error);return false}return true
+    const query=replace?supabase.from("mesa_initiative").upsert(payload,{onConflict:"session_key,token_id"}):supabase.from("mesa_initiative").insert(payload);
+    const {error}=await query;
+    if(error){
+      if(error.code==="23505"){await loadState();return false}
+      console.warn("MICROCOSMOS iniciativa:",error);return false
+    }
+    return true
   }
   async function rollOne(p){
-    const modifier=tokenModifier(p),natural=d20(),total=natural+modifier;if(await saveRoll(p,natural,total,modifier)){const log=document.getElementById("rollLog");if(log){const e=document.createElement("div");e.className="log-entry";e.textContent=`⚔️ Iniciativa • ${p.name}: ${natural} ${fmt(modifier)} = ${total}`;log.prepend(e)}await loadState()}
+    if(!p||!canRoll(p)||rollingIds.has(p.id))return false;
+    rollingIds.add(p.id);schedule();
+    try{
+      await loadState();
+      if(hasRolled(p))return false;
+      const modifier=tokenModifier(p),natural=d20(),total=natural+modifier;
+      if(!(await saveRoll(p,natural,total,modifier,false)))return false;
+      const log=document.getElementById("rollLog");if(log){const e=document.createElement("div");e.className="log-entry";e.textContent=`⚔️ Iniciativa • ${p.name}: ${natural} ${fmt(modifier)} = ${total}`;log.prepend(e)}
+      await loadState();return true
+    }finally{rollingIds.delete(p.id);schedule()}
   }
   async function editOne(id){
-    if(!isMaster||!session)return;const p=players.find(x=>x.id===id);if(!p)return;const current=tokenRow(p)?.initiative;const raw=prompt(`Iniciativa de ${p.name}:`,Number.isFinite(current)?String(current):"");if(raw===null)return;const total=Number(raw);if(!Number.isFinite(total))return;const modifier=tokenModifier(p);if(await saveRoll(p,null,Math.trunc(total),modifier))await loadState()
+    if(!isMaster||!session)return;const p=players.find(x=>x.id===id);if(!p)return;const current=tokenRow(p)?.initiative;const raw=prompt(`Iniciativa de ${p.name}:`,Number.isFinite(current)?String(current):"");if(raw===null)return;const total=Number(raw);if(!Number.isFinite(total))return;const modifier=tokenModifier(p);if(await saveRoll(p,null,Math.trunc(total),modifier,true))await loadState()
   }
   async function setCombat(next){
     if(!isMaster||!supabase||!session)return;const payload={session_key:SESSION_KEY,active_token_id:next.active_token_id||null,round:Math.max(0,next.round||0),started:!!next.started,updated_by:session.user.id,updated_at:new Date().toISOString()};const {error}=await supabase.from("mesa_combat_state").upsert(payload,{onConflict:"session_key"});if(error)console.warn("MICROCOSMOS turno:",error)
   }
+  async function maybeStartCombat(){
+    if(!isMaster||!supabase||!session||combat.started||autoStarting||clearingCombat||!allInitiativesReady())return false;
+    const order=orderedPlayers().filter(p=>hasRolled(p));if(!order.length)return false;
+    autoStarting=true;
+    try{
+      await setCombat({started:true,round:1,active_token_id:order[0].id});
+      await loadState();api.selectToken?.(order[0].id);return true
+    }finally{autoStarting=false}
+  }
   async function rollAll(){
-    if(!isMaster)return;for(const p of players){const m=tokenModifier(p),n=d20();await saveRoll(p,n,n+m,m)}await loadState();const order=orderedPlayers().filter(p=>Number.isFinite(tokenRow(p)?.initiative));if(order.length)await setCombat({started:true,round:1,active_token_id:order[0].id});await loadState()
+    if(!isMaster)return;await loadState();
+    for(const p of players){if(hasRolled(p))continue;const m=tokenModifier(p),n=d20();await saveRoll(p,n,n+m,m,false)}
+    await loadState();const order=orderedPlayers().filter(p=>hasRolled(p));if(order.length&&!combat.started)await setCombat({started:true,round:1,active_token_id:order[0].id});await loadState()
   }
   async function nextTurn(){
-    if(!isMaster)return;await loadState();const order=orderedPlayers().filter(p=>Number.isFinite(tokenRow(p)?.initiative));if(!order.length)return;
+    if(!isMaster)return;await loadState();const order=orderedPlayers().filter(p=>hasRolled(p));if(!order.length)return;
     let idx=order.findIndex(p=>p.id===combat.active_token_id),round=Math.max(1,combat.round||1);if(idx<0){idx=0}else{idx++;if(idx>=order.length){idx=0;round++}}
     await setCombat({started:true,round,active_token_id:order[idx].id});await loadState();api.selectToken?.(order[idx].id)
   }
   async function clearCombat(){
     if(!isMaster||!confirm("Limpar todas as iniciativas e encerrar o combate atual?"))return;
-    await supabase.from("mesa_initiative").delete().eq("session_key",SESSION_KEY);await setCombat({started:false,round:0,active_token_id:null});await loadState()
+    clearingCombat=true;
+    try{
+      await supabase.from("mesa_initiative").delete().eq("session_key",SESSION_KEY);await setCombat({started:false,round:0,active_token_id:null});await loadState()
+    }finally{setTimeout(()=>{clearingCombat=false},500)}
   }
 
   try{
