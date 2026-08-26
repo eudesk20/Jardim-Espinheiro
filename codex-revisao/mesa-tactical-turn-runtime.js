@@ -1,8 +1,9 @@
-/* MICROCOSMOS — Modo Tático Beta v1.
+/* MICROCOSMOS — Modo Tático Beta v1.1.
    Controla o deslocamento por turno em blocos reversíveis:
    - cada arrasto concluído vira um segmento de movimento;
    - ↩ desfaz somente o último segmento;
    - uma ação confirmada trava os movimentos anteriores, mas não zera o movimento restante;
+   - Ataques e magias respeitam o recurso Ação/Ação Bônus/Reação do turno;
    - o turno só avança quando o dono do token ativo (ou o Mestre) usa Passar Vez.
    Nesta primeira versão o histórico de movimento é local ao aparelho que controla o turno;
    a posição do token continua sincronizada pela Mesa compartilhada.
@@ -113,11 +114,22 @@
     const raw=`${item?.activation||""} ${item?.castingTime||""} ${item?.time||""} ${item?.actionType||""}`.toLowerCase();
     if(/b[oô]nus|bonus/.test(raw))return"bonus";if(/rea[cç][aã]o|reaction/.test(raw))return"reaction";return"action"
   }
+  function actionLabel(bucket){return bucket==="bonus"?"Ação Bônus":bucket==="reaction"?"Reação":"Ação"}
+  function canUseAction(caster,meta={}){
+    syncTurn();const c=combat();
+    if(!c.started)return{ok:true,bucket:actionBucket(meta.item,meta.type)};
+    if(!caster||String(c.active_token_id)!==String(caster.id))return{ok:false,bucket:"action",reason:`⏳ Aguarde. Agora é o turno de ${activeToken()?.name||"outro token"}.`};
+    if(!state||String(state.tokenId)!==String(caster.id))resetForTurn(c);
+    const bucket=actionBucket(meta.item,meta.type),used=bucket==="bonus"?state.bonusUsed:bucket==="reaction"?state.reactionUsed:state.actionUsed;
+    if(used)return{ok:false,bucket,reason:`🚫 ${actionLabel(bucket)} já foi usada neste turno.`};
+    return{ok:true,bucket}
+  }
   function commitAction(caster,meta={}){
-    syncTurn();const c=combat();if(!c.started||!state||String(c.active_token_id)!==String(caster?.id))return;
-    const bucket=actionBucket(meta.item,meta.type);if(bucket==="bonus")state.bonusUsed=true;else if(bucket==="reaction")state.reactionUsed=true;else state.actionUsed=true;
+    const check=canUseAction(caster,meta);if(!check.ok){notify(check.reason);render();return false}
+    const c=combat();if(!c.started)return true;
+    if(check.bucket==="bonus")state.bonusUsed=true;else if(check.bucket==="reaction")state.reactionUsed=true;else state.actionUsed=true;
     // Tudo que foi feito antes desta ação fica confirmado. O movimento restante continua disponível.
-    state.history=[];state.actionLocks++;render();notify(`🔒 Posição confirmada pela ação. Movimento restante: ${fmt(state.total-state.used)} m.`)
+    state.history=[];state.actionLocks++;render();notify(`🔒 ${actionLabel(check.bucket)} usada. Movimento restante: ${fmt(state.total-state.used)} m.`);return true
   }
   async function passTurn(){
     syncTurn();const p=activeToken();if(!p||!canControl(p)||!supabase)return;
@@ -133,6 +145,6 @@
     if(session){const {data:p}=await supabase.from("profiles").select("role,approved").eq("id",session.user.id).maybeSingle();profile=p||null}
   }catch(e){console.warn("MICROCOSMOS modo tático sem conexão online",e)}
 
-  globalThis.MICROCOSMOS_TACTICAL_TURN={validateMove,recordMove,undoLast,commitAction,passTurn,get state(){return state},distanceMeters,sync:syncTurn};
+  globalThis.MICROCOSMOS_TACTICAL_TURN={validateMove,recordMove,undoLast,commitAction,canUseAction,actionBucket,passTurn,get state(){return state},distanceMeters,sync:syncTurn};
   ensureHud();syncTurn();setInterval(()=>{syncTurn();render()},350);
 })();
