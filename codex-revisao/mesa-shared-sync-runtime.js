@@ -15,7 +15,7 @@
 
   const $=id=>document.getElementById(id);
   const clone=v=>{try{return structuredClone(v)}catch{return JSON.parse(JSON.stringify(v))}};
-  let supabase=null,session=null,profile=null,isMaster=false,applyingRemote=false,tokenTimer=null,sceneTimer=null,stateTimer=null;
+  let supabase=null,session=null,profile=null,isMaster=false,applyingRemote=false,tokenTimer=null,sceneTimer=null,stateTimer=null,queuedTokenRows=null;
   const remoteMeta=new Map();
 
   function tokenLayer(p){return p?.visibilityLayer||p?.layer||"players"}
@@ -39,6 +39,7 @@
     return data||[]
   }
   function applyRemoteTokens(rows){
+    if(globalThis.MICROCOSMOS_TOKEN_DRAGGING){queuedTokenRows=clone(rows||[]);return}
     applyingRemote=true;
     try{
       remoteMeta.clear();
@@ -67,6 +68,12 @@
     if(error)console.warn("MICROCOSMOS Mesa: falha ao sincronizar token",p.id,error);else remoteMeta.set(p.id,{owner_user_id:owner,layer,data:clone(data)})
   }
   async function flushToken(id,includeHp=false){if(!session)return false;const p=players.find(x=>String(x.id)===String(id));if(!p)return false;await uploadToken(p,{includeHp});return true}
+  async function finishTokenDrag(id){
+    try{if(session){const p=players.find(x=>String(x.id)===String(id));if(p)await uploadToken(p)}}
+    finally{globalThis.MICROCOSMOS_TOKEN_DRAGGING=null;queuedTokenRows=null}
+    if(session)applyRemoteTokens(await readRemoteTokens());
+    return true
+  }
   async function flushTokens(){
     if(applyingRemote||!session)return;
     const allowed=players.filter(p=>isMaster||ownerId(p)===session.user.id);
@@ -83,7 +90,7 @@
       if(error)console.warn("MICROCOSMOS Mesa: falha ao remover tokens compartilhados",error)
     }
   }
-  function scheduleTokens(){if(applyingRemote)return;clearTimeout(tokenTimer);tokenTimer=setTimeout(flushTokens,180)}
+  function scheduleTokens(){if(applyingRemote||globalThis.MICROCOSMOS_TOKEN_DRAGGING)return;clearTimeout(tokenTimer);tokenTimer=setTimeout(flushTokens,180)}
 
   function sceneElements(){return globalThis.MICROCOSMOS_SCENE?.elements||[]}
   function applyRemoteScene(rows){
@@ -180,5 +187,5 @@
     .on("postgres_changes",{event:"*",schema:"public",table:"mesa_session_state",filter:`session_key=eq.${SESSION_KEY}`},async payload=>{if(payload.new?.data)await applySessionState(payload.new.data)})
     .subscribe();
 
-  globalThis.MICROCOSMOS_MESA_SHARED={isMaster:()=>isMaster,flushToken,flushTokens,flushScene,reloadTokens:async()=>applyRemoteTokens(await readRemoteTokens()),reloadScene:async()=>applyRemoteScene(await readRemoteScene()),reloadState:async()=>applySessionState(await getSessionState()),channel};
+  globalThis.MICROCOSMOS_MESA_SHARED={isMaster:()=>isMaster,flushToken,finishTokenDrag,flushTokens,flushScene,reloadTokens:async()=>applyRemoteTokens(await readRemoteTokens()),reloadScene:async()=>applyRemoteScene(await readRemoteScene()),reloadState:async()=>applySessionState(await getSessionState()),channel};
 })();

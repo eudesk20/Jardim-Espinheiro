@@ -9,7 +9,7 @@
   const $=id=>document.getElementById(id),players=globalThis.MICROCOSMOS_TABLE_PLAYERS,api=globalThis.MICROCOSMOS_TABLE_API;
   const viewport=$("viewport"),tokenLayer=$("tokenLayer"),rollLog=$("rollLog"),left=$("leftPanel"),right=$("rightPanel");
   if(!Array.isArray(players)||!api||!viewport||!tokenLayer)return;
-  let session=null,profile=null,current=null,category="",toastTimer=0,menuTimer=0,actionPointer=null,suppressTokenClickUntil=0;
+  let session=null,profile=null,current=null,category="",toastTimer=0,menuTimer=0,actionPointer=null,suppressTokenClickUntil=0,wasInitiativeActive=false,pendingInitiativeOpen=false;
   const esc=v=>String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
   const fmt=n=>Number(n)>=0?`+${Number(n)||0}`:`${Number(n)||0}`;
   const d20=()=>1+Math.floor(Math.random()*20);
@@ -76,7 +76,7 @@
   function decorateCombatTokens(){const init=initiativeApi();tokenLayer.querySelectorAll("[data-token]").forEach(el=>{const id=el.dataset.token;if(init?.hasRolled?.(id)&&!el.querySelector(".micro-combat-mark")){const mark=document.createElement("span");mark.className="micro-combat-mark";mark.textContent="⚔";mark.title="Em combate";el.appendChild(mark)}})}
   function decorateTokenPrivacy(){tokenLayer.querySelectorAll("[data-token]").forEach(el=>{const p=tablePlayers().find(x=>String(x.id)===String(el.dataset.token)),visible=!!p&&(isMaster()||!!(session?.user?.id&&String(p.userId||p.ownerUserId||"")===session.user.id));if(el.classList.contains("micro-own-token")!==visible)el.classList.toggle("micro-own-token",visible);if(el.classList.contains("micro-can-see-hp")!==visible)el.classList.toggle("micro-can-see-hp",visible);const bar=el.querySelector(".hp");let label=bar?.querySelector(".micro-token-hp-label");if(visible&&bar){if(!label){label=document.createElement("b");label.className="micro-token-hp-label";bar.appendChild(label)}const value=`${Math.max(0,+p.hp||0)}/${Math.max(1,+p.hpMax||1)}`;if(label.textContent!==value)label.textContent=value}else label?.remove()})}
 
-  function reopenActionsFor(id){if(!initiativeActive()||document.body.classList.contains("micro-auto-target"))return;const p=tablePlayers().find(x=>String(x.id)===String(id)),el=tokenLayer.querySelector(`[data-token="${CSS.escape(String(id||""))}"]`);if(p&&el&&canControl(p))openMenu(p,el)}
+  function reopenActionsFor(id){if(!initiativeActive()||document.body.classList.contains("micro-auto-target"))return false;const p=tablePlayers().find(x=>String(x.id)===String(id)),el=tokenLayer.querySelector(`[data-token="${CSS.escape(String(id||""))}"]`);if(p&&el&&canControl(p)){openMenu(p,el);return true}return false}
   tokenLayer.addEventListener("pointerdown",e=>{const el=e.target.closest("[data-token]");if(!el||document.body.classList.contains("micro-auto-target"))return;actionPointer={id:el.dataset.token,pointer:e.pointerId,x:e.clientX,y:e.clientY,moved:false};closeMenu()},true);
   viewport.addEventListener("pointermove",e=>{if(!actionPointer||actionPointer.pointer!==e.pointerId)return;if(Math.hypot(e.clientX-actionPointer.x,e.clientY-actionPointer.y)>5)actionPointer.moved=true},true);
   function finishTokenGesture(e){if(!actionPointer||actionPointer.pointer!==e.pointerId)return;const gesture=actionPointer;actionPointer=null;suppressTokenClickUntil=performance.now()+180;clearTimeout(menuTimer);menuTimer=setTimeout(()=>reopenActionsFor(gesture.id),120)}
@@ -88,6 +88,6 @@
 
   ensureCss();ensureDrawers();ensureHeaderDrawer();ensureMenu();ensureQuickToggle();
   try{const {createClient}=await import("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm");const sb=createClient("https://evyhhlbvhspiuwouivbb.supabase.co","sb_publishable_mf7PV03HfaJw_YkUhX34NA_dAGFbyp6",{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}});const {data:{session:s}}=await sb.auth.getSession();session=s;if(session){const {data}=await sb.from("profiles").select("role,approved").eq("id",session.user.id).maybeSingle();profile=data||null}ensureMasterDrawer();decorateTokenPrivacy()}catch(_e){}
-  setInterval(()=>{decorateCombatTokens();decorateTokenPrivacy();ensureMasterDrawer();refreshQuickToggle();if(!initiativeActive())closeMenu()},500);
+  setInterval(()=>{decorateCombatTokens();decorateTokenPrivacy();ensureMasterDrawer();refreshQuickToggle();const active=initiativeActive();if(active&&!wasInitiativeActive)pendingInitiativeOpen=true;if(!active){pendingInitiativeOpen=false;closeMenu()}else if(pendingInitiativeOpen){const el=tokenLayer.querySelector("[data-token].selected")||tokenLayer.querySelector("[data-token][aria-selected='true']"),fallback=initiativeApi()?.order?.find?.(p=>hasInitiative(p));if(reopenActionsFor(el?.dataset.token||fallback?.id))pendingInitiativeOpen=false}wasInitiativeActive=active},500);
   globalThis.MICROCOSMOS_TOKEN_ACTIONS={open:p=>{const el=tokenLayer.querySelector(`[data-token="${CSS.escape(p.id)}"]`);if(el)openMenu(p,el)},close:closeMenu,showToast};
 })();
