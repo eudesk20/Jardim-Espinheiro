@@ -81,7 +81,11 @@
     },true))
   }
 
-  function stagePoint(e){const r=stage.getBoundingClientRect(),sx=r.width/(stage.offsetWidth||1400),sy=r.height/(stage.offsetHeight||900);return{x:(e.clientX-r.left)/sx,y:(e.clientY-r.top)/sy}}
+  function stagePoint(e){
+    const svg=$("microSceneVisibleLayer"),matrix=svg?.getScreenCTM?.();
+    if(svg&&matrix){const point=svg.createSVGPoint();point.x=e.clientX;point.y=e.clientY;const local=point.matrixTransform(matrix.inverse());return{x:local.x,y:local.y}}
+    const r=stage.getBoundingClientRect(),sx=r.width/(stage.offsetWidth||1400),sy=r.height/(stage.offsetHeight||900);return{x:(e.clientX-r.left)/sx,y:(e.clientY-r.top)/sy}
+  }
   function snapPoint(p){
     if(!$("microBuilderSnap")?.checked)return p;
     const s=Math.max(20,+gridSize?.value||70),type=gridType?.value;
