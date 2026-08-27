@@ -39,6 +39,9 @@ jobs:
       - name: Aplicar Configurações da Mesa
         run: node tools/apply-settings-runtime.mjs
 
+      - name: Aplicar Perícias Flexíveis
+        run: node tools/apply-flexible-skills-runtime.mjs
+
       - name: Preparar GitHub Pages
         uses: actions/configure-pages@v5
         with:
