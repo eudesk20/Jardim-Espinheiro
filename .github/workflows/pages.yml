@@ -36,6 +36,9 @@ jobs:
       - name: Aplicar auditoria à ficha publicada
         run: node tools/apply-material-audit-runtime.mjs
 
+      - name: Aplicar Configurações da Mesa
+        run: node tools/apply-settings-runtime.mjs
+
       - name: Preparar GitHub Pages
         uses: actions/configure-pages@v5
         with:
