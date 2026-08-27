@@ -5,6 +5,10 @@
    - "Rolar" vira "Escolher";
    - o clique abre o seletor FOR/DES/CON/INT/SAB/CAR do motor oficial.
    Ataques, Magias, Itens e Salvaguardas permanecem intocados.
+
+   IMPORTANTE: não usamos MutationObserver aqui. A versão anterior observava o menu
+   e, ao decorar as linhas, modificava o próprio DOM observado, criando um ciclo de
+   mutação -> decoração -> mutação que podia congelar a Mesa.
 */
 (function(){
   if(globalThis.MICROCOSMOS_TOKEN_FLEXIBLE_SKILLS_BRIDGE)return;
@@ -45,9 +49,11 @@
     menu.querySelectorAll(".micro-action-panel .micro-action-row").forEach(row=>{
       const title=row.querySelector("span>b"),meta=row.querySelector("span>small"),button=row.querySelector("button[data-action-row]");
       const name=String(title?.textContent||"").trim();if(!name||!button)return;
-      const skill=flexibleSkill(p,name);
+      const skill=flexibleSkill(p,name),signature=`${name}|${skill.suggested}|${proficiencyLabel(p,skill)}`;
+      if(row.dataset.flexSkillSignature===signature&&button.dataset.flexSkillChoice==="1")return;
       row.dataset.flexSkillName=name;
       row.dataset.flexSkillSuggested=skill.suggested;
+      row.dataset.flexSkillSignature=signature;
       if(meta)meta.textContent=`sug. ${skill.suggested} • ${proficiencyLabel(p,skill)} • Atributo livre`;
       button.textContent="Escolher";
       button.title=`Escolher abordagem para ${name}: FOR, DES, CON, INT, SAB ou CAR`;
@@ -66,17 +72,19 @@
     const p=selectedToken(),api=flexApi();
     if(!p||!api?.open)return;
     button.disabled=true;
-    try{await api.open(p,flexibleSkill(p,name))}finally{if(button.isConnected)button.disabled=false}
+    try{await api.open(p,flexibleSkill(p,name))}
+    catch(error){console.error("MICROCOSMOS: falha ao abrir Perícia Flexível",error)}
+    finally{if(button.isConnected)button.disabled=false}
   },true);
 
-  // A categoria é reconstruída a cada clique, então decoramos após mutações e
-  // também logo depois do botão "Perícias" ser acionado.
+  // O próprio menu já é reconstruído quando uma categoria é escolhida. Basta
+  // decorar UMA VEZ depois desse clique; não há observação contínua do DOM.
   document.addEventListener("click",event=>{
     if(event.target.closest?.('#microTokenActionMenu [data-action-cat="skill"]'))setTimeout(decorate,0)
   },true);
-  const observer=new MutationObserver(()=>queueMicrotask(decorate));
-  const start=()=>{const menu=document.getElementById("microTokenActionMenu");if(menu){observer.observe(menu,{childList:true,subtree:true});decorate();return true}return false};
-  if(!start()){let tries=0;const timer=setInterval(()=>{if(start()||++tries>80)clearInterval(timer)},125)}
+
+  // Se a configuração for ligada enquanto a aba Perícias já estiver aberta,
+  // fazemos somente uma nova passagem idempotente.
   window.addEventListener("microcosmos:settings-change",()=>setTimeout(decorate,0));
 
   globalThis.MICROCOSMOS_TOKEN_FLEXIBLE_SKILLS_BRIDGE_API={decorate,flexibleSkill};
