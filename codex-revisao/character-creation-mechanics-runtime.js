@@ -1,5 +1,56 @@
-/* MICROCOSMOS — Criação Assistida: Atributos, Perícias e Recursos. */
+/* MICROCOSMOS — Criação Assistida: Atributos v1.
+   Mostra Base + Classe/Raça/Sub-Raça/Antecedente = Total.
+*/
 (function(){
-  if(globalThis.MICROCOSMOS_CHARACTER_CREATION_MECHANICS)return;
-  globalThis.MICROCOSMOS_CHARACTER_CREATION_MECHANICS=true;
+ if(globalThis.MICROCOSMOS_CHARACTER_CREATION_MECHANICS)return;
+ globalThis.MICROCOSMOS_CHARACTER_CREATION_MECHANICS=true;
+ const $=id=>document.getElementById(id),A=["FOR","DES","CON","INT","SAB","CAR"];
+ const esc=v=>String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
+ let doc=null,loading=null,observer=null,busy=false;
+ function ok(){try{return typeof state!=="undefined"&&typeof save==="function"}catch{return false}}
+ function saveNow(){try{save()}catch(_e){}}
+ function draft(){state.creationDraft=state.creationDraft&&typeof state.creationDraft==="object"?state.creationDraft:{};const d=state.creationDraft;d.attributeBases=d.attributeBases&&typeof d.attributeBases==="object"?d.attributeBases:{};d.assignments=d.assignments&&typeof d.assignments==="object"?d.assignments:{};d.rolls=Array.isArray(d.rolls)?d.rolls:[];return d}
+ function step(){return +(String($("microCreateTitle")?.textContent||"").match(/^\s*(\d+)/)?.[1]||0)}
+ function races(){try{if(typeof RACE_DATA!=="undefined")return RACE_DATA}catch(_e){}return globalThis.CODEX_RACE_DATA||{}}
+ function obj(src){const o={};for(const k of A){const n=+src?.[k]||0;if(n)o[k]=n}return o}
+ function classB(){return obj(globalThis.MICROCOSMO_DATA?.classes?.[state.cls]?.abilityBonuses)}
+ function raceExplicit(){return obj(races()?.[state.race]?.abilityBonuses)}
+ function subB(){return obj(races()?.[state.race]?.subraceDetails?.[state.subrace]?.abilityBonuses)}
+ function loadDoc(){if(doc)return Promise.resolve(doc);if(!loading)loading=fetch("codex-revisao/racas-subracas-revisao.html",{cache:"force-cache"}).then(r=>r.text()).then(t=>doc=new DOMParser().parseFromString(t,"text/html")).catch(()=>null);return loading}
+ function raceSpec(){
+   const ex=raceExplicit();if(Object.keys(ex).length)return{fixed:ex,choice:null,raw:"Bônus estruturado da Raça"};
+   const li=doc?.getElementById(state.race)?.querySelectorAll(".traits li");const text=[...(li||[])].map(x=>x.textContent||"").find(t=>/\+\d+\s+(FOR|DES|CON|INT|SAB|CAR)/i.test(t))||"";const u=text.toUpperCase(),fixed={};
+   let m=u.match(/\+(\d+)\s+(FOR|DES|CON|INT|SAB|CAR)\s+E\s+\+(\d+)\s+(FOR|DES|CON|INT|SAB|CAR)\s+OU\s+(FOR|DES|CON|INT|SAB|CAR)/);
+   if(m){fixed[m[2]]=+m[1];return{fixed,choice:{amount:+m[3],options:[m[4],m[5]]},raw:text}}
+   for(const x of u.matchAll(/\+(\d+)\s+(FOR|DES|CON|INT|SAB|CAR)/g))fixed[x[2]]=(fixed[x[2]]||0)+(+x[1]);return{fixed,choice:null,raw:text}
+ }
+ function origin(){return globalThis.ORIGIN_ATTRIBUTE_DATA?.[state.background]||null}
+ function originB(){const d=draft(),o=origin(),out={};if(!o)return out;if(d.originMode==="three")for(const k of o.abilities)out[k]=1;else if(d.originMode==="two"&&o.abilities.includes(d.originPrimary)&&o.abilities.includes(d.originSecondary)&&d.originPrimary!==d.originSecondary){out[d.originPrimary]=2;out[d.originSecondary]=1}return out}
+ function raceB(){const d=draft(),s=raceSpec(),out={...s.fixed};if(s.choice?.options.includes(d.raceChoice))out[d.raceChoice]=(out[d.raceChoice]||0)+s.choice.amount;return out}
+ function breakdown(k){const c=classB()[k]||0,r=raceB()[k]||0,s=subB()[k]||0,o=originB()[k]||0;return{c,r,s,o,total:c+r+s+o}}
+ function ensureBase(){const d=draft();if(d.attributeBasesReady)return;for(const k of A)d.attributeBases[k]=Math.max(1,Math.min(20,+state.stats?.[k]||10));d.attributeBasesReady=true;saveNow()}
+ function apply(){ensureBase();const d=draft();state.creationAbilityBonuses={};for(const k of A){const b=breakdown(k);state.creationAbilityBonuses[k]=b.r+b.o;state.stats[k]=Math.max(1,Math.min(20,(+d.attributeBases[k]||10)+b.total))}saveNow();try{renderAttrs?.()}catch(_e){}}
+ function rr(){try{globalThis.MICROCOSMOS_CHARACTER_CREATION_API?.render?.()}catch(_e){}setTimeout(()=>paint(true),0)}
+ function roll4(){const dice=Array.from({length:4},()=>1+Math.floor(Math.random()*6)).sort((a,b)=>a-b);return{dice,total:dice[1]+dice[2]+dice[3]}}
+ function rollSix(){const d=draft();d.rolls=Array.from({length:6},roll4);d.assignments={};d.attributeBases={};d.attributeBasesReady=true;saveNow();rr()}
+ function assign(k,v){const d=draft();if(v===""){delete d.assignments[k];d.attributeBases[k]=10}else{v=+v;for(const [x,i] of Object.entries(d.assignments))if(x!==k&&+i===v){delete d.assignments[x];d.attributeBases[x]=10}d.assignments[k]=v;d.attributeBases[k]=d.rolls[v]?.total||10}apply();rr()}
+ function base(k,v){draft().attributeBases[k]=Math.max(1,Math.min(20,+v||10));apply();rr()}
+ function raceChoice(v){draft().raceChoice=v;apply();rr()}
+ function mode(v){const d=draft();d.originMode=v;d.originPrimary="";d.originSecondary="";apply();rr()}
+ function primary(v){const d=draft();d.originPrimary=v;if(d.originSecondary===v)d.originSecondary="";apply();rr()}
+ function secondary(v){const d=draft();d.originSecondary=v;if(d.originPrimary===v)d.originPrimary="";apply();rr()}
+ function fmt(n){return n?`+${n}`:"—"}
+ function html(){
+   ensureBase();const d=draft(),rs=raceSpec(),o=origin();if(o&&!d.originMode)d.originMode="two";apply();const used=new Set(Object.values(d.assignments).map(Number));
+   const raceChoiceHtml=rs.choice?`<label class="mca-choice">Bônus variável da Raça +${rs.choice.amount}<select onchange="MICROCOSMOS_CREATION_ATTR_API.raceChoice(this.value)"><option value="">Escolher…</option>${rs.choice.options.map(k=>`<option ${d.raceChoice===k?"selected":""}>${k}</option>`).join("")}</select></label>`:"";
+   const originHtml=o?`<section class="mca-origin"><b>📜 ${esc(state.background)}</b><small>Atributos permitidos: ${o.abilities.join(" • ")}</small><div><label><input type="radio" name="mca-mode" ${d.originMode==="two"?"checked":""} onchange="MICROCOSMOS_CREATION_ATTR_API.mode('two')"> +2/+1</label> <label><input type="radio" name="mca-mode" ${d.originMode==="three"?"checked":""} onchange="MICROCOSMOS_CREATION_ATTR_API.mode('three')"> +1/+1/+1</label></div>${d.originMode==="two"?`<div class="mca-pair"><label>+2<select onchange="MICROCOSMOS_CREATION_ATTR_API.primary(this.value)"><option value="">Escolher…</option>${o.abilities.map(k=>`<option ${d.originPrimary===k?"selected":""} ${d.originSecondary===k?"disabled":""}>${k}</option>`).join("")}</select></label><label>+1<select onchange="MICROCOSMOS_CREATION_ATTR_API.secondary(this.value)"><option value="">Escolher…</option>${o.abilities.map(k=>`<option ${d.originSecondary===k?"selected":""} ${d.originPrimary===k?"disabled":""}>${k}</option>`).join("")}</select></label></div>`:`<div class="mca-ok">✓ +1 em ${o.abilities.join(", ")}</div>`}</section>`:'<div class="micro-create-note">⚠️ Antecedente sem regra de Atributos estruturada.</div>';
+   const rows=A.map(k=>{const b=breakdown(k),cur=d.assignments[k],input=d.rolls.length?`<select onchange="MICROCOSMOS_CREATION_ATTR_API.assign('${k}',this.value)"><option value="">Resultado…</option>${d.rolls.map((r,i)=>`<option value="${i}" ${+cur===i?"selected":""} ${used.has(i)&&+cur!==i?"disabled":""}>${r.total} — ${r.dice.join("/")}</option>`).join("")}</select>`:`<input type="number" min="1" max="20" value="${d.attributeBases[k]}" onchange="MICROCOSMOS_CREATION_ATTR_API.base('${k}',this.value)">`;return`<div class="mca-row"><b>${k}</b><div><small>Base</small>${input}</div><div class="mca-bonus"><span>Classe ${fmt(b.c)}</span><span>Raça ${fmt(b.r)}</span><span>Sub-Raça ${fmt(b.s)}</span><span>Antecedente ${fmt(b.o)}</span></div><div><small>Total</small><strong>${state.stats[k]}</strong></div></div>`}).join("");
+   return `<div data-mca-step="5"><div class="micro-create-note"><b>5º Atributos.</b> Agora cada valor mostra <b>Base + bônus por origem = Total</b>. O Antecedente usa +2/+1 ou +1/+1/+1.</div><div class="mca-sources"><div><b>⚔️ Classe</b><small>${Object.keys(classB()).length?"Bônus estruturado aplicado.":"Sem aumento numérico automático."}</small></div><div><b>🧬 Raça</b><small>${esc(rs.raw||"Sem aumento numérico cadastrado.")}</small>${raceChoiceHtml}</div><div><b>🌿 Sub-Raça</b><small>${Object.keys(subB()).length?"Bônus estruturado aplicado.":"Sem aumento numérico próprio."}</small></div></div>${originHtml}<button class="btn primary" onclick="MICROCOSMOS_CREATION_ATTR_API.rollSix()">🎲 Rolar os 6 Atributos — 4d6, descarta o menor</button>${d.rolls.length?`<div class="micro-create-rolls">${d.rolls.map(r=>`<span class="micro-create-roll"><b>${r.total}</b> <small>[${r.dice.join(", ")}]</small></span>`).join("")}</div>`:""}<div class="mca-list">${rows}</div></div>`
+ }
+ function style(){if($("mcaStyle"))return;const s=document.createElement("style");s.id="mcaStyle";s.textContent=`.mca-sources{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:8px 0}.mca-sources>div,.mca-origin{padding:9px;border:1px solid #aa9270;border-radius:10px;background:#fffaf0}.mca-sources b,.mca-origin>b{display:block;color:#503868}.mca-sources small,.mca-origin small{display:block;color:#6d5a43;margin:3px 0}.mca-choice{display:block;margin-top:6px}.mca-origin{border-left:5px solid #75538c;margin:8px 0}.mca-origin input{width:auto}.mca-pair{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:7px}.mca-ok{padding:7px;background:#e4f0df;border-radius:8px}.mca-list{display:grid;gap:6px;margin-top:8px}.mca-row{display:grid;grid-template-columns:48px 1fr 2fr 70px;gap:8px;align-items:center;padding:8px;border:1px solid #b49a72;border-radius:9px;background:#fffaf0}.mca-row>b{color:#405d3e}.mca-row small{display:block}.mca-row strong{font-size:1.25rem;color:#503868}.mca-bonus{display:flex;gap:4px;flex-wrap:wrap}.mca-bonus span{padding:3px 6px;border:1px solid #c0ab89;border-radius:999px;background:#f4ead5;font-size:.68rem}@media(max-width:700px){.mca-sources{grid-template-columns:1fr}.mca-row{grid-template-columns:45px 1fr}.mca-bonus,.mca-row>div:last-child{grid-column:1/-1}.mca-pair{grid-template-columns:1fr}}`;document.head.appendChild(s)}
+ function validate(){const d=draft(),rs=raceSpec(),o=origin();if(rs.choice&&!rs.choice.options.includes(d.raceChoice))return alert("Escolha onde aplicar o bônus variável da Raça."),false;if(o&&d.originMode==="two"&&(!o.abilities.includes(d.originPrimary)||!o.abilities.includes(d.originSecondary)||d.originPrimary===d.originSecondary))return alert("Escolha um Atributo para +2 e outro diferente para +1 no Antecedente."),false;return true}
+ function paint(force=false){if(!ok()||step()!==5||$("microCreationWizard")?.hidden)return;const body=$("microCreateBody");if(!body)return;if(!force&&body.querySelector(':scope>[data-mca-step="5"]'))return;busy=true;body.innerHTML=html();busy=false}
+ function boot(){if(!ok())return false;style();ensureBase();loadDoc().then(()=>paint(true));const body=$("microCreateBody");if(body){observer?.disconnect();observer=new MutationObserver(()=>{if(!busy)requestAnimationFrame(()=>paint())});observer.observe(body,{childList:true,subtree:false})}document.addEventListener("click",e=>{if(e.target.closest?.("#microCreateNext")&&step()===5&&!validate()){e.preventDefault();e.stopImmediatePropagation()}},true);paint();return true}
+ globalThis.MICROCOSMOS_CREATION_ATTR_API={rollSix,assign,base,raceChoice,mode,primary,secondary,paint};
+ if(!boot()){let n=0,t=setInterval(()=>{if(boot()||++n>80)clearInterval(t)},125)}
 })();
