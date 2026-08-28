@@ -11,7 +11,7 @@
   const players=globalThis.MICROCOSMOS_TABLE_PLAYERS||[];
   const wait=ms=>new Promise(r=>setTimeout(r,ms));
   const esc=v=>String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
-  let sb=null,session=null,profile=null,organizing=false,restMode="individual",restCharacterId="",approvalChannel=null;
+  let sb=null,session=null,profile=null,organizing=false,restMode="individual",restCharacterId="",approvalChannel=null,mapSizeMode="squares";
 
   async function connect(){
     try{
@@ -69,16 +69,20 @@
 
   function renderTable(){
     const body=bodyOf("microMasterTableSection");if(!body)return;clearLegacyBody(body);
-    const type=$("gridType")?.value||"square",size=+$("gridSize")?.value||70;
+    const type=$("gridType")?.value||"square",size=+$("gridSize")?.value||70,stage=$("stage"),mapWidth=stage?.offsetWidth||1400,mapHeight=stage?.offsetHeight||900,minSquares=Math.ceil(350/size),maxSquares=Math.floor(14000/size),mapX=mapSizeMode==="squares"?Math.max(minSquares,Math.round(mapWidth/size)):mapWidth,mapY=mapSizeMode==="squares"?Math.max(minSquares,Math.round(mapHeight/size)):mapHeight;
     const card=document.createElement("div");card.dataset.masterV2="1";card.className="micro-tool-card";card.innerHTML=`
       <div class="micro-tool-row"><label>Tipo do Grid<select id="microV2GridType"><option value="square" ${type==="square"?"selected":""}>Quadrado</option><option value="hex" ${type==="hex"?"selected":""}>Hexagonal</option><option value="none" ${type==="none"?"selected":""}>Sem Grid</option></select></label><label>Tamanho do Grid<input id="microV2GridSize" type="range" min="40" max="120" value="${size}"></label></div>
       <div class="micro-tool-row"><button class="micro-tool-btn" id="microV2GridMinus">− Grid</button><button class="micro-tool-btn" id="microV2GridPlus">+ Grid</button><button class="micro-tool-btn primary" id="microV2Map">🖼️ Carregar Mapa</button><button class="micro-tool-btn danger" id="microV2ClearMap">Remover Mapa</button></div>
+      <div class="micro-tool-row"><label>Medir mapa por<select id="microV2MapSizeMode"><option value="squares" ${mapSizeMode==="squares"?"selected":""}>Quadrados</option><option value="pixels" ${mapSizeMode==="pixels"?"selected":""}>Pixels</option></select></label><label>Largura<input id="microV2MapWidth" type="number" min="${mapSizeMode==="squares"?minSquares:350}" max="${mapSizeMode==="squares"?maxSquares:14000}" value="${mapX}"></label><label>Altura<input id="microV2MapHeight" type="number" min="${mapSizeMode==="squares"?minSquares:350}" max="${mapSizeMode==="squares"?maxSquares:14000}" value="${mapY}"></label></div>
+      <button class="micro-tool-btn primary" id="microV2ApplyMapSize">↔ Aplicar tamanho do mapa</button><div class="micro-tool-note" id="microV2MapSizeNote">${mapSizeMode==="squares"?`${mapX} × ${mapY} quadrados = ${(mapX*1.5).toFixed(1)} × ${(mapY*1.5).toFixed(1)} m • ${mapX*5} × ${mapY*5} ft`:`${mapWidth} × ${mapHeight} px • cada quadrado usa ${size} px e vale 1,5 m / 5 ft.`}</div>
       <div class="micro-tool-note">Esses controles usam o mesmo Grid e o mesmo mapa da Mesa; só foram reorganizados dentro da gaveta do Mestre.</div>`;
     body.appendChild(card);
     $("microV2GridType").onchange=e=>dispatchOriginal("gridType",e.target.value);
     $("microV2GridSize").oninput=e=>dispatchOriginal("gridSize",e.target.value);
     $("microV2GridMinus").onclick=()=>clickOriginal("gridMinus");$("microV2GridPlus").onclick=()=>clickOriginal("gridPlus");
-    $("microV2Map").onclick=()=>$("mapFile")?.click();$("microV2ClearMap").onclick=()=>clickOriginal("clearMap")
+    $("microV2Map").onclick=()=>$("mapFile")?.click();$("microV2ClearMap").onclick=()=>clickOriginal("clearMap");
+    $("microV2MapSizeMode").onchange=e=>{mapSizeMode=e.target.value;renderTable()};
+    $("microV2ApplyMapSize").onclick=async e=>{const x=+$("microV2MapWidth").value||0,y=+$("microV2MapHeight").value||0,w=mapSizeMode==="squares"?x*size:x,h=mapSizeMode==="squares"?y*size:y;if(w<350||h<350)return alert("O mapa precisa ter pelo menos 350 × 350 pixels.");e.currentTarget.disabled=true;e.currentTarget.textContent="⏳ Aplicando…";await globalThis.MICROCOSMOS_MESA_SHARED?.setMapSize?.(w,h);renderTable()}
   }
 
   function renderPlayers(){

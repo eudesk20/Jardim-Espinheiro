@@ -136,6 +136,8 @@
     if(error)console.warn("MICROCOSMOS Mesa: falha ao sincronizar estado da sessão",error)
   }
   function scheduleGrid(){if(!isMaster||applyingRemote)return;clearTimeout(stateTimer);stateTimer=setTimeout(()=>mergeSessionState({gridType:$("gridType")?.value||"square",gridSize:+$("gridSize")?.value||70}),180)}
+  function applyMapSize(width,height){const stage=$("stage");if(!stage)return;const w=Math.max(350,Math.min(14000,+width||1400)),h=Math.max(350,Math.min(14000,+height||900));stage.style.width=`${w}px`;stage.style.height=`${h}px`;globalThis.MICROCOSMOS_SCENE?.refresh?.();globalThis.MICROCOSMOS_HEX_GRID?.refresh?.();globalThis.MICROCOSMOS_VISION?.refresh?.()}
+  async function setMapSize(width,height){if(!isMaster)return;applyMapSize(width,height);await mergeSessionState({mapWidth:Math.round(width),mapHeight:Math.round(height)})}
   function findMapElement(){return $("mapImage")||$("mapImg")||document.querySelector(".map-image")||document.querySelector("#stage img[data-map]")||document.querySelector("#stage>img")}
   async function applyMapPath(path){
     const el=findMapElement();
@@ -150,6 +152,7 @@
     try{
       if(data.gridType&&$("gridType"))$("gridType").value=data.gridType;
       if(data.gridSize&&$("gridSize"))$("gridSize").value=data.gridSize;
+      if(data.mapWidth&&data.mapHeight)applyMapSize(data.mapWidth,data.mapHeight);
       api.updateGrid?.();globalThis.MICROCOSMOS_HEX_GRID?.refresh?.();globalThis.MICROCOSMOS_TOKEN_SIZE?.refresh?.();
       if("mapPath" in data)await applyMapPath(data.mapPath)
     }finally{setTimeout(()=>applyingRemote=false,0)}
@@ -183,7 +186,7 @@
   if(remoteTokens.length)applyRemoteTokens(remoteTokens);else if(isMaster&&players.length)await flushTokens();
   const remoteScene=await readRemoteScene();
   if(remoteScene.length)applyRemoteScene(remoteScene);else if(isMaster&&sceneElements().length)await flushScene();
-  const state=await getSessionState();if(Object.keys(state).length)await applySessionState(state);else if(isMaster)await mergeSessionState({gridType:$("gridType")?.value||"square",gridSize:+$("gridSize")?.value||70,mapPath:null});
+  const state=await getSessionState();if(Object.keys(state).length)await applySessionState(state);else if(isMaster)await mergeSessionState({gridType:$("gridType")?.value||"square",gridSize:+$("gridSize")?.value||70,mapWidth:$("stage")?.offsetWidth||1400,mapHeight:$("stage")?.offsetHeight||900,mapPath:null});
   beginSceneObserver();
 
   const channel=supabase.channel(`mesa-shared-${SESSION_KEY}`)
@@ -194,5 +197,5 @@
 
   setInterval(async()=>{if(!globalThis.MICROCOSMOS_TOKEN_DRAGGING&&!applyingRemote)applyRemoteTokens(await readRemoteTokens())},1500);
 
-  globalThis.MICROCOSMOS_MESA_SHARED={isMaster:()=>isMaster,flushToken,finishTokenDrag,flushTokens,flushScene,reloadTokens:async()=>applyRemoteTokens(await readRemoteTokens()),reloadScene:async()=>applyRemoteScene(await readRemoteScene()),reloadState:async()=>applySessionState(await getSessionState()),channel};
+  globalThis.MICROCOSMOS_MESA_SHARED={isMaster:()=>isMaster,flushToken,finishTokenDrag,flushTokens,flushScene,setMapSize,reloadTokens:async()=>applyRemoteTokens(await readRemoteTokens()),reloadScene:async()=>applyRemoteScene(await readRemoteScene()),reloadState:async()=>applySessionState(await getSessionState()),channel};
 })();
