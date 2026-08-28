@@ -93,6 +93,7 @@
   // Capture no document: assume o movimento antes das rotinas antigas de snap.
   document.addEventListener("pointerdown",e=>{
     if(targeting())return;
+    if(e.target?.closest?.(".micro-vision-facing"))return;
     const el=e.target?.closest?.("#tokenLayer [data-token]");if(!el)return;
     const p=players.find(x=>x.id===el.dataset.token);if(!p)return;
     const pointer=stagePoint(e),start={x:+p.x||0,y:+p.y||0};
