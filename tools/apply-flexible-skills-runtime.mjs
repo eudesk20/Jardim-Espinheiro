@@ -8,6 +8,7 @@ const skillNamesUrl=new URL("codex-revisao/skill-name-sync-runtime.js",root);
 const classCraftUrl=new URL("codex-revisao/class-crafting-books-runtime.js",root);
 const officioEquipmentUrl=new URL("codex-revisao/class-officio-equipment-runtime.js",root);
 const officioKitGrantsUrl=new URL("codex-revisao/class-officio-kit-grants-runtime.js",root);
+const creationAssistantUrl=new URL("codex-revisao/character-creation-assistant-runtime.js",root);
 const mesaRuntimeUrl=new URL("codex-revisao/mesa-flexible-skills-runtime.js",root);
 const tokenBridgeUrl=new URL("codex-revisao/mesa-token-flexible-skills-bridge-runtime.js",root);
 const clickFixUrl=new URL("codex-revisao/mesa-flexible-skills-click-fix-runtime.js",root);
@@ -19,6 +20,7 @@ new Function(await readFile(skillNamesUrl,"utf8"));
 new Function(await readFile(classCraftUrl,"utf8"));
 new Function(await readFile(officioEquipmentUrl,"utf8"));
 new Function(await readFile(officioKitGrantsUrl,"utf8"));
+new Function(await readFile(creationAssistantUrl,"utf8"));
 new Function(await readFile(mesaRuntimeUrl,"utf8"));
 new Function(await readFile(tokenBridgeUrl,"utf8"));
 new Function(await readFile(clickFixUrl,"utf8"));
@@ -49,6 +51,7 @@ const officioEquipmentTag='<script src="codex-revisao/class-officio-equipment-ru
 const classCraftTag='<script src="codex-revisao/class-crafting-books-runtime.js"></script>';
 const fullKitTag='<script src="codex-revisao/class-kit-full-grants-runtime.js"></script>';
 const officioKitGrantsTag='<script src="codex-revisao/class-officio-kit-grants-runtime.js"></script>';
+const creationAssistantTag='<script src="codex-revisao/character-creation-assistant-runtime.js"></script>';
 if(!index.includes(skillNamesTag)){
   if(index.includes(skillChoiceTag))index=index.replace(skillChoiceTag,`${skillChoiceTag}\n${skillNamesTag}`);
   else index=index.replace('</body>',`${skillNamesTag}\n</body>`);
@@ -70,6 +73,11 @@ if(!index.includes(classCraftTag)){
 if(!index.includes(officioKitGrantsTag)){
   if(index.includes(fullKitTag))index=index.replace(fullKitTag,`${fullKitTag}\n${officioKitGrantsTag}`);
   else index=index.replace('</body>',`${officioKitGrantsTag}\n</body>`);
+}
+if(!index.includes(creationAssistantTag)){
+  if(index.includes(officioKitGrantsTag))index=index.replace(officioKitGrantsTag,`${officioKitGrantsTag}\n${creationAssistantTag}`);
+  else if(index.includes(classCraftTag))index=index.replace(classCraftTag,`${classCraftTag}\n${creationAssistantTag}`);
+  else index=index.replace('</body>',`${creationAssistantTag}\n</body>`);
 }
 await writeFile(indexUrl,index,"utf8");
 
@@ -101,4 +109,4 @@ if(!table.includes(sceneCopyTag)){
 }
 await writeFile(tableUrl,table,"utf8");
 
-console.log("Perícias Flexíveis, Conhecimento de Ofício, Kits exclusivos e atalhos do Construtor publicados: Livro de Receitas, Mochila de Projetos, equipamentos de Cozinheiro/Engenheiro, integração às Ações do Token e Ctrl+C/Ctrl+V no cenário.");
+console.log("Perícias Flexíveis, Conhecimento de Ofício, Kits exclusivos, Assistente de Criação e atalhos do Construtor publicados.");
