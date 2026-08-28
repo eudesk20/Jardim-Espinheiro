@@ -15,7 +15,7 @@
 
   const $=id=>document.getElementById(id);
   const clone=v=>{try{return structuredClone(v)}catch{return JSON.parse(JSON.stringify(v))}};
-  let supabase=null,session=null,profile=null,isMaster=false,applyingRemote=false,tokenTimer=null,sceneTimer=null,stateTimer=null,queuedTokenRows=null;
+  let supabase=null,session=null,profile=null,isMaster=false,applyingRemote=false,tokenTimer=null,sceneTimer=null,stateTimer=null,queuedTokenRows=null,lastTokenRowsSignature="";
   const remoteMeta=new Map();
 
   function tokenLayer(p){return p?.visibilityLayer||p?.layer||"players"}
@@ -40,6 +40,7 @@
   }
   function applyRemoteTokens(rows){
     if(globalThis.MICROCOSMOS_TOKEN_DRAGGING){queuedTokenRows=clone(rows||[]);return}
+    const signature=JSON.stringify((rows||[]).map(row=>[row.token_id,row.layer,row.updated_at]).sort((a,b)=>String(a[0]).localeCompare(String(b[0]))));if(signature===lastTokenRowsSignature)return;lastTokenRowsSignature=signature;
     applyingRemote=true;
     try{
       remoteMeta.clear();
