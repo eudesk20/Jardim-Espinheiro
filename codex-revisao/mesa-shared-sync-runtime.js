@@ -45,6 +45,7 @@
       remoteMeta.clear();
       const next=[];
       for(const row of rows){
+        if(!isMaster&&row.layer==="master")continue;
         remoteMeta.set(row.token_id,{owner_user_id:row.owner_user_id,layer:row.layer,data:clone(row.data||{})});
         const p={...(row.data||{}),id:row.token_id};
         if(row.owner_user_id&&!p.userId)p.userId=row.owner_user_id;
@@ -186,6 +187,8 @@
     .on("postgres_changes",{event:"*",schema:"public",table:"mesa_scene_elements",filter:`session_key=eq.${SESSION_KEY}`},async()=>{if(!applyingRemote&&!globalThis.MICROCOSMOS_SCENE_EDITING)applyRemoteScene(await readRemoteScene())})
     .on("postgres_changes",{event:"*",schema:"public",table:"mesa_session_state",filter:`session_key=eq.${SESSION_KEY}`},async payload=>{if(payload.new?.data)await applySessionState(payload.new.data)})
     .subscribe();
+
+  setInterval(async()=>{if(!globalThis.MICROCOSMOS_TOKEN_DRAGGING&&!applyingRemote)applyRemoteTokens(await readRemoteTokens())},1500);
 
   globalThis.MICROCOSMOS_MESA_SHARED={isMaster:()=>isMaster,flushToken,finishTokenDrag,flushTokens,flushScene,reloadTokens:async()=>applyRemoteTokens(await readRemoteTokens()),reloadScene:async()=>applyRemoteScene(await readRemoteScene()),reloadState:async()=>applySessionState(await getSessionState()),channel};
 })();
