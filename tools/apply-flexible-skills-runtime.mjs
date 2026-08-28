@@ -15,6 +15,7 @@ const originAttributesUrl=new URL("codex-revisao/origin-attributes-runtime.js",r
 const creationMechanicsUrl=new URL("codex-revisao/character-creation-mechanics-runtime.js",root);
 const creationSkillsUrl=new URL("codex-revisao/character-creation-skills-runtime.js",root);
 const creationResourcesUrl=new URL("codex-revisao/character-creation-resources-runtime.js",root);
+const desktopCompactUrl=new URL("codex-revisao/sheet-desktop-compact-runtime.js",root);
 const mesaRuntimeUrl=new URL("codex-revisao/mesa-flexible-skills-runtime.js",root);
 const tokenBridgeUrl=new URL("codex-revisao/mesa-token-flexible-skills-bridge-runtime.js",root);
 const clickFixUrl=new URL("codex-revisao/mesa-flexible-skills-click-fix-runtime.js",root);
@@ -33,6 +34,7 @@ new Function(await readFile(originAttributesUrl,"utf8"));
 new Function(await readFile(creationMechanicsUrl,"utf8"));
 new Function(await readFile(creationSkillsUrl,"utf8"));
 new Function(await readFile(creationResourcesUrl,"utf8"));
+new Function(await readFile(desktopCompactUrl,"utf8"));
 new Function(await readFile(mesaRuntimeUrl,"utf8"));
 new Function(await readFile(tokenBridgeUrl,"utf8"));
 new Function(await readFile(clickFixUrl,"utf8"));
@@ -69,6 +71,7 @@ const originAttributesTag='<script src="codex-revisao/origin-attributes-runtime.
 const creationMechanicsTag='<script src="codex-revisao/character-creation-mechanics-runtime.js"></script>';
 const creationSkillsTag='<script src="codex-revisao/character-creation-skills-runtime.js"></script>';
 const creationResourcesTag='<script src="codex-revisao/character-creation-resources-runtime.js"></script>';
+const desktopCompactTag='<script src="codex-revisao/sheet-desktop-compact-runtime.js"></script>';
 
 if(!index.includes(skillNamesTag)){
   if(index.includes(skillChoiceTag))index=index.replace(skillChoiceTag,`${skillChoiceTag}\n${skillNamesTag}`);
@@ -121,6 +124,10 @@ if(!index.includes(creationResourcesTag)){
   if(index.includes(creationSkillsTag))index=index.replace(creationSkillsTag,`${creationSkillsTag}\n${creationResourcesTag}`);
   else index=index.replace('</body>',`${creationResourcesTag}\n</body>`);
 }
+if(!index.includes(desktopCompactTag)){
+  if(index.includes(creationResourcesTag))index=index.replace(creationResourcesTag,`${creationResourcesTag}\n${desktopCompactTag}`);
+  else index=index.replace('</body>',`${desktopCompactTag}\n</body>`);
+}
 await writeFile(indexUrl,index,"utf8");
 
 let table=await readFile(tableUrl,"utf8");
@@ -151,4 +158,4 @@ if(!table.includes(sceneCopyTag)){
 }
 await writeFile(tableUrl,table,"utf8");
 
-console.log("Perícias Flexíveis, Conhecimento de Ofício e Criação Assistida completa com Atributos, Perícias e Recursos publicados.");
+console.log("Perícias Flexíveis, Conhecimento de Ofício, Criação Assistida e compactação visual da ficha no PC publicados.");
