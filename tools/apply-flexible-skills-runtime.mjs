@@ -9,6 +9,7 @@ const classCraftUrl=new URL("codex-revisao/class-crafting-books-runtime.js",root
 const mesaRuntimeUrl=new URL("codex-revisao/mesa-flexible-skills-runtime.js",root);
 const tokenBridgeUrl=new URL("codex-revisao/mesa-token-flexible-skills-bridge-runtime.js",root);
 const clickFixUrl=new URL("codex-revisao/mesa-flexible-skills-click-fix-runtime.js",root);
+const sceneCopyUrl=new URL("codex-revisao/mesa-scene-copy-paste-runtime.js",root);
 
 // Falha o deploy cedo se algum dos runtimes tiver erro de sintaxe.
 new Function(await readFile(fichaRuntimeUrl,"utf8"));
@@ -17,6 +18,7 @@ new Function(await readFile(classCraftUrl,"utf8"));
 new Function(await readFile(mesaRuntimeUrl,"utf8"));
 new Function(await readFile(tokenBridgeUrl,"utf8"));
 new Function(await readFile(clickFixUrl,"utf8"));
+new Function(await readFile(sceneCopyUrl,"utf8"));
 
 let index=await readFile(indexUrl,"utf8");
 
@@ -59,6 +61,8 @@ await writeFile(indexUrl,index,"utf8");
 let table=await readFile(tableUrl,"utf8");
 const settingsTag='<script src="codex-revisao/mesa-settings-runtime.js"></script>';
 const reactionGroupsTag='<script src="codex-revisao/mesa-reaction-groups-runtime.js"></script>';
+const sceneBuilderTag='<script src="codex-revisao/mesa-scene-builder-runtime.js"></script>';
+const sceneCopyTag='<script src="codex-revisao/mesa-scene-copy-paste-runtime.js"></script>';
 const mesaTag='<script src="codex-revisao/mesa-flexible-skills-runtime.js"></script>';
 const bridgeTag='<script src="codex-revisao/mesa-token-flexible-skills-bridge-runtime.js"></script>';
 const clickFixTag='<script src="codex-revisao/mesa-flexible-skills-click-fix-runtime.js"></script>';
@@ -76,6 +80,10 @@ if(!table.includes(clickFixTag)){
   else if(table.includes(mesaTag))table=table.replace(mesaTag,`${mesaTag}\n${clickFixTag}`);
   else table=table.replace('</body>',`${clickFixTag}\n</body>`);
 }
+if(!table.includes(sceneCopyTag)){
+  if(table.includes(sceneBuilderTag))table=table.replace(sceneBuilderTag,`${sceneBuilderTag}\n${sceneCopyTag}`);
+  else table=table.replace('</body>',`${sceneCopyTag}\n</body>`);
+}
 await writeFile(tableUrl,table,"utf8");
 
-console.log("Perícias Flexíveis e ofícios de Classe publicados: Ficha e Token com nomes canônicos, Livro de Receitas do Cozinheiro, Mochila de Projetos do Engenheiro e integração às Ações do Token.");
+console.log("Perícias Flexíveis, ofícios de Classe e atalhos do Construtor publicados: nomes canônicos, Livro de Receitas, Mochila de Projetos, integração às Ações do Token e Ctrl+C/Ctrl+V no cenário.");
