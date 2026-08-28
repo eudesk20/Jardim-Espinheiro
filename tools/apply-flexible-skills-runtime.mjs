@@ -5,6 +5,7 @@ const indexUrl=new URL("index.html",root);
 const tableUrl=new URL("mesa-campanha.html",root);
 const fichaRuntimeUrl=new URL("codex-revisao/flexible-skills-layout-runtime.js",root);
 const skillNamesUrl=new URL("codex-revisao/skill-name-sync-runtime.js",root);
+const classCraftUrl=new URL("codex-revisao/class-crafting-books-runtime.js",root);
 const mesaRuntimeUrl=new URL("codex-revisao/mesa-flexible-skills-runtime.js",root);
 const tokenBridgeUrl=new URL("codex-revisao/mesa-token-flexible-skills-bridge-runtime.js",root);
 const clickFixUrl=new URL("codex-revisao/mesa-flexible-skills-click-fix-runtime.js",root);
@@ -12,6 +13,7 @@ const clickFixUrl=new URL("codex-revisao/mesa-flexible-skills-click-fix-runtime.
 // Falha o deploy cedo se algum dos runtimes tiver erro de sintaxe.
 new Function(await readFile(fichaRuntimeUrl,"utf8"));
 new Function(await readFile(skillNamesUrl,"utf8"));
+new Function(await readFile(classCraftUrl,"utf8"));
 new Function(await readFile(mesaRuntimeUrl,"utf8"));
 new Function(await readFile(tokenBridgeUrl,"utf8"));
 new Function(await readFile(clickFixUrl,"utf8"));
@@ -37,6 +39,7 @@ index=index.slice(0,attrsStart)+canonicalAttrs+index.slice(attrsEnd+3);
 const skillChoiceTag='<script src="codex-revisao/skill-choice-runtime.js"></script>';
 const skillNamesTag='<script src="codex-revisao/skill-name-sync-runtime.js"></script>';
 const fichaTag='<script src="codex-revisao/flexible-skills-layout-runtime.js"></script>';
+const classCraftTag='<script src="codex-revisao/class-crafting-books-runtime.js"></script>';
 if(!index.includes(skillNamesTag)){
   if(index.includes(skillChoiceTag))index=index.replace(skillChoiceTag,`${skillChoiceTag}\n${skillNamesTag}`);
   else index=index.replace('</body>',`${skillNamesTag}\n</body>`);
@@ -45,6 +48,11 @@ if(!index.includes(fichaTag)){
   if(index.includes(skillNamesTag))index=index.replace(skillNamesTag,`${skillNamesTag}\n${fichaTag}`);
   else if(index.includes(skillChoiceTag))index=index.replace(skillChoiceTag,`${skillChoiceTag}\n${fichaTag}`);
   else index=index.replace('</body>',`${fichaTag}\n</body>`);
+}
+if(!index.includes(classCraftTag)){
+  if(index.includes(fichaTag))index=index.replace(fichaTag,`${fichaTag}\n${classCraftTag}`);
+  else if(index.includes(skillNamesTag))index=index.replace(skillNamesTag,`${skillNamesTag}\n${classCraftTag}`);
+  else index=index.replace('</body>',`${classCraftTag}\n</body>`);
 }
 await writeFile(indexUrl,index,"utf8");
 
@@ -70,4 +78,4 @@ if(!table.includes(clickFixTag)){
 }
 await writeFile(tableUrl,table,"utf8");
 
-console.log("Perícias Flexíveis publicadas: Ficha e Token com nomes canônicos iguais, migração das Proficiências antigas, regra no Codex e integração às Ações do Token.");
+console.log("Perícias Flexíveis e ofícios de Classe publicados: Ficha e Token com nomes canônicos, Livro de Receitas do Cozinheiro, Mochila de Projetos do Engenheiro e integração às Ações do Token.");
