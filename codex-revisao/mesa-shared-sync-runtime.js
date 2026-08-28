@@ -15,7 +15,7 @@
 
   const $=id=>document.getElementById(id);
   const clone=v=>{try{return structuredClone(v)}catch{return JSON.parse(JSON.stringify(v))}};
-  let supabase=null,session=null,profile=null,isMaster=false,applyingRemote=false,tokenTimer=null,sceneTimer=null,stateTimer=null,queuedTokenRows=null,lastTokenRowsSignature="";
+  let supabase=null,session=null,profile=null,isMaster=false,applyingRemote=false,tokenTimer=null,sceneTimer=null,stateTimer=null,queuedTokenRows=null,lastTokenRowsSignature="",lastLocalTokenSignature="";
   const remoteMeta=new Map();
 
   function tokenLayer(p){return p?.visibilityLayer||p?.layer||"players"}
@@ -25,6 +25,7 @@
     delete data._remote;delete data.__remote;
     return data
   }
+  function localTokenSignature(){return JSON.stringify(players.map(p=>tokenPayload(p)).sort((a,b)=>String(a.id).localeCompare(String(b.id))))}
   async function resolveAuth(){
     const {createClient}=await import("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm");
     supabase=createClient(PROJECT_URL,PUBLISHABLE_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}});
@@ -54,6 +55,7 @@
         next.push(p)
       }
       players.splice(0,players.length,...next);
+      lastLocalTokenSignature=localTokenSignature();
       api.renderPlayers?.();api.renderTokens?.();
       globalThis.MICROCOSMOS_TOKEN_SIZE?.refresh?.();
       globalThis.MICROCOSMOS_INITIATIVE?.refresh?.();
@@ -91,8 +93,9 @@
       const {error}=await supabase.from("mesa_tokens").delete().eq("session_key",SESSION_KEY).in("token_id",deletions);
       if(error)console.warn("MICROCOSMOS Mesa: falha ao remover tokens compartilhados",error)
     }
+    lastLocalTokenSignature=localTokenSignature();
   }
-  function scheduleTokens(){if(applyingRemote||globalThis.MICROCOSMOS_TOKEN_DRAGGING)return;clearTimeout(tokenTimer);tokenTimer=setTimeout(flushTokens,180)}
+  function scheduleTokens(){if(applyingRemote||globalThis.MICROCOSMOS_TOKEN_DRAGGING)return;const signature=localTokenSignature();if(signature===lastLocalTokenSignature)return;clearTimeout(tokenTimer);tokenTimer=setTimeout(flushTokens,180)}
 
   function sceneElements(){return globalThis.MICROCOSMOS_SCENE?.elements||[]}
   function applyRemoteScene(rows){
@@ -166,7 +169,7 @@
   wrapRender("renderTokens");wrapRender("renderPlayers");
 
   // Posições mudam durante o arrasto antes da renderização final; pointerup garante flush.
-  document.addEventListener("pointerup",e=>{if(e.target?.closest?.("#tokenLayer [data-token]")||document.querySelector("#tokenLayer .token.selected"))scheduleTokens()},true);
+  document.addEventListener("pointerup",e=>{if(e.target?.closest?.("#tokenLayer [data-token]"))scheduleTokens()},true);
   $("gridType")?.addEventListener("change",scheduleGrid,true);$("gridSize")?.addEventListener("input",scheduleGrid,true);$("gridMinus")?.addEventListener("click",()=>setTimeout(scheduleGrid,0),true);$("gridPlus")?.addEventListener("click",()=>setTimeout(scheduleGrid,0),true);
   document.addEventListener("change",e=>{const input=e.target;if(input?.matches?.('.map-upload input[type="file"]')&&input.files?.[0])uploadMap(input.files[0])},true);
   document.addEventListener("click",e=>{if(e.target?.closest?.("#clearMap")&&isMaster)setTimeout(()=>mergeSessionState({mapPath:null,mapUpdatedAt:Date.now()}),0)},true);
