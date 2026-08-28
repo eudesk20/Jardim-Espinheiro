@@ -61,7 +61,7 @@
     return {element:d,created}
   }
   const bodyOf=id=>$(id)?.querySelector(".micro-master-section-body");
-  function clearLegacyBody(body,keepSelector=""){if(!body)return;for(const el of [...body.children]){if(el.matches?.("[data-master-v2]"))continue;if(keepSelector&&el.matches?.(keepSelector))continue;el.remove()}}
+  function clearLegacyBody(body,keepSelector=""){if(!body)return;for(const el of [...body.children]){if(keepSelector&&el.matches?.(keepSelector))continue;el.remove()}}
   function selectedToken(){const id=document.querySelector("#tokenLayer .token.selected")?.dataset?.token;return players.find(p=>String(p.id)===String(id))||null}
   function selectedId(){return selectedToken()?.id||""}
   function clickOriginal(id){const el=$(id);if(el){el.click();return true}return false}
