@@ -9,7 +9,7 @@
   globalThis.MICROCOSMOS_FLEXIBLE_SKILLS_LAYOUT=true;
 
   const RULE_TITLE="Perícias Flexíveis";
-  const RULE_TEXT="Perícias não pertencem a um Atributo obrigatório. A Perícia define o que o personagem sabe fazer; o Atributo define como ele realiza aquela ação naquele momento. O jogador descreve a abordagem e escolhe FOR, DES, CON, INT, SAB ou CAR quando a descrição e a situação justificarem. O teste usa 1d20 + modificador do Atributo escolhido + Proficiência da Perícia; Especialização dobra a Proficiência. O Atributo indicado na ficha é somente uma sugestão. Exemplo: Intimidação pode usar CAR para uma ameaça verbal, FOR para uma demonstração física ou INT para expor friamente as consequências. O Mestre valida se a abordagem sustenta o Atributo escolhido. Percepção Passiva continua usando SAB + Percepção do Matagal porque representa atenção constante, e não uma abordagem ativa.";
+  const RULE_TEXT="Perícias não pertencem a um Atributo obrigatório. A Perícia define o que o personagem sabe fazer; o Atributo define como ele realiza aquela ação naquele momento. O jogador descreve a abordagem e escolhe FOR, DES, CON, INT, SAB ou CAR quando a descrição e a situação justificarem. O teste usa 1d20 + modificador do Atributo escolhido + Proficiência da Perícia; Especialização dobra a Proficiência. O Atributo indicado na ficha é somente uma sugestão. Exemplo: Intimidação pode usar CAR para uma ameaça verbal, FOR para uma demonstração física ou INT para expor friamente as consequências. O Mestre valida se a abordagem sustenta o Atributo escolhido. Percepção Passiva continua usando SAB + Percepção porque representa atenção constante, e não uma abordagem ativa.";
   let arranging=false;
 
   function ensureStyle(){
