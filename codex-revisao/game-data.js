@@ -9,7 +9,7 @@ globalThis.MICROCOSMO_DATA={
   clerigo:{name:"Clérigo",hit:"d8",hp:5,features:["Canalizar Vitalidade","Ritos do Jardim"],subs:["Grande Decomposição","Orvalho & Chuva","Raiz-Mãe","Sol da Copa"],caster:"SAB"},
   cozinheiro:{name:"Cozinheiro",hit:"d10",hp:6,features:["Prato de Assinatura","Mestre dos Utensílios","Livro de Receitas"],subs:["Mestre dos Caldeirões","Gourmet Tóxico","Padeiro de Sementes Féricas","Banqueteiro da Colmeia"],caster:null},
   druida:{name:"Druida",hit:"d8",hp:5,features:["Forma Selvagem","Magia Natural"],subs:["Micro-Enxame","Flora Carnívora","Metamorfoses Quitinosas","Névoa Esporóide"],caster:"SAB"},
-  engenheiro:{name:"Engenheiro",hit:"d8",hp:5,features:["Gambiarra","Ferramentas de Sucata"],subs:["Armadilhas de Mola","Balístico de Elástico","Centelha de Bateria","Piloto de Exotraje de Lata"],caster:"INT"},
+  engenheiro:{name:"Engenheiro",hit:"d8",hp:5,features:["Gambiarra","Ferramentas de Sucata","Mochila de Projetos"],subs:["Armadilhas de Mola","Balístico de Elástico","Centelha de Bateria","Piloto de Exotraje de Lata"],caster:"INT"},
   feiticeiro:{name:"Feiticeiro",hit:"d6",hp:4,features:["Feitiçaria Inata","Metamagia"],subs:["Sangue-Néctar","Centelha Estática","Magia Caótica do Lixo","Alma Micelial"],caster:"CAR"},
   guerreiro:{name:"Guerreiro",hit:"d10",hp:6,features:["Estilo de Luta","Retomar o Fôlego"],subs:["Esgrima de Agulha","Guardião de Falange","Atirador de Catapulta","Arqueiro de Hastes"],caster:null},
   ladino:{name:"Ladino",hit:"d8",hp:5,features:["Ataque Furtivo","Especialização"],subs:["Saqueador de Sucatas","Sombras de Orvalho","Corta-Gargantas de Agulha","Acrobata de Teias"],caster:null},
@@ -21,6 +21,16 @@ globalThis.MICROCOSMO_DATA={
  },
  races:globalThis.CODEX_RACE_DATA,
  classSaves:{barbaro:["FOR","CON"],bardo:["DES","CAR"],bastiao:["FOR","CON"],clerigo:["SAB","CAR"],druida:["INT","SAB"],guerreiro:["FOR","CON"],monge:["DES","SAB"],paladino:["SAB","CAR"],patrulheiro:["FOR","DES"],ladino:["DES","INT"],feiticeiro:["CON","CAR"],bruxo:["SAB","CAR"],mago:["INT","SAB"],cozinheiro:["CON","INT"],engenheiro:["CON","INT"]},
- classWeaponProficiencies:{barbaro:["group:simples","group:marcial"],bardo:["group:simples"],cozinheiro:["group:simples","weapon:tridente_junco","weapon:cimitarra_folha"]},
- classArmorProficiencies:{barbaro:["armor:leve","armor:media","armor:escudo"],bardo:["armor:leve"],cozinheiro:["armor:leve","armor:escudo"]}
+ classWeaponProficiencies:{
+  barbaro:["group:simples","group:marcial"],
+  bardo:["group:simples"],
+  cozinheiro:["group:simples","weapon:tridente_junco","weapon:cimitarra_folha","weapon:frigideira_combate","weapon:cutelo_cozinheiro"],
+  engenheiro:["group:simples","weapon:martelo_montagem","weapon:chave_sucata","weapon:lancador_mola"]
+ },
+ classArmorProficiencies:{
+  barbaro:["armor:leve","armor:media","armor:escudo"],
+  bardo:["armor:leve"],
+  cozinheiro:["armor:leve","armor:escudo"],
+  engenheiro:["armor:leve"]
+ }
 };
