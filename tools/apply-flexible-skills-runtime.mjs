@@ -11,12 +11,16 @@ const officioKitGrantsUrl=new URL("codex-revisao/class-officio-kit-grants-runtim
 const creationAssistantUrl=new URL("codex-revisao/character-creation-assistant-runtime.js",root);
 const creationFreezeFixUrl=new URL("codex-revisao/character-creation-freeze-fix-runtime.js",root);
 const creationCodexDetailsUrl=new URL("codex-revisao/character-creation-codex-details-runtime.js",root);
+const originAttributesUrl=new URL("codex-revisao/origin-attributes-runtime.js",root);
+const creationMechanicsUrl=new URL("codex-revisao/character-creation-mechanics-runtime.js",root);
+const creationSkillsUrl=new URL("codex-revisao/character-creation-skills-runtime.js",root);
+const creationResourcesUrl=new URL("codex-revisao/character-creation-resources-runtime.js",root);
 const mesaRuntimeUrl=new URL("codex-revisao/mesa-flexible-skills-runtime.js",root);
 const tokenBridgeUrl=new URL("codex-revisao/mesa-token-flexible-skills-bridge-runtime.js",root);
 const clickFixUrl=new URL("codex-revisao/mesa-flexible-skills-click-fix-runtime.js",root);
 const sceneCopyUrl=new URL("codex-revisao/mesa-scene-copy-paste-runtime.js",root);
 
-// Falha o deploy cedo se algum dos runtimes tiver erro de sintaxe.
+// Falha o deploy cedo se algum runtime tiver erro de sintaxe.
 new Function(await readFile(fichaRuntimeUrl,"utf8"));
 new Function(await readFile(skillNamesUrl,"utf8"));
 new Function(await readFile(classCraftUrl,"utf8"));
@@ -25,6 +29,10 @@ new Function(await readFile(officioKitGrantsUrl,"utf8"));
 new Function(await readFile(creationAssistantUrl,"utf8"));
 new Function(await readFile(creationFreezeFixUrl,"utf8"));
 new Function(await readFile(creationCodexDetailsUrl,"utf8"));
+new Function(await readFile(originAttributesUrl,"utf8"));
+new Function(await readFile(creationMechanicsUrl,"utf8"));
+new Function(await readFile(creationSkillsUrl,"utf8"));
+new Function(await readFile(creationResourcesUrl,"utf8"));
 new Function(await readFile(mesaRuntimeUrl,"utf8"));
 new Function(await readFile(tokenBridgeUrl,"utf8"));
 new Function(await readFile(clickFixUrl,"utf8"));
@@ -32,8 +40,7 @@ new Function(await readFile(sceneCopyUrl,"utf8"));
 
 let index=await readFile(indexUrl,"utf8");
 
-// A Ficha e a Mesa passam a usar exatamente a mesma lista canônica de nomes.
-// O Atributo continua sendo apenas sugestão por causa da regra de Perícias Flexíveis.
+// A Ficha e a Mesa usam exatamente a mesma lista canônica de Perícias.
 const canonicalAttrs=`const ATTRS=[
  {k:"FOR",label:"Força",skills:[["Atletismo","FOR"]]},
  {k:"DES",label:"Destreza",skills:[["Acrobacia","DES"],["Furtividade","DES"],["Prestidigitação","DES"]]},
@@ -58,6 +65,11 @@ const officioKitGrantsTag='<script src="codex-revisao/class-officio-kit-grants-r
 const creationAssistantTag='<script src="codex-revisao/character-creation-assistant-runtime.js"></script>';
 const creationFreezeFixTag='<script src="codex-revisao/character-creation-freeze-fix-runtime.js"></script>';
 const creationCodexDetailsTag='<script src="codex-revisao/character-creation-codex-details-runtime.js"></script>';
+const originAttributesTag='<script src="codex-revisao/origin-attributes-runtime.js"></script>';
+const creationMechanicsTag='<script src="codex-revisao/character-creation-mechanics-runtime.js"></script>';
+const creationSkillsTag='<script src="codex-revisao/character-creation-skills-runtime.js"></script>';
+const creationResourcesTag='<script src="codex-revisao/character-creation-resources-runtime.js"></script>';
+
 if(!index.includes(skillNamesTag)){
   if(index.includes(skillChoiceTag))index=index.replace(skillChoiceTag,`${skillChoiceTag}\n${skillNamesTag}`);
   else index=index.replace('</body>',`${skillNamesTag}\n</body>`);
@@ -91,8 +103,23 @@ if(!index.includes(creationFreezeFixTag)){
 }
 if(!index.includes(creationCodexDetailsTag)){
   if(index.includes(creationFreezeFixTag))index=index.replace(creationFreezeFixTag,`${creationFreezeFixTag}\n${creationCodexDetailsTag}`);
-  else if(index.includes(creationAssistantTag))index=index.replace(creationAssistantTag,`${creationAssistantTag}\n${creationCodexDetailsTag}`);
   else index=index.replace('</body>',`${creationCodexDetailsTag}\n</body>`);
+}
+if(!index.includes(originAttributesTag)){
+  if(index.includes(creationCodexDetailsTag))index=index.replace(creationCodexDetailsTag,`${creationCodexDetailsTag}\n${originAttributesTag}`);
+  else index=index.replace('</body>',`${originAttributesTag}\n</body>`);
+}
+if(!index.includes(creationMechanicsTag)){
+  if(index.includes(originAttributesTag))index=index.replace(originAttributesTag,`${originAttributesTag}\n${creationMechanicsTag}`);
+  else index=index.replace('</body>',`${creationMechanicsTag}\n</body>`);
+}
+if(!index.includes(creationSkillsTag)){
+  if(index.includes(creationMechanicsTag))index=index.replace(creationMechanicsTag,`${creationMechanicsTag}\n${creationSkillsTag}`);
+  else index=index.replace('</body>',`${creationSkillsTag}\n</body>`);
+}
+if(!index.includes(creationResourcesTag)){
+  if(index.includes(creationSkillsTag))index=index.replace(creationSkillsTag,`${creationSkillsTag}\n${creationResourcesTag}`);
+  else index=index.replace('</body>',`${creationResourcesTag}\n</body>`);
 }
 await writeFile(indexUrl,index,"utf8");
 
@@ -124,4 +151,4 @@ if(!table.includes(sceneCopyTag)){
 }
 await writeFile(tableUrl,table,"utf8");
 
-console.log("Perícias Flexíveis, Conhecimento de Ofício, Kits exclusivos, Assistente de Criação com Codex completo, correção de Sub-Raça/Antecedente, correção de travamento e atalhos do Construtor publicados.");
+console.log("Perícias Flexíveis, Conhecimento de Ofício e Criação Assistida completa com Atributos, Perícias e Recursos publicados.");
