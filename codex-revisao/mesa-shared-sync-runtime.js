@@ -106,6 +106,7 @@
       target.splice(0,target.length,...rows.map(r=>({...clone(r.data||{}),id:r.element_id,layer:r.layer})));
       try{localStorage.setItem("MICROCOSMOS_SCENE_GEOMETRY_V1",JSON.stringify({version:1,elements:target}))}catch(_e){}
       scene.refresh?.();
+      document.dispatchEvent(new CustomEvent("microcosmos:scene-changed"));
     }finally{setTimeout(()=>applyingRemote=false,0)}
   }
   async function readRemoteScene(){

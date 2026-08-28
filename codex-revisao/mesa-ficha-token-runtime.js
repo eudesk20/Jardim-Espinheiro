@@ -49,7 +49,7 @@
       localStorage.setItem(TABLE_KEY,JSON.stringify(players.map(p=>({
         id:p.id,name:p.name,color:p.color,cls:p.cls,level:p.level,hp:p.hp,hpMax:p.hpMax,ac:p.ac,speed:p.speed,x:p.x,y:p.y,
         attacks:p.attacks||[],spells:p.spells||[],master:!!p.master,free:!!p.free,linked:!!p.linked,userId:p.userId||"",characterId:p.characterId||"",
-        tokenImage:p.tokenImage||"",tokenImageMode:p.tokenImageMode||"",sheetPortrait:p.sheetPortrait||"",visibilityLayer:p.visibilityLayer||p.layer||"players"
+        tokenImage:p.tokenImage||"",tokenImageMode:p.tokenImageMode||"",sheetPortrait:p.sheetPortrait||"",visibilityLayer:p.visibilityLayer||p.layer||"players",visionRangeMeters:+p.visionRangeMeters||9,darkvisionMeters:+p.darkvisionMeters||0,visionArcDeg:+p.visionArcDeg||180,visionDirectionDeg:Number.isFinite(+p.visionDirectionDeg)?+p.visionDirectionDeg:0
       }))))
     }catch(e){console.warn("MICROCOSMOS Mesa: não foi possível salvar tokens",e)}
   }

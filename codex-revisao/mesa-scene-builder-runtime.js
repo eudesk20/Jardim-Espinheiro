@@ -338,6 +338,7 @@
 
   globalThis.MICROCOSMOS_SCENE={
     get elements(){return scene.elements},get isMaster(){return isMaster},behavior,refresh:render,
+    commit:()=>save(),
     getBlockingVision:()=>scene.elements.filter(e=>normalize(e).blocksVision).flatMap(blockingSegments),
     getBlockingMovement:()=>scene.elements.filter(e=>normalize(e).blocksMovement).flatMap(blockingSegments),
     add:e=>{const el=normalize({...e,id:e.id||uid()});insertElement(el);save();render();return el},
