@@ -12,7 +12,7 @@
   const STORE_KEY="MICROCOSMOS_SCENE_GEOMETRY_V1";
   const PROJECT_URL="https://evyhhlbvhspiuwouivbb.supabase.co";
   const PUBLISHABLE_KEY="sb_publishable_mf7PV03HfaJw_YkUhX34NA_dAGFbyp6";
-  let isMaster=false,currentUserId="",tool="select",targetLayer="players",selectedId="",drawing=null,editing=null,partialErasing=null,openingDrag=null,linkingDoorId="",scene={version:1,elements:[]},dynamicAnimations=new Map();
+  let isMaster=false,currentUserId="",tool="select",targetLayer="players",selectedId="",drawing=null,editing=null,partialErasing=null,openingDrag=null,linkingDoorId="",copiedElement=null,pasteCount=0,scene={version:1,elements:[]},dynamicAnimations=new Map();
   try{scene=JSON.parse(localStorage.getItem(STORE_KEY)||"null")||scene;if(!Array.isArray(scene.elements))scene.elements=[]}catch{}
   let lastSnapshot=JSON.stringify(scene),undoStack=[];
 
@@ -182,6 +182,8 @@
     if(after>=minLength)scene.elements.push(normalize({...wall,id:uid(),x1:+b.x.toFixed(1),y1:+b.y.toFixed(1)}));
     return el
   }
+  function copySelectedElement(){const el=selected();if(!el||el.type==='visionSettings')return;copiedElement=structuredClone(el);pasteCount=0;const status=$("microBuilderStatus");if(status)status.innerHTML=`📋 <b>${el.type==='door'?'Porta':el.type==='window'?'Janela':el.type==='light'?'Luz':'Elemento'} copiado.</b> Use Ctrl+V para colar.`}
+  function pasteCopiedElement(){if(!copiedElement)return;pasteCount++;const offset=Math.max(20,(+gridSize?.value||70)/2)*pasteCount,el=structuredClone(copiedElement);el.id=uid();delete el.groupId;delete el.linkId;delete el.parentId;delete el.replacesWallId;if(Array.isArray(el.points))el.points=el.points.map(p=>({...p,x:p.x+offset,y:p.y+offset}));else if(Number.isFinite(+el.cx)){el.cx+=offset;el.cy+=offset}else if(Number.isFinite(+el.x1)){el.x1+=offset;el.y1+=offset;el.x2+=offset;el.y2+=offset}normalize(el);scene.elements.push(el);selectedId=el.id;save();render();const status=$("microBuilderStatus");if(status)status.innerHTML='📌 <b>Cópia colada.</b> Arraste para a posição desejada.'}
   function drawStart(e){
     if(!isMaster||e.button>0||!["wall","door","window","circle","pen","light"].includes(tool)||e.target?.closest?.(".token"))return;
     const p=snapPoint(stagePoint(e)),drawType=tool,drawLayer=targetLayer;
@@ -315,6 +317,9 @@
     stage.addEventListener("pointerdown",partialEraseAt,true);stage.addEventListener("pointermove",partialEraseAt,true);stage.addEventListener("pointerup",e=>{if(partialErasing?.pointer===e.pointerId){partialErasing=null;try{stage.releasePointerCapture?.(e.pointerId)}catch(_e){}}},true);stage.addEventListener("pointercancel",e=>{if(partialErasing?.pointer===e.pointerId)partialErasing=null},true);stage.addEventListener("pointerleave",()=>{if(partialErasing===null)$("microPartialEraserPreview")?.remove()},true);
     window.addEventListener("pointermove",drawMove,true);window.addEventListener("pointerup",drawEnd,true);window.addEventListener("resize",updateMobileBar)
     window.addEventListener("keydown",e=>{
+      const typing=e.target?.matches?.('input,textarea,select,[contenteditable="true"]');
+      if(!typing&&(e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="c"){if(selected()){e.preventDefault();copySelectedElement()}return}
+      if(!typing&&(e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="v"){if(copiedElement){e.preventDefault();pasteCopiedElement()}return}
       if(e.key==="Enter"&&drawing?.type==="pen"){e.preventDefault();finishPen();return}
       if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="z"){e.preventDefault();undoScene();return}
       if(e.key!=="Escape"||!drawing&&!editing&&tool==="select")return;e.preventDefault();drawing=null;editing=null;globalThis.MICROCOSMOS_SCENE_EDITING=null;removePreview();setTool("select");render()
