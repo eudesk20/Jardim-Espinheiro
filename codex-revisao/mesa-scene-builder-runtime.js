@@ -12,7 +12,7 @@
   const STORE_KEY="MICROCOSMOS_SCENE_GEOMETRY_V1";
   const PROJECT_URL="https://evyhhlbvhspiuwouivbb.supabase.co";
   const PUBLISHABLE_KEY="sb_publishable_mf7PV03HfaJw_YkUhX34NA_dAGFbyp6";
-  let isMaster=false,currentUserId="",tool="select",targetLayer="players",selectedId="",drawing=null,editing=null,partialErasing=null,scene={version:1,elements:[]};
+  let isMaster=false,currentUserId="",tool="select",targetLayer="players",selectedId="",drawing=null,editing=null,partialErasing=null,scene={version:1,elements:[]},dynamicAnimations=new Map();
   try{scene=JSON.parse(localStorage.getItem(STORE_KEY)||"null")||scene;if(!Array.isArray(scene.elements))scene.elements=[]}catch{}
   let lastSnapshot=JSON.stringify(scene),undoStack=[];
 
@@ -75,8 +75,17 @@
   }
   function dynamicControlSvg(el){
     if(!isMaster||!['door','window','light'].includes(el.type))return'';
-    const light=el.type==='light',x=light?el.cx:(el.x1+el.x2)/2,y=(light?el.cy:(el.y1+el.y2)/2)-22,active=light?el.state!=='off':el.state==='open',symbol=light?(active?'☀':'○'):el.type==='door'?(active?'↔':'▮'):(active?'◇':'▣'),label=light?(active?'Apagar luz':'Acender luz'):(active?`Fechar ${el.type==='door'?'porta':'janela'}`:`Abrir ${el.type==='door'?'porta':'janela'}`);
-    return `<g class="micro-dynamic-control ${active?'on':'off'} ${active?'open':'closed'}" data-scene-toggle="${esc(el.id)}" role="button" tabindex="0" aria-label="${label}"><title>${label}</title><circle cx="${x}" cy="${y}" r="13"></circle><text x="${x}" y="${y}">${symbol}</text></g>`
+    const light=el.type==='light',x=light?el.cx:(el.x1+el.x2)/2,y=(light?el.cy:(el.y1+el.y2)/2)-22,active=light?el.state!=='off':el.state==='open',symbol=light?(active?'☀':'○'):el.type==='door'?(active?'↔':'▮'):(active?'◇':'▣'),label=light?(active?'Apagar luz':'Acender luz'):(active?`Fechar ${el.type==='door'?'porta':'janela'}`:`Abrir ${el.type==='door'?'porta':'janela'}`),main=`<g class="micro-dynamic-control ${active?'on':'off'} ${active?'open':'closed'}" data-scene-toggle="${esc(el.id)}" role="button" tabindex="0" aria-label="${label}"><title>${label}</title><circle cx="${x}" cy="${y}" r="13"></circle><text x="${x}" y="${y}">${symbol}</text></g>`;
+    if(el.type!=='window')return main;const curtainOpen=el.curtain!=='closed',curtainLabel=curtainOpen?'Fechar cortina':'Abrir cortina';return `${main}<g class="micro-dynamic-control ${curtainOpen?'open':'closed'}" data-scene-curtain-toggle="${esc(el.id)}" role="button" tabindex="0" aria-label="${curtainLabel}"><title>${curtainLabel}</title><circle cx="${x+30}" cy="${y}" r="13"></circle><text x="${x+30}" y="${y}">${curtainOpen?'◫':'▥'}</text></g>`
+  }
+  function animatedLineSvg(el,state,sel){
+    const curtain=el.type==="window"&&el.curtain==="closed"?" curtain":"",baseClass=`micro-scene-segment ${el.type} ${state}${curtain}${sel}`;
+    if(el.type==='door'&&['slide-left','slide-right'].includes(el.motion)){const amount=Number.isFinite(+el.openness)?Math.max(0,Math.min(1,+el.openness)):(state==='open'?1:0),right=el.motion==='slide-right',x1=right?el.x2+(el.x1-el.x2)*(1-amount):el.x1,y1=right?el.y2+(el.y1-el.y2)*(1-amount):el.y1,x2=right?el.x2:el.x1+(el.x2-el.x1)*(1-amount),y2=right?el.y2:el.y1+(el.y2-el.y1)*(1-amount);return `<line class="${baseClass}" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"></line>`}
+    if(el.type==='door'&&['hinge-left','hinge-right'].includes(el.motion||'hinge-left')){const right=el.motion==='hinge-right',px=right?el.x2:el.x1,py=right?el.y2:el.y1,angle=right?90:-90,current=state==='open'?angle:0,change=dynamicAnimations.get(el.id),from=change?.from==='open'?angle:0,to=change?.to==='open'?angle:0,animation=change?`<animateTransform attributeName="transform" type="rotate" from="${from} ${px} ${py}" to="${to} ${px} ${py}" dur=".38s" fill="freeze" calcMode="spline" keySplines=".2 .8 .2 1"/>`:'';return `<line class="${baseClass}" x1="${el.x1}" y1="${el.y1}" x2="${el.x2}" y2="${el.y2}" transform="rotate(${current} ${px} ${py})">${animation}</line>`}
+    return `<line class="${baseClass}" x1="${el.x1}" y1="${el.y1}" x2="${el.x2}" y2="${el.y2}"></line>`
+  }
+  function curtainVisualSvg(el){
+    if(el.type!=='window')return'';const change=dynamicAnimations.get(`curtain:${el.id}`),closed=el.curtain==='closed';if(!closed&&!change)return'';const mx=(el.x1+el.x2)/2,my=(el.y1+el.y2)/2,wasClosed=change?.from==='closed',start=wasClosed?{x1:el.x1,y1:el.y1,x2:el.x2,y2:el.y2}:{x1:mx,y1:my,x2:mx,y2:my},end=closed?{x1:el.x1,y1:el.y1,x2:el.x2,y2:el.y2}:{x1:mx,y1:my,x2:mx,y2:my},animate=change?`<animate attributeName="x1" from="${start.x1}" to="${end.x1}" dur=".34s" fill="freeze"/><animate attributeName="y1" from="${start.y1}" to="${end.y1}" dur=".34s" fill="freeze"/><animate attributeName="x2" from="${start.x2}" to="${end.x2}" dur=".34s" fill="freeze"/><animate attributeName="y2" from="${start.y2}" to="${end.y2}" dur=".34s" fill="freeze"/>`:'';return `<line x1="${end.x1}" y1="${end.y1}" x2="${end.x2}" y2="${end.y2}" style="stroke:#7c3f88;stroke-width:11;stroke-linecap:round;pointer-events:none;vector-effect:non-scaling-stroke">${animate}</line>`
   }
   function elementSvg(el){
     normalize(el);const state=el.state||"closed",sel=selectedTogether(el)?" selected":"",editingHandles=el.id===selectedId&&isMaster&&tool==="select";
@@ -94,7 +103,7 @@
       return `<g data-scene-id="${esc(el.id)}"><path class="micro-scene-hit" d="${d}" fill="none"></path><path class="micro-scene-segment wall ${state}${sel}" d="${d}" fill="none"></path>${handles}</g>`
     }
     const handles=editingHandles?`<circle class="micro-scene-handle endpoint" data-scene-handle="start" cx="${el.x1}" cy="${el.y1}" r="9"></circle><circle class="micro-scene-handle" data-scene-handle="move" cx="${(el.x1+el.x2)/2}" cy="${(el.y1+el.y2)/2}" r="10"></circle><circle class="micro-scene-handle endpoint" data-scene-handle="end" cx="${el.x2}" cy="${el.y2}" r="9"></circle>`:"";
-    return `<g data-scene-id="${esc(el.id)}"><line class="micro-scene-hit" x1="${el.x1}" y1="${el.y1}" x2="${el.x2}" y2="${el.y2}"></line><line class="micro-scene-segment ${el.type} ${state}${el.type==="window"&&el.curtain==="closed"?" curtain":""}${sel}" x1="${el.x1}" y1="${el.y1}" x2="${el.x2}" y2="${el.y2}"></line>${handles}${dynamicControlSvg(el)}</g>`
+    return `<g data-scene-id="${esc(el.id)}"><line class="micro-scene-hit" x1="${el.x1}" y1="${el.y1}" x2="${el.x2}" y2="${el.y2}"></line>${animatedLineSvg(el,state,sel)}${curtainVisualSvg(el)}${handles}${dynamicControlSvg(el)}</g>`
   }
   function render(){
     const {visible,master}=ensureLayers();
@@ -103,12 +112,16 @@
     bindSegments(visible);if(isMaster)bindSegments(master);renderSelected();if(isMaster)updateMobileBar()
   }
   function bindSegments(svg){
+    svg.querySelectorAll("[data-scene-curtain-toggle]").forEach(control=>{
+      const activate=e=>{if(e.type==='keydown'&&!['Enter',' '].includes(e.key))return;e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();toggleCurtain(control.dataset.sceneCurtainToggle)};
+      control.addEventListener('pointerdown',activate,true);control.addEventListener('keydown',activate,true)
+    });
     svg.querySelectorAll("[data-scene-toggle]").forEach(control=>{
       const activate=e=>{if(e.type==='keydown'&&!['Enter',' '].includes(e.key))return;e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();toggleDynamic(control.dataset.sceneToggle)};
       control.addEventListener('pointerdown',activate,true);control.addEventListener('keydown',activate,true)
     });
     svg.querySelectorAll("[data-scene-id]").forEach(g=>g.addEventListener("pointerdown",e=>{
-      if(e.target?.closest?.("[data-scene-handle],[data-scene-toggle]")||!isMaster||tool!=="select")return;e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();selectedId=g.dataset.sceneId;render()
+      if(e.target?.closest?.("[data-scene-handle],[data-scene-toggle],[data-scene-curtain-toggle]")||!isMaster||tool!=="select")return;e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();selectedId=g.dataset.sceneId;render()
     },true));
     svg.querySelectorAll("[data-scene-handle]").forEach(handle=>handle.addEventListener("pointerdown",e=>{
       const g=handle.closest("[data-scene-id]"),el=scene.elements.find(x=>x.id===g?.dataset.sceneId);if(!isMaster||tool!=="select"||!el)return;
@@ -219,7 +232,8 @@
     updateMobileBar();if(tool!=="select")closeMasterDrawerMobile()
   }
   function setElementState(id,state){const el=scene.elements.find(x=>x.id===id);if(!el)return;el.state=state;normalize(el);save();render()}
-  function toggleDynamic(id){if(!isMaster)return;const el=scene.elements.find(x=>x.id===id);if(!el)return;if(el.type==='light')el.state=el.state==='off'?'on':'off';else if(el.type==='door'||el.type==='window')el.state=el.state==='open'?'closed':'open';else return;normalize(el);save();render()}
+  function toggleDynamic(id){if(!isMaster)return;const el=scene.elements.find(x=>x.id===id);if(!el)return;const previous=el.state;if(el.type==='light')el.state=el.state==='off'?'on':'off';else if(el.type==='door'||el.type==='window')el.state=el.state==='open'?'closed':'open';else return;if(el.type==='door'){el.openness=el.state==='open'?1:0;dynamicAnimations.set(el.id,{from:previous,to:el.state})}normalize(el);save();render();setTimeout(()=>dynamicAnimations.delete(el.id),450)}
+  function toggleCurtain(id){if(!isMaster)return;const el=scene.elements.find(x=>x.id===id);if(el?.type!=='window')return;const previous=el.curtain||'open';el.curtain=previous==='closed'?'open':'closed';dynamicAnimations.set(`curtain:${el.id}`,{from:previous,to:el.curtain});normalize(el);save();render();setTimeout(()=>dynamicAnimations.delete(`curtain:${el.id}`),400)}
   function setElementLayer(id,layer){const el=scene.elements.find(x=>x.id===id);if(!el)return;el.layer=layer;save();render()}
   function setElementType(id,type){const el=scene.elements.find(x=>x.id===id);if(!el||!["wall","door","window"].includes(type))return;el.type=type;el.state=defaultState(type);normalize(el);save();render()}
   function deleteSelected(){if(!selectedId)return;const group=selected()?.groupId;scene.elements=scene.elements.filter(x=>group?x.groupId!==group:x.id!==selectedId);selectedId="";save();render()}
@@ -232,12 +246,13 @@
     const typeUi=isPath||isCircle?`<label>Formato<input value="${isCircle?"Círculo":"Parede contínua"}" disabled></label>`:`<label>Tipo<select id="microElementType"><option value="wall" ${el.type==="wall"?"selected":""}>Parede</option><option value="door" ${el.type==="door"?"selected":""}>Porta</option><option value="window" ${el.type==="window"?"selected":""}>Janela</option></select></label>`;
     const cornerUi=isPath?`<label>Quinas<select id="microElementCorner"><option value="straight" ${el.cornerStyle!=="round"?"selected":""}>Retas</option><option value="round" ${el.cornerStyle==="round"?"selected":""}>Arredondadas</option></select></label>`:stateUi;
     const curtainUi=el.type==="window"?`<div class="micro-builder-row"><label>Cortina<select id="microElementCurtain"><option value="open" ${el.curtain!=="closed"?"selected":""}>Aberta — permite visão</option><option value="closed" ${el.curtain==="closed"?"selected":""}>Fechada — bloqueia visão</option></select></label><small>A abertura da janela controla passagem; a cortina controla visão.</small></div>`:"";
-    const motionUi=["door","window"].includes(el.type)?`<div class="micro-builder-row"><label>Movimento<select id="microElementMotion"><option value="hinge-left" ${!el.motion||el.motion==="hinge-left"?"selected":""}>Giro para esquerda</option><option value="hinge-right" ${el.motion==="hinge-right"?"selected":""}>Giro para direita</option><option value="slide-left" ${el.motion==="slide-left"?"selected":""}>Corre para esquerda</option><option value="slide-right" ${el.motion==="slide-right"?"selected":""}>Corre para direita</option><option value="gate-up" ${el.motion==="gate-up"?"selected":""}>Sobe como portão</option></select></label><small>Define como a animação será feita na próxima etapa.</small></div>`:"";
+    const sliding=el.type==='door'&&['slide-left','slide-right'].includes(el.motion),opening=Math.round((Number.isFinite(+el.openness)?+el.openness:(el.state==='open'?1:0))*100),motionUi=["door","window"].includes(el.type)?`<div class="micro-builder-row"><label>Movimento<select id="microElementMotion"><option value="hinge-left" ${!el.motion||el.motion==="hinge-left"?"selected":""}>Giro para esquerda</option><option value="hinge-right" ${el.motion==="hinge-right"?"selected":""}>Giro para direita</option><option value="slide-left" ${el.motion==="slide-left"?"selected":""}>Corre para esquerda</option><option value="slide-right" ${el.motion==="slide-right"?"selected":""}>Corre para direita</option><option value="gate-up" ${el.motion==="gate-up"?"selected":""}>Sobe como portão</option></select></label><small>${sliding?'Arraste a barra para recolher a porta.':'Define como o elemento abre.'}</small></div>${sliding?`<label style="display:block;margin-top:7px">Abertura: <b id="microElementOpeningValue">${opening}%</b><input id="microElementOpening" type="range" min="0" max="100" step="1" value="${opening}" style="width:100%"></label>`:''}`:"";
     box.innerHTML=`<b>${isCircle?"⭕ Círculo":isPath?"✒️ Parede contínua":el.type==="wall"?"🧱 Parede":el.type==="door"?"🚪 Porta":"🪟 Janela"}</b><span class="micro-layer-chip">${el.layer==="master"?"SÓ MESTRE":"VISÍVEL"}</span><div class="micro-builder-row">${typeUi}<label>Camada<select id="microElementLayer"><option value="players" ${el.layer!=="master"?"selected":""}>Jogadores</option><option value="master" ${el.layer==="master"?"selected":""}>Mestre</option></select></label></div><div class="micro-builder-row">${cornerUi}<small>${isCircle?"Arraste o centro para mover ou o ponto amarelo para alterar o raio.":isPath?"Arraste qualquer ponto amarelo para editar a direção.":"Arraste as pontas amarelas para redimensionar e o círculo central para mover."}</small></div>${motionUi}${curtainUi}<small>Visão: <b>${el.blocksVision?"bloqueia":"permite"}</b> • Movimento: <b>${el.blocksMovement?"bloqueia":"permite"}</b></small><button type="button" class="btn danger" id="microDeleteElement" style="width:100%;margin-top:6px">🗑️ Apagar elemento</button>`;
     $("microElementType")?.addEventListener("change",e=>setElementType(el.id,e.target.value));$("microElementState")?.addEventListener("change",e=>setElementState(el.id,e.target.value));$("microElementLayer")?.addEventListener("change",e=>setElementLayer(el.id,e.target.value));$("microDeleteElement")?.addEventListener("click",deleteSelected)
     $("microElementCorner")?.addEventListener("change",e=>{el.cornerStyle=e.target.value;save();render()})
     $("microElementCurtain")?.addEventListener("change",e=>{el.curtain=e.target.value;normalize(el);save();render()})
     $("microElementMotion")?.addEventListener("change",e=>{el.motion=e.target.value;save();render()})
+    const openingInput=$("microElementOpening");openingInput?.addEventListener("input",e=>{const value=Math.max(0,Math.min(100,+e.target.value||0));el.openness=value/100;el.state=value<=0?'closed':value>=100?'open':'half';normalize(el);const valueLabel=$("microElementOpeningValue");if(valueLabel)valueLabel.textContent=`${value}%`;const line=document.querySelector(`[data-scene-id="${CSS.escape(el.id)}"] .micro-scene-segment.door`);if(line){const amount=el.openness,right=el.motion==='slide-right';line.setAttribute('x1',right?el.x2+(el.x1-el.x2)*(1-amount):el.x1);line.setAttribute('y1',right?el.y2+(el.y1-el.y2)*(1-amount):el.y1);line.setAttribute('x2',right?el.x2:el.x1+(el.x2-el.x1)*(1-amount));line.setAttribute('y2',right?el.y2:el.y1+(el.y2-el.y1)*(1-amount))}});openingInput?.addEventListener("change",()=>{save();render()})
   }
 
   function editMove(e){
