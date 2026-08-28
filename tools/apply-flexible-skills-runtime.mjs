@@ -6,6 +6,8 @@ const tableUrl=new URL("mesa-campanha.html",root);
 const fichaRuntimeUrl=new URL("codex-revisao/flexible-skills-layout-runtime.js",root);
 const skillNamesUrl=new URL("codex-revisao/skill-name-sync-runtime.js",root);
 const classCraftUrl=new URL("codex-revisao/class-crafting-books-runtime.js",root);
+const officioEquipmentUrl=new URL("codex-revisao/class-officio-equipment-runtime.js",root);
+const officioKitGrantsUrl=new URL("codex-revisao/class-officio-kit-grants-runtime.js",root);
 const mesaRuntimeUrl=new URL("codex-revisao/mesa-flexible-skills-runtime.js",root);
 const tokenBridgeUrl=new URL("codex-revisao/mesa-token-flexible-skills-bridge-runtime.js",root);
 const clickFixUrl=new URL("codex-revisao/mesa-flexible-skills-click-fix-runtime.js",root);
@@ -15,6 +17,8 @@ const sceneCopyUrl=new URL("codex-revisao/mesa-scene-copy-paste-runtime.js",root
 new Function(await readFile(fichaRuntimeUrl,"utf8"));
 new Function(await readFile(skillNamesUrl,"utf8"));
 new Function(await readFile(classCraftUrl,"utf8"));
+new Function(await readFile(officioEquipmentUrl,"utf8"));
+new Function(await readFile(officioKitGrantsUrl,"utf8"));
 new Function(await readFile(mesaRuntimeUrl,"utf8"));
 new Function(await readFile(tokenBridgeUrl,"utf8"));
 new Function(await readFile(clickFixUrl,"utf8"));
@@ -41,7 +45,10 @@ index=index.slice(0,attrsStart)+canonicalAttrs+index.slice(attrsEnd+3);
 const skillChoiceTag='<script src="codex-revisao/skill-choice-runtime.js"></script>';
 const skillNamesTag='<script src="codex-revisao/skill-name-sync-runtime.js"></script>';
 const fichaTag='<script src="codex-revisao/flexible-skills-layout-runtime.js"></script>';
+const officioEquipmentTag='<script src="codex-revisao/class-officio-equipment-runtime.js"></script>';
 const classCraftTag='<script src="codex-revisao/class-crafting-books-runtime.js"></script>';
+const fullKitTag='<script src="codex-revisao/class-kit-full-grants-runtime.js"></script>';
+const officioKitGrantsTag='<script src="codex-revisao/class-officio-kit-grants-runtime.js"></script>';
 if(!index.includes(skillNamesTag)){
   if(index.includes(skillChoiceTag))index=index.replace(skillChoiceTag,`${skillChoiceTag}\n${skillNamesTag}`);
   else index=index.replace('</body>',`${skillNamesTag}\n</body>`);
@@ -51,10 +58,18 @@ if(!index.includes(fichaTag)){
   else if(index.includes(skillChoiceTag))index=index.replace(skillChoiceTag,`${skillChoiceTag}\n${fichaTag}`);
   else index=index.replace('</body>',`${fichaTag}\n</body>`);
 }
+if(!index.includes(officioEquipmentTag)){
+  if(index.includes(fichaTag))index=index.replace(fichaTag,`${fichaTag}\n${officioEquipmentTag}`);
+  else index=index.replace('</body>',`${officioEquipmentTag}\n</body>`);
+}
 if(!index.includes(classCraftTag)){
-  if(index.includes(fichaTag))index=index.replace(fichaTag,`${fichaTag}\n${classCraftTag}`);
-  else if(index.includes(skillNamesTag))index=index.replace(skillNamesTag,`${skillNamesTag}\n${classCraftTag}`);
+  if(index.includes(officioEquipmentTag))index=index.replace(officioEquipmentTag,`${officioEquipmentTag}\n${classCraftTag}`);
+  else if(index.includes(fichaTag))index=index.replace(fichaTag,`${fichaTag}\n${classCraftTag}`);
   else index=index.replace('</body>',`${classCraftTag}\n</body>`);
+}
+if(!index.includes(officioKitGrantsTag)){
+  if(index.includes(fullKitTag))index=index.replace(fullKitTag,`${fullKitTag}\n${officioKitGrantsTag}`);
+  else index=index.replace('</body>',`${officioKitGrantsTag}\n</body>`);
 }
 await writeFile(indexUrl,index,"utf8");
 
@@ -86,4 +101,4 @@ if(!table.includes(sceneCopyTag)){
 }
 await writeFile(tableUrl,table,"utf8");
 
-console.log("Perícias Flexíveis, ofícios de Classe e atalhos do Construtor publicados: nomes canônicos, Livro de Receitas, Mochila de Projetos, integração às Ações do Token e Ctrl+C/Ctrl+V no cenário.");
+console.log("Perícias Flexíveis, Conhecimento de Ofício, Kits exclusivos e atalhos do Construtor publicados: Livro de Receitas, Mochila de Projetos, equipamentos de Cozinheiro/Engenheiro, integração às Ações do Token e Ctrl+C/Ctrl+V no cenário.");
