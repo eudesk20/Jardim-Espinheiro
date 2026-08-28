@@ -19,7 +19,29 @@
   const mod=v=>Math.floor(((+v||10)-10)/2);
   const prof=level=>2+Math.floor((Math.max(1,+level||1)-1)/4);
   const fmt=n=>(+n||0)>=0?`+${+n||0}`:`${+n||0}`;
-  let supabase=null,currentUserId="",currentRole="player",profile=null,profileNames=new Map(),characterCache=[],uploadTargetId="";
+  let supabase=null,currentUserId="",currentRole="player",profile=null,profileNames=new Map(),characterCache=[],uploadTargetId="",pendingPlacement=null;
+
+  function placementPoint(e){
+    const stage=$("stage"),rect=stage?.getBoundingClientRect(),baseW=stage?.offsetWidth||1400,baseH=stage?.offsetHeight||900;
+    if(!rect)return null;let x=(e.clientX-rect.left)/(rect.width/baseW||1),y=(e.clientY-rect.top)/(rect.height/baseH||1);
+    const size=+$("gridSize")?.value||70,type=$("gridType")?.value||"square",snapOn=!/OFF/i.test($("toggleSnap")?.textContent||"");
+    if(snapOn&&type==="square"){x=Math.round(x/size)*size;y=Math.round(y/size)*size}
+    else if(snapOn&&type==="hex"){const row=Math.round(y/(size*.75)),offset=(row%2)*(size*.5);x=Math.round((x-offset)/size)*size+offset;y=row*size*.75}
+    return{x:Math.max(25,Math.min(baseW-25,x)),y:Math.max(25,Math.min(baseH-25,y))}
+  }
+  function cancelTokenPlacement(){
+    if(!pendingPlacement)return;pendingPlacement.preview?.remove();pendingPlacement=null;document.body.classList.remove("micro-token-placing");
+    const status=$("mapStatus");if(status)status.textContent="Colocação cancelada."
+  }
+  function beginTokenPlacement(token,onPlaced){
+    cancelTokenPlacement();const preview=document.createElement("div");preview.className="micro-token-placement-preview";preview.style.setProperty("--token-color",token.color||"#fff");preview.textContent=String(token.name||"Token").slice(0,2).toUpperCase();document.body.appendChild(preview);
+    pendingPlacement={token,preview,onPlaced};document.body.classList.add("micro-token-placing");const status=$("mapStatus");if(status)status.textContent=`📍 ${token.name}: clique com o botão esquerdo no mapa para colocar • Esc ou botão direito cancela`;
+  }
+  function finishTokenPlacement(e){
+    if(!pendingPlacement||e.button!==0||!e.target.closest?.("#viewport"))return false;const point=placementPoint(e);if(!point)return false;
+    e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();const {token,preview,onPlaced}=pendingPlacement;pendingPlacement=null;preview.remove();document.body.classList.remove("micro-token-placing");token.x=point.x;token.y=point.y;players.push(token);saveTable();api.renderPlayers();api.renderTokens();decorateTokens();api.selectToken(token.id);globalThis.MICROCOSMOS_MESA_SHARED?.flushToken?.(token.id,true);onPlaced?.(token);const status=$("mapStatus");if(status)status.textContent=`✅ ${token.name} colocado no mapa.`;return true
+  }
+  globalThis.MICROCOSMOS_TOKEN_PLACEMENT={begin:beginTokenPlacement,cancel:cancelTokenPlacement,active:()=>!!pendingPlacement};
 
   function readLocalSheet(){try{return JSON.parse(localStorage.getItem(SHEET_KEY)||"{}")||{}}catch{return {}}}
   function saveTable(){
@@ -96,7 +118,8 @@
 
   function upsertCharacterToken(row,index=0,select=true){
     const token=sheetToToken(row,index),at=players.findIndex(p=>p.id===token.id);
-    if(at>=0)players[at]={...players[at],...token,x:players[at].x,y:players[at].y};else players.push(token);
+    if(at<0){beginTokenPlacement(token);return token}
+    players[at]={...players[at],...token,x:players[at].x,y:players[at].y};
     saveTable();api.renderPlayers();api.renderTokens();decorateTokens();if(select)api.selectToken(token.id);return token
   }
 
@@ -129,6 +152,7 @@
   function ensureUi(){
     if(!document.getElementById("microMesaTokenStyles")){
       const style=document.createElement("style");style.id="microMesaTokenStyles";style.textContent=`
+      body.micro-token-placing #viewport{cursor:crosshair!important}.micro-token-placement-preview{position:fixed;z-index:150000;width:58px;height:58px;transform:translate(-50%,-50%);pointer-events:none;border-radius:50%;border:4px solid var(--token-color,#fff);background:#241f1c;color:#fff;display:grid;place-items:center;font-weight:bold;box-shadow:0 5px 18px #000b,0 0 0 3px #f2d36f;opacity:.78}
       .token.micro-token-image{border-radius:12px!important;overflow:visible;background:#171714!important;font-size:0!important}.token.micro-token-image>.micro-token-photo{position:absolute;inset:2px;width:calc(100% - 4px);height:calc(100% - 4px);object-fit:cover;object-position:center;border-radius:8px;pointer-events:none;z-index:1}.token.micro-token-image>small,.token.micro-token-image>.hp{z-index:3}.token.micro-token-master-hidden{opacity:.42!important;filter:saturate(.35);outline:2px dashed #9d71b4!important}.token.micro-token-master-hidden:after{content:"OCULTO";position:absolute;left:50%;top:-20px;transform:translateX(-50%);padding:2px 5px;border-radius:999px;background:#5b3c70;color:#fff;font:bold 8px sans-serif;white-space:nowrap}.micro-token-visibility-quick{position:absolute;z-index:20;left:-11px;top:-11px;width:24px;height:24px;border-radius:50%;border:2px solid #e9cf76;background:#21372b;color:#fff;padding:0;display:grid;place-items:center;font-size:12px;line-height:1;opacity:.58;cursor:pointer;box-shadow:0 2px 7px #0008}.micro-token-visibility-quick:hover,.micro-token-visibility-quick:focus{opacity:1}.micro-token-master-hidden .micro-token-visibility-quick{opacity:1;background:#674579}.micro-token-tools{margin-top:10px;padding-top:9px;border-top:1px dashed #a18b69;display:grid;gap:6px}.micro-token-tools .row{display:flex;gap:6px;flex-wrap:wrap}.micro-token-tools .btn{flex:1}.micro-token-source{font-size:.72rem;color:#6d5a43;background:#efe5cc;border-radius:8px;padding:7px}.micro-enemy-editor{border:1px solid #a18b69;border-radius:9px;background:#fff8e7;padding:7px}.micro-enemy-editor summary{cursor:pointer;font-weight:bold}.micro-enemy-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:7px}.micro-enemy-grid label,.micro-enemy-wide label{display:grid;gap:2px;font-size:.66rem;font-weight:bold}.micro-enemy-grid input,.micro-enemy-wide textarea{width:100%;padding:6px;border:1px solid #9b8058;border-radius:7px;background:#fffdf6}.micro-enemy-wide{display:grid;gap:6px;margin-top:6px}.micro-enemy-wide small{font-weight:normal;color:#6d5a43}.micro-character-modal{position:fixed;inset:0;z-index:120000;background:#07100ddd;display:grid;place-items:center;padding:12px}.micro-character-modal[hidden]{display:none}.micro-character-modal-card{width:min(640px,100%);max-height:88vh;overflow:auto;background:#efe5cc;border:4px double #b58a3d;border-radius:20px;padding:14px;color:#30271e}.micro-character-list{display:grid;gap:8px;margin-top:10px}.micro-character-choice{width:100%;text-align:left;padding:10px;border:1px solid #9b8058;border-radius:11px;background:#fff8e7;color:#30271e}.micro-character-choice b{display:block;color:#405d3e}.micro-character-choice small{display:block;margin-top:3px;color:#6d5a43}.micro-token-thumb{width:36px;height:36px;border-radius:8px;object-fit:cover;object-position:center;border:2px solid #fff;box-shadow:0 0 0 1px #725e42}.player-row.has-photo{grid-template-columns:40px 1fr auto}.micro-table-actions{display:grid;gap:6px;margin-top:9px}.micro-sync-note{font-size:.72rem;color:#6b5a43;margin-top:6px}`;document.head.appendChild(style)
     }
     if(!$("microCharacterModal")){
@@ -151,7 +175,7 @@
   }
 
   function addFreeToken(){
-    const name=prompt("Nome do token livre / NPC:","Novo Token");if(!name)return;const s=+$("gridSize")?.value||70,id=`free:${Date.now()}`;players.push({id,name,color:stableColor(id),cls:"Token livre",level:1,hp:10,hpMax:10,ac:10,speed:9,x:s*6+s/2,y:s*5+s/2,attacks:[{name:"Ataque rápido",bonus:2,damage:"1d6"}],spells:[],free:true,linked:false,userId:"",characterId:"",tokenImage:"",tokenImageMode:""});saveTable();api.renderPlayers();api.renderTokens();decorateTokens();api.selectToken(id)
+    const name=prompt("Nome do token livre / NPC:","Novo Token");if(!name)return;const id=`free:${Date.now()}`;beginTokenPlacement({id,name,color:stableColor(id),cls:"Token livre",level:1,hp:10,hpMax:10,ac:10,speed:9,x:0,y:0,attacks:[{name:"Ataque rápido",bonus:2,damage:"1d6"}],spells:[],free:true,linked:false,userId:"",characterId:"",tokenImage:"",tokenImageMode:""})
   }
 
   function decoratePlayers(){
@@ -207,6 +231,10 @@
   const tokenObserver=new MutationObserver(()=>decorateTokens());tokenObserver.observe($("tokenLayer"),{childList:true,subtree:false});
   const cardObserver=new MutationObserver(()=>decorateCard());cardObserver.observe($("tokenCard"),{childList:true,subtree:true});
   const playerObserver=new MutationObserver(()=>decoratePlayers());playerObserver.observe($("players"),{childList:true,subtree:true});
+  document.addEventListener("pointermove",e=>{if(pendingPlacement){pendingPlacement.preview.style.left=`${e.clientX}px`;pendingPlacement.preview.style.top=`${e.clientY}px`}},true);
+  document.addEventListener("pointerdown",e=>{if(!pendingPlacement)return;if(e.button===2){e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();cancelTokenPlacement();return}finishTokenPlacement(e)},true);
+  document.addEventListener("contextmenu",e=>{if(!pendingPlacement)return;e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();cancelTokenPlacement()},true);
+  document.addEventListener("keydown",e=>{if(e.key==="Escape"&&pendingPlacement){e.preventDefault();cancelTokenPlacement()}},true);
   document.addEventListener("contextmenu",e=>{const token=e.target.closest?.("#tokenLayer [data-token]");if(currentRole!=="master"||!token)return;const p=players.find(x=>String(x.id)===String(token.dataset.token));if(!p)return;e.preventDefault();e.stopPropagation();showVisibilityMenu(p,e.clientX,e.clientY)},true);
   let visibilityHold=null;document.addEventListener("pointerdown",e=>{const token=e.target.closest?.("#tokenLayer [data-token]");if(currentRole!=="master"||!token)return;const p=players.find(x=>String(x.id)===String(token.dataset.token));if(!p)return;if(e.button===2){e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();showVisibilityMenu(p,e.clientX,e.clientY);return}if(!['touch','pen'].includes(e.pointerType))return;const start={x:e.clientX,y:e.clientY,id:token.dataset.token,pointer:e.pointerId};visibilityHold={...start,timer:setTimeout(()=>{visibilityHold=null;showVisibilityMenu(p,start.x,start.y)},650)}},true);document.addEventListener("pointermove",e=>{if(visibilityHold?.pointer===e.pointerId&&Math.hypot(e.clientX-visibilityHold.x,e.clientY-visibilityHold.y)>8){clearTimeout(visibilityHold.timer);visibilityHold=null}},true);for(const eventName of ["pointerup","pointercancel"])document.addEventListener(eventName,e=>{if(visibilityHold?.pointer===e.pointerId){clearTimeout(visibilityHold.timer);visibilityHold=null}},true);
   $("gridSize")?.addEventListener("input",resizeImageTokens);$("gridSize")?.addEventListener("change",resizeImageTokens);

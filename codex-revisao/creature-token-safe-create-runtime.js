@@ -87,11 +87,10 @@
     creating=true;btn.disabled=true;
     try{
       const token=buildToken();
-      players.push(token);
-      api.renderPlayers();api.renderTokens();api.selectToken(token.id);
-      closeModal();addLog(token);
-      globalThis.MICROCOSMOS_TOKEN_SIZE?.refresh?.();
-      globalThis.MICROCOSMOS_CREATURE_ND_LABEL_API?.refresh?.();
+      const placed=placedToken=>{addLog(placedToken);globalThis.MICROCOSMOS_TOKEN_SIZE?.refresh?.();globalThis.MICROCOSMOS_CREATURE_ND_LABEL_API?.refresh?.()};
+      closeModal();
+      if(globalThis.MICROCOSMOS_TOKEN_PLACEMENT?.begin)globalThis.MICROCOSMOS_TOKEN_PLACEMENT.begin(token,placed);
+      else{players.push(token);api.renderPlayers();api.renderTokens();api.selectToken(token.id);placed(token)}
     }catch(err){
       console.error("MICROCOSMOS: falha na criação segura do token",err);
       alert("Não foi possível criar o token desta criatura. A Mesa foi preservada; tente novamente após atualizar a página.")
