@@ -1,7 +1,10 @@
 /* MICROCOSMOS — correção de seleção de alvo na Mesa.
    Em modo de alvo, usa Pointer Events para unificar mouse, caneta e toque.
    Impede drag/pan de roubar a seleção e dispara o click que o runtime de magia
-   já sabe resolver. */
+   já sabe resolver.
+
+   Também restringe a área clicável da seta de direção da visão à parte externa
+   do token, evitando que cliques no centro iniciem rotação acidental. */
 (function(){
   if(globalThis.MICROCOSMOS_MESA_TARGET_POINTER_FIX)return;
   globalThis.MICROCOSMOS_MESA_TARGET_POINTER_FIX=true;
@@ -53,7 +56,41 @@
   // Enquanto o alvo está sendo escolhido, evita gestos de arrastar/selecionar.
   const style=document.createElement("style");
   style.id="microTargetPointerFixStyles";
-  style.textContent=`body.micro-target-mode #tokenLayer,body.micro-target-mode #tokenLayer [data-token]{touch-action:none!important;user-select:none!important;-webkit-user-select:none!important}body.micro-target-mode #tokenLayer [data-token]{cursor:crosshair!important}`;
+  style.textContent=`
+    body.micro-target-mode #tokenLayer,
+    body.micro-target-mode #tokenLayer [data-token]{
+      touch-action:none!important;
+      user-select:none!important;
+      -webkit-user-select:none!important
+    }
+    body.micro-target-mode #tokenLayer [data-token]{cursor:crosshair!important}
+
+    /* Direção da visão:
+       - mantém o pivô da rotação no centro do token;
+       - alonga a seta;
+       - recorta os primeiros 28 px da área de interação.
+       Assim o centro do token deixa de capturar a rotação. */
+    #tokenLayer [data-token] .micro-vision-facing{
+      width:72px!important;
+      height:24px!important;
+      clip-path:inset(0 0 0 28px)!important;
+      -webkit-clip-path:inset(0 0 0 28px)!important;
+      cursor:crosshair!important;
+      touch-action:none!important
+    }
+    #tokenLayer [data-token] .micro-vision-facing:before{
+      left:28px!important;
+      right:4px!important;
+      top:10px!important
+    }
+    #tokenLayer [data-token] .micro-vision-facing:after{
+      right:0!important;
+      top:6px!important;
+      border-left-width:10px!important;
+      border-top-width:6px!important;
+      border-bottom-width:6px!important
+    }
+  `;
   document.head.appendChild(style);
 
   // Alguns navegadores ainda geram um click nativo após pointerup. O primeiro
