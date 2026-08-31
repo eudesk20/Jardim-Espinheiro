@@ -87,8 +87,13 @@
   }
 
   function renderPlayers(){
-    const body=bodyOf("microMasterPlayersSection");if(!body)return;clearLegacyBody(body);
+    const body=bodyOf("microMasterPlayersSection");if(!body)return;
+    const rosterKey=players.map(p=>[p.id,p.name,p.cls||p.classKey,+p.hp||0,+p.hpMax||0,+p.ac||0].join("~")).join("|");
+    const current=body.querySelector("[data-master-player-card]");
+    if(current?.dataset.rosterKey===rosterKey){const id=String(selectedId());current.querySelectorAll("[data-master-select]").forEach(b=>b.closest(".micro-player-tool")?.classList.toggle("selected",String(b.dataset.masterSelect)===id));return}
+    clearLegacyBody(body);
     const card=document.createElement("div");card.dataset.masterV2="1";card.className="micro-tool-card";
+    card.dataset.masterPlayerCard="1";card.dataset.rosterKey=rosterKey;
     card.innerHTML=`<div class="micro-tool-row"><button class="micro-tool-btn primary" id="microV2AddSheet">🧙 Adicionar Ficha</button><button class="micro-tool-btn" id="microV2AddNpc">➕ Token / NPC</button></div><div class="micro-tool-list">${players.length?players.map(p=>`<div class="micro-player-tool ${String(p.id)===String(selectedId())?"selected":""}"><div><b>${esc(p.name||"Token")}</b><small>${esc(p.cls||p.classKey||"Sem Classe")} • PV ${+p.hp||0}/${+p.hpMax||0} • CA ${+p.ac||0}</small></div><button class="micro-tool-btn" data-master-select="${esc(p.id)}">Selecionar</button></div>`).join(""):'<div class="micro-empty-tool">Nenhum token na Mesa.</div>'}</div>`;
     body.appendChild(card);$("microV2AddSheet").onclick=()=>clickOriginal("microAddCharacterSide");$("microV2AddNpc").onclick=()=>clickOriginal("microAddFreeToken");
     card.querySelectorAll("[data-master-select]").forEach(b=>b.onclick=()=>{globalThis.MICROCOSMOS_TABLE_API?.selectToken?.(b.dataset.masterSelect);setTimeout(()=>{renderPlayers();renderToken()},80)})
