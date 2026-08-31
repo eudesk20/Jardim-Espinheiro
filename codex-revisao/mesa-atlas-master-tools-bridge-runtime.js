@@ -24,7 +24,7 @@
       #microAtlasTopBody #microCampaignAtlas{order:10}#microAtlasTopBody #microAtlasTransitionPanel{order:20}
       #microAtlasEntryPanel,#microAtlasEntryLayer{display:none!important}
       #microAtlasTopBody .micro-atlas-head h2{font-size:1.05rem}.micro-atlas-top-empty{padding:12px;text-align:center;background:#fff8e7;border-radius:9px;color:#715f49}
-      @media(max-width:720px){#microAtlasTopToggle{font-size:13px;padding:6px 9px;left:auto;right:7px;top:5px}#microAtlasTopDrawer{top:43px;left:6px;right:6px;transform:none;width:auto;max-height:calc(100vh - 50px);border-radius:13px}#microAtlasTopBody .micro-atlas-actions,#microAtlasTopBody .micro-entry-actions{flex-wrap:wrap}}
+      @media(max-width:720px){#microAtlasTopToggle{font-size:12px;padding:5px 8px;left:auto;right:82px;top:4px;min-height:34px}#microAtlasTopDrawer{top:auto;bottom:6px;left:6px;right:6px;transform:none;width:auto;max-height:min(68vh,560px);border-radius:15px;padding:7px}#microAtlasTopBody{gap:6px}#microAtlasTopBody .micro-atlas-actions{flex-wrap:wrap}.micro-atlas-top-head{position:sticky;top:-7px;z-index:3;background:#efe5cc;margin:-1px -1px 6px;padding:7px}.micro-atlas-folder summary{padding:9px 6px}.micro-atlas-scene{grid-template-columns:minmax(0,1fr) auto}.micro-transition-row{grid-template-columns:1fr}.micro-transition-actions{justify-content:flex-start}.micro-transition-mini{min-width:42px;min-height:36px}}
     `;
     document.head.appendChild(s)
   }
@@ -50,7 +50,7 @@
     if(!toggle){toggle=document.createElement("button");toggle.id="microAtlasTopToggle";toggle.type="button";toggle.textContent="🗂 Atlas";toggle.setAttribute("aria-expanded","false");document.body.appendChild(toggle)}
     let drawer=$("microAtlasTopDrawer");
     if(!drawer){drawer=document.createElement("aside");drawer.id="microAtlasTopDrawer";drawer.hidden=true;drawer.innerHTML='<div class="micro-atlas-top-head"><b>🗂️ Atlas da Campanha</b><button type="button" class="micro-atlas-top-close" aria-label="Fechar Atlas">✕</button></div><div id="microAtlasTopBody"></div>';document.body.appendChild(drawer)}
-    if(!toggle.dataset.bound){toggle.dataset.bound="1";toggle.onclick=e=>{e.stopPropagation();const open=drawer.hidden;drawer.hidden=!open;toggle.setAttribute("aria-expanded",String(open));if(open){mount();setTimeout(positionToggle,0)}}}
+    if(!toggle.dataset.bound){toggle.dataset.bound="1";toggle.onclick=e=>{e.stopPropagation();const open=drawer.hidden;if(open){const master=$("microMasterDrawer");if(master)master.hidden=true;$("microMasterToggle")?.setAttribute("aria-expanded","false")}drawer.hidden=!open;toggle.setAttribute("aria-expanded",String(open));if(open){mount();setTimeout(positionToggle,0)}}}
     const close=drawer.querySelector(".micro-atlas-top-close");if(close&&!close.dataset.bound){close.dataset.bound="1";close.onclick=()=>{drawer.hidden=true;toggle.setAttribute("aria-expanded","false")}}
     if(!drawer.dataset.bound){drawer.dataset.bound="1";drawer.addEventListener("click",e=>e.stopPropagation())}
     positionToggle();return{toggle,drawer,body:$("microAtlasTopBody")}
