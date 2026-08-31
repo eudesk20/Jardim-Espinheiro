@@ -34,7 +34,7 @@
       .micro-approval-tool{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center;padding:8px;border:1px solid #aa9675;border-radius:9px;background:#fffdf7}.micro-approval-tool small{display:block;color:#6b5a43;margin-top:3px}.micro-approval-actions{display:flex;gap:5px}.micro-approval-actions button{min-width:82px}.micro-approval-count{display:inline-flex;min-width:24px;justify-content:center;border-radius:999px;padding:2px 7px;background:#5d3041;color:#fff;font-size:.75rem}
       .micro-rest-mode{display:grid;grid-template-columns:1fr 1fr;gap:7px}.micro-rest-mode button.active{background:#356342;color:#fff}.micro-rest-actions{display:grid;grid-template-columns:1fr 1fr;gap:7px}.micro-rest-char{padding:8px;border:1px solid #ad9977;border-radius:9px;background:#fffdf7}.micro-rest-slot{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:7px;align-items:center;padding:7px;border-top:1px dashed #b3a17f}.micro-rest-slot:first-of-type{border-top:0}.micro-rest-slot small{display:block;color:#6d5b44}.micro-rest-status{font-size:.78rem;font-weight:bold;min-height:1.3em;color:#365c43}
       #tokenCard:not(.empty){display:flex!important;flex-direction:column!important}#tokenCard>.micro-token-tools{order:20}#tokenCard>#microTokenSizePanel{order:30}#tokenCard>#microMesaSkillsPanel{order:40}#tokenCard>#microReactionGroupPanel{order:50}
-      @media(max-width:720px){.micro-master-drawer.micro-master-organized{left:auto!important;right:6px!important;top:44px!important;bottom:auto!important;width:min(88vw,390px)!important;max-height:min(72vh,620px)!important;height:auto!important;padding:6px!important;border-radius:14px!important}.micro-master-title{position:sticky;top:-6px;z-index:8;background:#efe5cc;padding:7px 5px;margin:-1px -1px 5px}.micro-master-accordion{gap:5px}.micro-master-section>summary{font-size:.9rem;padding:10px}.micro-master-section-body{padding:6px}.micro-tool-card{padding:7px;gap:6px}.micro-tool-row{display:grid;grid-template-columns:1fr 1fr}.micro-tool-note{font-size:.68rem}.micro-approval-tool{grid-template-columns:1fr}.micro-approval-actions button{flex:1}.micro-rest-actions{grid-template-columns:1fr 1fr}body.micro-scene-building .micro-master-drawer{display:none!important}}
+      @media(max-width:720px){.micro-master-drawer.micro-master-organized{left:auto!important;right:6px!important;top:44px!important;bottom:auto!important;width:min(88vw,390px)!important;max-height:min(72vh,620px)!important;height:auto!important;padding:6px!important;border-radius:14px!important}.micro-master-title{position:sticky;top:-6px;z-index:8;background:#efe5cc;padding:7px 5px;margin:-1px -1px 5px}.micro-master-accordion{gap:5px}.micro-master-section>summary{font-size:.9rem;padding:10px}.micro-master-section-body{padding:6px}.micro-tool-card{padding:7px;gap:6px}.micro-tool-row{display:grid;grid-template-columns:1fr 1fr}.micro-tool-note{font-size:.68rem}.micro-approval-tool{grid-template-columns:1fr}.micro-approval-actions button{flex:1}.micro-rest-actions{grid-template-columns:1fr 1fr}body.micro-scene-panel-focused .micro-master-drawer.micro-master-organized{left:6px!important;right:6px!important;top:auto!important;bottom:6px!important;width:auto!important;max-height:min(58vh,560px)!important}body.micro-scene-panel-focused .micro-master-title,body.micro-scene-panel-focused #microMasterSceneSection>summary,body.micro-scene-panel-focused #microMasterAccordion>.micro-master-section:not(#microMasterSceneSection){display:none!important}body.micro-scene-building .micro-master-drawer{display:none!important}}
     `;document.head.appendChild(s)
   }
 
@@ -53,6 +53,8 @@
     if(!d.dataset.v2Bound){
       d.dataset.v2Bound="1";
       d.addEventListener("toggle",()=>{
+        if(d.id==="microMasterSceneSection")document.body.classList.toggle("micro-scene-panel-focused",d.open&&matchMedia("(max-width:720px)").matches);
+        else if(d.open)document.body.classList.remove("micro-scene-panel-focused");
         if(!d.open)return;
         root.querySelectorAll(":scope>.micro-master-section").forEach(o=>{if(o!==d&&o.open)o.open=false});
         refreshSection(id)
@@ -112,7 +114,7 @@
     let panel=$("microSceneBuilder")||$("microSceneTools");
     if(!panel){panel=[...document.querySelectorAll("section.panel,.panel")].find(el=>/Construir Cen[aá]rio/i.test(el.textContent||""))||null}
     for(const el of [...body.children])if(el!==panel)el.remove();
-    if(panel){panel.style.removeProperty("display");panel.style.margin="0";body.appendChild(panel)}
+    if(panel){panel.style.removeProperty("display");panel.style.margin="0";body.appendChild(panel);globalThis.MICROCOSMOS_SCENERY?.mount?.(panel)}
     else body.innerHTML='<div class="micro-empty-tool" data-master-v2="1">As ferramentas de cenário ainda estão carregando.</div>'
   }
 
