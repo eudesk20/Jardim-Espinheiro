@@ -29,8 +29,8 @@
   function fmt(v){const n=Math.round((+v||0)*10)/10;return Number.isInteger(n)?String(n):n.toFixed(1).replace(".",",")}
   function distance(a,b){const s=gridSize(),dx=Math.abs((+a?.x||0)-(+b?.x||0)),dy=Math.abs((+a?.y||0)-(+b?.y||0));return (gridType()==="square"?Math.max(dx,dy):Math.hypot(dx,dy))/s*1.5}
   function side(p){if(!p)return"neutral";if(p.creature||(!p.linked&&(p.free||p.master||p.ipm)))return"creature";if(p.linked)return"player";return"neutral"}
-  function hostile(a,b){const sa=side(a),sb=side(b);return sa!=="neutral"&&sb!=="neutral"&&sa!==sb}
-  function friendly(a,b){const sa=side(a),sb=side(b);return sa!=="neutral"&&sa===sb}
+  function hostile(a,b){const groups=globalThis.MICROCOSMOS_REACTION_GROUPS;if(groups?.isHostile)return groups.isHostile(a,b);const sa=side(a),sb=side(b);return sa!=="neutral"&&sb!=="neutral"&&sa!==sb}
+  function friendly(a,b){const groups=globalThis.MICROCOSMOS_REACTION_GROUPS;if(groups?.isFriendly)return groups.isFriendly(a,b);const sa=side(a),sb=side(b);return sa!=="neutral"&&sa===sb}
   function canControl(p){return !!p&&(isMaster||!!userId&&String(p.userId||p.ownerUserId||"")===String(userId))}
   function alive(p){return (+p?.hpMax||0)<=0||(+p?.hp||0)>0}
   function reactionAvailable(p){return !!p&&!reactionSpent.has(String(p.id))}

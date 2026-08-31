@@ -61,7 +61,7 @@ const players=[
 function setTransform(){stage.style.transform=`translate(${panX}px,${panY}px) scale(${scale})`;$("zoomReset").textContent=Math.round(scale*100)+"%"}
 function gridSize(){return +$("gridSize").value||70}
 function updateGrid(){const type=$("gridType").value,size=gridSize();gridLayer.className=`grid-layer ${type}`;if(type==="square")gridLayer.style.backgroundSize=`${size}px ${size}px`;else if(type==="hex")gridLayer.style.backgroundSize=`${Math.round(size*1.73)}px ${Math.round(size*1.5)}px`;gridLayer.style.opacity=type==="none"?0:.62}
-function snapPoint(x,y){if(!snap||$("gridType").value==="none")return{x,y};const s=gridSize();if($("gridType").value==="square")return{x:Math.round(x/s)*s,y:Math.round(y/s)*s};const row=Math.round(y/(s*.75)),offset=(row%2)*(s*.5);return{x:Math.round((x-offset)/s)*s+offset,y:row*s*.75}}
+function snapPoint(x,y){if(!snap||$("gridType").value==="none")return{x,y};const s=gridSize();if($("gridType").value==="square")return{x:Math.floor(x/s)*s+s/2,y:Math.floor(y/s)*s+s/2};const row=Math.round(y/(s*.75)),offset=(row%2)*(s*.5);return{x:Math.round((x-offset)/s)*s+offset,y:row*s*.75}}
 function renderPlayers(){$("players").innerHTML=players.map(p=>`<button class="player-row" data-select="${p.id}"><span class="dot" style="background:${p.color}"></span><span><b>${p.name}</b><br><small>${p.cls} • Nv. ${p.level}</small></span><span>${p.master?"👑":"🎲"}</span></button>`).join("");document.querySelectorAll("[data-select]").forEach(b=>b.onclick=()=>selectToken(b.dataset.select))}
 function renderTokens(){tokenLayer.innerHTML=players.map(p=>`<button class="token ${selected===p.id?"selected":""}" data-token="${p.id}" style="left:${p.x}px;top:${p.y}px;--token-color:${p.color}">${p.name.slice(0,2).toUpperCase()}<small>${p.name}</small><span class="hp"><span style="width:${Math.max(0,Math.min(100,p.hp/p.hpMax*100))}%"></span></span></button>`).join("");document.querySelectorAll("[data-token]").forEach(t=>{t.addEventListener("pointerdown",startTokenDrag);t.addEventListener("click",e=>{e.stopPropagation();selectToken(t.dataset.token)})})}
 function selectToken(id){selected=id;tokenLayer.querySelectorAll("[data-token]").forEach(el=>{const active=String(el.dataset.token)===String(id);el.classList.toggle("selected",active);el.setAttribute("aria-selected",active?"true":"false")});const p=players.find(x=>x.id===id);if(!p)return;tokenCard.className="token-card";tokenCard.innerHTML=`<div style="display:flex;align-items:center;gap:8px"><span class="dot" style="background:${p.color}"></span><div><b style="font-size:1.1rem">${p.name}</b><br><small>${p.cls} • Nível ${p.level}</small></div></div><div class="stat-grid"><div class="stat"><small>PV</small><b>${p.hp}/${p.hpMax}</b></div><div class="stat"><small>CA</small><b>${p.ac}</b></div><div class="stat"><small>Mov.</small><b>${p.speed}m</b></div></div><h3>⚔️ Ataques</h3><div class="quick-list">${p.attacks.map((a,i)=>`<div class="quick"><span><b>${a.name}</b><br><small>${a.bonus>=0?"+":""}${a.bonus} • ${a.damage}</small></span><button class="btn" data-roll="attack:${i}">Rolar</button></div>`).join("")||"<small>Sem ataques rápidos.</small>"}</div>${p.spells.length?`<h3>✨ Magias rápidas</h3><div class="quick-list">${p.spells.map((a,i)=>`<div class="quick"><span><b>${a.name}</b><br><small>${a.kind==="cura"?"Cura":"Ataque"} • ${a.damage}</small></span><button class="btn" data-roll="spell:${i}">Usar</button></div>`).join("")}</div>`:""}`;tokenCard.querySelectorAll("[data-roll]").forEach(b=>b.onclick=()=>quickRoll(p,b.dataset.roll))}
@@ -80,8 +80,51 @@ $("mapFile").onchange=e=>{const file=e.target.files?.[0];if(!file)return;if(mapU
 $("addToken").onclick=()=>{const name=prompt("Nome do novo token:",`Token ${tokenCounter}`);if(!name)return;const colors=["#5b86c5","#c59b4e","#9a5f87","#6f9d56"];players.push({id:"token"+tokenCounter,name,color:colors[tokenCounter%colors.length],cls:"Token livre",level:1,hp:10,hpMax:10,ac:10,speed:9,x:700,y:520,attacks:[{name:"Ataque rápido",bonus:2,damage:"1d6"}],spells:[]});tokenCounter++;renderPlayers();renderTokens()};
 $("centerMe").onclick=()=>{const p=players.find(x=>x.id==="luna")||players[0];scale=1.15;panX=viewport.clientWidth/2-p.x*scale;panY=viewport.clientHeight/2-p.y*scale;setTransform();selectToken(p.id)};
 document.querySelectorAll("[data-drawer]").forEach(b=>b.onclick=()=>{const id=b.dataset.drawer==="left"?"leftPanel":"rightPanel",el=$(id),is=el.classList.contains("drawer");document.querySelectorAll(".left,.right").forEach(x=>x.classList.remove("drawer"));if(!is)el.classList.add("drawer")});
+globalThis.MICROCOSMOS_TABLE_PLAYERS=players;
+globalThis.MICROCOSMOS_TABLE_API={renderPlayers,renderTokens,selectToken,quickRoll,updateGrid,setTransform};
 renderPlayers();renderTokens();updateGrid();setTransform();selectToken("luna");
 })();
 </script>
+<script src="codex-revisao/mesa-ficha-token-runtime.js"></script>
+<script src="codex-revisao/mesa-master-character-audit-runtime.js"></script>
+<script src="codex-revisao/mesa-master-character-context-runtime.js"></script>
+<script src="codex-revisao/mesa-combat-data-runtime.js"></script>
+<script src="codex-revisao/mesa-magic-effects-runtime.js"></script>
+<script src="codex-revisao/mesa-target-pointer-fix-runtime.js"></script>
+<script src="codex-revisao/mesa-combat-executor-runtime.js"></script>
+<script src="codex-revisao/mesa-combat-safety-runtime.js"></script>
+<script src="codex-revisao/master-creature-codex-runtime.js"></script>
+<script src="codex-revisao/creature-token-safe-create-runtime.js"></script>
+<script src="codex-revisao/creature-token-nd-fix-runtime.js"></script>
+<script src="codex-revisao/creature-nd-label-runtime.js"></script>
+<script src="codex-revisao/mesa-roll-history-runtime.js"></script>
+<script src="codex-revisao/mesa-collision-runtime.js"></script>
+<script src="codex-revisao/mesa-hex-grid-runtime.js"></script>
+<script src="codex-revisao/mesa-token-size-runtime.js"></script>
+<script src="codex-revisao/mesa-scene-builder-runtime.js"></script>
+<script src="codex-revisao/mesa-compact-controls-runtime.js"></script>
+<script src="codex-revisao/mesa-initiative-runtime.js"></script>
+<script src="codex-revisao/mesa-shared-sync-runtime.js"></script>
+<script src="codex-revisao/mesa-tactical-turn-runtime.js"></script>
+<script src="codex-revisao/mesa-tactical-preview-runtime.js"></script>
+<script src="codex-revisao/mesa-auto-token-sync-runtime.js"></script>
+<script src="codex-revisao/mesa-player-ui-lock-runtime.js"></script>
+<script src="codex-revisao/mesa-player-view-drawer-runtime.js"></script>
+<script src="codex-revisao/mesa-token-action-menu-runtime.js"></script>
+<script src="codex-revisao/mesa-turn-action-lock-runtime.js"></script>
+<script src="codex-revisao/mesa-reaction-groups-runtime.js"></script>
+<script src="codex-revisao/mesa-reaction-runtime.js"></script>
+<script src="codex-revisao/mesa-reaction-turn-compat-runtime.js"></script>
+<script src="codex-revisao/mesa-reaction-movement-guard-runtime.js"></script>
+<script src="codex-revisao/mesa-master-tools-organizer-runtime.js"></script>
+<script src="codex-revisao/mesa-master-tools-stable-refresh-runtime.js"></script>
+<script src="codex-revisao/mesa-master-tools-loop-guard-runtime.js"></script>
+<script src="codex-revisao/mesa-vision-light-runtime.js"></script>
+<script src="codex-revisao/mesa-scenery-images-runtime.js"></script>
+<script src="codex-revisao/mesa-campaign-atlas-runtime.js"></script>
+<script src="codex-revisao/mesa-atlas-entry-points-runtime.js"></script>
+<script src="codex-revisao/mesa-atlas-transitions-runtime.js"></script>
+<script src="codex-revisao/mesa-atlas-master-tools-bridge-runtime.js"></script>
+<script src="codex-revisao/mesa-atlas-ui-and-fresh-scene-fix-runtime.js"></script>
 </body>
 </html>

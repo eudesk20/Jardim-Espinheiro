@@ -1,6 +1,6 @@
 /* MICROCOSMOS — Atlas da Campanha em gaveta superior independente.
    Cria um botão 🗂 Atlas ao lado do botão Menu e mantém Pastas/Cenas,
-   Pontos de Entrada e Transições numa gaveta própria do Mestre. */
+   Transições vinculadas numa gaveta própria do Mestre. */
 (function(){
   if(globalThis.MICROCOSMOS_ATLAS_MASTER_TOOLS_BRIDGE)return;
   globalThis.MICROCOSMOS_ATLAS_MASTER_TOOLS_BRIDGE=true;
@@ -20,8 +20,9 @@
       .micro-atlas-top-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:7px;padding:2px 3px 7px;border-bottom:1px solid #a68d68}
       .micro-atlas-top-head b{font-size:1.05rem;color:#405d3e}.micro-atlas-top-close{border:1px solid #876d49;background:#fff8e7;border-radius:8px;padding:5px 8px;font-weight:bold}
       #microAtlasTopBody{display:grid;gap:8px}
-      #microAtlasTopBody #microCampaignAtlas,#microAtlasTopBody #microAtlasEntryPanel,#microAtlasTopBody #microAtlasTransitionPanel{margin:0!important;border:1px solid #a48d68!important;border-radius:10px!important;box-shadow:none!important;padding:8px!important;background:#fffaf0!important}
-      #microAtlasTopBody #microCampaignAtlas{order:10}#microAtlasTopBody #microAtlasEntryPanel{order:20}#microAtlasTopBody #microAtlasTransitionPanel{order:30}
+      #microAtlasTopBody #microCampaignAtlas,#microAtlasTopBody #microAtlasTransitionPanel{margin:0!important;border:1px solid #a48d68!important;border-radius:10px!important;box-shadow:none!important;padding:8px!important;background:#fffaf0!important}
+      #microAtlasTopBody #microCampaignAtlas{order:10}#microAtlasTopBody #microAtlasTransitionPanel{order:20}
+      #microAtlasEntryPanel,#microAtlasEntryLayer{display:none!important}
       #microAtlasTopBody .micro-atlas-head h2{font-size:1.05rem}.micro-atlas-top-empty{padding:12px;text-align:center;background:#fff8e7;border-radius:9px;color:#715f49}
       @media(max-width:720px){#microAtlasTopToggle{font-size:13px;padding:6px 9px;left:auto;right:7px;top:5px}#microAtlasTopDrawer{top:43px;left:6px;right:6px;transform:none;width:auto;max-height:calc(100vh - 50px);border-radius:13px}#microAtlasTopBody .micro-atlas-actions,#microAtlasTopBody .micro-entry-actions{flex-wrap:wrap}}
     `;
@@ -62,7 +63,8 @@
     try{
       const {body}=ensureShell();if(!body)return false;removeOldAccordionCopy();
       const atlas=$("microCampaignAtlas"),entries=$("microAtlasEntryPanel"),transitions=$("microAtlasTransitionPanel");
-      for(const panel of [atlas,entries,transitions])if(panel&&panel.parentElement!==body)body.appendChild(panel);
+      entries?.setAttribute("hidden","");
+      for(const panel of [atlas,transitions])if(panel&&panel.parentElement!==body)body.appendChild(panel);
       let empty=body.querySelector(".micro-atlas-top-empty");
       if(!atlas&&!entries&&!transitions){if(!empty){empty=document.createElement("div");empty.className="micro-atlas-top-empty";empty.textContent="O Atlas ainda está carregando…";body.appendChild(empty)}}else empty?.remove();
       return true
@@ -73,7 +75,7 @@
   document.addEventListener("keydown",e=>{if(e.key!=="Escape")return;const drawer=$("microAtlasTopDrawer"),toggle=$("microAtlasTopToggle");if(drawer&&!drawer.hidden){drawer.hidden=true;toggle?.setAttribute("aria-expanded","false")}},true);
   addEventListener("resize",positionToggle,{passive:true});
 
-  let tries=0;const timer=setInterval(()=>{mount();if(++tries>50&&$("microCampaignAtlas")&&$("microAtlasEntryPanel")&&$("microAtlasTransitionPanel"))clearInterval(timer)},220);
+  let tries=0;const timer=setInterval(()=>{mount();if(++tries>50&&$("microCampaignAtlas")&&$("microAtlasTransitionPanel"))clearInterval(timer)},220);
   for(const ev of ["microcosmos:atlas-entry-points-changed","microcosmos:atlas-transitions-changed","microcosmos:atlas-players-transferred"])
     document.addEventListener(ev,()=>setTimeout(mount,0));
   new MutationObserver(()=>positionToggle()).observe(document.body,{childList:true,subtree:true});
