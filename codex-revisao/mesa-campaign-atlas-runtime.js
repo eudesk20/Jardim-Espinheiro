@@ -1,12 +1,12 @@
-/* MICROCOSMOS — Atlas da Campanha v2: Pastas + Cenas realmente independentes. */
+/* MICROCOSMOS — Atlas da Campanha v2.1: Cenas independentes + edição local segura. */
 (async function(){
   if(globalThis.MICROCOSMOS_CAMPAIGN_ATLAS)return;
   globalThis.MICROCOSMOS_CAMPAIGN_ATLAS=true;
 
-  const $=id=>document.getElementById(id),left=$("leftPanel"),gridType=$("gridType"),gridSize=$("gridSize"),mapFile=$("mapFile"),mapImage=$("mapImage"),mapStatus=$("mapStatus");
+  const $=id=>document.getElementById(id),left=$("leftPanel"),gridType=$("gridType"),gridSize=$("gridSize"),mapFile=$("mapFile"),mapImage=$("mapImage"),mapStatus=$("mapStatus"),viewport=$("viewport");
   if(!left)return;
   const STORE="MICROCOSMOS_CAMPAIGN_ATLAS_V1",SCENE_STORE="MICROCOSMOS_SCENE_GEOMETRY_V1";
-  let isMaster=false,restoring=false;
+  let isMaster=false,restoring=false,lastLocalSceneInput=0,localCaptureTimer=null;
   try{
     const {createClient}=await import("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm");
     const sb=createClient("https://evyhhlbvhspiuwouivbb.supabase.co","sb_publishable_mf7PV03HfaJw_YkUhX34NA_dAGFbyp6",{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}});
@@ -29,6 +29,7 @@
   function saveData(){localStorage.setItem(STORE,JSON.stringify(atlas))}
   function active(){return atlas.scenes.find(s=>s.id===atlas.activeSceneId)||atlas.scenes[0]}
   function captureCurrent(){const s=active();if(!s||restoring)return;s.geometry=clone(readGeometry());s.gridType=gridType?.value||s.gridType||"square";s.gridSize=+gridSize?.value||s.gridSize||70;s.updatedAt=Date.now();saveData()}
+  function scheduleLocalCapture(delay=20){clearTimeout(localCaptureTimer);localCaptureTimer=setTimeout(captureCurrent,delay)}
   async function compressMap(file){
     const src=await new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=reject;r.readAsDataURL(file)});
     const img=await new Promise((resolve,reject)=>{const x=new Image();x.onload=()=>resolve(x);x.onerror=reject;x.src=src});
@@ -86,10 +87,21 @@
   mapFile?.addEventListener("change",async e=>{const file=e.target.files?.[0];if(!file)return;try{const data=await compressMap(file),s=active();if(s){s.mapData=data;s.updatedAt=Date.now();saveData();setTimeout(applySceneVisuals,0)}}catch(err){console.warn("MICROCOSMOS Atlas: mapa não pôde ser persistido",err)}},true);
   $("clearMap")?.addEventListener("click",()=>{const s=active();if(s){s.mapData="";saveData()}},true);
 
-  // O sincronizador antigo trabalha com um cenário global. Quando ele aplicar dados remotos,
-  // o Atlas NÃO salva esses dados por cima da Cena. Em vez disso, reaplica a Cena ativa.
-  document.addEventListener("microcosmos:scene-changed",()=>{clearTimeout(globalThis.__microAtlasRestoreTimer);globalThis.__microAtlasRestoreTimer=setTimeout(applyStoredGeometry,40)});
-  for(const delay of [180,500,1100])setTimeout(applyStoredGeometry,delay);
+  // Diferencia edição local do Mestre de aplicação remota do sincronizador global.
+  // No celular pointer/touch ocorre imediatamente antes do save do Construtor.
+  for(const type of ["pointerdown","pointermove","pointerup","touchstart","touchmove","touchend"]){
+    viewport?.addEventListener(type,()=>{lastLocalSceneInput=Date.now()},{capture:true,passive:true})
+  }
+  document.addEventListener("microcosmos:scene-changed",()=>{
+    const local=Date.now()-lastLocalSceneInput<1600||!!globalThis.MICROCOSMOS_SCENE_EDITING;
+    clearTimeout(globalThis.__microAtlasRestoreTimer);
+    if(local){scheduleLocalCapture(15);return}
+    globalThis.__microAtlasRestoreTimer=setTimeout(applyStoredGeometry,40)
+  });
+  // Uma única aplicação inicial é suficiente; não há mais restores tardios que possam apagar desenho novo.
+  setTimeout(applyStoredGeometry,60);
+  viewport?.addEventListener("pointerup",()=>scheduleLocalCapture(30),true);
+  viewport?.addEventListener("touchend",()=>scheduleLocalCapture(30),{capture:true,passive:true});
   window.addEventListener("beforeunload",captureCurrent);
   globalThis.MICROCOSMOS_ATLAS={get data(){return atlas},active,save:saveData,captureCurrent,restoreActive:applyStoredGeometry,switchScene,addFolder,addScene,render};
 })();
