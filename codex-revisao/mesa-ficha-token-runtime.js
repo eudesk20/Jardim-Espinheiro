@@ -49,7 +49,7 @@
       localStorage.setItem(TABLE_KEY,JSON.stringify(players.map(p=>({
         id:p.id,name:p.name,color:p.color,cls:p.cls,level:p.level,hp:p.hp,hpMax:p.hpMax,ac:p.ac,speed:p.speed,x:p.x,y:p.y,
         attacks:p.attacks||[],spells:p.spells||[],master:!!p.master,free:!!p.free,linked:!!p.linked,userId:p.userId||"",characterId:p.characterId||"",
-        tokenImage:p.tokenImage||"",tokenImageMode:p.tokenImageMode||"",sheetPortrait:p.sheetPortrait||"",visibilityLayer:p.visibilityLayer||p.layer||"players",visionRangeMeters:+p.visionRangeMeters||9,darkvisionMeters:+p.darkvisionMeters||0,visionArcDeg:+p.visionArcDeg||180,visionDirectionDeg:Number.isFinite(+p.visionDirectionDeg)?+p.visionDirectionDeg:0
+        tokenImage:p.tokenImage||"",tokenImageMode:p.tokenImageMode||"",sheetPortrait:p.sheetPortrait||"",visibilityLayer:p.visibilityLayer||p.layer||"players",visionRangeMeters:+p.visionRangeMeters||9,darkvisionMeters:+p.darkvisionMeters||0,lightVisionMode:p.lightVisionMode||(+p.darkvisionMeters>0?"darkvision":"normal"),visionArcDeg:+p.visionArcDeg||180,visionDirectionDeg:Number.isFinite(+p.visionDirectionDeg)?+p.visionDirectionDeg:0
       }))))
     }catch(e){console.warn("MICROCOSMOS Mesa: não foi possível salvar tokens",e)}
   }
@@ -113,7 +113,7 @@
       id,name,color:existing?.color||data.playerColor||stableColor(userId||name),cls:className(data.cls),classKey:data.cls||"",level:+data.level||1,
       hp:+data.hpNow||0,hpMax:+data.hpMax||0,ac:calcAC(data),speed:raceSpeed(data),
       x:existing?.x??(210+(index%6)*85),y:existing?.y??(210+Math.floor(index/6)*85),attacks:buildAttacks(data),spells:buildSpells(data),
-      linked:true,userId,characterId,tokenImage,tokenImageMode,sheetPortrait,free:false,visionRangeMeters:existing?.visionRangeMeters||9,darkvisionMeters:existing?.darkvisionMeters??sheetDarkvision(data),visionArcDeg:existing?.visionArcDeg||180,visionDirectionDeg:Number.isFinite(+existing?.visionDirectionDeg)?+existing.visionDirectionDeg:0
+      linked:true,userId,characterId,tokenImage,tokenImageMode,sheetPortrait,free:false,visionRangeMeters:existing?.visionRangeMeters||9,darkvisionMeters:existing?.darkvisionMeters??sheetDarkvision(data),lightVisionMode:existing?.lightVisionMode||(sheetDarkvision(data)>0?"darkvision":"normal"),visionArcDeg:existing?.visionArcDeg||180,visionDirectionDeg:Number.isFinite(+existing?.visionDirectionDeg)?+existing.visionDirectionDeg:0
     }
   }
 

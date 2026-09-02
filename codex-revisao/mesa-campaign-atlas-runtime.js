@@ -92,8 +92,8 @@
   for(const type of ["pointerdown","pointermove","pointerup","touchstart","touchmove","touchend"]){
     viewport?.addEventListener(type,()=>{lastLocalSceneInput=Date.now()},{capture:true,passive:true})
   }
-  document.addEventListener("microcosmos:scene-changed",()=>{
-    const local=Date.now()-lastLocalSceneInput<1600||!!globalThis.MICROCOSMOS_SCENE_EDITING;
+  document.addEventListener("microcosmos:scene-changed",e=>{
+    const local=!!e.detail?.local||Date.now()-lastLocalSceneInput<1600||!!globalThis.MICROCOSMOS_SCENE_EDITING;
     clearTimeout(globalThis.__microAtlasRestoreTimer);
     if(local){scheduleLocalCapture(15);return}
     globalThis.__microAtlasRestoreTimer=setTimeout(applyStoredGeometry,40)
