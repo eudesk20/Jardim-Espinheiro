@@ -14,18 +14,18 @@
   ];
 
   const TITLE_POLISH={
-    "Friends":"🎵 Encanto Amistoso",
-    "Encode Thoughts":"🎵 Fio de Pensamento",
-    "Poison Spray":"🕸️ Jato Venenoso",
-    "Control Flames":"🌀 Controlar Brasas",
-    "Create Bonfire":"🕸️ Criar Fogueira",
-    "Produce Flame":"🕸️ Criar Brasas",
-    "Mind Sliver":"🎵 Farpinha Mental",
-    "Lightning Lure":"✨ Laço de Relâmpago",
-    "Sapping Sting":"🕯️ Picada Debilitante",
-    "Shocking Grasp":"✨ Toque Elétrico",
-    "Sword Burst":"🕸️ Explosão de Lâminas",
-    "Toll the Dead":"🕯️ Sino dos Mortos"
+    "truques-12":"🎵 Encanto Amistoso",
+    "truques-10":"🎵 Fio de Pensamento",
+    "truques-29":"🕸️ Jato Venenoso",
+    "truques-5":"🌀 Controlar Brasas",
+    "truques-6":"🕸️ Criar Fogueira",
+    "truques-32":"🕸️ Criar Brasas",
+    "truques-25":"🎵 Farpinha Mental",
+    "truques-20":"✨ Laço de Relâmpago",
+    "truques-36":"🕯️ Picada Debilitante",
+    "truques-39":"✨ Toque Elétrico",
+    "truques-41":"🕸️ Explosão de Lâminas",
+    "truques-45":"🕯️ Sino dos Mortos"
   };
 
   const spells=(globalThis.CODEX_SPELL_DATA||[]).filter(s=>s&&s.level===0);

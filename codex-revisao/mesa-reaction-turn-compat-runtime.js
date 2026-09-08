@@ -19,15 +19,15 @@
   // Truques auditados no Codex que realizam jogada de ataque. A lista serve
   // apenas para recuperar fichas antigas que ainda guardam attack:false.
   const KNOWN_ATTACK_CANTRIPS=[
-    "booming blade","lamina trovejante","lamina em expansao",
-    "chill touch","toque necrotico",
-    "eldritch blast","explosao sobrenatural",
-    "fire bolt","raio de brasa",
-    "green-flame blade","lamina de brasa verde",
-    "primal savagery","selvageria primordial",
-    "ray of frost","raio de gelo",
-    "shocking grasp","toque eletrico",
-    "thorn whip","chicote espinhoso"
+    "truques-3","lamina trovejante","lamina em expansao",
+    "truques-4","toque necrotico",
+    "truques-9","explosao sobrenatural",
+    "truques-11","raio de brasa",
+    "truques-14","lamina de brasa verde",
+    "truques-31","selvageria primordial",
+    "truques-33","raio de gelo",
+    "truques-39","toque eletrico",
+    "truques-43","chicote espinhoso"
   ];
 
   function isKnownAttackCantrip(spell){
@@ -86,7 +86,7 @@
   }
 
   function selfTest(){
-    const stale={name:"Chicote Espinhoso",reference:"Thorn Whip",lvl:0,cast:"1 Ação",range:"9 m",attack:false,kind:"efeito",text:"Faça um ataque mágico corpo a corpo contra uma criatura."};
+    const stale={name:"Chicote Espinhoso",reference:"truques-43",lvl:0,cast:"1 Ação",range:"9 m",attack:false,kind:"efeito",text:"Faça um ataque mágico corpo a corpo contra uma criatura."};
     normalizeSpell(stale);
     return{ok:stale.attack===true&&stale.kind==="ataque"&&stale.cast==="1 Ação",spell:stale}
   }

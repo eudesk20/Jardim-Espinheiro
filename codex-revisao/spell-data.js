@@ -2,7 +2,7 @@ globalThis.CODEX_SPELL_DATA = [
   {
     "key": "truques-1",
     "title": "🕸️ Borrifada Ácida",
-    "reference": "Acid Splash",
+    "reference": "truques-1",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -34,12 +34,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "No 5º nível, use 2d6; no 11º, 3d6; no 17º, 4d6.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "truques-2",
     "title": "🛡️ Proteção Contra Lâminas",
-    "reference": "Blade Ward",
+    "reference": "truques-2",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -73,12 +76,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "truques-3",
     "title": "✨ Lâmina em expansão",
-    "reference": "Booming Blade",
+    "reference": "truques-3",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -114,12 +120,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "No 5º nível, use 2d8; no 11º, 3d8; no 17º, 4d8.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "truques-4",
     "title": "🕯️ Toque Necrótico",
-    "reference": "Chill Touch",
+    "reference": "truques-4",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -152,12 +161,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "No 5º nível, use 2d8; no 11º, 3d8; no 17º, 4d8.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "truques-5",
     "title": "🌀 Controle de Brasas",
-    "reference": "Control Flames",
+    "reference": "truques-5",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -190,12 +202,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "truques-6",
     "title": "🕸️ Criar fogueira",
-    "reference": "Create Bonfire",
+    "reference": "truques-6",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -229,12 +244,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "No 5º nível, use 2d8; no 11º, 3d8; no 17º, 4d8.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "truques-7",
     "title": "✨ Luzes Dançantes",
-    "reference": "Dancing Lights",
+    "reference": "truques-7",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -270,12 +288,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "truques-8",
     "title": "🌀 Druidismo.",
-    "reference": "Druidcraft",
+    "reference": "truques-8",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -306,12 +327,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "truques-9",
     "title": "✨ Explosão Sobrenatural",
-    "reference": "Eldritch Blast",
+    "reference": "truques-9",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -342,12 +366,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "No 5º nível, use 2d10; no 11º, 3d10; no 17º, 4d10.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "truques-10",
     "title": "🎵 Codificar pensamentos",
-    "reference": "Encode Thoughts",
+    "reference": "truques-10",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -378,12 +405,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "truques-11",
     "title": "✨ Raio de Brasa",
-    "reference": "Fire Bolt",
+    "reference": "truques-11",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -415,12 +445,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "No 5º nível, use 2d10; no 11º, 3d10; no 17º, 4d10.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "truques-12",
     "title": "🎵 Amigos",
-    "reference": "Friends",
+    "reference": "truques-12",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -457,12 +490,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "truques-13",
     "title": "✨ Congelamento",
-    "reference": "Frostbite",
+    "reference": "truques-13",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -496,12 +532,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "No 5º nível, use 2d6; no 11º, 3d6; no 17º, 4d6.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "truques-14",
     "title": "✨ Lâmina de Brasa Verde",
-    "reference": "Green-Flame Blade",
+    "reference": "truques-14",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -537,12 +576,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "No 5º nível, use 2dado; no 11º, 3dado; no 17º, 4dado.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "truques-15",
     "title": "👁️ Orientação",
-    "reference": "Guidance",
+    "reference": "truques-15",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -574,12 +616,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "truques-16",
     "title": "🌀 rajada",
-    "reference": "Gust",
+    "reference": "truques-16",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -612,12 +657,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "truques-17",
-    "title": "✨ Mão de Radiância (UA)",
-    "reference": "Hand of Radiance (UA)",
+    "title": "✨ Palma do Besouro-Sol (Experimental)",
+    "reference": "truques-17",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -634,8 +682,8 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 1.5 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "description": "Mão de Radiância (UA) libera energia contra o alvo ou a área escolhida.",
-    "effect": "Mão de Radiância (UA) libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de CON Falha: Sofre 1d6 Radiante de dano. Sucesso: Não sofre o dano.",
+    "description": "Palma do Besouro-Sol (Experimental) libera energia contra o alvo ou a área escolhida.",
+    "effect": "Palma do Besouro-Sol (Experimental) libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de CON Falha: Sofre 1d6 Radiante de dano. Sucesso: Não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d6 Radiante",
     "healing": "",
@@ -648,12 +696,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "truques-18",
     "title": "🕸️ Infestação",
-    "reference": "Infestation",
+    "reference": "truques-18",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -690,12 +742,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "No 5º nível, use 2d6; no 11º, 3d6; no 17º, 4d6.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "truques-19",
     "title": "✨ Luminosidade",
-    "reference": "Light",
+    "reference": "truques-19",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -732,12 +787,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "truques-20",
     "title": "✨ Atração relâmpago",
-    "reference": "Lightning Lure",
+    "reference": "truques-20",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -770,12 +828,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "No 5º nível, use 2d8; no 11º, 3d8; no 17º, 4d8.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "truques-21",
     "title": "🕸️ Mãos Mágicas",
-    "reference": "Mage Hand",
+    "reference": "truques-21",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -809,12 +870,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "truques-22",
     "title": "🌀 Pedra Mágica",
-    "reference": "Magic Stone",
+    "reference": "truques-22",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -846,12 +910,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "truques-23",
     "title": "🌀 Emendando",
-    "reference": "Mending",
+    "reference": "truques-23",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -889,12 +956,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "truques-24",
     "title": "🌀 Mensagem",
-    "reference": "Message",
+    "reference": "truques-24",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -930,12 +1000,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "truques-25",
     "title": "🎵 Mind Sliver",
-    "reference": "Mind Sliver",
+    "reference": "truques-25",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -968,12 +1041,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "No 5º nível, use 2d6; no 11º, 3d6; no 17º, 4d6.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "truques-26",
     "title": "🪞 Ilusão Menor",
-    "reference": "Minor Illusion",
+    "reference": "truques-26",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -1010,12 +1086,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "truques-27",
     "title": "🌀 Terra de molde",
-    "reference": "Mold Earth",
+    "reference": "truques-27",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -1048,12 +1127,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "truques-28",
-    "title": "🌀 Ligar/Desligar (UA)",
-    "reference": "On/Off (UA)",
+    "title": "🌀 Mulligar Relíquia (Experimental)",
+    "reference": "truques-28",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -1072,8 +1154,8 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "description": "Ligar/Desligar (UA) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Ligar/Desligar (UA) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
+    "description": "Mulligar Relíquia (Experimental) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Mulligar Relíquia (Experimental) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -1086,12 +1168,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": "T"
+    "flags": "T",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "truques-29",
     "title": "🕸️ Spray de Veneno",
-    "reference": "Poison Spray",
+    "reference": "truques-29",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -1125,12 +1211,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "No 5º nível, use 2d12; no 11º, 3d12; no 17º, 4d12.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "truques-30",
     "title": "🌀 Prestidigitação",
-    "reference": "Prestidigitation",
+    "reference": "truques-30",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -1164,12 +1253,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "truques-31",
     "title": "🌀 Selvageria Primordial",
-    "reference": "Primal Savagery",
+    "reference": "truques-31",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -1200,12 +1292,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "No 5º nível, use 2d10; no 11º, 3d10; no 17º, 4d10.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "truques-32",
     "title": "🕸️ Criar Brasas",
-    "reference": "Produce Flame",
+    "reference": "truques-32",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -1236,12 +1331,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "No 5º nível, use 2d8; no 11º, 3d8; no 17º, 4d8.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "truques-33",
     "title": "✨ Raio de Gelo",
-    "reference": "Ray of Frost",
+    "reference": "truques-33",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -1273,12 +1371,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "No 5º nível, use 2d8; no 11º, 3d8; no 17º, 4d8.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "truques-34",
     "title": "🛡️ Resistência",
-    "reference": "Resistance",
+    "reference": "truques-34",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -1313,12 +1414,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "truques-35",
     "title": "✨ Brasa Sagrada",
-    "reference": "Sacred Flame",
+    "reference": "truques-35",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -1349,12 +1453,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "No 5º nível, use 2d8; no 11º, 3d8; no 17º, 4d8.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "truques-36",
     "title": "🕯️ Picada de Sapping",
-    "reference": "Sapping Sting",
+    "reference": "truques-36",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -1385,12 +1492,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Caído",
     "repeatSave": "",
     "higherLevels": "No 5º nível, use 2d4; no 11º, 3d4; no 17º, 4d4.",
-    "flags": "D"
+    "flags": "D",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "truques-37",
     "title": "🌀 Moldar Orvalho",
-    "reference": "Shape Water",
+    "reference": "truques-37",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -1423,12 +1533,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "truques-38",
     "title": "🌀 Shillelagh",
-    "reference": "Shillelagh",
+    "reference": "truques-38",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -1462,12 +1575,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "truques-39",
     "title": "✨ Eletricidade",
-    "reference": "Shocking Grasp",
+    "reference": "truques-39",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -1499,12 +1615,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "No 5º nível, use 2d8; no 11º, 3d8; no 17º, 4d8.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "truques-40",
     "title": "🕯️ Poupe os Moribundos",
-    "reference": "Spare the Dying",
+    "reference": "truques-40",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -1535,12 +1654,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "truques-41",
     "title": "🕸️ Explosão de Espada",
-    "reference": "Sword Burst",
+    "reference": "truques-41",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -1573,12 +1695,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "No 5º nível, use 2d6; no 11º, 3d6; no 17º, 4d6.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "truques-42",
     "title": "🌀 Taumaturgia",
-    "reference": "Thaumaturgy",
+    "reference": "truques-42",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -1609,12 +1734,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "truques-43",
     "title": "🌀 Chicote Espinhoso",
-    "reference": "Thorn Whip",
+    "reference": "truques-43",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -1648,12 +1776,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "No 5º nível, use 2d6; no 11º, 3d6; no 17º, 4d6.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "truques-44",
     "title": "✨ Estrondo",
-    "reference": "Thunderclap",
+    "reference": "truques-44",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -1688,12 +1819,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "No 5º nível, use 2d6; no 11º, 3d6; no 17º, 4d6.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "truques-45",
     "title": "🕯️ Pedágio dos Mortos",
-    "reference": "Toll the Dead",
+    "reference": "truques-45",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -1726,12 +1860,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "No 5º nível, use 2d8; no 11º, 3d8; no 17º, 4d8.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "truques-46",
     "title": "👁️ Golpe Certeiro",
-    "reference": "True Strike",
+    "reference": "truques-46",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -1765,12 +1902,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "truques-47",
     "title": "🎵 Zombaria cruel",
-    "reference": "Vicious Mockery",
+    "reference": "truques-47",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -1801,12 +1941,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "No 5º nível, use 2d4; no 11º, 3d4; no 17º, 4d4.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "truques-48",
-    "title": "🛡️ Virtude (UA)",
-    "reference": "Virtue (UA)",
+    "title": "🛡️ Casca de Ânimo (Experimental)",
+    "reference": "truques-48",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -1823,8 +1966,8 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Criatura ou objeto tocado",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "description": "Virtude (UA) produz um efeito de abjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Virtude (UA) produz um efeito de abjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
+    "description": "Casca de Ânimo (Experimental) produz um efeito de abjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Casca de Ânimo (Experimental) produz um efeito de abjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -1837,12 +1980,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "truques-49",
     "title": "✨ Palavra de Radiância",
-    "reference": "Word of Radiance",
+    "reference": "truques-49",
     "level": 0,
     "kind": "completa",
     "status": "teste",
@@ -1876,12 +2023,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "No 5º nível, use 2d6; no 11º, 3d6; no 17º, 4d6.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m1-1",
     "title": "🛡️ Absorver elementos",
-    "reference": "Absorb Elements",
+    "reference": "m1-1",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -1915,12 +2065,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m1-2",
-    "title": "✨ Corrente Ácida (UA)",
-    "reference": "Acid Stream (UA)",
+    "title": "✨ Filete de Seiva Corrosiva (Experimental)",
+    "reference": "m1-2",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -1941,8 +2094,8 @@ globalThis.CODEX_SPELL_DATA = [
       "esporos_mutaveis"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporo Tóxico Concentrado e Esporos Mutáveis. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Corrente Ácida (UA) libera energia contra o alvo ou a área escolhida.",
-    "effect": "Corrente Ácida (UA) libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de DES Falha: Sofre 3d4 Ácido de dano. Sucesso: Não sofre o dano.",
+    "description": "Filete de Seiva Corrosiva (Experimental) libera energia contra o alvo ou a área escolhida.",
+    "effect": "Filete de Seiva Corrosiva (Experimental) libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de DES Falha: Sofre 3d4 Ácido de dano. Sucesso: Não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "3d4 Ácido",
     "healing": "",
@@ -1955,12 +2108,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d4 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m1-3",
     "title": "🛡️ Alarme",
-    "reference": "Alarm",
+    "reference": "m1-3",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -1995,12 +2152,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-4",
     "title": "🎵 Amizade Animal",
-    "reference": "Animal Friendship",
+    "reference": "m1-4",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -2036,12 +2196,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Enfeitiçado",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-5",
-    "title": "🌀 Arma Arcana (UA)",
-    "reference": "Arcane Weapon (UA)",
+    "title": "🌀 Ferrão Imbuído (Experimental)",
+    "reference": "m1-5",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -2058,8 +2221,8 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "description": "Arma Arcana (UA) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Arma Arcana (UA) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
+    "description": "Ferrão Imbuído (Experimental) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Ferrão Imbuído (Experimental) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -2072,12 +2235,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m1-6",
     "title": "🛡️ Casca do Inverno Profundo",
-    "reference": "Armor of Agathys",
+    "reference": "m1-6",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -2113,12 +2280,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m1-7",
     "title": "🕸️ Tentáculos do Vazio-Raiz",
-    "reference": "Arms of Hadar",
+    "reference": "m1-7",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -2151,12 +2320,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m1-8",
     "title": "🎵 Eliminar",
-    "reference": "Bane",
+    "reference": "m1-8",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -2191,12 +2362,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-9",
     "title": "👁️ Vínculo Fera",
-    "reference": "Beast Bond",
+    "reference": "m1-9",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -2231,12 +2405,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m1-10",
     "title": "🎵 Bênção",
-    "reference": "Bless",
+    "reference": "m1-10",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -2271,12 +2448,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-11",
     "title": "✨ Mãos Flamejantes",
-    "reference": "Burning Hands",
+    "reference": "m1-11",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -2308,12 +2488,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-12",
     "title": "🌀 Catapulta",
-    "reference": "Catapult",
+    "reference": "m1-12",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -2345,12 +2528,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m1-13",
     "title": "🕯️ Causar Medo",
-    "reference": "Cause Fear",
+    "reference": "m1-13",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -2382,12 +2568,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Amedrontado",
     "repeatSave": "Pode repetir a Salvaguarda no final de cada turno, encerrando o efeito se passar.",
     "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m1-14",
     "title": "🛡️ Cerimônia",
-    "reference": "Ceremony",
+    "reference": "m1-14",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -2422,12 +2611,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-15",
     "title": "✨ Parafuso do Caos",
-    "reference": "Chaos Bolt",
+    "reference": "m1-15",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -2458,12 +2650,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m1-16",
     "title": "🎵 Enfeitiçar Pessoa",
-    "reference": "Charm Person",
+    "reference": "m1-16",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -2498,12 +2693,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Enfeitiçado",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-17",
     "title": "✨ Orbe cromática",
-    "reference": "Chromatic Orb",
+    "reference": "m1-17",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -2538,12 +2736,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-18",
     "title": "🪞 Leque Cromático",
-    "reference": "Color Spray",
+    "reference": "m1-18",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -2579,12 +2780,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-19",
     "title": "🎵 Command",
-    "reference": "Command",
+    "reference": "m1-19",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -2617,12 +2821,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-20",
     "title": "🎵 Duelo Compelido",
-    "reference": "Compelled Duel",
+    "reference": "m1-20",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -2653,12 +2860,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m1-21",
     "title": "👁️ Compreender Idiomas",
-    "reference": "Comprehend Languages",
+    "reference": "m1-21",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -2695,12 +2905,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-22",
     "title": "🌀 Criar ou Destruir Orvalho",
-    "reference": "Create or Destroy Water",
+    "reference": "m1-22",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -2735,12 +2948,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-23",
     "title": "✨ Curar Ferimentos",
-    "reference": "Cure Wounds",
+    "reference": "m1-23",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -2775,12 +2991,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-24",
     "title": "👁️ Detectar o Bem e o Mal",
-    "reference": "Detect Evil and Good",
+    "reference": "m1-24",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -2812,12 +3031,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-25",
     "title": "👁️ Detecção de Magia",
-    "reference": "Detect Magic",
+    "reference": "m1-25",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -2854,12 +3076,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-26",
     "title": "👁️ Detectar Veneno e Doença",
-    "reference": "Detect Poison and Disease",
+    "reference": "m1-26",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -2896,12 +3121,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-27",
     "title": "🪞 Disfarce.",
-    "reference": "Disguise Self",
+    "reference": "m1-27",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -2934,12 +3162,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-28",
     "title": "🎵 Sussurros Dissonantes",
-    "reference": "Dissonant Whispers",
+    "reference": "m1-28",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -2970,12 +3201,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Surdo",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-29",
     "title": "🪞 Distorcer valor",
-    "reference": "Distort Value",
+    "reference": "m1-29",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -3009,12 +3243,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m1-30",
     "title": "✨ Auxílio Divino",
-    "reference": "Divine Favor",
+    "reference": "m1-30",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -3045,12 +3282,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-31",
     "title": "✨ Tremor de Terra",
-    "reference": "Earth Tremor",
+    "reference": "m1-31",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -3084,12 +3324,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Caído",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m1-32",
     "title": "🕸️ Golpe Aprisionador",
-    "reference": "Ensnaring Strike",
+    "reference": "m1-32",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -3120,12 +3363,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Contido",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-33",
     "title": "🕸️ Enredar",
-    "reference": "Entangle",
+    "reference": "m1-33",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -3157,12 +3403,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Contido",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-34",
     "title": "🌀 Recuo Acelerado",
-    "reference": "Expeditious Retreat",
+    "reference": "m1-34",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -3195,12 +3444,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-35",
     "title": "✨ Brasa das Fadas",
-    "reference": "Faerie Fire",
+    "reference": "m1-35",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -3232,12 +3484,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-36",
     "title": "🕯️ Vitalidade Ilusória",
-    "reference": "False Life",
+    "reference": "m1-36",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -3272,12 +3527,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-37",
     "title": "🌀 Queda Suave",
-    "reference": "Feather Fall",
+    "reference": "m1-37",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -3313,12 +3571,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-38",
     "title": "🕸️ Encontrar Familiar",
-    "reference": "Find Familiar",
+    "reference": "m1-38",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -3352,12 +3613,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-39",
     "title": "🕸️ Névoa Obscurecente",
-    "reference": "Fog Cloud",
+    "reference": "m1-39",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -3391,12 +3655,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-40",
     "title": "✨ Dedos de Gelo",
-    "reference": "Frost Fingers",
+    "reference": "m1-40",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -3427,12 +3694,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m1-41",
     "title": "👁️ Presente de Alacridade",
-    "reference": "Gift of Alacrity",
+    "reference": "m1-41",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -3463,12 +3733,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": "DC"
+    "flags": "DC",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m1-42",
     "title": "🌀 Goodberry",
-    "reference": "Goodberry",
+    "reference": "m1-42",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -3503,12 +3776,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-43",
     "title": "🕸️ Graxa",
-    "reference": "Grease",
+    "reference": "m1-43",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -3543,12 +3819,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Caído",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-44",
     "title": "✨ Raio Traçante",
-    "reference": "Guiding Bolt",
+    "reference": "m1-44",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -3579,12 +3858,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-45",
-    "title": "👁️ Mão Orientadora (UA)",
-    "reference": "Guiding Hand (UA)",
+    "title": "👁️ Mão-Guia do Micélio (Experimental)",
+    "reference": "m1-45",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -3604,8 +3886,8 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 1.5 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "description": "Mão Orientadora (UA) produz um efeito de adivinhação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Mão Orientadora (UA) produz um efeito de adivinhação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
+    "description": "Mão-Guia do Micélio (Experimental) produz um efeito de adivinhação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Mão-Guia do Micélio (Experimental) produz um efeito de adivinhação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -3618,12 +3900,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m1-46",
     "title": "🕸️ Granizo de Espinhos",
-    "reference": "Hail of Thorns",
+    "reference": "m1-46",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -3654,12 +3940,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d10 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m1-47",
-    "title": "🕸️ Elixir de Cura (UA)",
-    "reference": "Healing Elixir (UA)",
+    "title": "🕸️ Tônico de Orvalho Vital (Experimental)",
+    "reference": "m1-47",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -3680,8 +3969,8 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Elixir de Cura (UA) reúne energia vital para curar ou preservar as criaturas escolhidas. Ferimentos, condições e efeitos especiais são tratados conforme os valores indicados abaixo.",
-    "effect": "Elixir de Cura (UA) reúne energia vital para curar ou preservar as criaturas escolhidas. Ferimentos, condições e efeitos especiais são tratados conforme os valores indicados abaixo. A criatura recupera 2d4 + 2 pontos de vida",
+    "description": "Tônico de Orvalho Vital (Experimental) reúne energia vital para curar ou preservar as criaturas escolhidas. Ferimentos, condições e efeitos especiais são tratados conforme os valores indicados abaixo.",
+    "effect": "Tônico de Orvalho Vital (Experimental) reúne energia vital para curar ou preservar as criaturas escolhidas. Ferimentos, condições e efeitos especiais são tratados conforme os valores indicados abaixo. A criatura recupera 2d4 + 2 pontos de vida",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "2d4 + 2",
@@ -3694,12 +3983,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m1-48",
     "title": "✨ Palavra Curativa",
-    "reference": "Healing Word",
+    "reference": "m1-48",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -3732,12 +4025,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d4 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-49",
     "title": "✨ Repreensão Infernal",
-    "reference": "Hellish Rebuke",
+    "reference": "m1-49",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -3768,12 +4064,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d10 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-50",
     "title": "🎵 Herói",
-    "reference": "Heroism",
+    "reference": "m1-50",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -3805,12 +4104,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-51",
     "title": "🎵 Feitiço",
-    "reference": "Hex",
+    "reference": "m1-51",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -3844,12 +4146,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-52",
     "title": "👁️ Marca do Caçador",
-    "reference": "Hunter's Mark",
+    "reference": "m1-52",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -3880,12 +4185,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-53",
     "title": "🕸️ “Faca de Gelo!”",
-    "reference": "Ice Knife",
+    "reference": "m1-53",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -3921,12 +4229,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-54",
-    "title": "🎵 Insinuação de Id (UA)",
-    "reference": "Id Insinuation (UA)",
+    "title": "🎵 Sussurro do Subconsciente (Experimental)",
+    "reference": "m1-54",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -3945,8 +4256,8 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "description": "Insinuação de Id (UA) produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Insinuação de Id (UA) produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de SAB Falha: Sofre 1d12 Psíquico de dano e fica Incapacitado. Sucesso: Não sofre o dano nem fica Incapacitado. Pode repetir a Salvaguarda no final de cada turno, encerrando o efeito se passar.",
+    "description": "Sussurro do Subconsciente (Experimental) produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Sussurro do Subconsciente (Experimental) produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de SAB Falha: Sofre 1d12 Psíquico de dano e fica Incapacitado. Sucesso: Não sofre o dano nem fica Incapacitado. Pode repetir a Salvaguarda no final de cada turno, encerrando o efeito se passar.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d12 Psíquico",
     "healing": "",
@@ -3959,12 +4270,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Incapacitado",
     "repeatSave": "Pode repetir a Salvaguarda no final de cada turno, encerrando o efeito se passar.",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m1-55",
     "title": "👁️ Identificar",
-    "reference": "Identify",
+    "reference": "m1-55",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -3999,12 +4314,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-56",
     "title": "🪞 Escrita Ilusória",
-    "reference": "Illusory Script",
+    "reference": "m1-56",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -4040,12 +4358,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-57",
-    "title": "👁️ Relé Infalível (UA)",
-    "reference": "Infallible Relay (UA)",
+    "title": "👁️ Fio Infalível da Colônia (Experimental)",
+    "reference": "m1-57",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -4067,8 +4388,8 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Lente de Vidro e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Relé Infalível (UA) produz um efeito de adivinhação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Relé Infalível (UA) produz um efeito de adivinhação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CAR Falha: Sofre o efeito descrito pela magia. Sucesso: Evita o efeito da magia.",
+    "description": "Fio Infalível da Colônia (Experimental) produz um efeito de adivinhação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Fio Infalível da Colônia (Experimental) produz um efeito de adivinhação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CAR Falha: Sofre o efeito descrito pela magia. Sucesso: Evita o efeito da magia.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -4081,12 +4402,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": "T"
+    "flags": "T",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m1-58",
     "title": "🕯️ Infligir Ferimentos",
-    "reference": "Inflict Wounds",
+    "reference": "m1-58",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -4117,12 +4442,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d10 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-59",
     "title": "✨ Sementes Erráticas de Cristal",
-    "reference": "Jim's Magic Missile",
+    "reference": "m1-59",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -4158,12 +4486,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m1-60",
     "title": "🌀 Pulando",
-    "reference": "Jump",
+    "reference": "m1-60",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -4200,12 +4530,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-61",
     "title": "🌀 Passos Longos",
-    "reference": "Longstrider",
+    "reference": "m1-61",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -4242,12 +4575,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-62",
     "title": "🛡️ Armadura Arcana",
-    "reference": "Mage Armor",
+    "reference": "m1-62",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -4282,12 +4618,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-63",
     "title": "✨ Míssil Mágico",
-    "reference": "Magic Missile",
+    "reference": "m1-63",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -4319,12 +4658,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-64",
     "title": "🌀 Ampliar gravidade",
-    "reference": "Magnify Gravity",
+    "reference": "m1-64",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -4355,12 +4697,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
-    "flags": "DG"
+    "flags": "DG",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m1-65",
     "title": "🛡️ Proteção contra o Bem e o Mal",
-    "reference": "Protection from Evil and Good",
+    "reference": "m1-65",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -4398,12 +4743,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Enfeitiçado",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-66",
-    "title": "🎵 Fantoche (UA)",
-    "reference": "Puppet (UA)",
+    "title": "🎵 Fios da Marionete (Experimental)",
+    "reference": "m1-66",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -4422,8 +4770,8 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 36 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "description": "Fantoche (UA) produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Fantoche (UA) produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CON Falha: Sofre o efeito descrito pela magia. Sucesso: Evita o efeito da magia.",
+    "description": "Fios da Marionete (Experimental) produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Fios da Marionete (Experimental) produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CON Falha: Sofre o efeito descrito pela magia. Sucesso: Evita o efeito da magia.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -4436,12 +4784,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m1-67",
     "title": "🌀 Purificar Alimentos e Bebidas",
-    "reference": "Purify Food and Drink",
+    "reference": "m1-67",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -4474,12 +4826,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-68",
     "title": "🕯️ Raio de Doença",
-    "reference": "Ray of Sickness",
+    "reference": "m1-68",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -4511,12 +4866,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Envenenado",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-69",
-    "title": "🌀 Acesso Remoto (UA)",
-    "reference": "Remote Access (UA)",
+    "title": "🌀 Toque Distante na Relíquia (Experimental)",
+    "reference": "m1-69",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -4535,8 +4893,8 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 36 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "description": "Acesso Remoto (UA) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Acesso Remoto (UA) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
+    "description": "Toque Distante na Relíquia (Experimental) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Toque Distante na Relíquia (Experimental) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -4549,12 +4907,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": "T"
+    "flags": "T",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m1-70",
     "title": "🛡️ Santuário",
-    "reference": "Sanctuary",
+    "reference": "m1-70",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -4588,12 +4950,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-71",
     "title": "✨ Searing Smite",
-    "reference": "Searing Smite",
+    "reference": "m1-71",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -4625,12 +4990,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-72",
-    "title": "👁️ Sentir Emoção (UA)",
-    "reference": "Sense Emotion (UA)",
+    "title": "👁️ Sentir Feromônios (Experimental)",
+    "reference": "m1-72",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -4649,8 +5017,8 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "description": "Sentir Emoção (UA) produz um efeito de adivinhação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Sentir Emoção (UA) produz um efeito de adivinhação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
+    "description": "Sentir Feromônios (Experimental) produz um efeito de adivinhação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Sentir Feromônios (Experimental) produz um efeito de adivinhação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -4663,12 +5031,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m1-73",
     "title": "🛡️ Blindagem",
-    "reference": "Shield",
+    "reference": "m1-73",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -4700,12 +5072,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-74",
     "title": "🛡️ Escudo da Fé",
-    "reference": "Shield of Faith",
+    "reference": "m1-74",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -4740,12 +5115,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-75",
     "title": "🪞 Imagem Silenciosa",
-    "reference": "Silent Image",
+    "reference": "m1-75",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -4781,12 +5159,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-76",
     "title": "🎵 Farpas Prateadas",
-    "reference": "Silvery Barbs",
+    "reference": "m1-76",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -4819,12 +5200,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m1-77",
     "title": "🎵 Dormir",
-    "reference": "Sleep",
+    "reference": "m1-77",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -4860,12 +5244,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-78",
     "title": "🛡️ Snare (laço)",
-    "reference": "Snare",
+    "reference": "m1-78",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -4901,12 +5288,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Invisível",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m1-79",
     "title": "👁️ Falar com Animais",
-    "reference": "Speak with Animals",
+    "reference": "m1-79",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -4939,12 +5329,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-80",
-    "title": "🎵 Despertar Súbito (UA)",
-    "reference": "Sudden Awakening (UA)",
+    "title": "🎵 Alarme da Cigarra (Experimental)",
+    "reference": "m1-80",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -4964,8 +5357,8 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 3 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "description": "Despertar Súbito (UA) transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia.",
-    "effect": "Despertar Súbito (UA) transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. Aplique o efeito aos alvos indicados.",
+    "description": "Alarme da Cigarra (Experimental) transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia.",
+    "effect": "Alarme da Cigarra (Experimental) transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -4978,12 +5371,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m1-81",
     "title": "✨ Infusão Cáustica da Vespa",
-    "reference": "Tasha's Caustic Brew",
+    "reference": "m1-81",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -5020,12 +5417,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 2d4 por círculo acima do nível-base.",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m1-82",
     "title": "🎵 Riso Desconcertante dos Grilos",
-    "reference": "Tasha's Hideous Laughter",
+    "reference": "m1-82",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -5062,12 +5461,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m1-83",
     "title": "🕸️ Disco de Carga do Orvalho",
-    "reference": "Tenser's Floating Disk",
+    "reference": "m1-83",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -5103,12 +5504,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m1-84",
     "title": "✨ Thunderous Smite",
-    "reference": "Thunderous Smite",
+    "reference": "m1-84",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -5139,12 +5542,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Caído",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m1-85",
     "title": "✨ Onda Trovejante",
-    "reference": "Thunderwave",
+    "reference": "m1-85",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -5178,12 +5584,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-86",
-    "title": "🪞 Coro Não Terrestre (UA)",
-    "reference": "Unearthly Chorus (UA)",
+    "title": "🪞 Coro do Jardim Profundo (Experimental)",
+    "reference": "m1-86",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -5200,8 +5609,8 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 9 m a partir do conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "description": "Coro Não Terrestre (UA) transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia.",
-    "effect": "Coro Não Terrestre (UA) transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. O alvo faz uma Salvaguarda de CAR Falha: Sofre o efeito descrito pela magia. Sucesso: Evita o efeito da magia.",
+    "description": "Coro do Jardim Profundo (Experimental) transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia.",
+    "effect": "Coro do Jardim Profundo (Experimental) transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. O alvo faz uma Salvaguarda de CAR Falha: Sofre o efeito descrito pela magia. Sucesso: Evita o efeito da magia.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -5214,12 +5623,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m1-87",
     "title": "🕸️ Servo Invísivel",
-    "reference": "Unseen Servant",
+    "reference": "m1-87",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -5255,12 +5668,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m1-88",
-    "title": "🌀 Astúcia Selvagem (UA)",
-    "reference": "Wild Cunning (UA)",
+    "title": "🌀 Instinto do Batedor (Experimental)",
+    "reference": "m1-88",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -5278,8 +5694,8 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 36 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "description": "Astúcia Selvagem (UA) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Astúcia Selvagem (UA) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
+    "description": "Instinto do Batedor (Experimental) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Instinto do Batedor (Experimental) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -5292,12 +5708,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m1-89",
     "title": "✨ Raio Teleguiado",
-    "reference": "Witch Bolt",
+    "reference": "m1-89",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -5333,12 +5753,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d12 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m1-90",
     "title": "✨ Wrathful Smite",
-    "reference": "Wrathful Smite",
+    "reference": "m1-90",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -5369,12 +5792,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Amedrontado",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m1-91",
     "title": "🌀 Golpe do Zéfiro",
-    "reference": "Zephyr Strike",
+    "reference": "m1-91",
     "level": 1,
     "kind": "completa",
     "status": "teste",
@@ -5405,12 +5831,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m2-1",
     "title": "✨ Rajada Incandescente de Resina",
-    "reference": "Aganazzar's Scorcher",
+    "reference": "m2-1",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -5447,12 +5876,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m2-2",
     "title": "🛡️ Auxílio",
-    "reference": "Aid",
+    "reference": "m2-2",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -5489,12 +5920,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-3",
     "title": "🕸️ Bolha de ar",
-    "reference": "Air Bubble",
+    "reference": "m2-3",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -5528,12 +5962,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m2-4",
     "title": "🌀 Alterar-se",
-    "reference": "Alter Self",
+    "reference": "m2-4",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -5565,12 +6002,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-5",
     "title": "🎵 Mensageiro Animal",
-    "reference": "Animal Messenger",
+    "reference": "m2-5",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -5606,12 +6046,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-6",
-    "title": "🌀 Hackeamento Arcano (UA)",
-    "reference": "Arcane Hacking (UA)",
+    "title": "🌀 Decifrar Relíquia (Experimental)",
+    "reference": "m2-6",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -5633,8 +6076,8 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Hackeamento Arcano (UA) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Hackeamento Arcano (UA) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
+    "description": "Decifrar Relíquia (Experimental) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Decifrar Relíquia (Experimental) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -5647,12 +6090,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": "T"
+    "flags": "T",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m2-7",
     "title": "🛡️ Tranca Arcana",
-    "reference": "Arcane Lock",
+    "reference": "m2-7",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -5686,12 +6133,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-8",
     "title": "👁️ Áugures",
-    "reference": "Augury",
+    "reference": "m2-8",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -5727,12 +6177,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-9",
     "title": "🌀 Pele de Árvore",
-    "reference": "Barkskin",
+    "reference": "m2-9",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -5767,12 +6220,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-10",
     "title": "👁️ Sentido da Besta",
-    "reference": "Beast Sense",
+    "reference": "m2-10",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -5804,12 +6260,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m2-11",
     "title": "🕯️ Cegueira/Surdez",
-    "reference": "Blindness/Deafness",
+    "reference": "m2-11",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -5843,12 +6302,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Cego",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-12",
     "title": "🪞 Desfoque",
-    "reference": "Blur",
+    "reference": "m2-12",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -5880,12 +6342,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-13",
     "title": "👁️ Conhecimento emprestado",
-    "reference": "Borrowed Knowledge",
+    "reference": "m2-13",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -5922,12 +6387,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m2-14",
     "title": "✨ Marca da punição",
-    "reference": "Branding Smite",
+    "reference": "m2-14",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -5958,12 +6426,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Invisível",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m2-15",
     "title": "🎵 Acalmar Emoções",
-    "reference": "Calm Emotions",
+    "reference": "m2-15",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -5995,12 +6466,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-16",
     "title": "🕸️ Nuvem de Adagas",
-    "reference": "Cloud of Daggers",
+    "reference": "m2-16",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -6037,12 +6511,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 2d4 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m2-17",
     "title": "✨ Brasa Contínua",
-    "reference": "Continual Flame",
+    "reference": "m2-17",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -6078,12 +6555,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-18",
     "title": "🌀 Cordão de Flechas",
-    "reference": "Cordon of Arrows",
+    "reference": "m2-18",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -6117,12 +6597,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m2-19",
     "title": "🎵 Coroa da Loucura",
-    "reference": "Crown of Madness",
+    "reference": "m2-19",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -6156,12 +6639,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Enfeitiçado",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m2-20",
     "title": "✨ Escuridão",
-    "reference": "Darkness",
+    "reference": "m2-20",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -6197,12 +6683,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-21",
     "title": "🌀 Visão no Escuro",
-    "reference": "Darkvision",
+    "reference": "m2-21",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -6239,12 +6728,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-22",
     "title": "👁️ Detectar Pensamentos",
-    "reference": "Detect Thoughts",
+    "reference": "m2-22",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -6280,12 +6772,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-23",
-    "title": "🛡️ Fantasma Digital (UA)",
-    "reference": "Digital Phantom (UA)",
+    "title": "🛡️ Véu da Engrenagem (Experimental)",
+    "reference": "m2-23",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -6307,8 +6802,8 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Fantasma Digital (UA) cria ou altera uma percepção. Toque, investigação ou sentidos especiais podem revelar que o efeito não é real.",
-    "effect": "Fantasma Digital (UA) cria ou altera uma percepção. Toque, investigação ou sentidos especiais podem revelar que o efeito não é real. Aplique o efeito aos alvos indicados.",
+    "description": "Véu da Engrenagem (Experimental) cria ou altera uma percepção. Toque, investigação ou sentidos especiais podem revelar que o efeito não é real.",
+    "effect": "Véu da Engrenagem (Experimental) cria ou altera uma percepção. Toque, investigação ou sentidos especiais podem revelar que o efeito não é real. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -6321,12 +6816,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": "T"
+    "flags": "T",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m2-24",
     "title": "🌀 Bafo de Titã",
-    "reference": "Dragon's Breath",
+    "reference": "m2-24",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -6361,12 +6860,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-25",
     "title": "🕸️ Diabo da Poeira",
-    "reference": "Dust Devil",
+    "reference": "m2-25",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -6402,12 +6904,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m2-26",
     "title": "🌀 “Amarrar à Terra!”",
-    "reference": "Earthbind",
+    "reference": "m2-26",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -6441,12 +6946,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m2-27",
     "title": "🌀 Aprimorar Habilidade",
-    "reference": "Enhance Ability",
+    "reference": "m2-27",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -6485,12 +6993,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-28",
     "title": "🌀 Aumentar/Reduzir",
-    "reference": "Enlarge/Reduce",
+    "reference": "m2-28",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -6527,12 +7038,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-29",
     "title": "🎵 Cativar",
-    "reference": "Enthrall",
+    "reference": "m2-29",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -6564,12 +7078,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Enfeitiçado",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-30",
     "title": "🕸️ Encontrar Montaria",
-    "reference": "Find Steed",
+    "reference": "m2-30",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -6600,12 +7117,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-31",
     "title": "👁️ Encontrar Armadilhas",
-    "reference": "Find Traps",
+    "reference": "m2-31",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -6638,12 +7158,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-32",
-    "title": "🕸️ Encontrar veículo (UA)",
-    "reference": "Find Vehicle (UA)",
+    "title": "🕸️ Convocar Montaria de Sucata (Experimental)",
+    "reference": "m2-32",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -6663,8 +7186,8 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 9 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "description": "Encontrar veículo (UA) produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Encontrar veículo (UA) produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
+    "description": "Convocar Montaria de Sucata (Experimental) produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Convocar Montaria de Sucata (Experimental) produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -6677,12 +7200,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": "T"
+    "flags": "T",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m2-33",
     "title": "✨ Lâmina Flamejante",
-    "reference": "Flame Blade",
+    "reference": "m2-33",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -6717,12 +7244,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-34",
     "title": "🕸️ Esfera Flamejante",
-    "reference": "Flaming Sphere",
+    "reference": "m2-34",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -6758,12 +7288,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-35",
     "title": "🕸️ Rebanho de Familiares",
-    "reference": "Flock of Familiars",
+    "reference": "m2-35",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -6795,12 +7328,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m2-36",
     "title": "👁️ Favor da Fortuna",
-    "reference": "Fortune's Favor",
+    "reference": "m2-36",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -6834,12 +7370,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base.",
-    "flags": "D"
+    "flags": "D",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m2-37",
     "title": "🕯️ Repouso Tranquilo",
-    "reference": "Gentle Repose",
+    "reference": "m2-37",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -6875,12 +7414,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-38",
     "title": "🎵 Presente de Gab",
-    "reference": "Gift of Gab",
+    "reference": "m2-38",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -6915,12 +7457,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m2-39",
     "title": "✨ Rajada de Vento",
-    "reference": "Gust of Wind",
+    "reference": "m2-39",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -6957,12 +7502,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-40",
     "title": "🕸️ Espírito de Cura",
-    "reference": "Healing Spirit",
+    "reference": "m2-40",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -6994,12 +7542,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m2-41",
     "title": "🌀 Esquentar Metal",
-    "reference": "Heat Metal",
+    "reference": "m2-41",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -7034,12 +7585,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-42",
     "title": "🎵 Imobilizar Pessoa",
-    "reference": "Hold Person",
+    "reference": "m2-42",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -7078,12 +7632,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Paralisado",
     "repeatSave": "Pode repetir a Salvaguarda no final de cada turno, encerrando o efeito se passar.",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-43",
-    "title": "✨ Geada da Morte Gélida (UA)",
-    "reference": "Icingdeath's Frost (UA)",
+    "title": "✨ Geada da Mariposa Pálida (Experimental)",
+    "reference": "m2-43",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -7104,8 +7661,8 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. M: Pó de Carapaça Ancestral e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Geada da Morte Gélida (UA) libera energia contra o alvo ou a área escolhida.",
-    "effect": "Geada da Morte Gélida (UA) libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de CON Falha: Sofre 3d8 Frio de dano. Sucesso: Sofre metade do dano.",
+    "description": "Geada da Mariposa Pálida (Experimental) libera energia contra o alvo ou a área escolhida.",
+    "effect": "Geada da Mariposa Pálida (Experimental) libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de CON Falha: Sofre 3d8 Frio de dano. Sucesso: Sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "3d8 Frio",
     "healing": "",
@@ -7118,12 +7675,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m2-44",
     "title": "🌀 Objeto Imóvel",
-    "reference": "Immovable Object",
+    "reference": "m2-44",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -7157,12 +7718,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": "DG"
+    "flags": "DG",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m2-45",
     "title": "🪞 Invisibilidade",
-    "reference": "Invisibility",
+    "reference": "m2-45",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -7199,12 +7763,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Invisível",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-46",
     "title": "🎵 Moeda-Lume do Trapaceiro",
-    "reference": "Jim's Glowing Coin",
+    "reference": "m2-46",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -7240,12 +7807,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m2-47",
     "title": "🌀 Kinetic Jaunt",
-    "reference": "Kinetic Jaunt",
+    "reference": "m2-47",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -7278,12 +7847,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m2-48",
     "title": "🌀 Batida",
-    "reference": "Knock",
+    "reference": "m2-48",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -7316,12 +7888,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-49",
     "title": "🛡️ Restauração Menor",
-    "reference": "Lesser Restoration",
+    "reference": "m2-49",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -7356,12 +7931,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-50",
     "title": "🌀 Levitação",
-    "reference": "Levitate",
+    "reference": "m2-50",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -7396,12 +7974,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-51",
     "title": "👁️ Localizar Animais ou Plantas",
-    "reference": "Locate Animals or Plants",
+    "reference": "m2-51",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -7437,12 +8018,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-52",
     "title": "👁️ Localizar Objeto",
-    "reference": "Locate Object",
+    "reference": "m2-52",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -7481,12 +8065,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-53",
     "title": "🪞 Boca Encantada",
-    "reference": "Magic Mouth",
+    "reference": "m2-53",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -7521,12 +8108,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-54",
     "title": "🌀 Arma Mágica",
-    "reference": "Magic Weapon",
+    "reference": "m2-54",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -7560,12 +8150,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-55",
     "title": "🌀 Punho de Terra Enraizada",
-    "reference": "Maximillian's Earthen Grasp",
+    "reference": "m2-55",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -7602,12 +8195,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m2-56",
     "title": "✨ Flecha ácida de Melf",
-    "reference": "Melf's Acid Arrow",
+    "reference": "m2-56",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -7641,12 +8236,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d4 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m2-57",
-    "title": "🛡️ Barreira Mental (UA)",
-    "reference": "Mental Barrier (UA)",
+    "title": "🛡️ Casulo Mental (Experimental)",
+    "reference": "m2-57",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -7665,8 +8263,8 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "description": "Barreira Mental (UA) cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar.",
-    "effect": "Barreira Mental (UA) cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. O alvo faz uma Salvaguarda de CAR Falha: Sofre o efeito descrito pela magia. Sucesso: Evita o efeito da magia.",
+    "description": "Casulo Mental (Experimental) cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar.",
+    "effect": "Casulo Mental (Experimental) cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. O alvo faz uma Salvaguarda de CAR Falha: Sofre o efeito descrito pela magia. Sucesso: Evita o efeito da magia.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -7679,12 +8277,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m2-58",
     "title": "👁️ Espigão Mental",
-    "reference": "Mind Spike",
+    "reference": "m2-58",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -7717,12 +8319,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Invisível",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-59",
-    "title": "🎵 Impulso Mental (UA)",
-    "reference": "Mind Thrust (UA)",
+    "title": "🎵 Impulso do Micélio (Experimental)",
+    "reference": "m2-59",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -7741,8 +8346,8 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "description": "Impulso Mental (UA) afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito.",
-    "effect": "Impulso Mental (UA) afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de INT Falha: Sofre 3d6 Psíquico de dano. Sucesso: Sofre metade do dano.",
+    "description": "Impulso do Micélio (Experimental) afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito.",
+    "effect": "Impulso do Micélio (Experimental) afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de INT Falha: Sofre 3d6 Psíquico de dano. Sucesso: Sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "3d6 Psíquico",
     "healing": "",
@@ -7755,12 +8360,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m2-60",
     "title": "🪞 Reflexos",
-    "reference": "Mirror Image",
+    "reference": "m2-60",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -7794,12 +8403,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-61",
     "title": "🕸️ Passo Nebuloso",
-    "reference": "Misty Step",
+    "reference": "m2-61",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -7832,12 +8444,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-62",
     "title": "✨ Raio Lunar",
-    "reference": "Moonbeam",
+    "reference": "m2-62",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -7871,12 +8486,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d10 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-63",
     "title": "🪞 Travessura do Pólen Feérico",
-    "reference": "Nathair's Mischief",
+    "reference": "m2-63",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -7914,12 +8532,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m2-64",
     "title": "🪞 Travessura Experimental do Pólen",
-    "reference": "Nathair's Mischief (UA)",
+    "reference": "m2-64",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -7957,12 +8577,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m2-65",
     "title": "🪞 Aura de Seiva Enganadora",
-    "reference": "Nystul's Magic Aura",
+    "reference": "m2-65",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -7998,12 +8620,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m2-66",
     "title": "🛡️ Passos sem Pegadas",
-    "reference": "Pass Without Trace",
+    "reference": "m2-66",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -8038,12 +8662,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-67",
     "title": "🪞 Força Fantasmática",
-    "reference": "Phantasmal Force",
+    "reference": "m2-67",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -8079,12 +8706,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-68",
     "title": "✨ Oração de Cura",
-    "reference": "Prayer of Healing",
+    "reference": "m2-68",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -8116,12 +8746,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-69",
     "title": "🛡️ Proteção Contra Veneno",
-    "reference": "Protection from Poison",
+    "reference": "m2-69",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -8155,12 +8788,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Envenenado",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-70",
     "title": "🌀 Pirotecnia",
-    "reference": "Pyrotechnics",
+    "reference": "m2-70",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -8193,12 +8829,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Cego",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m2-71",
     "title": "🕯️ Raio do Enfraquecimento",
-    "reference": "Ray of Enfeeblement",
+    "reference": "m2-71",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -8230,12 +8869,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-72",
     "title": "✨ Gelo Vinculante de Rime",
-    "reference": "Rime's Binding Ice",
+    "reference": "m2-72",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -8270,12 +8912,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m2-73",
     "title": "🌀 Truque da Corda",
-    "reference": "Rope Trick",
+    "reference": "m2-73",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -8309,12 +8954,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-74",
     "title": "✨ Raio Ardente",
-    "reference": "Scorching Ray",
+    "reference": "m2-74",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -8346,12 +8994,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, crie um raio adicional por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-75",
     "title": "👁️ Ver o Invisível",
-    "reference": "See Invisibility",
+    "reference": "m2-75",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -8387,12 +9038,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-76",
     "title": "🪞 Lâmina Sombria",
-    "reference": "Shadow Blade",
+    "reference": "m2-76",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -8425,12 +9079,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m2-77",
     "title": "✨ Fragmentar",
-    "reference": "Shatter",
+    "reference": "m2-77",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -8467,12 +9124,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-78",
     "title": "🪞 Silêncio",
-    "reference": "Silence",
+    "reference": "m2-78",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -8505,12 +9165,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-79",
     "title": "🌀 Skywrite",
-    "reference": "Skywrite",
+    "reference": "m2-79",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -8543,12 +9206,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m2-80",
     "title": "✨ Enxame de Granizo-Semente",
-    "reference": "Snilloc's Snowball Swarm",
+    "reference": "m2-80",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -8585,12 +9251,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m2-81",
     "title": "🌀 Escalada de Aranha",
-    "reference": "Spider Climb",
+    "reference": "m2-81",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -8626,12 +9294,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-82",
     "title": "🌀 Crescer Espinhos",
-    "reference": "Spike Growth",
+    "reference": "m2-82",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -8666,12 +9337,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-83",
     "title": "✨ Arma Espiritual",
-    "reference": "Spiritual Weapon",
+    "reference": "m2-83",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -8702,12 +9376,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-84",
     "title": "🕸️ Spray de Cartões",
-    "reference": "Spray Of Cards",
+    "reference": "m2-84",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -8744,12 +9421,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Cego",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d10 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m2-85",
-    "title": "🕸️ Pulverização de Cartões (UA)",
-    "reference": "Spray of Cards (UA)",
+    "title": "🕸️ Rajada de Folhas Laminadas (Experimental)",
+    "reference": "m2-85",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -8772,8 +9452,8 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Pulverização de Cartões (UA) libera energia contra o alvo ou a área escolhida.",
-    "effect": "Pulverização de Cartões (UA) libera energia contra o alvo ou a área escolhida. Aplique o efeito aos alvos indicados.",
+    "description": "Rajada de Folhas Laminadas (Experimental) libera energia contra o alvo ou a área escolhida.",
+    "effect": "Rajada de Folhas Laminadas (Experimental) libera energia contra o alvo ou a área escolhida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -8786,12 +9466,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m2-86",
     "title": "🎵 Sugestão",
-    "reference": "Suggestion",
+    "reference": "m2-86",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -8828,12 +9512,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-87",
     "title": "🕸️ Invocar Besta",
-    "reference": "Summon Beast",
+    "reference": "m2-87",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -8868,12 +9555,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m2-88",
     "title": "🎵 Chicote Mental da Cigarra",
-    "reference": "Tasha's Mind Whip",
+    "reference": "m2-88",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -8907,12 +9597,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base.",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m2-89",
-    "title": "🛡️ Escudo do Pensamento (UA)",
-    "reference": "Thought Shield (UA)",
+    "title": "🛡️ Carapaça do Pensamento (Experimental)",
+    "reference": "m2-89",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -8931,8 +9623,8 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Criatura ou objeto tocado",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "description": "Escudo do Pensamento (UA) cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar.",
-    "effect": "Escudo do Pensamento (UA) cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Aplique o efeito aos alvos indicados.",
+    "description": "Carapaça do Pensamento (Experimental) cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar.",
+    "effect": "Carapaça do Pensamento (Experimental) cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -8945,12 +9637,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m2-90",
     "title": "🕸️ Urdidura em Vórtice",
-    "reference": "Vortex Warp",
+    "reference": "m2-90",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -8982,12 +9678,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m2-91",
     "title": "🛡️ Vínculo de Proteção",
-    "reference": "Warding Bond",
+    "reference": "m2-91",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -9022,12 +9721,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-92",
     "title": "✨ Vento de Proteção",
-    "reference": "Warding Wind",
+    "reference": "m2-92",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -9061,12 +9763,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m2-93",
     "title": "👁️ Sentido de urdidura",
-    "reference": "Warp Sense",
+    "reference": "m2-93",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -9102,12 +9807,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m2-94",
     "title": "🕸️ Web",
-    "reference": "Web",
+    "reference": "m2-94",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -9142,12 +9850,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Contido",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m2-95",
     "title": "🕯️ Wither e Bloom",
-    "reference": "Wither and Bloom",
+    "reference": "m2-95",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -9183,12 +9894,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m2-96",
     "title": "🕸️ Bolso de pulso",
-    "reference": "Wristpocket",
+    "reference": "m2-96",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -9219,12 +9933,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": "D"
+    "flags": "D",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m2-97",
     "title": "🎵 Zona da Verdade",
-    "reference": "Zone of Truth",
+    "reference": "m2-97",
     "level": 2,
     "kind": "completa",
     "status": "teste",
@@ -9257,12 +9974,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-1",
     "title": "🕯️ Animar Mortos",
-    "reference": "Animate Dead",
+    "reference": "m3-1",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -9297,12 +10017,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-2",
     "title": "🎵 Antagonizar",
-    "reference": "Antagonize",
+    "reference": "m3-2",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -9339,12 +10062,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d4 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m3-3",
-    "title": "🎵 Antagonizar (UA)",
-    "reference": "Antagonize (UA)",
+    "title": "🎵 Feromônio de Discórdia (Experimental)",
+    "reference": "m3-3",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -9367,8 +10093,8 @@ globalThis.CODEX_SPELL_DATA = [
       "folha_serena"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Feromônio Ressonante e Folha Serena. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Antagonizar (UA) produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Antagonizar (UA) produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de SAB Falha: Sofre 4d4 Psíquico de dano. Sucesso: Não sofre o dano.",
+    "description": "Feromônio de Discórdia (Experimental) produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Feromônio de Discórdia (Experimental) produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de SAB Falha: Sofre 4d4 Psíquico de dano. Sucesso: Não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "4d4 Psíquico",
     "healing": "",
@@ -9381,12 +10107,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d4 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m3-4",
     "title": "🌀 Passo da Salamandra de Brasa",
-    "reference": "Ashardalon's Stride",
+    "reference": "m3-4",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -9421,12 +10151,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m3-5",
     "title": "✨ Aura de Vitalidade",
-    "reference": "Aura of Vitality",
+    "reference": "m3-5",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -9459,12 +10191,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m3-6",
     "title": "🛡️ Farol da Esperança",
-    "reference": "Beacon of Hope",
+    "reference": "m3-6",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -9495,12 +10230,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-7",
     "title": "🕯️ Rogar Maldição",
-    "reference": "Bestow Curse",
+    "reference": "m3-7",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -9533,12 +10271,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-8",
     "title": "✨ Ferimento Cegante",
-    "reference": "Blinding Smite",
+    "reference": "m3-8",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -9569,12 +10310,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Cego",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m3-9",
     "title": "🌀 Blink",
-    "reference": "Blink",
+    "reference": "m3-9",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -9606,12 +10350,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-10",
     "title": "🕸️ Convocar Relâmpagos",
-    "reference": "Call Lightning",
+    "reference": "m3-10",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -9642,12 +10389,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d10 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-11",
     "title": "🎵 Catnap.",
-    "reference": "Catnap",
+    "reference": "m3-11",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -9683,12 +10433,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m3-12",
     "title": "👁️ Clarividência",
-    "reference": "Clairvoyance",
+    "reference": "m3-12",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -9725,12 +10478,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-13",
     "title": "🕸️ Conjurar Animais",
-    "reference": "Conjure Animals",
+    "reference": "m3-13",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -9762,12 +10518,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-14",
     "title": "🕸️ Invocar Barragem",
-    "reference": "Conjure Barrage",
+    "reference": "m3-14",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -9801,12 +10560,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m3-15",
-    "title": "🕸️ Conjurar Demônio Menor (UA)",
-    "reference": "Conjure Lesser Demon (UA)",
+    "title": "🕸️ Convocar Faminto Menor (Experimental)",
+    "reference": "m3-15",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -9827,8 +10589,8 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Conjurar Demônio Menor (UA) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina.",
-    "effect": "Conjurar Demônio Menor (UA) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
+    "description": "Convocar Faminto Menor (Experimental) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina.",
+    "effect": "Convocar Faminto Menor (Experimental) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -9841,12 +10603,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m3-16",
     "title": "🛡️ Contramágica",
-    "reference": "Counterspell",
+    "reference": "m3-16",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -9879,12 +10645,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-17",
     "title": "🕸️ Criar Comida e Orvalho",
-    "reference": "Create Food and Water",
+    "reference": "m3-17",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -9916,12 +10685,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-18",
     "title": "✨ Manto do Cruzado",
-    "reference": "Crusader's Mantle",
+    "reference": "m3-18",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -9952,12 +10724,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m3-19",
     "title": "✨ Daylight",
-    "reference": "Daylight",
+    "reference": "m3-19",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -9992,12 +10767,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-20",
     "title": "🛡️ Dissipar Magia",
-    "reference": "Dispel Magic",
+    "reference": "m3-20",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -10034,12 +10812,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-21",
     "title": "🌀 Arma Elemental",
-    "reference": "Elemental Weapon",
+    "reference": "m3-21",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -10072,12 +10853,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m3-22",
     "title": "🎵 Inimigos Abundam",
-    "reference": "Enemies Abound",
+    "reference": "m3-22",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -10111,12 +10895,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "Pode repetir a Salvaguarda conforme indicado pela magia, encerrando o efeito se passar.",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m3-23",
     "title": "🌀 Erupção da Terra",
-    "reference": "Erupting Earth",
+    "reference": "m3-23",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -10152,12 +10939,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d12 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m3-24",
     "title": "🎵 Amigos rápidos",
-    "reference": "Fast Friends",
+    "reference": "m3-24",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -10190,12 +10980,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Enfeitiçado",
     "repeatSave": "Pode repetir a Salvaguarda conforme indicado pela magia, encerrando o efeito se passar.",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m3-25",
     "title": "🪞 Medo",
-    "reference": "Fear",
+    "reference": "m3-25",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -10232,12 +11025,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Amedrontado",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-26",
     "title": "🕯️ Fingir morte",
-    "reference": "Feign Death",
+    "reference": "m3-26",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -10274,12 +11070,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Envenenado",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m3-27",
     "title": "✨ Bola Brasa",
-    "reference": "Fireball",
+    "reference": "m3-27",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -10314,12 +11113,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-28",
     "title": "🌀 Flechas Flamejantes",
-    "reference": "Flame Arrows",
+    "reference": "m3-28",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -10353,12 +11155,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m3-29",
-    "title": "🌀 Caminhada da Brasa (UA)",
-    "reference": "Flame Stride (UA)",
+    "title": "🌀 Passos sobre Brasas (Experimental)",
+    "reference": "m3-29",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -10377,8 +11182,8 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "description": "Caminhada da Brasa (UA) altera movimento, distância ou posição. O destino precisa estar dentro do alcance e ter espaço livre para receber a criatura.",
-    "effect": "Caminhada da Brasa (UA) altera movimento, distância ou posição. O destino precisa estar dentro do alcance e ter espaço livre para receber a criatura. O alvo sofre 1d6 Fogo de dano",
+    "description": "Passos sobre Brasas (Experimental) altera movimento, distância ou posição. O destino precisa estar dentro do alcance e ter espaço livre para receber a criatura.",
+    "effect": "Passos sobre Brasas (Experimental) altera movimento, distância ou posição. O destino precisa estar dentro do alcance e ter espaço livre para receber a criatura. O alvo sofre 1d6 Fogo de dano",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d6 Fogo",
     "healing": "",
@@ -10391,12 +11196,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m3-30",
     "title": "🌀 Voar",
-    "reference": "Fly",
+    "reference": "m3-30",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -10432,12 +11241,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-31",
     "title": "🕸️ Torre de Casca Súbita",
-    "reference": "Galder's Tower",
+    "reference": "m3-31",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -10473,12 +11285,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m3-32",
     "title": "🌀 Forma Gasosa",
-    "reference": "Gaseous Form",
+    "reference": "m3-32",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -10514,12 +11328,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-33",
     "title": "🛡️ Símbolo de Proteção",
-    "reference": "Glyph of Warding",
+    "reference": "m3-33",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -10555,12 +11372,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Invisível",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-34",
     "title": "🌀 Apressar",
-    "reference": "Haste",
+    "reference": "m3-34",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -10595,12 +11415,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-35",
-    "title": "🎵 Haywire (UA)",
-    "reference": "Haywire (UA)",
+    "title": "🎵 Descompasso das Engrenagens (Experimental)",
+    "reference": "m3-35",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -10619,8 +11442,8 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 3 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "description": "Haywire (UA) produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Haywire (UA) produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de SAB Falha: Sofre o efeito descrito pela magia. Sucesso: Evita o efeito da magia.",
+    "description": "Descompasso das Engrenagens (Experimental) produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Descompasso das Engrenagens (Experimental) produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de SAB Falha: Sofre o efeito descrito pela magia. Sucesso: Evita o efeito da magia.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -10633,12 +11456,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": "T"
+    "flags": "T",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m3-36",
-    "title": "🕸️ Castelo de cartas",
-    "reference": "House of Cards (UA)",
+    "title": "🕸️ Fortaleza de Folhas (Experimental)",
+    "reference": "m3-36",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -10660,8 +11487,8 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Castelo de cartas produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Castelo de cartas produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
+    "description": "Fortaleza de Folhas (Experimental) produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Fortaleza de Folhas (Experimental) produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -10674,12 +11501,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m3-37",
     "title": "🕸️ Fome do Vazio-Raiz",
-    "reference": "Hunger Of Hadar",
+    "reference": "m3-37",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -10715,12 +11546,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m3-38",
     "title": "🪞 Padrão Hipnótico",
-    "reference": "Hypnotic Pattern",
+    "reference": "m3-38",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -10757,12 +11590,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Enfeitiçado",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-39",
     "title": "🎵 Incite a ganância",
-    "reference": "Incite Greed",
+    "reference": "m3-39",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -10799,12 +11635,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Enfeitiçado",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m3-40",
     "title": "🛡️ I. Fortaleza do Intelecto",
-    "reference": "Intellect Fortress",
+    "reference": "m3-40",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -10838,12 +11677,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m3-41",
-    "title": "🪞 Invisibilidade para câmeras (UA)",
-    "reference": "Invisibility To Cameras (UA)",
+    "title": "🪞 Véu contra Olhos de Vidro (Experimental)",
+    "reference": "m3-41",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -10865,8 +11707,8 @@ globalThis.CODEX_SPELL_DATA = [
       "lente_vidro"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Espelho de Orvalho e Lente de Vidro. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Invisibilidade para câmeras (UA) cria ou altera uma percepção. Toque, investigação ou sentidos especiais podem revelar que o efeito não é real.",
-    "effect": "Invisibilidade para câmeras (UA) cria ou altera uma percepção. Toque, investigação ou sentidos especiais podem revelar que o efeito não é real. Aplique o efeito aos alvos indicados.",
+    "description": "Véu contra Olhos de Vidro (Experimental) cria ou altera uma percepção. Toque, investigação ou sentidos especiais podem revelar que o efeito não é real.",
+    "effect": "Véu contra Olhos de Vidro (Experimental) cria ou altera uma percepção. Toque, investigação ou sentidos especiais podem revelar que o efeito não é real. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -10879,12 +11721,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": "T"
+    "flags": "T",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m3-42",
     "title": "✨ Abrigo Breve de Folhas",
-    "reference": "Leomund's Tiny Hut",
+    "reference": "m3-42",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -10921,12 +11767,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m3-43",
     "title": "🕯️ Transferência de Vida",
-    "reference": "Life Transference",
+    "reference": "m3-43",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -10958,12 +11806,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m3-44",
     "title": "🌀 Flecha Relâmpago",
-    "reference": "Lightning Arrow",
+    "reference": "m3-44",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -10994,12 +11845,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m3-45",
     "title": "✨ Relâmpago",
-    "reference": "Lightning Bolt",
+    "reference": "m3-45",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -11034,12 +11888,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-46",
     "title": "🛡️ Círculo Mágico",
-    "reference": "Magic Circle",
+    "reference": "m3-46",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -11076,12 +11933,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-47",
     "title": "🪞 Imagem Maior",
-    "reference": "Major Image",
+    "reference": "m3-47",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -11118,12 +11978,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-48",
     "title": "✨ Palavra Curativa em Massa",
-    "reference": "Mass Healing Word",
+    "reference": "m3-48",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -11155,12 +12018,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d4 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-49",
     "title": "🌀 Mesclar-se às Rochas",
-    "reference": "Meld into Stone",
+    "reference": "m3-49",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -11193,12 +12059,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-50",
     "title": "✨ Meteoros Minutos de Melf",
-    "reference": "Melf's Minute Meteors",
+    "reference": "m3-50",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -11233,12 +12102,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m3-51",
     "title": "🎵 Fala Motivacional",
-    "reference": "Motivational Speech",
+    "reference": "m3-51",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -11270,12 +12142,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m3-52",
     "title": "🛡️ Indetectável",
-    "reference": "Nondetection",
+    "reference": "m3-52",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -11311,12 +12186,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-53",
     "title": "🪞 Montaria Fantasmagórica",
-    "reference": "Phantom Steed",
+    "reference": "m3-53",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -11347,12 +12225,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-54",
     "title": "🌀 Crescimento de Plantas",
-    "reference": "Plant Growth",
+    "reference": "m3-54",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -11385,12 +12266,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-55",
-    "title": "🛡️ Proteção contra Balística (UA)",
-    "reference": "Protection from Ballistics (UA)",
+    "title": "🛡️ Casca contra Projéteis (Experimental)",
+    "reference": "m3-55",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -11412,8 +12296,8 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Proteção contra Balística (UA) cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar.",
-    "effect": "Proteção contra Balística (UA) cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Aplique o efeito aos alvos indicados.",
+    "description": "Casca contra Projéteis (Experimental) cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar.",
+    "effect": "Casca contra Projéteis (Experimental) cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -11426,12 +12310,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": "T"
+    "flags": "T",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m3-56",
     "title": "🛡️ Proteção contra Energia",
-    "reference": "Protection from Energy",
+    "reference": "m3-56",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -11466,12 +12354,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-57",
-    "title": "✨ Explosão Psiônica (UA)",
-    "reference": "Psionic Blast (UA)",
+    "title": "✨ Onda do Pensamento Partido (Experimental)",
+    "reference": "m3-57",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -11490,8 +12381,8 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "cone de 9 m a partir do conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "description": "Explosão Psiônica (UA) libera energia contra o alvo ou a área escolhida.",
-    "effect": "Explosão Psiônica (UA) libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de DES Falha: Sofre 5d8 Força de dano e fica Caído. Sucesso: Sofre metade do dano e não fica Caído.",
+    "description": "Onda do Pensamento Partido (Experimental) libera energia contra o alvo ou a área escolhida.",
+    "effect": "Onda do Pensamento Partido (Experimental) libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de DES Falha: Sofre 5d8 Força de dano e fica Caído. Sucesso: Sofre metade do dano e não fica Caído.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "5d8 Força",
     "healing": "",
@@ -11504,12 +12395,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Caído",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m3-58",
     "title": "✨ Onda de Pulso",
-    "reference": "Pulse Wave",
+    "reference": "m3-58",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -11540,12 +12435,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": "D"
+    "flags": "D",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m3-59",
     "title": "🛡️ Remover Maldição",
-    "reference": "Remove Curse",
+    "reference": "m3-59",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -11579,12 +12477,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-60",
-    "title": "🕯️ Ressurreição",
-    "reference": "Revivify",
+    "title": "🕯️ Última Centelha do Casulo",
+    "reference": "m3-60",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -11607,8 +12508,8 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Carapaça Ancestral e Incenso de Raiz. Material: consumível e gasto ao concluir a conjuração. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Ressurreição reúne energia vital para curar ou preservar as criaturas escolhidas. Ferimentos, condições e efeitos especiais são tratados conforme os valores indicados abaixo.",
-    "effect": "Ressurreição reúne energia vital para curar ou preservar as criaturas escolhidas. Ferimentos, condições e efeitos especiais são tratados conforme os valores indicados abaixo. Aplique o efeito aos alvos indicados.",
+    "description": "Última Centelha do Casulo reúne energia vital para curar ou preservar as criaturas escolhidas. Ferimentos, condições e efeitos especiais são tratados conforme os valores indicados abaixo.",
+    "effect": "Última Centelha do Casulo reúne energia vital para curar ou preservar as criaturas escolhidas. Ferimentos, condições e efeitos especiais são tratados conforme os valores indicados abaixo. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -11621,12 +12522,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1",
+    "microcosmoContent": true
   },
   {
     "key": "m3-61",
     "title": "✨ Enviando",
-    "reference": "Sending",
+    "reference": "m3-61",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -11662,12 +12567,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-62",
     "title": "🕸️ Nevasca",
-    "reference": "Sleet Storm",
+    "reference": "m3-62",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -11703,12 +12611,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Caído",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-63",
     "title": "🌀 Lenta",
-    "reference": "Slow",
+    "reference": "m3-63",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -11744,12 +12655,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-64",
     "title": "🕯️ Falar com Mortos",
-    "reference": "Speak with Dead",
+    "reference": "m3-64",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -11785,12 +12699,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-65",
     "title": "🌀 Falar com Plantas",
-    "reference": "Speak with Plants",
+    "reference": "m3-65",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -11823,12 +12740,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-66",
     "title": "🕸️ Guardiões Espirituais",
-    "reference": "Spirit Guardians",
+    "reference": "m3-66",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -11862,12 +12782,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-67",
     "title": "🕯️ Cobertura Espiritual",
-    "reference": "Spirit Shroud",
+    "reference": "m3-67",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -11901,12 +12824,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m3-68",
     "title": "🕸️ Névoa Fétida",
-    "reference": "Stinking Cloud",
+    "reference": "m3-68",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -11942,12 +12868,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-69",
     "title": "🕸️ Invocar Fey",
-    "reference": "Summon Fey",
+    "reference": "m3-69",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -11984,12 +12913,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m3-70",
     "title": "🕸️ Invocar Demônios Menores",
-    "reference": "Summon Lesser Demons",
+    "reference": "m3-70",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -12024,12 +12956,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m3-71",
     "title": "🕸️ Invocar Cria das Sombras",
-    "reference": "Summon Shadowspawn",
+    "reference": "m3-71",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -12064,12 +12999,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m3-72",
     "title": "🕯️ Invocar Mortos-Vivos",
-    "reference": "Summon Undead",
+    "reference": "m3-72",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -12104,12 +13042,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m3-73",
-    "title": "🕸️ Invocar Espírito Guerreiro (UA)",
-    "reference": "Summon Warrior Spirit (UA)",
+    "title": "🕸️ Convocar Guardião de Quitina (Experimental)",
+    "reference": "m3-73",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -12131,8 +13072,8 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Invocar Espírito Guerreiro (UA) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina.",
-    "effect": "Invocar Espírito Guerreiro (UA) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
+    "description": "Convocar Guardião de Quitina (Experimental) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina.",
+    "effect": "Convocar Guardião de Quitina (Experimental) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -12145,12 +13086,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m3-74",
     "title": "🕸️ Passo do Trovão",
-    "reference": "Thunder Step",
+    "reference": "m3-74",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -12183,12 +13128,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d10 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m3-75",
     "title": "🕸️ A Onda Gigante",
-    "reference": "Tidal Wave",
+    "reference": "m3-75",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -12224,12 +13172,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Caído",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m3-76",
     "title": "🌀 Pequeno Servo",
-    "reference": "Tiny Servant",
+    "reference": "m3-76",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -12260,12 +13211,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m3-77",
     "title": "👁️ Línguas",
-    "reference": "Tongues",
+    "reference": "m3-77",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -12303,12 +13257,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-78",
     "title": "🕯️ Toque Vampírico",
-    "reference": "Vampiric Touch",
+    "reference": "m3-78",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -12341,12 +13298,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-79",
     "title": "✨ Parede de Areia",
-    "reference": "Wall of Sand",
+    "reference": "m3-79",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -12380,12 +13340,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m3-80",
     "title": "✨ PAREDE DE Orvalho",
-    "reference": "Wall of Water",
+    "reference": "m3-80",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -12421,12 +13384,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-81",
     "title": "🌀 Respirar na Orvalho",
-    "reference": "Water Breathing",
+    "reference": "m3-81",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -12463,12 +13429,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-82",
     "title": "🌀 Passeio das Orvalhos",
-    "reference": "Water Walk",
+    "reference": "m3-82",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -12505,12 +13474,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m3-83",
     "title": "✨ Parede Eólica",
-    "reference": "Wind Wall",
+    "reference": "m3-83",
     "level": 3,
     "kind": "completa",
     "status": "teste",
@@ -12545,12 +13517,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m4-1",
     "title": "👁️ Olho Arcano",
-    "reference": "Arcane Eye",
+    "reference": "m4-1",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -12584,12 +13559,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m4-2",
     "title": "🛡️ Aura de Vida",
-    "reference": "Aura of Life",
+    "reference": "m4-2",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -12621,12 +13599,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m4-3",
     "title": "🛡️ de Pureza",
-    "reference": "Aura of Purity",
+    "reference": "m4-3",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -12658,12 +13639,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Cego",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m4-4",
     "title": "🛡️ Banimento",
-    "reference": "Banishment",
+    "reference": "m4-4",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -12701,12 +13685,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m4-5",
     "title": "🕯️ Secar Plantas",
-    "reference": "Blight",
+    "reference": "m4-5",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -12740,12 +13727,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m4-6",
     "title": "🎵 Monstro de Charme",
-    "reference": "Charm Monster",
+    "reference": "m4-6",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -12780,12 +13770,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Enfeitiçado",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m4-7",
     "title": "🎵 Compulsão.",
-    "reference": "Compulsion",
+    "reference": "m4-7",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -12816,12 +13809,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Enfeitiçado",
     "repeatSave": "Pode repetir a Salvaguarda conforme indicado pela magia, encerrando o efeito se passar.",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m4-8",
     "title": "🎵 Confusão",
-    "reference": "Confusion",
+    "reference": "m4-8",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -12858,12 +13854,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m4-9",
     "title": "🕸️ Convocar Predador do Subsolo (Experimental)",
-    "reference": "Conjure Barlgura (UA)",
+    "reference": "m4-9",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -12897,12 +13896,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m4-10",
     "title": "🕸️ Convocar Oráculo Mecânico (Experimental)",
-    "reference": "Conjure Knowbot (UA)",
+    "reference": "m4-10",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -12937,12 +13938,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
     "flags": "T",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m4-11",
     "title": "🕸️ Conjurar Elementais Menores",
-    "reference": "Conjure Minor Elementals",
+    "reference": "m4-11",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -12974,12 +13977,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m4-12",
-    "title": "🕸️ Conjurar Demônio das Sombras (UA)",
-    "reference": "Conjure Shadow Demon (UA)",
+    "title": "🕸️ Convocar Sombra do Subsolo (Experimental)",
+    "reference": "m4-12",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -13000,8 +14006,8 @@ globalThis.CODEX_SPELL_DATA = [
       "lente_vidro"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Espelho de Orvalho e Lente de Vidro. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Conjurar Demônio das Sombras (UA) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina.",
-    "effect": "Conjurar Demônio das Sombras (UA) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
+    "description": "Convocar Sombra do Subsolo (Experimental) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina.",
+    "effect": "Convocar Sombra do Subsolo (Experimental) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -13014,12 +14020,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m4-13",
     "title": "🕸️ Conjurar Seres da Jardim",
-    "reference": "Conjure Woodland Beings",
+    "reference": "m4-13",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -13054,12 +14064,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m4-14",
     "title": "🌀 Controlar Orvalho",
-    "reference": "Control Water",
+    "reference": "m4-14",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -13095,12 +14108,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m4-15",
     "title": "🛡️ Proteção Contra Morte",
-    "reference": "Death Ward",
+    "reference": "m4-15",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -13132,12 +14148,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m4-16",
     "title": "🕸️ Porta Dimensional",
-    "reference": "Dimension Door",
+    "reference": "m4-16",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -13171,12 +14190,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m4-17",
     "title": "👁️ Adivinhação",
-    "reference": "Divination",
+    "reference": "m4-17",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -13212,12 +14234,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m4-18",
     "title": "🎵 Dominar Fera",
-    "reference": "Dominate Beast",
+    "reference": "m4-18",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -13250,12 +14275,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Enfeitiçado",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m4-19",
-    "title": "🎵 Chicote do Ego (UA)",
-    "reference": "Ego Whip (UA)",
+    "title": "🎵 Ferrão do Ego (Experimental)",
+    "reference": "m4-19",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -13275,8 +14303,8 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 9 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "description": "Chicote do Ego (UA) libera energia contra o alvo ou a área escolhida.",
-    "effect": "Chicote do Ego (UA) libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de INT Falha: Sofre o efeito descrito pela magia. Sucesso: Evita o efeito da magia. Pode repetir a Salvaguarda no final de cada turno, encerrando o efeito se passar.",
+    "description": "Ferrão do Ego (Experimental) libera energia contra o alvo ou a área escolhida.",
+    "effect": "Ferrão do Ego (Experimental) libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de INT Falha: Sofre o efeito descrito pela magia. Sucesso: Evita o efeito da magia. Pode repetir a Salvaguarda no final de cada turno, encerrando o efeito se passar.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -13289,12 +14317,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "Pode repetir a Salvaguarda no final de cada turno, encerrando o efeito se passar.",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m4-20",
     "title": "🌀 Perdição Elemental",
-    "reference": "Elemental Bane",
+    "reference": "m4-20",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -13327,12 +14359,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m4-21",
     "title": "🕸️ Tentáculos Negros de Evard",
-    "reference": "Evard's Black Tentacles",
+    "reference": "m4-21",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -13366,12 +14401,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Contido",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m4-22",
     "title": "🌀 Fabricar",
-    "reference": "Fabricate",
+    "reference": "m4-22",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -13402,12 +14440,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m4-23",
     "title": "🕸️ Encontre um corcel maior",
-    "reference": "Find Greater Steed",
+    "reference": "m4-23",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -13438,12 +14479,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m4-24",
     "title": "✨ Escudo do Brasa",
-    "reference": "Fire Shield",
+    "reference": "m4-24",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -13479,12 +14523,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m4-25",
     "title": "🛡️ Direito de ir e vir",
-    "reference": "Freedom of Movement",
+    "reference": "m4-25",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -13521,12 +14568,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m4-26",
     "title": "🕸️ Correio Veloz da Libélula",
-    "reference": "Galder's Speedy Courier",
+    "reference": "m4-26",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -13563,12 +14613,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m4-27",
     "title": "🛡️ Vedação do portão",
-    "reference": "Gate Seal",
+    "reference": "m4-27",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -13604,12 +14656,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m4-28",
     "title": "🌀 Criatura do Jardim Gigante",
-    "reference": "Giant Insect",
+    "reference": "m4-28",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -13640,12 +14695,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m4-29",
     "title": "🕸️ Videira Agarradora",
-    "reference": "Grasping Vine",
+    "reference": "m4-29",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -13677,12 +14735,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m4-30",
     "title": "✨ Sinkhole Gravitacional",
-    "reference": "Gravity Sinkhole",
+    "reference": "m4-30",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -13716,12 +14777,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d10 por círculo acima do nível-base.",
-    "flags": "DG"
+    "flags": "DG",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m4-31",
     "title": "🪞 Invisibilidade Maior",
-    "reference": "Greater Invisibility",
+    "reference": "m4-31",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -13754,12 +14818,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Invisível",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m4-32",
     "title": "🕸️ Guardião da Fé",
-    "reference": "Guardian of Faith",
+    "reference": "m4-32",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -13790,12 +14857,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m4-33",
     "title": "🌀 Guardião da Natureza",
-    "reference": "Guardian of Nature",
+    "reference": "m4-33",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -13827,12 +14897,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m4-34",
     "title": "🪞 Terreno Alucinatório",
-    "reference": "Hallucinatory Terrain",
+    "reference": "m4-34",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -13869,12 +14942,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m4-35",
     "title": "✨ Tempestade de gelo",
-    "reference": "Ice Storm",
+    "reference": "m4-35",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -13910,12 +14986,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m4-36",
     "title": "🕸️ Baú Oculto do Micélio",
-    "reference": "Leomund's Secret Chest",
+    "reference": "m4-36",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -13951,12 +15030,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m4-37",
     "title": "👁️ Localizar Criatura",
-    "reference": "Locate Creature",
+    "reference": "m4-37",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -13995,12 +15076,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m4-38",
     "title": "🕸️ Cão-Vigia de Esporos",
-    "reference": "Mordenkainen's Faithful Hound",
+    "reference": "m4-38",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -14036,12 +15120,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m4-39",
     "title": "🛡️ Refúgio Privado da Colônia",
-    "reference": "Mordenkainen's Private Sanctum",
+    "reference": "m4-39",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -14077,12 +15163,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m4-40",
     "title": "✨ Esfera Resiliente de Resina",
-    "reference": "Otiluke's Resilient Sphere",
+    "reference": "m4-40",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -14118,12 +15206,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m4-41",
     "title": "🪞 Assassino Fantasmagórico",
-    "reference": "Phantasmal Killer",
+    "reference": "m4-41",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -14155,12 +15245,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Amedrontado",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d10 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m4-42",
     "title": "🌀 Polimorfar",
-    "reference": "Polymorph",
+    "reference": "m4-42",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -14197,12 +15290,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Inconsciente",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m4-43",
     "title": "🎵 Lança Psíquica da Vespa-Oráculo",
-    "reference": "Raulothim's Psychic Lance",
+    "reference": "m4-43",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -14238,12 +15334,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m4-44",
     "title": "🎵 Lança Psíquica Experimental da Vespa-Oráculo",
-    "reference": "Raulothim's Psychic Lance (UA)",
+    "reference": "m4-44",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -14279,12 +15377,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m4-45",
     "title": "🕯️ Sombra de Moil",
-    "reference": "Shadow Of Moil",
+    "reference": "m4-45",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -14318,12 +15418,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m4-46",
     "title": "✨ Radiância Doentia",
-    "reference": "Sickening Radiance",
+    "reference": "m4-46",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -14356,12 +15459,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m4-47",
     "title": "🕯️ Espírito da Morte",
-    "reference": "Spirit Of Death",
+    "reference": "m4-47",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -14397,12 +15503,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m4-48",
-    "title": "🕯️ Espírito da Morte (UA)",
-    "reference": "Spirit of Death (UA)",
+    "title": "🕯️ Eco do Último Casulo (Experimental)",
+    "reference": "m4-48",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -14424,8 +15533,8 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Carapaça Ancestral e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Espírito da Morte (UA) produz um efeito de necromancia dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Espírito da Morte (UA) produz um efeito de necromancia dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
+    "description": "Eco do Último Casulo (Experimental) produz um efeito de necromancia dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Eco do Último Casulo (Experimental) produz um efeito de necromancia dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -14438,12 +15547,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m4-49",
     "title": "✨ Golpe Escalonador",
-    "reference": "Staggering Smite",
+    "reference": "m4-49",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -14474,12 +15587,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m4-50",
     "title": "🌀 Moldar Rochas",
-    "reference": "Stone Shape",
+    "reference": "m4-50",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -14515,12 +15631,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m4-51",
     "title": "🛡️ Pele Rochosa",
-    "reference": "Stoneskin",
+    "reference": "m4-51",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -14557,12 +15676,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m4-52",
     "title": "✨ Esfera da Tempestade",
-    "reference": "Storm Sphere",
+    "reference": "m4-52",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -14594,12 +15716,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m4-53",
     "title": "🕸️ Invocar Aberração",
-    "reference": "Summon Aberration",
+    "reference": "m4-53",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -14634,12 +15759,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m4-54",
     "title": "🕸️ Invocar Construto",
-    "reference": "Summon Construct",
+    "reference": "m4-54",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -14673,12 +15801,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m4-55",
     "title": "🕸️ Convocar Elemental",
-    "reference": "Summon Elemental",
+    "reference": "m4-55",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -14714,12 +15845,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m4-56",
     "title": "🕸️ Invocar Demônio Maior",
-    "reference": "Summon Greater Demon",
+    "reference": "m4-56",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -14754,12 +15888,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m4-57",
-    "title": "🎵 Sincronicidade (UA)",
-    "reference": "Synchronicity (UA)",
+    "title": "🎵 Pulso Sincrônico do Enxame (Experimental)",
+    "reference": "m4-57",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -14778,8 +15915,8 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Criatura ou objeto tocado",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "description": "Sincronicidade (UA) produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Sincronicidade (UA) produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
+    "description": "Pulso Sincrônico do Enxame (Experimental) produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Pulso Sincrônico do Enxame (Experimental) produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -14792,12 +15929,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": "T"
+    "flags": "T",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m4-58",
-    "title": "🌀 Backdoor do Sistema (UA)",
-    "reference": "System Backdoor (UA)",
+    "title": "🌀 Passagem Oculta da Relíquia (Experimental)",
+    "reference": "m4-58",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -14819,8 +15960,8 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Backdoor do Sistema (UA) altera movimento, distância ou posição. O destino precisa estar dentro do alcance e ter espaço livre para receber a criatura.",
-    "effect": "Backdoor do Sistema (UA) altera movimento, distância ou posição. O destino precisa estar dentro do alcance e ter espaço livre para receber a criatura. Aplique o efeito aos alvos indicados.",
+    "description": "Passagem Oculta da Relíquia (Experimental) altera movimento, distância ou posição. O destino precisa estar dentro do alcance e ter espaço livre para receber a criatura.",
+    "effect": "Passagem Oculta da Relíquia (Experimental) altera movimento, distância ou posição. O destino precisa estar dentro do alcance e ter espaço livre para receber a criatura. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -14833,12 +15974,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": "T"
+    "flags": "T",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m4-59",
     "title": "✨ Esfera Vitriólica",
-    "reference": "Vitriolic Sphere",
+    "reference": "m4-59",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -14873,12 +16018,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 2d4 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m4-60",
     "title": "✨ Muralha de Brasa",
-    "reference": "Wall of Fire",
+    "reference": "m4-60",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -14914,12 +16062,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m4-61",
     "title": "🕸️ Esfera Aquosa",
-    "reference": "Watery Sphere",
+    "reference": "m4-61",
     "level": 4,
     "kind": "completa",
     "status": "teste",
@@ -14955,12 +16106,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Caído",
     "repeatSave": "Pode repetir a Salvaguarda no final de cada turno, encerrando o efeito se passar.",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m5-1",
     "title": "🌀 Animar Objetos",
-    "reference": "Animate Objects",
+    "reference": "m5-1",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -14993,12 +16147,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m5-2",
     "title": "🛡️ Cúpula Antivida",
-    "reference": "Antilife Shell",
+    "reference": "m5-2",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -15029,12 +16186,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m5-3",
     "title": "🌀 Despertar",
-    "reference": "Awaken",
+    "reference": "m5-3",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -15069,12 +16229,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m5-4",
     "title": "🛡️ Banishing Smite",
-    "reference": "Banishing Smite",
+    "reference": "m5-4",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -15105,12 +16268,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m5-5",
     "title": "✨ Mão Colossal da Seiva",
-    "reference": "Bigby's Hand",
+    "reference": "m5-5",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -15147,12 +16313,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 2d6 por círculo acima do nível-base.",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m5-6",
     "title": "🛡️ Círculo de Poder",
-    "reference": "Circle of Power",
+    "reference": "m5-6",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -15183,12 +16351,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m5-7",
     "title": "🕸️ Névoa Mortal",
-    "reference": "Cloudkill",
+    "reference": "m5-7",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -15220,12 +16391,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m5-8",
     "title": "👁️ Comunhão",
-    "reference": "Commune",
+    "reference": "m5-8",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -15259,12 +16433,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m5-9",
-    "title": "👁️ Comunhão com a Cidade (UA)",
-    "reference": "Commune with City (UA)",
+    "title": "👁️ Conselho das Ruas-Raiz (Experimental)",
+    "reference": "m5-9",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -15283,8 +16460,8 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "description": "Comunhão com a Cidade (UA) amplia sentidos, conhecimento ou comunicação. As informações alcançam apenas os alvos e a distância indicados pela magia.",
-    "effect": "Comunhão com a Cidade (UA) amplia sentidos, conhecimento ou comunicação. As informações alcançam apenas os alvos e a distância indicados pela magia. Aplique o efeito aos alvos indicados.",
+    "description": "Conselho das Ruas-Raiz (Experimental) amplia sentidos, conhecimento ou comunicação. As informações alcançam apenas os alvos e a distância indicados pela magia.",
+    "effect": "Conselho das Ruas-Raiz (Experimental) amplia sentidos, conhecimento ou comunicação. As informações alcançam apenas os alvos e a distância indicados pela magia. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -15297,12 +16474,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": "T"
+    "flags": "T",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m5-10",
     "title": "👁️ Comunhão com a Natureza",
-    "reference": "Commune with Nature",
+    "reference": "m5-10",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -15334,12 +16515,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m5-11",
     "title": "✨ Cone de Frio",
-    "reference": "Cone of Cold",
+    "reference": "m5-11",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -15375,12 +16559,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m5-12",
     "title": "🕸️ Conjurar Elemental",
-    "reference": "Conjure Elemental",
+    "reference": "m5-12",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -15415,12 +16602,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m5-13",
     "title": "🕸️ Conjurar Voleio",
-    "reference": "Conjure Volley",
+    "reference": "m5-13",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -15454,12 +16644,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m5-14",
     "title": "🕸️ Convocar Caçador Alado (Experimental)",
-    "reference": "Conjure Vrock (UA)",
+    "reference": "m5-14",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -15496,12 +16689,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m5-15",
     "title": "👁️ Contato Extraplanar",
-    "reference": "Contact Other Plane",
+    "reference": "m5-15",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -15533,12 +16728,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m5-16",
     "title": "🕯️ Contágio",
-    "reference": "Contagion",
+    "reference": "m5-16",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -15570,12 +16768,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Envenenado",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m5-17",
     "title": "🌀 Ventos de Controle",
-    "reference": "Control Winds",
+    "reference": "m5-17",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -15608,12 +16809,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m5-18",
     "title": "🌀 Criar Elmo de Bloqueio Mágico",
-    "reference": "Create Spelljamming Helm",
+    "reference": "m5-18",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -15647,12 +16851,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m5-19",
     "title": "🪞 Criação",
-    "reference": "Creation",
+    "reference": "m5-19",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -15687,12 +16894,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m5-20",
     "title": "🕯️ Danse Macabre",
-    "reference": "Danse Macabre",
+    "reference": "m5-20",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -15724,12 +16934,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m5-21",
     "title": "✨ Amanhecer",
-    "reference": "Dawn",
+    "reference": "m5-21",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -15764,12 +16977,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m5-22",
     "title": "✨ Onda Destrutiva",
-    "reference": "Destructive Wave",
+    "reference": "m5-22",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -15800,12 +17016,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Caído",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m5-23",
     "title": "🛡️ Dissipar o Mal e o Bem",
-    "reference": "Dispel Evil and Good",
+    "reference": "m5-23",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -15840,12 +17059,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m5-24",
     "title": "🎵 Dominar Pessoa",
-    "reference": "Dominate Person",
+    "reference": "m5-24",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -15878,12 +17100,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Enfeitiçado",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m5-25",
     "title": "🪞 Sonhe",
-    "reference": "Dream",
+    "reference": "m5-25",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -15919,12 +17144,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m5-26",
     "title": "🕯️ Enervação",
-    "reference": "Enervation",
+    "reference": "m5-26",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -15957,12 +17185,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m5-27",
     "title": "🕸️ Passo Distante",
-    "reference": "Far Step",
+    "reference": "m5-27",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -15995,12 +17226,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m5-28",
     "title": "✨ Ataque Flamejante",
-    "reference": "Flame Strike",
+    "reference": "m5-28",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -16034,12 +17268,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m5-29",
     "title": "🎵 Geas",
-    "reference": "Geas",
+    "reference": "m5-29",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -16074,12 +17311,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Enfeitiçado",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m5-30",
     "title": "🛡️ Restauração maior",
-    "reference": "Greater Restoration",
+    "reference": "m5-30",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -16116,12 +17356,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m5-31",
     "title": "✨ Consagrar",
-    "reference": "Hallow",
+    "reference": "m5-31",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -16155,12 +17398,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m5-32",
     "title": "🎵 Imobilizar Monstro",
-    "reference": "Hold Monster",
+    "reference": "m5-32",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -16197,12 +17443,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Paralisado",
     "repeatSave": "Pode repetir a Salvaguarda no final de cada turno, encerrando o efeito se passar.",
     "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m5-33",
     "title": "✨ Arma Sagrada",
-    "reference": "Holy Weapon",
+    "reference": "m5-33",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -16234,12 +17483,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Cego",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m5-34",
     "title": "✨ Imolação",
-    "reference": "Immolation",
+    "reference": "m5-34",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -16271,12 +17523,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "Pode repetir a Salvaguarda no final de cada turno, encerrando o efeito se passar.",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m5-35",
     "title": "🕸️ Brasado Infernal",
-    "reference": "Infernal Calling",
+    "reference": "m5-35",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -16311,12 +17566,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m5-36",
     "title": "🕸️ Praga de Criatura do Jardims",
-    "reference": "Insect Plague",
+    "reference": "m5-36",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -16352,12 +17610,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d10 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m5-37",
     "title": "👁️ Lendas e Histórias",
-    "reference": "Legend Lore",
+    "reference": "m5-37",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -16393,12 +17654,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m5-38",
     "title": "✨ Sorvedouro",
-    "reference": "Maelstrom",
+    "reference": "m5-38",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -16432,12 +17696,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m5-39",
     "title": "✨ Curar Ferimentos em Massa",
-    "reference": "Mass Cure Wounds",
+    "reference": "m5-39",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -16470,12 +17737,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m5-40",
     "title": "🪞 Despistar",
-    "reference": "Mislead",
+    "reference": "m5-40",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -16508,12 +17778,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Invisível",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m5-41",
     "title": "🎵 Modificar Memória",
-    "reference": "Modify Memory",
+    "reference": "m5-41",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -16545,12 +17818,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Enfeitiçado",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m5-42",
     "title": "🕯️ Inundação de Energia Negativa",
-    "reference": "Negative Energy Flood",
+    "reference": "m5-42",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -16585,12 +17861,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m5-43",
     "title": "🌀 Criar Passagem",
-    "reference": "Passwall",
+    "reference": "m5-43",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -16624,12 +17903,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m5-44",
     "title": "🛡️ Âncora Planar",
-    "reference": "Planar Binding",
+    "reference": "m5-44",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -16667,12 +17949,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m5-45",
     "title": "🕯️ Reviver os Mortos",
-    "reference": "Raise Dead",
+    "reference": "m5-45",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -16708,12 +17993,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m5-46",
     "title": "👁️ Rede Telepática do Micélio",
-    "reference": "Rary's Telepathic Bond",
+    "reference": "m5-46",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -16750,12 +18038,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m5-47",
     "title": "🌀 Reencarnar",
-    "reference": "Reincarnate",
+    "reference": "m5-47",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -16789,12 +18079,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m5-48",
     "title": "👁️ Vidência",
-    "reference": "Scrying",
+    "reference": "m5-48",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -16832,12 +18125,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Invisível",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m5-49",
     "title": "🪞 Similaridade",
-    "reference": "Seeming",
+    "reference": "m5-49",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -16870,12 +18166,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m5-50",
-    "title": "🌀 Desligamento (UA)",
-    "reference": "Shutdown (UA)",
+    "title": "🌀 Silenciar Engrenagens (Experimental)",
+    "reference": "m5-50",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -16894,8 +18193,8 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 36 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "description": "Desligamento (UA) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Desligamento (UA) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CON Falha: Sofre o efeito descrito pela magia. Sucesso: Evita o efeito da magia.",
+    "description": "Silenciar Engrenagens (Experimental) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Silenciar Engrenagens (Experimental) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CON Falha: Sofre o efeito descrito pela magia. Sucesso: Evita o efeito da magia.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -16908,12 +18207,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": "T"
+    "flags": "T",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m5-51",
     "title": "🌀 Capacitação de habilidades",
-    "reference": "Skill Empowerment",
+    "reference": "m5-51",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -16946,12 +18249,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m5-52",
     "title": "🕸️ Golpe de Vento de Aço",
-    "reference": "Steel Wind Strike",
+    "reference": "m5-52",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -16986,12 +18292,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m5-53",
     "title": "🕸️ Invocar Luminar",
-    "reference": "Summon Celestial",
+    "reference": "m5-53",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -17026,12 +18335,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m5-54",
     "title": "🕸️ Invocar Espírito Dracônico",
-    "reference": "Summon Draconic Spirit",
+    "reference": "m5-54",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -17067,12 +18379,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m5-55",
-    "title": "🕸️ Invocar Espírito Dracônico (UA)",
-    "reference": "Summon Draconic Spirit (UA)",
+    "title": "🕸️ Convocar Espírito de Escamas (Experimental)",
+    "reference": "m5-55",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -17094,8 +18409,8 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Invocar Espírito Dracônico (UA) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina.",
-    "effect": "Invocar Espírito Dracônico (UA) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
+    "description": "Convocar Espírito de Escamas (Experimental) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina.",
+    "effect": "Convocar Espírito de Escamas (Experimental) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -17108,12 +18423,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m5-56",
     "title": "🌀 Aljava Rápida",
-    "reference": "Swift Quiver",
+    "reference": "m5-56",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -17147,12 +18466,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m5-57",
     "title": "🎵 Estático Sináptico",
-    "reference": "Synaptic Static",
+    "reference": "m5-57",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -17186,12 +18508,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m5-58",
     "title": "🌀 Telecinese",
-    "reference": "Telekinesis",
+    "reference": "m5-58",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -17223,12 +18548,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m5-59",
     "title": "🕸️ Círculo de Teletransporte",
-    "reference": "Teleportation Circle",
+    "reference": "m5-59",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -17265,12 +18593,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m5-60",
     "title": "🌀 Derivação Temporal",
-    "reference": "Temporal Shunt",
+    "reference": "m5-60",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -17301,12 +18632,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base.",
-    "flags": "DC"
+    "flags": "DC",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m5-61",
     "title": "🌀 Transmute Rock",
-    "reference": "Transmute Rock",
+    "reference": "m5-61",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -17341,12 +18675,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m5-62",
     "title": "🕸️ Passo Arbóreo",
-    "reference": "Tree Stride",
+    "reference": "m5-62",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -17378,12 +18715,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m5-63",
     "title": "✨ Muralha de Energia",
-    "reference": "Wall of Force",
+    "reference": "m5-63",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -17417,12 +18757,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m5-64",
     "title": "✨ Muralha de Luz",
-    "reference": "Wall of Light",
+    "reference": "m5-64",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -17458,12 +18801,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Cego",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m5-65",
     "title": "✨ Muralha de Pedra",
-    "reference": "Wall of Stone",
+    "reference": "m5-65",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -17499,12 +18845,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m5-66",
     "title": "✨ Ira da natureza",
-    "reference": "Wrath Of Nature",
+    "reference": "m5-66",
     "level": 5,
     "kind": "completa",
     "status": "teste",
@@ -17536,12 +18885,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Caído",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m6-1",
     "title": "🕸️ Portão Arcano",
-    "reference": "Arcane Gate",
+    "reference": "m6-1",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -17574,12 +18926,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m6-2",
     "title": "✨ Barreira de Lâminas",
-    "reference": "Blade Barrier",
+    "reference": "m6-2",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -17610,12 +18965,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m6-3",
     "title": "🌀 OSSOS DA TERRA",
-    "reference": "Bones of the Earth",
+    "reference": "m6-3",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -17646,12 +19004,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Contido",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m6-4",
     "title": "✨ Cadeia de Raios",
-    "reference": "Chain Lightning",
+    "reference": "m6-4",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -17686,12 +19047,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m6-5",
     "title": "🕯️ Círculo da Morte",
-    "reference": "Circle of Death",
+    "reference": "m6-5",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -17727,12 +19091,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 2d6 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m6-6",
     "title": "🕸️ Conjurar Feérico",
-    "reference": "Conjure Fey",
+    "reference": "m6-6",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -17764,12 +19131,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m6-7",
     "title": "✨ Contingência",
-    "reference": "Contingency",
+    "reference": "m6-7",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -17803,12 +19173,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m6-8",
     "title": "🌀 Criar Homúnculo",
-    "reference": "Create Homunculus",
+    "reference": "m6-8",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -17842,12 +19215,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m6-9",
     "title": "🕯️ Criar Mortos-Vivos",
-    "reference": "Create Undead",
+    "reference": "m6-9",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -17883,12 +19259,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m6-10",
     "title": "🌀 Desintegrar",
-    "reference": "Disintegrate",
+    "reference": "m6-10",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -17923,12 +19302,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 3d6 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m6-11",
     "title": "🕸️ Chamado Instantâneo do Fio",
-    "reference": "Drawmij's Instant Summons",
+    "reference": "m6-11",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -17964,12 +19346,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m6-12",
     "title": "🛡️ Druid Grove",
-    "reference": "Druid Grove",
+    "reference": "m6-12",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -18003,12 +19387,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m6-13",
     "title": "🕯️ Ataque Visual",
-    "reference": "Eyebite",
+    "reference": "m6-13",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -18042,12 +19429,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m6-14",
     "title": "👁️ Encontrar o Caminho",
-    "reference": "Find the Path",
+    "reference": "m6-14",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -18083,12 +19473,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m6-15",
     "title": "🛡️ Escudo de Quitina Solar",
-    "reference": "Fizban's Platinum Shield",
+    "reference": "m6-15",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -18125,12 +19518,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m6-16",
     "title": "🛡️ Escudo Experimental de Quitina Solar",
-    "reference": "Fizban's Platinum Shield (UA)",
+    "reference": "m6-16",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -18167,12 +19562,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m6-17",
     "title": "🌀 Carne para Pedra",
-    "reference": "Flesh to Stone",
+    "reference": "m6-17",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -18209,12 +19606,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Petrificado",
     "repeatSave": "Pode repetir a Salvaguarda no final de cada turno, encerrando o efeito se passar.",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m6-18",
     "title": "🛡️ Proibição",
-    "reference": "Forbiddance",
+    "reference": "m6-18",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -18248,12 +19648,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m6-19",
     "title": "🛡️ Globo de Invulnerabilidade",
-    "reference": "Globe of Invulnerability",
+    "reference": "m6-19",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -18288,12 +19691,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m6-20",
     "title": "✨ Fissura por Gravidade",
-    "reference": "Gravity Fissure",
+    "reference": "m6-20",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -18327,12 +19733,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
-    "flags": "DG"
+    "flags": "DG",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m6-21",
     "title": "🛡️ Proteger Fortaleza",
-    "reference": "Guards and Wards",
+    "reference": "m6-21",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -18367,12 +19776,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m6-22",
     "title": "🕯️ Dano",
-    "reference": "Harm",
+    "reference": "m6-22",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -18403,12 +19815,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m6-23",
     "title": "✨ Curar",
-    "reference": "Heal",
+    "reference": "m6-23",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -18440,12 +19855,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 10 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m6-24",
     "title": "🕸️ Banquete de Heróis",
-    "reference": "Heroes' Feast",
+    "reference": "m6-24",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -18481,12 +19899,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Amedrontado",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m6-25",
     "title": "🌀 Investidura de Brasa",
-    "reference": "Investiture of Flame",
+    "reference": "m6-25",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -18520,12 +19941,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m6-26",
     "title": "🌀 Investidura de Gelo",
-    "reference": "Investiture of Ice",
+    "reference": "m6-26",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -18559,12 +19983,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m6-27",
     "title": "🌀 Investidura de Pedra",
-    "reference": "Investiture of Stone",
+    "reference": "m6-27",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -18598,12 +20025,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m6-28",
     "title": "🌀 Investidura de Vento",
-    "reference": "Investiture of Wind",
+    "reference": "m6-28",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -18637,12 +20067,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m6-29",
     "title": "🕯️ Jarro mágico",
-    "reference": "Magic Jar",
+    "reference": "m6-29",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -18676,12 +20109,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m6-30",
     "title": "🎵 Sugestão Coletiva",
-    "reference": "Mass Suggestion",
+    "reference": "m6-30",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -18718,12 +20154,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m6-31",
     "title": "🪞 Prisão Mental",
-    "reference": "Mental Prison",
+    "reference": "m6-31",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -18756,12 +20195,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m6-32",
     "title": "🌀 Mover Terra",
-    "reference": "Move Earth",
+    "reference": "m6-32",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -18797,12 +20239,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m6-33",
-    "title": "🌀 Forma de Outro Mundo (UA)",
-    "reference": "Otherworldly Form (UA)",
+    "title": "🌀 Forma do Jardim Distante (Experimental)",
+    "reference": "m6-33",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -18825,8 +20270,8 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Forma de Outro Mundo (UA) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Forma de Outro Mundo (UA) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
+    "description": "Forma do Jardim Distante (Experimental) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Forma do Jardim Distante (Experimental) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -18839,12 +20284,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m6-34",
     "title": "✨ Esfera Congelante do Orvalho",
-    "reference": "Otiluke's Freezing Sphere",
+    "reference": "m6-34",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -18881,12 +20330,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m6-35",
     "title": "🎵 Dança Irresistível das Antenas",
-    "reference": "Otto's Irresistible Dance",
+    "reference": "m6-35",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -18920,12 +20371,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m6-36",
     "title": "🕸️ Aliado Extra-Planar",
-    "reference": "Planar Ally",
+    "reference": "m6-36",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -18956,12 +20409,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m6-37",
     "title": "🛡️ Proteção Primordial",
-    "reference": "Primordial Ward",
+    "reference": "m6-37",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -18992,12 +20448,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m6-38",
     "title": "🪞 Ilusão Programada",
-    "reference": "Programmed Illusion",
+    "reference": "m6-38",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -19032,12 +20491,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m6-39",
-    "title": "🎵 Esmagamento Psíquico (UA)",
-    "reference": "Psychic Crush (UA)",
+    "title": "🎵 Colapso da Mente-Colmeia (Experimental)",
+    "reference": "m6-39",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -19056,8 +20518,8 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "description": "Esmagamento Psíquico (UA) afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito.",
-    "effect": "Esmagamento Psíquico (UA) afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de INT Falha: Sofre 12d6 Psíquico de dano e fica Atordoado. Sucesso: Sofre metade do dano e não fica Atordoado.",
+    "description": "Colapso da Mente-Colmeia (Experimental) afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito.",
+    "effect": "Colapso da Mente-Colmeia (Experimental) afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de INT Falha: Sofre 12d6 Psíquico de dano e fica Atordoado. Sucesso: Sofre metade do dano e não fica Atordoado.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "12d6 Psíquico",
     "healing": "",
@@ -19070,12 +20532,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Atordoado",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m6-40",
     "title": "🕸️ Espalhar",
-    "reference": "Scatter",
+    "reference": "m6-40",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -19108,12 +20574,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m6-41",
     "title": "🕯️ Gaiola da Alma",
-    "reference": "Soul Cage",
+    "reference": "m6-41",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -19148,12 +20617,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m6-42",
     "title": "🕸️ Invocar Ínfero",
-    "reference": "Summon Fiend",
+    "reference": "m6-42",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -19188,12 +20660,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m6-43",
     "title": "✨ Raio Solar",
-    "reference": "Sunbeam",
+    "reference": "m6-43",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -19230,12 +20705,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Cego",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m6-44",
     "title": "🌀 Forma do Outro Jardim",
-    "reference": "Tasha's Otherworldly Guise",
+    "reference": "m6-44",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -19273,12 +20751,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m6-45",
     "title": "🌀 Metamorfose do Casulo Bélico",
-    "reference": "Tenser's Transformation",
+    "reference": "m6-45",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -19314,12 +20794,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m6-46",
     "title": "🕸️ Teletransporte por Plantas",
-    "reference": "Transport via Plants",
+    "reference": "m6-46",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -19350,12 +20832,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m6-47",
     "title": "👁️ Visão da Verdade",
-    "reference": "True Seeing",
+    "reference": "m6-47",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -19393,12 +20878,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m6-48",
     "title": "✨ Parede de Gelo",
-    "reference": "Wall of Ice",
+    "reference": "m6-48",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -19432,12 +20920,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m6-49",
     "title": "🕸️ Muralha de Espinhos",
-    "reference": "Wall of Thorns",
+    "reference": "m6-49",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -19471,12 +20962,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m6-50",
     "title": "🌀 Caminhar no Vento",
-    "reference": "Wind Walk",
+    "reference": "m6-50",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -19510,12 +21004,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m6-51",
     "title": "🕸️ Palavra de Recordação",
-    "reference": "Word of Recall",
+    "reference": "m6-51",
     "level": 6,
     "kind": "completa",
     "status": "teste",
@@ -19546,12 +21043,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m7-1",
     "title": "🕸️ Conjurar Luminar",
-    "reference": "Conjure Celestial",
+    "reference": "m7-1",
     "level": 7,
     "kind": "completa",
     "status": "teste",
@@ -19582,12 +21082,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m7-2",
     "title": "🕸️ Convocar Colosso do Brejo (Experimental)",
-    "reference": "Conjure Hezrou (UA)",
+    "reference": "m7-2",
     "level": 7,
     "kind": "completa",
     "status": "teste",
@@ -19624,12 +21127,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m7-3",
     "title": "🌀 Criar Magen",
-    "reference": "Create Magen",
+    "reference": "m7-3",
     "level": 7,
     "kind": "completa",
     "status": "teste",
@@ -19663,12 +21168,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m7-4",
     "title": "✨ Coroa de Estrelas",
-    "reference": "Crown of Stars",
+    "reference": "m7-4",
     "level": 7,
     "kind": "completa",
     "status": "teste",
@@ -19701,12 +21209,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m7-5",
     "title": "✨ Bola de Brasa Controlável",
-    "reference": "Delayed Blast Fireball",
+    "reference": "m7-5",
     "level": 7,
     "kind": "completa",
     "status": "teste",
@@ -19741,12 +21252,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m7-6",
     "title": "✨ Palavra Sagrada",
-    "reference": "Divine Word",
+    "reference": "m7-6",
     "level": 7,
     "kind": "completa",
     "status": "teste",
@@ -19777,12 +21291,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m7-7",
     "title": "🌀 Transformação Dracônica",
-    "reference": "Draconic Transformation",
+    "reference": "m7-7",
     "level": 7,
     "kind": "completa",
     "status": "teste",
@@ -19818,12 +21335,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m7-8",
-    "title": "🌀 Transformação Dracônica (UA)",
-    "reference": "Draconic Transformation (UA)",
+    "title": "🌀 Metamorfose do Lagarto-Titã (Experimental)",
+    "reference": "m7-8",
     "level": 7,
     "kind": "completa",
     "status": "teste",
@@ -19845,8 +21365,8 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Transformação Dracônica (UA) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Transformação Dracônica (UA) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
+    "description": "Metamorfose do Lagarto-Titã (Experimental) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Metamorfose do Lagarto-Titã (Experimental) produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -19859,12 +21379,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "provenance": "microcosmo-original-rewrite",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo Experimental"
   },
   {
     "key": "m7-9",
     "title": "🕸️ Sonho com o véu azul",
-    "reference": "Dream of the Blue Veil",
+    "reference": "m7-9",
     "level": 7,
     "kind": "completa",
     "status": "teste",
@@ -19901,12 +21425,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m7-10",
     "title": "🌀 Eterealidade",
-    "reference": "Etherealness",
+    "reference": "m7-10",
     "level": 7,
     "kind": "completa",
     "status": "teste",
@@ -19941,12 +21468,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m7-11",
     "title": "🕯️ Dedo da Morte",
-    "reference": "Finger of Death",
+    "reference": "m7-11",
     "level": 7,
     "kind": "completa",
     "status": "teste",
@@ -19979,12 +21509,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m7-12",
     "title": "✨ Tempestade de Brasa",
-    "reference": "Fire Storm",
+    "reference": "m7-12",
     "level": 7,
     "kind": "completa",
     "status": "teste",
@@ -20017,12 +21550,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m7-13",
     "title": "✨ Prisão de Energia",
-    "reference": "Forcecage",
+    "reference": "m7-13",
     "level": 7,
     "kind": "completa",
     "status": "teste",
@@ -20058,12 +21594,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m7-14",
     "title": "🪞 Miragem",
-    "reference": "Mirage Arcane",
+    "reference": "m7-14",
     "level": 7,
     "kind": "completa",
     "status": "teste",
@@ -20096,12 +21635,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m7-15",
     "title": "🕸️ Palácio Vivo da Colônia",
-    "reference": "Mordenkainen's Magnificent Mansion",
+    "reference": "m7-15",
     "level": 7,
     "kind": "completa",
     "status": "teste",
@@ -20138,12 +21680,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m7-16",
     "title": "✨ Lâmina Autônoma de Cristal",
-    "reference": "Mordenkainen's Sword",
+    "reference": "m7-16",
     "level": 7,
     "kind": "completa",
     "status": "teste",
@@ -20180,12 +21724,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m7-17",
     "title": "🕸️ Viagem Planar",
-    "reference": "Plane Shift",
+    "reference": "m7-17",
     "level": 7,
     "kind": "completa",
     "status": "teste",
@@ -20223,12 +21769,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m7-18",
     "title": "🎵 Palavra de Poder: Dor",
-    "reference": "Power Word: Pain",
+    "reference": "m7-18",
     "level": 7,
     "kind": "completa",
     "status": "teste",
@@ -20261,12 +21810,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m7-19",
     "title": "✨ Rajada Prismática",
-    "reference": "Prismatic Spray",
+    "reference": "m7-19",
     "level": 7,
     "kind": "completa",
     "status": "teste",
@@ -20299,12 +21851,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m7-20",
     "title": "🪞 Projetar Imagem",
-    "reference": "Project Image",
+    "reference": "m7-20",
     "level": 7,
     "kind": "completa",
     "status": "teste",
@@ -20339,12 +21894,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m7-21",
     "title": "🌀 Recriar",
-    "reference": "Regenerate",
+    "reference": "m7-21",
     "level": 7,
     "kind": "completa",
     "status": "teste",
@@ -20380,12 +21938,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m7-22",
-    "title": "🕯️ Ressurreição",
-    "reference": "Resurrection",
+    "title": "🕯️ Retorno do Casulo Ancestral",
+    "reference": "m7-22",
     "level": 7,
     "kind": "completa",
     "status": "teste",
@@ -20406,8 +21967,8 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Carapaça Ancestral e Incenso de Raiz. Material: consumível e gasto ao concluir a conjuração. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Ressurreição reúne energia vital para curar ou preservar as criaturas escolhidas. Ferimentos, condições e efeitos especiais são tratados conforme os valores indicados abaixo.",
-    "effect": "Ressurreição reúne energia vital para curar ou preservar as criaturas escolhidas. Ferimentos, condições e efeitos especiais são tratados conforme os valores indicados abaixo. Aplique o efeito aos alvos indicados.",
+    "description": "Retorno do Casulo Ancestral reúne energia vital para curar ou preservar as criaturas escolhidas. Ferimentos, condições e efeitos especiais são tratados conforme os valores indicados abaixo.",
+    "effect": "Retorno do Casulo Ancestral reúne energia vital para curar ou preservar as criaturas escolhidas. Ferimentos, condições e efeitos especiais são tratados conforme os valores indicados abaixo. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -20420,12 +21981,16 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1",
+    "microcosmoContent": true
   },
   {
     "key": "m7-23",
     "title": "🌀 Inverter a Gravidade",
-    "reference": "Reverse Gravity",
+    "reference": "m7-23",
     "level": 7,
     "kind": "completa",
     "status": "teste",
@@ -20461,12 +22026,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m7-24",
     "title": "🌀 Sequradora",
-    "reference": "Sequester",
+    "reference": "m7-24",
     "level": 7,
     "kind": "completa",
     "status": "teste",
@@ -20500,12 +22068,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Invisível",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m7-25",
     "title": "🪞 Simulacro",
-    "reference": "Simulacrum",
+    "reference": "m7-25",
     "level": 7,
     "kind": "completa",
     "status": "teste",
@@ -20539,12 +22110,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m7-26",
     "title": "🛡️ Símbolo",
-    "reference": "Symbol",
+    "reference": "m7-26",
     "level": 7,
     "kind": "completa",
     "status": "teste",
@@ -20581,12 +22155,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Invisível",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m7-27",
     "title": "🕸️ Teleporte",
-    "reference": "Teleport",
+    "reference": "m7-27",
     "level": 7,
     "kind": "completa",
     "status": "teste",
@@ -20619,12 +22196,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m7-28",
     "title": "🕸️ Templo dos Deuses",
-    "reference": "Temple of the Gods",
+    "reference": "m7-28",
     "level": 7,
     "kind": "completa",
     "status": "teste",
@@ -20658,12 +22238,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m7-29",
     "title": "🕯️ Tether Essence",
-    "reference": "Tether Essence",
+    "reference": "m7-29",
     "level": 7,
     "kind": "completa",
     "status": "teste",
@@ -20697,12 +22280,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": "D"
+    "flags": "D",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m7-30",
     "title": "✨ Furacão",
-    "reference": "Whirlwind",
+    "reference": "m7-30",
     "level": 7,
     "kind": "completa",
     "status": "teste",
@@ -20737,12 +22323,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Contido",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m8-1",
     "title": "🕯️ Murcha Horrenda do Brejo",
-    "reference": "Abi-Dalzim's Horrid Wilting",
+    "reference": "m8-1",
     "level": 8,
     "kind": "completa",
     "status": "teste",
@@ -20779,12 +22368,14 @@ globalThis.CODEX_SPELL_DATA = [
     "higherLevels": "",
     "flags": "",
     "microcosmoContent": true,
-    "legacyReferenceInternal": true
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m8-2",
     "title": "🌀 Formas Animais",
-    "reference": "Animal Shapes",
+    "reference": "m8-2",
     "level": 8,
     "kind": "completa",
     "status": "teste",
@@ -20815,12 +22406,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Inconsciente",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m8-3",
     "title": "🛡️ Campo Antimagia",
-    "reference": "Antimagic Field",
+    "reference": "m8-3",
     "level": 8,
     "kind": "completa",
     "status": "teste",
@@ -20855,12 +22449,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m8-4",
     "title": "🎵 Antipatia / Simpatia",
-    "reference": "Antipathy/Sympathy",
+    "reference": "m8-4",
     "level": 8,
     "kind": "completa",
     "status": "teste",
@@ -20896,12 +22493,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m8-5",
     "title": "🕯️ Clonar",
-    "reference": "Clone",
+    "reference": "m8-5",
     "level": 8,
     "kind": "completa",
     "status": "teste",
@@ -20935,12 +22535,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m8-6",
     "title": "🌀 Controlar o Clima",
-    "reference": "Control Weather",
+    "reference": "m8-6",
     "level": 8,
     "kind": "completa",
     "status": "teste",
@@ -20976,12 +22579,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m8-7",
     "title": "✨ Estrela Negra",
-    "reference": "Dark Star",
+    "reference": "m8-7",
     "level": 8,
     "kind": "completa",
     "status": "teste",
@@ -21015,12 +22621,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": "DG"
+    "flags": "DG",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m8-8",
     "title": "🕸️ Semiplano",
-    "reference": "Demiplane",
+    "reference": "m8-8",
     "level": 8,
     "kind": "completa",
     "status": "teste",
@@ -21053,12 +22662,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m8-9",
     "title": "🎵 Dominar Monstro",
-    "reference": "Dominate Monster",
+    "reference": "m8-9",
     "level": 8,
     "kind": "completa",
     "status": "teste",
@@ -21092,12 +22704,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Enfeitiçado",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m8-10",
     "title": "✨ Terremoto",
-    "reference": "Earthquake",
+    "reference": "m8-10",
     "level": 8,
     "kind": "completa",
     "status": "teste",
@@ -21133,12 +22748,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Caído",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m8-11",
     "title": "🎵 Enfraquecer Intelecto",
-    "reference": "Feeblemind",
+    "reference": "m8-11",
     "level": 8,
     "kind": "completa",
     "status": "teste",
@@ -21175,12 +22793,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m8-12",
     "title": "🌀 Loquacidade",
-    "reference": "Glibness",
+    "reference": "m8-12",
     "level": 8,
     "kind": "completa",
     "status": "teste",
@@ -21212,12 +22833,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m8-13",
     "title": "🛡️ Aura Sagrada",
-    "reference": "Holy Aura",
+    "reference": "m8-13",
     "level": 8,
     "kind": "completa",
     "status": "teste",
@@ -21251,12 +22875,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Cego",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m8-14",
     "title": "🪞 Titã Ilusório",
-    "reference": "Illusory Dragon",
+    "reference": "m8-14",
     "level": 8,
     "kind": "completa",
     "status": "teste",
@@ -21287,12 +22914,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Amedrontado",
     "repeatSave": "Pode repetir a Salvaguarda conforme indicado pela magia, encerrando o efeito se passar.",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m8-15",
     "title": "🕸️ Nuvem Incendiária",
-    "reference": "Incendiary Cloud",
+    "reference": "m8-15",
     "level": 8,
     "kind": "completa",
     "status": "teste",
@@ -21325,12 +22955,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m8-16",
     "title": "✨ Escuridão Enlouquecedora",
-    "reference": "Maddening Darkness",
+    "reference": "m8-16",
     "level": 8,
     "kind": "completa",
     "status": "teste",
@@ -21365,12 +22998,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m8-17",
     "title": "🕸️ Maze",
-    "reference": "Maze",
+    "reference": "m8-17",
     "level": 8,
     "kind": "completa",
     "status": "teste",
@@ -21401,12 +23037,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m8-18",
     "title": "🕸️ Fortaleza Poderosa",
-    "reference": "Mighty Fortress",
+    "reference": "m8-18",
     "level": 8,
     "kind": "completa",
     "status": "teste",
@@ -21440,12 +23079,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m8-19",
     "title": "🛡️ Limpar a Mente",
-    "reference": "Mind Blank",
+    "reference": "m8-19",
     "level": 8,
     "kind": "completa",
     "status": "teste",
@@ -21477,12 +23119,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m8-20",
     "title": "🎵 Palavra de Poder Atordoar",
-    "reference": "Power Word: Stun",
+    "reference": "m8-20",
     "level": 8,
     "kind": "completa",
     "status": "teste",
@@ -21516,12 +23161,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Atordoado",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m8-21",
     "title": "🕸️ Reality Break",
-    "reference": "Reality Break",
+    "reference": "m8-21",
     "level": 8,
     "kind": "completa",
     "status": "teste",
@@ -21555,12 +23203,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": "DC"
+    "flags": "DC",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m8-22",
     "title": "✨ Raio de sol",
-    "reference": "Sunburst",
+    "reference": "m8-22",
     "level": 8,
     "kind": "completa",
     "status": "teste",
@@ -21597,12 +23248,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Cego",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m8-23",
     "title": "✨ Telepatia",
-    "reference": "Telepathy",
+    "reference": "m8-23",
     "level": 8,
     "kind": "completa",
     "status": "teste",
@@ -21636,12 +23290,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m8-24",
     "title": "🕸️ Tsunami",
-    "reference": "Tsunami",
+    "reference": "m8-24",
     "level": 8,
     "kind": "completa",
     "status": "teste",
@@ -21672,12 +23329,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m9-1",
     "title": "✨ Projeção Astral",
-    "reference": "Astral Projection",
+    "reference": "m9-1",
     "level": 9,
     "kind": "completa",
     "status": "teste",
@@ -21713,12 +23373,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m9-2",
     "title": "🕸️ Lâmina do Desastre",
-    "reference": "Blade of Disaster",
+    "reference": "m9-2",
     "level": 9,
     "kind": "completa",
     "status": "teste",
@@ -21751,12 +23414,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m9-3",
     "title": "👁️ Previdência",
-    "reference": "Foresight",
+    "reference": "m9-3",
     "level": 9,
     "kind": "completa",
     "status": "teste",
@@ -21793,12 +23459,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m9-4",
     "title": "🕸️ Portão",
-    "reference": "Gate",
+    "reference": "m9-4",
     "level": 9,
     "kind": "completa",
     "status": "teste",
@@ -21835,12 +23504,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m9-5",
     "title": "🛡️ Prisão",
-    "reference": "Imprisonment",
+    "reference": "m9-5",
     "level": 9,
     "kind": "completa",
     "status": "teste",
@@ -21875,12 +23547,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m9-6",
     "title": "🛡️ Invulnerabilidade",
-    "reference": "Invulnerability",
+    "reference": "m9-6",
     "level": 9,
     "kind": "completa",
     "status": "teste",
@@ -21914,12 +23589,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m9-7",
     "title": "✨ Cura em Massa",
-    "reference": "Mass Heal",
+    "reference": "m9-7",
     "level": 9,
     "kind": "completa",
     "status": "teste",
@@ -21950,12 +23628,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m9-8",
     "title": "🌀 Polimorfo de Massa",
-    "reference": "Mass Polymorph",
+    "reference": "m9-8",
     "level": 9,
     "kind": "completa",
     "status": "teste",
@@ -21991,12 +23672,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m9-9",
     "title": "✨ Chuva de Meteoros",
-    "reference": "Meteor Swarm",
+    "reference": "m9-9",
     "level": 9,
     "kind": "completa",
     "status": "teste",
@@ -22028,12 +23712,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m9-10",
     "title": "✨ Palavra de Poder: Curar",
-    "reference": "Power Word: Heal",
+    "reference": "m9-10",
     "level": 9,
     "kind": "completa",
     "status": "teste",
@@ -22065,12 +23752,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m9-11",
     "title": "🎵 Palavra de Poder Matar",
-    "reference": "Power Word: Kill",
+    "reference": "m9-11",
     "level": 9,
     "kind": "completa",
     "status": "teste",
@@ -22104,12 +23794,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m9-12",
     "title": "🛡️ Muralha Prismática",
-    "reference": "Prismatic Wall",
+    "reference": "m9-12",
     "level": 9,
     "kind": "completa",
     "status": "teste",
@@ -22141,12 +23834,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Cego",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m9-13",
     "title": "🎵 Grito Psíquico",
-    "reference": "Psychic Scream",
+    "reference": "m9-13",
     "level": 9,
     "kind": "completa",
     "status": "teste",
@@ -22180,12 +23876,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Atordoado",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m9-14",
     "title": "✨ Vazio Voraz",
-    "reference": "Ravenous Void",
+    "reference": "m9-14",
     "level": 9,
     "kind": "completa",
     "status": "teste",
@@ -22219,12 +23918,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Contido",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": "DG"
+    "flags": "DG",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m9-15",
     "title": "🌀 Alterar Forma",
-    "reference": "Shapechange",
+    "reference": "m9-15",
     "level": 9,
     "kind": "completa",
     "status": "teste",
@@ -22259,12 +23961,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Inconsciente",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m9-16",
     "title": "🕸️ Tempestade da Vingança",
-    "reference": "Storm of Vengeance",
+    "reference": "m9-16",
     "level": 9,
     "kind": "completa",
     "status": "teste",
@@ -22295,12 +24000,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Surdo",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m9-17",
     "title": "🕯️ Devastação do Tempo",
-    "reference": "Time Ravage",
+    "reference": "m9-17",
     "level": 9,
     "kind": "completa",
     "status": "teste",
@@ -22334,12 +24042,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": "DC"
+    "flags": "DC",
+    "provenance": "microcosmo-adapted-review",
+    "license": "Microcosmo",
+    "sourceCatalog": "Microcosmo"
   },
   {
     "key": "m9-18",
     "title": "🌀 Parar o Tempo",
-    "reference": "Time Stop",
+    "reference": "m9-18",
     "level": 9,
     "kind": "completa",
     "status": "teste",
@@ -22371,12 +24082,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m9-19",
     "title": "🌀 Polimorfia Total",
-    "reference": "True Polymorph",
+    "reference": "m9-19",
     "level": 9,
     "kind": "completa",
     "status": "teste",
@@ -22412,12 +24126,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m9-20",
     "title": "🕯️ Ressurreição Verdadeira",
-    "reference": "True Resurrection",
+    "reference": "m9-20",
     "level": 9,
     "kind": "completa",
     "status": "teste",
@@ -22452,12 +24169,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m9-21",
     "title": "🪞 Estranho",
-    "reference": "Weird",
+    "reference": "m9-21",
     "level": 9,
     "kind": "completa",
     "status": "teste",
@@ -22489,12 +24209,15 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Amedrontado",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   },
   {
     "key": "m9-22",
     "title": "🕸️ Desejo",
-    "reference": "Wish",
+    "reference": "m9-22",
     "level": 9,
     "kind": "completa",
     "status": "teste",
@@ -22526,6 +24249,9 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "provenance": "srd-5.2.1-cc-by-4.0",
+    "license": "CC-BY-4.0",
+    "sourceCatalog": "SRD 5.2.1"
   }
 ];

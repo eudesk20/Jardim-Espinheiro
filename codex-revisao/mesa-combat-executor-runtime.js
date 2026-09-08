@@ -78,7 +78,7 @@
     const details=`<b style="color:${caster.color}">${esc(caster.name)}</b> usa <b>${esc(item.name)}</b> em <b>${esc(target.name)}</b><br>📏 ${dist.toFixed(1)} m / ${max} m${slot.level?` • 🔷 Slot ${slot.level}º gasto`:""}<br>${rollInfo}${item.damageType&&amount?`<br>💥 ${amount} ${esc(item.damageType)}`:""}`;
     await hpEffect(caster,target,amount,effect,item,details);
     for(const extra of secondaryEffects){if(!extra?.target||(+extra.amount||0)<=0)continue;const extraItem={...item,name:extra.reason||item.name};await hpEffect(caster,extra.target,+extra.amount||0,extra.effect||"damage",extraItem,`🌟 <b>${esc(extra.reason||"Reação Especial")}</b><br>${esc(extra.target.name||"Alvo")} recebe ${+extra.amount||0} de dano redirecionado.`)}
-    if(success&&/thorn whip|chicote espinhoso/i.test(`${item.reference||""} ${item.name||""}`)){const moved=pullToward(caster,target,3);log(moved?`🌿 <b>${esc(target.name)}</b> foi puxado até 3 m em direção a ${esc(caster.name)}.`:`🌿 O puxão não moveu ${esc(target.name)} (tamanho/posição incompatível).`,caster.color)}
+    if(success&&/truques-43|chicote espinhoso/i.test(`${item.reference||""} ${item.name||""}`)){const moved=pullToward(caster,target,3);log(moved?`🌿 <b>${esc(target.name)}</b> foi puxado até 3 m em direção a ${esc(caster.name)}.`:`🌿 O puxão não moveu ${esc(target.name)} (tamanho/posição incompatível).`,caster.color)}
   }
 
   document.addEventListener("click",e=>{const btn=e.target?.closest?.("#tokenCard [data-roll]");if(!btn)return;const caster=selected();if(!caster)return;const m=String(btn.dataset.roll||"").match(/^(attack|spell):(\d+)$/);if(!m)return;e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();start(caster,m[1],+m[2])},true);

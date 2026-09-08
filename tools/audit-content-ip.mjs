@@ -16,9 +16,11 @@ const races = context.CODEX_RACE_DATA || {};
 const items = context.CODEX_ITEM_DATA || [];
 const creatures = context.MICROCOSMOS_CREATURES_IPM || [];
 const named = /(Bigby|Mordenkainen|Tenser|Tasha|Aganazzar|Abi-Dalzim|Otiluke|Otto|Drawmij|Jim|Hadar|Agathys|Raulothim|Fizban|Nathair|Rary|Leomund|Nystul|Snilloc|Maximilian|Galder|Kelemvor|Iggwilv|Ashardalon|Vrock|Hezrou|Barlgura|Knowbot)/i;
-const experimental = spells.filter(item => /\(UA\)/i.test(item.reference || ""));
+const experimental = spells.filter(item => item.provenance === "microcosmo-original-rewrite" || /\(Experimental\)/i.test(item.title || ""));
 const namedReferences = spells.filter(item => named.test(item.reference || ""));
 const renamed = spells.filter(item => item.microcosmoContent);
+const srd = spells.filter(item => item.provenance === "srd-5.2.1-cc-by-4.0");
+const adaptedReview = spells.filter(item => item.provenance === "microcosmo-adapted-review");
 const duplicateTitles = [...spells.reduce((map, item) => {
   const key = String(item.title || "").toLocaleLowerCase("pt-BR");
   map.set(key, [...(map.get(key) || []), item.key]);
@@ -38,8 +40,10 @@ const lines = [
   `- Itens estruturados: ${items.length}.`,
   `- Criaturas IPM estruturadas: ${creatures.length}.`,
   `- Magias: ${spells.length}.`,
-  `- Magias experimentais provenientes de UA: ${experimental.length} (alto risco; reescrita ou retirada antes de comercialização).`,
-  `- Magias com nomes próprios ou criaturas reconhecíveis na referência interna: ${namedReferences.length}.`,
+  `- Magias experimentais rebatizadas e reescritas para o Microcosmo: ${experimental.length}.`,
+  `- Magias classificadas no SRD 5.2.1: ${srd.length}.`,
+  `- Magias adaptadas que ainda pedem revisão editorial humana: ${adaptedReview.length}.`,
+  `- Referências internas neutralizadas: ${spells.filter(item => item.reference === item.key).length} de ${spells.length}.`,
   `- Magias já renomeadas nesta migração: ${renamed.length}.`,
   `- Magias sem metadado individual de licença/procedência: ${spells.filter(item => !item.license && !item.provenance).length}.`,
   `- Títulos duplicados no catálogo: ${duplicateTitles.length}.`,
@@ -53,24 +57,23 @@ const lines = [
   "| Classes | IDs técnicos preservados; nomes públicos migrados para o vocabulário do Microcosmo | Reescrever progressões e características que ainda reproduzam estrutura externa |",
   "| Equipamentos | Predominantemente genéricos ou tematizados | Acrescentar procedência por item nas próximas revisões |",
   "| Grimório SRD | Pode ser usado com atribuição CC BY 4.0 | Confirmar item a item contra o SRD oficial e manter a atribuição |",
-  "| Grimório UA/suplementos | Não há licença aberta presumida | Substituir nome, texto e expressão mecânica; renomear sozinho não basta |",
-  "| Ferramentas de importação | Há consultas a Wikidot, 5etools e APIs comunitárias | Não usar como fonte editorial de uma versão comercial |",
+  "| Antigo grimório UA | As 50 entradas foram desvinculadas dos nomes externos e reescritas como conteúdo experimental do Microcosmo | Fazer revisão humana final antes de declarar versão comercial |",
+  "| Ferramentas de importação | Importadores comunitários e caches externos foram removidos | Regenerações futuras devem usar somente fontes oficiais/licenciadas |",
   "| Imagens enviadas pelo usuário | Conteúdo externo não empacotado | Exibir aviso de responsabilidade no upload |",
   "",
   "## Medidas já aplicadas",
   "",
   "- IDs de classes e chaves de magia foram preservados para não quebrar fichas e automações.",
   "- Doze nomes públicos de classes foram convertidos para nomes próprios do Microcosmo; Bastião, Cozinheiro e Engenheiro já eram distintivos e foram mantidos.",
-  `- ${renamed.length} magias com nomes próprios ou criaturas reconhecíveis receberam títulos do Microcosmo.`,
+  `- ${renamed.length} magias de maior risco receberam títulos do Microcosmo; todas as ${spells.length} referências técnicas usam agora somente suas chaves internas.`,
+  "- O grimório legado foi substituído por uma página única gerada diretamente do catálogo atual.",
+  "- Importadores comunitários, cache de descrições externas e tabela antiga de traduções foram removidos do projeto.",
   "- Foi criado `CONTENT_ATTRIBUTION.md` com o crédito exigido para o conteúdo SRD.",
   "",
   "## Pendências que impedem declarar o catálogo totalmente original",
   "",
-  "1. Classificar as 574 magias contra a lista oficial do SRD 5.2.1.",
-  "2. Retirar ou reescrever integralmente as 50 entradas UA; trocar apenas o título não licencia texto ou mecânica expressiva.",
-  "3. Substituir as referências inglesas internas por chaves neutras depois de converter as regras especiais que ainda consultam `reference`.",
-  "4. Desativar o uso editorial dos importadores comunitários e manter apenas fontes oficiais/licenciadas.",
-  "5. Fazer revisão humana de similaridade de descrições, progressões, listas de classe, talentos e equipamentos.",
+  `1. Revisar humanamente as ${adaptedReview.length} magias classificadas por comparação automática como adaptações fora do SRD 5.2.1.`,
+  "2. Fazer revisão humana final de similaridade de progressões, listas de classe, talentos e equipamentos antes de comercializar.",
   "",
   "## Apêndice A - Classes (inventário completo)", "",
   ...Object.entries(classes).map(([id, item]) => `- ${id}: ${item.name}`),
@@ -82,7 +85,7 @@ const lines = [
   ...creatures.map(item => `- ${item.id || "sem-id"}: ${label(item)}`),
   "", "## Apêndice E - Magias (inventário completo)", "",
   ...spells.map(item => {
-    const flags = [/\(UA\)/i.test(item.reference || "") ? "experimental" : "", named.test(item.reference || "") ? "referência reconhecível" : "", item.microcosmoContent ? "nome migrado" : ""].filter(Boolean);
+    const flags = [item.provenance === "microcosmo-original-rewrite" ? "experimental do Microcosmo" : "", item.provenance === "srd-5.2.1-cc-by-4.0" ? "SRD 5.2.1 / CC BY 4.0" : "", item.provenance === "microcosmo-adapted-review" ? "adaptação em revisão" : "", item.microcosmoContent ? "nome migrado" : ""].filter(Boolean);
     return `- ${item.key}: ${item.title} — nível ${item.level}${flags.length ? ` — ${flags.join(", ")}` : ""}`;
   }),
   "", "## Apêndice F - Duplicidades", "",

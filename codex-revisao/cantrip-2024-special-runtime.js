@@ -6,7 +6,7 @@
   globalThis.MICROCOSMOS_CANTRIP_2024_SPECIAL=true;
 
   const PATCH={
-    "Blade Ward":{
+    "truques-2":{
       title:"🛡️ Proteção Contra Lâminas",
       cast:"1 Ação",
       range:"Pessoal",
@@ -17,7 +17,7 @@
       limitation:"A proteção exige Concentração e não reduz dano automaticamente; ela interfere na jogada de ataque.",
       damage:"",healing:"",attack:false,save:"",higherLevels:""
     },
-    "Guidance":{
+    "truques-15":{
       title:"👁️ Orientação",
       cast:"1 Ação",
       range:"Toque",
@@ -27,7 +27,7 @@
       effect:"Ao conjurar, escolha uma perícia. Enquanto a magia durar, o alvo adiciona 1d4 a qualquer teste de habilidade que use a perícia escolhida.",
       limitation:"Exige Concentração e o bônus vale apenas para a perícia escolhida quando a magia foi conjurada."
     },
-    "Resistance":{
+    "truques-34":{
       title:"🛡️ Resistência",
       cast:"1 Ação",
       range:"Toque",
@@ -37,7 +37,7 @@
       effect:"Escolha ao conjurar: Ácido, Contundente, Frio, Fogo, Relâmpago, Necrótico, Perfurante, Veneno, Radiante, Cortante ou Trovão. Quando o alvo sofrer dano do tipo escolhido antes da magia terminar, reduza o dano total em 1d4. A criatura só pode receber essa redução uma vez por turno.",
       limitation:"Exige Concentração, funciona apenas contra o tipo de dano escolhido e reduz dano no máximo uma vez por turno."
     },
-    "True Strike":{
+    "truques-46":{
       title:"👁️ Golpe Certeiro",
       cast:"1 Ação",
       range:"Pessoal",
@@ -49,7 +49,7 @@
       attack:true,
       higherLevels:"Nível 5: +1d6 Radiante; nível 11: +2d6; nível 17: +3d6."
     },
-    "Shillelagh":{
+    "truques-38":{
       title:"🌀 Bastão Encantado",
       cast:"1 Ação Bônus",
       range:"Pessoal",
@@ -60,7 +60,7 @@
       limitation:"A magia termina se você conjurá-la novamente ou soltar a arma.",
       higherLevels:"Nível 5: d10; nível 11: d12; nível 17: 2d6."
     },
-    "Spare the Dying":{
+    "truques-40":{
       title:"🕯️ Estabilizar Moribundo",
       cast:"1 Ação",
       range:"4,5 m",
@@ -72,7 +72,7 @@
       healing:"",
       higherLevels:"Nível 5: alcance 9 m; nível 11: 18 m; nível 17: 36 m."
     },
-    "Shocking Grasp":{
+    "truques-39":{
       title:"✨ Toque Elétrico",
       cast:"1 Ação",
       range:"Toque",
