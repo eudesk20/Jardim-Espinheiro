@@ -2076,7 +2076,7 @@ globalThis.CODEX_SPELL_DATA = [
   },
   {
     "key": "m1-6",
-    "title": "🛡️ Armadura de Agathys",
+    "title": "🛡️ Casca do Inverno Profundo",
     "reference": "Armor of Agathys",
     "level": 1,
     "kind": "completa",
@@ -2097,8 +2097,8 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Armadura de Agathys cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar.",
-    "effect": "Armadura de Agathys cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Aplique o efeito aos alvos indicados.",
+    "description": "Casca do Inverno Profundo cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar.",
+    "effect": "Casca do Inverno Profundo cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -2111,11 +2111,13 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m1-7",
-    "title": "🕸️ Braços de Hadar",
+    "title": "🕸️ Tentáculos do Vazio-Raiz",
     "reference": "Arms of Hadar",
     "level": 1,
     "kind": "completa",
@@ -2133,8 +2135,8 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "raio de 3 m a partir do conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "description": "Braços de Hadar produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Braços de Hadar produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de FOR Falha: Sofre 2d6 Necrótico de dano. Sucesso: Sofre metade do dano.",
+    "description": "Tentáculos do Vazio-Raiz produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Tentáculos do Vazio-Raiz produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de FOR Falha: Sofre 2d6 Necrótico de dano. Sucesso: Sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d6 Necrótico",
     "healing": "",
@@ -2147,7 +2149,9 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m1-8",
@@ -4117,7 +4121,7 @@ globalThis.CODEX_SPELL_DATA = [
   },
   {
     "key": "m1-59",
-    "title": "✨ Míssil Mágico de Jim",
+    "title": "✨ Sementes Erráticas de Cristal",
     "reference": "Jim's Magic Missile",
     "level": 1,
     "kind": "completa",
@@ -4138,8 +4142,8 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Míssil Mágico de Jim produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Míssil Mágico de Jim produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Faça um ataque mágico contra cada alvo indicado Se acertar, o alvo sofre 2d4 Força + 5d4 Força de dano",
+    "description": "Sementes Erráticas de Cristal produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Sementes Erráticas de Cristal produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Faça um ataque mágico contra cada alvo indicado Se acertar, o alvo sofre 2d4 Força + 5d4 Força de dano",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d4 Força + 5d4 Força",
     "healing": "",
@@ -4152,7 +4156,9 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m1-60",
@@ -4976,7 +4982,7 @@ globalThis.CODEX_SPELL_DATA = [
   },
   {
     "key": "m1-81",
-    "title": "✨ Mistura cáustica de Tasha",
+    "title": "✨ Infusão Cáustica da Vespa",
     "reference": "Tasha's Caustic Brew",
     "level": 1,
     "kind": "completa",
@@ -4998,8 +5004,8 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Mistura cáustica de Tasha produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Mistura cáustica de Tasha produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de DES Falha: Sofre 2d4 Ácido de dano. Sucesso: Não sofre o dano.",
+    "description": "Infusão Cáustica da Vespa produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Infusão Cáustica da Vespa produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de DES Falha: Sofre 2d4 Ácido de dano. Sucesso: Não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d4 Ácido",
     "healing": "",
@@ -5012,11 +5018,13 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 2d4 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m1-82",
-    "title": "🎵 O riso hediondo de Tasha",
+    "title": "🎵 Riso Desconcertante dos Grilos",
     "reference": "Tasha's Hideous Laughter",
     "level": 1,
     "kind": "completa",
@@ -5038,8 +5046,8 @@ globalThis.CODEX_SPELL_DATA = [
       "folha_serena"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Feromônio Ressonante e Folha Serena. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "O riso hediondo de Tasha afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito.",
-    "effect": "O riso hediondo de Tasha afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de SAB Falha: Fica Incapacitado. Sucesso: Não fica Incapacitado. Pode repetir a Salvaguarda no final de cada turno, encerrando o efeito se passar.",
+    "description": "Riso Desconcertante dos Grilos afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito.",
+    "effect": "Riso Desconcertante dos Grilos afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de SAB Falha: Fica Incapacitado. Sucesso: Não fica Incapacitado. Pode repetir a Salvaguarda no final de cada turno, encerrando o efeito se passar.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -5052,11 +5060,13 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Incapacitado",
     "repeatSave": "Pode repetir a Salvaguarda no final de cada turno, encerrando o efeito se passar.",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m1-83",
-    "title": "🕸️ Disco Flutuante de Tenser",
+    "title": "🕸️ Disco de Carga do Orvalho",
     "reference": "Tenser's Floating Disk",
     "level": 1,
     "kind": "completa",
@@ -5077,8 +5087,8 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Disco Flutuante de Tenser produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Disco Flutuante de Tenser produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
+    "description": "Disco de Carga do Orvalho produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Disco de Carga do Orvalho produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -5091,7 +5101,9 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m1-84",
@@ -5397,7 +5409,7 @@ globalThis.CODEX_SPELL_DATA = [
   },
   {
     "key": "m2-1",
-    "title": "✨ Aganazzar's Scorcher",
+    "title": "✨ Rajada Incandescente de Resina",
     "reference": "Aganazzar's Scorcher",
     "level": 2,
     "kind": "completa",
@@ -5419,8 +5431,8 @@ globalThis.CODEX_SPELL_DATA = [
       "carvao_po"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Semente de Brasa e Carvão em Pó. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Aganazzar's Scorcher produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Aganazzar's Scorcher produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de DES Falha: Sofre 3d8 Fogo de dano. Sucesso: Sofre metade do dano.",
+    "description": "Rajada Incandescente de Resina produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Rajada Incandescente de Resina produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de DES Falha: Sofre 3d8 Fogo de dano. Sucesso: Sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "3d8 Fogo",
     "healing": "",
@@ -5433,7 +5445,9 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d8 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m2-2",
@@ -7189,7 +7203,7 @@ globalThis.CODEX_SPELL_DATA = [
   },
   {
     "key": "m2-46",
-    "title": "🎵 Moeda Brilhante de Jim",
+    "title": "🎵 Moeda-Lume do Trapaceiro",
     "reference": "Jim's Glowing Coin",
     "level": 2,
     "kind": "completa",
@@ -7210,8 +7224,8 @@ globalThis.CODEX_SPELL_DATA = [
       "folha_serena"
     ],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. M: Feromônio Ressonante e Folha Serena. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Moeda Brilhante de Jim produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Moeda Brilhante de Jim produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de SAB Falha: Sofre o efeito descrito pela magia. Sucesso: Evita o efeito da magia.",
+    "description": "Moeda-Lume do Trapaceiro produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Moeda-Lume do Trapaceiro produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de SAB Falha: Sofre o efeito descrito pela magia. Sucesso: Evita o efeito da magia.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -7224,7 +7238,9 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m2-47",
@@ -7548,7 +7564,7 @@ globalThis.CODEX_SPELL_DATA = [
   },
   {
     "key": "m2-55",
-    "title": "🌀 Aperto Terrestre de Maximiliano",
+    "title": "🌀 Punho de Terra Enraizada",
     "reference": "Maximillian's Earthen Grasp",
     "level": 2,
     "kind": "completa",
@@ -7570,8 +7586,8 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sementes Nutritivas e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Aperto Terrestre de Maximiliano transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia.",
-    "effect": "Aperto Terrestre de Maximiliano transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. O alvo faz uma Salvaguarda de FOR Falha: Sofre 2d6 Concussão de dano e fica Contido. Sucesso: Sofre metade do dano e não fica Contido.",
+    "description": "Punho de Terra Enraizada transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia.",
+    "effect": "Punho de Terra Enraizada transforma uma criatura, objeto ou parte do ambiente. A mudança dura pelo tempo indicado e termina com a magia. O alvo faz uma Salvaguarda de FOR Falha: Sofre 2d6 Concussão de dano e fica Contido. Sucesso: Sofre metade do dano e não fica Contido.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d6 Concussão",
     "healing": "",
@@ -7584,7 +7600,9 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Contido",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m2-56",
@@ -7857,7 +7875,7 @@ globalThis.CODEX_SPELL_DATA = [
   },
   {
     "key": "m2-63",
-    "title": "🪞 Nathair's Mischief",
+    "title": "🪞 Travessura do Pólen Feérico",
     "reference": "Nathair's Mischief",
     "level": 2,
     "kind": "completa",
@@ -7880,8 +7898,8 @@ globalThis.CODEX_SPELL_DATA = [
       "lente_vidro"
     ],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. M: Pó de Espelho de Orvalho e Lente de Vidro. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Nathair's Mischief produz um efeito de ilusão dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Nathair's Mischief produz um efeito de ilusão dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
+    "description": "Travessura do Pólen Feérico produz um efeito de ilusão dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Travessura do Pólen Feérico produz um efeito de ilusão dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -7894,11 +7912,13 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m2-64",
-    "title": "🪞 Nathair's Mischief (UA)",
+    "title": "🪞 Travessura Experimental do Pólen",
     "reference": "Nathair's Mischief (UA)",
     "level": 2,
     "kind": "completa",
@@ -7921,8 +7941,8 @@ globalThis.CODEX_SPELL_DATA = [
       "lente_vidro"
     ],
     "conjuration": "S: gesto que orienta e dá forma à manifestação. M: Pó de Espelho de Orvalho e Lente de Vidro. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Nathair's Mischief (UA) produz um efeito de ilusão dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Nathair's Mischief (UA) produz um efeito de ilusão dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
+    "description": "Travessura Experimental do Pólen produz um efeito de ilusão dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Travessura Experimental do Pólen produz um efeito de ilusão dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -7935,11 +7955,13 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m2-65",
-    "title": "🪞 A Aura Esotérica de Nystul",
+    "title": "🪞 Aura de Seiva Enganadora",
     "reference": "Nystul's Magic Aura",
     "level": 2,
     "kind": "completa",
@@ -7960,8 +7982,8 @@ globalThis.CODEX_SPELL_DATA = [
       "lente_vidro"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Espelho de Orvalho e Lente de Vidro. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "A Aura Esotérica de Nystul cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar.",
-    "effect": "A Aura Esotérica de Nystul cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Aplique o efeito aos alvos indicados.",
+    "description": "Aura de Seiva Enganadora cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar.",
+    "effect": "Aura de Seiva Enganadora cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -7974,7 +7996,9 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m2-66",
@@ -8523,7 +8547,7 @@ globalThis.CODEX_SPELL_DATA = [
   },
   {
     "key": "m2-80",
-    "title": "✨ Enxame de Bolas de Neve de Snilloc",
+    "title": "✨ Enxame de Granizo-Semente",
     "reference": "Snilloc's Snowball Swarm",
     "level": 2,
     "kind": "completa",
@@ -8545,8 +8569,8 @@ globalThis.CODEX_SPELL_DATA = [
       "perola_orvalho"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Orvalho Purificado e Pérola de Orvalho Puríssimo. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Enxame de Bolas de Neve de Snilloc libera energia contra o alvo ou a área escolhida.",
-    "effect": "Enxame de Bolas de Neve de Snilloc libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de DES Falha: Sofre 3d6 Frio de dano. Sucesso: Sofre metade do dano.",
+    "description": "Enxame de Granizo-Semente libera energia contra o alvo ou a área escolhida.",
+    "effect": "Enxame de Granizo-Semente libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de DES Falha: Sofre 3d6 Frio de dano. Sucesso: Sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "3d6 Frio",
     "healing": "",
@@ -8559,7 +8583,9 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m2-81",
@@ -8846,7 +8872,7 @@ globalThis.CODEX_SPELL_DATA = [
   },
   {
     "key": "m2-88",
-    "title": "🎵 O Chicote Mental de Tasha",
+    "title": "🎵 Chicote Mental da Cigarra",
     "reference": "Tasha's Mind Whip",
     "level": 2,
     "kind": "completa",
@@ -8865,8 +8891,8 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 27 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "description": "O Chicote Mental de Tasha afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito.",
-    "effect": "O Chicote Mental de Tasha afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de INT Falha: Sofre 3d6 Psíquico de dano. Sucesso: Sofre metade do dano.",
+    "description": "Chicote Mental da Cigarra afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito.",
+    "effect": "Chicote Mental da Cigarra afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de INT Falha: Sofre 3d6 Psíquico de dano. Sucesso: Sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "3d6 Psíquico",
     "healing": "",
@@ -8879,7 +8905,9 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, escolha um alvo adicional por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m2-89",
@@ -9357,7 +9385,7 @@ globalThis.CODEX_SPELL_DATA = [
   },
   {
     "key": "m3-4",
-    "title": "🌀 Passo de Ashardalon",
+    "title": "🌀 Passo da Salamandra de Brasa",
     "reference": "Ashardalon's Stride",
     "level": 3,
     "kind": "completa",
@@ -9377,8 +9405,8 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Conjurador",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "description": "Passo de Ashardalon altera movimento, distância ou posição. O destino precisa estar dentro do alcance e ter espaço livre para receber a criatura.",
-    "effect": "Passo de Ashardalon altera movimento, distância ou posição. O destino precisa estar dentro do alcance e ter espaço livre para receber a criatura. O alvo sofre 1d6 Fogo de dano",
+    "description": "Passo da Salamandra de Brasa altera movimento, distância ou posição. O destino precisa estar dentro do alcance e ter espaço livre para receber a criatura.",
+    "effect": "Passo da Salamandra de Brasa altera movimento, distância ou posição. O destino precisa estar dentro do alcance e ter espaço livre para receber a criatura. O alvo sofre 1d6 Fogo de dano",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "1d6 Fogo",
     "healing": "",
@@ -9391,7 +9419,9 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m3-5",
@@ -10406,7 +10436,7 @@ globalThis.CODEX_SPELL_DATA = [
   },
   {
     "key": "m3-31",
-    "title": "🕸️ Torre de Galder",
+    "title": "🕸️ Torre de Casca Súbita",
     "reference": "Galder's Tower",
     "level": 3,
     "kind": "completa",
@@ -10427,8 +10457,8 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Torre de Galder produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Torre de Galder produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
+    "description": "Torre de Casca Súbita produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Torre de Casca Súbita produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -10441,7 +10471,9 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m3-32",
@@ -10646,7 +10678,7 @@ globalThis.CODEX_SPELL_DATA = [
   },
   {
     "key": "m3-37",
-    "title": "🕸️ Fome de Hadar",
+    "title": "🕸️ Fome do Vazio-Raiz",
     "reference": "Hunger Of Hadar",
     "level": 3,
     "kind": "completa",
@@ -10667,8 +10699,8 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Fome de Hadar produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Fome de Hadar produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Salvaguarda condicional: Quando uma criatura começa o turno dentro da área do efeito. Falha: Sofre 2d6 Frio + 2d6 Ácido de dano. Sucesso: Não sofre o dano.",
+    "description": "Fome do Vazio-Raiz produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Fome do Vazio-Raiz produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Salvaguarda condicional: Quando uma criatura começa o turno dentro da área do efeito. Falha: Sofre 2d6 Frio + 2d6 Ácido de dano. Sucesso: Não sofre o dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "2d6 Frio + 2d6 Ácido",
     "healing": "",
@@ -10681,7 +10713,9 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m3-38",
@@ -10849,7 +10883,7 @@ globalThis.CODEX_SPELL_DATA = [
   },
   {
     "key": "m3-42",
-    "title": "✨ Pequena cabana de Leomund",
+    "title": "✨ Abrigo Breve de Folhas",
     "reference": "Leomund's Tiny Hut",
     "level": 3,
     "kind": "completa",
@@ -10871,8 +10905,8 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Pequena cabana de Leomund produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Pequena cabana de Leomund produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
+    "description": "Abrigo Breve de Folhas produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Abrigo Breve de Folhas produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -10885,7 +10919,9 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m3-43",
@@ -12826,7 +12862,7 @@ globalThis.CODEX_SPELL_DATA = [
   },
   {
     "key": "m4-9",
-    "title": "🕸️ Conjurar Barlgura (UA)",
+    "title": "🕸️ Convocar Predador do Subsolo (Experimental)",
     "reference": "Conjure Barlgura (UA)",
     "level": 4,
     "kind": "completa",
@@ -12845,8 +12881,8 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 18 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "description": "Conjurar Barlgura (UA) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina.",
-    "effect": "Conjurar Barlgura (UA) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
+    "description": "Convocar Predador do Subsolo (Experimental) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina.",
+    "effect": "Convocar Predador do Subsolo (Experimental) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -12859,11 +12895,13 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m4-10",
-    "title": "🕸️ Conjurar Knowbot (UA)",
+    "title": "🕸️ Convocar Oráculo Mecânico (Experimental)",
     "reference": "Conjure Knowbot (UA)",
     "level": 4,
     "kind": "completa",
@@ -12883,8 +12921,8 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Criatura ou objeto tocado",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. Nenhum componente material é necessário.",
-    "description": "Conjurar Knowbot (UA) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina.",
-    "effect": "Conjurar Knowbot (UA) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
+    "description": "Convocar Oráculo Mecânico (Experimental) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina.",
+    "effect": "Convocar Oráculo Mecânico (Experimental) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -12897,7 +12935,9 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": "T"
+    "flags": "T",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m4-11",
@@ -13485,7 +13525,7 @@ globalThis.CODEX_SPELL_DATA = [
   },
   {
     "key": "m4-26",
-    "title": "🕸️ O Correio Rápido de Galder",
+    "title": "🕸️ Correio Veloz da Libélula",
     "reference": "Galder's Speedy Courier",
     "level": 4,
     "kind": "completa",
@@ -13507,8 +13547,8 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "O Correio Rápido de Galder produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "O Correio Rápido de Galder produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
+    "description": "Correio Veloz da Libélula produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Correio Veloz da Libélula produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -13521,7 +13561,9 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m4-27",
@@ -13872,7 +13914,7 @@ globalThis.CODEX_SPELL_DATA = [
   },
   {
     "key": "m4-36",
-    "title": "🕸️ Baú Secreto de Leomund",
+    "title": "🕸️ Baú Oculto do Micélio",
     "reference": "Leomund's Secret Chest",
     "level": 4,
     "kind": "completa",
@@ -13893,8 +13935,8 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Baú Secreto de Leomund produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Baú Secreto de Leomund produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
+    "description": "Baú Oculto do Micélio produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Baú Oculto do Micélio produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -13907,7 +13949,9 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m4-37",
@@ -13955,7 +13999,7 @@ globalThis.CODEX_SPELL_DATA = [
   },
   {
     "key": "m4-38",
-    "title": "🕸️ Cão Fiel de Mordenkainen",
+    "title": "🕸️ Cão-Vigia de Esporos",
     "reference": "Mordenkainen's Faithful Hound",
     "level": 4,
     "kind": "completa",
@@ -13976,8 +14020,8 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Cão Fiel de Mordenkainen produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Cão Fiel de Mordenkainen produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo sofre 4d8 Perfurante de dano",
+    "description": "Cão-Vigia de Esporos produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Cão-Vigia de Esporos produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo sofre 4d8 Perfurante de dano",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "4d8 Perfurante",
     "healing": "",
@@ -13990,11 +14034,13 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m4-39",
-    "title": "🛡️ Santuário Privado de Mordenkainen",
+    "title": "🛡️ Refúgio Privado da Colônia",
     "reference": "Mordenkainen's Private Sanctum",
     "level": 4,
     "kind": "completa",
@@ -14015,8 +14061,8 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Santuário Privado de Mordenkainen produz um efeito de abjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Santuário Privado de Mordenkainen produz um efeito de abjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
+    "description": "Refúgio Privado da Colônia produz um efeito de abjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Refúgio Privado da Colônia produz um efeito de abjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -14029,11 +14075,13 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, amplie os alvos, a duração ou o efeito conforme a progressão específica desta magia.",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m4-40",
-    "title": "✨ Esfera Resiliente de Otiluke",
+    "title": "✨ Esfera Resiliente de Resina",
     "reference": "Otiluke's Resilient Sphere",
     "level": 4,
     "kind": "completa",
@@ -14054,8 +14102,8 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Esfera Resiliente de Otiluke libera energia contra o alvo ou a área escolhida.",
-    "effect": "Esfera Resiliente de Otiluke libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de DES Falha: Sofre o efeito descrito pela magia. Sucesso: Evita o efeito da magia.",
+    "description": "Esfera Resiliente de Resina libera energia contra o alvo ou a área escolhida.",
+    "effect": "Esfera Resiliente de Resina libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de DES Falha: Sofre o efeito descrito pela magia. Sucesso: Evita o efeito da magia.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -14068,7 +14116,9 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m4-41",
@@ -14151,7 +14201,7 @@ globalThis.CODEX_SPELL_DATA = [
   },
   {
     "key": "m4-43",
-    "title": "🎵 Lança Psíquica de Raulothim",
+    "title": "🎵 Lança Psíquica da Vespa-Oráculo",
     "reference": "Raulothim's Psychic Lance",
     "level": 4,
     "kind": "completa",
@@ -14172,8 +14222,8 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 36 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "description": "Lança Psíquica de Raulothim afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito.",
-    "effect": "Lança Psíquica de Raulothim afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de INT Falha: Sofre 7d6 Psíquico de dano e fica Incapacitado. Sucesso: Sofre metade do dano e não fica Incapacitado.",
+    "description": "Lança Psíquica da Vespa-Oráculo afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito.",
+    "effect": "Lança Psíquica da Vespa-Oráculo afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de INT Falha: Sofre 7d6 Psíquico de dano e fica Incapacitado. Sucesso: Sofre metade do dano e não fica Incapacitado.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "7d6 Psíquico",
     "healing": "",
@@ -14186,11 +14236,13 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Incapacitado",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m4-44",
-    "title": "🎵 Lança Psíquica de Raulothim (UA)",
+    "title": "🎵 Lança Psíquica Experimental da Vespa-Oráculo",
     "reference": "Raulothim's Psychic Lance (UA)",
     "level": 4,
     "kind": "completa",
@@ -14211,8 +14263,8 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 36 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "description": "Lança Psíquica de Raulothim (UA) afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito.",
-    "effect": "Lança Psíquica de Raulothim (UA) afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de INT Falha: Sofre 10d6 Psíquico de dano e fica Incapacitado. Sucesso: Não sofre o dano nem fica Incapacitado.",
+    "description": "Lança Psíquica Experimental da Vespa-Oráculo afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito.",
+    "effect": "Lança Psíquica Experimental da Vespa-Oráculo afeta a mente, a emoção ou a vontade do alvo. Imunidades mentais e criaturas que não percebam o estímulo podem impedir o efeito. O alvo faz uma Salvaguarda de INT Falha: Sofre 10d6 Psíquico de dano e fica Incapacitado. Sucesso: Não sofre o dano nem fica Incapacitado.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "10d6 Psíquico",
     "healing": "",
@@ -14225,7 +14277,9 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "Incapacitado",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m4-45",
@@ -15055,7 +15109,7 @@ globalThis.CODEX_SPELL_DATA = [
   },
   {
     "key": "m5-5",
-    "title": "✨ Mão de Bigby",
+    "title": "✨ Mão Colossal da Seiva",
     "reference": "Bigby's Hand",
     "level": 5,
     "kind": "completa",
@@ -15077,8 +15131,8 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Mão de Bigby produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Mão de Bigby produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
+    "description": "Mão Colossal da Seiva produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Mão Colossal da Seiva produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -15091,7 +15145,9 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 2d6 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m5-6",
@@ -15402,7 +15458,7 @@ globalThis.CODEX_SPELL_DATA = [
   },
   {
     "key": "m5-14",
-    "title": "🕸️ Conjurar Vrock (UA)",
+    "title": "🕸️ Convocar Caçador Alado (Experimental)",
     "reference": "Conjure Vrock (UA)",
     "level": 5,
     "kind": "completa",
@@ -15424,8 +15480,8 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Conjurar Vrock (UA) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina.",
-    "effect": "Conjurar Vrock (UA) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
+    "description": "Convocar Caçador Alado (Experimental) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina.",
+    "effect": "Convocar Caçador Alado (Experimental) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -15438,7 +15494,9 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m5-15",
@@ -16654,7 +16712,7 @@ globalThis.CODEX_SPELL_DATA = [
   },
   {
     "key": "m5-46",
-    "title": "👁️ Ligação Telepática de Rary",
+    "title": "👁️ Rede Telepática do Micélio",
     "reference": "Rary's Telepathic Bond",
     "level": 5,
     "kind": "completa",
@@ -16676,8 +16734,8 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Lente de Vidro e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Ligação Telepática de Rary produz um efeito de adivinhação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Ligação Telepática de Rary produz um efeito de adivinhação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
+    "description": "Rede Telepática do Micélio produz um efeito de adivinhação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Rede Telepática do Micélio produz um efeito de adivinhação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -16690,7 +16748,9 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m5-47",
@@ -17867,7 +17927,7 @@ globalThis.CODEX_SPELL_DATA = [
   },
   {
     "key": "m6-11",
-    "title": "🕸️ Invocação Instantânea de Drawmij",
+    "title": "🕸️ Chamado Instantâneo do Fio",
     "reference": "Drawmij's Instant Summons",
     "level": 6,
     "kind": "completa",
@@ -17888,8 +17948,8 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Invocação Instantânea de Drawmij cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina.",
-    "effect": "Invocação Instantânea de Drawmij cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
+    "description": "Chamado Instantâneo do Fio cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina.",
+    "effect": "Chamado Instantâneo do Fio cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -17902,7 +17962,9 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m6-12",
@@ -18025,7 +18087,7 @@ globalThis.CODEX_SPELL_DATA = [
   },
   {
     "key": "m6-15",
-    "title": "🛡️ Escudo de Platina de Fizban",
+    "title": "🛡️ Escudo de Quitina Solar",
     "reference": "Fizban's Platinum Shield",
     "level": 6,
     "kind": "completa",
@@ -18047,8 +18109,8 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Escudo de Platina de Fizban cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar.",
-    "effect": "Escudo de Platina de Fizban cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. O alvo faz uma Salvaguarda de DES Falha: Sofre o efeito descrito pela magia. Sucesso: Sofre metade do dano.",
+    "description": "Escudo de Quitina Solar cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar.",
+    "effect": "Escudo de Quitina Solar cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. O alvo faz uma Salvaguarda de DES Falha: Sofre o efeito descrito pela magia. Sucesso: Sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -18061,11 +18123,13 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m6-16",
-    "title": "🛡️ Escudo de Platina de Fizban (UA)",
+    "title": "🛡️ Escudo Experimental de Quitina Solar",
     "reference": "Fizban's Platinum Shield (UA)",
     "level": 6,
     "kind": "completa",
@@ -18087,8 +18151,8 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Sal Cristalino e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Escudo de Platina de Fizban (UA) cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar.",
-    "effect": "Escudo de Platina de Fizban (UA) cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Aplique o efeito aos alvos indicados.",
+    "description": "Escudo Experimental de Quitina Solar cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar.",
+    "effect": "Escudo Experimental de Quitina Solar cria uma proteção ou barreira na área indicada. Ela permanece ativa pela duração da magia ou até a Concentração terminar. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -18101,7 +18165,9 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m6-17",
@@ -18777,7 +18843,7 @@ globalThis.CODEX_SPELL_DATA = [
   },
   {
     "key": "m6-34",
-    "title": "✨ Esfera Congelante de Otiluke",
+    "title": "✨ Esfera Congelante do Orvalho",
     "reference": "Otiluke's Freezing Sphere",
     "level": 6,
     "kind": "completa",
@@ -18799,8 +18865,8 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Cristal de Orvalho Condutor e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Esfera Congelante de Otiluke libera energia contra o alvo ou a área escolhida.",
-    "effect": "Esfera Congelante de Otiluke libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de CON Falha: Sofre 10d6 Frio de dano. Sucesso: Sofre metade do dano.",
+    "description": "Esfera Congelante do Orvalho libera energia contra o alvo ou a área escolhida.",
+    "effect": "Esfera Congelante do Orvalho libera energia contra o alvo ou a área escolhida. O alvo faz uma Salvaguarda de CON Falha: Sofre 10d6 Frio de dano. Sucesso: Sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "10d6 Frio",
     "healing": "",
@@ -18813,11 +18879,13 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "Ao usar um espaço superior, aumente o efeito em 1d6 por círculo acima do nível-base.",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m6-35",
-    "title": "🎵 A dança irresistível de Otto",
+    "title": "🎵 Dança Irresistível das Antenas",
     "reference": "Otto's Irresistible Dance",
     "level": 6,
     "kind": "completa",
@@ -18836,8 +18904,8 @@ globalThis.CODEX_SPELL_DATA = [
     "area": "Alvo ou ponto dentro de 9 m",
     "materialIds": [],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. Nenhum componente material é necessário.",
-    "description": "A dança irresistível de Otto produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "A dança irresistível de Otto produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de DES Falha: Sofre o efeito descrito pela magia. Sucesso: Evita o efeito da magia.",
+    "description": "Dança Irresistível das Antenas produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Dança Irresistível das Antenas produz um efeito de encantamento dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de DES Falha: Sofre o efeito descrito pela magia. Sucesso: Evita o efeito da magia.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -18850,7 +18918,9 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m6-36",
@@ -19164,7 +19234,7 @@ globalThis.CODEX_SPELL_DATA = [
   },
   {
     "key": "m6-44",
-    "title": "🌀 A Guise de Outro Mundo de Tasha",
+    "title": "🌀 Forma do Outro Jardim",
     "reference": "Tasha's Otherworldly Guise",
     "level": 6,
     "kind": "completa",
@@ -19187,8 +19257,8 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "A Guise de Outro Mundo de Tasha produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "A Guise de Outro Mundo de Tasha produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
+    "description": "Forma do Outro Jardim produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Forma do Outro Jardim produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -19201,11 +19271,13 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m6-45",
-    "title": "🌀 Transformação de Tenser",
+    "title": "🌀 Metamorfose do Casulo Bélico",
     "reference": "Tenser's Transformation",
     "level": 6,
     "kind": "completa",
@@ -19226,8 +19298,8 @@ globalThis.CODEX_SPELL_DATA = [
       "casca_mineral"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Esporos Mutáveis e Casca Mineral Translúcida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Transformação de Tenser produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Transformação de Tenser produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
+    "description": "Metamorfose do Casulo Bélico produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Metamorfose do Casulo Bélico produz um efeito de transmutação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -19240,7 +19312,9 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m6-46",
@@ -19512,7 +19586,7 @@ globalThis.CODEX_SPELL_DATA = [
   },
   {
     "key": "m7-2",
-    "title": "🕸️ Conjurar Hezrou (UA)",
+    "title": "🕸️ Convocar Colosso do Brejo (Experimental)",
     "reference": "Conjure Hezrou (UA)",
     "level": 7,
     "kind": "completa",
@@ -19534,8 +19608,8 @@ globalThis.CODEX_SPELL_DATA = [
       "resina_endurecida"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Fio de Seda de Aranha e Resina Endurecida. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Conjurar Hezrou (UA) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina.",
-    "effect": "Conjurar Hezrou (UA) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
+    "description": "Convocar Colosso do Brejo (Experimental) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina.",
+    "effect": "Convocar Colosso do Brejo (Experimental) cria ou convoca uma presença no espaço escolhido. Ela permanece pela duração indicada e desaparece quando a magia termina. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -19548,7 +19622,9 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m7-3",
@@ -20024,7 +20100,7 @@ globalThis.CODEX_SPELL_DATA = [
   },
   {
     "key": "m7-15",
-    "title": "🕸️ Mansão Magnífica de Mordenkainen",
+    "title": "🕸️ Palácio Vivo da Colônia",
     "reference": "Mordenkainen's Magnificent Mansion",
     "level": 7,
     "kind": "completa",
@@ -20046,8 +20122,8 @@ globalThis.CODEX_SPELL_DATA = [
       "perola_orvalho"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Orvalho Purificado e Pérola de Orvalho Puríssimo. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Mansão Magnífica de Mordenkainen produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Mansão Magnífica de Mordenkainen produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
+    "description": "Palácio Vivo da Colônia produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Palácio Vivo da Colônia produz um efeito de conjuração dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Aplique o efeito aos alvos indicados.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "",
     "healing": "",
@@ -20060,11 +20136,13 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m7-16",
-    "title": "✨ Espada de Mordenkainen",
+    "title": "✨ Lâmina Autônoma de Cristal",
     "reference": "Mordenkainen's Sword",
     "level": 7,
     "kind": "completa",
@@ -20086,8 +20164,8 @@ globalThis.CODEX_SPELL_DATA = [
       "nectar_luminoso"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Casca Oca Ressoante e Néctar Luminoso. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "Espada de Mordenkainen produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "Espada de Mordenkainen produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Faça um ataque mágico contra cada alvo indicado Se acertar, o alvo sofre 3d10 Força de dano",
+    "description": "Lâmina Autônoma de Cristal produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Lâmina Autônoma de Cristal produz um efeito de evocação dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. Faça um ataque mágico contra cada alvo indicado Se acertar, o alvo sofre 3d10 Força de dano",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "3d10 Força",
     "healing": "",
@@ -20100,7 +20178,9 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m7-17",
@@ -20661,7 +20741,7 @@ globalThis.CODEX_SPELL_DATA = [
   },
   {
     "key": "m8-1",
-    "title": "🕯️ O Horrendo Murchamento de Abi-Dalzim",
+    "title": "🕯️ Murcha Horrenda do Brejo",
     "reference": "Abi-Dalzim's Horrid Wilting",
     "level": 8,
     "kind": "completa",
@@ -20683,8 +20763,8 @@ globalThis.CODEX_SPELL_DATA = [
       "incenso_raiz"
     ],
     "conjuration": "V: fórmula, palavra ou vibração de ativação. S: gesto que orienta e dá forma à manifestação. M: Pó de Carapaça Ancestral e Incenso de Raiz. Material: reutilizável, desde que permaneça inteiro. Componentes com preço indicado não podem ser substituídos pela Bolsa ou por foco.",
-    "description": "O Horrendo Murchamento de Abi-Dalzim produz um efeito de necromancia dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
-    "effect": "O Horrendo Murchamento de Abi-Dalzim produz um efeito de necromancia dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CON Falha: Sofre 12d8 Necrótico de dano. Sucesso: Sofre metade do dano.",
+    "description": "Murcha Horrenda do Brejo produz um efeito de necromancia dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida.",
+    "effect": "Murcha Horrenda do Brejo produz um efeito de necromancia dentro do alcance indicado. Se exigir Concentração, o efeito termina quando ela for perdida. O alvo faz uma Salvaguarda de CON Falha: Sofre 12d8 Necrótico de dano. Sucesso: Sofre metade do dano.",
     "limitation": "A magia respeita cobertura, Concentração, imunidades e requisitos de alvo indicados.",
     "damage": "12d8 Necrótico",
     "healing": "",
@@ -20697,7 +20777,9 @@ globalThis.CODEX_SPELL_DATA = [
     "condition": "",
     "repeatSave": "",
     "higherLevels": "",
-    "flags": ""
+    "flags": "",
+    "microcosmoContent": true,
+    "legacyReferenceInternal": true
   },
   {
     "key": "m8-2",

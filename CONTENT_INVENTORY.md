@@ -1,0 +1,722 @@
+# Inventário editorial e de propriedade intelectual do Microcosmo
+
+Gerado em 2026-09-08. Este documento é uma triagem editorial e técnica, não um parecer jurídico.
+
+## Resultado executivo
+
+- Classes: 15.
+- Povos/raças: 12.
+- Itens estruturados: 55.
+- Criaturas IPM estruturadas: 3.
+- Magias: 574.
+- Magias experimentais provenientes de UA: 50 (alto risco; reescrita ou retirada antes de comercialização).
+- Magias com nomes próprios ou criaturas reconhecíveis na referência interna: 40.
+- Magias já renomeadas nesta migração: 41.
+- Magias sem metadado individual de licença/procedência: 574.
+- Títulos duplicados no catálogo: 1.
+
+## Classificação por área
+
+| Área | Situação | Ação |
+|---|---|---|
+| Mesa, Atlas, grid, iluminação e interface | Código funcional próprio; baixo risco editorial | Manter e documentar autoria |
+| Criaturas IPM e povos do Microcosmo | Identidade temática própria | Manter; revisar apenas semelhanças pontuais |
+| Classes | IDs técnicos preservados; nomes públicos migrados para o vocabulário do Microcosmo | Reescrever progressões e características que ainda reproduzam estrutura externa |
+| Equipamentos | Predominantemente genéricos ou tematizados | Acrescentar procedência por item nas próximas revisões |
+| Grimório SRD | Pode ser usado com atribuição CC BY 4.0 | Confirmar item a item contra o SRD oficial e manter a atribuição |
+| Grimório UA/suplementos | Não há licença aberta presumida | Substituir nome, texto e expressão mecânica; renomear sozinho não basta |
+| Ferramentas de importação | Há consultas a Wikidot, 5etools e APIs comunitárias | Não usar como fonte editorial de uma versão comercial |
+| Imagens enviadas pelo usuário | Conteúdo externo não empacotado | Exibir aviso de responsabilidade no upload |
+
+## Medidas já aplicadas
+
+- IDs de classes e chaves de magia foram preservados para não quebrar fichas e automações.
+- Doze nomes públicos de classes foram convertidos para nomes próprios do Microcosmo; Bastião, Cozinheiro e Engenheiro já eram distintivos e foram mantidos.
+- 41 magias com nomes próprios ou criaturas reconhecíveis receberam títulos do Microcosmo.
+- Foi criado `CONTENT_ATTRIBUTION.md` com o crédito exigido para o conteúdo SRD.
+
+## Pendências que impedem declarar o catálogo totalmente original
+
+1. Classificar as 574 magias contra a lista oficial do SRD 5.2.1.
+2. Retirar ou reescrever integralmente as 50 entradas UA; trocar apenas o título não licencia texto ou mecânica expressiva.
+3. Substituir as referências inglesas internas por chaves neutras depois de converter as regras especiais que ainda consultam `reference`.
+4. Desativar o uso editorial dos importadores comunitários e manter apenas fontes oficiais/licenciadas.
+5. Fazer revisão humana de similaridade de descrições, progressões, listas de classe, talentos e equipamentos.
+
+## Apêndice A - Classes (inventário completo)
+
+- barbaro: Casca-Fera
+- bardo: Cantor de Ecos
+- bastiao: Bastião
+- clerigo: Guardião do Orvalho
+- cozinheiro: Cozinheiro
+- druida: Metamorfo do Jardim
+- engenheiro: Engenheiro
+- feiticeiro: Nascido da Seiva
+- guerreiro: Lâmina da Colônia
+- ladino: Sombra de Folha
+- mago: Tecelão
+- monge: Discípulo do Casulo
+- paladino: Juramentado da Colmeia
+- patrulheiro: Batedor do Jardim
+- bruxo: Pactário do Subsolo
+
+## Apêndice B - Povos/raças (inventário completo)
+
+- race-0: Povo-Folha
+- race-1: Quitinoso
+- race-2: Saltídeo
+- race-3: Formiguídeo
+- race-4: Apídeo
+- race-5: Mantídeo
+- race-6: Miceliano
+- race-7: Caracolídeo
+- race-8: Libélulo
+- race-9: Grilídeo
+- race-10: Humanoide do Broto
+- race-11: Férico do Orvalho
+
+## Apêndice C - Itens (inventário completo)
+
+- item-1: Corda de Fibra (10 m)
+- item-2: Gancho de Espinho
+- item-3: Pitões de Casca (10)
+- item-4: Lanterna de Vagalume
+- item-5: Frasco de Orvalho
+- item-6: Bolsa de Componentes
+- item-7: Foco Arcano de Cristal
+- item-8: Foco Natural de Raiz
+- item-9: Símbolo Espiritual de Semente
+- item-10: Giz de Pólen
+- item-11: Kit de Primeiros Socorros
+- item-12: Kit de Coleta
+- item-13: Kit de Engenharia de Sucata
+- item-14: Kit de Cozinha de Campo
+- item-15: Kit de Alquimia de Resina
+- item-16: Manto de Folha
+- item-17: Cobertor de Pétala
+- item-18: Tenda de Folha para 2
+- item-19: Ração de Semente
+- item-20: Pasta de Néctar
+- item-21: Bandagem de Seda
+- item-22: Óleo de Resina
+- item-23: Pó Secante
+- item-24: Fósforo de Pedra
+- item-25: Pederneira de Sílex
+- item-26: Lupa de Orvalho
+- item-27: Espelho de Fragmento
+- item-28: Apito de Casca
+- item-29: Sino de Semente
+- item-30: Bússola de Magnetita
+- item-31: Mapa de Casca
+- item-32: Caderno de Folha Seca
+- item-33: Tinta de Fruta
+- item-34: Pena de Inseto
+- item-35: Mochila de Fibra
+- item-36: Bornal de Coleta
+- item-37: Caixa de Semente
+- item-38: Frasco Selado
+- item-39: Ampola de Orvalho Frio
+- item-40: Máscara de Fibra
+- item-41: Óculos de Orvalho
+- item-42: Luvas de Casca
+- item-43: Botas de Aderência
+- item-44: Paraquedas de Folha
+- item-45: Prancha de Casca
+- item-46: Carrinho de Semente
+- item-47: Carrinho de Tampa
+- item-48: Gaiola de Fibra
+- item-49: Rede de Coleta
+- item-50: Pinça de Mandíbula
+- item-51: Serrote de Sílex
+- item-52: Martelo de Pedra
+- item-53: Agulha de Costura de Campo
+- item-54: Linha de Seda (20 m)
+- item-55: Resina Adesiva
+
+## Apêndice D - Criaturas IPM (inventário completo)
+
+- primevo-miceliano-errante: Miceliano Primevo Errante
+- primevo-apideo-feroz: Apídeo Primevo Feroz
+- elevada-dama-teia-rubra: Dama da Teia Rubra
+
+## Apêndice E - Magias (inventário completo)
+
+- truques-1: 🕸️ Borrifada Ácida — nível 0
+- truques-2: 🛡️ Proteção Contra Lâminas — nível 0
+- truques-3: ✨ Lâmina em expansão — nível 0
+- truques-4: 🕯️ Toque Necrótico — nível 0
+- truques-5: 🌀 Controle de Brasas — nível 0
+- truques-6: 🕸️ Criar fogueira — nível 0
+- truques-7: ✨ Luzes Dançantes — nível 0
+- truques-8: 🌀 Druidismo. — nível 0
+- truques-9: ✨ Explosão Sobrenatural — nível 0
+- truques-10: 🎵 Codificar pensamentos — nível 0
+- truques-11: ✨ Raio de Brasa — nível 0
+- truques-12: 🎵 Amigos — nível 0
+- truques-13: ✨ Congelamento — nível 0
+- truques-14: ✨ Lâmina de Brasa Verde — nível 0
+- truques-15: 👁️ Orientação — nível 0
+- truques-16: 🌀 rajada — nível 0
+- truques-17: ✨ Mão de Radiância (UA) — nível 0 — experimental
+- truques-18: 🕸️ Infestação — nível 0
+- truques-19: ✨ Luminosidade — nível 0
+- truques-20: ✨ Atração relâmpago — nível 0
+- truques-21: 🕸️ Mãos Mágicas — nível 0
+- truques-22: 🌀 Pedra Mágica — nível 0
+- truques-23: 🌀 Emendando — nível 0
+- truques-24: 🌀 Mensagem — nível 0
+- truques-25: 🎵 Mind Sliver — nível 0
+- truques-26: 🪞 Ilusão Menor — nível 0
+- truques-27: 🌀 Terra de molde — nível 0
+- truques-28: 🌀 Ligar/Desligar (UA) — nível 0 — experimental
+- truques-29: 🕸️ Spray de Veneno — nível 0
+- truques-30: 🌀 Prestidigitação — nível 0
+- truques-31: 🌀 Selvageria Primordial — nível 0
+- truques-32: 🕸️ Criar Brasas — nível 0
+- truques-33: ✨ Raio de Gelo — nível 0
+- truques-34: 🛡️ Resistência — nível 0
+- truques-35: ✨ Brasa Sagrada — nível 0
+- truques-36: 🕯️ Picada de Sapping — nível 0
+- truques-37: 🌀 Moldar Orvalho — nível 0
+- truques-38: 🌀 Shillelagh — nível 0
+- truques-39: ✨ Eletricidade — nível 0
+- truques-40: 🕯️ Poupe os Moribundos — nível 0
+- truques-41: 🕸️ Explosão de Espada — nível 0
+- truques-42: 🌀 Taumaturgia — nível 0
+- truques-43: 🌀 Chicote Espinhoso — nível 0
+- truques-44: ✨ Estrondo — nível 0
+- truques-45: 🕯️ Pedágio dos Mortos — nível 0
+- truques-46: 👁️ Golpe Certeiro — nível 0
+- truques-47: 🎵 Zombaria cruel — nível 0
+- truques-48: 🛡️ Virtude (UA) — nível 0 — experimental
+- truques-49: ✨ Palavra de Radiância — nível 0
+- m1-1: 🛡️ Absorver elementos — nível 1
+- m1-2: ✨ Corrente Ácida (UA) — nível 1 — experimental
+- m1-3: 🛡️ Alarme — nível 1
+- m1-4: 🎵 Amizade Animal — nível 1
+- m1-5: 🌀 Arma Arcana (UA) — nível 1 — experimental
+- m1-6: 🛡️ Casca do Inverno Profundo — nível 1 — referência reconhecível, nome migrado
+- m1-7: 🕸️ Tentáculos do Vazio-Raiz — nível 1 — referência reconhecível, nome migrado
+- m1-8: 🎵 Eliminar — nível 1
+- m1-9: 👁️ Vínculo Fera — nível 1
+- m1-10: 🎵 Bênção — nível 1
+- m1-11: ✨ Mãos Flamejantes — nível 1
+- m1-12: 🌀 Catapulta — nível 1
+- m1-13: 🕯️ Causar Medo — nível 1
+- m1-14: 🛡️ Cerimônia — nível 1
+- m1-15: ✨ Parafuso do Caos — nível 1
+- m1-16: 🎵 Enfeitiçar Pessoa — nível 1
+- m1-17: ✨ Orbe cromática — nível 1
+- m1-18: 🪞 Leque Cromático — nível 1
+- m1-19: 🎵 Command — nível 1
+- m1-20: 🎵 Duelo Compelido — nível 1
+- m1-21: 👁️ Compreender Idiomas — nível 1
+- m1-22: 🌀 Criar ou Destruir Orvalho — nível 1
+- m1-23: ✨ Curar Ferimentos — nível 1
+- m1-24: 👁️ Detectar o Bem e o Mal — nível 1
+- m1-25: 👁️ Detecção de Magia — nível 1
+- m1-26: 👁️ Detectar Veneno e Doença — nível 1
+- m1-27: 🪞 Disfarce. — nível 1
+- m1-28: 🎵 Sussurros Dissonantes — nível 1
+- m1-29: 🪞 Distorcer valor — nível 1
+- m1-30: ✨ Auxílio Divino — nível 1
+- m1-31: ✨ Tremor de Terra — nível 1
+- m1-32: 🕸️ Golpe Aprisionador — nível 1
+- m1-33: 🕸️ Enredar — nível 1
+- m1-34: 🌀 Recuo Acelerado — nível 1
+- m1-35: ✨ Brasa das Fadas — nível 1
+- m1-36: 🕯️ Vitalidade Ilusória — nível 1
+- m1-37: 🌀 Queda Suave — nível 1
+- m1-38: 🕸️ Encontrar Familiar — nível 1
+- m1-39: 🕸️ Névoa Obscurecente — nível 1
+- m1-40: ✨ Dedos de Gelo — nível 1
+- m1-41: 👁️ Presente de Alacridade — nível 1
+- m1-42: 🌀 Goodberry — nível 1
+- m1-43: 🕸️ Graxa — nível 1
+- m1-44: ✨ Raio Traçante — nível 1
+- m1-45: 👁️ Mão Orientadora (UA) — nível 1 — experimental
+- m1-46: 🕸️ Granizo de Espinhos — nível 1
+- m1-47: 🕸️ Elixir de Cura (UA) — nível 1 — experimental
+- m1-48: ✨ Palavra Curativa — nível 1
+- m1-49: ✨ Repreensão Infernal — nível 1
+- m1-50: 🎵 Herói — nível 1
+- m1-51: 🎵 Feitiço — nível 1
+- m1-52: 👁️ Marca do Caçador — nível 1
+- m1-53: 🕸️ “Faca de Gelo!” — nível 1
+- m1-54: 🎵 Insinuação de Id (UA) — nível 1 — experimental
+- m1-55: 👁️ Identificar — nível 1
+- m1-56: 🪞 Escrita Ilusória — nível 1
+- m1-57: 👁️ Relé Infalível (UA) — nível 1 — experimental
+- m1-58: 🕯️ Infligir Ferimentos — nível 1
+- m1-59: ✨ Sementes Erráticas de Cristal — nível 1 — referência reconhecível, nome migrado
+- m1-60: 🌀 Pulando — nível 1
+- m1-61: 🌀 Passos Longos — nível 1
+- m1-62: 🛡️ Armadura Arcana — nível 1
+- m1-63: ✨ Míssil Mágico — nível 1
+- m1-64: 🌀 Ampliar gravidade — nível 1
+- m1-65: 🛡️ Proteção contra o Bem e o Mal — nível 1
+- m1-66: 🎵 Fantoche (UA) — nível 1 — experimental
+- m1-67: 🌀 Purificar Alimentos e Bebidas — nível 1
+- m1-68: 🕯️ Raio de Doença — nível 1
+- m1-69: 🌀 Acesso Remoto (UA) — nível 1 — experimental
+- m1-70: 🛡️ Santuário — nível 1
+- m1-71: ✨ Searing Smite — nível 1
+- m1-72: 👁️ Sentir Emoção (UA) — nível 1 — experimental
+- m1-73: 🛡️ Blindagem — nível 1
+- m1-74: 🛡️ Escudo da Fé — nível 1
+- m1-75: 🪞 Imagem Silenciosa — nível 1
+- m1-76: 🎵 Farpas Prateadas — nível 1
+- m1-77: 🎵 Dormir — nível 1
+- m1-78: 🛡️ Snare (laço) — nível 1
+- m1-79: 👁️ Falar com Animais — nível 1
+- m1-80: 🎵 Despertar Súbito (UA) — nível 1 — experimental
+- m1-81: ✨ Infusão Cáustica da Vespa — nível 1 — referência reconhecível, nome migrado
+- m1-82: 🎵 Riso Desconcertante dos Grilos — nível 1 — referência reconhecível, nome migrado
+- m1-83: 🕸️ Disco de Carga do Orvalho — nível 1 — referência reconhecível, nome migrado
+- m1-84: ✨ Thunderous Smite — nível 1
+- m1-85: ✨ Onda Trovejante — nível 1
+- m1-86: 🪞 Coro Não Terrestre (UA) — nível 1 — experimental
+- m1-87: 🕸️ Servo Invísivel — nível 1
+- m1-88: 🌀 Astúcia Selvagem (UA) — nível 1 — experimental
+- m1-89: ✨ Raio Teleguiado — nível 1
+- m1-90: ✨ Wrathful Smite — nível 1
+- m1-91: 🌀 Golpe do Zéfiro — nível 1
+- m2-1: ✨ Rajada Incandescente de Resina — nível 2 — referência reconhecível, nome migrado
+- m2-2: 🛡️ Auxílio — nível 2
+- m2-3: 🕸️ Bolha de ar — nível 2
+- m2-4: 🌀 Alterar-se — nível 2
+- m2-5: 🎵 Mensageiro Animal — nível 2
+- m2-6: 🌀 Hackeamento Arcano (UA) — nível 2 — experimental
+- m2-7: 🛡️ Tranca Arcana — nível 2
+- m2-8: 👁️ Áugures — nível 2
+- m2-9: 🌀 Pele de Árvore — nível 2
+- m2-10: 👁️ Sentido da Besta — nível 2
+- m2-11: 🕯️ Cegueira/Surdez — nível 2
+- m2-12: 🪞 Desfoque — nível 2
+- m2-13: 👁️ Conhecimento emprestado — nível 2
+- m2-14: ✨ Marca da punição — nível 2
+- m2-15: 🎵 Acalmar Emoções — nível 2
+- m2-16: 🕸️ Nuvem de Adagas — nível 2
+- m2-17: ✨ Brasa Contínua — nível 2
+- m2-18: 🌀 Cordão de Flechas — nível 2
+- m2-19: 🎵 Coroa da Loucura — nível 2
+- m2-20: ✨ Escuridão — nível 2
+- m2-21: 🌀 Visão no Escuro — nível 2
+- m2-22: 👁️ Detectar Pensamentos — nível 2
+- m2-23: 🛡️ Fantasma Digital (UA) — nível 2 — experimental
+- m2-24: 🌀 Bafo de Titã — nível 2
+- m2-25: 🕸️ Diabo da Poeira — nível 2
+- m2-26: 🌀 “Amarrar à Terra!” — nível 2
+- m2-27: 🌀 Aprimorar Habilidade — nível 2
+- m2-28: 🌀 Aumentar/Reduzir — nível 2
+- m2-29: 🎵 Cativar — nível 2
+- m2-30: 🕸️ Encontrar Montaria — nível 2
+- m2-31: 👁️ Encontrar Armadilhas — nível 2
+- m2-32: 🕸️ Encontrar veículo (UA) — nível 2 — experimental
+- m2-33: ✨ Lâmina Flamejante — nível 2
+- m2-34: 🕸️ Esfera Flamejante — nível 2
+- m2-35: 🕸️ Rebanho de Familiares — nível 2
+- m2-36: 👁️ Favor da Fortuna — nível 2
+- m2-37: 🕯️ Repouso Tranquilo — nível 2
+- m2-38: 🎵 Presente de Gab — nível 2
+- m2-39: ✨ Rajada de Vento — nível 2
+- m2-40: 🕸️ Espírito de Cura — nível 2
+- m2-41: 🌀 Esquentar Metal — nível 2
+- m2-42: 🎵 Imobilizar Pessoa — nível 2
+- m2-43: ✨ Geada da Morte Gélida (UA) — nível 2 — experimental
+- m2-44: 🌀 Objeto Imóvel — nível 2
+- m2-45: 🪞 Invisibilidade — nível 2
+- m2-46: 🎵 Moeda-Lume do Trapaceiro — nível 2 — referência reconhecível, nome migrado
+- m2-47: 🌀 Kinetic Jaunt — nível 2
+- m2-48: 🌀 Batida — nível 2
+- m2-49: 🛡️ Restauração Menor — nível 2
+- m2-50: 🌀 Levitação — nível 2
+- m2-51: 👁️ Localizar Animais ou Plantas — nível 2
+- m2-52: 👁️ Localizar Objeto — nível 2
+- m2-53: 🪞 Boca Encantada — nível 2
+- m2-54: 🌀 Arma Mágica — nível 2
+- m2-55: 🌀 Punho de Terra Enraizada — nível 2 — nome migrado
+- m2-56: ✨ Flecha ácida de Melf — nível 2
+- m2-57: 🛡️ Barreira Mental (UA) — nível 2 — experimental
+- m2-58: 👁️ Espigão Mental — nível 2
+- m2-59: 🎵 Impulso Mental (UA) — nível 2 — experimental
+- m2-60: 🪞 Reflexos — nível 2
+- m2-61: 🕸️ Passo Nebuloso — nível 2
+- m2-62: ✨ Raio Lunar — nível 2
+- m2-63: 🪞 Travessura do Pólen Feérico — nível 2 — referência reconhecível, nome migrado
+- m2-64: 🪞 Travessura Experimental do Pólen — nível 2 — experimental, referência reconhecível, nome migrado
+- m2-65: 🪞 Aura de Seiva Enganadora — nível 2 — referência reconhecível, nome migrado
+- m2-66: 🛡️ Passos sem Pegadas — nível 2
+- m2-67: 🪞 Força Fantasmática — nível 2
+- m2-68: ✨ Oração de Cura — nível 2
+- m2-69: 🛡️ Proteção Contra Veneno — nível 2
+- m2-70: 🌀 Pirotecnia — nível 2
+- m2-71: 🕯️ Raio do Enfraquecimento — nível 2
+- m2-72: ✨ Gelo Vinculante de Rime — nível 2
+- m2-73: 🌀 Truque da Corda — nível 2
+- m2-74: ✨ Raio Ardente — nível 2
+- m2-75: 👁️ Ver o Invisível — nível 2
+- m2-76: 🪞 Lâmina Sombria — nível 2
+- m2-77: ✨ Fragmentar — nível 2
+- m2-78: 🪞 Silêncio — nível 2
+- m2-79: 🌀 Skywrite — nível 2
+- m2-80: ✨ Enxame de Granizo-Semente — nível 2 — referência reconhecível, nome migrado
+- m2-81: 🌀 Escalada de Aranha — nível 2
+- m2-82: 🌀 Crescer Espinhos — nível 2
+- m2-83: ✨ Arma Espiritual — nível 2
+- m2-84: 🕸️ Spray de Cartões — nível 2
+- m2-85: 🕸️ Pulverização de Cartões (UA) — nível 2 — experimental
+- m2-86: 🎵 Sugestão — nível 2
+- m2-87: 🕸️ Invocar Besta — nível 2
+- m2-88: 🎵 Chicote Mental da Cigarra — nível 2 — referência reconhecível, nome migrado
+- m2-89: 🛡️ Escudo do Pensamento (UA) — nível 2 — experimental
+- m2-90: 🕸️ Urdidura em Vórtice — nível 2
+- m2-91: 🛡️ Vínculo de Proteção — nível 2
+- m2-92: ✨ Vento de Proteção — nível 2
+- m2-93: 👁️ Sentido de urdidura — nível 2
+- m2-94: 🕸️ Web — nível 2
+- m2-95: 🕯️ Wither e Bloom — nível 2
+- m2-96: 🕸️ Bolso de pulso — nível 2
+- m2-97: 🎵 Zona da Verdade — nível 2
+- m3-1: 🕯️ Animar Mortos — nível 3
+- m3-2: 🎵 Antagonizar — nível 3
+- m3-3: 🎵 Antagonizar (UA) — nível 3 — experimental
+- m3-4: 🌀 Passo da Salamandra de Brasa — nível 3 — referência reconhecível, nome migrado
+- m3-5: ✨ Aura de Vitalidade — nível 3
+- m3-6: 🛡️ Farol da Esperança — nível 3
+- m3-7: 🕯️ Rogar Maldição — nível 3
+- m3-8: ✨ Ferimento Cegante — nível 3
+- m3-9: 🌀 Blink — nível 3
+- m3-10: 🕸️ Convocar Relâmpagos — nível 3
+- m3-11: 🎵 Catnap. — nível 3
+- m3-12: 👁️ Clarividência — nível 3
+- m3-13: 🕸️ Conjurar Animais — nível 3
+- m3-14: 🕸️ Invocar Barragem — nível 3
+- m3-15: 🕸️ Conjurar Demônio Menor (UA) — nível 3 — experimental
+- m3-16: 🛡️ Contramágica — nível 3
+- m3-17: 🕸️ Criar Comida e Orvalho — nível 3
+- m3-18: ✨ Manto do Cruzado — nível 3
+- m3-19: ✨ Daylight — nível 3
+- m3-20: 🛡️ Dissipar Magia — nível 3
+- m3-21: 🌀 Arma Elemental — nível 3
+- m3-22: 🎵 Inimigos Abundam — nível 3
+- m3-23: 🌀 Erupção da Terra — nível 3
+- m3-24: 🎵 Amigos rápidos — nível 3
+- m3-25: 🪞 Medo — nível 3
+- m3-26: 🕯️ Fingir morte — nível 3
+- m3-27: ✨ Bola Brasa — nível 3
+- m3-28: 🌀 Flechas Flamejantes — nível 3
+- m3-29: 🌀 Caminhada da Brasa (UA) — nível 3 — experimental
+- m3-30: 🌀 Voar — nível 3
+- m3-31: 🕸️ Torre de Casca Súbita — nível 3 — referência reconhecível, nome migrado
+- m3-32: 🌀 Forma Gasosa — nível 3
+- m3-33: 🛡️ Símbolo de Proteção — nível 3
+- m3-34: 🌀 Apressar — nível 3
+- m3-35: 🎵 Haywire (UA) — nível 3 — experimental
+- m3-36: 🕸️ Castelo de cartas — nível 3 — experimental
+- m3-37: 🕸️ Fome do Vazio-Raiz — nível 3 — referência reconhecível, nome migrado
+- m3-38: 🪞 Padrão Hipnótico — nível 3
+- m3-39: 🎵 Incite a ganância — nível 3
+- m3-40: 🛡️ I. Fortaleza do Intelecto — nível 3
+- m3-41: 🪞 Invisibilidade para câmeras (UA) — nível 3 — experimental
+- m3-42: ✨ Abrigo Breve de Folhas — nível 3 — referência reconhecível, nome migrado
+- m3-43: 🕯️ Transferência de Vida — nível 3
+- m3-44: 🌀 Flecha Relâmpago — nível 3
+- m3-45: ✨ Relâmpago — nível 3
+- m3-46: 🛡️ Círculo Mágico — nível 3
+- m3-47: 🪞 Imagem Maior — nível 3
+- m3-48: ✨ Palavra Curativa em Massa — nível 3
+- m3-49: 🌀 Mesclar-se às Rochas — nível 3
+- m3-50: ✨ Meteoros Minutos de Melf — nível 3
+- m3-51: 🎵 Fala Motivacional — nível 3
+- m3-52: 🛡️ Indetectável — nível 3
+- m3-53: 🪞 Montaria Fantasmagórica — nível 3
+- m3-54: 🌀 Crescimento de Plantas — nível 3
+- m3-55: 🛡️ Proteção contra Balística (UA) — nível 3 — experimental
+- m3-56: 🛡️ Proteção contra Energia — nível 3
+- m3-57: ✨ Explosão Psiônica (UA) — nível 3 — experimental
+- m3-58: ✨ Onda de Pulso — nível 3
+- m3-59: 🛡️ Remover Maldição — nível 3
+- m3-60: 🕯️ Ressurreição — nível 3
+- m3-61: ✨ Enviando — nível 3
+- m3-62: 🕸️ Nevasca — nível 3
+- m3-63: 🌀 Lenta — nível 3
+- m3-64: 🕯️ Falar com Mortos — nível 3
+- m3-65: 🌀 Falar com Plantas — nível 3
+- m3-66: 🕸️ Guardiões Espirituais — nível 3
+- m3-67: 🕯️ Cobertura Espiritual — nível 3
+- m3-68: 🕸️ Névoa Fétida — nível 3
+- m3-69: 🕸️ Invocar Fey — nível 3
+- m3-70: 🕸️ Invocar Demônios Menores — nível 3
+- m3-71: 🕸️ Invocar Cria das Sombras — nível 3
+- m3-72: 🕯️ Invocar Mortos-Vivos — nível 3
+- m3-73: 🕸️ Invocar Espírito Guerreiro (UA) — nível 3 — experimental
+- m3-74: 🕸️ Passo do Trovão — nível 3
+- m3-75: 🕸️ A Onda Gigante — nível 3
+- m3-76: 🌀 Pequeno Servo — nível 3
+- m3-77: 👁️ Línguas — nível 3
+- m3-78: 🕯️ Toque Vampírico — nível 3
+- m3-79: ✨ Parede de Areia — nível 3
+- m3-80: ✨ PAREDE DE Orvalho — nível 3
+- m3-81: 🌀 Respirar na Orvalho — nível 3
+- m3-82: 🌀 Passeio das Orvalhos — nível 3
+- m3-83: ✨ Parede Eólica — nível 3
+- m4-1: 👁️ Olho Arcano — nível 4
+- m4-2: 🛡️ Aura de Vida — nível 4
+- m4-3: 🛡️ de Pureza — nível 4
+- m4-4: 🛡️ Banimento — nível 4
+- m4-5: 🕯️ Secar Plantas — nível 4
+- m4-6: 🎵 Monstro de Charme — nível 4
+- m4-7: 🎵 Compulsão. — nível 4
+- m4-8: 🎵 Confusão — nível 4
+- m4-9: 🕸️ Convocar Predador do Subsolo (Experimental) — nível 4 — experimental, referência reconhecível, nome migrado
+- m4-10: 🕸️ Convocar Oráculo Mecânico (Experimental) — nível 4 — experimental, referência reconhecível, nome migrado
+- m4-11: 🕸️ Conjurar Elementais Menores — nível 4
+- m4-12: 🕸️ Conjurar Demônio das Sombras (UA) — nível 4 — experimental
+- m4-13: 🕸️ Conjurar Seres da Jardim — nível 4
+- m4-14: 🌀 Controlar Orvalho — nível 4
+- m4-15: 🛡️ Proteção Contra Morte — nível 4
+- m4-16: 🕸️ Porta Dimensional — nível 4
+- m4-17: 👁️ Adivinhação — nível 4
+- m4-18: 🎵 Dominar Fera — nível 4
+- m4-19: 🎵 Chicote do Ego (UA) — nível 4 — experimental
+- m4-20: 🌀 Perdição Elemental — nível 4
+- m4-21: 🕸️ Tentáculos Negros de Evard — nível 4
+- m4-22: 🌀 Fabricar — nível 4
+- m4-23: 🕸️ Encontre um corcel maior — nível 4
+- m4-24: ✨ Escudo do Brasa — nível 4
+- m4-25: 🛡️ Direito de ir e vir — nível 4
+- m4-26: 🕸️ Correio Veloz da Libélula — nível 4 — referência reconhecível, nome migrado
+- m4-27: 🛡️ Vedação do portão — nível 4
+- m4-28: 🌀 Criatura do Jardim Gigante — nível 4
+- m4-29: 🕸️ Videira Agarradora — nível 4
+- m4-30: ✨ Sinkhole Gravitacional — nível 4
+- m4-31: 🪞 Invisibilidade Maior — nível 4
+- m4-32: 🕸️ Guardião da Fé — nível 4
+- m4-33: 🌀 Guardião da Natureza — nível 4
+- m4-34: 🪞 Terreno Alucinatório — nível 4
+- m4-35: ✨ Tempestade de gelo — nível 4
+- m4-36: 🕸️ Baú Oculto do Micélio — nível 4 — referência reconhecível, nome migrado
+- m4-37: 👁️ Localizar Criatura — nível 4
+- m4-38: 🕸️ Cão-Vigia de Esporos — nível 4 — referência reconhecível, nome migrado
+- m4-39: 🛡️ Refúgio Privado da Colônia — nível 4 — referência reconhecível, nome migrado
+- m4-40: ✨ Esfera Resiliente de Resina — nível 4 — referência reconhecível, nome migrado
+- m4-41: 🪞 Assassino Fantasmagórico — nível 4
+- m4-42: 🌀 Polimorfar — nível 4
+- m4-43: 🎵 Lança Psíquica da Vespa-Oráculo — nível 4 — referência reconhecível, nome migrado
+- m4-44: 🎵 Lança Psíquica Experimental da Vespa-Oráculo — nível 4 — experimental, referência reconhecível, nome migrado
+- m4-45: 🕯️ Sombra de Moil — nível 4
+- m4-46: ✨ Radiância Doentia — nível 4
+- m4-47: 🕯️ Espírito da Morte — nível 4
+- m4-48: 🕯️ Espírito da Morte (UA) — nível 4 — experimental
+- m4-49: ✨ Golpe Escalonador — nível 4
+- m4-50: 🌀 Moldar Rochas — nível 4
+- m4-51: 🛡️ Pele Rochosa — nível 4
+- m4-52: ✨ Esfera da Tempestade — nível 4
+- m4-53: 🕸️ Invocar Aberração — nível 4
+- m4-54: 🕸️ Invocar Construto — nível 4
+- m4-55: 🕸️ Convocar Elemental — nível 4
+- m4-56: 🕸️ Invocar Demônio Maior — nível 4
+- m4-57: 🎵 Sincronicidade (UA) — nível 4 — experimental
+- m4-58: 🌀 Backdoor do Sistema (UA) — nível 4 — experimental
+- m4-59: ✨ Esfera Vitriólica — nível 4
+- m4-60: ✨ Muralha de Brasa — nível 4
+- m4-61: 🕸️ Esfera Aquosa — nível 4
+- m5-1: 🌀 Animar Objetos — nível 5
+- m5-2: 🛡️ Cúpula Antivida — nível 5
+- m5-3: 🌀 Despertar — nível 5
+- m5-4: 🛡️ Banishing Smite — nível 5
+- m5-5: ✨ Mão Colossal da Seiva — nível 5 — referência reconhecível, nome migrado
+- m5-6: 🛡️ Círculo de Poder — nível 5
+- m5-7: 🕸️ Névoa Mortal — nível 5
+- m5-8: 👁️ Comunhão — nível 5
+- m5-9: 👁️ Comunhão com a Cidade (UA) — nível 5 — experimental
+- m5-10: 👁️ Comunhão com a Natureza — nível 5
+- m5-11: ✨ Cone de Frio — nível 5
+- m5-12: 🕸️ Conjurar Elemental — nível 5
+- m5-13: 🕸️ Conjurar Voleio — nível 5
+- m5-14: 🕸️ Convocar Caçador Alado (Experimental) — nível 5 — experimental, referência reconhecível, nome migrado
+- m5-15: 👁️ Contato Extraplanar — nível 5
+- m5-16: 🕯️ Contágio — nível 5
+- m5-17: 🌀 Ventos de Controle — nível 5
+- m5-18: 🌀 Criar Elmo de Bloqueio Mágico — nível 5
+- m5-19: 🪞 Criação — nível 5
+- m5-20: 🕯️ Danse Macabre — nível 5
+- m5-21: ✨ Amanhecer — nível 5
+- m5-22: ✨ Onda Destrutiva — nível 5
+- m5-23: 🛡️ Dissipar o Mal e o Bem — nível 5
+- m5-24: 🎵 Dominar Pessoa — nível 5
+- m5-25: 🪞 Sonhe — nível 5
+- m5-26: 🕯️ Enervação — nível 5
+- m5-27: 🕸️ Passo Distante — nível 5
+- m5-28: ✨ Ataque Flamejante — nível 5
+- m5-29: 🎵 Geas — nível 5
+- m5-30: 🛡️ Restauração maior — nível 5
+- m5-31: ✨ Consagrar — nível 5
+- m5-32: 🎵 Imobilizar Monstro — nível 5
+- m5-33: ✨ Arma Sagrada — nível 5
+- m5-34: ✨ Imolação — nível 5
+- m5-35: 🕸️ Brasado Infernal — nível 5
+- m5-36: 🕸️ Praga de Criatura do Jardims — nível 5
+- m5-37: 👁️ Lendas e Histórias — nível 5
+- m5-38: ✨ Sorvedouro — nível 5
+- m5-39: ✨ Curar Ferimentos em Massa — nível 5
+- m5-40: 🪞 Despistar — nível 5
+- m5-41: 🎵 Modificar Memória — nível 5
+- m5-42: 🕯️ Inundação de Energia Negativa — nível 5
+- m5-43: 🌀 Criar Passagem — nível 5
+- m5-44: 🛡️ Âncora Planar — nível 5
+- m5-45: 🕯️ Reviver os Mortos — nível 5
+- m5-46: 👁️ Rede Telepática do Micélio — nível 5 — referência reconhecível, nome migrado
+- m5-47: 🌀 Reencarnar — nível 5
+- m5-48: 👁️ Vidência — nível 5
+- m5-49: 🪞 Similaridade — nível 5
+- m5-50: 🌀 Desligamento (UA) — nível 5 — experimental
+- m5-51: 🌀 Capacitação de habilidades — nível 5
+- m5-52: 🕸️ Golpe de Vento de Aço — nível 5
+- m5-53: 🕸️ Invocar Luminar — nível 5
+- m5-54: 🕸️ Invocar Espírito Dracônico — nível 5
+- m5-55: 🕸️ Invocar Espírito Dracônico (UA) — nível 5 — experimental
+- m5-56: 🌀 Aljava Rápida — nível 5
+- m5-57: 🎵 Estático Sináptico — nível 5
+- m5-58: 🌀 Telecinese — nível 5
+- m5-59: 🕸️ Círculo de Teletransporte — nível 5
+- m5-60: 🌀 Derivação Temporal — nível 5
+- m5-61: 🌀 Transmute Rock — nível 5
+- m5-62: 🕸️ Passo Arbóreo — nível 5
+- m5-63: ✨ Muralha de Energia — nível 5
+- m5-64: ✨ Muralha de Luz — nível 5
+- m5-65: ✨ Muralha de Pedra — nível 5
+- m5-66: ✨ Ira da natureza — nível 5
+- m6-1: 🕸️ Portão Arcano — nível 6
+- m6-2: ✨ Barreira de Lâminas — nível 6
+- m6-3: 🌀 OSSOS DA TERRA — nível 6
+- m6-4: ✨ Cadeia de Raios — nível 6
+- m6-5: 🕯️ Círculo da Morte — nível 6
+- m6-6: 🕸️ Conjurar Feérico — nível 6
+- m6-7: ✨ Contingência — nível 6
+- m6-8: 🌀 Criar Homúnculo — nível 6
+- m6-9: 🕯️ Criar Mortos-Vivos — nível 6
+- m6-10: 🌀 Desintegrar — nível 6
+- m6-11: 🕸️ Chamado Instantâneo do Fio — nível 6 — referência reconhecível, nome migrado
+- m6-12: 🛡️ Druid Grove — nível 6
+- m6-13: 🕯️ Ataque Visual — nível 6
+- m6-14: 👁️ Encontrar o Caminho — nível 6
+- m6-15: 🛡️ Escudo de Quitina Solar — nível 6 — referência reconhecível, nome migrado
+- m6-16: 🛡️ Escudo Experimental de Quitina Solar — nível 6 — experimental, referência reconhecível, nome migrado
+- m6-17: 🌀 Carne para Pedra — nível 6
+- m6-18: 🛡️ Proibição — nível 6
+- m6-19: 🛡️ Globo de Invulnerabilidade — nível 6
+- m6-20: ✨ Fissura por Gravidade — nível 6
+- m6-21: 🛡️ Proteger Fortaleza — nível 6
+- m6-22: 🕯️ Dano — nível 6
+- m6-23: ✨ Curar — nível 6
+- m6-24: 🕸️ Banquete de Heróis — nível 6
+- m6-25: 🌀 Investidura de Brasa — nível 6
+- m6-26: 🌀 Investidura de Gelo — nível 6
+- m6-27: 🌀 Investidura de Pedra — nível 6
+- m6-28: 🌀 Investidura de Vento — nível 6
+- m6-29: 🕯️ Jarro mágico — nível 6
+- m6-30: 🎵 Sugestão Coletiva — nível 6
+- m6-31: 🪞 Prisão Mental — nível 6
+- m6-32: 🌀 Mover Terra — nível 6
+- m6-33: 🌀 Forma de Outro Mundo (UA) — nível 6 — experimental
+- m6-34: ✨ Esfera Congelante do Orvalho — nível 6 — referência reconhecível, nome migrado
+- m6-35: 🎵 Dança Irresistível das Antenas — nível 6 — referência reconhecível, nome migrado
+- m6-36: 🕸️ Aliado Extra-Planar — nível 6
+- m6-37: 🛡️ Proteção Primordial — nível 6
+- m6-38: 🪞 Ilusão Programada — nível 6
+- m6-39: 🎵 Esmagamento Psíquico (UA) — nível 6 — experimental
+- m6-40: 🕸️ Espalhar — nível 6
+- m6-41: 🕯️ Gaiola da Alma — nível 6
+- m6-42: 🕸️ Invocar Ínfero — nível 6
+- m6-43: ✨ Raio Solar — nível 6
+- m6-44: 🌀 Forma do Outro Jardim — nível 6 — referência reconhecível, nome migrado
+- m6-45: 🌀 Metamorfose do Casulo Bélico — nível 6 — referência reconhecível, nome migrado
+- m6-46: 🕸️ Teletransporte por Plantas — nível 6
+- m6-47: 👁️ Visão da Verdade — nível 6
+- m6-48: ✨ Parede de Gelo — nível 6
+- m6-49: 🕸️ Muralha de Espinhos — nível 6
+- m6-50: 🌀 Caminhar no Vento — nível 6
+- m6-51: 🕸️ Palavra de Recordação — nível 6
+- m7-1: 🕸️ Conjurar Luminar — nível 7
+- m7-2: 🕸️ Convocar Colosso do Brejo (Experimental) — nível 7 — experimental, referência reconhecível, nome migrado
+- m7-3: 🌀 Criar Magen — nível 7
+- m7-4: ✨ Coroa de Estrelas — nível 7
+- m7-5: ✨ Bola de Brasa Controlável — nível 7
+- m7-6: ✨ Palavra Sagrada — nível 7
+- m7-7: 🌀 Transformação Dracônica — nível 7
+- m7-8: 🌀 Transformação Dracônica (UA) — nível 7 — experimental
+- m7-9: 🕸️ Sonho com o véu azul — nível 7
+- m7-10: 🌀 Eterealidade — nível 7
+- m7-11: 🕯️ Dedo da Morte — nível 7
+- m7-12: ✨ Tempestade de Brasa — nível 7
+- m7-13: ✨ Prisão de Energia — nível 7
+- m7-14: 🪞 Miragem — nível 7
+- m7-15: 🕸️ Palácio Vivo da Colônia — nível 7 — referência reconhecível, nome migrado
+- m7-16: ✨ Lâmina Autônoma de Cristal — nível 7 — referência reconhecível, nome migrado
+- m7-17: 🕸️ Viagem Planar — nível 7
+- m7-18: 🎵 Palavra de Poder: Dor — nível 7
+- m7-19: ✨ Rajada Prismática — nível 7
+- m7-20: 🪞 Projetar Imagem — nível 7
+- m7-21: 🌀 Recriar — nível 7
+- m7-22: 🕯️ Ressurreição — nível 7
+- m7-23: 🌀 Inverter a Gravidade — nível 7
+- m7-24: 🌀 Sequradora — nível 7
+- m7-25: 🪞 Simulacro — nível 7
+- m7-26: 🛡️ Símbolo — nível 7
+- m7-27: 🕸️ Teleporte — nível 7
+- m7-28: 🕸️ Templo dos Deuses — nível 7
+- m7-29: 🕯️ Tether Essence — nível 7
+- m7-30: ✨ Furacão — nível 7
+- m8-1: 🕯️ Murcha Horrenda do Brejo — nível 8 — referência reconhecível, nome migrado
+- m8-2: 🌀 Formas Animais — nível 8
+- m8-3: 🛡️ Campo Antimagia — nível 8
+- m8-4: 🎵 Antipatia / Simpatia — nível 8
+- m8-5: 🕯️ Clonar — nível 8
+- m8-6: 🌀 Controlar o Clima — nível 8
+- m8-7: ✨ Estrela Negra — nível 8
+- m8-8: 🕸️ Semiplano — nível 8
+- m8-9: 🎵 Dominar Monstro — nível 8
+- m8-10: ✨ Terremoto — nível 8
+- m8-11: 🎵 Enfraquecer Intelecto — nível 8
+- m8-12: 🌀 Loquacidade — nível 8
+- m8-13: 🛡️ Aura Sagrada — nível 8
+- m8-14: 🪞 Titã Ilusório — nível 8
+- m8-15: 🕸️ Nuvem Incendiária — nível 8
+- m8-16: ✨ Escuridão Enlouquecedora — nível 8
+- m8-17: 🕸️ Maze — nível 8
+- m8-18: 🕸️ Fortaleza Poderosa — nível 8
+- m8-19: 🛡️ Limpar a Mente — nível 8
+- m8-20: 🎵 Palavra de Poder Atordoar — nível 8
+- m8-21: 🕸️ Reality Break — nível 8
+- m8-22: ✨ Raio de sol — nível 8
+- m8-23: ✨ Telepatia — nível 8
+- m8-24: 🕸️ Tsunami — nível 8
+- m9-1: ✨ Projeção Astral — nível 9
+- m9-2: 🕸️ Lâmina do Desastre — nível 9
+- m9-3: 👁️ Previdência — nível 9
+- m9-4: 🕸️ Portão — nível 9
+- m9-5: 🛡️ Prisão — nível 9
+- m9-6: 🛡️ Invulnerabilidade — nível 9
+- m9-7: ✨ Cura em Massa — nível 9
+- m9-8: 🌀 Polimorfo de Massa — nível 9
+- m9-9: ✨ Chuva de Meteoros — nível 9
+- m9-10: ✨ Palavra de Poder: Curar — nível 9
+- m9-11: 🎵 Palavra de Poder Matar — nível 9
+- m9-12: 🛡️ Muralha Prismática — nível 9
+- m9-13: 🎵 Grito Psíquico — nível 9
+- m9-14: ✨ Vazio Voraz — nível 9
+- m9-15: 🌀 Alterar Forma — nível 9
+- m9-16: 🕸️ Tempestade da Vingança — nível 9
+- m9-17: 🕯️ Devastação do Tempo — nível 9
+- m9-18: 🌀 Parar o Tempo — nível 9
+- m9-19: 🌀 Polimorfia Total — nível 9
+- m9-20: 🕯️ Ressurreição Verdadeira — nível 9
+- m9-21: 🪞 Estranho — nível 9
+- m9-22: 🕸️ Desejo — nível 9
+
+## Apêndice F - Duplicidades
+
+- 🕯️ ressurreição: m3-60, m7-22
