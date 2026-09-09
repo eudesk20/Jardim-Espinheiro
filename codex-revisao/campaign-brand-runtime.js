@@ -1,0 +1,2 @@
+/* Exibe a campanha ativa como identidade principal da ficha sem remover a marca MICROCOSMOS. */
+(()=>{try{const active=JSON.parse(localStorage.getItem("MICROCOSMOS_ACTIVE_ROOM_V1")||"null"),name=String(active?.roomName||"").trim();if(!name||active?.roomId==="microcosmos-main")return;const label=document.querySelector(".masthead .brand small");if(label)label.textContent=name.toLocaleUpperCase("pt-BR");document.title=`♦ MICROCOSMO ♦ — ${name}`}catch(_e){}})();

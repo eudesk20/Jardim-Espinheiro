@@ -51,7 +51,7 @@
     </section>`;
     document.body.appendChild(overlay);
     const error=message=>overlay.querySelector("#microRoomError").textContent=message||"";
-    const selectRoom=room=>{localStorage.setItem(STORAGE_KEY,JSON.stringify({roomId:room.room_id}));location.reload()};
+    const selectRoom=room=>{localStorage.setItem(STORAGE_KEY,JSON.stringify({roomId:room.room_id,roomName:room.room_name||"Mesa atual"}));location.reload()};
     overlay.querySelectorAll("[data-enter]").forEach(btn=>btn.onclick=()=>selectRoom(rooms.find(r=>r.room_id===btn.dataset.enter)));
     overlay.querySelector("[data-close]")?.addEventListener("click",()=>overlay.remove());
     overlay.querySelector("[data-legacy]")?.addEventListener("click",()=>{localStorage.setItem(STORAGE_KEY,JSON.stringify({roomId:LEGACY_KEY}));location.reload()});
