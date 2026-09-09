@@ -8,7 +8,7 @@
   const PROJECT_URL="https://evyhhlbvhspiuwouivbb.supabase.co";
   const PUBLISHABLE_KEY="sb_publishable_mf7PV03HfaJw_YkUhX34NA_dAGFbyp6";
   const SHEET_KEY="JE_INTEGRATED_123";
-  const SESSION_KEY="microcosmos-main";
+  const SESSION_KEY=globalThis.MICROCOSMOS_ACTIVE_ROOM_ID||"microcosmos-main";
   const players=globalThis.MICROCOSMOS_TABLE_PLAYERS,api=globalThis.MICROCOSMOS_TABLE_API;
   if(!Array.isArray(players)||!api)return;
   const $=id=>document.getElementById(id),tokenLayer=$("tokenLayer"),rollLog=$("rollLog"),stage=$("stage");

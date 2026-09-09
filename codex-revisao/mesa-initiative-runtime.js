@@ -10,7 +10,7 @@
 
   const PROJECT_URL="https://evyhhlbvhspiuwouivbb.supabase.co";
   const PUBLISHABLE_KEY="sb_publishable_mf7PV03HfaJw_YkUhX34NA_dAGFbyp6";
-  const SESSION_KEY="microcosmos-main";
+  const SESSION_KEY=globalThis.MICROCOSMOS_ACTIVE_ROOM_ID||"microcosmos-main";
   const players=globalThis.MICROCOSMOS_TABLE_PLAYERS;
   const api=globalThis.MICROCOSMOS_TABLE_API;
   const list=document.getElementById("players"),tokenLayer=document.getElementById("tokenLayer");
@@ -155,7 +155,7 @@
 
   try{
     const {createClient}=await import("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm");supabase=createClient(PROJECT_URL,PUBLISHABLE_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}});const {data:{session:s}}=await supabase.auth.getSession();session=s;
-    if(session){const {data:p}=await supabase.from("profiles").select("role,approved").eq("id",session.user.id).maybeSingle();profile=p;isMaster=profile?.role==="master"&&profile?.approved!==false;await loadCharacters();await loadState();supabase.channel(`mesa-init-${SESSION_KEY}`).on("postgres_changes",{event:"*",schema:"public",table:"mesa_initiative",filter:`session_key=eq.${SESSION_KEY}`},()=>loadState()).on("postgres_changes",{event:"*",schema:"public",table:"mesa_combat_state",filter:`session_key=eq.${SESSION_KEY}`},()=>loadState()).subscribe()}else schedule();
+    if(session){const {data:p}=await supabase.from("profiles").select("role,approved").eq("id",session.user.id).maybeSingle();profile=p;const roomContext=await (globalThis.MICROCOSMOS_ROOMS?.ready||Promise.resolve(null));isMaster=profile?.approved!==false&&(roomContext?!!roomContext.canMaster:profile?.role==="master");await loadCharacters();await loadState();supabase.channel(`mesa-init-${SESSION_KEY}`).on("postgres_changes",{event:"*",schema:"public",table:"mesa_initiative",filter:`session_key=eq.${SESSION_KEY}`},()=>loadState()).on("postgres_changes",{event:"*",schema:"public",table:"mesa_combat_state",filter:`session_key=eq.${SESSION_KEY}`},()=>loadState()).subscribe()}else schedule();
   }catch(e){console.warn("MICROCOSMOS: iniciativa online indisponível",e);schedule()}
 
   if(tokenLayer){const obs=new MutationObserver(()=>{loadCharacters().then(schedule)});obs.observe(tokenLayer,{childList:true,subtree:false})}

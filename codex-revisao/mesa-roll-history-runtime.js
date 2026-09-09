@@ -9,11 +9,11 @@
 
   const PROJECT_URL="https://evyhhlbvhspiuwouivbb.supabase.co";
   const PUBLISHABLE_KEY="sb_publishable_mf7PV03HfaJw_YkUhX34NA_dAGFbyp6";
-  const SESSION_KEY="microcosmos-main";
+  const SESSION_KEY=globalThis.MICROCOSMOS_ACTIVE_ROOM_ID||"microcosmos-main";
   const rollLog=document.getElementById("rollLog");
   if(!rollLog)return;
 
-  let supabase=null,session=null,profile=null,hiddenMode=false,loadingRemote=false;
+  let supabase=null,session=null,profile=null,isMaster=false,hiddenMode=false,loadingRemote=false;
   const seenIds=new Set(),localNonces=new Set();
   const players=globalThis.MICROCOSMOS_TABLE_PLAYERS||[];
 
@@ -43,14 +43,14 @@
     const panel=rollLog.closest(".panel")||rollLog.parentElement;
     if(!panel||document.getElementById("microRollToolbar"))return;
     const bar=document.createElement("div");bar.id="microRollToolbar";bar.className="micro-roll-toolbar";
-    bar.innerHTML=`<small>As rolagens públicas da Mesa são compartilhadas com todos.</small>${profile?.role==="master"?'<button class="btn dark" id="microHiddenRollToggle">🎭 Rolagem Oculta: OFF</button>':""}`;
+    bar.innerHTML=`<small>As rolagens públicas da Mesa são compartilhadas com todos.</small>${isMaster?'<button class="btn dark" id="microHiddenRollToggle">🎭 Rolagem Oculta: OFF</button>':""}`;
     panel.insertBefore(bar,rollLog);
     const btn=document.getElementById("microHiddenRollToggle");if(btn)btn.onclick=()=>{hiddenMode=!hiddenMode;btn.textContent=`🎭 Rolagem Oculta: ${hiddenMode?"ON":"OFF"}`;btn.classList.toggle("danger",hiddenMode);btn.classList.toggle("dark",!hiddenMode)}
   }
 
   function rowHtml(r){
     const message=publicRollText(r?.message);if(!message)return"";
-    const hidden=r.hidden&&profile?.role==="master";
+    const hidden=r.hidden&&isMaster;
     return `<div class="log-entry ${hidden?"micro-hidden-roll":""}" data-roll-id="${esc(r.id)}"><span class="micro-roll-author">${esc(r.actor_name||"Jogador")}</span>${r.token_name?` • ${esc(r.token_name)}`:""}<span class="micro-roll-time">${esc(timeText(r.created_at))}</span>${hidden?'<span class="micro-roll-hidden-badge">SÓ MESTRE</span>':""}<br>${esc(message)}</div>`
   }
 
@@ -75,7 +75,7 @@
   async function publishMessage(message,entry){
     message=publicRollText(message);if(!session||!profile||!message)return;
     const n=nonce();localNonces.add(n);if(entry)entry.dataset.microRollNonce=n;const token=selectedToken();
-    const payload={session_key:SESSION_KEY,actor_user_id:session.user.id,actor_name:actorName(),actor_role:profile.role==="master"?"master":"player",token_name:token?.name||null,message:message.slice(0,2000),hidden:profile.role==="master"&&hiddenMode,client_nonce:n};
+    const payload={session_key:SESSION_KEY,actor_user_id:session.user.id,actor_name:actorName(),actor_role:isMaster?"master":"player",token_name:token?.name||null,message:message.slice(0,2000),hidden:isMaster&&hiddenMode,client_nonce:n};
     const {error}=await supabase.from("mesa_rolls").insert(payload);if(error)console.warn("MICROCOSMOS: falha ao publicar rolagem",error)
   }
 
@@ -92,7 +92,7 @@
         const raw=(entry.textContent||"").trim(),text=publicRollText(raw);if(!raw||/mesa está pronta para o teste/i.test(raw))continue;
         entry.dataset.microPublished="1";
         if(!text){entry.remove();continue}
-        if(profile?.role==="master"&&hiddenMode){entry.classList.add("micro-hidden-roll");const badge=document.createElement("span");badge.className="micro-roll-hidden-badge";badge.textContent="SÓ MESTRE";entry.prepend(badge)}
+        if(isMaster&&hiddenMode){entry.classList.add("micro-hidden-roll");const badge=document.createElement("span");badge.className="micro-roll-hidden-badge";badge.textContent="SÓ MESTRE";entry.prepend(badge)}
         publishMessage(text,entry)
       }
     }
@@ -103,9 +103,9 @@
     const {createClient}=await import("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm");
     supabase=createClient(PROJECT_URL,PUBLISHABLE_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}});
     const {data:{session:s}}=await supabase.auth.getSession();session=s;if(!session)return;
-    const {data:p}=await supabase.from("profiles").select("id,username,display_name,role,approved").eq("id",session.user.id).maybeSingle();profile=p;if(!profile||profile.approved===false)return;
+    const {data:p}=await supabase.from("profiles").select("id,username,display_name,role,approved").eq("id",session.user.id).maybeSingle();profile=p;if(!profile||profile.approved===false)return;const roomContext=await (globalThis.MICROCOSMOS_ROOMS?.ready||Promise.resolve(null));isMaster=roomContext?!!roomContext.canMaster:profile.role==="master";
     ensureToolbar();await loadRecent();
     supabase.channel(`mesa-rolls-${SESSION_KEY}`).on("postgres_changes",{event:"INSERT",schema:"public",table:"mesa_rolls",filter:`session_key=eq.${SESSION_KEY}`},payload=>prependRow(payload.new)).subscribe();
-    globalThis.MICROCOSMOS_MESA_ROLLS={reload:loadRecent,isHidden:()=>hiddenMode,setHidden:v=>{if(profile.role==="master"){hiddenMode=!!v;const b=document.getElementById("microHiddenRollToggle");if(b)b.click()}}};
+    globalThis.MICROCOSMOS_MESA_ROLLS={reload:loadRecent,isHidden:()=>hiddenMode,setHidden:v=>{if(isMaster){hiddenMode=!!v;const b=document.getElementById("microHiddenRollToggle");if(b)b.click()}}};
   }catch(e){console.warn("MICROCOSMOS: histórico online da Mesa indisponível",e)}
 })();

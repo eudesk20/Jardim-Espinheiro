@@ -56,7 +56,7 @@
   async function resolveTarget(target){const p=pendingSpell;if(!p)return;cancelTargeting();const spell=p.spell,caster=p.caster,effect=spell.kind==="cura"?"healing":"damage";let amount=dice(spell.damage||spell.healing||"0");if(amount<=0)amount=1;vfx(caster,target,p.shape,p.element,amount,effect);log(`<b style="color:${caster.color}">${esc(caster.name)}</b> usa <b>${esc(spell.name)}</b> em <b>${esc(target.name)}</b> → ${effect==="healing"?"💚 cura":"💥 dano"} <b>${amount} PV</b>`,caster.color);
     if(!supabase||!session){log("⚠️ Sem sessão online: o PV não foi alterado no Supabase.","#a36f17");return}
     if((!target.linked||!target.userId)&&profile?.role==="master"){const before=+target.hp||0;target.hp=effect==="healing"?Math.min(+target.hpMax||before,before+amount):Math.max(0,before-amount);api.renderPlayers();api.renderTokens();api.selectToken(target.id);await globalThis.MICROCOSMOS_MESA_SHARED?.flushToken?.(target.id,true);log(`✅ Efeito aplicado pelo Mestre. PV: ${before} → ${target.hp}.`,"#477344");return}
-    const payload={effect,amount,spell_name:spell.name||"Magia",caster_name:caster.name,target_name:target.name,element:p.element,shape:p.shape,session_key:"microcosmos-main",source:"campaign_table"};
+    const payload={effect,amount,spell_name:spell.name||"Magia",caster_name:caster.name,target_name:target.name,element:p.element,shape:p.shape,session_key:globalThis.MICROCOSMOS_ACTIVE_ROOM_ID||"microcosmos-main",source:"campaign_table"};
     const request=target.linked&&target.userId
       ? await supabase.rpc("request_interaction",{target:target.userId,interaction_kind:"combat_effect",interaction_payload:payload})
       : await supabase.rpc("request_token_combat_effect",{target_token:target.id,interaction_payload:payload});

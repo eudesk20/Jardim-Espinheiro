@@ -12,7 +12,7 @@
   if(globalThis.MICROCOSMOS_TACTICAL_TURN)return;
   const PROJECT_URL="https://evyhhlbvhspiuwouivbb.supabase.co";
   const PUBLISHABLE_KEY="sb_publishable_mf7PV03HfaJw_YkUhX34NA_dAGFbyp6";
-  const SESSION_KEY="microcosmos-main";
+  const SESSION_KEY=globalThis.MICROCOSMOS_ACTIVE_ROOM_ID||"microcosmos-main";
   const players=globalThis.MICROCOSMOS_TABLE_PLAYERS;
   const api=globalThis.MICROCOSMOS_TABLE_API;
   if(!Array.isArray(players)||!api)return;

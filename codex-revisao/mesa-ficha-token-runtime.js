@@ -7,7 +7,7 @@
 
   const PROJECT_URL="https://evyhhlbvhspiuwouivbb.supabase.co";
   const PUBLISHABLE_KEY="sb_publishable_mf7PV03HfaJw_YkUhX34NA_dAGFbyp6";
-  const MESA_SESSION_KEY="microcosmos-main";
+  const MESA_SESSION_KEY=globalThis.MICROCOSMOS_ACTIVE_ROOM_ID||"microcosmos-main";
   const SHEET_KEY="JE_INTEGRATED_123";
   const TABLE_KEY="MICROCOSMOS_TABLE_TOKENS_V2";
   const players=globalThis.MICROCOSMOS_TABLE_PLAYERS;

@@ -9,7 +9,7 @@
 
   const PROJECT_URL="https://evyhhlbvhspiuwouivbb.supabase.co";
   const PUBLISHABLE_KEY="sb_publishable_mf7PV03HfaJw_YkUhX34NA_dAGFbyp6";
-  const SESSION_KEY="microcosmos-main";
+  const SESSION_KEY=globalThis.MICROCOSMOS_ACTIVE_ROOM_ID||"microcosmos-main";
   const PLAYER_KEY="MICROCOSMOS_PLAYER_EXPERIENCE_V1";
   const TABLE_LOCAL_KEY="MICROCOSMOS_TABLE_RULES_V1";
   const $=id=>document.getElementById(id);

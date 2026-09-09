@@ -8,7 +8,7 @@
 
   const PROJECT_URL="https://evyhhlbvhspiuwouivbb.supabase.co";
   const PUBLISHABLE_KEY="sb_publishable_mf7PV03HfaJw_YkUhX34NA_dAGFbyp6";
-  const SESSION_KEY="microcosmos-main";
+  let SESSION_KEY=globalThis.MICROCOSMOS_ACTIVE_ROOM_ID||"microcosmos-main";
   const players=globalThis.MICROCOSMOS_TABLE_PLAYERS;
   const api=globalThis.MICROCOSMOS_TABLE_API;
   if(!Array.isArray(players)||!api)return;
@@ -31,7 +31,10 @@
     supabase=createClient(PROJECT_URL,PUBLISHABLE_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}});
     const {data:{session:s}}=await supabase.auth.getSession();session=s;if(!session)return false;
     const {data:p,error}=await supabase.from("profiles").select("id,role,approved").eq("id",session.user.id).maybeSingle();
-    if(error||!p||p.approved===false)return false;profile=p;isMaster=p.role==="master";return true
+    if(error||!p||p.approved===false)return false;
+    const roomContext=await (globalThis.MICROCOSMOS_ROOMS?.ready||Promise.resolve(null));
+    SESSION_KEY=roomContext?.room?.room_id||globalThis.MICROCOSMOS_ACTIVE_ROOM_ID||"microcosmos-main";
+    profile=p;isMaster=roomContext?!!roomContext.canMaster:p.role==="master";return true
   }
 
   async function readRemoteTokens(){
