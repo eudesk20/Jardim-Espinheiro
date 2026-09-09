@@ -30,12 +30,6 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Auditar materiais das magias
-        run: node tools/build-material-audit.mjs
-
-      - name: Aplicar auditoria à ficha publicada
-        run: node tools/apply-material-audit-runtime.mjs
-
       - name: Aplicar Configurações da Mesa
         run: node tools/apply-settings-runtime.mjs
 

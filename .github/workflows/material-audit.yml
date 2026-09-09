@@ -1,17 +1,17 @@
-name: Auditar materiais das magias
+name: Auditar conteúdo editorial
 
 on:
   push:
     branches:
       - main
     paths:
-      - "tools/build-material-audit.mjs"
+      - "tools/audit-content-ip.mjs"
       - "codex-revisao/spell-data.js"
       - ".github/workflows/material-audit.yml"
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: material-audit
@@ -29,18 +29,5 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Auditar componentes materiais do Grimório
-        run: node tools/build-material-audit.mjs
-
-      - name: Publicar auditoria gerada
-        shell: bash
-        run: |
-          if git diff --quiet -- codex-revisao/spell-material-audit.js; then
-            echo "Auditoria já está atualizada."
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add codex-revisao/spell-material-audit.js
-          git commit -m "Atualizar auditoria de materiais das magias"
-          git push
+      - name: Verificar inventário editorial
+        run: node tools/audit-content-ip.mjs && git diff --exit-code -- CONTENT_INVENTORY.md
