@@ -12,6 +12,8 @@
 
   async function resolveRole(){
     try{
+      const room=await (globalThis.MICROCOSMOS_ROOMS?.ready||Promise.resolve(null));
+      if(room&&!room.legacy)return room.membership?.member_role==="spectator"?"spectator":room.canMaster?"master":"player";
       const {createClient}=await import("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm");
       const sb=createClient("https://evyhhlbvhspiuwouivbb.supabase.co","sb_publishable_mf7PV03HfaJw_YkUhX34NA_dAGFbyp6",{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}});
       const {data:{session}}=await sb.auth.getSession();
@@ -26,7 +28,7 @@
   function loadAddon(src){if([...document.scripts].some(s=>s.src.endsWith(src)))return;const s=document.createElement("script");s.src=src;s.async=false;document.head.appendChild(s)}
 
   function apply(){
-    const master=role==="master";
+    const master=role==="master",spectator=role==="spectator";
     document.documentElement.dataset.mesaRole=role;
     document.body.classList.toggle("micro-mesa-master",master);
     document.body.classList.toggle("micro-mesa-player",!master);
@@ -43,7 +45,7 @@
     if(master){
       show(gridWrap,"flex");show(mapWrap);show(more);show(free);show(ficha)
     }else{
-      hide(gridWrap);hide(mapWrap);hide(more);hide(free);show(ficha);
+      hide(gridWrap);hide(mapWrap);hide(more);hide(free);if(spectator)hide(ficha);else show(ficha);
 
       // Proteção adicional caso algum controle antigo volte para o DOM por re-render.
       hide($("gridType"));hide($("gridMinus"));hide($("gridPlus"));hide($("gridSize"));hide($("clearMap"));
