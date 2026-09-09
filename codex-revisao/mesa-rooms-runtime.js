@@ -80,7 +80,7 @@
       if(saved?.roomId===LEGACY_KEY&&profile?.role==="master")finish({room:{room_id:LEGACY_KEY,room_name:"Mesa atual",master_mode:"human"},membership:{member_role:"owner"},legacy:true,canMaster:true,client,session});
       else if(active){const canMaster=["owner","master"].includes(active.member_role)&&active.master_mode!=="ai";finish({room:active,membership:active,legacy:false,canMaster,client,session});startModeration(client,active);watchAccess(client,active)}
       else openPicker(client,rooms||[],profile,{required:true});
-      const launch=document.createElement("button");launch.className="micro-room-launch";launch.textContent=active?`🏰 ${active.room_name}`:"🏰 Salas";launch.onclick=()=>location.href="lobby.html";document.body.appendChild(launch);
+      const launch=document.createElement("button");launch.className="micro-room-launch";launch.textContent="🏰 Trocar de sala";launch.title=active?`Sair de ${active.room_name} e voltar ao Lobby sem deslogar`:"Voltar ao Lobby de campanhas";launch.setAttribute("aria-label",launch.title);launch.onclick=()=>location.href="lobby.html";document.body.appendChild(launch);
     }catch(error){console.warn("MICROCOSMOS Salas:",error);finish({room:{room_id:LEGACY_KEY,room_name:"Mesa atual"},membership:{member_role:"player"},legacy:true,canMaster:false,error})}
   })();
 })();
