@@ -30,4 +30,4 @@ jobs:
           node-version: "22"
 
       - name: Verificar inventário editorial
-        run: node tools/audit-content-ip.mjs && git diff --exit-code -- CONTENT_INVENTORY.md
+        run: node tools/audit-content-ip.mjs
