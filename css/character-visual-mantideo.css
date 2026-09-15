@@ -2,10 +2,10 @@
   width: 100%;
   height: auto;
   aspect-ratio: 1;
-  background-image: url("../assets/characters/mantideo-adulto-heroico-v1.png");
-  background-size: 200% 200%;
+  background-image: url("../assets/characters/mantideo-feminino-frontal-v1.png");
+  background-size: contain;
   background-repeat: no-repeat;
-  background-position: 0 0;
+  background-position: center;
   filter: drop-shadow(0 8px 5px #35271966);
 }
 
@@ -14,22 +14,24 @@
 }
 
 .visual-figure[data-race="race-5"][data-art-ready="true"][data-presentation="masculina"] {
-  background-size: 180% 180%;
-  background-position: 0 100%;
+  background-image: url("../assets/characters/mantideo-masculino-frontal-v1.png");
+  background-size: contain;
+  background-position: center;
 }
 
 .visual-token-figure[data-race="race-5"][data-art-ready="true"] {
   width: 88%;
   border-color: #ead08a;
   background-color: #2d3d2d;
-  background-image: url("../assets/characters/mantideo-adulto-heroico-v1.png");
-  background-size: 200% 200%;
+  background-image: url("../assets/characters/mantideo-feminino-superior-v1.png");
+  background-size: contain;
   background-repeat: no-repeat;
-  background-position: 100% 0;
+  background-position: center;
 }
 
 .visual-token-figure[data-race="race-5"][data-art-ready="true"][data-presentation="masculina"] {
-  background-position: 100% 100%;
+  background-image: url("../assets/characters/mantideo-masculino-superior-v1.png");
+  background-position: center;
 }
 
 .visual-token-figure:after {
