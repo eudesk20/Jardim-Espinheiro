@@ -103,10 +103,11 @@
     const palette=["#8d63bf","#4f9464","#b06b4d","#4f7fa8","#b18a42","#9a5f87","#6f9d56","#b65c62"];let h=0;for(const ch of String(seed||"token"))h=(h*31+ch.charCodeAt(0))>>>0;return palette[h%palette.length]
   }
   function sheetToToken(row,index=0){
-    const data=row.data||{},characterId=row.id||`local-${row.user_id||"self"}`,userId=row.user_id||currentUserId||"",id=`sheet:${characterId}`,existing=players.find(p=>p.id===id),sheetPortrait=data.portrait||"";
+    const data=row.data||{},characterId=row.id||`local-${row.user_id||"self"}`,userId=row.user_id||currentUserId||"",id=`sheet:${characterId}`,existing=players.find(p=>p.id===id),sheetPortrait=data.portrait||"",visualToken=data.appearance?.tokenAsset||"";
     let tokenImage="",tokenImageMode=existing?.tokenImageMode||"";
     if(tokenImageMode==="custom")tokenImage=existing?.tokenImage||"";
     else if(tokenImageMode==="none")tokenImage="";
+    else if(visualToken){tokenImageMode="visual";tokenImage=visualToken}
     else {tokenImageMode=sheetPortrait?"sheet":"";tokenImage=sheetPortrait}
     const name=data.charName||row.name||profileNames.get(userId)||"Personagem";
     return {
