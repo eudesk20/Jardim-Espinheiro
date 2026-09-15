@@ -1,0 +1,11 @@
+.glade-large .glade-seat[data-race="race-5"].idle-reading .glade-avatar {
+  left: -5%;
+  bottom: 14%;
+  width: 110%;
+  height: 105%;
+  aspect-ratio: auto;
+}
+
+.glade-demo-read[hidden] {
+  display: none !important;
+}

@@ -353,10 +353,10 @@ input,select,textarea{width:100%;background:var(--paper2);border:1px solid #a38e
   </div>
 
   <div class="tabs">
-    <button class="active" data-page="p1Page">⚔️ 1. Combate</button>
-    <button data-page="p2Page">🌱 2. Vida no Jardim</button>
-    <button data-page="p3Page">✨ 3. Grimório</button>
-    <button data-page="p4Page">📚 4. Codex</button>
+    <button class="active" data-page="p1Page">⚔️ Combate</button>
+    <button data-page="p2Page">🌱 Vida no Jardim</button>
+    <button data-page="p3Page">✨ Grimório</button>
+    <button data-page="p4Page">📚 Codex</button>
   </div>
 
 	  <section id="p1Page" class="page-wrap active"><div class="sheet">
@@ -682,6 +682,7 @@ input,select,textarea{width:100%;background:var(--paper2);border:1px solid #a38e
 
 <script src="codex-revisao/grimorio-index.js"></script>
 <script src="codex-revisao/spell-data.js"></script>
+<script src="codex-revisao/mantideo-racial-cantrip-runtime.js"></script>
 <script src="codex-revisao/spell-material-audit.js"></script>
 <script src="codex-revisao/class-kits.js"></script>
 <script src="codex-revisao/race-data.js"></script>
@@ -1487,7 +1488,7 @@ function creationNarrative(d,type){
 
 const CODEX_REVIEW_MODE=false;
 const codexVisible=item=>CODEX_REVIEW_MODE||item?.discovered!==false;
-const AUTO_SPELLS={race:{},subclass:{}};
+const AUTO_SPELLS={race:{"race-5":["Foices Retráteis"]},subclass:{}};
 function syncAutoSpells(){
   state.magic.known=state.magic.known.filter(x=>!x.auto);
   const grants=[...(AUTO_SPELLS.race[state.race]||[]).map(n=>({name:n,source:`Raça: ${RACE_DATA[state.race]?.name||"Codex"}`})),...(AUTO_SPELLS.subclass[state.sub]||[]).map(n=>({name:n,source:`Subclasse: ${state.sub}`}))];

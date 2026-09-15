@@ -259,10 +259,12 @@ globalThis.CODEX_RACE_DATA = {
     "speed": "9 m",
     "features": [
       "Garras Naturais",
+      "Foices Retráteis",
       "Imobilidade de Caça"
     ],
     "featureDetails": {
       "Garras Naturais": "Garras Naturais: 1d6 Cortante.",
+      "Foices Retráteis": "Truque racial automático e extra: com 1 Ação Bônus, estenda as lâminas naturais dos antebraços sem ocupar as mãos. Recolhê-las não exige Ação. O Truque não concede ataque adicional nem aumenta o dano de Garras Naturais.",
       "Imobilidade de Caça": "Imobilidade de Caça: se não mover no turno, +1 Percepção até o próximo turno."
     },
     "subs": [
@@ -302,7 +304,7 @@ globalThis.CODEX_RACE_DATA = {
     "carry": 1,
     "tagline": "Predadores disciplinados, imóveis até o instante exato de agir.",
     "identity": "IPJ — Origem & Identidade Mantídeos tratam paciência como forma de poder. Sua cultura valoriza postura, observação e o 'momento perfeito'.",
-    "appearance": "Aparência Corpos esguios, braços em lâmina, cabeças triangulares e cores que imitam folhas, flores ou galhos.",
+    "appearance": "Aparência Corpos esguios, cabeças triangulares e cores que imitam folhas, flores ou galhos. Têm mãos articuladas para tarefas comuns; as lâminas naturais ficam recolhidas junto aos antebraços e se estendem quando necessário.",
     "culture": "Cultura Rituais de duelo, meditação imóvel e respeito pela caça. Muitos também são escultores, juízes e observadores."
   },
   "race-6": {
@@ -612,4 +614,3 @@ globalThis.CODEX_RACE_DATA = {
     "culture": "Cultura Cultura poética, ritualística e imprevisível. Nomes, promessas e gestos pequenos importam muito."
   }
 };
-
