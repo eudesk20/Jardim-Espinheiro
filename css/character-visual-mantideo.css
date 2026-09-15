@@ -1,0 +1,32 @@
+.visual-figure[data-race="race-5"][data-art-ready="true"] {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  background-image: url("../assets/characters/mantideo-adulto-heroico-v1.png");
+  background-size: 200% 200%;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  filter: drop-shadow(0 8px 5px #35271966);
+}
+
+.visual-figure[data-race="race-5"][data-art-ready="true"] > * {
+  display: none;
+}
+
+.visual-figure[data-race="race-5"][data-art-ready="true"][data-presentation="masculina"] {
+  background-position: 0 100%;
+}
+
+.visual-token-figure[data-race="race-5"][data-art-ready="true"] {
+  width: 78%;
+  border-color: #ead08a;
+  background-color: #2d3d2d;
+  background-image: url("../assets/characters/mantideo-adulto-heroico-v1.png");
+  background-size: 200% 200%;
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+}
+
+.visual-token-figure[data-race="race-5"][data-art-ready="true"][data-presentation="masculina"] {
+  background-position: 100% 100%;
+}
