@@ -31,3 +31,10 @@
 .visual-token-figure[data-race="race-5"][data-art-ready="true"][data-presentation="masculina"] {
   background-position: 100% 100%;
 }
+
+.visual-token-figure:after {
+  top: auto;
+  bottom: -18%;
+  border-top: 22px solid #f3d47d;
+  border-bottom: 0;
+}
