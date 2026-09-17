@@ -27,8 +27,7 @@
   }
   function localTokenSignature(){return JSON.stringify(players.map(p=>tokenPayload(p)).sort((a,b)=>String(a.id).localeCompare(String(b.id))))}
   async function resolveAuth(){
-    const {createClient}=await import("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm");
-    supabase=createClient(PROJECT_URL,PUBLISHABLE_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}});
+    supabase=await globalThis.MICROCOSMOS_GET_SUPABASE();
     const {data:{session:s}}=await supabase.auth.getSession();session=s;if(!session)return false;
     const {data:p,error}=await supabase.from("profiles").select("id,role,approved").eq("id",session.user.id).maybeSingle();
     if(error||!p||p.approved===false)return false;

@@ -141,7 +141,7 @@
   }
 
   try{
-    const {createClient}=await import("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm");supabase=createClient(PROJECT_URL,PUBLISHABLE_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}});const {data:{session:s}}=await supabase.auth.getSession();session=s;
+    supabase=await globalThis.MICROCOSMOS_GET_SUPABASE();const {data:{session:s}}=await supabase.auth.getSession();session=s;
     if(session){const {data:p}=await supabase.from("profiles").select("role,approved").eq("id",session.user.id).maybeSingle();profile=p||null}
   }catch(e){console.warn("MICROCOSMOS modo tático sem conexão online",e)}
 

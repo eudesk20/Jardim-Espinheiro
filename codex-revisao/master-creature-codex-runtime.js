@@ -33,7 +33,7 @@
   function jsonList(v){try{const x=JSON.parse(v||"[]");return Array.isArray(x)?x:[]}catch{return null}}
 
   async function connect(){
-    try{const {createClient}=await import("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm");supabase=createClient(PROJECT_URL,PUBLISHABLE_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}});const {data:{session}}=await supabase.auth.getSession();if(!session)return false;const {data}=await supabase.from("profiles").select("id,role,approved").eq("id",session.user.id).maybeSingle();profile=data||null;return profile?.role==="master"}
+    try{supabase=await globalThis.MICROCOSMOS_GET_SUPABASE();const {data:{session}}=await supabase.auth.getSession();if(!session)return false;const {data}=await supabase.from("profiles").select("id,role,approved").eq("id",session.user.id).maybeSingle();profile=data||null;return profile?.role==="master"}
     catch(e){console.warn("MICROCOSMOS: Codex IPM indisponível",e);return false}
   }
   function styles(){if($("microCreatureCodexStyles"))return;const s=document.createElement("style");s.id="microCreatureCodexStyles";s.textContent=`

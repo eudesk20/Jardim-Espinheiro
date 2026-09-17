@@ -15,8 +15,7 @@
 
   async function connect(){
     try{
-      const {createClient}=await import("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm");
-      sb=createClient("https://evyhhlbvhspiuwouivbb.supabase.co","sb_publishable_mf7PV03HfaJw_YkUhX34NA_dAGFbyp6",{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}});
+      sb=await globalThis.MICROCOSMOS_GET_SUPABASE();
       const {data:{session:s}}=await sb.auth.getSession();session=s;if(!session)return false;
       const {data:p}=await sb.from("profiles").select("id,role,approved").eq("id",session.user.id).maybeSingle();profile=p||null;
       return profile?.role==="master"&&profile?.approved!==false

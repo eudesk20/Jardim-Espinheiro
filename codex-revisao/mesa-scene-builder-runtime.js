@@ -29,8 +29,7 @@
 
   async function resolveRole(){
     try{
-      const {createClient}=await import("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm");
-      const sb=createClient(PROJECT_URL,PUBLISHABLE_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}});
+      const sb=await globalThis.MICROCOSMOS_GET_SUPABASE();
       const {data:{session}}=await sb.auth.getSession();if(!session)return;currentUserId=session.user.id;
       const {data}=await sb.from("profiles").select("role,approved").eq("id",session.user.id).maybeSingle();
       isMaster=data?.role==="master"&&data?.approved!==false

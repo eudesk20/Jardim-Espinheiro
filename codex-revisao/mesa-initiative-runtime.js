@@ -154,7 +154,7 @@
   }
 
   try{
-    const {createClient}=await import("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm");supabase=createClient(PROJECT_URL,PUBLISHABLE_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}});const {data:{session:s}}=await supabase.auth.getSession();session=s;
+    supabase=await globalThis.MICROCOSMOS_GET_SUPABASE();const {data:{session:s}}=await supabase.auth.getSession();session=s;
     if(session){const {data:p}=await supabase.from("profiles").select("role,approved").eq("id",session.user.id).maybeSingle();profile=p;const roomContext=await (globalThis.MICROCOSMOS_ROOMS?.ready||Promise.resolve(null));isMaster=profile?.approved!==false&&(roomContext?!!roomContext.canMaster:profile?.role==="master");await loadCharacters();await loadState();supabase.channel(`mesa-init-${SESSION_KEY}`).on("postgres_changes",{event:"*",schema:"public",table:"mesa_initiative",filter:`session_key=eq.${SESSION_KEY}`},()=>loadState()).on("postgres_changes",{event:"*",schema:"public",table:"mesa_combat_state",filter:`session_key=eq.${SESSION_KEY}`},()=>loadState()).subscribe()}else schedule();
   }catch(e){console.warn("MICROCOSMOS: iniciativa online indisponível",e);schedule()}
 

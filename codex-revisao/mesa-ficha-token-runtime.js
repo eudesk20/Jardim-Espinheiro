@@ -127,7 +127,7 @@
 
   async function connectSupabase(){
     try{
-      const {createClient}=await import("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm");supabase=createClient(PROJECT_URL,PUBLISHABLE_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}});
+      supabase=await globalThis.MICROCOSMOS_GET_SUPABASE();
       const {data:{session}}=await supabase.auth.getSession();if(!session)return;
       currentUserId=session.user.id;
       const {data:p}=await supabase.from("profiles").select("id,username,display_name,role,approved").eq("id",currentUserId).maybeSingle();profile=p||null;currentRole=profile?.role||"player";

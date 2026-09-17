@@ -70,8 +70,7 @@
   function watchAccess(client,room){if(!room?.room_id||room.room_id===LEGACY_KEY)return;const initialRole=room.member_role;setInterval(async()=>{const {data}=await client.rpc("list_my_rooms"),current=(data||[]).find(r=>r.room_id===room.room_id&&r.member_status==="active");if(!current){alert("Seu acesso a esta sala foi encerrado pelo Mestre.");location.href="lobby.html";return}if(current.member_role!==initialRole){location.reload()}},5000)}
   (async()=>{
     try{
-      const {createClient}=await import("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm");
-      const client=globalThis.MICROCOSMOS_SUPABASE||createClient(PROJECT_URL,PUBLISHABLE_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}});
+      const client=await globalThis.MICROCOSMOS_GET_SUPABASE();
       const {data:{session}}=await client.auth.getSession();
       if(!session){finish({room:{room_id:LEGACY_KEY,room_name:"Mesa local"},membership:{member_role:"player"},legacy:true,canMaster:false});return}
       const [{data:rooms,error},{data:profile}]=await Promise.all([client.rpc("list_my_rooms"),client.from("profiles").select("role,approved").eq("id",session.user.id).maybeSingle()]);

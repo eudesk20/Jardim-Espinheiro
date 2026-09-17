@@ -196,7 +196,7 @@
 
   async function connect(){
     try{
-      const {createClient}=await import("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm");supabase=createClient(PROJECT_URL,PUBLISHABLE_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}});
+      supabase=await globalThis.MICROCOSMOS_GET_SUPABASE();
       const {data:{session}}=await supabase.auth.getSession();userId=session?.user?.id||"";if(userId){const {data}=await supabase.from("profiles").select("role,approved").eq("id",userId).maybeSingle();if(data?.approved!==false)profileRole=data?.role||"";await refreshRawRanks(true)}
     }catch(e){console.warn("MICROCOSMOS Perícias Flexíveis: dados online indisponíveis",e)}
     lastPanelSignature="";renderPanel()

@@ -14,8 +14,7 @@
     try{
       const room=await (globalThis.MICROCOSMOS_ROOMS?.ready||Promise.resolve(null));
       if(room&&!room.legacy)return room.membership?.member_role==="spectator"?"spectator":room.canMaster?"master":"player";
-      const {createClient}=await import("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm");
-      const sb=createClient("https://evyhhlbvhspiuwouivbb.supabase.co","sb_publishable_mf7PV03HfaJw_YkUhX34NA_dAGFbyp6",{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}});
+      const sb=await globalThis.MICROCOSMOS_GET_SUPABASE();
       const {data:{session}}=await sb.auth.getSession();
       if(!session)return "player";
       const {data}=await sb.from("profiles").select("role,approved").eq("id",session.user.id).maybeSingle();

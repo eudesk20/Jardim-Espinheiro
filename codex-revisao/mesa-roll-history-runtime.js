@@ -100,8 +100,7 @@
   observer.observe(rollLog,{childList:true,subtree:true});
 
   try{
-    const {createClient}=await import("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm");
-    supabase=createClient(PROJECT_URL,PUBLISHABLE_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}});
+    supabase=await globalThis.MICROCOSMOS_GET_SUPABASE();
     const {data:{session:s}}=await supabase.auth.getSession();session=s;if(!session)return;
     const {data:p}=await supabase.from("profiles").select("id,username,display_name,role,approved").eq("id",session.user.id).maybeSingle();profile=p;if(!profile||profile.approved===false)return;const roomContext=await (globalThis.MICROCOSMOS_ROOMS?.ready||Promise.resolve(null));isMaster=roomContext?!!roomContext.canMaster:profile.role==="master";
     ensureToolbar();await loadRecent();

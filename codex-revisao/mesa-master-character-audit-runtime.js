@@ -84,7 +84,7 @@
   function schedule(){if(queued)return;queued=true;requestAnimationFrame(()=>{queued=false;inject()})}
 
   try{
-    const {createClient}=await import("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm");supabase=createClient(PROJECT_URL,PUBLISHABLE_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}});
+    supabase=await globalThis.MICROCOSMOS_GET_SUPABASE();
     const {data:{session}}=await supabase.auth.getSession();if(!session)return;
     const {data:profile}=await supabase.from("profiles").select("role,approved").eq("id",session.user.id).maybeSingle();role=profile?.approved?profile?.role||"player":"player";
     if(!isMaster())return;
