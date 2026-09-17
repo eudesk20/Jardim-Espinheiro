@@ -3,9 +3,10 @@
 (()=>{
   if(globalThis.MICROCOSMOS_MANTIDEO_RACIAL_CANTRIP)return;
   globalThis.MICROCOSMOS_MANTIDEO_RACIAL_CANTRIP=true;
+  const visual=new URL("../assets/characters/mantideo-truque-foices-magicas-superior-ativacao-guarda-golpe-guia-v2.png",document.currentScript?.src||location.href).href;
   const spell={
     key:"racial-mantideo-foices-retrateis",
-    title:"✨ Foices Retráteis",
+    title:"✨ Foices Mágicas Retráteis",
     reference:"racial-mantideo-foices-retrateis",
     level:0,
     kind:"completa",
@@ -13,17 +14,17 @@
     classes:[],
     school:"Transmutação racial",
     source:"Raça: Mantídeo",
-    manifestation:"✨ Manifestação corporal",
+    manifestation:"✨ Projeção racial de energia",
     cast:"1 Ação Bônus",
     range:"Pessoal",
     duration:"Até serem recolhidas",
     components:"S",
     area:"O próprio Mantídeo",
     materialIds:[],
-    conjuration:"Um gesto curto ou impulso instintivo faz as lâminas naturais deslizarem para fora dos antebraços. Recolhê-las não exige Ação.",
-    description:"Você estende ou recolhe as foices naturais alojadas junto aos antebraços sem impedir o uso das mãos.",
-    effect:"Enquanto estendidas, suas mãos continuam livres e suas Garras Naturais ficam disponíveis, causando 1d6 de dano Cortante conforme o traço racial. A manifestação pode ter um brilho discreto de seiva, pólen ou energia, escolhido pelo personagem.",
-    limitation:"Este Truque não concede um ataque adicional, não aumenta o dano das Garras Naturais, não aumenta o alcance e não transforma o dano em mágico por si só.",
+    conjuration:"Um gesto curto ou impulso instintivo forma anéis de energia nos pulsos. Deles surgem duas foices mágicas translúcidas, como folhas luminosas projetadas junto aos antebraços. Dissipá-las não exige Ação.",
+    description:"Você manifesta ou dissipa foices mágicas retráteis sem substituir os braços, deformar as mãos ou impedir que elas continuem livres.",
+    effect:"Enquanto manifestadas, suas mãos continuam livres e suas Garras Naturais ficam disponíveis, causando 1d6 de dano Cortante conforme o traço racial. Cor dos anéis, nervuras luminosas e partículas podem variar com a aparência do personagem.",
+    limitation:"As foices são projeções raciais, não membros permanentes. Este Truque não concede ataque adicional, não aumenta o dano das Garras Naturais, não aumenta o alcance e não torna o dano mágico por si só.",
     damage:"1d6 Cortante (Garras Naturais)",
     healing:"",
     damageType:"Cortante",
@@ -42,7 +43,8 @@
     grantedBy:"Raça: Mantídeo",
     provenance:"microcosmos-original",
     license:"Conteúdo original do MICROCOSMOS",
-    sourceCatalog:"MICROCOSMOS"
+    sourceCatalog:"MICROCOSMOS",
+    visual
   };
   const spells=globalThis.CODEX_SPELL_DATA||(globalThis.CODEX_SPELL_DATA=[]);
   if(!spells.some(item=>item.key===spell.key))spells.push(spell);

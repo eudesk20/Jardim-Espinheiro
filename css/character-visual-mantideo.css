@@ -40,3 +40,14 @@
   border-top: 22px solid #f3d47d;
   border-bottom: 0;
 }
+
+.mantideo-racial-control[hidden],.mantideo-racial-guide[hidden]{display:none!important}
+.mantideo-racial-control{padding:9px;border:1px solid #9d8051;border-radius:10px;background:#f3e7bd}
+.mantideo-racial-guide{margin:10px 0;padding:8px;border:1px solid #9d8051;border-radius:12px;background:#20372d;color:#f3e7bd;text-align:center}
+.mantideo-racial-guide img{display:block;width:100%;max-height:330px;object-fit:contain;border-radius:8px;background:#f8f3e7}
+.mantideo-racial-guide figcaption{margin-top:6px;font-size:.72rem}
+.visual-token-figure[data-race="race-5"][data-racial-scythes]:not([data-racial-scythes="recolhidas"]){box-shadow:0 0 0 3px #efca65,0 0 22px #dfff8c99}
+.visual-token-figure[data-race="race-5"][data-racial-scythes]:not([data-racial-scythes="recolhidas"])::before{content:"";position:absolute;inset:-7%;z-index:3;background:center/contain no-repeat;pointer-events:none}
+.visual-token-figure[data-race="race-5"][data-racial-scythes="ativacao"]::before{background-image:url("../assets/characters/mantideo-foices-magicas-overlay-ativacao-v1.png")}
+.visual-token-figure[data-race="race-5"][data-racial-scythes="guarda"]::before{background-image:url("../assets/characters/mantideo-foices-magicas-overlay-guarda-v1.png")}
+.visual-token-figure[data-race="race-5"][data-racial-scythes="golpe"]::before{background-image:url("../assets/characters/mantideo-foices-magicas-overlay-golpe-v1.png")}
